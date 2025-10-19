@@ -1,0 +1,17 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin and API routes
+Disallow: /admin
+Disallow: /api
+
+# Allow specific API routes
+Allow: /api/sitemap
+
+# Sitemap
+Sitemap: https://shifa-alhind.onrender.com/sitemap.xml
+Sitemap: https://shifa-alhind.onrender.com/ar/sitemap.xml
+
+# Crawl delay for politeness
+Crawl-delay: 1

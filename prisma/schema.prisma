@@ -1,0 +1,651 @@
+// Shifa AlHind Database Schema
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// USER & AUTHENTICATION
+// ============================================
+
+enum UserRole {
+  ADMIN
+  EDITOR
+  TRANSLATOR
+  MANAGER
+  USER
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?
+  image         String?
+  role          UserRole  @default(USER)
+  phone         String?
+  locale        String    @default("en")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts      Account[]
+  sessions      Session[]
+  bookings      Booking[]
+  translator    Translator?
+  auditLogs     AuditLog[]
+  contentPages  ContentPage[]
+
+  @@index([email])
+  @@index([role])
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ============================================
+// CORE MEDICAL ENTITIES
+// ============================================
+
+model Country {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name_en     String
+  name_ar     String
+  code        String   @unique // ISO 3166-1 alpha-2
+  phonePrefix String
+  currency    String
+  flag        String?
+  seoTitle_en String?
+  seoTitle_ar String?
+  seoDesc_en  String?  @db.Text
+  seoDesc_ar  String?  @db.Text
+  published   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  cities City[]
+
+  @@index([slug])
+  @@index([published])
+}
+
+model City {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  name_en     String
+  name_ar     String
+  countryId   String
+  country     Country  @relation(fields: [countryId], references: [id], onDelete: Cascade)
+  timezone    String?
+  latitude    Float?
+  longitude   Float?
+
+  // SEO fields
+  seoTitle_en String?
+  seoTitle_ar String?
+  seoDesc_en  String?  @db.Text
+  seoDesc_ar  String?  @db.Text
+  keywords_en String[] @default([])
+  keywords_ar String[] @default([])
+
+  // Content
+  intro_en    String?  @db.Text
+  intro_ar    String?  @db.Text
+
+  published   Boolean  @default(false)
+  priority    Int      @default(50) // For sitemap
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  hospitals         Hospital[]
+  cityTreatments    CityTreatment[]
+  articles          Article[]
+
+  @@index([slug])
+  @@index([countryId])
+  @@index([published])
+}
+
+model Hospital {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  name_en         String
+  name_ar         String
+  cityId          String
+  city            City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+
+  address_en      String?
+  address_ar      String?
+  phone           String?
+  email           String?
+  website         String?
+
+  accreditations  String[] @default([]) // JCI, NABH, ISO, etc.
+  specialties     String[] @default([])
+  languages       String[] @default([])
+
+  // Media
+  logo            String?
+  images          String[] @default([])
+  virtualTour     String?
+
+  // Content
+  about_en        String?  @db.Text
+  about_ar        String?  @db.Text
+  facilities_en   String?  @db.Text
+  facilities_ar   String?  @db.Text
+
+  // Location
+  latitude        Float?
+  longitude       Float?
+  mapUrl          String?
+
+  // SEO
+  seoTitle_en     String?
+  seoTitle_ar     String?
+  seoDesc_en      String?  @db.Text
+  seoDesc_ar      String?  @db.Text
+
+  published       Boolean  @default(false)
+  featured        Boolean  @default(false)
+  rating          Float?   @default(0)
+  reviewCount     Int      @default(0)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  doctors         Doctor[]
+  packages        Package[]
+
+  @@index([slug])
+  @@index([cityId])
+  @@index([published])
+  @@index([featured])
+}
+
+model Doctor {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+  hospitalId      String
+  hospital        Hospital @relation(fields: [hospitalId], references: [id], onDelete: Cascade)
+
+  name_en         String
+  name_ar         String
+  title_en        String?  // Dr., Prof., etc.
+  title_ar        String?
+
+  specialties     String[] @default([])
+  qualifications  String[] @default([])
+  experience      Int?     // years
+  languages       String[] @default([])
+
+  profileImage    String?
+  bio_en          String?  @db.Text
+  bio_ar          String?  @db.Text
+
+  consultationFee Float?
+  available       Boolean  @default(true)
+
+  // SEO
+  seoTitle_en     String?
+  seoTitle_ar     String?
+  seoDesc_en      String?  @db.Text
+  seoDesc_ar      String?  @db.Text
+
+  published       Boolean  @default(false)
+  featured        Boolean  @default(false)
+  rating          Float?   @default(0)
+  reviewCount     Int      @default(0)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([slug])
+  @@index([hospitalId])
+  @@index([published])
+  @@index([featured])
+}
+
+model Treatment {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+
+  title_en        String
+  title_ar        String
+  category_en     String?
+  category_ar     String?
+
+  summary_en      String?  @db.Text
+  summary_ar      String?  @db.Text
+
+  content_en      Json?    // Blocks/rich content
+  content_ar      Json?
+
+  costMin         Float?
+  costMax         Float?
+  currency        String   @default("USD")
+
+  duration        String?  // e.g., "7-10 days"
+  recovery        String?  // e.g., "2-3 weeks"
+
+  // Media
+  thumbnail       String?
+  images          String[] @default([])
+  video           String?
+
+  // FAQ
+  faq_en          Json?    // [{question, answer}, ...]
+  faq_ar          Json?
+
+  // SEO
+  seoTitle_en     String?
+  seoTitle_ar     String?
+  seoDesc_en      String?  @db.Text
+  seoDesc_ar      String?  @db.Text
+  keywords_en     String[] @default([])
+  keywords_ar     String[] @default([])
+
+  published       Boolean  @default(false)
+  featured        Boolean  @default(false)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  cityTreatments  CityTreatment[]
+  bookings        Booking[]
+  packages        Package[]
+
+  @@index([slug])
+  @@index([published])
+  @@index([featured])
+}
+
+// Junction table for City <-> Treatment with city-specific content
+model CityTreatment {
+  id              String   @id @default(cuid())
+  cityId          String
+  city            City     @relation(fields: [cityId], references: [id], onDelete: Cascade)
+  treatmentId     String
+  treatment       Treatment @relation(fields: [treatmentId], references: [id], onDelete: Cascade)
+
+  // City-specific content overrides
+  intro_en        String?  @db.Text
+  intro_ar        String?  @db.Text
+  costMin         Float?
+  costMax         Float?
+
+  // SEO for city-treatment page
+  seoTitle_en     String?
+  seoTitle_ar     String?
+  seoDesc_en      String?  @db.Text
+  seoDesc_ar      String?  @db.Text
+  keywords_en     String[] @default([])
+  keywords_ar     String[] @default([])
+
+  published       Boolean  @default(false)
+  priority        Int      @default(50) // For sitemap
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  articles        Article[]
+
+  @@unique([cityId, treatmentId])
+  @@index([cityId])
+  @@index([treatmentId])
+  @@index([published])
+}
+
+model Package {
+  id              String   @id @default(cuid())
+  slug            String   @unique
+
+  name_en         String
+  name_ar         String
+  treatmentId     String?
+  treatment       Treatment? @relation(fields: [treatmentId], references: [id])
+  hospitalId      String?
+  hospital        Hospital?  @relation(fields: [hospitalId], references: [id])
+
+  items_en        String[] @default([]) // What's included
+  items_ar        String[] @default([])
+
+  priceEstimate   Float?
+  currency        String   @default("USD")
+  durationDays    Int?
+
+  description_en  String?  @db.Text
+  description_ar  String?  @db.Text
+
+  thumbnail       String?
+
+  published       Boolean  @default(false)
+  featured        Boolean  @default(false)
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  bookings        Booking[]
+
+  @@index([slug])
+  @@index([treatmentId])
+  @@index([hospitalId])
+  @@index([published])
+}
+
+// ============================================
+// CONTENT & BLOG
+// ============================================
+
+enum ContentPageType {
+  PAGE
+  BLOG_POST
+  ARTICLE
+  LANDING
+}
+
+model ContentPage {
+  id              String          @id @default(cuid())
+  slug            String          @unique
+  type            ContentPageType @default(PAGE)
+
+  title_en        String
+  title_ar        String
+
+  excerpt_en      String?         @db.Text
+  excerpt_ar      String?         @db.Text
+
+  body_en         Json?           // Rich content blocks
+  body_ar         Json?
+
+  thumbnail       String?
+  images          String[]        @default([])
+
+  authorId        String?
+  author          User?           @relation(fields: [authorId], references: [id])
+
+  // SEO
+  seoTitle_en     String?
+  seoTitle_ar     String?
+  seoDesc_en      String?         @db.Text
+  seoDesc_ar      String?         @db.Text
+  keywords_en     String[]        @default([])
+  keywords_ar     String[]        @default([])
+
+  // Publishing
+  published       Boolean         @default(false)
+  publishDate     DateTime?
+
+  // Review flags
+  needsNativeReview Boolean       @default(true)
+  needsMedicalReview Boolean      @default(false)
+  reviewedAt      DateTime?
+  reviewedBy      String?
+
+  views           Int             @default(0)
+
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+
+  @@index([slug])
+  @@index([type])
+  @@index([published])
+  @@index([publishDate])
+}
+
+model Article {
+  id                String        @id @default(cuid())
+  slug              String        @unique
+
+  cityTreatmentId   String
+  cityTreatment     CityTreatment @relation(fields: [cityTreatmentId], references: [id], onDelete: Cascade)
+  cityId            String
+  city              City          @relation(fields: [cityId], references: [id], onDelete: Cascade)
+
+  title_en          String
+  title_ar          String
+
+  excerpt_en        String?       @db.Text
+  excerpt_ar        String?       @db.Text
+
+  content_en        Json?         // Rich content blocks
+  content_ar        Json?
+
+  thumbnail         String?
+  images            String[]      @default([])
+
+  // SEO
+  seoTitle_en       String?
+  seoTitle_ar       String?
+  seoDesc_en        String?       @db.Text
+  seoDesc_ar        String?       @db.Text
+  keywords_en       String[]      @default([])
+  keywords_ar       String[]      @default([])
+
+  // Publishing
+  published         Boolean       @default(false)
+  publishDate       DateTime?
+
+  // Review flags
+  needsNativeReview Boolean       @default(true)
+  needsMedicalReview Boolean      @default(false)
+
+  views             Int           @default(0)
+  priority          Int           @default(30) // For sitemap
+
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@index([slug])
+  @@index([cityTreatmentId])
+  @@index([cityId])
+  @@index([published])
+  @@index([publishDate])
+}
+
+// ============================================
+// BOOKINGS & LEADS
+// ============================================
+
+enum BookingStatus {
+  PENDING
+  CONTACTED
+  CONSULTATION_SCHEDULED
+  DOCUMENTS_REQUESTED
+  DOCUMENTS_RECEIVED
+  QUOTE_SENT
+  CONFIRMED
+  CANCELLED
+  COMPLETED
+}
+
+model Booking {
+  id                    String        @id @default(cuid())
+
+  // User info
+  userId                String?
+  user                  User?         @relation(fields: [userId], references: [id])
+  userName              String
+  email                 String
+  phone                 String
+  countryOrigin         String
+  cityOrigin            String?
+
+  // Treatment info
+  treatmentId           String?
+  treatment             Treatment?    @relation(fields: [treatmentId], references: [id])
+  packageId             String?
+  package               Package?      @relation(fields: [packageId], references: [id])
+
+  preferredDate         DateTime?
+  message               String?       @db.Text
+
+  // Status & assignment
+  status                BookingStatus @default(PENDING)
+  assignedTranslatorId  String?
+  assignedTranslator    Translator?   @relation(fields: [assignedTranslatorId], references: [id])
+
+  // Documents
+  documents             Json[]        @default([]) // [{key, url, type, uploadedAt}]
+
+  // Communication
+  notes                 Json[]        @default([]) // [{text, author, createdAt}]
+
+  createdAt             DateTime      @default(now())
+  updatedAt             DateTime      @updatedAt
+
+  @@index([userId])
+  @@index([email])
+  @@index([status])
+  @@index([treatmentId])
+  @@index([createdAt])
+}
+
+model Translator {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  languages    String[] @default([])
+  availability Boolean  @default(true)
+  maxLoad      Int      @default(10) // Max concurrent bookings
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  bookings     Booking[]
+
+  @@index([availability])
+}
+
+// ============================================
+// MEDIA
+// ============================================
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
+
+model Media {
+  id          String    @id @default(cuid())
+  key         String    @unique
+  url         String
+  cdnUrl      String?
+
+  type        MediaType @default(IMAGE)
+  mime        String
+  size        Int       // bytes
+
+  width       Int?
+  height      Int?
+
+  alt_en      String?
+  alt_ar      String?
+  caption_en  String?
+  caption_ar  String?
+
+  blurhash    String?
+
+  // Organization
+  folder      String?
+  tags        String[]  @default([])
+
+  uploadedBy  String?
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([key])
+  @@index([type])
+  @@index([folder])
+}
+
+// ============================================
+// AUDIT & LOGS
+// ============================================
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  actor      User?    @relation(fields: [actorId], references: [id])
+
+  action     String   // CREATE, UPDATE, DELETE, PUBLISH, etc.
+  entityType String   // User, Booking, ContentPage, etc.
+  entityId   String
+
+  payload    Json?    // What changed
+  ipAddress  String?
+  userAgent  String?
+
+  createdAt  DateTime @default(now())
+
+  @@index([actorId])
+  @@index([entityType, entityId])
+  @@index([createdAt])
+}
+
+// ============================================
+// SEO & SCHEMA
+// ============================================
+
+model Sitemap {
+  id           String   @id @default(cuid())
+  locale       String   // en, ar
+  url          String
+  priority     Float    @default(0.5)
+  changefreq   String   @default("weekly")
+  lastmod      DateTime @default(now())
+
+  entityType   String?  // city, treatment, article, page
+  entityId     String?
+
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@unique([locale, url])
+  @@index([locale])
+  @@index([entityType])
+}

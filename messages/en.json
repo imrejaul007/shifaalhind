@@ -1,0 +1,111 @@
+{
+  "common": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Services",
+    "contact": "Contact",
+    "faq": "FAQ",
+    "blog": "Blog",
+    "treatments": "Treatments",
+    "hospitals": "Hospitals",
+    "doctors": "Doctors",
+    "packages": "Packages",
+    "booking": "Book Now",
+    "consultation": "Free Consultation",
+    "learnMore": "Learn More",
+    "readMore": "Read More",
+    "getStarted": "Get Started",
+    "viewAll": "View All",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "backToHome": "Back to Home"
+  },
+  "nav": {
+    "medicalTourism": "Medical Tourism",
+    "successStories": "Success Stories",
+    "travelVisa": "Travel & Visa",
+    "whyIndia": "Why India",
+    "myJourney": "My Journey"
+  },
+  "hero": {
+    "title": "World-Class Healthcare in India",
+    "subtitle": "Premium medical treatments at affordable costs. Experience excellence with Shifa AlHind.",
+    "cta": "Start Your Journey",
+    "searchPlaceholder": "Search treatments, procedures, hospitals..."
+  },
+  "home": {
+    "featuredTreatments": "Popular Treatments",
+    "topDestinations": "Top Medical Destinations",
+    "whyChooseUs": "Why Choose Shifa AlHind",
+    "testimonials": "Success Stories",
+    "howItWorks": "How It Works"
+  },
+  "footer": {
+    "tagline": "Your trusted partner for medical tourism in India",
+    "quickLinks": "Quick Links",
+    "treatments": "Treatments",
+    "destinations": "Destinations",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "refunds": "Refund Policy",
+    "followUs": "Follow Us",
+    "newsletter": "Subscribe to our newsletter",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "copyright": "© 2024 Shifa AlHind. All rights reserved."
+  },
+  "booking": {
+    "title": "Book Your Treatment",
+    "step1": "Select Treatment",
+    "step2": "Personal Details",
+    "step3": "Medical Information",
+    "step4": "Confirmation",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "country": "Country",
+    "city": "City",
+    "treatment": "Treatment",
+    "preferredDate": "Preferred Date",
+    "message": "Additional Information",
+    "submit": "Submit Booking",
+    "success": "Your booking request has been submitted successfully!",
+    "error": "There was an error submitting your booking. Please try again."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have questions? We're here to help 24/7",
+    "whatsapp": "Chat on WhatsApp",
+    "email": "Send Email",
+    "phone": "Call Us",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message"
+    }
+  },
+  "treatments": {
+    "allTreatments": "All Treatments",
+    "costFrom": "Starting from",
+    "duration": "Duration",
+    "recovery": "Recovery Time",
+    "readMore": "Learn More About This Treatment",
+    "relatedArticles": "Related Articles"
+  },
+  "cities": {
+    "explore": "Explore Medical Tourism in",
+    "topTreatments": "Top Treatments",
+    "topHospitals": "Top Hospitals",
+    "whyChoose": "Why Choose"
+  }
+}

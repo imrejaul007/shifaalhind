@@ -1,0 +1,115 @@
+import { GCCCountryConfig } from '@/types';
+
+export const gccCountries: GCCCountryConfig[] = [
+  {
+    slug: 'united-arab-emirates',
+    name: 'United Arab Emirates',
+    code: 'AE',
+    currency: 'AED',
+    phonePrefix: '+971',
+    cities: [
+      { slug: 'dubai', name: 'Dubai' },
+      { slug: 'abu-dhabi', name: 'Abu Dhabi' },
+      { slug: 'sharjah', name: 'Sharjah' },
+      { slug: 'ajman', name: 'Ajman' },
+      { slug: 'fujairah', name: 'Fujairah' },
+      { slug: 'ras-al-khaimah', name: 'Ras Al Khaimah' },
+      { slug: 'al-ain', name: 'Al Ain' },
+    ],
+  },
+  {
+    slug: 'saudi-arabia',
+    name: 'Saudi Arabia',
+    code: 'SA',
+    currency: 'SAR',
+    phonePrefix: '+966',
+    cities: [
+      { slug: 'riyadh', name: 'Riyadh' },
+      { slug: 'jeddah', name: 'Jeddah' },
+      { slug: 'dammam', name: 'Dammam' },
+      { slug: 'khobar', name: 'Khobar' },
+      { slug: 'mecca', name: 'Mecca' },
+      { slug: 'medina', name: 'Medina' },
+      { slug: 'taif', name: 'Taif' },
+      { slug: 'tabuk', name: 'Tabuk' },
+    ],
+  },
+  {
+    slug: 'qatar',
+    name: 'Qatar',
+    code: 'QA',
+    currency: 'QAR',
+    phonePrefix: '+974',
+    cities: [
+      { slug: 'doha', name: 'Doha' },
+      { slug: 'al-wakrah', name: 'Al Wakrah' },
+      { slug: 'al-khor', name: 'Al Khor' },
+    ],
+  },
+  {
+    slug: 'oman',
+    name: 'Oman',
+    code: 'OM',
+    currency: 'OMR',
+    phonePrefix: '+968',
+    cities: [
+      { slug: 'muscat', name: 'Muscat' },
+      { slug: 'sohar', name: 'Sohar' },
+      { slug: 'salalah', name: 'Salalah' },
+      { slug: 'nizwa', name: 'Nizwa' },
+    ],
+  },
+  {
+    slug: 'kuwait',
+    name: 'Kuwait',
+    code: 'KW',
+    currency: 'KWD',
+    phonePrefix: '+965',
+    cities: [
+      { slug: 'kuwait-city', name: 'Kuwait City' },
+      { slug: 'hawalli', name: 'Hawalli' },
+      { slug: 'salmiya', name: 'Salmiya' },
+      { slug: 'farwaniya', name: 'Farwaniya' },
+    ],
+  },
+  {
+    slug: 'bahrain',
+    name: 'Bahrain',
+    code: 'BH',
+    currency: 'BHD',
+    phonePrefix: '+973',
+    cities: [
+      { slug: 'manama', name: 'Manama' },
+      { slug: 'muharraq', name: 'Muharraq' },
+      { slug: 'riffa', name: 'Riffa' },
+    ],
+  },
+];
+
+export const treatments = [
+  { slug: 'heart-surgery', name: 'Heart Surgery' },
+  { slug: 'knee-replacement', name: 'Knee Replacement' },
+  { slug: 'hip-replacement', name: 'Hip Replacement' },
+  { slug: 'ivf', name: 'IVF & Fertility' },
+  { slug: 'dental-implants', name: 'Dental Implants' },
+  { slug: 'hair-transplant', name: 'Hair Transplant' },
+  { slug: 'cataract-surgery', name: 'Cataract Surgery' },
+  { slug: 'cancer-treatment', name: 'Cancer Treatment' },
+  { slug: 'cosmetic-surgery', name: 'Cosmetic Surgery' },
+  { slug: 'bariatric-surgery', name: 'Bariatric Surgery' },
+  { slug: 'organ-transplant', name: 'Organ Transplant' },
+  { slug: 'neurosurgery', name: 'Neurosurgery' },
+  { slug: 'ophthalmology', name: 'Ophthalmology' },
+  { slug: 'ayurveda-wellness', name: 'Ayurveda & Wellness' },
+];
+
+export const currencies = {
+  AED: { symbol: 'د.إ', name: 'UAE Dirham', rate: 3.67 },
+  SAR: { symbol: 'ر.س', name: 'Saudi Riyal', rate: 3.75 },
+  QAR: { symbol: 'ر.ق', name: 'Qatari Riyal', rate: 3.64 },
+  OMR: { symbol: 'ر.ع', name: 'Omani Rial', rate: 0.38 },
+  KWD: { symbol: 'د.ك', name: 'Kuwaiti Dinar', rate: 0.31 },
+  BHD: { symbol: 'د.ب', name: 'Bahraini Dinar', rate: 0.38 },
+  INR: { symbol: '₹', name: 'Indian Rupee', rate: 83.0 },
+  USD: { symbol: '$', name: 'US Dollar', rate: 1.0 },
+};
