@@ -1,0 +1,53 @@
+entity_type,country_slug,country_name,city_slug,city_name,treatment_slug,treatment_name,article_number,slug,title_en,priority,needs_native_review,needs_medical_review
+country,united-arab-emirates,United Arab Emirates,,,,,,united-arab-emirates,Medical Tourism from UAE to India,100,TRUE,FALSE
+country,saudi-arabia,Saudi Arabia,,,,,,saudi-arabia,Medical Tourism from Saudi Arabia to India,100,TRUE,FALSE
+country,qatar,Qatar,,,,,,qatar,Medical Tourism from Qatar to India,100,TRUE,FALSE
+country,oman,Oman,,,,,,oman,Medical Tourism from Oman to India,100,TRUE,FALSE
+country,kuwait,Kuwait,,,,,,kuwait,Medical Tourism from Kuwait to India,100,TRUE,FALSE
+country,bahrain,Bahrain,,,,,,bahrain,Medical Tourism from Bahrain to India,100,TRUE,FALSE
+city,united-arab-emirates,United Arab Emirates,dubai,Dubai,,,,dubai,Medical Tourism from Dubai to India,90,TRUE,FALSE
+city,united-arab-emirates,United Arab Emirates,abu-dhabi,Abu Dhabi,,,,abu-dhabi,Medical Tourism from Abu Dhabi to India,85,TRUE,FALSE
+city,united-arab-emirates,United Arab Emirates,sharjah,Sharjah,,,,sharjah,Medical Tourism from Sharjah to India,80,TRUE,FALSE
+city,saudi-arabia,Saudi Arabia,riyadh,Riyadh,,,,riyadh,Medical Tourism from Riyadh to India,90,TRUE,FALSE
+city,saudi-arabia,Saudi Arabia,jeddah,Jeddah,,,,jeddah,Medical Tourism from Jeddah to India,85,TRUE,FALSE
+city,saudi-arabia,Saudi Arabia,dammam,Dammam,,,,dammam,Medical Tourism from Dammam to India,75,TRUE,FALSE
+city,qatar,Qatar,doha,Doha,,,,doha,Medical Tourism from Doha to India,90,TRUE,FALSE
+city,oman,Oman,muscat,Muscat,,,,muscat,Medical Tourism from Muscat to India,90,TRUE,FALSE
+city,kuwait,Kuwait,kuwait-city,Kuwait City,,,,kuwait-city,Medical Tourism from Kuwait City to India,90,TRUE,FALSE
+city,bahrain,Bahrain,manama,Manama,,,,manama,Medical Tourism from Manama to India,90,TRUE,FALSE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,,dubai-heart-surgery,Heart Surgery for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,knee-replacement,Knee Replacement,,dubai-knee-replacement,Knee Replacement for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,hip-replacement,Hip Replacement,,dubai-hip-replacement,Hip Replacement for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,ivf,IVF & Fertility,,dubai-ivf,IVF Treatment for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,dental-implants,Dental Implants,,dubai-dental-implants,Dental Implants for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,hair-transplant,Hair Transplant,,dubai-hair-transplant,Hair Transplant for Dubai Patients,70,TRUE,FALSE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,cataract-surgery,Cataract Surgery,,dubai-cataract-surgery,Cataract Surgery for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,cancer-treatment,Cancer Treatment,,dubai-cancer-treatment,Cancer Treatment for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,cosmetic-surgery,Cosmetic Surgery,,dubai-cosmetic-surgery,Cosmetic Surgery for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,bariatric-surgery,Bariatric Surgery,,dubai-bariatric-surgery,Bariatric Surgery for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,organ-transplant,Organ Transplant,,dubai-organ-transplant,Organ Transplant for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,neurosurgery,Neurosurgery,,dubai-neurosurgery,Neurosurgery for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,ophthalmology,Ophthalmology,,dubai-ophthalmology,Ophthalmology for Dubai Patients,70,TRUE,TRUE
+city_treatment,united-arab-emirates,United Arab Emirates,dubai,Dubai,ayurveda-wellness,Ayurveda & Wellness,,dubai-ayurveda-wellness,Ayurveda & Wellness for Dubai Patients,70,TRUE,FALSE
+article,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,1,dubai-heart-surgery-guide-1,Heart Surgery in India: Complete Guide for Dubai Patients (Part 1),30,TRUE,TRUE
+article,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,2,dubai-heart-surgery-guide-2,Heart Surgery in India: Cost Breakdown for Dubai Patients (Part 2),30,TRUE,TRUE
+article,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,3,dubai-heart-surgery-guide-3,Heart Surgery in India: Recovery Tips for Dubai Patients (Part 3),30,TRUE,TRUE
+article,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,4,dubai-heart-surgery-guide-4,Heart Surgery in India: Hospital Selection for Dubai Patients (Part 4),30,TRUE,TRUE
+article,united-arab-emirates,United Arab Emirates,dubai,Dubai,heart-surgery,Heart Surgery,5,dubai-heart-surgery-guide-5,Heart Surgery in India: Travel & Visa Guide for Dubai Patients (Part 5),30,TRUE,FALSE
+
+NOTE: This is a SAMPLE of the content manifest. The full manifest would include:
+- 6 countries
+- ~30 cities (based on the GCC_CITIES configuration)
+- 14 treatments per city = ~420 city-treatment pages
+- 5 articles per treatment per city = ~2100 articles
+- Total: ~2550+ content pieces
+
+To generate the full manifest, run the content generation script after database setup.
+The script should:
+1. Loop through all GCC countries
+2. For each country, create entries for all cities
+3. For each city, create entries for all 14 treatments
+4. For each city-treatment, create 5 article entries
+5. Generate SEO-optimized slugs, titles, and metadata
+6. Flag all Arabic content for native review
+7. Flag medical content for medical review
