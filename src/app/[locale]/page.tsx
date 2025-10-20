@@ -138,7 +138,7 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <Link
-                    href={`/treatments/${treatment.slug}`}
+                    href="/treatments"
                     className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                   >
                     Learn More
@@ -180,10 +180,10 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href={`/for-${country.slug}-patients`}
+                  href="/medical-tourism"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  Explore packages
+                  Explore Destinations
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>

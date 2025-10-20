@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-gray-600 hover:text-primary-500">
-                  {t('quickLinks')}
+                  About Us
                 </Link>
               </li>
               <li>
@@ -73,7 +73,7 @@ export function Footer() {
               {treatments.slice(0, 6).map((treatment) => (
                 <li key={treatment.slug}>
                   <Link
-                    href={`/treatments/${treatment.slug}`}
+                    href="/treatments"
                     className="text-gray-600 hover:text-primary-500"
                   >
                     {treatment.name}
@@ -90,7 +90,7 @@ export function Footer() {
               {gccCountries.slice(0, 6).map((country) => (
                 <li key={country.slug}>
                   <Link
-                    href={`/for-${country.slug}-patients`}
+                    href="/medical-tourism"
                     className="text-gray-600 hover:text-primary-500"
                   >
                     For {country.name} Patients
