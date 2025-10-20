@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 
+export const dynamic = 'force-dynamic';
+
 const leadSchema = z.object({
   userName: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
