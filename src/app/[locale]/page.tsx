@@ -82,16 +82,17 @@ export default function HomePage() {
       {/* Search Bar */}
       <section className="container -mt-8 px-4">
         <div className="glass mx-auto max-w-4xl rounded-2xl p-6">
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <form action="/search" method="get" className="flex flex-col gap-4 sm:flex-row">
             <input
               type="text"
-              placeholder="Search treatments..."
+              name="q"
+              placeholder="Search treatments, hospitals, cities..."
               className="flex-1 rounded-lg border-2 border-gray-200 bg-white px-4 py-3 focus:border-primary-500 focus:outline-none"
             />
-            <Button size="lg" className="sm:w-auto">
+            <Button type="submit" size="lg" className="sm:w-auto">
               Search
             </Button>
-          </div>
+          </form>
         </div>
       </section>
 
