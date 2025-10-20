@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import {
   LayoutDashboard,
   FileText,
-  Hospital,
+  Building2,
   Users,
   Settings,
   LogOut
@@ -34,7 +34,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
     { name: 'Bookings', href: '/admin/bookings', icon: FileText },
     { name: 'Content', href: '/admin/content', icon: FileText },
-    { name: 'Hospitals', href: '/admin/hospitals', icon: Hospital },
+    { name: 'Hospitals', href: '/admin/hospitals', icon: Building2 },
     { name: 'Users', href: '/admin/users', icon: Users },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];

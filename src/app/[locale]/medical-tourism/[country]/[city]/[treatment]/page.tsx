@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
@@ -7,19 +9,20 @@ import { Button } from '@/components/ui/button';
 import { Clock, DollarSign, Calendar, FileText } from 'lucide-react';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
     country: string;
     city: string;
     treatment: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
+  const { city, treatment } = await params;
   const cityTreatment = await prisma.cityTreatment.findFirst({
     where: {
-      city: { slug: params.city },
-      treatment: { slug: params.treatment },
+      city: { slug: city },
+      treatment: { slug: treatment },
     },
     include: {
       city: { include: { country: true } },
@@ -29,22 +32,25 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!cityTreatment) return {};
 
+  const { locale, country, city: citySlug, treatment: treatmentSlug } = await params;
+
   return generateSEOMetadata({
     title_en: cityTreatment.seoTitle_en || `${cityTreatment.treatment.title_en} for ${cityTreatment.city.name_en} Patients`,
     title_ar: cityTreatment.seoTitle_ar || `${cityTreatment.treatment.title_ar} لمرضى ${cityTreatment.city.name_ar}`,
-    description_en: cityTreatment.seoDesc_en,
-    description_ar: cityTreatment.seoDesc_ar,
-    locale: params.locale,
-    path: `/medical-tourism/${params.country}/${params.city}/${params.treatment}`,
+    description_en: cityTreatment.seoDesc_en || undefined,
+    description_ar: cityTreatment.seoDesc_ar || undefined,
+    locale,
+    path: `/medical-tourism/${country}/${citySlug}/${treatmentSlug}`,
     keywords: cityTreatment.keywords_en,
   });
 }
 
 export default async function TreatmentPage({ params }: PageProps) {
+  const { locale, country, city: citySlug, treatment: treatmentSlug } = await params;
   const cityTreatment = await prisma.cityTreatment.findFirst({
     where: {
-      city: { slug: params.city },
-      treatment: { slug: params.treatment },
+      city: { slug: citySlug },
+      treatment: { slug: treatmentSlug },
       published: true,
     },
     include: {
@@ -62,16 +68,16 @@ export default async function TreatmentPage({ params }: PageProps) {
     notFound();
   }
 
-  const isArabic = params.locale === 'ar';
+  const isArabic = locale === 'ar';
   const { city, treatment, articles } = cityTreatment;
 
   // Generate schemas
   const breadcrumbs = generateBreadcrumbSchema([
-    { name: 'Home', url: `/${params.locale}` },
-    { name: 'Medical Tourism', url: `/${params.locale}/medical-tourism` },
-    { name: city.country.name_en, url: `/${params.locale}/for-${city.country.slug}-patients` },
-    { name: city.name_en, url: `/${params.locale}/medical-tourism/${params.country}/${params.city}` },
-    { name: treatment.title_en, url: `/${params.locale}/medical-tourism/${params.country}/${params.city}/${params.treatment}` },
+    { name: 'Home', url: `/${locale}` },
+    { name: 'Medical Tourism', url: `/${locale}/medical-tourism` },
+    { name: city.country.name_en, url: `/${locale}/for-${city.country.slug}-patients` },
+    { name: city.name_en, url: `/${locale}/medical-tourism/${country}/${citySlug}` },
+    { name: treatment.title_en, url: `/${locale}/medical-tourism/${country}/${citySlug}/${treatmentSlug}` },
   ]);
 
   const procedureSchema = generateMedicalProcedureSchema({
@@ -96,9 +102,9 @@ export default async function TreatmentPage({ params }: PageProps) {
       <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-16 text-white">
         <div className="container">
           <div className="mb-4 flex flex-wrap items-center gap-2 text-sm text-primary-100">
-            <Link href={`/${params.locale}`} className="hover:text-white">Home</Link>
+            <Link href={`/${locale}`} className="hover:text-white">Home</Link>
             <span>/</span>
-            <Link href={`/${params.locale}/medical-tourism/${params.country}/${params.city}`} className="hover:text-white">
+            <Link href={`/${locale}/medical-tourism/${country}/${citySlug}`} className="hover:text-white">
               {isArabic ? city.name_ar : city.name_en}
             </Link>
             <span>/</span>
@@ -146,12 +152,12 @@ export default async function TreatmentPage({ params }: PageProps) {
 
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" variant="secondary">
-              <Link href={`/${params.locale}/consultation?treatment=${treatment.slug}`}>
+              <Link href={`/${locale}/consultation?treatment=${treatment.slug}`}>
                 Get Free Consultation
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/20">
-              <Link href={`/${params.locale}/booking?treatment=${treatment.id}`}>
+              <Link href={`/${locale}/booking?treatment=${treatment.id}`}>
                 Book Now
               </Link>
             </Button>
@@ -197,12 +203,12 @@ export default async function TreatmentPage({ params }: PageProps) {
               </CardHeader>
               <CardContent className="space-y-4">
                 <Button asChild className="w-full">
-                  <Link href={`/${params.locale}/consultation?treatment=${treatment.slug}&city=${city.slug}`}>
+                  <Link href={`/${locale}/consultation?treatment=${treatment.slug}&city=${city.slug}`}>
                     Request Consultation
                   </Link>
                 </Button>
                 <Button asChild variant="outline" className="w-full">
-                  <Link href={`/${params.locale}/booking?treatment=${treatment.id}`}>
+                  <Link href={`/${locale}/booking?treatment=${treatment.id}`}>
                     Book Treatment
                   </Link>
                 </Button>
@@ -210,7 +216,7 @@ export default async function TreatmentPage({ params }: PageProps) {
                   <p className="mb-2 text-sm font-semibold">Need Help?</p>
                   <p className="text-sm text-gray-600">Contact our support team 24/7</p>
                   <Button asChild variant="link" className="px-0">
-                    <Link href={`/${params.locale}/contact`}>Contact Us →</Link>
+                    <Link href={`/${locale}/contact`}>Contact Us →</Link>
                   </Button>
                 </div>
               </CardContent>
@@ -244,7 +250,7 @@ export default async function TreatmentPage({ params }: PageProps) {
                   </CardHeader>
                   <CardContent>
                     <Link
-                      href={`/${params.locale}/blog/${params.country}/${params.city}/${params.treatment}/${article.slug}`}
+                      href={`/${locale}/blog/${country}/${citySlug}/${treatmentSlug}/${article.slug}`}
                       className="text-sm font-medium text-primary-500 hover:text-primary-600"
                     >
                       Read More →

@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Users, FileText, Hospital, TrendingUp } from 'lucide-react';
+import { Users, FileText, Building2, TrendingUp } from 'lucide-react';
 
 export default function AdminDashboard() {
   const stats = [
@@ -21,7 +21,7 @@ export default function AdminDashboard() {
       title: 'Partner Hospitals',
       value: '52',
       change: '+3',
-      icon: Hospital,
+      icon: Building2,
       color: 'text-purple-600',
     },
     {

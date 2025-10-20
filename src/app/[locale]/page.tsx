@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -11,7 +13,9 @@ import {
 } from 'lucide-react';
 import { treatments, gccCountries } from '@/config/gcc-countries';
 
-export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
   return generateSEOMetadata({
     title_en: 'Premium Medical Tourism to India',
     title_ar: 'سياحة علاجية متميزة إلى الهند',
@@ -26,8 +30,6 @@ export async function generateMetadata({ params: { locale } }: { params: { local
 }
 
 export default function HomePage() {
-  const t = useTranslations();
-
   const features = [
     {
       icon: CheckCircle,
@@ -53,20 +55,20 @@ export default function HomePage() {
         <div className="container relative z-10">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-6 font-serif text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              {t('hero.title')}
+              World-Class Medical Tourism to India
             </h1>
             <p className="mb-8 text-lg text-primary-50 md:text-xl">
-              {t('hero.subtitle')}
+              Affordable, quality healthcare from top hospitals. Specialized care for GCC patients.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" variant="secondary">
                 <Link href="/consultation">
-                  {t('hero.cta')}
+                  Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20">
-                <Link href="/treatments">{t('common.treatments')}</Link>
+                <Link href="/treatments">All Treatments</Link>
               </Button>
             </div>
           </div>
@@ -83,11 +85,11 @@ export default function HomePage() {
           <div className="flex flex-col gap-4 sm:flex-row">
             <input
               type="text"
-              placeholder={t('hero.searchPlaceholder')}
+              placeholder="Search treatments..."
               className="flex-1 rounded-lg border-2 border-gray-200 bg-white px-4 py-3 focus:border-primary-500 focus:outline-none"
             />
             <Button size="lg" className="sm:w-auto">
-              {t('common.search')}
+              Search
             </Button>
           </div>
         </div>
@@ -115,7 +117,7 @@ export default function HomePage() {
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-              {t('home.featuredTreatments')}
+              Featured Treatments
             </h2>
             <p className="text-lg text-gray-600">
               Explore our most popular medical procedures
@@ -139,7 +141,7 @@ export default function HomePage() {
                     href={`/treatments/${treatment.slug}`}
                     className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                   >
-                    {t('common.learnMore')}
+                    Learn More
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </CardContent>
@@ -149,7 +151,7 @@ export default function HomePage() {
 
           <div className="mt-12 text-center">
             <Button asChild variant="outline" size="lg">
-              <Link href="/treatments">{t('common.viewAll')}</Link>
+              <Link href="/treatments">View All Treatments</Link>
             </Button>
           </div>
         </div>
@@ -159,7 +161,7 @@ export default function HomePage() {
       <section className="container px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {t('home.topDestinations')}
+            Top Destinations
           </h2>
           <p className="text-lg text-gray-600">
             Medical tourism destinations across the GCC
@@ -201,10 +203,10 @@ export default function HomePage() {
           </p>
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/consultation">{t('common.consultation')}</Link>
+              <Link href="/consultation">Free Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20">
-              <Link href="/contact">{t('common.contact')}</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>

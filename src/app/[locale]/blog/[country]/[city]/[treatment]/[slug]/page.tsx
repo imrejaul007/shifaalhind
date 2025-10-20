@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
@@ -8,18 +10,19 @@ import { Calendar, User, ArrowLeft } from 'lucide-react';
 import { formatDate } from '@/lib/utils';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     locale: string;
     country: string;
     city: string;
     treatment: string;
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
   const article = await prisma.article.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: {
       city: { include: { country: true } },
       cityTreatment: { include: { treatment: true } },
@@ -28,13 +31,15 @@ export async function generateMetadata({ params }: PageProps) {
 
   if (!article) return {};
 
+  const { locale, country, city, treatment, slug: slugParam } = await params;
+
   return generateSEOMetadata({
     title_en: article.seoTitle_en || article.title_en,
     title_ar: article.seoTitle_ar || article.title_ar,
     description_en: article.seoDesc_en || article.excerpt_en || undefined,
     description_ar: article.seoDesc_ar || article.excerpt_ar || undefined,
-    locale: params.locale,
-    path: `/blog/${params.country}/${params.city}/${params.treatment}/${params.slug}`,
+    locale,
+    path: `/blog/${country}/${city}/${treatment}/${slugParam}`,
     type: 'article',
     publishedTime: article.publishDate?.toISOString(),
     keywords: article.keywords_en,
@@ -43,8 +48,9 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function ArticlePage({ params }: PageProps) {
+  const { locale, country, city, treatment, slug } = await params;
   const article = await prisma.article.findUnique({
-    where: { slug: params.slug, published: true },
+    where: { slug, published: true },
     include: {
       city: { include: { country: true } },
       cityTreatment: { include: { treatment: true } },
@@ -55,7 +61,7 @@ export default async function ArticlePage({ params }: PageProps) {
     notFound();
   }
 
-  const isArabic = params.locale === 'ar';
+  const isArabic = locale === 'ar';
 
   // Get related articles
   const relatedArticles = await prisma.article.findMany({
@@ -70,11 +76,11 @@ export default async function ArticlePage({ params }: PageProps) {
 
   // Generate schemas
   const breadcrumbs = generateBreadcrumbSchema([
-    { name: 'Home', url: `/${params.locale}` },
-    { name: 'Blog', url: `/${params.locale}/blog` },
-    { name: article.city.name_en, url: `/${params.locale}/medical-tourism/${params.country}/${params.city}` },
-    { name: article.cityTreatment.treatment.title_en, url: `/${params.locale}/medical-tourism/${params.country}/${params.city}/${params.treatment}` },
-    { name: article.title_en, url: `/${params.locale}/blog/${params.country}/${params.city}/${params.treatment}/${params.slug}` },
+    { name: 'Home', url: `/${locale}` },
+    { name: 'Blog', url: `/${locale}/blog` },
+    { name: article.city.name_en, url: `/${locale}/medical-tourism/${country}/${city}` },
+    { name: article.cityTreatment.treatment.title_en, url: `/${locale}/medical-tourism/${country}/${city}/${treatment}` },
+    { name: article.title_en, url: `/${locale}/blog/${country}/${city}/${treatment}/${slug}` },
   ]);
 
   const articleSchema = generateArticleSchema({
@@ -102,9 +108,9 @@ export default async function ArticlePage({ params }: PageProps) {
       <div className="border-b bg-gray-50 px-4 py-4">
         <div className="container">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href={`/${params.locale}`} className="hover:text-primary-600">Home</Link>
+            <Link href={`/${locale}`} className="hover:text-primary-600">Home</Link>
             <span>/</span>
-            <Link href={`/${params.locale}/blog`} className="hover:text-primary-600">Blog</Link>
+            <Link href={`/${locale}/blog`} className="hover:text-primary-600">Blog</Link>
             <span>/</span>
             <span className="text-gray-900">{isArabic ? article.title_ar : article.title_en}</span>
           </div>
@@ -116,7 +122,7 @@ export default async function ArticlePage({ params }: PageProps) {
         <div className="mx-auto max-w-4xl">
           {/* Back Link */}
           <Link
-            href={`/${params.locale}/medical-tourism/${params.country}/${params.city}/${params.treatment}`}
+            href={`/${locale}/medical-tourism/${country}/${city}/${treatment}`}
             className="mb-6 inline-flex items-center gap-2 text-sm text-primary-600 hover:text-primary-700"
           >
             <ArrowLeft className="h-4 w-4" />
@@ -133,7 +139,7 @@ export default async function ArticlePage({ params }: PageProps) {
             <div className="flex items-center gap-2">
               <Calendar className="h-4 w-4" />
               <time dateTime={article.publishDate?.toISOString() || article.createdAt.toISOString()}>
-                {formatDate(article.publishDate || article.createdAt, params.locale)}
+                {formatDate(article.publishDate || article.createdAt, locale)}
               </time>
             </div>
             <div className="flex items-center gap-2">
@@ -208,12 +214,12 @@ export default async function ArticlePage({ params }: PageProps) {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" variant="secondary">
-                <Link href={`/${params.locale}/consultation?treatment=${article.cityTreatment.treatment.slug}`}>
+                <Link href={`/${locale}/consultation?treatment=${article.cityTreatment.treatment.slug}`}>
                   Get Free Consultation
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-white bg-white/10 text-white hover:bg-white/20">
-                <Link href={`/${params.locale}/booking?treatment=${article.cityTreatment.treatmentId}`}>
+                <Link href={`/${locale}/booking?treatment=${article.cityTreatment.treatmentId}`}>
                   Book Treatment
                 </Link>
               </Button>
@@ -241,7 +247,7 @@ export default async function ArticlePage({ params }: PageProps) {
                   </CardHeader>
                   <CardContent>
                     <Link
-                      href={`/${params.locale}/blog/${params.country}/${params.city}/${params.treatment}/${related.slug}`}
+                      href={`/${locale}/blog/${country}/${city}/${treatment}/${related.slug}`}
                       className="text-sm font-medium text-primary-500 hover:text-primary-600"
                     >
                       Read Article →

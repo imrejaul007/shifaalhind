@@ -1,21 +1,26 @@
+export const dynamic = 'force-dynamic';
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Heart, Users, Award, Globe } from 'lucide-react';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
   return generateSEOMetadata({
     title_en: 'About Us - Shifa AlHind Medical Tourism',
     title_ar: 'من نحن - شفاء الهند السياحة العلاجية',
     description_en: 'Learn about Shifa AlHind, your trusted partner for medical tourism from GCC countries to India. Quality healthcare, affordable costs, complete support.',
     description_ar: 'تعرف على شفاء الهند، شريكك الموثوق للسياحة العلاجية من دول مجلس التعاون الخليجي إلى الهند.',
-    locale: params.locale,
+    locale,
     path: '/about',
   });
 }
 
-export default async function AboutPage({ params }: { params: { locale: string } }) {
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const values = [
     {
       icon: Heart,
@@ -115,7 +120,7 @@ export default async function AboutPage({ params }: { params: { locale: string }
             Get a free consultation from our medical team
           </p>
           <Button asChild size="lg" variant="secondary">
-            <Link href={`/${params.locale}/consultation`}>
+            <Link href={`/${locale}/consultation`}>
               Get Free Consultation
             </Link>
           </Button>
