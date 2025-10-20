@@ -36,17 +36,28 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch('/api/v1/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
-    // TODO: Send to API
-    // eslint-disable-next-line no-console
-    console.log('Contact form:', data);
-    setIsSubmitted(true);
-    setIsSubmitting(false);
-    reset();
+      const result = await response.json();
 
-    setTimeout(() => setIsSubmitted(false), 3000);
+      if (response.ok && result.success) {
+        setIsSubmitted(true);
+        reset();
+        setTimeout(() => setIsSubmitted(false), 5000);
+      } else {
+        alert(result.error || 'Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [

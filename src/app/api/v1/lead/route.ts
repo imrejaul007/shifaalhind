@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
+import {
+  sendLeadNotification,
+  sendLeadConfirmation,
+  sendLeadWhatsAppNotification,
+  sendLeadWhatsAppConfirmation,
+} from '@/lib/notifications';
 
 export const dynamic = 'force-dynamic';
 
@@ -43,9 +49,33 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    // TODO: Send email notification
-    // TODO: Send WhatsApp notification
-    // TODO: Add to CRM
+    // Send notifications (non-blocking - don't fail if notifications fail)
+    const notificationData = {
+      userName: booking.userName,
+      email: booking.email,
+      phone: booking.phone,
+      countryOrigin: booking.countryOrigin,
+      treatmentId: booking.treatmentId || undefined,
+      message: booking.message || undefined,
+    };
+
+    // Send email notifications
+    Promise.all([
+      sendLeadNotification(notificationData),
+      sendLeadConfirmation(notificationData),
+    ]).catch((error) => {
+      console.error('Email notification error:', error);
+    });
+
+    // Send WhatsApp notifications
+    Promise.all([
+      sendLeadWhatsAppNotification(notificationData),
+      sendLeadWhatsAppConfirmation(notificationData),
+    ]).catch((error) => {
+      console.error('WhatsApp notification error:', error);
+    });
+
+    // TODO: Add to CRM (HubSpot, Salesforce, etc.)
 
     return NextResponse.json({
       success: true,
