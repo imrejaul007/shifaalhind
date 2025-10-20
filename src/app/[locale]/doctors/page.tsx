@@ -1,61 +1,30 @@
 export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
+import { prisma } from '@/lib/prisma';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { User, Award, GraduationCap, Languages, CheckCircle } from 'lucide-react';
+import { User, Award, GraduationCap, Languages, CheckCircle, Star, Briefcase } from 'lucide-react';
 
-export default function DoctorsPage() {
-  const doctors = [
-    {
-      name: 'Dr. Rajesh Kumar',
-      specialty: 'Cardiac Surgeon',
-      hospital: 'Apollo Hospital Delhi',
-      experience: '25+ years',
-      qualifications: ['MBBS', 'MS', 'MCh Cardiothoracic Surgery', 'FRCS'],
-      languages: ['English', 'Hindi', 'Arabic'],
+export default async function DoctorsPage() {
+  const doctors = await prisma.doctor.findMany({
+    where: { published: true },
+    include: {
+      hospital: {
+        include: {
+          city: {
+            include: {
+              country: true,
+            },
+          },
+        },
+      },
     },
-    {
-      name: 'Dr. Priya Sharma',
-      specialty: 'Oncologist',
-      hospital: 'Fortis Memorial Research Institute',
-      experience: '18+ years',
-      qualifications: ['MBBS', 'MD', 'DM Medical Oncology'],
-      languages: ['English', 'Hindi'],
-    },
-    {
-      name: 'Dr. Mohammed Ahmed',
-      specialty: 'Orthopedic Surgeon',
-      hospital: 'Medanta - The Medicity',
-      experience: '20+ years',
-      qualifications: ['MBBS', 'MS Orthopedics', 'Fellowship Joint Replacement'],
-      languages: ['English', 'Hindi', 'Urdu', 'Arabic'],
-    },
-    {
-      name: 'Dr. Sunita Reddy',
-      specialty: 'IVF Specialist',
-      hospital: 'Manipal Hospital Bangalore',
-      experience: '15+ years',
-      qualifications: ['MBBS', 'MD', 'Fellowship Reproductive Medicine'],
-      languages: ['English', 'Hindi', 'Tamil'],
-    },
-    {
-      name: 'Dr. Anil Patel',
-      specialty: 'Neurosurgeon',
-      hospital: 'Kokilaben Hospital Mumbai',
-      experience: '22+ years',
-      qualifications: ['MBBS', 'MS', 'MCh Neurosurgery', 'FACS'],
-      languages: ['English', 'Hindi', 'Gujarati'],
-    },
-    {
-      name: 'Dr. Fatima Khan',
-      specialty: 'Cosmetic Surgeon',
-      hospital: 'Max Super Speciality Hospital',
-      experience: '12+ years',
-      qualifications: ['MBBS', 'MS', 'DNB Plastic Surgery'],
-      languages: ['English', 'Hindi', 'Urdu'],
-    },
-  ];
+    orderBy: [
+      { featured: 'desc' },
+      { rating: 'desc' },
+    ],
+  });
 
   return (
     <div className="min-h-screen">
@@ -97,48 +66,94 @@ export default function DoctorsPage() {
 
       {/* Doctors Grid */}
       <section className="container mx-auto px-4 py-16">
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {doctors.map((doctor, index) => (
-            <Card key={index} className="transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-100">
-                  <User className="h-10 w-10 text-primary-600" />
-                </div>
-                <CardTitle className="text-xl">{doctor.name}</CardTitle>
-                <CardDescription>{doctor.specialty}</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <p className="text-sm font-semibold text-gray-900">{doctor.hospital}</p>
-                  <p className="text-sm text-gray-600">{doctor.experience} experience</p>
-                </div>
-
-                <div>
-                  <h4 className="mb-2 text-sm font-semibold text-gray-900">Qualifications:</h4>
-                  <div className="flex flex-wrap gap-1">
-                    {doctor.qualifications.map((qual, idx) => (
-                      <span
-                        key={idx}
-                        className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700"
-                      >
-                        {qual}
-                      </span>
-                    ))}
+        {doctors.length === 0 ? (
+          <div className="py-12 text-center">
+            <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
+              <User className="h-10 w-10 text-gray-400" />
+            </div>
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">No doctors available yet</h3>
+            <p className="mb-6 text-gray-600">Check back soon for our medical experts</p>
+            <Button asChild>
+              <Link href="/contact">Contact Us</Link>
+            </Button>
+          </div>
+        ) : (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {doctors.map((doctor) => (
+              <Card key={doctor.id} className="transition-shadow hover:shadow-lg">
+                <CardHeader>
+                  <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-primary-100">
+                    <User className="h-10 w-10 text-primary-600" />
                   </div>
-                </div>
+                  <CardTitle className="text-xl">
+                    {doctor.title_en} {doctor.name_en}
+                  </CardTitle>
+                  <CardDescription>{doctor.specialties.join(', ')}</CardDescription>
+                  {doctor.rating && (
+                    <div className="mt-2 flex items-center gap-1 text-sm">
+                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <span className="font-semibold">{doctor.rating}/5</span>
+                      <span className="text-gray-500">({doctor.reviewCount} reviews)</span>
+                    </div>
+                  )}
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div>
+                    <p className="text-sm font-semibold text-gray-900">{doctor.hospital.name_en}</p>
+                    <p className="text-sm text-gray-600">
+                      {doctor.hospital.city.name_en}, {doctor.hospital.city.country.name_en}
+                    </p>
+                    {doctor.experience && (
+                      <div className="mt-1 flex items-center gap-1 text-sm text-gray-600">
+                        <Briefcase className="h-3 w-3" />
+                        <span>{doctor.experience}+ years experience</span>
+                      </div>
+                    )}
+                  </div>
 
-                <div>
-                  <h4 className="mb-2 text-sm font-semibold text-gray-900">Languages:</h4>
-                  <p className="text-sm text-gray-600">{doctor.languages.join(', ')}</p>
-                </div>
+                  {doctor.qualifications.length > 0 && (
+                    <div>
+                      <h4 className="mb-2 text-sm font-semibold text-gray-900">Qualifications:</h4>
+                      <div className="flex flex-wrap gap-1">
+                        {doctor.qualifications.slice(0, 3).map((qual, idx) => (
+                          <span
+                            key={idx}
+                            className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700"
+                          >
+                            {qual}
+                          </span>
+                        ))}
+                        {doctor.qualifications.length > 3 && (
+                          <span className="rounded-full bg-gray-100 px-2 py-1 text-xs text-gray-700">
+                            +{doctor.qualifications.length - 3} more
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  )}
 
-                <Button asChild className="w-full">
-                  <Link href="/consultation">Book Consultation</Link>
-                </Button>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  {doctor.languages.length > 0 && (
+                    <div>
+                      <h4 className="mb-2 text-sm font-semibold text-gray-900">Languages:</h4>
+                      <p className="text-sm text-gray-600">{doctor.languages.join(', ')}</p>
+                    </div>
+                  )}
+
+                  {doctor.consultationFee && (
+                    <div className="rounded-lg bg-green-50 p-2 text-center">
+                      <p className="text-sm text-gray-600">Consultation Fee</p>
+                      <p className="text-lg font-bold text-green-700">${doctor.consultationFee}</p>
+                    </div>
+                  )}
+
+                  <Button asChild className="w-full">
+                    <Link href={`/doctors/${doctor.slug}`}>View Profile</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* CTA Section */}
