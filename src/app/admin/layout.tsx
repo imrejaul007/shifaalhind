@@ -13,6 +13,8 @@ import {
   LogOut
 } from 'lucide-react';
 
+export const dynamic = 'force-dynamic';
+
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const { data: session, status } = useSession();
 
