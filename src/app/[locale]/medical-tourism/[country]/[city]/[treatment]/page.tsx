@@ -42,8 +42,6 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export default async function TreatmentPage({ params }: PageProps) {
-  const t = await getTranslations({ locale: params.locale });
-
   const cityTreatment = await prisma.cityTreatment.findFirst({
     where: {
       city: { slug: params.city },

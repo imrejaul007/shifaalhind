@@ -37,6 +37,8 @@ export default function ContactPage() {
     // Simulate API call
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
+    // TODO: Send to API
+    // eslint-disable-next-line no-console
     console.log('Contact form:', data);
     setIsSubmitted(true);
     setIsSubmitting(false);
@@ -85,7 +87,7 @@ export default function ContactPage() {
             Get in Touch
           </h1>
           <p className="text-xl text-primary-100">
-            We're here to help 24/7. Reach out to us anytime!
+            We&apos;re here to help 24/7. Reach out to us anytime!
           </p>
         </div>
       </section>
@@ -165,7 +167,7 @@ export default function ContactPage() {
 
                 {isSubmitted && (
                   <p className="text-center text-sm text-green-600">
-                    Message sent successfully! We'll get back to you soon.
+                    Message sent successfully! We&apos;ll get back to you soon.
                   </p>
                 )}
               </form>

@@ -37,7 +37,6 @@ const steps = [
 ];
 
 export default function BookingPage() {
-  const t = useTranslations('booking');
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -118,7 +117,7 @@ export default function BookingPage() {
             <h3 className="mb-2 font-semibold text-primary-900">What Happens Next?</h3>
             <ul className="space-y-2 text-left text-primary-700">
               <li>✅ Medical team reviews your request</li>
-              <li>✅ You'll receive a call within 24 hours</li>
+              <li>✅ You&apos;ll receive a call within 24 hours</li>
               <li>✅ Personalized treatment plan created</li>
               <li>✅ Cost estimate and timeline provided</li>
               <li>✅ Travel and accommodation assistance</li>
@@ -294,7 +293,7 @@ export default function BookingPage() {
                       {...register('message')}
                       rows={3}
                       className="flex w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
-                      placeholder="Any other information you'd like to share..."
+                      placeholder="Any other information you&apos;d like to share..."
                     />
                   </div>
                 </div>
@@ -336,8 +335,8 @@ export default function BookingPage() {
                     <h4 className="mb-2 font-semibold text-primary-900">What happens next?</h4>
                     <ul className="space-y-2 text-sm text-primary-700">
                       <li>✓ Our medical team will review your request</li>
-                      <li>✓ You'll receive a call within 24 hours</li>
-                      <li>✓ We'll create a personalized treatment plan</li>
+                      <li>✓ You&apos;ll receive a call within 24 hours</li>
+                      <li>✓ We&apos;ll create a personalized treatment plan</li>
                       <li>✓ Cost estimate and timeline will be provided</li>
                       <li>✓ Complete support from travel to recovery</li>
                     </ul>

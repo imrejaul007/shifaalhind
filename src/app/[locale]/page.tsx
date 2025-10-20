@@ -6,8 +6,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 import {
   Heart,
-  Stethoscope,
-  Eye,
   Activity,
   ArrowRight,
   CheckCircle,
@@ -31,11 +29,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
   });
 }
 
-export default function HomePage({
-  params: { locale },
-}: {
-  params: { locale: string };
-}) {
+export default function HomePage() {
   const t = useTranslations();
 
   const features = [

@@ -23,7 +23,6 @@ export function Header() {
   ];
 
   const toggleLocale = () => {
-    const newLocale = locale === 'en' ? 'ar' : 'en';
     const path = window.location.pathname;
     const newPath = locale === 'en' ? `/ar${path}` : path.replace('/ar', '');
     window.location.href = newPath || '/';

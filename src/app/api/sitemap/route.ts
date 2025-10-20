@@ -23,7 +23,14 @@ export async function GET() {
     }),
   ]);
 
-  const sitemap: any[] = [];
+  interface SitemapEntry {
+    url: string;
+    lastmod: string;
+    changefreq: string;
+    priority: number;
+  }
+
+  const sitemap: SitemapEntry[] = [];
 
   // Static pages
   const staticPages = [

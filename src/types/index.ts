@@ -99,6 +99,7 @@ export interface SEOData {
 // Content Block types (for rich content)
 export interface ContentBlock {
   type: 'paragraph' | 'heading' | 'list' | 'image' | 'video' | 'quote' | 'cta';
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   content: any;
 }
 
