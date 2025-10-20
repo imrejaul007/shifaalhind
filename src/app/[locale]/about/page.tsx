@@ -1,4 +1,3 @@
-import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -17,8 +16,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 }
 
 export default async function AboutPage({ params }: { params: { locale: string } }) {
-  const t = await getTranslations({ locale: params.locale });
-
   const values = [
     {
       icon: Heart,
@@ -61,10 +58,10 @@ export default async function AboutPage({ params }: { params: { locale: string }
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-6 font-serif text-3xl font-bold">Our Mission</h2>
           <p className="mb-4 text-lg leading-relaxed text-gray-700">
-            Shifa AlHind was founded with a simple yet powerful mission: to make world-class healthcare accessible and affordable for patients from the GCC region. We bridge the gap between patients seeking quality medical care and India's renowned hospitals and specialists.
+            Shifa AlHind was founded with a simple yet powerful mission: to make world-class healthcare accessible and affordable for patients from the GCC region. We bridge the gap between patients seeking quality medical care and India&apos;s renowned hospitals and specialists.
           </p>
           <p className="text-lg leading-relaxed text-gray-700">
-            With over a decade of experience in medical tourism, we've helped thousands of patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain receive life-changing treatments at a fraction of the cost in their home countries.
+            With over a decade of experience in medical tourism, we&apos;ve helped thousands of patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain receive life-changing treatments at a fraction of the cost in their home countries.
           </p>
         </div>
       </section>

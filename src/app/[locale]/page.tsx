@@ -1,5 +1,3 @@
-import { useTranslations } from 'next-intl';
-import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,8 +12,6 @@ import {
 import { treatments, gccCountries } from '@/config/gcc-countries';
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
-  const t = await getTranslations({ locale });
-
   return generateSEOMetadata({
     title_en: 'Premium Medical Tourism to India',
     title_ar: 'سياحة علاجية متميزة إلى الهند',
