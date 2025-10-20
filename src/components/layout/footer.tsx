@@ -73,7 +73,7 @@ export function Footer() {
               {treatments.slice(0, 6).map((treatment) => (
                 <li key={treatment.slug}>
                   <Link
-                    href="/treatments"
+                    href={`/treatments/${treatment.slug}`}
                     className="text-gray-600 hover:text-primary-500"
                   >
                     {treatment.name}

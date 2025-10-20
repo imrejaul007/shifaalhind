@@ -138,7 +138,7 @@ export default function HomePage() {
                 </CardHeader>
                 <CardContent>
                   <Link
-                    href="/treatments"
+                    href={`/treatments/${treatment.slug}`}
                     className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                   >
                     Learn More
