@@ -649,3 +649,24 @@ model Sitemap {
   @@index([locale])
   @@index([entityType])
 }
+
+// ============================================
+// NEWSLETTER
+// ============================================
+
+model Newsletter {
+  id          String   @id @default(cuid())
+  email       String   @unique
+
+  locale      String   @default("en")
+  source      String?  // Where did they subscribe from (footer, blog, etc.)
+
+  subscribed  Boolean  @default(true)
+  verified    Boolean  @default(false)
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([email])
+  @@index([subscribed])
+}

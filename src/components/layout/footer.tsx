@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
@@ -8,6 +9,9 @@ import { gccCountries, treatments } from '@/config/gcc-countries';
 export function Footer() {
   const t = useTranslations('footer');
   const locale = useLocale();
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
   const socialLinks = [
     { name: 'Facebook', icon: Facebook, href: 'https://facebook.com/shifaalhind' },
@@ -15,6 +19,40 @@ export function Footer() {
     { name: 'Instagram', icon: Instagram, href: 'https://instagram.com/shifaalhind' },
     { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/shifaalhind' },
   ];
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null);
+
+    try {
+      const response = await fetch('/api/v1/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          locale,
+          source: 'footer',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setMessage({ type: 'success', text: data.message || 'Successfully subscribed!' });
+        setEmail('');
+      } else {
+        setMessage({ type: 'error', text: data.error || 'Failed to subscribe' });
+      }
+    } catch (error) {
+      console.error('Newsletter subscription error:', error);
+      setMessage({ type: 'error', text: 'Failed to subscribe. Please try again.' });
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <footer className="border-t bg-gray-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
@@ -105,19 +143,33 @@ export function Footer() {
         <div className="mt-8 border-t pt-8">
           <div className="mx-auto max-w-md text-center">
             <h4 className="mb-2 font-semibold text-gray-900">{t('newsletter')}</h4>
-            <form className="flex gap-2">
+            <form onSubmit={handleNewsletterSubmit} className="flex gap-2">
               <input
                 type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder={t('emailPlaceholder')}
-                className="flex-1 rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-primary-500 focus:outline-none"
+                required
+                disabled={loading}
+                className="flex-1 rounded-lg border-2 border-gray-300 px-4 py-2 focus:border-primary-500 focus:outline-none disabled:bg-gray-100 disabled:cursor-not-allowed"
               />
               <button
                 type="submit"
-                className="rounded-lg bg-primary-500 px-6 py-2 text-white hover:bg-primary-600"
+                disabled={loading}
+                className="rounded-lg bg-primary-500 px-6 py-2 text-white hover:bg-primary-600 disabled:bg-gray-400 disabled:cursor-not-allowed"
               >
-                {t('subscribe')}
+                {loading ? 'Subscribing...' : t('subscribe')}
               </button>
             </form>
+            {message && (
+              <p
+                className={`mt-2 text-sm ${
+                  message.type === 'success' ? 'text-green-600' : 'text-red-600'
+                }`}
+              >
+                {message.text}
+              </p>
+            )}
           </div>
         </div>
 

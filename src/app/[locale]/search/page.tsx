@@ -3,7 +3,8 @@
 export const dynamic = 'force-dynamic';
 
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -16,13 +17,19 @@ interface SearchResult {
   description: string;
   url: string;
   location?: string;
+  category?: string;
+  rating?: number;
+  accreditations?: string[];
 }
 
 export default function SearchPage() {
   const searchParams = useSearchParams();
+  const router = useRouter();
+  const locale = useLocale();
   const query = searchParams.get('q') || '';
   const [searchQuery, setSearchQuery] = useState(query);
   const [results, setResults] = useState<SearchResult[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
@@ -38,70 +45,47 @@ export default function SearchPage() {
     setIsSearching(true);
     setHasSearched(true);
 
-    // Simulate search delay
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    try {
+      const response = await fetch(
+        `/api/v1/search?q=${encodeURIComponent(q)}&locale=${locale}&limit=20`
+      );
 
-    // Mock search results - In production, this would call an API endpoint
-    const mockResults: SearchResult[] = [
-      {
-        id: '1',
-        type: 'treatment',
-        title: 'Heart Surgery',
-        description: 'World-class cardiac surgery procedures with experienced specialists',
-        url: '/treatments/heart-surgery',
-        location: 'Multiple locations',
-      },
-      {
-        id: '2',
-        type: 'treatment',
-        title: 'Knee Replacement',
-        description: 'Advanced orthopedic surgery for knee joint replacement',
-        url: '/treatments/knee-replacement',
-        location: 'Multiple locations',
-      },
-      {
-        id: '3',
-        type: 'hospital',
-        title: 'Apollo Hospital Mumbai',
-        description: 'Leading multi-specialty hospital with JCI accreditation',
-        url: '/hospitals/apollo-hospital-mumbai',
-        location: 'Mumbai, India',
-      },
-      {
-        id: '4',
-        type: 'city',
-        title: 'Medical Tourism in Mumbai',
-        description: 'Explore top hospitals and treatments available in Mumbai',
-        url: '/medical-tourism/india/mumbai',
-        location: 'Mumbai, India',
-      },
-      {
-        id: '5',
-        type: 'article',
-        title: 'Complete Guide to Heart Surgery in India',
-        description: 'Everything you need to know about cardiac surgery procedures in India',
-        url: '/blog/india/mumbai/heart-surgery/complete-guide',
-        location: 'Blog',
-      },
-    ];
+      if (!response.ok) {
+        throw new Error('Search failed');
+      }
 
-    // Filter results based on query (simple mock filtering)
-    const filtered = mockResults.filter(
-      (result) =>
-        result.title.toLowerCase().includes(q.toLowerCase()) ||
-        result.description.toLowerCase().includes(q.toLowerCase())
-    );
+      const data = await response.json();
 
-    setResults(filtered);
-    setIsSearching(false);
+      if (data.success) {
+        // Flatten all results into a single array
+        const allResults: SearchResult[] = [
+          ...data.results.treatments,
+          ...data.results.hospitals,
+          ...data.results.cities,
+          ...data.results.articles,
+        ];
+
+        setResults(allResults);
+        setTotalCount(data.totalCount);
+      } else {
+        console.error('Search error:', data.error);
+        setResults([]);
+        setTotalCount(0);
+      }
+    } catch (error) {
+      console.error('Search error:', error);
+      setResults([]);
+      setTotalCount(0);
+    } finally {
+      setIsSearching(false);
+    }
   };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
-      // Update URL with search query
-      window.history.pushState({}, '', `/search?q=${encodeURIComponent(searchQuery)}`);
-      performSearch(searchQuery);
+      // Update URL with search query using Next.js router
+      router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
     }
   };
 
@@ -180,13 +164,13 @@ export default function SearchPage() {
               <h2 className="mb-2 text-2xl font-bold text-gray-900">
                 {isSearching
                   ? 'Searching...'
-                  : results.length > 0
-                  ? `Found ${results.length} result${results.length !== 1 ? 's' : ''}`
+                  : totalCount > 0
+                  ? `Found ${totalCount} result${totalCount !== 1 ? 's' : ''}`
                   : 'No results found'}
               </h2>
               {query && !isSearching && (
                 <p className="text-gray-600">
-                  {results.length > 0 ? (
+                  {totalCount > 0 ? (
                     <>Showing results for &quot;{query}&quot;</>
                   ) : (
                     <>No results for &quot;{query}&quot;. Try different keywords.</>
