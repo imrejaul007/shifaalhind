@@ -8,6 +8,7 @@ const nextConfig = withNextIntl({
 
   images: {
     domains: [
+      'shifaalhind.onrender.com',
       'shifa-alhind.onrender.com',
       'staging.shifa-alhind.onrender.com',
       'res.cloudinary.com',
@@ -18,6 +19,9 @@ const nextConfig = withNextIntl({
     deviceSizes: [320, 480, 768, 1024, 1440, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60,
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
 
   // Security headers
@@ -72,6 +76,14 @@ const nextConfig = withNextIntl({
   // Performance optimizations
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
+    webpackBuildWorker: true,
+  },
+
+  // Compiler optimizations
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production' ? {
+      exclude: ['error', 'warn'],
+    } : false,
   },
 
   // Environment variables that should be available in the browser

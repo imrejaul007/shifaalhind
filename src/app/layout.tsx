@@ -22,7 +22,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://shifa-alhind.onrender.com'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://shifaalhind.onrender.com'),
   title: {
     default: 'Shifa AlHind | Premium Medical Tourism to India',
     template: '%s | Shifa AlHind',
@@ -36,10 +36,19 @@ export const metadata: Metadata = {
     'hospitals in India',
     'affordable healthcare',
     'GCC medical tourism',
+    'medical tourism India',
+    'healthcare India',
+    'best hospitals India',
+    'medical packages India',
+    'surgery India',
+    'treatment India',
   ],
   authors: [{ name: 'Shifa AlHind' }],
   creator: 'Shifa AlHind',
   publisher: 'Shifa AlHind',
+  applicationName: 'Shifa AlHind',
+  category: 'health',
+  classification: 'Medical Tourism',
   robots: {
     index: true,
     follow: true,
@@ -51,9 +60,65 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['ar_SA'],
+    url: process.env.NEXT_PUBLIC_APP_URL || 'https://shifaalhind.onrender.com',
+    title: 'Shifa AlHind | Premium Medical Tourism to India',
+    description:
+      'Connect with world-class hospitals and treatments in India. Affordable, quality healthcare for patients from GCC countries.',
+    siteName: 'Shifa AlHind',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Shifa AlHind - Medical Tourism to India',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Shifa AlHind | Premium Medical Tourism to India',
+    description:
+      'Connect with world-class hospitals and treatments in India. Affordable, quality healthcare for patients from GCC countries.',
+    images: ['/og-image.png'],
+    creator: '@shifaalhind',
+    site: '@shifaalhind',
+  },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    other: {
+      'msvalidate.01': process.env.NEXT_PUBLIC_BING_VERIFICATION || '',
+    },
   },
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+      'ar-SA': '/ar',
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    other: [
+      {
+        rel: 'mask-icon',
+        url: '/safari-pinned-tab.svg',
+        color: '#10b981',
+      },
+    ],
+  },
+  manifest: '/manifest.webmanifest',
 };
 
 export default function RootLayout({
