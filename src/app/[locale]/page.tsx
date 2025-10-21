@@ -371,6 +371,79 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Patient Success Stories / Testimonials */}
+      <section className="bg-gray-50 px-4 py-16">
+        <div className="container">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+              What Our Patients Say
+            </h2>
+            <p className="mb-12 text-center text-lg text-gray-600">
+              Join thousands of satisfied patients from UAE, Saudi Arabia, and across the GCC who chose India for world-class medical treatment
+            </p>
+            <div className="grid gap-8 md:grid-cols-3">
+              <Card>
+                <CardHeader>
+                  <div className="mb-4 flex items-center gap-2">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-accent-500">★</span>
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Life-Changing Heart Surgery</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-gray-700">
+                    &quot;I underwent bypass surgery at Fortis Hospital in Delhi. The care was exceptional, doctors were highly skilled, and I saved over $25,000 compared to Dubai. Six months later, I&apos;m healthier than ever. Highly recommend!&quot;
+                  </p>
+                  <p className="font-semibold text-gray-900">Mohammed K.</p>
+                  <p className="text-sm text-gray-600">Heart Surgery Patient, Dubai, UAE</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <div className="mb-4 flex items-center gap-2">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-accent-500">★</span>
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Successful IVF Journey</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-gray-700">
+                    &quot;After two failed IVF attempts in Saudi Arabia, we tried in Bangalore. The doctors were compassionate, the facility was world-class, and we&apos;re now proud parents of twins! Forever grateful to the team and Shifa AlHind.&quot;
+                  </p>
+                  <p className="font-semibold text-gray-900">Fatima & Ahmed R.</p>
+                  <p className="text-sm text-gray-600">IVF Patients, Riyadh, Saudi Arabia</p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <div className="mb-4 flex items-center gap-2">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-accent-500">★</span>
+                    ))}
+                  </div>
+                  <CardTitle className="text-lg">Pain-Free After Knee Replacement</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-4 text-gray-700">
+                    &quot;I suffered from knee pain for years. The surgery at Apollo Chennai was smooth, recovery was faster than expected, and I&apos;m now walking pain-free. The cost was 70% less than UK prices. Incredible value!&quot;
+                  </p>
+                  <p className="font-semibold text-gray-900">Sarah M.</p>
+                  <p className="text-sm text-gray-600">Knee Replacement Patient, Sharjah, UAE</p>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="mt-12 text-center">
+              <Link href="/stories" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                Read More Success Stories
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-primary-500 px-4 py-16 text-white">
         <div className="container text-center">
