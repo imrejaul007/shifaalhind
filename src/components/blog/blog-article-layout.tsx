@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { ArrowLeft, Share2, Phone, Mail } from 'lucide-react';
 import Link from 'next/link';
 
@@ -12,6 +13,7 @@ interface BlogArticleLayoutProps {
   publishedDate: string;
   lastUpdated: string;
   readTime: string;
+  breadcrumbTitle: string;
   children: ReactNode;
 }
 
@@ -22,6 +24,7 @@ export default function BlogArticleLayout({
   publishedDate,
   lastUpdated,
   readTime,
+  breadcrumbTitle,
   children,
 }: BlogArticleLayoutProps) {
   return (
@@ -29,6 +32,14 @@ export default function BlogArticleLayout({
       {/* Header */}
       <div className="border-b border-primary-100 bg-white">
         <div className="container mx-auto px-4 py-4">
+          <div className="mb-3">
+            <Breadcrumbs
+              items={[
+                { label: 'Blog', href: '/blog' },
+                { label: breadcrumbTitle },
+              ]}
+            />
+          </div>
           <Link href="/blog" className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700">
             <ArrowLeft className="h-4 w-4" />
             Back to Blog

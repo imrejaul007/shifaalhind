@@ -19,6 +19,7 @@ export default function IVFFertilityGuide() {
       publishedDate="January 2025"
       lastUpdated="January 2025"
       readTime="15 min"
+      breadcrumbTitle="IVF & Fertility Treatment Guide"
     >
       <section className="mb-8">
         <p className="text-lg">IVF in GCC countries costs $10,000-$20,000+ per cycle. India offers the same quality at $3,500-$6,000, with success rates of 55-65% for patients under 35. Over 15,000 international couples choose India annually.</p>

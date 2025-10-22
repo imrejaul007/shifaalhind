@@ -19,6 +19,7 @@ export default function KneeReplacementCostPage() {
       publishedDate="January 2025"
       lastUpdated="January 2025"
       readTime="14 min"
+      breadcrumbTitle="Knee Replacement Cost Guide"
     >
       {/* Introduction */}
       <section className="mb-8">

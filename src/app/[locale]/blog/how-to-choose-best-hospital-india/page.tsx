@@ -19,6 +19,7 @@ export default function HospitalSelectionGuide() {
       publishedDate="January 2025"
       lastUpdated="January 2025"
       readTime="12 min"
+      breadcrumbTitle="Hospital Selection Guide"
     >
       <section className="mb-8">
         <p className="text-lg">With 1,500+ hospitals in India, choosing the right one is critical. This guide helps you select world-class care and avoid costly mistakes.</p>

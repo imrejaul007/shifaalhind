@@ -19,6 +19,7 @@ export default function MedicalTourismUAEGuidePage() {
       publishedDate="January 2025"
       lastUpdated="January 2025"
       readTime="15 min"
+      breadcrumbTitle="UAE Patients Guide"
     >
       {/* Introduction */}
       <section className="mb-8">

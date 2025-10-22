@@ -19,6 +19,7 @@ export default function HeartSurgeryCostComparisonPage() {
       publishedDate="January 2025"
       lastUpdated="January 2025"
       readTime="12 min"
+      breadcrumbTitle="Heart Surgery Cost Comparison"
     >
       {/* Introduction */}
       <section className="mb-8">
