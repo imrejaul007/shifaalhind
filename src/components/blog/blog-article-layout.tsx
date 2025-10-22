@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
-import { Metadata } from 'next';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Breadcrumbs } from '@/components/ui/breadcrumbs';
 import { ArrowLeft, Share2, Phone, Mail } from 'lucide-react';

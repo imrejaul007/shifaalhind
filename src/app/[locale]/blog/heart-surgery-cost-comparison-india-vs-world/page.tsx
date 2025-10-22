@@ -11,63 +11,8 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default function HeartSurgeryCostComparisonPage() {
-  // FAQ Schema for Rich Snippets
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long do I need to stay in India for heart surgery?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Typically 2-3 weeks total: 2-3 days pre-op, 7-10 days hospital stay, 5-7 days post-discharge recovery before flight clearance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is it safe to fly after heart surgery?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, after medical clearance (usually 10-14 days post-surgery). Flights from India to GCC countries are short (3-4 hours), reducing risk."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I bring a family member?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely recommended. We arrange medical visas and accommodation for companions."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do Indian hospitals accept health insurance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Many Indian hospitals are recognized by international insurance companies. Check with your insurer. Most patients pay upfront and seek reimbursement."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I know the quality is good?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Look for JCI accreditation, surgeon credentials, published success rates, and patient testimonials. All top hospitals provide this information."
-        }
-      }
-    ]
-  };
-
   return (
-    <>
-      {/* FAQ Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <BlogArticleLayout
+    <BlogArticleLayout
       title="Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide"
       excerpt="Discover how much you can save on heart surgery in India compared to USA, UK, UAE, and Saudi Arabia."
       author="Shifa AlHind Medical Team"
@@ -610,6 +555,5 @@ export default function HeartSurgeryCostComparisonPage() {
         </Card>
       </section>
     </BlogArticleLayout>
-    </>
   );
 }

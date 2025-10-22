@@ -11,63 +11,8 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default function MedicalTourismUAEGuidePage() {
-  // FAQ Schema for Rich Snippets
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How long does the entire process take?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "From first contact to flying back home: typically 3-5 weeks. This includes 1 week planning, 1-3 weeks in India (depending on procedure), and immediate return home."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will my UAE health insurance cover treatment in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Many UAE insurance plans cover treatment abroad for pre-approved procedures. Check with your insurer. Even without coverage, you still save significantly. Most patients pay upfront in India and seek reimbursement from UAE insurance later."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is language a barrier?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. All doctors in top hospitals speak fluent English. Many hospitals have Arabic-speaking staff for GCC patients. Shifa AlHind provides Arabic translation if needed."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is halal food available?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, absolutely. India has 200+ million Muslims. All hospitals provide halal food options. Restaurants near hospitals offer halal meals. Mosques are within walking distance of most hospitals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What if I need emergency care after returning to UAE?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Your Indian surgeon remains available 24/7 via WhatsApp/telemedicine. We coordinate with your UAE doctor for any needed interventions. All hospitals provide detailed discharge summaries in English."
-        }
-      }
-    ]
-  };
-
   return (
-    <>
-      {/* FAQ Schema Markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-
-      <BlogArticleLayout
+    <BlogArticleLayout
       title="Medical Tourism to India from UAE: Complete 2025 Guide"
       excerpt="Everything UAE patients need to know about traveling to India for medical treatment."
       author="Shifa AlHind Medical Team"
@@ -589,6 +534,5 @@ export default function MedicalTourismUAEGuidePage() {
         </Card>
       </section>
     </BlogArticleLayout>
-    </>
   );
 }
