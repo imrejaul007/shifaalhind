@@ -11,8 +11,63 @@ export const metadata: Metadata = {
 export const dynamic = 'force-dynamic';
 
 export default function KneeReplacementCostPage() {
+  // FAQ Schema for Rich Snippets
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How long do I need to stay in India for knee replacement?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Total: 2-3 weeks. Hospital stay is 4-6 days, then 10-14 days outpatient recovery before flight clearance. For bilateral (both knees), add 3-5 extra days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does the knee implant last?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "15-25 years for most patients. 90% of implants still functioning after 15 years, 80% after 20 years. Younger, more active patients may need revision sooner."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is the implant the same quality as in USA/UAE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, identical. Indian hospitals use the same FDA/CE-approved implants from DePuy, Stryker, Zimmer Biomet, and Smith & Nephew. Same manufacturers, same models, same quality standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When can I walk after surgery?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You'll stand and take first steps day 2 post-surgery with walker support. Walk independently with cane by week 3-4. Normal walking by week 6-8. Full recovery 3-6 months."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the success rate of knee replacement in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "95-98% success rate at top Indian hospitals, matching or exceeding Western standards. Complication rates <2%. Over 150,000 international patients choose India annually for knee replacement."
+        }
+      }
+    ]
+  };
+
   return (
-    <BlogArticleLayout
+    <>
+      {/* FAQ Schema Markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <BlogArticleLayout
       title="Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide"
       excerpt="Save 60-80% on knee replacement surgery in India. Complete cost breakdown, top hospitals, and real patient success stories."
       author="Shifa AlHind Medical Team"
@@ -639,5 +694,6 @@ export default function KneeReplacementCostPage() {
         </Card>
       </section>
     </BlogArticleLayout>
+    </>
   );
 }
