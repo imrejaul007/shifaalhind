@@ -612,7 +612,7 @@ export default function KneeReplacementCostPage() {
             </CardHeader>
             <CardContent>
               <p className="text-gray-700">
-                95-98% success rate at top Indian hospitals, matching or exceeding Western standards. Complication rates <2%. Over 150,000 international patients choose India annually for knee replacement.
+                95-98% success rate at top Indian hospitals, matching or exceeding Western standards. Complication rates &lt;2%. Over 150,000 international patients choose India annually for knee replacement.
               </p>
             </CardContent>
           </Card>

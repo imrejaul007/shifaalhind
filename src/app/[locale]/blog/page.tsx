@@ -25,6 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const dynamic = 'force-dynamic';
+
 // Our 5 SEO-optimized blog articles
 const blogArticles = [
   {
