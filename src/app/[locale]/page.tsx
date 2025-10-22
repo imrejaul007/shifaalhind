@@ -444,6 +444,159 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Latest Blog Articles Section */}
+      <section className="bg-gradient-to-b from-white to-gray-50 px-4 py-16">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+              Medical Tourism Resources & Guides
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Comprehensive guides to help you make informed decisions about medical treatment in India. Cost comparisons, hospital selection tips, and real patient stories.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {/* Blog Article 1 */}
+            <Card className="flex flex-col transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex items-center gap-2 text-sm text-primary-600">
+                  <Heart className="h-4 w-4" />
+                  <span className="font-medium">Cost Comparison</span>
+                </div>
+                <CardTitle className="text-xl">
+                  <Link href="/blog/heart-surgery-cost-comparison-india-vs-world" className="hover:text-primary-600">
+                    Heart Surgery Cost: India vs USA, UK, UAE
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  Complete 2025 cost breakdown. Save 60-80% on cardiac surgery without compromising quality.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto">
+                <Link href="/blog/heart-surgery-cost-comparison-india-vs-world" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                  Read Full Guide
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Blog Article 2 */}
+            <Card className="flex flex-col transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex items-center gap-2 text-sm text-primary-600">
+                  <MapPin className="h-4 w-4" />
+                  <span className="font-medium">Travel Guide</span>
+                </div>
+                <CardTitle className="text-xl">
+                  <Link href="/blog/medical-tourism-india-uae-patients-guide" className="hover:text-primary-600">
+                    Medical Tourism from UAE: Complete Guide
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  Step-by-step process for UAE patients. Visa, flights, accommodation, and real success stories.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto">
+                <Link href="/blog/medical-tourism-india-uae-patients-guide" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                  Read Full Guide
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Blog Article 3 */}
+            <Card className="flex flex-col transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex items-center gap-2 text-sm text-primary-600">
+                  <Activity className="h-4 w-4" />
+                  <span className="font-medium">Orthopedics</span>
+                </div>
+                <CardTitle className="text-xl">
+                  <Link href="/blog/knee-replacement-cost-india-vs-world" className="hover:text-primary-600">
+                    Knee Replacement Surgery Cost Guide
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  TKR, bilateral, and partial knee replacement. Implant brands, hospitals, and patient savings.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto">
+                <Link href="/blog/knee-replacement-cost-india-vs-world" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                  Read Full Guide
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Blog Article 4 */}
+            <Card className="flex flex-col transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex items-center gap-2 text-sm text-primary-600">
+                  <Heart className="h-4 w-4" />
+                  <span className="font-medium">Fertility</span>
+                </div>
+                <CardTitle className="text-xl">
+                  <Link href="/blog/ivf-fertility-treatment-india-complete-guide" className="hover:text-primary-600">
+                    IVF & Fertility Treatment Complete Guide
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  IVF success rates by age, top clinics, costs, and real patient success stories from GCC.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto">
+                <Link href="/blog/ivf-fertility-treatment-india-complete-guide" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                  Read Full Guide
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Blog Article 5 */}
+            <Card className="flex flex-col transition-shadow hover:shadow-lg">
+              <CardHeader>
+                <div className="mb-3 flex items-center gap-2 text-sm text-primary-600">
+                  <CheckCircle className="h-4 w-4" />
+                  <span className="font-medium">Selection Guide</span>
+                </div>
+                <CardTitle className="text-xl">
+                  <Link href="/blog/how-to-choose-best-hospital-india" className="hover:text-primary-600">
+                    How to Choose the Best Hospital in India
+                  </Link>
+                </CardTitle>
+                <CardDescription>
+                  10 essential criteria, JCI accreditation, doctor credentials, and red flags to avoid.
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="mt-auto">
+                <Link href="/blog/how-to-choose-best-hospital-india" className="inline-flex items-center text-primary-600 hover:text-primary-700">
+                  Read Full Guide
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* View All Blog Link Card */}
+            <Card className="flex flex-col items-center justify-center bg-primary-50 transition-shadow hover:shadow-lg">
+              <CardContent className="flex flex-col items-center py-12 text-center">
+                <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-white">
+                  <ArrowRight className="h-8 w-8" />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-gray-900">More Resources</h3>
+                <p className="mb-4 text-gray-600">
+                  Explore all our medical tourism guides and resources
+                </p>
+                <Link href="/blog" className="inline-flex items-center font-semibold text-primary-600 hover:text-primary-700">
+                  View All Articles
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-primary-500 px-4 py-16 text-white">
         <div className="container text-center">
