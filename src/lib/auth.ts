@@ -1,4 +1,5 @@
 import type { NextAuthConfig } from 'next-auth';
+import NextAuth from 'next-auth';
 import { PrismaAdapter } from '@auth/prisma-adapter';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import EmailProvider from 'next-auth/providers/email';
@@ -100,3 +101,6 @@ export const roleHierarchy: Record<UserRole, number> = {
 export function hasMinimumRole(userRole: UserRole, minimumRole: UserRole): boolean {
   return roleHierarchy[userRole] >= roleHierarchy[minimumRole];
 }
+
+// Export auth handler for use in API routes
+export const { handlers, auth, signIn, signOut } = NextAuth(authOptions);
