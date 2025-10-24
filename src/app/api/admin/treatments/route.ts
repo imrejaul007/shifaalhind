@@ -14,13 +14,6 @@ export async function GET(_request: NextRequest) {
     }
 
     const treatments = await prisma.treatment.findMany({
-      where: { published: true },
-      select: {
-        id: true,
-        slug: true,
-        title_en: true,
-        title_ar: true,
-      },
       orderBy: { title_en: 'asc' },
     });
 
@@ -29,6 +22,30 @@ export async function GET(_request: NextRequest) {
     console.error('Error fetching treatments:', error);
     return NextResponse.json(
       { error: 'Failed to fetch treatments' },
+      { status: 500 }
+    );
+  }
+}
+
+// POST - Create treatment
+export async function POST(request: NextRequest) {
+  try {
+    const session = await auth();
+    if (!session || session.user?.role !== 'ADMIN') {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+
+    const body = await request.json();
+
+    const treatment = await prisma.treatment.create({
+      data: body,
+    });
+
+    return NextResponse.json(treatment);
+  } catch (error) {
+    console.error('Error creating treatment:', error);
+    return NextResponse.json(
+      { error: 'Failed to create treatment' },
       { status: 500 }
     );
   }
