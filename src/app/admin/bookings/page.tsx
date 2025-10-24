@@ -2,7 +2,10 @@ export const dynamic = 'force-dynamic';
 
 import { prisma } from '@/lib/prisma';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { formatDate } from '@/lib/utils';
+import { Eye } from 'lucide-react';
+import Link from 'next/link';
 
 export default async function AdminBookingsPage() {
   const bookings = await prisma.booking.findMany({
@@ -17,6 +20,10 @@ export default async function AdminBookingsPage() {
   const statusColors: Record<string, string> = {
     PENDING: 'bg-yellow-100 text-yellow-700',
     CONTACTED: 'bg-blue-100 text-blue-700',
+    CONSULTATION_SCHEDULED: 'bg-purple-100 text-purple-700',
+    DOCUMENTS_REQUESTED: 'bg-indigo-100 text-indigo-700',
+    DOCUMENTS_RECEIVED: 'bg-teal-100 text-teal-700',
+    QUOTE_SENT: 'bg-cyan-100 text-cyan-700',
     CONFIRMED: 'bg-green-100 text-green-700',
     CANCELLED: 'bg-red-100 text-red-700',
     COMPLETED: 'bg-gray-100 text-gray-700',
@@ -45,6 +52,7 @@ export default async function AdminBookingsPage() {
                   <th className="pb-3">Country</th>
                   <th className="pb-3">Status</th>
                   <th className="pb-3">Date</th>
+                  <th className="pb-3">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -68,6 +76,14 @@ export default async function AdminBookingsPage() {
                     </td>
                     <td className="py-3 text-sm text-gray-600">
                       {formatDate(booking.createdAt, 'en')}
+                    </td>
+                    <td className="py-3">
+                      <Link href={`/admin/bookings/${booking.id}/edit`}>
+                        <Button variant="outline" size="sm">
+                          <Eye className="h-3 w-3 mr-1" />
+                          View
+                        </Button>
+                      </Link>
                     </td>
                   </tr>
                 ))}
