@@ -15,7 +15,10 @@ import {
   Menu,
   X,
   Package,
-  UserRound
+  UserRound,
+  Stethoscope,
+  MapPin,
+  BookOpen
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -44,6 +47,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { name: 'Hospitals', href: '/admin/hospitals', icon: Building2 },
     { name: 'Doctors', href: '/admin/doctors', icon: UserRound },
     { name: 'Packages', href: '/admin/packages', icon: Package },
+    { name: 'Treatments', href: '/admin/treatments', icon: Stethoscope },
+    { name: 'Cities', href: '/admin/cities', icon: MapPin },
+    { name: 'Articles', href: '/admin/articles', icon: BookOpen },
     { name: 'Users', href: '/admin/users', icon: Users },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ];
