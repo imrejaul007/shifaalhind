@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Playfair_Display, Cairo } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { generateOrganizationSchema } from '@/lib/seo';
 
@@ -138,6 +139,9 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} ${playfair.variable} ${cairo.variable} font-sans antialiased`}>
         {children}
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+        )}
       </body>
     </html>
   );
