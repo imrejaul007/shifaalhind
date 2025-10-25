@@ -18,14 +18,32 @@ export const metadata: Metadata = {
   title: 'Medical Tourism India for UAE Patients | Save 60-80% on Treatment',
   description: 'Discover why 50,000+ UAE patients choose India for medical treatment. Save 60-80% on heart surgery, IVF, knee replacement with JCI-accredited hospitals. Direct flights from Dubai.',
   keywords: [
+    // English keywords - UAE specific
     'medical tourism india from uae',
     'medical tourism india dubai',
+    'medical tourism india abu dhabi',
     'treatment in india for uae patients',
     'dubai to india medical treatment',
-    'medical tourism india abu dhabi',
-    'السياحة العلاجية في الهند من الإمارات',
+    'abu dhabi to india medical treatment',
+    'sharjah to india medical treatment',
     'heart surgery cost india vs uae',
-    'ivf treatment india uae patients'
+    'ivf treatment india uae patients',
+    'knee replacement india uae',
+    'uae to india flights medical',
+    'medical visa india from uae',
+    'jci hospitals india uae patients',
+    // Arabic keywords - UAE specific
+    'السياحة العلاجية في الهند من الإمارات',
+    'العلاج في الهند من دبي',
+    'العلاج في الهند من أبوظبي',
+    'العلاج في الهند للإماراتيين',
+    'تكلفة العلاج في الهند من الإمارات',
+    'جراحة القلب في الهند من الإمارات',
+    'أطفال الأنابيب في الهند من الإمارات',
+    'استبدال الركبة في الهند',
+    'مستشفيات الهند للإماراتيين',
+    'الطيران من دبي إلى الهند للعلاج',
+    'التأشيرة الطبية للهند من الإمارات',
   ],
 };
 

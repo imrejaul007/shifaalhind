@@ -11,10 +11,29 @@ export const metadata: Metadata = {
   title: 'Medical Tourism India for Bahrain Patients | Save 70-80%',
   description: 'Join 8,000+ Bahrain patients who saved 70-80% on medical treatment in India. JCI hospitals, direct flights from Manama.',
   keywords: [
+    // English keywords - Bahrain specific
     'medical tourism india from bahrain',
+    'medical tourism india manama',
     'treatment in india for bahrain patients',
     'manama to india medical treatment',
-    'العلاج في الهند من البحرين'
+    'bahrain to india medical treatment',
+    'heart surgery cost india vs bahrain',
+    'ivf treatment india bahrain patients',
+    'knee replacement india bahrain',
+    'medical visa india from bahrain',
+    'jci hospitals india bahrain patients',
+    // Arabic keywords - Bahrain specific
+    'السياحة العلاجية في الهند من البحرين',
+    'العلاج في الهند من البحرين',
+    'العلاج في الهند من المنامة',
+    'العلاج في الهند للبحرينيين',
+    'تكلفة العلاج في الهند من البحرين',
+    'جراحة القلب في الهند من البحرين',
+    'أطفال الأنابيب في الهند من البحرين',
+    'استبدال الركبة في الهند للبحرينيين',
+    'مستشفيات الهند للبحرينيين',
+    'الطيران من المنامة إلى الهند للعلاج',
+    'التأشيرة الطبية للهند من البحرين',
   ],
 };
 

@@ -11,10 +11,29 @@ export const metadata: Metadata = {
   title: 'Medical Tourism India for Oman Patients | Save 70-80% on Treatment',
   description: 'Join 12,000+ Oman patients who saved 70-80% on medical treatment in India. JCI hospitals, direct flights from Muscat.',
   keywords: [
+    // English keywords - Oman specific
     'medical tourism india from oman',
+    'medical tourism india muscat',
     'treatment in india for oman patients',
     'muscat to india medical treatment',
-    'العلاج في الهند من عمان'
+    'oman to india medical treatment',
+    'heart surgery cost india vs oman',
+    'ivf treatment india oman patients',
+    'knee replacement india oman',
+    'medical visa india from oman',
+    'jci hospitals india oman patients',
+    // Arabic keywords - Oman specific
+    'السياحة العلاجية في الهند من عمان',
+    'العلاج في الهند من عمان',
+    'العلاج في الهند من مسقط',
+    'العلاج في الهند للعمانيين',
+    'تكلفة العلاج في الهند من عمان',
+    'جراحة القلب في الهند من عمان',
+    'أطفال الأنابيب في الهند من عمان',
+    'استبدال الركبة في الهند للعمانيين',
+    'مستشفيات الهند للعمانيين',
+    'الطيران من مسقط إلى الهند للعلاج',
+    'التأشيرة الطبية للهند من عمان',
   ],
 };
 

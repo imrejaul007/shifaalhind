@@ -11,10 +11,29 @@ export const metadata: Metadata = {
   title: 'Medical Tourism India for Kuwait Patients | Save 70-80% on Treatment',
   description: 'Discover why 20,000+ Kuwait patients choose India for medical treatment. Save 70-80% on heart surgery, IVF, knee replacement. Direct flights from Kuwait City.',
   keywords: [
+    // English keywords - Kuwait specific
     'medical tourism india from kuwait',
+    'medical tourism india kuwait city',
     'treatment in india for kuwait patients',
     'kuwait to india medical treatment',
-    'العلاج في الهند من الكويت'
+    'kuwait city to india medical treatment',
+    'heart surgery cost india vs kuwait',
+    'ivf treatment india kuwait patients',
+    'knee replacement india kuwait',
+    'medical visa india from kuwait',
+    'jci hospitals india kuwait patients',
+    // Arabic keywords - Kuwait specific
+    'السياحة العلاجية في الهند من الكويت',
+    'العلاج في الهند من الكويت',
+    'العلاج في الهند من مدينة الكويت',
+    'العلاج في الهند للكويتيين',
+    'تكلفة العلاج في الهند من الكويت',
+    'جراحة القلب في الهند من الكويت',
+    'أطفال الأنابيب في الهند من الكويت',
+    'استبدال الركبة في الهند للكويتيين',
+    'مستشفيات الهند للكويتيين',
+    'الطيران من الكويت إلى الهند للعلاج',
+    'التأشيرة الطبية للهند من الكويت',
   ],
 };
 

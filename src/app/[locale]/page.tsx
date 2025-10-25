@@ -16,6 +16,41 @@ import { treatments, gccCountries } from '@/config/gcc-countries';
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
+  // Comprehensive keywords (English + Arabic)
+  const keywords = [
+    // English keywords
+    'medical tourism india',
+    'medical tourism india from uae',
+    'medical tourism india from saudi arabia',
+    'medical tourism india gcc',
+    'treatment in india',
+    'hospitals in india',
+    'jci accredited hospitals india',
+    'heart surgery india',
+    'ivf treatment india',
+    'knee replacement india',
+    'cancer treatment india',
+    'affordable healthcare india',
+    'apollo hospital india',
+    'fortis hospital india',
+    'medical visa india',
+    // Arabic keywords
+    'السياحة العلاجية في الهند',
+    'العلاج في الهند',
+    'المستشفيات في الهند',
+    'تكلفة العلاج في الهند',
+    'جراحة القلب في الهند',
+    'أطفال الأنابيب في الهند',
+    'استبدال الركبة في الهند',
+    'علاج السرطان في الهند',
+    'السياحة العلاجية من الإمارات',
+    'السياحة العلاجية من السعودية',
+    'العلاج في الهند للسعوديين',
+    'العلاج في الهند للإماراتيين',
+    'مستشفيات معتمدة في الهند',
+    'التأشيرة الطبية للهند',
+  ];
+
   return generateSEOMetadata({
     title_en: 'Premium Medical Tourism to India',
     title_ar: 'سياحة علاجية متميزة إلى الهند',
@@ -26,6 +61,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     path: '/',
     type: 'website',
+    keywords,
   });
 }
 

@@ -12,11 +12,29 @@ export const metadata: Metadata = {
   title: 'Medical Tourism India for Qatar Patients | Save 65-80% on Treatment',
   description: 'Discover why 15,000+ Qatar patients choose India for medical treatment. Save 65-80% on heart surgery, IVF, knee replacement with JCI-accredited hospitals. Direct flights from Doha.',
   keywords: [
+    // English keywords - Qatar specific
     'medical tourism india from qatar',
     'medical tourism india doha',
     'treatment in india for qatar patients',
     'doha to india medical treatment',
-    'العلاج في الهند من قطر'
+    'qatar to india medical treatment',
+    'heart surgery cost india vs qatar',
+    'ivf treatment india qatar patients',
+    'knee replacement india qatar',
+    'medical visa india from qatar',
+    'jci hospitals india qatar patients',
+    // Arabic keywords - Qatar specific
+    'السياحة العلاجية في الهند من قطر',
+    'العلاج في الهند من قطر',
+    'العلاج في الهند من الدوحة',
+    'العلاج في الهند للقطريين',
+    'تكلفة العلاج في الهند من قطر',
+    'جراحة القلب في الهند من قطر',
+    'أطفال الأنابيب في الهند من قطر',
+    'استبدال الركبة في الهند للقطريين',
+    'مستشفيات الهند للقطريين',
+    'الطيران من الدوحة إلى الهند للعلاج',
+    'التأشيرة الطبية للهند من قطر',
   ],
 };
 
