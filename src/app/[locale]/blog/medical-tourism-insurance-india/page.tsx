@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -195,6 +196,14 @@ export default function MedicalTourismInsuranceIndiaPage() {
       />
 
       {/* FAQ */}
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "Does my home insurance cover treatment abroad?", answer: "Usually no. Most domestic insurance policies don't cover planned treatment abroad. Check with your insurer. Some international plans (like Cigna Global, Bupa International) may cover pre-approved medical tourism." },
+        { question: "Does medical tourism insurance cover the planned surgery?", answer: "No, it covers complications, not the surgery itself. You pay for the surgery as planned. Insurance covers emergencies, complications, evacuation, and travel issues." },
+        { question: "How do I file a claim?", answer: "Keep all receipts and medical reports. File claim within 30 days of treatment. Submit: hospital bills, doctor reports, receipts, policy number. Most insurers reimburse within 2-4 weeks." },
+        { question: "What if I have complications after returning home?", answer: "Coverage extends 30-90 days post-return (depends on policy). Must be directly related to procedure in India. Contact insurer immediately if complications arise at home." }
+      ]} />
+
       <Card>
         <CardContent className="pt-6">
           <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>

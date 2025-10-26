@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -244,6 +245,15 @@ export default function BestTimeVisitIndiaPage() {
       />
 
       {/* FAQ */}
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "What is the absolute best month for medical tourism in India?", answer: "November or February. November has post-Diwali calm with pleasant weather. February avoids all major festivals and has perfect recovery weather (18-25°C). Both months have good flight availability at reasonable prices." },
+        { question: "Can I travel during monsoon (June-August) if necessary?", answer: "Yes, but not ideal. Hospitals operate normally, but expect flight delays, humid indoor conditions, and higher infection risk. Consider Bangalore (least affected by monsoon) if must travel during this period. Bring extra medications and plan buffer days." },
+        { question: "How far in advance should I book treatment?", answer: "2-3 months for peak season (Oct-Mar), 1 month for off-season. Popular surgeons and hospitals have 4-6 week waiting lists in winter. Summer and monsoon have same-week availability. Book early for complex procedures (heart, transplants) regardless of season." },
+        { question: "Does weather affect surgery outcomes?", answer: "Not directly (hospitals have climate control), but affects recovery. Hot/humid weather can slow wound healing, increase infection risk, and make physical therapy uncomfortable. Cool, dry weather (winter) is medically proven to aid faster recovery for orthopedic and cardiac procedures." },
+        { question: "Are there any health risks during specific seasons?", answer: "Monsoon has higher infection risk (humid conditions breed bacteria). Winter (December-January) has air pollution in Delhi (avoid if respiratory issues). Summer has dehydration risk (drink more water). Overall, modern hospitals mitigate most seasonal health risks." }
+      ]} />
+
       <Card>
         <CardContent className="pt-6">
           <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
