@@ -34,12 +34,12 @@ export function ClarityScript() {
         (c[a].q = c[a].q || []).push(args);
       };
       t = l.createElement(r) as any;
-      // @ts-expect-error - t is assigned above
+      // @ts-expect-error - Clarity IIFE pattern - t is assigned above
       t.async = 1;
-      // @ts-expect-error - t is assigned above
+      // @ts-expect-error - Clarity IIFE pattern - t is assigned above
       t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0] as any;
-      // @ts-expect-error - y is assigned above
+      // @ts-expect-error - Clarity IIFE pattern - y is assigned above
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', clarityId);
   }, []);
