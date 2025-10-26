@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { TreatmentLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
@@ -638,6 +641,19 @@ export default function KneeReplacementCostPage() {
           </CardContent>
         </Card>
       </section>
+
+      {/* Internal Links */}
+      <TreatmentLinks treatments={["Hip Replacement","Spine Surgery","Shoulder Surgery"]} />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Knee Replacement Cost India vs World 2025: Save $20,000+"
+        url="/blog/knee-replacement-cost-india-vs-world"
+        description="Complete guide to knee replacement surgery costs in India. Compare TKR, bilateral, partial, and revision knee replacement prices."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DIABETES_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

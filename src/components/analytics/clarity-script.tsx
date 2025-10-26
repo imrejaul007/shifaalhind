@@ -28,17 +28,18 @@ export function ClarityScript() {
     }
 
     // Load Microsoft Clarity script
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore - Clarity IIFE initialization pattern
     (function(c, l, a, r, i, t, y) {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       c[a] = c[a] || function(...args: any[]) {
         (c[a].q = c[a].q || []).push(args);
       };
       t = l.createElement(r) as any;
+      // @ts-expect-error - t is assigned above
       t.async = 1;
+      // @ts-expect-error - t is assigned above
       t.src = 'https://www.clarity.ms/tag/' + i;
       y = l.getElementsByTagName(r)[0] as any;
+      // @ts-expect-error - y is assigned above
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', clarityId);
   }, []);

@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Diabetes Treatment India - Complete Guide 2025 | Type 1 & Type 2 Management',
@@ -677,6 +680,39 @@ export default function DiabetesTreatmentIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Diabetes Specialty Centers",
+                    "href": "/hospitals",
+                    "description": "Leading diabetes treatment centers with reversal programs."
+          },
+          {
+                    "title": "Bariatric Surgery for Diabetes",
+                    "href": "/treatments",
+                    "description": "85% diabetes remission rate with weight loss surgery."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get personalized diabetes management plan."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Diabetes Treatment India Complete Guide 2025"
+        url="/blog/diabetes-treatment-india-guide"
+        description="Comprehensive diabetes management in India. Reversal programs, bariatric surgery, insulin therapy with expert endocrinologists."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DIABETES_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

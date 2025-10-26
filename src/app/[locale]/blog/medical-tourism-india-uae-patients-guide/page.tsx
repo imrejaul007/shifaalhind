@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { CityLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
@@ -533,6 +536,19 @@ export default function MedicalTourismUAEGuidePage() {
           </CardContent>
         </Card>
       </section>
+
+      {/* Internal Links */}
+      <CityLinks cities={["Mumbai","Delhi","Bangalore","Chennai"]} />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Medical Tourism India: Complete Guide for UAE Patients 2025"
+        url="/blog/medical-tourism-india-uae-patients-guide"
+        description="Everything UAE patients need to know about medical treatment in India: costs, visa, flights, hospitals, and step-by-step process."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DENTAL_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

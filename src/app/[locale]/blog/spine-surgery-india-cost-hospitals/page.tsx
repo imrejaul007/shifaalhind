@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Spine Surgery Cost India [2025] - Save 70% | 95%+ Success Rate',
@@ -618,6 +621,39 @@ export default function SpineSurgeryIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Top Spine Surgery Centers",
+                    "href": "/hospitals",
+                    "description": "Leading neurosurgery and spine surgery hospitals in India."
+          },
+          {
+                    "title": "Knee Replacement Guide",
+                    "href": "/blog/knee-replacement-cost-india-vs-world",
+                    "description": "Another orthopedic procedure popular with medical tourists."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get spine surgery evaluation and treatment plan."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Spine Surgery India: Cost & Top Hospitals 2025"
+        url="/blog/spine-surgery-india-cost-hospitals"
+        description="Minimally invasive spine surgery in India. Discectomy, fusion, laminectomy costs 65-85% lower than USA/UK."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DIABETES_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

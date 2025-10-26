@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Cancer Treatment Cost India vs USA/UK/UAE [2025] - Save 70-85%',
@@ -419,6 +422,39 @@ export default function CancerTreatmentCostPage() {
           </Card>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Top Oncology Hospitals in India",
+                    "href": "/hospitals",
+                    "description": "JCI-accredited cancer centers with latest technology and expert oncologists."
+          },
+          {
+                    "title": "Hospital Selection Guide",
+                    "href": "/blog/how-to-choose-best-hospital-india",
+                    "description": "How to choose the right hospital for your cancer treatment."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get personalized treatment plan and cost estimate from our experts."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Cancer Treatment Cost India vs World 2025"
+        url="/blog/cancer-treatment-cost-india-vs-world"
+        description="Save 70-90% on cancer treatment at world-class hospitals with 85-92% success rates. Chemotherapy, radiation, surgery costs compared."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={CANCER_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'How to Choose the Best Hospital in India for Medical Tourism: Complete 2025 Guide',
@@ -96,6 +99,39 @@ export default function HospitalSelectionGuide() {
       <section className="mb-12">
         <Card className="border-primary-200 bg-primary-50"><CardContent className="p-8"><h2 className="mb-4 text-3xl font-bold">Make an Informed Decision</h2><p className="mb-6 text-lg">The right hospital makes all the difference. Don&apos;t rush - use this guide to verify credentials, check success rates, and ask the right questions.</p><div className="grid gap-4 md:grid-cols-4"><div className="bg-white p-4 rounded text-center"><p className="text-2xl font-bold text-primary-600">✓</p><p className="text-sm">JCI Accreditation</p></div><div className="bg-white p-4 rounded text-center"><p className="text-2xl font-bold text-primary-600">✓</p><p className="text-sm">Doctor Credentials</p></div><div className="bg-white p-4 rounded text-center"><p className="text-2xl font-bold text-primary-600">✓</p><p className="text-sm">Success Rates</p></div><div className="bg-white p-4 rounded text-center"><p className="text-2xl font-bold text-primary-600">✓</p><p className="text-sm">Patient Reviews</p></div></div></CardContent></Card>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Medical Tourism UAE Patients Guide",
+                    "href": "/blog/medical-tourism-india-uae-patients-guide",
+                    "description": "Complete step-by-step guide for UAE patients seeking treatment in India."
+          },
+          {
+                    "title": "Heart Surgery Cost Comparison",
+                    "href": "/blog/heart-surgery-cost-comparison-india-vs-world",
+                    "description": "Compare heart surgery costs at top hospitals in India vs world."
+          },
+          {
+                    "title": "Cancer Treatment in India",
+                    "href": "/blog/cancer-treatment-cost-india-vs-world",
+                    "description": "JCI-accredited cancer hospitals with 85-92% success rates."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="How to Choose the Best Hospital in India for Medical Tourism 2025"
+        url="/blog/how-to-choose-best-hospital-india"
+        description="Essential guide to selecting JCI-accredited hospitals in India. 10 criteria, top hospital chains, common mistakes to avoid."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={CANCER_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

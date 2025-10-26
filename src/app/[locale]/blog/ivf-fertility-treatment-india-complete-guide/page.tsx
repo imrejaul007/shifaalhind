@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
@@ -87,6 +90,39 @@ export default function IVFFertilityGuide() {
       <section className="mb-12">
         <Card className="border-primary-200 bg-primary-50"><CardContent className="p-8"><h2 className="mb-4 text-3xl font-bold">Ready to Start?</h2><p className="mb-4 text-lg">Over 15,000 couples choose India annually. Save 50-70% with 55-65% success rates.</p><div className="grid gap-4 md:grid-cols-3"><div className="bg-white p-4 rounded"><p className="text-3xl font-bold text-primary-600">50-70%</p><p>Cost savings</p></div><div className="bg-white p-4 rounded"><p className="text-3xl font-bold text-primary-600">55-65%</p><p>Success under 35</p></div><div className="bg-white p-4 rounded"><p className="text-3xl font-bold text-primary-600">3-4 weeks</p><p>Total time</p></div></div></CardContent></Card>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Top Fertility Clinics in India",
+                    "href": "/hospitals",
+                    "description": "JCI-accredited fertility centers with international standards and high success rates."
+          },
+          {
+                    "title": "Medical Tourism from Saudi Arabia",
+                    "href": "/for-saudi-patients",
+                    "description": "How Saudi patients access affordable fertility treatment in India."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get personalized success rate estimates and treatment plan."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="IVF & Fertility Treatment India: Complete Guide 2025"
+        url="/blog/ivf-fertility-treatment-india-complete-guide"
+        description="Affordable IVF treatment in India with 65% success rates. Compare costs, clinics, and success rates for ICSI, FET, egg donation, and PGT."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DENTAL_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

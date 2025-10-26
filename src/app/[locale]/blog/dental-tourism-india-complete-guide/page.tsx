@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Dental Tourism India - Complete Guide [2025] Save 70-80%',
@@ -405,6 +408,39 @@ export default function DentalTourismIndiaPage() {
           </Card>
         </div>
       </section>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Top Dental Clinics in India",
+                    "href": "/hospitals",
+                    "description": "International standard dental clinics in Mumbai, Delhi, and Bangalore."
+          },
+          {
+                    "title": "Knee Replacement Cost Guide",
+                    "href": "/blog/knee-replacement-cost-india-vs-world",
+                    "description": "Another popular medical tourism procedure with huge cost savings."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get personalized dental treatment plan and quote."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Dental Tourism India Complete Guide 2025"
+        url="/blog/dental-tourism-india-complete-guide"
+        description="Save 60-80% on dental treatment in India. Implants, veneers, crowns, orthodontics at world-class clinics with international dentists."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={DENTAL_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

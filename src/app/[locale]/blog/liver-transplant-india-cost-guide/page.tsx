@@ -2,6 +2,9 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Liver Transplant Cost India [2025] - Save 75% | Success Rate 90%+',
@@ -748,6 +751,39 @@ export default function LiverTransplantIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+                    "title": "Top Transplant Centers in India",
+                    "href": "/hospitals",
+                    "description": "Leading liver transplant hospitals with high success rates."
+          },
+          {
+                    "title": "Kidney Transplant Guide",
+                    "href": "/treatments",
+                    "description": "Another major transplant procedure available in India."
+          },
+          {
+                    "title": "Free Consultation",
+                    "href": "/consultation",
+                    "description": "Get transplant evaluation and cost estimate."
+          }
+]}
+        variant="compact"
+      />
+
+      {/* Social Sharing */}
+      <SocialShare
+        title="Liver Transplant Cost India: Complete Guide 2025"
+        url="/blog/liver-transplant-india-cost-guide"
+        description="Liver transplant in India costs 70-80% less than Western countries. Living donor, deceased donor, pediatric transplants explained."
+      />
+
+      {/* Related Articles */}
+      <RelatedArticles articles={CANCER_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }
