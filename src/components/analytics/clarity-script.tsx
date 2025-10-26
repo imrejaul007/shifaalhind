@@ -28,7 +28,7 @@ export function ClarityScript() {
     }
 
     // Load Microsoft Clarity script
-    // @ts-ignore - Clarity initialization script pattern
+    // @ts-expect-error - Clarity initialization script pattern
     (function(c, l, a, r, i, t, y) {
       c[a] = c[a] || function(...args: any[]) {
         (c[a].q = c[a].q || []).push(args);
