@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { TreatmentLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
@@ -561,6 +562,15 @@ export default function KneeReplacementCostPage() {
       </section>
 
       {/* FAQ */}
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does knee replacement cost in India?", answer: "Total knee replacement costs $4,000-7,000 in India vs $35,000-50,000 in USA (85-90% savings). Price includes hospital stay, surgery, high-quality implants (DePuy, Stryker), physiotherapy, and follow-up." },
+        { question: "What knee implant brands are used in India?", answer: "Top hospitals use international brands: DePuy (J&J), Stryker, Zimmer Biomet, and Smith & Nephew. Same implants used in USA/Europe with 15-20 year lifespan." },
+        { question: "How long is recovery after knee replacement in India?", answer: "Hospital stay: 3-5 days, India stay: 10-14 days total. Walk with assistance after 1-2 days, resume normal activities in 6-12 weeks. Physiotherapy starts day after surgery." },
+        { question: "Are Indian orthopedic surgeons qualified?", answer: "Yes. Top surgeons have 15-25 years experience, trained at Mayo Clinic, Johns Hopkins, Cleveland Clinic. Perform 200-500 knee replacements annually with 95-98% success rates." },
+        { question: "Can I fly back home after knee replacement?", answer: "Yes, safe to fly 10-14 days post-surgery with doctor clearance. Book aisle seat, do in-flight exercises, wear compression stockings. Follow-up via video call with surgeon." }
+      ]} />
+
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
 

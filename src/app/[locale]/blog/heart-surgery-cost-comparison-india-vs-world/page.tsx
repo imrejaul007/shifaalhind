@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
@@ -497,6 +498,15 @@ export default function HeartSurgeryCostComparisonPage() {
       />
 
       {/* FAQ */}
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does heart surgery cost in India vs USA?", answer: "Heart bypass surgery costs $5,000-8,000 in India vs $70,000-150,000 in USA (93-95% savings). India offers JCI-accredited hospitals with experienced cardiac surgeons at a fraction of Western costs." },
+        { question: "Are Indian hospitals safe for heart surgery?", answer: "Yes. Top Indian hospitals like Apollo, Fortis, and Medanta have JCI/NABH accreditation, success rates of 98%+, and cardiac surgeons trained at Harvard, Cleveland Clinic, and Mayo Clinic." },
+        { question: "How long do I need to stay in India for heart surgery?", answer: "Typically 10-14 days total: 3-5 days pre-surgery (tests, consultation), 5-7 days post-surgery (hospital + recovery), plus 2-3 follow-up days." },
+        { question: "What is included in the heart surgery package cost?", answer: "Hospital stay, surgeon fees, anesthesia, ICU care, medications, pre/post-surgery tests, and 1-2 follow-up consultations. International coordinators and airport pickup often included." },
+        { question: "Can I bring a family member for heart surgery?", answer: "Yes, most packages allow 1 companion to stay with you. Medical attendant visa ($80) is easily obtained. Some hospitals provide free companion accommodation." }
+      ]} />
+
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
 

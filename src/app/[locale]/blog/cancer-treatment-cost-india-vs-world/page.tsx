@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Cancer Treatment Cost India vs USA/UK/UAE [2025] - Save 70-85%',
@@ -335,6 +336,16 @@ export default function CancerTreatmentCostPage() {
           </CardContent>
         </Card>
       </section>
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does cancer treatment cost in India?", answer: "Chemotherapy: $500-1,500/cycle (vs $10,000-30,000 USA), Radiation: $3,000-6,000 (vs $50,000-100,000), Surgery: $5,000-15,000 (vs $50,000-150,000). Total savings: 70-90%." },
+        { question: "Are Indian cancer hospitals as good as USA?", answer: "Yes. Hospitals like Tata Memorial, Apollo Cancer Centre, and HCG have 85-92% early-stage cancer cure rates (comparable to USA's 88-95%). JCI-accredited with latest equipment (PET-CT, CyberKnife, immunotherapy)." },
+        { question: "What types of cancer can be treated in India?", answer: "All major cancers: Breast, lung, prostate, colorectal, blood (leukemia, lymphoma), brain, liver, kidney, ovarian, cervical, pancreatic. Specialized centers for pediatric cancer and rare cancers." },
+        { question: "How long does cancer treatment take in India?", answer: "Depends on type: Surgery (2-3 weeks total stay), Chemotherapy (6-12 cycles over 4-6 months, can do some cycles at home), Radiation (3-7 weeks daily treatment). Many patients split treatment into phases." },
+        { question: "Can I get second opinion for cancer in India?", answer: "Yes, most hospitals offer virtual second opinions ($100-300). Send medical records/scans for expert review by oncologists. Helps confirm diagnosis and explore treatment options before traveling." },
+        { question: "What if I need ongoing treatment after returning home?", answer: "Indian oncologists coordinate with your home country doctors. Get complete treatment plan, prescriptions for 3-6 months of medications, follow-up via video call, and send scans for remote monitoring." }
+      ]} />
 
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold">Frequently Asked Questions</h2>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { CityLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
@@ -450,6 +451,18 @@ export default function MedicalTourismUAEGuidePage() {
       </section>
 
       {/* FAQ */}
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much can UAE patients save on treatment in India?", answer: "60-80% savings on most procedures. Heart surgery: Save AED 220,000-260,000, Knee replacement: Save AED 44,000-52,000, IVF: Save AED 16,500-20,000 compared to Dubai/Abu Dhabi prices." },
+        { question: "How do I get a medical visa for India from UAE?", answer: "Apply online at indianvisaonline.gov.in ($80, 3-5 days). Need hospital invitation letter (Shifa AlHind provides FREE), passport copy, and photo. Visa on arrival available at Mumbai, Delhi, Bangalore, Chennai airports." },
+        { question: "Which Indian cities are best for UAE medical tourists?", answer: "Mumbai (3h flight from Dubai), Delhi (3.5h), Bangalore (4h), Chennai (4.5h). All have JCI-accredited hospitals, direct flights, and Arabic-speaking coordinators." },
+        { question: "Do Indian hospitals have Arabic-speaking staff?", answer: "Yes, top hospitals treating UAE patients have Arabic coordinators, interpreters available 24/7, halal food options, and prayer facilities. Many doctors speak basic Arabic." },
+        { question: "Is travel insurance required for medical tourism?", answer: "Recommended but not mandatory. Medical tourism insurance costs $50-200 for 2 weeks, covers post-procedure complications, emergency evacuation, and trip cancellation." },
+        { question: "What currency should I bring to India?", answer: "Indian Rupees (INR) or US Dollars. Major hospitals accept credit cards, USD, EUR. ATMs widely available. Hospital cashier can exchange currency. Most treatment payments via bank transfer before arrival." },
+        { question: "How do I arrange airport pickup from UAE?", answer: "Shifa AlHind provides FREE airport pickup for all patients. Share flight details 2-3 days before arrival. Driver will meet you at arrivals with name board. WhatsApp number provided for easy contact." },
+        { question: "Can I combine treatment with tourism in India?", answer: "Yes, but prioritize recovery first. Plan 2-3 days sightseeing after doctor clearance. Popular: Mumbai (Gateway of India, Marine Drive), Delhi (Taj Mahal 3h away), Bangalore (gardens, temples). Avoid strenuous activities." }
+      ]} />
+
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
 

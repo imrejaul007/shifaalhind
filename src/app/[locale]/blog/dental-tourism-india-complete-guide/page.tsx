@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Dental Tourism India - Complete Guide [2025] Save 70-80%',
@@ -323,6 +324,16 @@ export default function DentalTourismIndiaPage() {
           </CardContent>
         </Card>
       </section>
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much do dental implants cost in India?", answer: "Single implant: $400-800 (vs $3,000-6,000 USA, 85-90% savings). Full mouth reconstruction: $3,000-8,000 (vs $30,000-80,000 USA). Includes implant, abutment, crown, all consultations." },
+        { question: "Are Indian dentists qualified for complex procedures?", answer: "Yes. Top dentists have BDS/MDS degrees, 10-20 years experience, trained at NYU, UCLA, King's College London. Many are members of American Dental Association, International Congress of Oral Implantologists." },
+        { question: "How long do I need to stay for dental treatment?", answer: "Depends on procedure: Implants (5-7 days for temporary crowns, return after 3-4 months for permanent), Veneers (2-3 visits over 5-7 days), Root canal (1-2 days), Smile makeover (7-10 days)." },
+        { question: "What dental materials are used in India?", answer: "Same brands as USA/Europe: Straumann, Nobel Biocare (implants), 3M ESPE, IPS e.max (crowns/veneers), Dentsply Sirona (materials). FDA/CE certified materials with 10-25 year warranties." },
+        { question: "Is dental work in India painful?", answer: "No. Modern pain management with local anesthesia, laughing gas, IV sedation, or general anesthesia for complex procedures. Many clinics offer pain-free laser dentistry for gum treatments." },
+        { question: "What if I have problems after returning home?", answer: "Most clinics offer 1-5 year warranties on dental work. If issues arise, they'll coordinate with local dentist for repairs or offer free revision on return visit. Tele-dentistry follow-up available." }
+      ]} />
 
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold">Frequently Asked Questions</h2>
