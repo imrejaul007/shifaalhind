@@ -1,6 +1,9 @@
 import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { SocialShare } from '@/components/blog/social-share';
+import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { InternalLinks } from '@/components/seo/internal-links';
 
 export const metadata: Metadata = {
   title: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
@@ -470,6 +473,29 @@ export default function HeartSurgeryCostComparisonPage() {
         </Card>
       </section>
 
+      {/* Internal Links */}
+      <InternalLinks
+        title="Related Medical Tourism Resources"
+        links={[
+          {
+            title: 'Best Cardiac Hospitals in India',
+            href: '/hospitals',
+            description: 'Explore JCI-accredited hospitals with world-class cardiac departments and experienced surgeons.'
+          },
+          {
+            title: 'Medical Tourism Guide for UAE Patients',
+            href: '/blog/medical-tourism-india-uae-patients-guide',
+            description: 'Complete step-by-step guide for UAE patients seeking treatment in India.'
+          },
+          {
+            title: 'Free Consultation',
+            href: '/consultation',
+            description: 'Get a free consultation and personalized treatment plan from our medical experts.'
+          }
+        ]}
+        variant="compact"
+      />
+
       {/* FAQ */}
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
@@ -532,6 +558,13 @@ export default function HeartSurgeryCostComparisonPage() {
         </div>
       </section>
 
+      {/* Social Sharing */}
+      <SocialShare
+        title="Heart Surgery Cost Comparison: India vs World 2025"
+        url="/blog/heart-surgery-cost-comparison-india-vs-world"
+        description="Discover how heart surgery in India costs 70-90% less than USA/UK with the same quality. Compare CABG, valve replacement, angioplasty costs and save $20,000-$150,000."
+      />
+
       {/* Conclusion */}
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Conclusion</h2>
@@ -554,6 +587,9 @@ export default function HeartSurgeryCostComparisonPage() {
           </CardContent>
         </Card>
       </section>
+
+      {/* Related Articles */}
+      <RelatedArticles articles={CANCER_RELATED_ARTICLES} />
     </BlogArticleLayout>
   );
 }

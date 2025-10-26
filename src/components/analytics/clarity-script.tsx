@@ -35,10 +35,10 @@ export function ClarityScript() {
       c[a] = c[a] || function(...args: any[]) {
         (c[a].q = c[a].q || []).push(args);
       };
-      t = l.createElement(r);
+      t = l.createElement(r) as any;
       t.async = 1;
       t.src = 'https://www.clarity.ms/tag/' + i;
-      y = l.getElementsByTagName(r)[0];
+      y = l.getElementsByTagName(r)[0] as any;
       y.parentNode.insertBefore(t, y);
     })(window, document, 'clarity', 'script', clarityId);
   }, []);
