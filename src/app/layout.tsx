@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Cairo } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { generateOrganizationSchema } from '@/lib/seo';
+import { ClarityScript } from '@/components/analytics/clarity-script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -142,6 +143,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_ID && (
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
         )}
+        <ClarityScript />
       </body>
     </html>
   );
