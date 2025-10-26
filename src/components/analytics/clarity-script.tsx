@@ -28,8 +28,10 @@ export function ClarityScript() {
     }
 
     // Load Microsoft Clarity script
-    // @ts-expect-error - Clarity initialization script pattern
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore - Clarity IIFE initialization pattern
     (function(c, l, a, r, i, t, y) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       c[a] = c[a] || function(...args: any[]) {
         (c[a].q = c[a].q || []).push(args);
       };
