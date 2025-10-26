@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Liver Transplant Cost India [2025] - Save 75% | Success Rate 90%+',
@@ -583,6 +584,14 @@ export default function LiverTransplantIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does liver transplant cost in India?", answer: "Living donor liver transplant costs $40,000-$60,000 in India vs $400,000-$800,000 in USA (85-92% savings). Deceased donor: $35,000-$55,000, Pediatric: $45,000-$65,000. Includes pre-transplant evaluation, surgery, 3-4 week hospital stay, immunosuppressants, and 1-year follow-up." },
+        { question: "What are liver transplant success rates in India?", answer: "1-year survival: 90-95% (living donor), 85-90% (deceased donor). 5-year survival: 75-85%. Top centers like Apollo, Fortis, Global Health City perform 200+ transplants annually with outcomes matching USA/Europe. Success depends on patient health, donor quality, and post-transplant care adherence." },
+        { question: "How long is the wait for deceased donor liver in India?", answer: "Average wait: 6-18 months depending on blood type, MELD score, and region. Chennai/Delhi have shorter waits (6-12 months) vs other cities (12-18 months). Living donor transplant can be scheduled within 4-6 weeks after evaluation. GCC patients often opt for living donor to avoid wait time." },
+        { question: "Can I bring a family member as living donor?", answer: "Yes, blood relatives (parents, siblings, children) are permitted. Spouse allowed with approval. Non-relatives not permitted in India. Donor must be 18-60 years, compatible blood type, healthy liver function, and pass psychological evaluation. Donor surgery costs included in package price." }
+      ]} />
 
       {/* FAQs */}
       <div className="my-12">

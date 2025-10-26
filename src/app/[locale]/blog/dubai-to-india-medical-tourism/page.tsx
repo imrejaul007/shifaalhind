@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 
@@ -543,6 +544,14 @@ export default function DubaiToIndiaMedicalTourismPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much can Dubai patients save by choosing India?", answer: "Average savings: 65-75% on most procedures. Heart bypass: AED 144,000 saved (73%), Knee replacement: AED 52,000 (73%), IVF: AED 30,000 (65%), Liver transplant: AED 260,000 (74%). Total savings for complex procedures can exceed AED 100,000-200,000." },
+        { question: "How long does it take to fly from Dubai to India?", answer: "Dubai to Mumbai: 3 hours direct, Delhi: 3.5 hours, Bangalore: 4 hours, Chennai: 4.5 hours. Multiple daily flights from Emirates, Air India, IndiGo, SpiceJet. Flights cost AED 1,000-2,500 round trip. Medical visa processed within 72 hours online." },
+        { question: "Do Indian hospitals cater to UAE patients?", answer: "Yes! Top hospitals (Apollo, Fortis, Max, Manipal, Medanta) have dedicated UAE patient coordinators, Arabic-speaking staff, halal food options, prayer rooms, private suites, UAE payment methods (credit card, wire transfer), and direct partnerships with UAE insurance companies." },
+        { question: "Is medical care in India as good as Dubai/UAE?", answer: "Yes, for top JCI-accredited hospitals. Same standards: Apollo/Fortis success rates match Cleveland Clinic/Mayo. Same doctors: Many trained at Johns Hopkins, Harvard, UK institutions. Same technology: Robotic surgery, Gamma Knife, advanced diagnostics. Same accreditation: JCI (international gold standard)." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

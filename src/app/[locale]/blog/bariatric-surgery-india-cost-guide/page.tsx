@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -602,6 +603,14 @@ export default function BariatricSurgeryCostIndiaPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does bariatric surgery cost in India?", answer: "Gastric bypass: $5,500-$7,500, Sleeve gastrectomy: $5,000-$7,000, Gastric band: $4,500-$6,500, Mini gastric bypass: $5,000-$7,000. Costs are 70-80% lower than USA ($20,000-$35,000). Includes pre-op assessment, surgery, 3-5 day hospital stay, dietitian, 1-year follow-up." },
+        { question: "What is the success rate of bariatric surgery in India?", answer: "60-80% excess weight loss within 12-18 months. Type 2 diabetes remission: 85%, Hypertension improvement: 75%, Sleep apnea resolution: 90%. Success requires lifelong dietary changes, exercise, vitamin supplementation, and follow-up compliance." },
+        { question: "Am I a candidate for bariatric surgery?", answer: "BMI 35+ (any patient), BMI 30-34.9 with comorbidities (diabetes, hypertension, sleep apnea), Failed diet/exercise attempts, Age 18-65, Psychologically prepared for lifestyle changes. Not suitable: Active substance abuse, untreated depression, certain medical conditions." },
+        { question: "Can I reverse diabetes with bariatric surgery in India?", answer: "Yes! 85% of Type 2 diabetes patients achieve remission within 3-6 months post-surgery. Bariatric surgery is most effective diabetes treatment for obese patients (BMI 35+). Many patients stop insulin/medications within weeks. Long-term success requires dietary compliance and regular monitoring." }
+      ]} />
 
       {/* FAQ */}
       <Card>

@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Spine Surgery Cost India [2025] - Save 70% | 95%+ Success Rate',
@@ -444,6 +445,14 @@ export default function SpineSurgeryIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does spine surgery cost in India?", answer: "Discectomy: $4,000-$6,500, Spinal fusion: $6,500-$9,500, Laminectomy: $4,500-$7,000, MISS: $5,500-$8,500. Costs are 70-85% lower than USA. Includes hospital stay, surgeon fees, implants (if needed), physiotherapy, and follow-up." },
+        { question: "What are success rates for spine surgery in India?", answer: "95-98% success for discectomy and laminectomy. 92-96% for spinal fusion. Complication rates <2% at top centers (ISIC Delhi, Apollo, Medanta). Success depends on proper patient selection, experienced surgeon, and post-op rehabilitation adherence." },
+        { question: "How long is recovery after spine surgery in India?", answer: "Hospital stay: 3-7 days (simple procedures), 5-10 days (fusion). Return to light activities: 2-4 weeks. Full recovery: 3-6 months. Physiotherapy starts 2-4 weeks post-op. Can fly home after 7-14 days with surgeon clearance. Avoid heavy lifting for 3 months." },
+        { question: "Do Indian spine surgeons use the same techniques as USA/Europe?", answer: "Yes, top surgeons trained at Johns Hopkins, Mayo Clinic, or European centers. Techniques identical: minimally invasive spine surgery (MISS), endoscopic discectomy, robotic-assisted fusion. Equipment: Carl Zeiss microscopes, Medtronic navigation systems, same implants (Medtronic, DePuy Synthes) used in USA." }
+      ]} />
 
       {/* FAQs */}
       <div className="my-12">

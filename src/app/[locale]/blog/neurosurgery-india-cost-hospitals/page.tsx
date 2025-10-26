@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -437,6 +438,14 @@ export default function NeurosurgeryIndiaCostPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does neurosurgery cost in India?", answer: "Brain tumor craniotomy: $8,000-$12,000, Spinal fusion: $6,500-$9,500, Aneurysm clipping: $10,000-$15,000, Gamma Knife radiosurgery: $5,000-$8,000. Costs are 65-80% lower than USA. Includes pre-op imaging, surgery, ICU/hospital stay, medications, and follow-up." },
+        { question: "Do Indian neurosurgeons have advanced training?", answer: "Yes, top neurosurgeons have MCh (Neurosurgery) from AIIMS/NIMHANS, fellowship training from USA/Europe (Johns Hopkins, Mayo Clinic), 15-20+ years experience, perform 300+ complex surgeries annually. Many trained in minimally invasive techniques, Gamma Knife, CyberKnife." },
+        { question: "What advanced technology is available in India?", answer: "Top centers have: Gamma Knife Icon (brain tumors without surgery), CyberKnife (robotic radiosurgery), Intraoperative MRI (iMRI), Neuronavigation (GPS for brain), Endoscopy (keyhole surgery), Awake craniotomy (speech preservation). Equipment from Carl Zeiss, Medtronic, Elekta - same as USA." },
+        { question: "How long is recovery after brain surgery in India?", answer: "Hospital stay: 5-10 days (simple), 7-14 days (complex). ICU: 1-3 days. Return to light activities: 2-4 weeks. Full recovery: 3-6 months. Can fly home: 10-14 days post-op with clearance. Radiation therapy (if needed): Outpatient over 4-6 weeks, or continue at home." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

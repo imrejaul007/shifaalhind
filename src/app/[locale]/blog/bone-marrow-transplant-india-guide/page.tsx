@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -455,6 +456,14 @@ export default function BoneMarrowTransplantIndiaPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does bone marrow transplant cost in India?", answer: "Autologous BMT: $25,000-$35,000, Allogeneic (matched sibling): $40,000-$60,000, Haploidentical (half-matched): $50,000-$70,000. Costs are 70-80% lower than USA ($200,000-$500,000). Includes donor workup, conditioning, transplant, 4-6 week hospital stay, medications, and 100-day follow-up." },
+        { question: "What are BMT success rates in India?", answer: "Survival rates vary by disease and type: Leukemia (allogeneic): 65-75%, Lymphoma (autologous): 70-80%, Multiple myeloma: 75-85%, Thalassemia: 85-90%, Aplastic anemia: 80-85%. Top centers like Apollo, Tata Memorial, Fortis perform 200+ BMTs annually with outcomes matching USA/Europe." },
+        { question: "Do I need a matched donor for BMT in India?", answer: "Depends on disease. Autologous (your own cells): No donor needed. Allogeneic: Matched sibling best (25% chance), Matched unrelated donor (MUD) via registries (50-70% find match), Haploidentical (parent/child, 100% available) now highly successful in India." },
+        { question: "How long do I stay in India for BMT?", answer: "6-8 weeks minimum. Pre-transplant evaluation: 1 week, Conditioning chemotherapy: 7-10 days, Transplant day: Day 0, Hospital stay post-transplant: 3-5 weeks (until engraftment), Outpatient monitoring: 2-4 weeks. Total stay: 8-12 weeks for international patients." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

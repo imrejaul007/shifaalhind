@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
@@ -76,6 +77,14 @@ export default function IVFFertilityGuide() {
           <Card><CardHeader><CardTitle>Days 20-32: Pregnancy Test</CardTitle></CardHeader><CardContent><p>2-week wait. Blood test day 28-32. Can fly home after transfer.</p></CardContent></Card>
         </div>
       </section>
+
+      {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does IVF cost in India?", answer: "Standard IVF cycle costs $2,500-4,000 in India vs $12,000-15,000 in USA (75-85% savings). ICSI: $3,000-4,500, Egg donation: $4,500-6,500, FET: $1,500-2,500." },
+        { question: "What are IVF success rates in India?", answer: "Under 35: 55-65%, Age 35-37: 50-60%, Age 38-40: 40-50%, Over 40: 25-35%. Comparable to USA/Europe. Top clinics like Nova IVF and Cloudnine achieve 60%+ success rates." },
+        { question: "How long do I need to stay in India for IVF?", answer: "3-4 weeks total: Week 1-2 (ovarian stimulation, monitoring), Week 3 (egg retrieval, fertilization, embryo culture), Week 4 (embryo transfer, rest). Can split into 2 trips if needed." },
+        { question: "Can I choose gender through IVF in India?", answer: "No, gender selection is illegal in India (Pre-Conception and Pre-Natal Diagnostic Techniques Act). Only allowed for medical reasons like genetic disorders. Focus is on healthy pregnancy." }
+      ]} />
 
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold">FAQ</h2>

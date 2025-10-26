@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 
@@ -472,6 +473,14 @@ export default function MedicalVisaIndiaGuidePage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How long does it take to get medical visa for India?", answer: "e-Medical Visa: 3-5 days online (fastest), Medical Visa on Arrival: Instant at 6 major airports, Regular Medical Visa: 7-10 days at embassy. e-Medical Visa recommended for GCC patients - apply at indianvisaonline.gov.in, receive approval via email, valid for 60 days triple entry." },
+        { question: "How much does Indian medical visa cost?", answer: "e-Medical Visa: $80 (AED 294, SAR 300) online payment via credit card. Medical Visa on Arrival: $80 cash/card at airport. Regular Medical Visa (embassy): $50-120 depending on nationality and duration. Medical attendant visa (companion): $80 (up to 2 attendants allowed)." },
+        { question: "Can my family accompany me on medical visa?", answer: "Yes, up to 2 family members can apply for Medical Attendant Visa (linked to patient visa). Same process as e-Medical Visa, costs $80 per person, approved within 3-5 days. Family can stay entire treatment duration with patient. Extension possible up to 1 year via FRRO office." },
+        { question: "What documents do I need for Indian medical visa?", answer: "Required: Valid passport (6 months validity), Recent photo (white background), Hospital letter (treatment details, estimated cost, duration), Round-trip flight booking, Proof of funds ($50-100/day). Optional but helpful: Medical reports, doctor referral letter, travel insurance. Upload documents during online application." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -507,6 +508,14 @@ export default function CosmeticSurgeryCostIndiaPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does cosmetic surgery cost in India?", answer: "Rhinoplasty: $1,500-$3,000, Liposuction: $1,200-$2,500, Breast augmentation: $2,500-$4,000, Facelift: $3,000-$5,500. Costs are 60-75% lower than USA/UK. Includes consultation, surgery, anesthesia, hospital stay (if needed), post-op care, and follow-up visits." },
+        { question: "Are Indian cosmetic surgeons qualified?", answer: "Yes, top surgeons have MCh (Plastic Surgery) from premier institutes, fellowship training from USA/Europe (ASPS, ISAPS), 10-15+ years experience, perform 200+ procedures annually. Check surgeon credentials, before/after photos, patient reviews." },
+        { question: "How long do I need to stay in India for cosmetic surgery?", answer: "7-14 days depending on procedure. Rhinoplasty/liposuction: 7-10 days, Facelift/breast surgery: 10-14 days, Tummy tuck: 10-14 days. Includes pre-op consultation, surgery, initial recovery, suture removal, surgeon clearance. Can return for final follow-up or do virtually." },
+        { question: "What if I have complications after returning home?", answer: "Top hospitals provide 24/7 support via WhatsApp/video call. Minor issues managed remotely. For serious complications, hospital covers treatment costs (check warranty policy). Medical tourism insurance recommended for post-procedure complications coverage ($100-200)." }
+      ]} />
 
       {/* FAQ */}
       <Card>

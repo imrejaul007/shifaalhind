@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 
@@ -409,6 +410,14 @@ export default function RiyadhToIndiaHealthcarePage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much can Saudi patients save in India?", answer: "Average savings: 70-80% on most procedures. Heart bypass: SAR 142,500 saved (72%), Knee replacement: SAR 51,250 (73%), Liver transplant: SAR 256,250 (74%), IVF: SAR 26,250 (70%). For complex procedures, savings can exceed SAR 100,000-200,000 per patient." },
+        { question: "How long does it take to fly from Riyadh to India?", answer: "Riyadh to Mumbai: 4 hours direct, Delhi: 4.5 hours, Bangalore: 5 hours, Chennai: 5.5 hours. Multiple weekly flights from Saudia, Air India, IndiGo. Flights cost SAR 1,500-3,000 round trip. Medical visa (e-Medical Visa) processed online within 3-5 days." },
+        { question: "Do Indian hospitals accommodate Saudi cultural needs?", answer: "Yes! Top hospitals provide: Arabic-speaking coordinators, halal food (all meals), prayer rooms with Qibla direction, gender-specific care (female doctors for women), private family suites, Islamic dietary requirements, flexible prayer times during treatment. Many hospitals have 10+ years experience with Saudi patients." },
+        { question: "Are Indian doctors qualified to treat Saudi patients?", answer: "Yes, top doctors have international training (USA, UK, Europe), 15-20+ years experience, perform 300+ procedures annually. Many hospitals have treated 5,000+ Saudi patients. Success rates match or exceed Saudi hospitals. All JCI-accredited hospitals follow international protocols identical to Gulf region hospitals." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

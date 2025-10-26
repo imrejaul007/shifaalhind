@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -448,6 +449,14 @@ export default function KidneyTransplantCostIndiaPage() {
         ]}
         variant="compact"
       />
+
+            {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "How much does kidney transplant cost in India?", answer: "Living donor kidney transplant: $15,000-$20,000, Deceased donor: $13,000-$18,000, Pediatric: $18,000-$25,000. Costs are 75-85% lower than USA ($300,000-$500,000). Includes pre-transplant evaluation, surgery, 2-3 week hospital stay, immunosuppressants (1 year), and follow-up." },
+        { question: "What are kidney transplant success rates in India?", answer: "1-year graft survival: 95-98% (living donor), 90-95% (deceased donor). 5-year survival: 85-90%. Top centers like Apollo, Medanta, Fortis perform 300+ transplants annually. Success depends on donor-recipient match, patient health, and immunosuppressant adherence." },
+        { question: "Can I bring a family member as living donor?", answer: "Yes, blood relatives (parents, siblings, children, spouse) permitted. Donor must be 18-60 years, compatible blood type (or ABO incompatible with special prep), healthy kidney function (GFR >80), BMI <35, and pass psychological evaluation. Donor surgery and care included in package cost." },
+        { question: "How long do I wait for deceased donor kidney in India?", answer: "Average wait: 6-24 months depending on blood type, age, MELD score, and region. Delhi/Chennai have better organ availability (6-12 months) vs other cities (12-24 months). Living donor transplant can be scheduled within 4-6 weeks after evaluation. Most GCC patients choose living donor." }
+      ]} />
 
       {/* FAQ Section */}
       <Card>

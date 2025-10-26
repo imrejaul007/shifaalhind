@@ -5,6 +5,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
 
 export const metadata: Metadata = {
   title: 'Diabetes Treatment India - Complete Guide 2025 | Type 1 & Type 2 Management',
@@ -514,6 +515,14 @@ export default function DiabetesTreatmentIndiaPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={[
+        { question: "Can Type 2 diabetes really be reversed in India?", answer: "Yes! India's diabetes reversal programs show 60-75% success rates for Type 2 diabetes remission using evidence-based intensive lifestyle interventions including personalized diet (low-carb or Mediterranean), supervised exercise, behavioral counseling, and continuous monitoring. Best results occur within 5-6 years of diagnosis. Programs cost $800-$1,500 for 3-6 months vs $4,000-$8,000 in USA." },
+        { question: "How much does insulin pump therapy cost in India?", answer: "Insulin pump therapy in India costs $3,500-$5,500 annually including device, infusion sets, reservoirs, and insulin. This is 70% cheaper than USA ($15,000-$25,000). Major brands available: Medtronic (630G, 670G, 780G), Omnipod (tubeless patch pump), Accu-Chek. Package includes pump training, 24/7 support, and regular endocrinologist follow-ups." },
+        { question: "Which Indian diabetes centers are best for GCC patients?", answer: "Top centers: Apollo Sugar Clinics (65 centers, best reversal programs), Dr. Mohan's Diabetes Specialities Centre (Chennai, 40 years experience), Fortis C-DOC (Delhi, insulin pump expertise), Max Super Speciality (comprehensive care), Manipal Hospital (bariatric surgery for diabetes). All offer Arabic-speaking coordinators, halal food, and prayer facilities." },
+        { question: "Is bariatric surgery effective for Type 2 diabetes?", answer: "Yes, highly effective! Bariatric surgery (gastric bypass/sleeve) achieves 85% diabetes remission rate within 1 year for BMI 35+ patients. Costs $4,500-$7,000 in India vs $20,000-$35,000 in USA. Includes pre-op assessment, surgery, 5-7 day hospital stay, dietitian consultation, and 1-year follow-up." }
+      ]} />
 
       {/* FAQs */}
       <div className="my-12">
