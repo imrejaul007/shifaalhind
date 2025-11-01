@@ -435,7 +435,7 @@ export default function HipReplacementIndiaPage() {
                 <strong>Pain Level:</strong> 5-7/10 (controlled with IV pain medication)
               </p>
               <p className="mt-2 text-gray-700">
-                <strong>Mobility:</strong> Bed rest with position restrictions (no crossing legs, no bending >90°)
+                <strong>Mobility:</strong> Bed rest with position restrictions (no crossing legs, no bending &gt;90°)
               </p>
             </CardContent>
           </Card>
@@ -570,7 +570,7 @@ export default function HipReplacementIndiaPage() {
             <CardContent>
               <p className="text-gray-700">
                 <strong>Avoid forever:</strong> High-impact sports (running marathons, jumping, contact sports like football/rugby).
-                <strong>First 6-8 weeks:</strong> No bending hip >90°, no crossing legs, no pivoting/twisting, no sitting on low chairs/toilets.
+                <strong>First 6-8 weeks:</strong> No bending hip &gt;90°, no crossing legs, no pivoting/twisting, no sitting on low chairs/toilets.
                 <strong>Allowed after 3-6 months:</strong> Walking/hiking, swimming, cycling, golf, tennis, dancing, yoga (modified).
                 Use raised toilet seat, grab bars, long-handled shoe horn. Most patients return to 90-95% normal activities.
               </p>
