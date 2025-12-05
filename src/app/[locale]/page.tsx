@@ -9,9 +9,16 @@ import {
   Activity,
   ArrowRight,
   CheckCircle,
-  MapPin
+  MapPin,
+  Users,
+  Award,
+  TrendingUp,
+  DollarSign
 } from 'lucide-react';
 import { treatments, gccCountries } from '@/config/gcc-countries';
+import { CostCalculator } from '@/components/marketing/cost-calculator';
+import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { SocialShare } from '@/components/blog/social-share';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -65,7 +72,75 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
+// FAQ data for FAQ Schema (SEO rich snippets)
+const faqData = [
+  {
+    question: 'How much can I save with medical tourism to India?',
+    answer: 'Most patients save 60-80% compared to costs in the UAE, Saudi Arabia, or Western countries. For example, a knee replacement costs $30,000-50,000 in the US but only $6,000-8,000 in India. Heart bypass surgery costs $100,000+ in the West versus $8,000-12,000 in India. Even after including travel, accommodation, and other expenses, the savings are substantial.'
+  },
+  {
+    question: 'Are Indian hospitals really as good as hospitals in the West?',
+    answer: "Yes. India's top hospitals are JCI-accredited, which means they meet the same international standards as hospitals in the US and Europe. Many Indian doctors are trained at Harvard, Johns Hopkins, and other prestigious institutions. India performs over 200,000 cardiac surgeries annually with success rates matching or exceeding Western standards. Hospitals like Apollo, Fortis, and Max use the same advanced technology you'd find in New York or London."
+  },
+  {
+    question: 'What treatments are most popular for GCC patients?',
+    answer: 'The most sought-after treatments include cardiac surgery (bypass, valve replacement), orthopedic procedures (knee and hip replacement), fertility treatments (IVF), cosmetic surgery, dental implants, cancer treatment, and spinal surgery. India is also renowned for complex procedures like liver transplants and robotic surgery.'
+  },
+  {
+    question: 'How long do I need to stay in India for treatment?',
+    answer: 'It depends on the procedure. Simple treatments like dental work might require 5-7 days, while major surgeries like knee replacement typically need 10-14 days (including pre-op tests, surgery, and initial recovery). Heart surgery usually requires 2-3 weeks. We provide detailed timelines during your consultation based on your specific treatment.'
+  },
+  {
+    question: 'Do you help with medical visas?',
+    answer: 'Yes, we provide complete support for obtaining a medical visa for India. We supply the required invitation letter from the hospital, help you prepare the documentation, and guide you through the application process. Medical visas are typically processed within 3-5 days for GCC nationals.'
+  },
+  {
+    question: 'What about language barriers?',
+    answer: 'English is widely spoken in all major Indian hospitals, and most doctors are fluent. Additionally, we provide Arabic interpreters for GCC patients who prefer to communicate in Arabic. Our coordinators are bilingual and available 24/7 to help with any communication needs.'
+  },
+  {
+    question: 'Is medical treatment in India safe for international patients?',
+    answer: "Absolutely. India's top hospitals maintain the same safety standards as hospitals in the US and Europe. They have JCI accreditation, NABH certification, and ISO quality standards. Infection control protocols, patient safety measures, and post-operative care meet international benchmarks. Over 2 million international patients choose India annually for medical treatment."
+  },
+  {
+    question: 'How do I get started with Shifa AlHind?',
+    answer: "Getting started is simple: (1) Submit your medical reports through our free consultation form, (2) We'll connect you with the best hospitals and doctors for your condition, (3) Receive detailed cost estimates and treatment plans, (4) We handle all logistics including visa, flights, and accommodation, (5) Receive world-class treatment with 24/7 support. The entire process typically takes 7-14 days from initial consultation to arrival in India."
+  }
+];
+
 export default function HomePage() {
+  // Statistics data
+  const statistics = [
+    {
+      icon: Users,
+      number: '2M+',
+      label: 'International Patients Annually',
+      description: 'From 150+ countries worldwide',
+      color: 'text-primary-600'
+    },
+    {
+      icon: Award,
+      number: '40+',
+      label: 'JCI-Accredited Hospitals',
+      description: 'Meeting global quality standards',
+      color: 'text-accent-600'
+    },
+    {
+      icon: TrendingUp,
+      number: '95%+',
+      label: 'Success Rate',
+      description: 'On par with USA/UK hospitals',
+      color: 'text-green-600'
+    },
+    {
+      icon: DollarSign,
+      number: '60-80%',
+      label: 'Average Savings',
+      description: 'Compared to Western countries',
+      color: 'text-blue-600'
+    },
+  ];
+
   const features = [
     {
       icon: CheckCircle,
@@ -135,6 +210,35 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Statistics Section */}
+      <section className="container px-4 py-16">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+            Trusted by Thousands of International Patients
+          </h2>
+          <p className="text-lg text-gray-600">
+            Leading the way in medical tourism with proven results and world-class care
+          </p>
+        </div>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {statistics.map((stat, index) => {
+            const Icon = stat.icon;
+            return (
+              <div key={index} className="text-center">
+                <div className={`mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gray-50 ${stat.color}`}>
+                  <Icon className="h-8 w-8" />
+                </div>
+                <div className={`mb-2 font-serif text-4xl font-bold ${stat.color}`}>
+                  {stat.number}
+                </div>
+                <div className="mb-1 font-semibold text-gray-900">{stat.label}</div>
+                <div className="text-sm text-gray-600">{stat.description}</div>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
       {/* Features */}
       <section className="container px-4 py-16">
         <div className="grid gap-6 md:grid-cols-3">
@@ -196,6 +300,217 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Cost Comparison Table */}
+      <section className="container px-4 py-16">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+            Compare Treatment Costs: India vs World
+          </h2>
+          <p className="mx-auto max-w-2xl text-lg text-gray-600">
+            See how much you can save on popular medical procedures. All costs in USD.
+          </p>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse rounded-lg bg-white shadow-lg">
+            <thead>
+              <tr className="bg-primary-50">
+                <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">
+                  Treatment
+                </th>
+                <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
+                  India
+                </th>
+                <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
+                  USA
+                </th>
+                <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
+                  UK
+                </th>
+                <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
+                  UAE
+                </th>
+                <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  Your Savings
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Heart Bypass Surgery (CABG)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $8,000-$12,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $120,000-$150,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $90,000-$110,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $50,000-$70,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $42K-$138K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Knee Replacement (TKR)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $6,000-$8,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $40,000-$50,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $35,000-$45,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $20,000-$28,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $14K-$42K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  IVF (Single Cycle)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $2,500-$4,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $12,000-$15,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $10,000-$12,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $8,000-$10,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $4K-$11K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Dental Implants (Single Tooth)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $500-$800
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $3,000-$4,500
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $2,500-$3,500
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $1,500-$2,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $700-$3.7K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Liver Transplant
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $35,000-$50,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $500,000-$800,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $400,000-$600,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $200,000-$300,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $150K-$750K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Cataract Surgery (Both Eyes)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $1,500-$2,500
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $6,000-$8,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $5,000-$7,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $3,500-$5,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $2K-$5.5K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Rhinoplasty (Nose Job)
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $2,500-$4,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $8,000-$15,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $6,000-$10,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $5,000-$8,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $2.5K-$11K
+                </td>
+              </tr>
+              <tr className="hover:bg-gray-50">
+                <td className="border border-gray-200 px-4 py-3 font-medium text-gray-900">
+                  Spinal Fusion Surgery
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-green-600">
+                  $8,000-$12,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $80,000-$120,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $60,000-$90,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center text-gray-600">
+                  $35,000-$50,000
+                </td>
+                <td className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
+                  $23K-$108K
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-8 text-center">
+          <p className="mb-4 text-gray-700">
+            <strong>Note:</strong> Costs include hospital stay, surgeon fees, anesthesia, and follow-up visits. Actual costs may vary based on patient condition and hospital choice.
+          </p>
+          <Button asChild size="lg" variant="outline">
+            <Link href="/treatments">View All Treatment Costs</Link>
+          </Button>
+        </div>
+      </section>
+
+      {/* Cost Calculator */}
+      <CostCalculator />
 
       {/* Top Destinations */}
       <section className="container px-4 py-16">
@@ -336,6 +651,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* FAQ Schema for Rich Snippets */}
+      <FAQSchema faqs={faqData.map(faq => ({ question: faq.question, answer: faq.answer }))} />
+
       {/* FAQ Section */}
       <section className="container px-4 py-16">
         <div className="mx-auto max-w-4xl">
@@ -400,6 +718,26 @@ export default function HomePage() {
               <CardContent>
                 <p className="text-gray-700">
                   English is widely spoken in all major Indian hospitals, and most doctors are fluent. Additionally, we provide Arabic interpreters for GCC patients who prefer to communicate in Arabic. Our coordinators are bilingual and available 24/7 to help with any communication needs.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Is medical treatment in India safe for international patients?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  Absolutely. India&apos;s top hospitals maintain the same safety standards as hospitals in the US and Europe. They have JCI accreditation, NABH certification, and ISO quality standards. Infection control protocols, patient safety measures, and post-operative care meet international benchmarks. Over 2 million international patients choose India annually for medical treatment.
+                </p>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>How do I get started with Shifa AlHind?</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-700">
+                  Getting started is simple: (1) Submit your medical reports through our free consultation form, (2) We&apos;ll connect you with the best hospitals and doctors for your condition, (3) Receive detailed cost estimates and treatment plans, (4) We handle all logistics including visa, flights, and accommodation, (5) Receive world-class treatment with 24/7 support. The entire process typically takes 7-14 days from initial consultation to arrival in India.
                 </p>
               </CardContent>
             </Card>
@@ -630,6 +968,17 @@ export default function HomePage() {
               </CardContent>
             </Card>
           </div>
+        </div>
+      </section>
+
+      {/* Social Share Section */}
+      <section className="container px-4 py-12">
+        <div className="mx-auto max-w-4xl">
+          <SocialShare
+            url="/"
+            title="World-Class Medical Tourism to India from UAE, Saudi Arabia & GCC - Save 60-80%"
+            description="Connect with JCI-accredited hospitals and internationally trained doctors in India. Trusted by 2M+ international patients annually. Get free consultation!"
+          />
         </div>
       </section>
 
