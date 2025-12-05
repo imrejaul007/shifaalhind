@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
+import { ALL_TREATMENTS } from '@/config/treatments-list';
 
 const bookingSchema = z.object({
   // Step 1: Personal Info
@@ -250,14 +251,11 @@ export default function BookingPage() {
                       className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
                     >
                       <option value="">Choose Treatment</option>
-                      <option value="1">Heart Surgery</option>
-                      <option value="2">Knee Replacement</option>
-                      <option value="3">IVF & Fertility</option>
-                      <option value="4">Dental Implants</option>
-                      <option value="5">Hair Transplant</option>
-                      <option value="6">Cataract Surgery</option>
-                      <option value="7">Cancer Treatment</option>
-                      <option value="8">Cosmetic Surgery</option>
+                      {ALL_TREATMENTS.map((treatment, index) => (
+                        <option key={treatment.slug} value={String(index + 1)}>
+                          {treatment.name}
+                        </option>
+                      ))}
                     </select>
                     {errors.treatmentId && (
                       <p className="mt-1 text-sm text-red-600">{errors.treatmentId.message}</p>
