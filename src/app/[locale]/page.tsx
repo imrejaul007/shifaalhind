@@ -386,7 +386,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="/blog/cancer-treatment-cost-india-hospitals"
+                  href="/blog/cancer-treatment-cost-india-vs-world"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
                   Learn More
