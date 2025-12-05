@@ -15,7 +15,7 @@ import {
   TrendingUp,
   DollarSign
 } from 'lucide-react';
-import { treatments, gccCountries } from '@/config/gcc-countries';
+import { gccCountries } from '@/config/gcc-countries';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
