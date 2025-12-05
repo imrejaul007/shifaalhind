@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-// Our 5 SEO-optimized blog articles
+// All 24 SEO-optimized blog articles
 const blogArticles = [
   {
     id: 1,
@@ -36,20 +36,20 @@ const blogArticles = [
     slug: 'heart-surgery-cost-comparison-india-vs-world',
     category: 'Cost Comparison',
     icon: Heart,
-    publishedDate: 'January 2025',
+    publishedDate: 'October 2025',
     readTime: '12 min read',
-    tags: ['Heart Surgery', 'Cost Comparison', 'CABG', 'Cardiac Care'],
+    tags: ['Heart Surgery', 'Cost Comparison', 'CABG'],
   },
   {
     id: 2,
     title: 'Medical Tourism India: Complete 2025 Guide for UAE Patients',
     excerpt: 'Complete step-by-step guide for UAE patients seeking medical treatment in India. Visa process, flights, accommodation, cost savings, and real patient success stories from Dubai and Abu Dhabi.',
     slug: 'medical-tourism-india-uae-patients-guide',
-    category: 'Travel Guide',
+    category: 'Destination Guide',
     icon: Plane,
-    publishedDate: 'January 2025',
+    publishedDate: 'October 2025',
     readTime: '15 min read',
-    tags: ['UAE Patients', 'Travel Guide', 'Visa Process', 'Patient Stories'],
+    tags: ['UAE Patients', 'Travel Guide', 'Visa'],
   },
   {
     id: 3,
@@ -58,40 +58,205 @@ const blogArticles = [
     slug: 'knee-replacement-cost-india-vs-world',
     category: 'Cost Comparison',
     icon: Activity,
-    publishedDate: 'January 2025',
+    publishedDate: 'October 2025',
     readTime: '14 min read',
-    tags: ['Knee Replacement', 'Orthopedic Surgery', 'Cost Comparison'],
+    tags: ['Knee Replacement', 'Orthopedic'],
   },
   {
     id: 4,
     title: 'IVF & Fertility Treatment in India: Complete 2025 Guide',
-    excerpt: 'Complete IVF cost guide for GCC patients. Success rates by age, top fertility clinics, ICSI, egg donation, and frozen embryo transfer prices. Real patient success stories and complete timeline.',
+    excerpt: 'Complete IVF cost guide for GCC patients. Success rates by age, top fertility clinics, ICSI, egg donation, and frozen embryo transfer prices. Real patient success stories.',
     slug: 'ivf-fertility-treatment-india-complete-guide',
     category: 'Treatment Guide',
     icon: Baby,
-    publishedDate: 'January 2025',
+    publishedDate: 'October 2025',
     readTime: '16 min read',
-    tags: ['IVF', 'Fertility Treatment', 'Success Rates', 'Patient Stories'],
+    tags: ['IVF', 'Fertility', 'Success Rates'],
   },
   {
     id: 5,
     title: 'How to Choose the Best Hospital in India for Medical Tourism',
-    excerpt: '10 essential criteria for selecting the right hospital in India. JCI accreditation guide, top hospital chains, common mistakes to avoid, and 20+ questions to ask before deciding.',
+    excerpt: '10 essential criteria for selecting the right hospital in India. JCI accreditation guide, top hospital chains, common mistakes to avoid, and 20+ questions to ask.',
     slug: 'how-to-choose-best-hospital-india',
     category: 'Hospital Guide',
     icon: Building2,
-    publishedDate: 'January 2025',
+    publishedDate: 'October 2025',
     readTime: '13 min read',
-    tags: ['Hospital Selection', 'JCI Accreditation', 'Quality Care'],
+    tags: ['Hospital Selection', 'JCI Accreditation'],
+  },
+  {
+    id: 6,
+    title: 'Cancer Treatment Cost in India vs USA, UK, UAE: Complete 2025 Guide',
+    excerpt: 'Compare cancer treatment costs in India vs worldwide. Chemotherapy, radiation, surgery, and targeted therapy prices. Save 60-80% with world-class oncology care.',
+    slug: 'cancer-treatment-cost-india-vs-world',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '14 min read',
+    tags: ['Cancer Treatment', 'Oncology'],
+  },
+  {
+    id: 7,
+    title: 'Dental Tourism India: Complete Guide for GCC Patients',
+    excerpt: 'Complete dental tourism guide for GCC patients. Implants, veneers, root canals, and cosmetic dentistry. Save up to 75% with top dental clinics.',
+    slug: 'dental-tourism-india-complete-guide',
+    category: 'Treatment Guide',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '12 min read',
+    tags: ['Dental Tourism', 'Implants'],
+  },
+  {
+    id: 8,
+    title: 'Diabetes Treatment in India: Complete 2025 Guide',
+    excerpt: 'Complete diabetes treatment guide. Bariatric surgery for diabetes reversal, continuous glucose monitoring, insulin pumps, and comprehensive diabetes management.',
+    slug: 'diabetes-treatment-india-guide',
+    category: 'Treatment Guide',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '11 min read',
+    tags: ['Diabetes', 'Bariatric Surgery'],
+  },
+  {
+    id: 9,
+    title: 'Liver Transplant in India: Complete Cost & Hospital Guide 2025',
+    excerpt: 'Complete liver transplant guide for GCC patients. Living donor vs deceased donor costs, top transplant centers, success rates, and patient stories.',
+    slug: 'liver-transplant-india-cost-guide',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '15 min read',
+    tags: ['Liver Transplant', 'Organ Transplant'],
+  },
+  {
+    id: 10,
+    title: 'Spine Surgery India: Complete Cost & Hospitals Guide 2025',
+    excerpt: 'Complete spine surgery guide. Spinal fusion, disc replacement, minimally invasive procedures, and robotic spine surgery. Top neurosurgeons and orthopedic specialists.',
+    slug: 'spine-surgery-india-cost-hospitals',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '13 min read',
+    tags: ['Spine Surgery', 'Neurosurgery'],
+  },
+  {
+    id: 11,
+    title: 'Cosmetic Surgery Cost in India: Complete 2025 Guide',
+    excerpt: 'Complete cosmetic surgery cost guide. Rhinoplasty, liposuction, breast augmentation, facelift, and tummy tuck. Save 60-75% with top plastic surgeons.',
+    slug: 'cosmetic-surgery-cost-india',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '14 min read',
+    tags: ['Cosmetic Surgery', 'Rhinoplasty'],
+  },
+  {
+    id: 12,
+    title: 'Bariatric Surgery India: Complete Cost & Guide 2025',
+    excerpt: 'Complete bariatric surgery guide. Gastric bypass, sleeve gastrectomy, gastric band, and revision surgery. 85% diabetes remission rate with top bariatric centers.',
+    slug: 'bariatric-surgery-india-cost-guide',
+    category: 'Treatment Guide',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '13 min read',
+    tags: ['Bariatric Surgery', 'Weight Loss'],
+  },
+  {
+    id: 13,
+    title: 'Kidney Transplant in India: Complete Cost & Hospital Guide 2025',
+    excerpt: 'Complete kidney transplant guide. Living donor, deceased donor, pediatric, and ABO incompatible transplants. 95-98% success rates with top nephrology centers.',
+    slug: 'kidney-transplant-cost-india-guide',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '14 min read',
+    tags: ['Kidney Transplant', 'Organ Transplant'],
+  },
+  {
+    id: 14,
+    title: 'Bone Marrow Transplant India: Complete BMT Guide 2025',
+    excerpt: 'Complete BMT guide for leukemia, lymphoma, and thalassemia. Autologous, allogeneic, and haploidentical transplants. Success rates and top BMT centers.',
+    slug: 'bone-marrow-transplant-india-guide',
+    category: 'Treatment Guide',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '15 min read',
+    tags: ['BMT', 'Blood Cancer'],
+  },
+  {
+    id: 15,
+    title: 'Neurosurgery in India: Complete Cost & Hospitals Guide 2025',
+    excerpt: 'Complete neurosurgery guide. Brain tumor, aneurysm, Gamma Knife, CyberKnife, and minimally invasive procedures. Top neuroscience centers.',
+    slug: 'neurosurgery-india-cost-hospitals',
+    category: 'Cost Comparison',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '13 min read',
+    tags: ['Neurosurgery', 'Brain Surgery'],
+  },
+  {
+    id: 16,
+    title: 'Dubai to India Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Complete guide for Dubai patients. Direct flights, medical visa, cost savings, and top hospitals with UAE patient support. Save 60-80% on treatment.',
+    slug: 'dubai-to-india-medical-tourism',
+    category: 'Destination Guide',
+    icon: Plane,
+    publishedDate: 'October 2025',
+    readTime: '16 min read',
+    tags: ['Dubai Patients', 'UAE'],
+  },
+  {
+    id: 17,
+    title: 'Riyadh to India Healthcare: Complete Guide for Saudi Patients 2025',
+    excerpt: 'Complete guide for Riyadh patients. Direct flights, e-Medical visa, cost savings in SAR, and top hospitals with Arabic coordinators.',
+    slug: 'riyadh-to-india-healthcare',
+    category: 'Destination Guide',
+    icon: Plane,
+    publishedDate: 'October 2025',
+    readTime: '15 min read',
+    tags: ['Riyadh Patients', 'Saudi Arabia'],
+  },
+  {
+    id: 18,
+    title: 'Medical Visa India: Complete Application Guide 2025',
+    excerpt: 'Complete medical visa guide. E-Medical visa, visa on arrival, medical attendant visa, and extension process. Application guide for GCC patients.',
+    slug: 'medical-visa-india-complete-guide',
+    category: 'Travel Guide',
+    icon: Plane,
+    publishedDate: 'October 2025',
+    readTime: '18 min read',
+    tags: ['Medical Visa', 'Visa Guide'],
+  },
+  {
+    id: 19,
+    title: 'Medical Tourism Insurance India: Complete Guide 2025',
+    excerpt: 'Complete medical tourism insurance guide. Post-procedure complications, emergency care, evacuation coverage, and best insurance providers.',
+    slug: 'medical-tourism-insurance-india',
+    category: 'Travel Guide',
+    icon: Activity,
+    publishedDate: 'October 2025',
+    readTime: '10 min read',
+    tags: ['Insurance', 'Travel'],
+  },
+  {
+    id: 20,
+    title: 'Best Time to Visit India for Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Complete seasonal guide for medical tourists. Best months by city, weather considerations, festival calendar, and booking tips for optimal recovery.',
+    slug: 'best-time-visit-india-medical-tourism',
+    category: 'Travel Guide',
+    icon: Calendar,
+    publishedDate: 'October 2025',
+    readTime: '12 min read',
+    tags: ['Travel Planning', 'Weather'],
   },
 ];
 
 const categories = [
-  { name: 'All Articles', count: 5 },
-  { name: 'Cost Comparison', count: 2 },
-  { name: 'Treatment Guide', count: 1 },
-  { name: 'Travel Guide', count: 1 },
-  { name: 'Hospital Guide', count: 1 },
+  { name: 'All Articles', count: 20 },
+  { name: 'Cost Comparison', count: 7 },
+  { name: 'Treatment Guide', count: 5 },
+  { name: 'Destination Guide', count: 4 },
+  { name: 'Travel Guide', count: 4 },
 ];
 
 export default function BlogPage() {
@@ -108,15 +273,15 @@ export default function BlogPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">13,000+</div>
+              <div className="text-2xl font-bold">54,000+</div>
               <div className="text-sm text-primary-100">Words of Content</div>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">5</div>
+              <div className="text-2xl font-bold">20</div>
               <div className="text-sm text-primary-100">Expert Guides</div>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">40+</div>
+              <div className="text-2xl font-bold">100+</div>
               <div className="text-sm text-primary-100">Topics Covered</div>
             </div>
           </div>
