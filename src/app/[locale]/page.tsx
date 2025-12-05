@@ -256,46 +256,191 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Treatments */}
+      {/* Popular Medical Treatments */}
       <section className="bg-gray-50 px-4 py-16">
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-              Featured Treatments
+              Popular Medical Treatments
             </h2>
             <p className="text-lg text-gray-600">
-              Explore our most popular medical procedures
+              Most requested procedures by international patients from UAE, Saudi Arabia & GCC countries
             </p>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {treatments.slice(0, 8).map((treatment) => (
-              <Card key={treatment.slug} className="group cursor-pointer transition-transform hover:scale-105">
-                <CardHeader>
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                    <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
-                  </div>
-                  <CardTitle className="text-lg">{treatment.name}</CardTitle>
-                  <CardDescription>
-                    World-class {treatment.name.toLowerCase()} procedures
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <Link
-                    href={`/treatments/${treatment.slug}`}
-                    className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-1 h-4 w-4" />
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Heart Surgery</CardTitle>
+                <CardDescription>
+                  CABG, valve replacement, angioplasty procedures
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/blog/heart-surgery-cost-comparison-india-vs-world"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Knee Replacement</CardTitle>
+                <CardDescription>
+                  Total knee replacement with advanced implants
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/blog/knee-replacement-cost-india-vs-world"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">IVF & Fertility</CardTitle>
+                <CardDescription>
+                  Advanced fertility treatments and IVF procedures
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/blog/ivf-fertility-treatment-india-complete-guide"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Dental Implants</CardTitle>
+                <CardDescription>
+                  Titanium and zirconia dental implant solutions
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/treatments/dental-implants-india"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Hair Transplant</CardTitle>
+                <CardDescription>
+                  FUE, FUT, and DHI hair restoration techniques
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/treatments/hair-transplant-india"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Cancer Treatment</CardTitle>
+                <CardDescription>
+                  Advanced oncology care and cancer treatments
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/blog/cancer-treatment-cost-india-hospitals"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">Rhinoplasty</CardTitle>
+                <CardDescription>
+                  Cosmetic nose reshaping and rhinoplasty surgery
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/treatments/rhinoplasty-india"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
+
+            <Card className="group cursor-pointer transition-transform hover:scale-105">
+              <CardHeader>
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
+                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                </div>
+                <CardTitle className="text-lg">LASIK Eye Surgery</CardTitle>
+                <CardDescription>
+                  Blade-free LASIK and vision correction
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <Link
+                  href="/treatments/lasik-eye-surgery-india"
+                  className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
+                >
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
+                </Link>
+              </CardContent>
+            </Card>
           </div>
 
           <div className="mt-12 text-center">
             <Button asChild variant="outline" size="lg">
-              <Link href="/treatments">View All Treatments</Link>
+              <Link href="/treatments">View All 30+ Treatments</Link>
             </Button>
           </div>
         </div>
