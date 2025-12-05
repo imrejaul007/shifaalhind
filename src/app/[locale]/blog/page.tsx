@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, User, ArrowRight, Tag, Heart, Plane, Activity, Baby, Building2, TrendingUp } from 'lucide-react';
+import { Calendar, User, ArrowRight, Tag, Heart, Plane, Activity, Baby, Building2, TrendingUp, MapPin } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism Blog - Expert Guides & Resources | Shifa AlHind',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-// All 24 SEO-optimized blog articles
+// All 24 SEO-optimized blog articles (20 treatment/travel guides + 4 city hospital guides)
 const blogArticles = [
   {
     id: 1,
@@ -249,13 +249,58 @@ const blogArticles = [
     readTime: '12 min read',
     tags: ['Travel Planning', 'Weather'],
   },
+  {
+    id: 21,
+    title: 'Best Hospitals in Mumbai for Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Top 10 JCI-accredited hospitals in Mumbai for international patients. Apollo Navi Mumbai, Fortis Mulund, Tata Memorial, Kokilaben Ambani. Compare costs, specialties, and success rates.',
+    slug: 'best-hospitals-mumbai-medical-tourism',
+    category: 'Hospital Guide',
+    icon: MapPin,
+    publishedDate: 'October 2025',
+    readTime: '14 min read',
+    tags: ['Mumbai Hospitals', 'JCI Accredited'],
+  },
+  {
+    id: 22,
+    title: 'Best Hospitals in Delhi NCR for Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Top 10 hospitals in Delhi NCR for international patients. AIIMS, Medanta, Fortis, Max Super Speciality, BLK-Max. World-class infrastructure and affordable government hospital options.',
+    slug: 'best-hospitals-delhi-medical-tourism',
+    category: 'Hospital Guide',
+    icon: MapPin,
+    publishedDate: 'October 2025',
+    readTime: '15 min read',
+    tags: ['Delhi Hospitals', 'NABH Accredited'],
+  },
+  {
+    id: 23,
+    title: 'Best Hospitals in Bangalore for Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Top 10 hospitals in Bangalore for medical tourists. Narayana Health City, Apollo, Manipal, BGS Gleneagles, Columbia Asia. Innovation hub with year-round perfect weather.',
+    slug: 'best-hospitals-bangalore-medical-tourism',
+    category: 'Hospital Guide',
+    icon: MapPin,
+    publishedDate: 'October 2025',
+    readTime: '14 min read',
+    tags: ['Bangalore Hospitals', 'Innovation'],
+  },
+  {
+    id: 24,
+    title: 'Best Hospitals in Chennai for Medical Tourism: Complete 2025 Guide',
+    excerpt: 'Top 10 hospitals in Chennai for international patients. Apollo Chennai, Global Health City, Fortis Malar, MIOT International, Sankara Nethralaya. Medical heritage capital and organ transplant leader.',
+    slug: 'best-hospitals-chennai-medical-tourism',
+    category: 'Hospital Guide',
+    icon: MapPin,
+    publishedDate: 'October 2025',
+    readTime: '13 min read',
+    tags: ['Chennai Hospitals', 'Organ Transplant'],
+  },
 ];
 
 const categories = [
-  { name: 'All Articles', count: 20 },
+  { name: 'All Articles', count: 24 },
   { name: 'Cost Comparison', count: 7 },
   { name: 'Treatment Guide', count: 5 },
   { name: 'Destination Guide', count: 4 },
+  { name: 'Hospital Guide', count: 4 },
   { name: 'Travel Guide', count: 4 },
 ];
 
@@ -273,15 +318,15 @@ export default function BlogPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">54,000+</div>
+              <div className="text-2xl font-bold">65,000+</div>
               <div className="text-sm text-primary-100">Words of Content</div>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">20</div>
+              <div className="text-2xl font-bold">24</div>
               <div className="text-sm text-primary-100">Expert Guides</div>
             </div>
             <div className="rounded-lg bg-white/10 px-6 py-3 backdrop-blur-sm">
-              <div className="text-2xl font-bold">100+</div>
+              <div className="text-2xl font-bold">120+</div>
               <div className="text-sm text-primary-100">Topics Covered</div>
             </div>
           </div>
