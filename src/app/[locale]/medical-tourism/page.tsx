@@ -759,6 +759,7 @@ export default async function MedicalTourismPage() {
       {/* Social Share */}
       <section className="container mx-auto px-4 py-8">
         <SocialShare
+          url="/medical-tourism"
           title="Medical Tourism to India 2025 - Save 60-80% on World-Class Healthcare"
           description="JCI-accredited hospitals, expert doctors, no waiting times. Trusted by 200,000+ patients from UAE, Saudi Arabia & GCC."
         />
