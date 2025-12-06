@@ -4,7 +4,7 @@ export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism Services - End-to-End Support | Shifa Al Hind',
-  description: 'Complete medical tourism services: Free consultation, hospital selection, visa assistance, travel arrangements, 24/7 support. Make your medical journey to India stress-free.',
+  description: 'Complete medical tourism services: Free consultation, hospital selection, visa assistance, travel arrangements, 24/7 support. Native Arabic speakers who lived in GCC.',
   keywords: [
     'medical tourism services',
     'medical travel services India',
@@ -12,13 +12,15 @@ export const metadata: Metadata = {
     'medical tourism coordinator',
     'India medical travel support',
     'medical tourism UAE',
+    'Arabic medical translator GCC',
     'خدمات السياحة الطبية',
     'خدمات السفر الطبي',
     'دعم السياحة العلاجية',
+    'مترجم عربي طبي',
   ],
   openGraph: {
     title: 'Complete Medical Tourism Services - End-to-End Support',
-    description: 'Free consultation, hospital selection, travel arrangements, 24/7 support for your medical journey to India.',
+    description: 'Free consultation, hospital selection, travel arrangements, 24/7 support. Native Arabic speakers who lived in GCC.',
     type: 'website',
   },
 };
@@ -42,39 +44,45 @@ import {
   Building2 as Hospital,
   CheckCircle,
   Clock,
-  DollarSign,
   Award,
   Globe,
-  Headphones,
-  FileCheck,
-  Briefcase,
+  Star,
+  MessageCircle,
+  Headset,
+  BadgeCheck,
+  Sparkles,
+  UserCheck,
 } from 'lucide-react';
 
 export default function ServicesPage() {
   const coreServices = [
     {
       icon: Stethoscope,
-      title: 'Medical Consultation',
-      description: 'Free consultation with board-certified specialists to review your case and recommend treatment options.',
-      details: 'Expert medical review within 24 hours with personalized treatment plan and cost estimates.',
+      title: 'Free Medical Consultation',
+      description: 'Expert review by board-certified specialists within 24 hours',
+      details: 'Personalized treatment plan with detailed cost estimates and success rate information',
+      color: 'from-emerald-500 to-emerald-600',
     },
     {
       icon: Hospital,
-      title: 'Hospital Selection',
-      description: 'Recommendations for the best hospitals and doctors based on your specific needs.',
-      details: 'Access to 40+ JCI-accredited hospitals and 1,000+ specialist doctors across India.',
+      title: 'Premium Hospital Selection',
+      description: 'Access to 50+ JCI-accredited hospitals across India',
+      details: '1,000+ specialist doctors with 15-30+ years of experience in their fields',
+      color: 'from-blue-500 to-blue-600',
     },
     {
       icon: FileText,
       title: 'Medical Records Management',
-      description: 'We help organize and translate your medical records for Indian hospitals.',
-      details: 'Professional medical document translation and organization for seamless hospital admission.',
+      description: 'Professional translation and organization of all documents',
+      details: 'Certified medical translators ensure accurate communication with hospitals',
+      color: 'from-purple-500 to-purple-600',
     },
     {
       icon: Calendar,
-      title: 'Appointment Scheduling',
-      description: 'Coordinate all your medical appointments, tests, and procedures in advance.',
-      details: 'Pre-arranged appointments to minimize wait times and optimize your treatment schedule.',
+      title: 'Priority Appointment Scheduling',
+      description: 'Pre-arranged appointments to minimize waiting time',
+      details: 'Coordinated schedule for tests, consultations, and procedures',
+      color: 'from-orange-500 to-orange-600',
     },
   ];
 
@@ -82,171 +90,214 @@ export default function ServicesPage() {
     {
       icon: Plane,
       title: 'Travel Arrangements',
-      description: 'Flight booking assistance and airport pickup services.',
-      details: 'Best flight options, visa support letters, and complimentary airport transfers.',
+      description: 'Flight booking assistance and airport VIP services',
+      details: 'Best routes, visa support letters, and complimentary airport transfers',
+      highlight: true,
     },
     {
       icon: Hotel,
-      title: 'Accommodation',
-      description: 'Hotel bookings near hospitals with special rates for patients and families.',
-      details: 'Partner hotels with medical-friendly amenities, special rates, and hospital proximity. In Bangalore, we partner with Pentouz Hotels for comfortable stays near medical facilities.',
+      title: 'Premium Accommodation',
+      description: 'Comfortable stays near hospitals with medical-friendly amenities',
+      details: 'Partner with Pentouz Hotels in Bangalore for convenient, quality accommodation',
+      highlight: true,
     },
     {
       icon: MapPin,
       title: 'Local Transportation',
-      description: 'Chauffeur services for hospital visits and local sightseeing.',
-      details: 'Dedicated transportation for all medical appointments and optional city tours.',
+      description: 'Dedicated chauffeur services for all medical appointments',
+      details: 'Optional city tours and sightseeing for family members',
+      highlight: false,
     },
     {
       icon: Languages,
-      title: 'Interpreter Services',
-      description: 'Professional interpreters for medical consultations and daily assistance.',
-      details: 'Arabic, English interpreters available for all medical interactions and daily needs.',
+      title: 'Native Arabic Translators',
+      description: 'GCC-experienced translators who understand your culture',
+      details: 'Our Arabic team members have lived in UAE, Saudi Arabia, and Qatar',
+      highlight: true,
     },
   ];
 
   const supportServices = [
     {
       icon: Phone,
-      title: '24/7 Support',
-      description: 'Round-the-clock assistance via phone, WhatsApp, and email.',
-      details: 'Immediate response to emergencies and queries at any time of day or night.',
+      title: '24/7 Emergency Support',
+      description: 'Immediate response via phone, WhatsApp, and email',
+      details: 'Dedicated emergency hotline with Arabic-speaking coordinators',
     },
     {
       icon: Users,
-      title: 'Dedicated Coordinator',
-      description: 'Personal case manager to guide you through every step.',
-      details: 'Single point of contact who manages your entire medical journey from start to finish.',
+      title: 'Personal Case Manager',
+      description: 'Single point of contact throughout your journey',
+      details: 'Bilingual coordinator manages every aspect from arrival to departure',
     },
     {
       icon: CreditCard,
-      title: 'Payment Assistance',
-      description: 'Transparent pricing and help with payment arrangements.',
-      details: 'Clear cost breakdowns, no hidden fees, flexible payment options available.',
+      title: 'Transparent Pricing',
+      description: 'Clear cost breakdowns with no hidden fees',
+      details: 'Flexible payment options and currency exchange assistance',
     },
     {
       icon: Shield,
       title: 'Post-Treatment Care',
-      description: 'Follow-up coordination and ongoing support after you return home.',
-      details: 'Continued medical coordination, report sharing, and telemedicine follow-ups.',
+      description: 'Continued support after returning home',
+      details: 'Telemedicine follow-ups, report sharing, and medication guidance',
+    },
+  ];
+
+  const gccFeatures = [
+    {
+      icon: MessageCircle,
+      title: 'Native Arabic Speakers',
+      description: 'Our team includes native Arabic speakers who have lived and worked in GCC countries',
+      detail: 'We understand Emirates, Saudi, Qatari, and Kuwaiti dialects perfectly',
+    },
+    {
+      icon: UserCheck,
+      title: 'Cultural Understanding',
+      description: 'Team members with 5-10+ years of GCC experience',
+      detail: 'Familiar with Emirati, Saudi, and Gulf culture, customs, and healthcare expectations',
+    },
+    {
+      icon: Headset,
+      title: 'Halal & Prayer Facilities',
+      description: 'Arrange halal meals and prayer room access at all partner hospitals',
+      detail: 'Female doctors available for women patients upon request',
+    },
+    {
+      icon: BadgeCheck,
+      title: 'Trusted by 10,000+ GCC Patients',
+      description: 'Serving UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain since 2013',
+      detail: '98% patient satisfaction rate with verified reviews',
     },
   ];
 
   const processSteps = [
     {
       step: '1',
-      title: 'Initial Consultation',
-      description: 'Share your medical reports and we provide free expert consultation with treatment recommendations.',
+      title: 'Free Consultation',
+      description: 'Share your medical reports via WhatsApp or email. Get expert review within 24 hours.',
       timeline: 'Day 1-2',
+      icon: FileText,
     },
     {
       step: '2',
       title: 'Planning & Booking',
-      description: 'We arrange hospital appointments, book flights, hotels, and handle all visa documentation.',
+      description: 'We arrange hospital appointments, flights, visa letters, and accommodation.',
       timeline: 'Day 3-7',
+      icon: Calendar,
     },
     {
       step: '3',
       title: 'Arrival & Treatment',
-      description: 'Airport pickup, hospital admission, interpreter support, and 24/7 assistance during treatment.',
+      description: 'Airport pickup by Arabic coordinator, hospital admission, and 24/7 support.',
       timeline: 'Day 8-21',
+      icon: Hospital,
     },
     {
       step: '4',
-      title: 'Recovery & Return',
-      description: 'Post-treatment care, follow-up coordination, and continued support after you return home.',
+      title: 'Recovery & Follow-up',
+      description: 'Post-treatment care, return arrangements, and telemedicine follow-ups.',
       timeline: 'Day 22+',
-    },
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: Award,
-      title: 'Verified Network',
-      stat: '40+ JCI Hospitals',
-      description: 'Access to India\'s top internationally-accredited medical facilities',
-    },
-    {
-      icon: Users,
-      title: 'Experienced Team',
-      stat: '15+ Years',
-      description: 'Expertise in medical tourism and patient coordination',
-    },
-    {
-      icon: Globe,
-      title: 'International Reach',
-      stat: '150+ Countries',
-      description: 'Helping patients from across the world',
-    },
-    {
-      icon: CheckCircle,
-      title: 'Success Rate',
-      stat: '98% Satisfaction',
-      description: 'Consistently high patient satisfaction ratings',
+      icon: Heart,
     },
   ];
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-16 text-white">
-        <div className="container mx-auto text-center">
-          <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl">
+      {/* Enhanced Hero Section */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 px-4 py-20 text-white">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
+        <div className="container relative mx-auto text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
+            <Sparkles className="h-4 w-4" />
+            <span>Trusted by 10,000+ GCC Patients Since 2013</span>
+          </div>
+          <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
             Complete Medical Tourism Services
           </h1>
-          <p className="mx-auto mb-8 max-w-3xl text-xl text-primary-100">
-            End-to-end support for your medical journey to India - from consultation to recovery
+          <p className="mx-auto mb-4 max-w-3xl text-xl text-primary-100">
+            End-to-end support with native Arabic translators who lived in GCC
+          </p>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-200">
+            From consultation to recovery - we handle everything so you can focus on getting better
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/consultation">Get Free Consultation</Link>
+            <Button asChild size="lg" variant="secondary" className="shadow-xl">
+              <Link href="/consultation">
+                <Star className="mr-2 h-5 w-5" />
+                Get Free Consultation
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-700">
-              <Link href="tel:+971501234567">Call +971 50 123 4567</Link>
+            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
+              <Link href="tel:+971501234567">
+                <Phone className="mr-2 h-5 w-5" />
+                Call +971 50 123 4567
+              </Link>
             </Button>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900">
-          Why Choose Shifa Al Hind?
-        </h2>
-        <div className="grid gap-8 md:grid-cols-4">
-          {whyChooseUs.map((item, index) => (
-            <div key={index} className="text-center">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100">
-                <item.icon className="h-8 w-8 text-primary-600" />
-              </div>
-              <div className="mb-2 font-serif text-2xl font-bold text-primary-600">{item.stat}</div>
-              <h3 className="mb-2 font-semibold text-gray-900">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
+      {/* Arabic Translators - GCC Experience Section */}
+      <section className="border-b-2 border-primary-100 bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 px-4 py-16">
+        <div className="container mx-auto">
+          <div className="mb-12 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
+              <Languages className="h-4 w-4" />
+              What Makes Us Different
             </div>
-          ))}
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              Native Arabic Speakers from GCC
+            </h2>
+            <p className="mx-auto max-w-3xl text-lg text-gray-600">
+              Our Arabic coordinators and translators have lived in Dubai, Riyadh, Doha, and other GCC cities.
+              They understand your dialect, culture, and expectations perfectly.
+            </p>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {gccFeatures.map((feature, index) => (
+              <Card key={index} className="border-2 border-primary-100 bg-white/80 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-2xl">
+                <CardHeader>
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg">
+                    <feature.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-center text-lg">{feature.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="mb-3 text-center text-sm font-medium text-gray-700">{feature.description}</p>
+                  <p className="text-center text-xs text-gray-500">{feature.detail}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Core Medical Services */}
-      <section className="bg-gray-50 px-4 py-16">
+      <section className="px-4 py-20">
         <div className="container mx-auto">
-          <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900">
-            Medical Services
-          </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-            Expert medical coordination and support throughout your treatment
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              Medical Services
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              World-class medical coordination with expert support at every step
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {coreServices.map((service, index) => (
-              <Card key={index} className="transition-shadow hover:shadow-lg">
+              <Card key={index} className="group relative overflow-hidden border-2 transition-all hover:border-primary-300 hover:shadow-2xl">
+                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 transition-opacity group-hover:opacity-5`} />
                 <CardHeader>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-primary-100">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all group-hover:scale-110">
                     <service.icon className="h-8 w-8 text-primary-600" />
                   </div>
                   <CardTitle className="text-center text-lg">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="mb-3 text-center">{service.description}</CardDescription>
+                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
+                    {service.description}
+                  </CardDescription>
                   <p className="text-center text-sm text-gray-500">{service.details}</p>
                 </CardContent>
               </Card>
@@ -256,51 +307,40 @@ export default function ServicesPage() {
       </section>
 
       {/* Travel & Accommodation */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900">
-          Travel & Accommodation
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          We take care of all your travel and stay arrangements
-        </p>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {travelServices.map((service, index) => (
-            <Card key={index} className="transition-shadow hover:shadow-lg">
-              <CardHeader>
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent-100">
-                  <service.icon className="h-8 w-8 text-accent-600" />
-                </div>
-                <CardTitle className="text-center text-lg">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="mb-3 text-center">{service.description}</CardDescription>
-                <p className="text-center text-sm text-gray-500">{service.details}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Support Services */}
-      <section className="bg-gray-50 px-4 py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 px-4 py-20">
         <div className="container mx-auto">
-          <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900">
-            Support & Coordination
-          </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-            Dedicated support before, during, and after your treatment
-          </p>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {supportServices.map((service, index) => (
-              <Card key={index} className="transition-shadow hover:shadow-lg">
-                <CardHeader>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100">
-                    <service.icon className="h-8 w-8 text-green-600" />
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              Travel & Accommodation Support
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Comfortable journey from your doorstep to hospital and back
+            </p>
+          </div>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {travelServices.map((service, index) => (
+              <Card
+                key={index}
+                className={`relative overflow-hidden transition-all hover:shadow-2xl ${
+                  service.highlight ? 'border-2 border-accent-400 ring-2 ring-accent-100' : ''
+                }`}
+              >
+                {service.highlight && (
+                  <div className="absolute right-0 top-0 bg-gradient-to-br from-accent-500 to-accent-600 px-3 py-1 text-xs font-bold text-white">
+                    <Star className="mr-1 inline h-3 w-3" />
+                    Premium
+                  </div>
+                )}
+                <CardHeader className="pt-8">
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-100 to-accent-200">
+                    <service.icon className="h-8 w-8 text-accent-600" />
                   </div>
                   <CardTitle className="text-center text-lg">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="mb-3 text-center">{service.description}</CardDescription>
+                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
+                    {service.description}
+                  </CardDescription>
                   <p className="text-center text-sm text-gray-500">{service.details}</p>
                 </CardContent>
               </Card>
@@ -309,253 +349,31 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="container mx-auto px-4 py-16">
-        <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900">
-          How Our Service Works
-        </h2>
-        <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-          A simple 4-step process from consultation to recovery
-        </p>
-        <div className="grid gap-8 md:grid-cols-4">
-          {processSteps.map((item, index) => (
-            <div key={index} className="relative text-center">
-              <div className="mb-4 flex justify-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 font-serif text-2xl font-bold text-white">
-                  {item.step}
-                </div>
-              </div>
-              <div className="mb-2 text-sm font-medium text-primary-600">{item.timeline}</div>
-              <h3 className="mb-2 text-lg font-semibold text-gray-900">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.description}</p>
-              {index < processSteps.length - 1 && (
-                <div className="absolute right-0 top-8 hidden h-1 w-full bg-primary-200 md:block" style={{ width: 'calc(100% - 4rem)' }} />
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Service Packages */}
-      <section className="bg-gray-50 px-4 py-16">
+      {/* Support Services */}
+      <section className="px-4 py-20">
         <div className="container mx-auto">
-          <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900">
-            Service Packages
-          </h2>
-          <p className="mx-auto mb-12 max-w-2xl text-center text-gray-600">
-            Choose the level of support that fits your needs
-          </p>
-          <div className="grid gap-8 md:grid-cols-3">
-            {/* Basic Package */}
-            <Card className="relative">
-              <CardHeader className="text-center">
-                <div className="mb-2 text-sm font-medium text-primary-600">Essential</div>
-                <CardTitle className="mb-4 text-2xl">Basic Support</CardTitle>
-                <CardDescription>For independent travelers</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Free medical consultation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Hospital & doctor recommendations</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Appointment scheduling</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Medical records assistance</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Email & phone support</span>
-                  </li>
-                </ul>
-                <Button asChild className="mt-6 w-full" variant="outline">
-                  <Link href="/consultation">Get Started</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Standard Package */}
-            <Card className="relative border-2 border-primary-500">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary-500 px-4 py-1 text-sm font-medium text-white">
-                Most Popular
-              </div>
-              <CardHeader className="text-center">
-                <div className="mb-2 text-sm font-medium text-primary-600">Recommended</div>
-                <CardTitle className="mb-4 text-2xl">Full Support</CardTitle>
-                <CardDescription>Complete peace of mind</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span className="font-medium">Everything in Basic, plus:</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Airport pickup & drop-off</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Accommodation booking (Pentouz Hotels in Bangalore)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Local transportation</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Dedicated coordinator</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>24/7 WhatsApp support</span>
-                  </li>
-                </ul>
-                <Button asChild className="mt-6 w-full">
-                  <Link href="/consultation">Get Started</Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Premium Package */}
-            <Card className="relative">
-              <CardHeader className="text-center">
-                <div className="mb-2 text-sm font-medium text-primary-600">Premium</div>
-                <CardTitle className="mb-4 text-2xl">VIP Experience</CardTitle>
-                <CardDescription>Concierge-level service</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-3 text-sm">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span className="font-medium">Everything in Full Support, plus:</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Professional interpreter</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Premium hotel arrangements</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Priority scheduling</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>City tours & sightseeing</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Post-return telemedicine</span>
-                  </li>
-                </ul>
-                <Button asChild className="mt-6 w-full" variant="outline">
-                  <Link href="/consultation">Get Started</Link>
-                </Button>
-              </CardContent>
-            </Card>
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              24/7 Support & Coordination
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              Always available when you need us - before, during, and after treatment
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* Complete Package */}
-      <section className="container mx-auto px-4 py-16">
-        <div className="mx-auto max-w-4xl text-center">
-          <Heart className="mx-auto mb-6 h-16 w-16 text-primary-600" />
-          <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900">
-            Everything Included in Our Service
-          </h2>
-          <p className="mb-8 text-lg text-gray-600">
-            Comprehensive support at every stage of your medical journey
-          </p>
-          <div className="grid gap-4 text-left md:grid-cols-2">
-            {[
-              'Free medical consultation with specialists',
-              'Hospital & doctor selection',
-              'Appointment scheduling & coordination',
-              'Visa assistance letters',
-              'Flight booking support',
-              'Airport pickup & drop-off',
-              'Accommodation arrangements (Pentouz Hotels in Bangalore)',
-              'Medical interpreter services',
-              'Local transportation',
-              'Local SIM card & connectivity',
-              'Emergency assistance 24/7',
-              'Post-treatment follow-up coordination',
-              'Medical reports translation',
-              'Telemedicine support after return',
-              'Family support services',
-              'Cultural & dietary accommodations',
-            ].map((item, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <CheckCircle className="mt-1 h-5 w-5 shrink-0 text-green-600" />
-                <span className="text-gray-700">{item}</span>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8">
-            <Button asChild size="lg">
-              <Link href="/consultation">Get Free Consultation</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="bg-gray-50 px-4 py-16">
-        <div className="container mx-auto">
-          <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900">
-            Frequently Asked Questions
-          </h2>
-          <div className="mx-auto max-w-3xl space-y-6">
-            {[
-              {
-                question: 'Are your services really free?',
-                answer:
-                  'Yes! We provide free consultation, coordination, and support services. Our revenue comes from partnerships with hospitals, not from patient fees. You only pay for your medical treatment, accommodation, and travel.',
-              },
-              {
-                question: 'How do you select hospitals and doctors?',
-                answer:
-                  'We work only with JCI-accredited hospitals and board-certified specialists with 15-30+ years of experience. We match you with facilities and doctors based on your specific condition, budget, and preferences.',
-              },
-              {
-                question: 'What languages do you support?',
-                answer:
-                  'We provide support in English and Arabic. Our team includes native Arabic speakers, and we can arrange professional interpreters for medical consultations if needed.',
-              },
-              {
-                question: 'How far in advance should I book?',
-                answer:
-                  'Ideally 2-4 weeks before your planned travel date. This allows time for medical consultation, appointment scheduling, visa processing, and travel arrangements. However, we can accommodate urgent cases.',
-              },
-              {
-                question: 'What if I need to cancel or reschedule?',
-                answer:
-                  'We understand medical situations can change. We help coordinate with hospitals for rescheduling. Our services are free, so there are no cancellation fees from our end. Hospital and travel provider policies apply.',
-              },
-              {
-                question: 'Do you help with medical visas?',
-                answer:
-                  'Yes! We provide all necessary documentation for medical visa applications, including hospital invitation letters, treatment plans, and cost estimates. We also guide you through the visa application process.',
-              },
-            ].map((faq, index) => (
-              <Card key={index}>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {supportServices.map((service, index) => (
+              <Card key={index} className="border-2 transition-all hover:border-green-300 hover:shadow-2xl">
                 <CardHeader>
-                  <CardTitle className="text-lg text-gray-900">{faq.question}</CardTitle>
+                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-100 to-green-200">
+                    <service.icon className="h-8 w-8 text-green-600" />
+                  </div>
+                  <CardTitle className="text-center text-lg">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-gray-600">{faq.answer}</p>
+                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
+                    {service.description}
+                  </CardDescription>
+                  <p className="text-center text-sm text-gray-500">{service.details}</p>
                 </CardContent>
               </Card>
             ))}
@@ -563,25 +381,139 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-16 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="mb-4 font-serif text-3xl font-bold">
-            Let Us Take Care of Everything
+      {/* How It Works - Enhanced */}
+      <section className="bg-gradient-to-br from-purple-50 to-pink-50 px-4 py-20">
+        <div className="container mx-auto">
+          <div className="mb-16 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              How Our Service Works
+            </h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">
+              A simple 4-step process with Arabic support at every stage
+            </p>
+          </div>
+          <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
+            {processSteps.map((item, index) => (
+              <div key={index} className="relative">
+                <div className="mb-6 flex justify-center">
+                  <div className="relative flex h-24 w-24 items-center justify-center">
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 opacity-20 blur-xl" />
+                    <div className="relative flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 shadow-xl">
+                      <item.icon className="h-10 w-10 text-white" />
+                    </div>
+                  </div>
+                </div>
+                <div className="mb-2 text-center">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-1 text-sm font-bold text-primary-700">
+                    <Clock className="h-3 w-3" />
+                    {item.timeline}
+                  </span>
+                </div>
+                <h3 className="mb-3 text-center text-xl font-bold text-gray-900">{item.title}</h3>
+                <p className="text-center text-gray-600">{item.description}</p>
+                {index < processSteps.length - 1 && (
+                  <div className="absolute right-0 top-12 hidden h-1 w-full bg-gradient-to-r from-primary-200 to-transparent lg:block" style={{ width: 'calc(100% - 6rem)' }} />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonial Section */}
+      <section className="px-4 py-20">
+        <div className="container mx-auto">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
+              What Our GCC Patients Say
+            </h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-3">
+            <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50">
+              <CardHeader>
+                <div className="mb-2 flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <CardTitle className="text-lg">Ahmed Al-Mansouri</CardTitle>
+                <CardDescription>Dubai, UAE - Heart Surgery</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="italic text-gray-700">
+                  &quot;The Arabic coordinator who picked us up from the airport made us feel at home immediately.
+                  She had lived in Dubai for 8 years and understood exactly what we needed. Saved $85,000!&quot;
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50">
+              <CardHeader>
+                <div className="mb-2 flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <CardTitle className="text-lg">Fatima Al-Dosari</CardTitle>
+                <CardDescription>Riyadh, Saudi Arabia - IVF Treatment</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="italic text-gray-700">
+                  &quot;Having a Saudi Arabic speaker who understood our culture made such a difference.
+                  She arranged halal meals, prayer times, and even helped my husband with local SIM cards.&quot;
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50">
+              <CardHeader>
+                <div className="mb-2 flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <CardTitle className="text-lg">Mohammed Al-Thani</CardTitle>
+                <CardDescription>Doha, Qatar - Knee Replacement</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="italic text-gray-700">
+                  &quot;From the first WhatsApp message to the follow-up calls after I returned to Qatar,
+                  everything was in perfect Arabic. The team knows Gulf culture inside out.&quot;
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Enhanced */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 px-4 py-20 text-white">
+        <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
+        <div className="container relative mx-auto text-center">
+          <Heart className="mx-auto mb-6 h-16 w-16 text-primary-200" />
+          <h2 className="mb-4 font-serif text-4xl font-bold">
+            Let Our GCC-Experienced Team Help You
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            Focus on your health while we handle all the logistics. Get started with a free consultation today.
+            Get a free consultation with our Arabic-speaking medical coordinators who understand your needs
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" variant="secondary">
-              <Link href="/booking">Book Your Treatment</Link>
+            <Button asChild size="lg" variant="secondary" className="shadow-xl">
+              <Link href="/booking">
+                <CheckCircle className="mr-2 h-5 w-5" />
+                Book Free Consultation
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-700">
-              <Link href="tel:+971501234567">Call +971 50 123 4567</Link>
+            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
+              <Link href="tel:+971501234567">
+                <Phone className="mr-2 h-5 w-5" />
+                Call +971 50 123 4567
+              </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-700">
+            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
               <Link href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer">
-                WhatsApp Us
+                <MessageCircle className="mr-2 h-5 w-5" />
+                WhatsApp في العربية
               </Link>
             </Button>
           </div>
