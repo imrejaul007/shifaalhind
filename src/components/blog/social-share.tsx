@@ -22,15 +22,19 @@ import { trackSocialShare } from '@/lib/analytics';
 
 interface SocialShareProps {
   title: string;
-  url: string;
+  url?: string; // Make URL optional
   description?: string;
 }
 
 export function SocialShare({ title, url, description }: SocialShareProps) {
   const [copied, setCopied] = useState(false);
 
+  // Use current page URL if url prop is not provided
+  const currentUrl = typeof window !== 'undefined' ? window.location.href : '';
+  const baseUrl = url || currentUrl;
+
   // Ensure absolute URL
-  const fullUrl = url.startsWith('http') ? url : `https://shifaalhind.onrender.com${url}`;
+  const fullUrl = baseUrl.startsWith('http') ? baseUrl : `https://shifaalhind.onrender.com${baseUrl}`;
   const encodedUrl = encodeURIComponent(fullUrl);
   const encodedTitle = encodeURIComponent(title);
   const encodedDescription = encodeURIComponent(description || title);
