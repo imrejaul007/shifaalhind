@@ -29,11 +29,48 @@ export function Header() {
       href: '/treatments',
       hasDropdown: true,
       submenu: [
-        { name: 'Heart Surgery', href: '/treatments/heart-surgery' },
-        { name: 'Knee Replacement', href: '/treatments/knee-replacement' },
-        { name: 'IVF & Fertility', href: '/treatments/ivf' },
-        { name: 'Cancer Treatment', href: '/treatments/cancer' },
-        { name: 'View All Treatments', href: '/treatments' },
+        // Cardiac
+        { name: 'Angioplasty', href: '/treatments/angioplasty-india' },
+        // Orthopedic
+        { name: 'ACL Reconstruction', href: '/treatments/acl-reconstruction-india' },
+        { name: 'Hip Replacement', href: '/treatments/hip-replacement-india' },
+        { name: 'Shoulder Surgery', href: '/treatments/shoulder-surgery-india' },
+        // Cancer Treatment
+        { name: 'Blood Cancer Treatment', href: '/treatments/blood-cancer-treatment-india' },
+        { name: 'Breast Cancer Treatment', href: '/treatments/breast-cancer-treatment-india' },
+        { name: 'Cervical Cancer Treatment', href: '/treatments/cervical-cancer-treatment-india' },
+        { name: 'Colon Cancer Treatment', href: '/treatments/colon-cancer-treatment-india' },
+        { name: 'Lung Cancer Treatment', href: '/treatments/lung-cancer-treatment-india' },
+        { name: 'Prostate Cancer Treatment', href: '/treatments/prostate-cancer-treatment-india' },
+        // Eye Care
+        { name: 'Cataract Surgery', href: '/treatments/cataract-surgery-india' },
+        { name: 'LASIK Eye Surgery', href: '/treatments/lasik-eye-surgery-india' },
+        // Dental
+        { name: 'All-on-4 Dental Implants', href: '/treatments/all-on-4-dental-implants-india' },
+        { name: 'Dental Implants', href: '/treatments/dental-implants-india' },
+        { name: 'Veneers', href: '/treatments/veneers-india' },
+        // Cosmetic
+        { name: 'Breast Augmentation', href: '/treatments/breast-augmentation-india' },
+        { name: 'Hair Transplant', href: '/treatments/hair-transplant-india' },
+        { name: 'Liposuction', href: '/treatments/liposuction-india' },
+        { name: 'Rhinoplasty', href: '/treatments/rhinoplasty-india' },
+        // Bariatric
+        { name: 'Gastric Bypass', href: '/treatments/gastric-bypass-india' },
+        // General Surgery
+        { name: 'Appendix Surgery', href: '/treatments/appendix-surgery-india' },
+        { name: 'Gallbladder Surgery', href: '/treatments/gallbladder-surgery-india' },
+        { name: 'Hernia Surgery', href: '/treatments/hernia-surgery-india' },
+        { name: 'Piles Surgery', href: '/treatments/piles-surgery-india' },
+        { name: 'Thyroid Surgery', href: '/treatments/thyroid-surgery-india' },
+        { name: 'Varicose Veins Treatment', href: '/treatments/varicose-veins-treatment-india' },
+        // Urology
+        { name: 'Kidney Stone Treatment', href: '/treatments/kidney-stone-treatment-india' },
+        // Women\'s Health
+        { name: 'Egg Freezing', href: '/treatments/egg-freezing-india' },
+        { name: 'Hysterectomy Surgery', href: '/treatments/hysterectomy-surgery-india' },
+        { name: 'PCOS Treatment', href: '/treatments/pcos-treatment-india' },
+        // View All
+        { name: '→ View All Treatments', href: '/treatments' },
       ]
     },
     { name: t('common.hospitals'), href: '/hospitals' },
