@@ -128,7 +128,7 @@ export function Footer() {
               {gccCountries.slice(0, 6).map((country) => (
                 <li key={country.slug}>
                   <Link
-                    href="/medical-tourism"
+                    href={`/for-${country.slug}-patients`}
                     className="text-gray-600 hover:text-primary-500"
                   >
                     For {country.name} Patients

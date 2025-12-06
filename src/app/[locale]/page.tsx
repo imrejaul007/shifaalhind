@@ -680,7 +680,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="/medical-tourism"
+                  href={`/for-${country.slug}-patients`}
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
                   Explore Destinations
