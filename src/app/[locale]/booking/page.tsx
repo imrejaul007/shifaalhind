@@ -236,12 +236,41 @@ export default function BookingPage() {
                       className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
                     >
                       <option value="">Select Country</option>
-                      <option value="AE">United Arab Emirates</option>
-                      <option value="SA">Saudi Arabia</option>
-                      <option value="QA">Qatar</option>
-                      <option value="OM">Oman</option>
-                      <option value="KW">Kuwait</option>
-                      <option value="BH">Bahrain</option>
+
+                      <optgroup label="🌟 GCC Countries (Primary Target)">
+                        <option value="AE">🇦🇪 United Arab Emirates (UAE)</option>
+                        <option value="SA">🇸🇦 Saudi Arabia</option>
+                        <option value="QA">🇶🇦 Qatar</option>
+                        <option value="OM">🇴🇲 Oman</option>
+                        <option value="KW">🇰🇼 Kuwait</option>
+                        <option value="BH">🇧🇭 Bahrain</option>
+                      </optgroup>
+
+                      <optgroup label="🌍 MENA Region">
+                        <option value="EG">🇪🇬 Egypt</option>
+                        <option value="JO">🇯🇴 Jordan</option>
+                        <option value="LB">🇱🇧 Lebanon</option>
+                        <option value="IQ">🇮🇶 Iraq</option>
+                        <option value="YE">🇾🇪 Yemen</option>
+                        <option value="SY">🇸🇾 Syria</option>
+                        <option value="PS">🇵🇸 Palestine</option>
+                        <option value="MA">🇲🇦 Morocco</option>
+                        <option value="DZ">🇩🇿 Algeria</option>
+                        <option value="TN">🇹🇳 Tunisia</option>
+                        <option value="LY">🇱🇾 Libya</option>
+                        <option value="SD">🇸🇩 Sudan</option>
+                      </optgroup>
+
+                      <optgroup label="🌎 Other Countries">
+                        <option value="US">🇺🇸 United States</option>
+                        <option value="GB">🇬🇧 United Kingdom</option>
+                        <option value="CA">🇨🇦 Canada</option>
+                        <option value="AU">🇦🇺 Australia</option>
+                        <option value="SG">🇸🇬 Singapore</option>
+                        <option value="MY">🇲🇾 Malaysia</option>
+                        <option value="TH">🇹🇭 Thailand</option>
+                        <option value="OTHER">🌍 Other</option>
+                      </optgroup>
                     </select>
                     {errors.countryOrigin && (
                       <p className="mt-1 text-sm text-red-600">{errors.countryOrigin.message}</p>
