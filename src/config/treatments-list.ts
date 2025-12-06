@@ -11,102 +11,158 @@ export interface Treatment {
 
 export const ALL_TREATMENTS: Treatment[] = [
   // Cardiac & Heart (2)
-  { slug: 'heart-surgery', name: 'Heart Surgery / CABG', category: 'Cardiac' },
-  { slug: 'angioplasty', name: 'Angioplasty & Stenting', category: 'Cardiac' },
+  // { slug: 'heart-surgery', name: 'Heart Surgery / CABG', category: 'Cardiac' }, // TODO: Create page
+  { slug: 'angioplasty-india', name: 'Angioplasty & Stenting', category: 'Cardiac' },
 
   // Orthopedic (4)
-  { slug: 'knee-replacement', name: 'Knee Replacement', category: 'Orthopedic' },
-  { slug: 'hip-replacement', name: 'Hip Replacement', category: 'Orthopedic' },
-  { slug: 'shoulder-surgery', name: 'Shoulder Surgery', category: 'Orthopedic' },
-  { slug: 'acl-reconstruction', name: 'ACL Reconstruction', category: 'Orthopedic' },
+  // { slug: 'knee-replacement', name: 'Knee Replacement', category: 'Orthopedic' }, // TODO: Create page
+  { slug: 'hip-replacement-india', name: 'Hip Replacement', category: 'Orthopedic' },
+  { slug: 'shoulder-surgery-india', name: 'Shoulder Surgery', category: 'Orthopedic' },
+  { slug: 'acl-reconstruction-india', name: 'ACL Reconstruction', category: 'Orthopedic' },
 
-  // Oncology / Cancer (6)
-  { slug: 'cancer-treatment', name: 'Cancer Treatment', category: 'Oncology' },
-  { slug: 'breast-cancer', name: 'Breast Cancer Treatment', category: 'Oncology' },
-  { slug: 'lung-cancer', name: 'Lung Cancer Treatment', category: 'Oncology' },
-  { slug: 'colon-cancer', name: 'Colon Cancer Treatment', category: 'Oncology' },
-  { slug: 'cervical-cancer', name: 'Cervical Cancer Treatment', category: 'Oncology' },
-  { slug: 'prostate-cancer', name: 'Prostate Cancer Treatment', category: 'Oncology' },
-  { slug: 'blood-cancer', name: 'Blood Cancer / Leukemia Treatment', category: 'Oncology' },
+  // Oncology / Cancer (7)
+  // { slug: 'cancer-treatment', name: 'Cancer Treatment (General)', category: 'Oncology' }, // TODO: Create page
+  { slug: 'breast-cancer-treatment-india', name: 'Breast Cancer Treatment', category: 'Oncology' },
+  { slug: 'lung-cancer-treatment-india', name: 'Lung Cancer Treatment', category: 'Oncology' },
+  { slug: 'colon-cancer-treatment-india', name: 'Colon Cancer Treatment', category: 'Oncology' },
+  { slug: 'cervical-cancer-treatment-india', name: 'Cervical Cancer Treatment', category: 'Oncology' },
+  { slug: 'prostate-cancer-treatment-india', name: 'Prostate Cancer Treatment', category: 'Oncology' },
+  { slug: 'blood-cancer-treatment-india', name: 'Blood Cancer / Leukemia Treatment', category: 'Oncology' },
 
   // Transplants (3)
-  { slug: 'liver-transplant', name: 'Liver Transplant', category: 'Transplant' },
-  { slug: 'kidney-transplant', name: 'Kidney Transplant', category: 'Transplant' },
-  { slug: 'bone-marrow-transplant', name: 'Bone Marrow Transplant (BMT)', category: 'Transplant' },
+  // { slug: 'liver-transplant', name: 'Liver Transplant', category: 'Transplant' }, // TODO: Create page - USER REPORTED 404
+  // { slug: 'kidney-transplant', name: 'Kidney Transplant', category: 'Transplant' }, // TODO: Create page
+  // { slug: 'bone-marrow-transplant', name: 'Bone Marrow Transplant (BMT)', category: 'Transplant' }, // TODO: Create page
 
-  // Fertility & Gynecology (3)
-  { slug: 'ivf', name: 'IVF & Fertility Treatment', category: 'Fertility' },
-  { slug: 'pcos-treatment', name: 'PCOS Treatment', category: 'Fertility' },
-  { slug: 'egg-freezing', name: 'Egg Freezing', category: 'Fertility' },
-  { slug: 'hysterectomy', name: 'Hysterectomy Surgery', category: 'Gynecology' },
+  // Fertility & Gynecology (4)
+  // { slug: 'ivf', name: 'IVF & Fertility Treatment', category: 'Fertility' }, // TODO: Create page
+  { slug: 'pcos-treatment-india', name: 'PCOS Treatment', category: 'Fertility' },
+  { slug: 'egg-freezing-india', name: 'Egg Freezing', category: 'Fertility' },
+  { slug: 'hysterectomy-surgery-india', name: 'Hysterectomy Surgery', category: 'Gynecology' },
 
-  // Cosmetic & Plastic Surgery (3)
-  { slug: 'cosmetic-surgery', name: 'Cosmetic Surgery', category: 'Cosmetic' },
-  { slug: 'rhinoplasty', name: 'Rhinoplasty (Nose Job)', category: 'Cosmetic' },
-  { slug: 'liposuction', name: 'Liposuction', category: 'Cosmetic' },
-  { slug: 'breast-augmentation', name: 'Breast Augmentation', category: 'Cosmetic' },
+  // Cosmetic & Plastic Surgery (5)
+  // { slug: 'cosmetic-surgery', name: 'Cosmetic Surgery (General)', category: 'Cosmetic' }, // TODO: Create page
+  { slug: 'rhinoplasty-india', name: 'Rhinoplasty (Nose Job)', category: 'Cosmetic' },
+  { slug: 'liposuction-india', name: 'Liposuction', category: 'Cosmetic' },
+  { slug: 'breast-augmentation-india', name: 'Breast Augmentation', category: 'Cosmetic' },
+  { slug: 'hair-transplant-india', name: 'Hair Transplant', category: 'Cosmetic' },
 
   // Dental (3)
-  { slug: 'dental-implants', name: 'Dental Implants', category: 'Dental' },
-  { slug: 'all-on-4-dental', name: 'All-on-4 Dental Implants', category: 'Dental' },
-  { slug: 'veneers', name: 'Dental Veneers', category: 'Dental' },
+  { slug: 'dental-implants-india', name: 'Dental Implants', category: 'Dental' },
+  { slug: 'all-on-4-dental-implants-india', name: 'All-on-4 Dental Implants', category: 'Dental' },
+  { slug: 'veneers-india', name: 'Dental Veneers', category: 'Dental' },
 
   // Ophthalmology / Eye (2)
-  { slug: 'cataract-surgery', name: 'Cataract Surgery', category: 'Ophthalmology' },
-  { slug: 'lasik', name: 'LASIK Eye Surgery', category: 'Ophthalmology' },
+  { slug: 'cataract-surgery-india', name: 'Cataract Surgery', category: 'Ophthalmology' },
+  { slug: 'lasik-eye-surgery-india', name: 'LASIK Eye Surgery', category: 'Ophthalmology' },
 
   // Neurosurgery & Spine (2)
-  { slug: 'neurosurgery', name: 'Neurosurgery / Brain Surgery', category: 'Neurosurgery' },
-  { slug: 'spine-surgery', name: 'Spine Surgery', category: 'Neurosurgery' },
+  // { slug: 'neurosurgery', name: 'Neurosurgery / Brain Surgery', category: 'Neurosurgery' }, // TODO: Create page
+  // { slug: 'spine-surgery', name: 'Spine Surgery', category: 'Neurosurgery' }, // TODO: Create page
 
-  // General Surgery (5)
-  { slug: 'piles-surgery', name: 'Piles / Hemorrhoid Surgery', category: 'General Surgery' },
-  { slug: 'hernia-surgery', name: 'Hernia Surgery', category: 'General Surgery' },
-  { slug: 'gallbladder-surgery', name: 'Gallbladder Surgery', category: 'General Surgery' },
-  { slug: 'appendix-surgery', name: 'Appendix Surgery', category: 'General Surgery' },
+  // General Surgery (4)
+  { slug: 'piles-surgery-india', name: 'Piles / Hemorrhoid Surgery', category: 'General Surgery' },
+  { slug: 'hernia-surgery-india', name: 'Hernia Surgery', category: 'General Surgery' },
+  { slug: 'gallbladder-surgery-india', name: 'Gallbladder Surgery', category: 'General Surgery' },
+  { slug: 'appendix-surgery-india', name: 'Appendix Surgery', category: 'General Surgery' },
 
   // Bariatric & Weight Loss (2)
-  { slug: 'bariatric-surgery', name: 'Bariatric / Weight Loss Surgery', category: 'Bariatric' },
-  { slug: 'gastric-bypass', name: 'Gastric Bypass Surgery', category: 'Bariatric' },
+  // { slug: 'bariatric-surgery', name: 'Bariatric / Weight Loss Surgery (General)', category: 'Bariatric' }, // TODO: Create page
+  { slug: 'gastric-bypass-india', name: 'Gastric Bypass Surgery', category: 'Bariatric' },
 
-  // Urology (2)
-  { slug: 'kidney-stone', name: 'Kidney Stone Treatment', category: 'Urology' },
+  // Urology (1)
+  { slug: 'kidney-stone-treatment-india', name: 'Kidney Stone Treatment', category: 'Urology' },
 
   // Vascular (1)
-  { slug: 'varicose-veins', name: 'Varicose Veins Treatment', category: 'Vascular' },
+  { slug: 'varicose-veins-treatment-india', name: 'Varicose Veins Treatment', category: 'Vascular' },
 
   // Endocrine (1)
-  { slug: 'thyroid-surgery', name: 'Thyroid Surgery', category: 'Endocrine' },
+  { slug: 'thyroid-surgery-india', name: 'Thyroid Surgery', category: 'Endocrine' },
 
   // Other
-  { slug: 'diabetes-treatment', name: 'Diabetes Treatment', category: 'Endocrinology' },
+  // { slug: 'diabetes-treatment', name: 'Diabetes Treatment', category: 'Endocrinology' }, // TODO: Create page
   { slug: 'other', name: 'Other Treatment', category: 'Other' },
 ];
 
 // Group treatments by category for better UX
 export const TREATMENTS_BY_CATEGORY = {
   'Popular Treatments': [
-    'heart-surgery',
-    'knee-replacement',
-    'hip-replacement',
-    'ivf',
-    'cancer-treatment',
-    'dental-implants',
-    'lasik',
-    'cosmetic-surgery',
+    // 'heart-surgery', // TODO: Create page
+    // 'knee-replacement', // TODO: Create page
+    'hip-replacement-india',
+    // 'ivf', // TODO: Create page
+    'breast-cancer-treatment-india',
+    'dental-implants-india',
+    'lasik-eye-surgery-india',
+    'rhinoplasty-india',
   ],
-  'Cardiac': ['heart-surgery', 'angioplasty'],
-  'Orthopedic': ['knee-replacement', 'hip-replacement', 'shoulder-surgery', 'acl-reconstruction'],
-  'Oncology': ['cancer-treatment', 'breast-cancer', 'lung-cancer', 'colon-cancer', 'cervical-cancer', 'prostate-cancer', 'blood-cancer'],
-  'Transplants': ['liver-transplant', 'kidney-transplant', 'bone-marrow-transplant'],
-  'Fertility': ['ivf', 'pcos-treatment', 'egg-freezing'],
-  'Cosmetic': ['cosmetic-surgery', 'rhinoplasty', 'liposuction', 'breast-augmentation'],
-  'Dental': ['dental-implants', 'all-on-4-dental', 'veneers'],
-  'Eye': ['cataract-surgery', 'lasik'],
-  'Brain & Spine': ['neurosurgery', 'spine-surgery'],
-  'General Surgery': ['piles-surgery', 'hernia-surgery', 'gallbladder-surgery', 'appendix-surgery'],
-  'Weight Loss': ['bariatric-surgery', 'gastric-bypass'],
-  'Other': ['kidney-stone', 'varicose-veins', 'thyroid-surgery', 'diabetes-treatment', 'hysterectomy', 'other'],
+  'Cardiac': [
+    // 'heart-surgery', // TODO: Create page
+    'angioplasty-india'
+  ],
+  'Orthopedic': [
+    // 'knee-replacement', // TODO: Create page
+    'hip-replacement-india',
+    'shoulder-surgery-india',
+    'acl-reconstruction-india'
+  ],
+  'Oncology': [
+    // 'cancer-treatment', // TODO: Create page
+    'breast-cancer-treatment-india',
+    'lung-cancer-treatment-india',
+    'colon-cancer-treatment-india',
+    'cervical-cancer-treatment-india',
+    'prostate-cancer-treatment-india',
+    'blood-cancer-treatment-india'
+  ],
+  'Transplants': [
+    // 'liver-transplant', // TODO: Create page
+    // 'kidney-transplant', // TODO: Create page
+    // 'bone-marrow-transplant' // TODO: Create page
+  ],
+  'Fertility': [
+    // 'ivf', // TODO: Create page
+    'pcos-treatment-india',
+    'egg-freezing-india'
+  ],
+  'Cosmetic': [
+    // 'cosmetic-surgery', // TODO: Create page
+    'rhinoplasty-india',
+    'liposuction-india',
+    'breast-augmentation-india',
+    'hair-transplant-india'
+  ],
+  'Dental': [
+    'dental-implants-india',
+    'all-on-4-dental-implants-india',
+    'veneers-india'
+  ],
+  'Eye': [
+    'cataract-surgery-india',
+    'lasik-eye-surgery-india'
+  ],
+  'Brain & Spine': [
+    // 'neurosurgery', // TODO: Create page
+    // 'spine-surgery' // TODO: Create page
+  ],
+  'General Surgery': [
+    'piles-surgery-india',
+    'hernia-surgery-india',
+    'gallbladder-surgery-india',
+    'appendix-surgery-india'
+  ],
+  'Weight Loss': [
+    // 'bariatric-surgery', // TODO: Create page
+    'gastric-bypass-india'
+  ],
+  'Other': [
+    'kidney-stone-treatment-india',
+    'varicose-veins-treatment-india',
+    'thyroid-surgery-india',
+    // 'diabetes-treatment', // TODO: Create page
+    'hysterectomy-surgery-india',
+    'other'
+  ],
 };
 
 // Helper function to get treatment name by slug
