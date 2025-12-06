@@ -2,7 +2,7 @@ import { GCCCountryConfig } from '@/types';
 
 export const gccCountries: GCCCountryConfig[] = [
   {
-    slug: 'united-arab-emirates',
+    slug: 'uae',
     name: 'United Arab Emirates',
     code: 'AE',
     currency: 'AED',
@@ -18,7 +18,7 @@ export const gccCountries: GCCCountryConfig[] = [
     ],
   },
   {
-    slug: 'saudi-arabia',
+    slug: 'saudi',
     name: 'Saudi Arabia',
     code: 'SA',
     currency: 'SAR',
