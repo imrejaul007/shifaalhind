@@ -10,10 +10,14 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
+import { ALL_TREATMENTS } from '@/config/treatments-list';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name is required'),
   email: z.string().email('Invalid email'),
+  phone: z.string().optional(),
+  country: z.string().optional(),
+  treatmentInterest: z.string().optional(),
   subject: z.string().min(5, 'Subject is required'),
   message: z.string().min(10, 'Message must be at least 10 characters'),
 });
@@ -137,20 +141,92 @@ export default function ContactPage() {
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-                <div>
-                  <label className="mb-2 block text-sm font-medium">Name *</label>
-                  <Input {...register('name')} placeholder="Your name" />
-                  {errors.name && (
-                    <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
-                  )}
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">Name *</label>
+                    <Input {...register('name')} placeholder="Your name" />
+                    {errors.name && (
+                      <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">Email *</label>
+                    <Input {...register('email')} type="email" placeholder="your@email.com" />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">Phone / WhatsApp</label>
+                    <Input {...register('phone')} type="tel" placeholder="+971 50 123 4567" />
+                    {errors.phone && (
+                      <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
+                    )}
+                  </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">Your Country</label>
+                    <select
+                      {...register('country')}
+                      className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
+                    >
+                      <option value="">Select country...</option>
+
+                      <optgroup label="🌟 GCC Countries">
+                        <option value="AE">🇦🇪 United Arab Emirates</option>
+                        <option value="SA">🇸🇦 Saudi Arabia</option>
+                        <option value="QA">🇶🇦 Qatar</option>
+                        <option value="OM">🇴🇲 Oman</option>
+                        <option value="KW">🇰🇼 Kuwait</option>
+                        <option value="BH">🇧🇭 Bahrain</option>
+                      </optgroup>
+
+                      <optgroup label="🌍 MENA Region">
+                        <option value="EG">🇪🇬 Egypt</option>
+                        <option value="JO">🇯🇴 Jordan</option>
+                        <option value="LB">🇱🇧 Lebanon</option>
+                        <option value="IQ">🇮🇶 Iraq</option>
+                        <option value="YE">🇾🇪 Yemen</option>
+                        <option value="SY">🇸🇾 Syria</option>
+                        <option value="PS">🇵🇸 Palestine</option>
+                        <option value="MA">🇲🇦 Morocco</option>
+                        <option value="DZ">🇩🇿 Algeria</option>
+                        <option value="TN">🇹🇳 Tunisia</option>
+                        <option value="LY">🇱🇾 Libya</option>
+                        <option value="SD">🇸🇩 Sudan</option>
+                      </optgroup>
+
+                      <optgroup label="🌎 Other Countries">
+                        <option value="US">🇺🇸 United States</option>
+                        <option value="GB">🇬🇧 United Kingdom</option>
+                        <option value="CA">🇨🇦 Canada</option>
+                        <option value="AU">🇦🇺 Australia</option>
+                        <option value="SG">🇸🇬 Singapore</option>
+                        <option value="MY">🇲🇾 Malaysia</option>
+                        <option value="TH">🇹🇭 Thailand</option>
+                        <option value="OTHER">🌍 Other</option>
+                      </optgroup>
+                    </select>
+                  </div>
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium">Email *</label>
-                  <Input {...register('email')} type="email" placeholder="your@email.com" />
-                  {errors.email && (
-                    <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
-                  )}
+                  <label className="mb-2 block text-sm font-medium">Treatment of Interest</label>
+                  <select
+                    {...register('treatmentInterest')}
+                    className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
+                  >
+                    <option value="">Select treatment (optional)...</option>
+                    {ALL_TREATMENTS.map((treatment) => (
+                      <option key={treatment.slug} value={treatment.slug}>
+                        {treatment.name}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div>
@@ -167,7 +243,7 @@ export default function ContactPage() {
                     {...register('message')}
                     rows={5}
                     className="flex w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
-                    placeholder="Tell us more..."
+                    placeholder="Tell us more about your medical tourism needs..."
                   />
                   {errors.message && (
                     <p className="mt-1 text-sm text-red-600">{errors.message.message}</p>
