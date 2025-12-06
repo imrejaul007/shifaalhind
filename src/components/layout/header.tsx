@@ -24,8 +24,6 @@ export function Header() {
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
 
   const navigation = [
-    { name: t('common.home'), href: '/' },
-    { name: t('nav.medicalTourism'), href: '/medical-tourism' },
     {
       name: t('common.treatments'),
       href: '/treatments',
@@ -40,7 +38,6 @@ export function Header() {
     },
     { name: t('common.hospitals'), href: '/hospitals' },
     { name: t('common.doctors'), href: '/doctors' },
-    { name: t('nav.successStories'), href: '/stories' },
     { name: t('common.about'), href: '/about' },
     { name: t('common.contact'), href: '/contact' },
   ];
