@@ -159,9 +159,9 @@ export default function ServicesPage() {
     },
     {
       icon: Headset,
-      title: 'Halal & Prayer Facilities',
-      description: 'Arrange halal meals and prayer room access at all partner hospitals',
-      detail: 'Female doctors available for women patients upon request',
+      title: '100% Halal Food & Nearby Mosques',
+      description: '✅ Certified halal meals (Arabic, Indian cuisines) | ✅ Mosques within 5-10 min walk | ✅ Prayer rooms in hotels with Qibla direction',
+      detail: 'Female doctors available for women patients • Arabic TV channels • Prayer mats & wudu facilities',
     },
     {
       icon: BadgeCheck,

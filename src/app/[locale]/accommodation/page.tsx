@@ -26,6 +26,10 @@ import {
   MessageCircle,
   CheckCircle,
   Navigation,
+  Church,
+  UserCheck,
+  Coffee,
+  Bed,
 } from 'lucide-react';
 
 export const dynamic = 'force-dynamic';
@@ -274,6 +278,206 @@ export default function AccommodationPage() {
             >
               <Link href="tel:+918970298300">Call +91 89702 98300</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* GCC/Muslim-Friendly Features - PROMINENT */}
+      <section className="border-b-4 border-green-100 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 px-4 py-20">
+        <div className="container mx-auto">
+          <div className="mb-16 text-center">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-100 px-6 py-2 text-sm font-bold text-green-700">
+              <Sparkles className="h-5 w-5" />
+              Muslim-Friendly & GCC Comfort
+            </div>
+            <h2 className="mb-6 font-serif text-4xl font-bold text-gray-900 md:text-5xl">
+              Complete Comfort for GCC & Muslim Patients
+            </h2>
+            <p className="mx-auto max-w-3xl text-xl leading-relaxed text-gray-700">
+              We understand your needs. Halal food, nearby mosques, Arabic-speaking staff, prayer facilities - everything you need to feel at home during your medical journey.
+            </p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {/* Mosque/Prayer Facilities */}
+            <Card className="group border-4 border-green-200 bg-white transition-all hover:scale-105 hover:border-green-400 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-xl transition-all group-hover:scale-110">
+                  <Church className="h-10 w-10 text-white" />
+                </div>
+                <CardTitle className="text-center text-xl font-bold">Nearby Mosques & Prayer Rooms</CardTitle>
+                <div className="mt-2 text-center">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
+                    <CheckCircle className="h-3 w-3" />
+                    5-10 min walk
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-center text-gray-700">
+                  Masjid Juma (Indiranagar), Frazer Town Mosque, Shivaji Nagar Jama Masjid within 5-15 minutes from all our properties.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    <span>Prayer mats & Qibla direction in all rooms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    <span>Wudu facilities at hotels</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-green-600" />
+                    <span>Prayer time notifications available</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* 100% Halal Food */}
+            <Card className="group border-4 border-orange-200 bg-white transition-all hover:scale-105 hover:border-orange-400 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 shadow-xl transition-all group-hover:scale-110">
+                  <Utensils className="h-10 w-10 text-white" />
+                </div>
+                <CardTitle className="text-center text-xl font-bold">100% Certified Halal Food</CardTitle>
+                <div className="mt-2 text-center">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-orange-700">
+                    <CheckCircle className="h-3 w-3" />
+                    Halal Certified
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-center text-gray-700">
+                  All meals prepared with halal-certified ingredients. Choose from Arabic, Indian, Continental cuisines.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" />
+                    <span>Emirati, Saudi, Kuwaiti dishes available</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" />
+                    <span>Special dietary requests accommodated</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-orange-600" />
+                    <span>Family-style dining options</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Arabic Speaking Staff 24/7 */}
+            <Card className="group border-4 border-blue-200 bg-white transition-all hover:scale-105 hover:border-blue-400 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-blue-600 shadow-xl transition-all group-hover:scale-110">
+                  <Languages className="h-10 w-10 text-white" />
+                </div>
+                <CardTitle className="text-center text-xl font-bold">Native Arabic Staff 24/7</CardTitle>
+                <div className="mt-2 text-center">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
+                    <CheckCircle className="h-3 w-3" />
+                    Round-the-clock
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-center text-gray-700">
+                  Our Arabic coordinators have lived in UAE, Saudi Arabia, Qatar - they understand your dialect perfectly.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
+                    <span>Emirati, Saudi, Qatari dialects fluent</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
+                    <span>WhatsApp support in Arabic anytime</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-blue-600" />
+                    <span>Cultural understanding & sensitivity</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Family & Women-Friendly */}
+            <Card className="group border-4 border-purple-200 bg-white transition-all hover:scale-105 hover:border-purple-400 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-purple-600 shadow-xl transition-all group-hover:scale-110">
+                  <UserCheck className="h-10 w-10 text-white" />
+                </div>
+                <CardTitle className="text-center text-xl font-bold">Family & Women-Friendly</CardTitle>
+                <div className="mt-2 text-center">
+                  <span className="inline-flex items-center gap-1 rounded-full bg-purple-100 px-3 py-1 text-xs font-bold text-purple-700">
+                    <CheckCircle className="h-3 w-3" />
+                    Private & Safe
+                  </span>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="mb-4 text-center text-gray-700">
+                  Female staff available for women patients. Family suites. Conservative, respectful environment.
+                </p>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-purple-600" />
+                    <span>Female doctors & nurses upon request</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-purple-600" />
+                    <span>Adjoining rooms for families</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="mt-0.5 h-4 w-4 shrink-0 text-purple-600" />
+                    <span>Privacy & modesty respected</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Additional Comforts */}
+          <div className="mt-12 grid gap-6 md:grid-cols-3 lg:grid-cols-6">
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Coffee className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">Arabic Coffee & Dates</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Bed className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">Separate Beds for Families</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Globe className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">Arabic TV Channels</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Shield className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">Women-Only Floors</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Heart className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">Modest Dress Code Respected</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2 border-green-100 bg-white text-center transition-all hover:shadow-lg">
+              <CardContent className="pt-6">
+                <Phone className="mx-auto mb-2 h-8 w-8 text-green-600" />
+                <p className="text-sm font-semibold text-gray-700">24/7 Halal Food Hotline</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>

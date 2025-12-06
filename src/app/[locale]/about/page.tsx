@@ -321,15 +321,21 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 </p>
               </Card>
 
-              <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-orange-50 p-8 transition-all hover:shadow-2xl">
+              <Card className="border-4 border-green-200 bg-gradient-to-br from-white to-green-50 p-8 transition-all hover:border-green-400 hover:shadow-2xl">
                 <div className="mb-4 flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600">
                     <Heart className="h-7 w-7 text-white" />
                   </div>
-                  <h3 className="font-serif text-2xl font-semibold text-gray-900">Cultural Sensitivity & Comfort</h3>
+                  <h3 className="font-serif text-2xl font-semibold text-gray-900">Muslim-Friendly & GCC Cultural Comfort</h3>
                 </div>
+                <p className="mb-4 text-lg font-bold leading-relaxed text-gray-900">
+                  ✅ 100% Certified Halal Food | ✅ Nearby Mosques (5-10 min) | ✅ Prayer Rooms in Hotels
+                </p>
+                <p className="mb-4 text-lg leading-relaxed text-gray-700">
+                  <strong>We understand the unique needs of GCC patients.</strong> Our partner hospitals provide <strong className="text-green-700">100% certified halal meals</strong> (Arabic, Indian, Continental cuisines), <strong className="text-green-700">prayer facilities with Qibla direction</strong>, and <strong className="text-green-700">female doctors for women patients</strong> when requested. All accommodations are within <strong className="text-green-700">5-15 minutes of mosques</strong> including Masjid Juma (Indiranagar), Frazer Town Mosque, and Shivaji Nagar Jama Masjid.
+                </p>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  We understand the unique needs of GCC patients. Our partner hospitals provide halal meal options, prayer facilities, and female doctors for women patients when requested. We arrange accommodation close to hospitals with amenities familiar to GCC travelers. In Bangalore, we partner with <a href="https://pentouz.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary-600 underline hover:text-primary-700">Pentouz Hotels</a>, offering comfortable and convenient stays near major medical facilities. Our team understands cultural nuances and ensures your comfort throughout your medical journey.
+                  We arrange accommodation close to hospitals with <strong>amenities familiar to GCC travelers</strong>: Arabic TV channels, Arabic coffee & dates, prayer mats in rooms, wudu facilities, women-only floors, and family suites. In Bangalore, we partner with <a href="https://pentouz.com/" target="_blank" rel="noopener noreferrer" className="font-semibold text-primary-600 underline hover:text-primary-700">Pentouz Hotels</a>, offering comfortable and convenient stays near major medical facilities. Our team understands cultural nuances and ensures your complete comfort throughout your medical journey.
                 </p>
               </Card>
             </div>
