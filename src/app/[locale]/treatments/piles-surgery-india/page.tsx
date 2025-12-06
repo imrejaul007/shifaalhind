@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const dynamic = 'force-dynamic';
 
@@ -283,7 +285,18 @@ export default function PilesSurgeryIndiaPage() {
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Top 5 Piles Surgery Hospitals in India</h2>
         <div className="space-y-6">
-          <Card className="border-primary-200 bg-primary-50">
+          
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Piles Surgery Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      <Card className="border-primary-200 bg-primary-50">
             <CardHeader>
               <CardTitle className="text-2xl">1. Pristyn Care (Pan-India, 30+ Cities)</CardTitle>
               <p className="text-sm text-gray-600">🏆 #1 Piles Surgery Specialists | 50,000+ Procedures Annually</p>

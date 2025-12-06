@@ -6,6 +6,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const dynamic = 'force-dynamic';
 
@@ -303,7 +305,18 @@ export default function HipReplacementIndiaPage() {
       <section className="mb-12">
         <h2 className="mb-6 text-3xl font-bold text-gray-900">Top 5 Hip Replacement Hospitals in India</h2>
         <div className="space-y-6">
-          <Card className="border-primary-200 bg-primary-50">
+          
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['knee-replacement']}
+        title="Success Stories from Our Hip Replacement Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      <Card className="border-primary-200 bg-primary-50">
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span className="text-xl">🏆 #1: Fortis Hospital (Delhi, Mumbai, Bangalore)</span>

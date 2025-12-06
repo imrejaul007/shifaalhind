@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import Link from 'next/link';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Thyroid Surgery in India 2025: Thyroidectomy Cost, Best Hospitals, Recovery | Total vs Partial',
@@ -293,6 +295,17 @@ export default function ThyroidSurgeryIndiaPage() {
           </Card>
         </div>
       </section>
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Thyroid Surgery Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      
 
       {/* Final CTA */}
       <Card className="bg-green-50">

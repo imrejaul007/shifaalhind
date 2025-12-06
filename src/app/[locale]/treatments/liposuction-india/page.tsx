@@ -17,6 +17,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const dynamic = 'force-dynamic';
 
@@ -572,6 +574,17 @@ export default function LiposuctionIndiaPage() {
           </Card>
         </div>
       </section>
+
+      
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Liposuction Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* CTA Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">

@@ -6,6 +6,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Gallbladder Surgery in India 2025: Cost, Best Hospitals | Laparoscopic Cholecystectomy',
@@ -486,6 +488,17 @@ export default function GallbladderSurgeryIndiaPage() {
           </Card>
         </div>
       </section>
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Gallbladder Surgery Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      
 
       {/* Internal Links */}
       <InternalLinks

@@ -6,6 +6,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Lung Cancer Treatment in India 2025: Cost, Best Oncology Hospitals, Success Rate | Surgery, Chemotherapy, Immunotherapy',
@@ -569,6 +571,17 @@ export default function LungCancerTreatmentIndiaPage() {
           </Card>
         </div>
       </section>
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Lung Cancer Treatment Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      
 
       {/* Internal Links */}
       <InternalLinks

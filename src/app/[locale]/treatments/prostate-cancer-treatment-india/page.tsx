@@ -15,6 +15,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const dynamic = 'force-dynamic';
 
@@ -306,6 +308,17 @@ export default function ProstateCancerTreatmentIndiaPage() {
       </section>
 
       {/* CTA */}
+      
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Prostate Cancer Treatment Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">Ready to Get Started?</h2>

@@ -568,12 +568,25 @@ export default function BloodCancerTreatmentIndiaPage() {
             </CardHeader>
             <CardContent>
               <p>
-                Yes, highly recommended for blood cancer diagnosis and treatment planning. Why get second opinion: Blood cancers have many subtypes (requires expert diagnosis), treatment protocols vary (confirm best approach), BMT decision is major (verify if truly needed), clinical trials available (may offer better options). Where to get second opinion in India: Tata Memorial Hospital Mumbai (India&apos;s premier cancer hospital), Apollo Cancer Centre Chennai, Fortis Memorial Research Institute Gurgaon, BLK-Max Delhi, HCG Bangalore. Timeline: Diagnosis confirmation: 7-10 days (pathology review, flow cytometry), treatment planning: 2-3 weeks (review records, new tests if needed). Cost: $200-500 for comprehensive second opinion (includes expert review, new consultation, treatment plan). Many hospitals offer telemedicine second opinions (no travel required).
+                Yes, highly recommended for blood cancer diagnosis and treatment planning. Why get second opinion: Blood cancers have many subtypes (requires expert diagnosis), treatment protocols vary (confirm best approach), BMT decision is major (verify if truly needed), clinical trials available (may offer better options). Where to get second opinion in India: Tata Memorial Hospital Mumbai (India&apos;
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';s premier cancer hospital), Apollo Cancer Centre Chennai, Fortis Memorial Research Institute Gurgaon, BLK-Max Delhi, HCG Bangalore. Timeline: Diagnosis confirmation: 7-10 days (pathology review, flow cytometry), treatment planning: 2-3 weeks (review records, new tests if needed). Cost: $200-500 for comprehensive second opinion (includes expert review, new consultation, treatment plan). Many hospitals offer telemedicine second opinions (no travel required).
               </p>
             </CardContent>
           </Card>
         </div>
       </section>
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Blood Cancer Treatment Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      
 
       {/* Final CTA */}
       <Card className="bg-green-50">

@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import Link from 'next/link';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Appendix Surgery (Appendectomy) in India 2025: Cost, Best Hospitals, Recovery Time | Laparoscopic vs Open',
@@ -512,6 +514,17 @@ export default function AppendixSurgeryIndiaPage() {
           </Card>
         </div>
       </section>
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Appendix Surgery Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
+
+      
 
       {/* Final CTA */}
       <Card className="bg-green-50">

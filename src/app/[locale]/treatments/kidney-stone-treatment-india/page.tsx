@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const dynamic = 'force-dynamic';
 
@@ -498,6 +500,16 @@ export default function KidneyStoneTreatmentPage() {
           </Card>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['generic']}
+        title="Success Stories from Our Kidney Stone Treatment Patients"
+        subtitle="Real transformations from GCC patients who achieved life-changing results"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* Final CTA */}
       <Card className="mb-12 border-primary-200 bg-primary-50">
