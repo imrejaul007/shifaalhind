@@ -22,55 +22,95 @@ export function Header() {
   const locale = useLocale();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [treatmentsOpen, setTreatmentsOpen] = useState(false);
+  const [mobileTreatmentsOpen, setMobileTreatmentsOpen] = useState(false);
 
   const navigation = [
     {
       name: t('common.treatments'),
       href: '/treatments',
       hasDropdown: true,
+      megaMenu: true,
       submenu: [
-        // Cardiac
-        { name: 'Angioplasty', href: '/treatments/angioplasty-india' },
-        // Orthopedic
-        { name: 'ACL Reconstruction', href: '/treatments/acl-reconstruction-india' },
-        { name: 'Hip Replacement', href: '/treatments/hip-replacement-india' },
-        { name: 'Shoulder Surgery', href: '/treatments/shoulder-surgery-india' },
-        // Cancer Treatment
-        { name: 'Blood Cancer Treatment', href: '/treatments/blood-cancer-treatment-india' },
-        { name: 'Breast Cancer Treatment', href: '/treatments/breast-cancer-treatment-india' },
-        { name: 'Cervical Cancer Treatment', href: '/treatments/cervical-cancer-treatment-india' },
-        { name: 'Colon Cancer Treatment', href: '/treatments/colon-cancer-treatment-india' },
-        { name: 'Lung Cancer Treatment', href: '/treatments/lung-cancer-treatment-india' },
-        { name: 'Prostate Cancer Treatment', href: '/treatments/prostate-cancer-treatment-india' },
-        // Eye Care
-        { name: 'Cataract Surgery', href: '/treatments/cataract-surgery-india' },
-        { name: 'LASIK Eye Surgery', href: '/treatments/lasik-eye-surgery-india' },
-        // Dental
-        { name: 'All-on-4 Dental Implants', href: '/treatments/all-on-4-dental-implants-india' },
-        { name: 'Dental Implants', href: '/treatments/dental-implants-india' },
-        { name: 'Veneers', href: '/treatments/veneers-india' },
-        // Cosmetic
-        { name: 'Breast Augmentation', href: '/treatments/breast-augmentation-india' },
-        { name: 'Hair Transplant', href: '/treatments/hair-transplant-india' },
-        { name: 'Liposuction', href: '/treatments/liposuction-india' },
-        { name: 'Rhinoplasty', href: '/treatments/rhinoplasty-india' },
-        // Bariatric
-        { name: 'Gastric Bypass', href: '/treatments/gastric-bypass-india' },
-        // General Surgery
-        { name: 'Appendix Surgery', href: '/treatments/appendix-surgery-india' },
-        { name: 'Gallbladder Surgery', href: '/treatments/gallbladder-surgery-india' },
-        { name: 'Hernia Surgery', href: '/treatments/hernia-surgery-india' },
-        { name: 'Piles Surgery', href: '/treatments/piles-surgery-india' },
-        { name: 'Thyroid Surgery', href: '/treatments/thyroid-surgery-india' },
-        { name: 'Varicose Veins Treatment', href: '/treatments/varicose-veins-treatment-india' },
-        // Urology
-        { name: 'Kidney Stone Treatment', href: '/treatments/kidney-stone-treatment-india' },
-        // Women\'s Health
-        { name: 'Egg Freezing', href: '/treatments/egg-freezing-india' },
-        { name: 'Hysterectomy Surgery', href: '/treatments/hysterectomy-surgery-india' },
-        { name: 'PCOS Treatment', href: '/treatments/pcos-treatment-india' },
-        // View All
-        { name: '→ View All Treatments', href: '/treatments' },
+        {
+          category: '🫀 Cardiac',
+          items: [
+            { name: 'Angioplasty', href: '/treatments/angioplasty-india' },
+          ]
+        },
+        {
+          category: '🦴 Orthopedic',
+          items: [
+            { name: 'ACL Reconstruction', href: '/treatments/acl-reconstruction-india' },
+            { name: 'Hip Replacement', href: '/treatments/hip-replacement-india' },
+            { name: 'Shoulder Surgery', href: '/treatments/shoulder-surgery-india' },
+          ]
+        },
+        {
+          category: '🎗️ Cancer Treatment',
+          items: [
+            { name: 'Blood Cancer', href: '/treatments/blood-cancer-treatment-india' },
+            { name: 'Breast Cancer', href: '/treatments/breast-cancer-treatment-india' },
+            { name: 'Cervical Cancer', href: '/treatments/cervical-cancer-treatment-india' },
+            { name: 'Colon Cancer', href: '/treatments/colon-cancer-treatment-india' },
+            { name: 'Lung Cancer', href: '/treatments/lung-cancer-treatment-india' },
+            { name: 'Prostate Cancer', href: '/treatments/prostate-cancer-treatment-india' },
+          ]
+        },
+        {
+          category: '👁️ Eye Care',
+          items: [
+            { name: 'Cataract Surgery', href: '/treatments/cataract-surgery-india' },
+            { name: 'LASIK Eye Surgery', href: '/treatments/lasik-eye-surgery-india' },
+          ]
+        },
+        {
+          category: '🦷 Dental',
+          items: [
+            { name: 'All-on-4 Dental Implants', href: '/treatments/all-on-4-dental-implants-india' },
+            { name: 'Dental Implants', href: '/treatments/dental-implants-india' },
+            { name: 'Veneers', href: '/treatments/veneers-india' },
+          ]
+        },
+        {
+          category: '✨ Cosmetic',
+          items: [
+            { name: 'Breast Augmentation', href: '/treatments/breast-augmentation-india' },
+            { name: 'Hair Transplant', href: '/treatments/hair-transplant-india' },
+            { name: 'Liposuction', href: '/treatments/liposuction-india' },
+            { name: 'Rhinoplasty', href: '/treatments/rhinoplasty-india' },
+          ]
+        },
+        {
+          category: '⚖️ Bariatric',
+          items: [
+            { name: 'Gastric Bypass', href: '/treatments/gastric-bypass-india' },
+          ]
+        },
+        {
+          category: '🏥 General Surgery',
+          items: [
+            { name: 'Appendix Surgery', href: '/treatments/appendix-surgery-india' },
+            { name: 'Gallbladder Surgery', href: '/treatments/gallbladder-surgery-india' },
+            { name: 'Hernia Surgery', href: '/treatments/hernia-surgery-india' },
+            { name: 'Piles Surgery', href: '/treatments/piles-surgery-india' },
+            { name: 'Thyroid Surgery', href: '/treatments/thyroid-surgery-india' },
+            { name: 'Varicose Veins', href: '/treatments/varicose-veins-treatment-india' },
+          ]
+        },
+        {
+          category: '🩺 Urology',
+          items: [
+            { name: 'Kidney Stone Treatment', href: '/treatments/kidney-stone-treatment-india' },
+          ]
+        },
+        {
+          category: '👩‍⚕️ Women\'s Health',
+          items: [
+            { name: 'Egg Freezing', href: '/treatments/egg-freezing-india' },
+            { name: 'Hysterectomy Surgery', href: '/treatments/hysterectomy-surgery-india' },
+            { name: 'PCOS Treatment', href: '/treatments/pcos-treatment-india' },
+          ]
+        },
       ]
     },
     { name: t('common.hospitals'), href: '/hospitals' },
@@ -148,16 +188,50 @@ export function Header() {
                         <ChevronDown className="h-4 w-4" />
                       </button>
                       {treatmentsOpen && (
-                        <div className="absolute left-0 top-full z-50 mt-1.5 w-60 rounded-lg border border-gray-100 bg-white py-2 shadow-xl">
-                          {item.submenu?.map((subItem) => (
-                            <Link
-                              key={subItem.name}
-                              href={subItem.href}
-                              className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
+                        <div className={`absolute left-0 top-full z-50 mt-1.5 rounded-lg border border-gray-100 bg-white shadow-xl ${item.megaMenu ? 'w-[800px] p-6' : 'w-60 py-2'}`}>
+                          {item.megaMenu ? (
+                            // Mega Menu with categories
+                            <div className="grid grid-cols-3 gap-6">
+                              {item.submenu?.map((category: any) => (
+                                <div key={category.category}>
+                                  <h3 className="mb-3 text-sm font-bold text-gray-900 border-b border-gray-200 pb-2">
+                                    {category.category}
+                                  </h3>
+                                  <div className="space-y-1">
+                                    {category.items.map((subItem: any) => (
+                                      <Link
+                                        key={subItem.name}
+                                        href={subItem.href}
+                                        className="block rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                                      >
+                                        {subItem.name}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              ))}
+                              {/* View All Link */}
+                              <div className="col-span-3 border-t border-gray-200 pt-4 mt-2">
+                                <Link
+                                  href="/treatments"
+                                  className="flex items-center justify-center rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
+                                >
+                                  View All Treatments →
+                                </Link>
+                              </div>
+                            </div>
+                          ) : (
+                            // Regular dropdown
+                            item.submenu?.map((subItem: any) => (
+                              <Link
+                                key={subItem.name}
+                                href={subItem.href}
+                                className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))
+                          )}
                         </div>
                       )}
                     </div>
@@ -307,14 +381,57 @@ export function Header() {
           <div className="max-h-[60vh] overflow-y-auto py-4">
             <div className="flex flex-col space-y-1 px-4">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="flex h-12 items-center rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                <div key={item.name}>
+                  {item.hasDropdown ? (
+                    <>
+                      <button
+                        onClick={() => setMobileTreatmentsOpen(!mobileTreatmentsOpen)}
+                        className="flex h-12 w-full items-center justify-between rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                      >
+                        <span>{item.name}</span>
+                        <ChevronDown className={`h-4 w-4 transition-transform ${mobileTreatmentsOpen ? 'rotate-180' : ''}`} />
+                      </button>
+                      {mobileTreatmentsOpen && item.megaMenu && (
+                        <div className="mt-2 space-y-4 pl-4">
+                          {item.submenu?.map((category: any) => (
+                            <div key={category.category}>
+                              <h4 className="text-xs font-bold text-gray-500 uppercase mb-2">
+                                {category.category}
+                              </h4>
+                              <div className="space-y-1">
+                                {category.items.map((subItem: any) => (
+                                  <Link
+                                    key={subItem.name}
+                                    href={subItem.href}
+                                    className="block rounded-md px-3 py-2 text-sm text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                  >
+                                    {subItem.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                          <Link
+                            href="/treatments"
+                            className="block mt-3 rounded-lg bg-primary-500 px-4 py-2.5 text-center text-sm font-semibold text-white"
+                            onClick={() => setMobileMenuOpen(false)}
+                          >
+                            View All Treatments →
+                          </Link>
+                        </div>
+                      )}
+                    </>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className="flex h-12 items-center rounded-lg px-4 py-3 text-base font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  )}
+                </div>
               ))}
             </div>
 
