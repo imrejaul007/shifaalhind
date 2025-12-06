@@ -4,7 +4,8 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
-import { gccCountries, treatments } from '@/config/gcc-countries';
+import { gccCountries } from '@/config/gcc-countries';
+import { ALL_TREATMENTS } from '@/config/treatments-list';
 
 export function Footer() {
   const t = useTranslations('footer');
@@ -57,7 +58,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-gray-50" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-5">
           {/* About */}
           <div>
             <h3 className="mb-4 font-serif text-xl font-bold text-primary-500">Shifa AlHind</h3>
@@ -92,6 +93,21 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hospitals" className="text-gray-600 hover:text-primary-500">
+                  Hospitals
+                </Link>
+              </li>
+              <li>
+                <Link href="/doctors" className="text-gray-600 hover:text-primary-500">
+                  Doctors
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-gray-600 hover:text-primary-500">
+                  Blog
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-gray-600 hover:text-primary-500">
                   Contact
                 </Link>
@@ -101,14 +117,44 @@ export function Footer() {
                   FAQ
                 </Link>
               </li>
+              <li>
+                <Link href="/booking" className="text-gray-600 hover:text-primary-500">
+                  Book Consultation
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Treatments */}
+          {/* Popular Treatments */}
           <div>
-            <h4 className="mb-4 font-semibold text-gray-900">{t('treatments')}</h4>
+            <h4 className="mb-4 font-semibold text-gray-900">Popular Treatments</h4>
             <ul className="space-y-2 text-sm">
-              {treatments.slice(0, 6).map((treatment) => (
+              {ALL_TREATMENTS.slice(0, 10).map((treatment) => (
+                <li key={treatment.slug}>
+                  <Link
+                    href={`/treatments/${treatment.slug}`}
+                    className="text-gray-600 hover:text-primary-500"
+                  >
+                    {treatment.name}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link
+                  href="/treatments"
+                  className="font-semibold text-primary-500 hover:text-primary-600"
+                >
+                  View All 40+ Treatments →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* More Treatments */}
+          <div>
+            <h4 className="mb-4 font-semibold text-gray-900">More Treatments</h4>
+            <ul className="space-y-2 text-sm">
+              {ALL_TREATMENTS.slice(10, 20).map((treatment) => (
                 <li key={treatment.slug}>
                   <Link
                     href={`/treatments/${treatment.slug}`}
@@ -125,7 +171,7 @@ export function Footer() {
           <div>
             <h4 className="mb-4 font-semibold text-gray-900">{t('destinations')}</h4>
             <ul className="space-y-2 text-sm">
-              {gccCountries.slice(0, 6).map((country) => (
+              {gccCountries.map((country) => (
                 <li key={country.slug}>
                   <Link
                     href={`/for-${country.slug}-patients`}
@@ -135,6 +181,14 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li className="pt-2">
+                <Link
+                  href="/medical-tourism"
+                  className="font-semibold text-primary-500 hover:text-primary-600"
+                >
+                  Medical Tourism Guide →
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
