@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Hair Transplant in India 2025: Cost, Best Clinics, Success Rate | FUE & FUT',
@@ -550,6 +552,16 @@ export default function HairTransplantIndiaPage() {
           </Card>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <Testimonials
+        testimonials={TREATMENT_TESTIMONIALS['hair-transplant']}
+        title="Success Stories from Our Hair Transplant Patients"
+        subtitle="Real transformations from GCC patients who regained their confidence"
+      />
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* CTA Section */}
       <Card className="mb-12 border-primary-200 bg-primary-50">
