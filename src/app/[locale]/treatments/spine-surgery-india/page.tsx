@@ -13,30 +13,30 @@ import { TrustBadges } from '@/components/trust-badges/trust-badges';
 export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
-  title: 'Blood Cancer Treatment India: Cost, Best Hospitals & Success Rate 2025',
-  description: 'Blood cancer treatment in India costs 70-85% less than USA. Leukemia, Lymphoma, Myeloma. Top oncology centers, 60-85% success. Chemotherapy, BMT, targeted therapy.',
-  keywords: 'blood cancer treatment india, leukemia treatment india, lymphoma treatment india, blood cancer cost india',
+  title: 'Spine Surgery India: Cost, Best Spine Surgeons & Hospitals 2025',
+  description: 'Spine surgery in India costs $4,500-10,000 vs $60,000-150,000 in USA (85-92% savings). 92-97% success. Top spine centers with minimally invasive techniques.',
+  keywords: 'spine surgery india, spinal fusion india, spine surgery cost india, best spine surgeon india',
 };
 
 const RELATED_ARTICLES = [
   { title: "Medical Visa India Guide", href: "/blog/medical-visa-india-complete-guide", description: "Complete visa process guide" },
-  { title: "Best Hospitals Mumbai", href: "/blog/best-hospitals-mumbai-medical-tourism", description: "Top 10 JCI-accredited hospitals" },
+  { title: "Best Hospitals Delhi", href: "/blog/best-hospitals-delhi-medical-tourism", description: "Top 10 JCI-accredited hospitals" },
   { title: "Medical Tourism Guide", href: "/blog/medical-tourism-uae-patients-guide", description: "Complete guide for GCC patients" }
 ];
 
-export default function BloodCancerTreatmentIndiaPage() {
+export default function SpineSurgeryIndiaPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-16">
         <div className="container">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl">Blood Cancer Treatment in India</h1>
-            <p className="mb-6 text-xl text-primary-50">Comprehensive Oncology Care at Fraction of Cost</p>
+            <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl">Spine Surgery in India</h1>
+            <p className="mb-6 text-xl text-primary-50">Advanced Spinal Care with Minimally Invasive Techniques</p>
             <div className="mb-6 flex flex-wrap items-center justify-center gap-4 text-lg">
-              <div className="flex items-center gap-2"><DollarSign className="h-5 w-5" /><span>$1,500 - $45,000</span></div>
-              <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>Varies</span></div>
-              <div className="flex items-center gap-2"><Heart className="h-5 w-5" /><span>60-85% success</span></div>
+              <div className="flex items-center gap-2"><DollarSign className="h-5 w-5" /><span>$4,500 - $10,000</span></div>
+              <div className="flex items-center gap-2"><Clock className="h-5 w-5" /><span>2-6 hours</span></div>
+              <div className="flex items-center gap-2"><Heart className="h-5 w-5" /><span>92-97% success</span></div>
             </div>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
@@ -59,7 +59,7 @@ export default function BloodCancerTreatmentIndiaPage() {
       <section className="container px-4 py-12">
         <div className="mx-auto max-w-5xl">
           <h2 className="mb-6 text-center font-serif text-3xl font-bold text-gray-900">Cost Comparison: India vs World</h2>
-          <p className="mb-8 text-center text-lg text-gray-600">Save 70-85% with same quality care</p>
+          <p className="mb-8 text-center text-lg text-gray-600">Save 60-95% with same quality care</p>
           <Card className="overflow-hidden shadow-xl">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -74,32 +74,32 @@ export default function BloodCancerTreatmentIndiaPage() {
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Chemotherapy (per cycle)</td>
-                    <td className="px-4 py-3 text-center font-semibold text-green-600">$1,500 - $3,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">$10,000 - $30,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">£8,000 - £25,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">AED 35,000 - 100,000</td>
+                    <td className="px-4 py-3 font-medium">Lumbar Spinal Fusion</td>
+                    <td className="px-4 py-3 text-center font-semibold text-green-600">$5,500 - $8,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">$80,000 - $150,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">£65,000 - £120,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">AED 70,000 - 130,000</td>
                   </tr>
                   <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Bone Marrow Transplant</td>
-                    <td className="px-4 py-3 text-center font-semibold text-green-600">$25,000 - $45,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">$300,000 - $500,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">£250,000 - £400,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">AED 350,000 - 550,000</td>
+                    <td className="px-4 py-3 font-medium">Cervical Disc Replacement</td>
+                    <td className="px-4 py-3 text-center font-semibold text-green-600">$5,000 - $7,500</td>
+                    <td className="px-4 py-3 text-center text-gray-600">$70,000 - $120,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">£55,000 - £95,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">AED 60,000 - 110,000</td>
                   </tr>
                   <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Targeted Therapy</td>
-                    <td className="px-4 py-3 text-center font-semibold text-green-600">$5,000 - $12,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">$50,000 - $150,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">£40,000 - £120,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">AED 60,000 - 180,000</td>
+                    <td className="px-4 py-3 font-medium">Minimally Invasive Discectomy</td>
+                    <td className="px-4 py-3 text-center font-semibold text-green-600">$4,500 - $6,500</td>
+                    <td className="px-4 py-3 text-center text-gray-600">$50,000 - $80,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">£40,000 - £65,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">AED 45,000 - 75,000</td>
                   </tr>
                   <tr className="hover:bg-gray-50">
-                    <td className="px-4 py-3 font-medium">Immunotherapy</td>
-                    <td className="px-4 py-3 text-center font-semibold text-green-600">$8,000 - $15,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">$80,000 - $200,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">£65,000 - £160,000</td>
-                    <td className="px-4 py-3 text-center text-gray-600">AED 90,000 - 220,000</td>
+                    <td className="px-4 py-3 font-medium">Scoliosis Correction</td>
+                    <td className="px-4 py-3 text-center font-semibold text-green-600">$8,000 - $12,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">$120,000 - $200,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">£95,000 - £160,000</td>
+                    <td className="px-4 py-3 text-center text-gray-600">AED 105,000 - 175,000</td>
                   </tr>
                 </tbody>
               </table>
@@ -111,26 +111,26 @@ export default function BloodCancerTreatmentIndiaPage() {
       {/* Top Hospitals */}
       <section className="container px-4 py-12">
         <div className="mx-auto max-w-5xl">
-          <h2 className="mb-8 text-center font-serif text-3xl font-bold text-gray-900">Top 3 Hospitals for Blood Cancer Treatment</h2>
+          <h2 className="mb-8 text-center font-serif text-3xl font-bold text-gray-900">Top 3 Hospitals for Spine Surgery</h2>
           <div className="space-y-4">
             <Card className="shadow-lg">
               <CardContent className="p-6">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="mb-2 flex items-center gap-3">
-                      <h3 className="text-xl font-bold text-gray-900">1. Tata Memorial Hospital</h3>
+                      <h3 className="text-xl font-bold text-gray-900">1. Apollo Hospitals</h3>
                       <div className="flex items-center gap-1 rounded-full bg-green-100 px-2 py-1">
                         <Star className="h-4 w-4 fill-green-600 text-green-600" />
                         <span className="text-sm font-semibold text-green-700">4.8/5</span>
                       </div>
                     </div>
-                    <p className="mb-3 text-gray-600">Mumbai | 15,000+ blood cancer patients annually</p>
+                    <p className="mb-3 text-gray-600">Chennai, Delhi | 5,000+ spine surgeries</p>
                     <div className="mb-3 flex flex-wrap gap-2">
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Asia&apos;s largest cancer center</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Government-subsidized</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">CAR-T cell therapy</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Minimally invasive</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Navigation</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Robotic assistance</span>
                     </div>
-                    <p className="text-sm font-semibold text-primary-600">Cost: $20,000 - $40,000</p>
+                    <p className="text-sm font-semibold text-primary-600">Cost: $5,500 - $9,000</p>
                   </div>
                 </div>
               </CardContent>
@@ -140,19 +140,19 @@ export default function BloodCancerTreatmentIndiaPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="mb-2 flex items-center gap-3">
-                      <h3 className="text-xl font-bold text-gray-900">2. Apollo Cancer Centre</h3>
+                      <h3 className="text-xl font-bold text-gray-900">2. Indian Spinal Injuries Centre</h3>
                       <div className="flex items-center gap-1 rounded-full bg-green-100 px-2 py-1">
                         <Star className="h-4 w-4 fill-green-600 text-green-600" />
-                        <span className="text-sm font-semibold text-green-700">4.8/5</span>
+                        <span className="text-sm font-semibold text-green-700">4.9/5</span>
                       </div>
                     </div>
-                    <p className="mb-3 text-gray-600">Chennai | 1,500+ BMT annually</p>
+                    <p className="mb-3 text-gray-600">Delhi | 4,500+ procedures</p>
                     <div className="mb-3 flex flex-wrap gap-2">
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Haploidentical BMT</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Pediatric blood cancer</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">International accredited</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Specialized spine center</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Complex deformities</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Rehabilitation</span>
                     </div>
-                    <p className="text-sm font-semibold text-primary-600">Cost: $28,000 - $50,000</p>
+                    <p className="text-sm font-semibold text-primary-600">Cost: $5,000 - $8,500</p>
                   </div>
                 </div>
               </CardContent>
@@ -162,19 +162,19 @@ export default function BloodCancerTreatmentIndiaPage() {
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
                     <div className="mb-2 flex items-center gap-3">
-                      <h3 className="text-xl font-bold text-gray-900">3. Fortis Memorial</h3>
+                      <h3 className="text-xl font-bold text-gray-900">3. Manipal Hospitals</h3>
                       <div className="flex items-center gap-1 rounded-full bg-green-100 px-2 py-1">
                         <Star className="h-4 w-4 fill-green-600 text-green-600" />
                         <span className="text-sm font-semibold text-green-700">4.7/5</span>
                       </div>
                     </div>
-                    <p className="mb-3 text-gray-600">Gurgaon | 1,200+ blood cancer cases</p>
+                    <p className="mb-3 text-gray-600">Bangalore | 3,500+ surgeries</p>
                     <div className="mb-3 flex flex-wrap gap-2">
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Advanced BMT unit</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Flow cytometry</span>
-                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Clinical trials</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Endoscopic spine</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Disc replacement</span>
+                      <span className="rounded-full bg-primary-100 px-3 py-1 text-xs font-medium text-primary-700">Sports injuries</span>
                     </div>
-                    <p className="text-sm font-semibold text-primary-600">Cost: $25,000 - $45,000</p>
+                    <p className="text-sm font-semibold text-primary-600">Cost: $4,800 - $8,000</p>
                   </div>
                 </div>
               </CardContent>
@@ -184,7 +184,7 @@ export default function BloodCancerTreatmentIndiaPage() {
       </section>
 
       {/* FAQ Schema */}
-      <FAQSchema faqs={[{"question":"What is success rate?","answer":"Acute Lymphoblastic Leukemia (ALL): 80-90% in children, 40-50% in adults. Acute Myeloid Leukemia (AML): 60-70% complete remission. Hodgkin Lymphoma: 80-85% cure rate. Non-Hodgkin Lymphoma: 60-75%. Multiple Myeloma: 75-85% response rate with novel therapies."},{"question":"How long is treatment?","answer":"Chemotherapy: 4-8 cycles over 3-6 months. BMT: Hospital stay 4-6 weeks, recovery 3-6 months. Maintenance therapy: 1-2 years for some types. Total treatment duration: 1-3 years depending on cancer type and stage."},{"question":"Is BMT necessary?","answer":"Not always. BMT needed for: High-risk leukemia, Relapsed disease, Certain aggressive lymphomas. NOT needed for: Early-stage Hodgkin, Some indolent lymphomas, Elderly patients over 70. Your oncologist will determine based on disease subtype, risk factors, and molecular markers."},{"question":"What are side effects?","answer":"Chemotherapy: Nausea, hair loss, low blood counts, infection risk. BMT: Graft-versus-host disease, infections, organ toxicity. Targeted therapy: Rash, diarrhea, liver issues (generally milder than chemo). Most side effects are manageable with supportive care. Indian hospitals excel at supportive care."}]} />
+      <FAQSchema faqs={[{"question":"What is success rate?","answer":"Spinal fusion: 92-97%, Disc replacement: 90-95%, Discectomy: 90-95%, Scoliosis correction: 85-92%. Success depends on severity, technique, patient compliance."},{"question":"Minimally invasive vs open?","answer":"MIS: Small incision (1-2cm), less pain, faster recovery (2-4 weeks), outpatient/1-day stay. Open: Traditional, larger incision, for complex cases, 3-5 day stay. MIS preferred when possible."},{"question":"How long is recovery?","answer":"Hospital: 2-5 days (MIS: 1-2 days), Walking: Day 1-2, Return to desk work: 2-4 weeks, Return to physical work: 6-12 weeks, Full recovery: 3-6 months."},{"question":"Will I need physiotherapy?","answer":"Yes, crucial for recovery. Starts 1-2 days after surgery. 4-8 weeks of structured rehab. Strengthens core, improves flexibility, prevents re-injury. Clinic provides physiotherapy plan."}]} />
 
       {/* FAQ Section */}
       <section className="container px-4 py-12">
@@ -194,25 +194,25 @@ export default function BloodCancerTreatmentIndiaPage() {
             <Card className="shadow-md">
               <CardContent className="p-6">
                 <h3 className="mb-3 text-lg font-bold text-gray-900">What is success rate?</h3>
-                <p className="text-gray-700">Acute Lymphoblastic Leukemia (ALL): 80-90% in children, 40-50% in adults. Acute Myeloid Leukemia (AML): 60-70% complete remission. Hodgkin Lymphoma: 80-85% cure rate. Non-Hodgkin Lymphoma: 60-75%. Multiple Myeloma: 75-85% response rate with novel therapies.</p>
+                <p className="text-gray-700">Spinal fusion: 92-97%, Disc replacement: 90-95%, Discectomy: 90-95%, Scoliosis correction: 85-92%. Success depends on severity, technique, patient compliance.</p>
               </CardContent>
             </Card>
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="mb-3 text-lg font-bold text-gray-900">How long is treatment?</h3>
-                <p className="text-gray-700">Chemotherapy: 4-8 cycles over 3-6 months. BMT: Hospital stay 4-6 weeks, recovery 3-6 months. Maintenance therapy: 1-2 years for some types. Total treatment duration: 1-3 years depending on cancer type and stage.</p>
+                <h3 className="mb-3 text-lg font-bold text-gray-900">Minimally invasive vs open?</h3>
+                <p className="text-gray-700">MIS: Small incision (1-2cm), less pain, faster recovery (2-4 weeks), outpatient/1-day stay. Open: Traditional, larger incision, for complex cases, 3-5 day stay. MIS preferred when possible.</p>
               </CardContent>
             </Card>
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="mb-3 text-lg font-bold text-gray-900">Is BMT necessary?</h3>
-                <p className="text-gray-700">Not always. BMT needed for: High-risk leukemia, Relapsed disease, Certain aggressive lymphomas. NOT needed for: Early-stage Hodgkin, Some indolent lymphomas, Elderly patients over 70. Your oncologist will determine based on disease subtype, risk factors, and molecular markers.</p>
+                <h3 className="mb-3 text-lg font-bold text-gray-900">How long is recovery?</h3>
+                <p className="text-gray-700">Hospital: 2-5 days (MIS: 1-2 days), Walking: Day 1-2, Return to desk work: 2-4 weeks, Return to physical work: 6-12 weeks, Full recovery: 3-6 months.</p>
               </CardContent>
             </Card>
             <Card className="shadow-md">
               <CardContent className="p-6">
-                <h3 className="mb-3 text-lg font-bold text-gray-900">What are side effects?</h3>
-                <p className="text-gray-700">Chemotherapy: Nausea, hair loss, low blood counts, infection risk. BMT: Graft-versus-host disease, infections, organ toxicity. Targeted therapy: Rash, diarrhea, liver issues (generally milder than chemo). Most side effects are manageable with supportive care. Indian hospitals excel at supportive care.</p>
+                <h3 className="mb-3 text-lg font-bold text-gray-900">Will I need physiotherapy?</h3>
+                <p className="text-gray-700">Yes, crucial for recovery. Starts 1-2 days after surgery. 4-8 weeks of structured rehab. Strengthens core, improves flexibility, prevents re-injury. Clinic provides physiotherapy plan.</p>
               </CardContent>
             </Card>
           </div>
@@ -244,7 +244,7 @@ export default function BloodCancerTreatmentIndiaPage() {
 
       {/* Social Share */}
       <div className="container px-4 py-8">
-        <SocialShare title="Blood Cancer Treatment India: Cost, Best Hospitals & Success Rate 2025" description="Blood cancer treatment in India costs 70-85% less than USA. Leukemia, Lymphoma, Myeloma. Top oncology centers, 60-85% success. Chemotherapy, BMT, targeted therapy." />
+        <SocialShare title="Spine Surgery India: Cost, Best Spine Surgeons & Hospitals 2025" description="Spine surgery in India costs $4,500-10,000 vs $60,000-150,000 in USA (85-92% savings). 92-97% success. Top spine centers with minimally invasive techniques." />
       </div>
 
       {/* Related Articles */}
