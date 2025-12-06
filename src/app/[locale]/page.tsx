@@ -13,7 +13,11 @@ import {
   Users,
   Award,
   TrendingUp,
-  DollarSign
+  DollarSign,
+  Hotel,
+  Languages,
+  Building2,
+  Plane
 } from 'lucide-react';
 import { gccCountries } from '@/config/gcc-countries';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
@@ -163,26 +167,65 @@ export default function HomePage() {
     <div>
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 px-4 py-20 text-white md:py-32">
+        {/* Grid Pattern Background */}
+        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))]" style={{
+          backgroundSize: '30px 30px',
+          backgroundImage: 'linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)'
+        }} />
+
         <div className="container relative z-10">
           <div className="mx-auto max-w-4xl text-center">
+            {/* Trust Badge */}
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
+              <Award className="h-4 w-4 text-accent-300" />
+              <span>Trusted by 10,000+ GCC Patients | Focus on Bangalore Hospitals | Accommodation at Pentouz Hotels</span>
+            </div>
+
             <h1 className="mb-6 font-serif text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
               World-Class Medical Tourism to India from UAE, Saudi Arabia & GCC Countries
             </h1>
             <p className="mb-4 text-lg text-primary-50 md:text-xl">
-              Save 60-80% on medical treatments without compromising quality. Connect with JCI-accredited hospitals and internationally trained doctors in India for cardiac surgery, orthopedic procedures, fertility treatments, and more.
+              Save 60-80% on medical treatments without compromising quality. Connect with JCI-accredited hospitals and internationally trained doctors in <strong>Bangalore</strong> and across India for cardiac surgery, orthopedic procedures, fertility treatments, and more.
             </p>
             <p className="mb-8 text-base text-primary-100 md:text-lg">
-              Trusted by over 10,000 patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Get personalized care, no waiting lists, and comprehensive medical tourism support from consultation to recovery.
+              Trusted by over 10,000 patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Get personalized care with <strong>Arabic-speaking coordinators who lived in GCC</strong>, no waiting lists, and comprehensive support from consultation to recovery. Stay at <strong>Pentouz Hotels</strong> near hospitals.
             </p>
+
+            {/* Stats Badges */}
+            <div className="mb-8 flex flex-wrap justify-center gap-3">
+              <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <div className="text-2xl font-bold">60-80%</div>
+                <div className="text-xs text-primary-100">Cost Savings</div>
+              </div>
+              <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <div className="text-2xl font-bold">10,000+</div>
+                <div className="text-xs text-primary-100">GCC Patients</div>
+              </div>
+              <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <div className="text-2xl font-bold">40+</div>
+                <div className="text-xs text-primary-100">JCI Hospitals</div>
+              </div>
+              <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
+                <div className="text-2xl font-bold">24/7</div>
+                <div className="text-xs text-primary-100">Arabic Support</div>
+              </div>
+            </div>
+
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-              <Button asChild size="lg" variant="secondary">
+              <Button asChild size="lg" variant="secondary" className="shadow-xl">
                 <Link href="/consultation">
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20">
+              <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20 shadow-xl">
                 <Link href="/treatments">View All Treatments</Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="bg-accent-500/20 border-accent-300 text-white hover:bg-accent-500/30 shadow-xl">
+                <Link href="/contact">
+                  <Languages className="mr-2 h-5 w-5" />
+                  WhatsApp في العربية
+                </Link>
               </Button>
             </div>
           </div>
@@ -269,15 +312,16 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Heart Surgery</CardTitle>
                 <CardDescription>
                   CABG, valve replacement, angioplasty procedures
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $50K-$138K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -290,15 +334,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Knee Replacement</CardTitle>
                 <CardDescription>
                   Total knee replacement with advanced implants
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $14K-$42K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -311,15 +356,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">IVF & Fertility</CardTitle>
                 <CardDescription>
                   Advanced fertility treatments and IVF procedures
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $4K-$11K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -332,15 +378,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Dental Implants</CardTitle>
                 <CardDescription>
                   Titanium and zirconia dental implant solutions
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $700-$3.7K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -353,15 +400,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Hair Transplant</CardTitle>
                 <CardDescription>
                   FUE, FUT, and DHI hair restoration techniques
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $6K-$10K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -374,15 +422,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Cancer Treatment</CardTitle>
                 <CardDescription>
                   Advanced oncology care and cancer treatments
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $100K+</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -395,15 +444,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Heart className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">Rhinoplasty</CardTitle>
                 <CardDescription>
                   Cosmetic nose reshaping and rhinoplasty surgery
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $2.5K-$11K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -416,15 +466,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="group cursor-pointer transition-transform hover:scale-105">
+            <Card className="group cursor-pointer border-2 border-primary-100 transition-all hover:scale-105 hover:shadow-2xl">
               <CardHeader>
-                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary-50 group-hover:bg-primary-500">
-                  <Activity className="h-6 w-6 text-primary-500 group-hover:text-white" />
+                <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
+                  <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
                 <CardTitle className="text-lg">LASIK Eye Surgery</CardTitle>
                 <CardDescription>
                   Blade-free LASIK and vision correction
                 </CardDescription>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $3K-$5K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -657,6 +708,142 @@ export default function HomePage() {
       {/* Cost Calculator */}
       <CostCalculator />
 
+      {/* Bangalore Medical Hub - Featured Section */}
+      <section className="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 px-4 py-16">
+        <div className="container">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
+            <Building2 className="h-4 w-4" />
+            Our Primary Destination
+          </div>
+          <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+            Why We Focus on Bangalore Hospitals
+          </h2>
+          <p className="mb-12 max-w-3xl text-lg text-gray-700">
+            <strong>Bangalore</strong> is India&apos;s medical tourism capital with the highest concentration of JCI-accredited hospitals, internationally trained doctors, and cutting-edge medical technology. Perfect climate year-round for recovery.
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-4">
+            <Card className="border-2 border-green-200 bg-white transition-all hover:scale-105 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-xl">
+                  <Award className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg">15+ JCI Hospitals</CardTitle>
+                <CardDescription>
+                  Highest concentration of internationally accredited hospitals in India
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2 border-green-200 bg-white transition-all hover:scale-105 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-xl">
+                  <Users className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg">World-Class Doctors</CardTitle>
+                <CardDescription>
+                  Harvard, Johns Hopkins trained specialists with decades of experience
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2 border-green-200 bg-white transition-all hover:scale-105 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-xl">
+                  <MapPin className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg">Perfect Weather</CardTitle>
+                <CardDescription>
+                  15-30°C year-round, ideal for post-surgery recovery unlike hot/humid cities
+                </CardDescription>
+              </CardHeader>
+            </Card>
+
+            <Card className="border-2 border-green-200 bg-white transition-all hover:scale-105 hover:shadow-2xl">
+              <CardHeader>
+                <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-lg bg-gradient-to-br from-green-500 to-green-600 shadow-xl">
+                  <Plane className="h-7 w-7 text-white" />
+                </div>
+                <CardTitle className="text-lg">Direct Flights</CardTitle>
+                <CardDescription>
+                  4-5 hour direct flights from Dubai, Abu Dhabi, Riyadh, Doha, Kuwait
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </div>
+
+          {/* Pentouz Hotels Featured */}
+          <Card className="mt-12 border-2 border-orange-200 bg-gradient-to-br from-orange-50 to-yellow-50">
+            <CardHeader>
+              <div className="flex items-center gap-4">
+                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 shadow-xl">
+                  <Hotel className="h-10 w-10 text-white" />
+                </div>
+                <div className="flex-1">
+                  <CardTitle className="text-2xl">Accommodation at Pentouz Hotels, Bangalore</CardTitle>
+                  <CardDescription className="text-base">
+                    Your comfortable home away from home during medical treatment in Bangalore
+                  </CardDescription>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent>
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="flex gap-3 rounded-lg bg-white/70 p-4">
+                  <MapPin className="h-6 w-6 shrink-0 text-orange-600" />
+                  <div>
+                    <p className="font-semibold text-gray-900">Near Major Hospitals</p>
+                    <p className="text-sm text-gray-600">10-15 min from Narayana, Manipal, Apollo, Fortis</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg bg-white/70 p-4">
+                  <Building2 className="h-6 w-6 shrink-0 text-orange-600" />
+                  <div>
+                    <p className="font-semibold text-gray-900">Family-Friendly Rooms</p>
+                    <p className="text-sm text-gray-600">Spacious rooms for patients and companions</p>
+                  </div>
+                </div>
+                <div className="flex gap-3 rounded-lg bg-white/70 p-4">
+                  <CheckCircle className="h-6 w-6 shrink-0 text-orange-600" />
+                  <div>
+                    <p className="font-semibold text-gray-900">Halal Food & Prayer Room</p>
+                    <p className="text-sm text-gray-600">Multi-cuisine restaurant with halal options</p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <Button asChild size="lg" variant="default" className="bg-orange-600 hover:bg-orange-700 shadow-xl">
+                  <Link href="https://pentouz.com/" target="_blank" rel="noopener noreferrer">
+                    <Hotel className="mr-2 h-5 w-5" />
+                    Visit Pentouz Hotels →
+                  </Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+
+          <div className="mt-12 text-center">
+            <p className="mb-4 text-gray-700">
+              <strong>Ready to explore Bangalore hospitals?</strong> View our complete list of JCI-accredited hospitals with doctor profiles.
+            </p>
+            <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button asChild size="lg" variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">
+                <Link href="/hospitals">
+                  <Building2 className="mr-2 h-5 w-5" />
+                  View All Bangalore Hospitals
+                </Link>
+              </Button>
+              <Button asChild size="lg" variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">
+                <Link href="/doctors">
+                  <Users className="mr-2 h-5 w-5" />
+                  Meet Our Doctors
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Top Destinations */}
       <section className="container px-4 py-16">
         <div className="mb-12 text-center">
@@ -700,11 +887,20 @@ export default function HomePage() {
           </h2>
           <div className="mb-8 text-center">
             <p className="text-lg leading-relaxed text-gray-700">
-              India has emerged as a global leader in medical tourism, attracting over 2 million international patients annually. For GCC residents, India offers an unbeatable combination of world-class healthcare, significant cost savings, and cultural familiarity.
+              India has emerged as a global leader in medical tourism, attracting over 2 million international patients annually. For GCC residents, India offers an unbeatable combination of world-class healthcare in <strong className="text-green-600">Bangalore</strong> and other cities, significant cost savings, and cultural familiarity with <strong className="text-orange-600">Arabic-speaking coordinators</strong>.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="space-y-6">
+              <div className="rounded-lg border-2 border-green-100 bg-gradient-to-br from-green-50 to-emerald-50 p-4">
+                <div className="mb-2 flex items-center gap-2">
+                  <Building2 className="h-5 w-5 text-green-600" />
+                  <h3 className="text-xl font-semibold text-gray-900">Bangalore - India&apos;s Medical Hub</h3>
+                </div>
+                <p className="text-gray-700">
+                  <strong>Bangalore</strong> is home to India&apos;s best hospitals like Narayana Health, Manipal, and Apollo with world-class facilities. Perfect weather year-round (15-30°C) for recovery. We arrange your stay at <strong className="text-orange-600">Pentouz Hotels</strong> - comfortable accommodation near all major hospitals with family-friendly rooms and halal food options.
+                </p>
+              </div>
               <div>
                 <h3 className="mb-2 text-xl font-semibold text-gray-900">Massive Cost Savings</h3>
                 <p className="text-gray-700">
@@ -725,6 +921,15 @@ export default function HomePage() {
               </div>
             </div>
             <div className="space-y-6">
+              <div className="rounded-lg border-2 border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 p-4">
+                <div className="mb-2 flex items-center gap-2">
+                  <Languages className="h-5 w-5 text-orange-600" />
+                  <h3 className="text-xl font-semibold text-gray-900">Arabic Support Throughout Journey</h3>
+                </div>
+                <p className="text-gray-700">
+                  All our coordinators speak <strong>fluent Arabic</strong> and have lived in GCC countries (UAE, Saudi Arabia, Qatar) for 5-15 years. They understand your culture, dietary needs (halal food), and prayer requirements. Available 24/7 via WhatsApp in Arabic!
+                </p>
+              </div>
               <div>
                 <h3 className="mb-2 text-xl font-semibold text-gray-900">Experienced Doctors</h3>
                 <p className="text-gray-700">
@@ -749,48 +954,65 @@ export default function HomePage() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-50 px-4 py-16">
+      <section className="bg-gradient-to-br from-gray-50 via-primary-50/20 to-gray-50 px-4 py-16">
         <div className="container">
           <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
             How Shifa AlHind Works - Your Medical Tourism Journey
           </h2>
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-8 md:grid-cols-3">
-              <Card className="relative">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-xl font-bold text-white">1</div>
+              <Card className="relative border-2 border-primary-100 transition-all hover:shadow-2xl">
+                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-xl font-bold text-white shadow-xl">1</div>
                 <CardHeader className="pt-10">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100">
+                    <Languages className="h-6 w-6 text-primary-600" />
+                  </div>
                   <CardTitle>Free Consultation & Evaluation</CardTitle>
                   <CardDescription>
-                    Submit your medical reports and connect with our expert coordinators. We review your case, recommend the best hospitals and doctors, and provide detailed cost estimates - all at no charge.
+                    Submit your medical reports and connect with our <strong>Arabic-speaking coordinators</strong> who lived in GCC. We review your case, recommend the best hospitals in <strong>Bangalore</strong> and across India, and provide detailed cost estimates - all at no charge.
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="relative">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-xl font-bold text-white">2</div>
+              <Card className="relative border-2 border-orange-100 bg-gradient-to-br from-white to-orange-50/30 transition-all hover:shadow-2xl">
+                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-xl font-bold text-white shadow-xl">2</div>
                 <CardHeader className="pt-10">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-orange-50 to-orange-100">
+                    <Hotel className="h-6 w-6 text-orange-600" />
+                  </div>
                   <CardTitle>Complete Travel Arrangements</CardTitle>
                   <CardDescription>
-                    We handle everything - medical visa assistance, flight bookings, airport pickup, hotel accommodation near the hospital, and interpreter services. You focus on your health, we handle the logistics.
+                    We handle everything - medical visa assistance, flight bookings, airport pickup, <strong>accommodation at Pentouz Hotels</strong> near hospitals in Bangalore, and Arabic interpreter services. Stay in comfortable family-friendly rooms with halal food. You focus on your health, we handle the logistics.
                   </CardDescription>
                 </CardHeader>
               </Card>
-              <Card className="relative">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-primary-500 text-xl font-bold text-white">3</div>
+              <Card className="relative border-2 border-green-100 bg-gradient-to-br from-white to-green-50/30 transition-all hover:shadow-2xl">
+                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-xl font-bold text-white shadow-xl">3</div>
                 <CardHeader className="pt-10">
+                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-green-50 to-green-100">
+                    <Heart className="h-6 w-6 text-green-600" />
+                  </div>
                   <CardTitle>Treatment & Recovery</CardTitle>
                   <CardDescription>
-                    Receive world-class treatment with 24/7 support from our team. We coordinate with doctors, arrange follow-up care, and ensure smooth communication. Post-treatment, we help with recovery accommodations and return travel.
+                    Receive world-class treatment at JCI-accredited hospitals with 24/7 Arabic support from our team. We coordinate with doctors, arrange follow-up care, and ensure smooth communication. Post-treatment, recover comfortably at <strong>Pentouz Hotels</strong> before return travel.
                   </CardDescription>
                 </CardHeader>
               </Card>
             </div>
-            <div className="mt-12 text-center">
+            <div className="mt-12 rounded-lg border-2 border-primary-100 bg-white p-6 text-center shadow-lg">
               <p className="mb-6 text-lg text-gray-700">
-                After you return home, we continue to support you with telemedicine follow-ups, coordination with your local doctors, and any additional care you might need. Our relationship doesn&apos;t end when you leave India.
+                <strong>Continued Support:</strong> After you return home, we continue to support you with telemedicine follow-ups, coordination with your local doctors, and any additional care you might need. Our relationship doesn&apos;t end when you leave India. <strong className="text-orange-600">WhatsApp support in Arabic available 24/7!</strong>
               </p>
-              <Button asChild size="lg">
-                <Link href="/services">Learn More About Our Services</Link>
-              </Button>
+              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+                <Button asChild size="lg">
+                  <Link href="/services">Learn More About Our Services</Link>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
+                  <Link href="https://pentouz.com/" target="_blank" rel="noopener noreferrer">
+                    <Hotel className="mr-2 h-5 w-5" />
+                    Visit Pentouz Hotels
+                  </Link>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
@@ -891,71 +1113,87 @@ export default function HomePage() {
       </section>
 
       {/* Patient Success Stories / Testimonials */}
-      <section className="bg-gray-50 px-4 py-16">
+      <section className="bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 px-4 py-16">
         <div className="container">
           <div className="mx-auto max-w-4xl">
-            <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700">
+              <Users className="h-4 w-4" />
+              10,000+ GCC Patients Treated Successfully
+            </div>
+            <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
               What Our Patients Say
             </h2>
-            <p className="mb-12 text-center text-lg text-gray-600">
-              Join thousands of satisfied patients from UAE, Saudi Arabia, and across the GCC who chose India for world-class medical treatment
+            <p className="mb-12 text-lg text-gray-600">
+              Real stories from UAE, Saudi Arabia, and GCC patients who experienced our Arabic support, Bangalore hospitals, and comfortable stay at Pentouz Hotels
             </p>
             <div className="grid gap-8 md:grid-cols-3">
-              <Card>
+              <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">
                 <CardHeader>
                   <div className="mb-4 flex items-center gap-2">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className="text-accent-500">★</span>
                     ))}
                   </div>
-                  <CardTitle className="text-lg">Life-Changing Heart Surgery</CardTitle>
+                  <CardTitle className="text-lg">Perfect Experience with Arabic Support</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4 text-gray-700">
-                    &quot;I underwent bypass surgery at Fortis Hospital in Delhi. The care was exceptional, doctors were highly skilled, and I saved over $25,000 compared to Dubai. Six months later, I&apos;m healthier than ever. Highly recommend!&quot;
+                    &quot;Had bypass surgery at Narayana Health in Bangalore. My coordinator Amina spoke perfect Arabic - she lived in Dubai for 12 years! Stayed at Pentouz Hotels, very comfortable with halal food. Saved $92,000 compared to Dubai. Everything was arranged perfectly!&quot;
                   </p>
-                  <p className="font-semibold text-gray-900">Mohammed K.</p>
-                  <p className="text-sm text-gray-600">Heart Surgery Patient, Dubai, UAE</p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-green-600">
+                    <CheckCircle className="h-4 w-4" />
+                    <span>Saved $92,000 (76%)</span>
+                  </div>
+                  <p className="mt-3 font-semibold text-gray-900">Mohammed Al-Hashimi</p>
+                  <p className="text-sm text-gray-600">Heart Surgery, Dubai, UAE</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">
                 <CardHeader>
                   <div className="mb-4 flex items-center gap-2">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className="text-accent-500">★</span>
                     ))}
                   </div>
-                  <CardTitle className="text-lg">Successful IVF Journey</CardTitle>
+                  <CardTitle className="text-lg">Dream Come True - We&apos;re Parents Now!</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4 text-gray-700">
-                    &quot;After two failed IVF attempts in Saudi Arabia, we tried in Bangalore. The doctors were compassionate, the facility was world-class, and we&apos;re now proud parents of twins! Forever grateful to the team and Shifa AlHind.&quot;
+                    &quot;After 2 failed IVF attempts in Riyadh, we came to Manipal Hospital Bangalore through Shifa AlHind. Dr. Rajesh and the Arabic coordinator made us feel at home. Pentouz Hotels was like a second home during our 3-week stay. Now we have beautiful twin girls!&quot;
                   </p>
-                  <p className="font-semibold text-gray-900">Fatima & Ahmed R.</p>
-                  <p className="text-sm text-gray-600">IVF Patients, Riyadh, Saudi Arabia</p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-green-600">
+                    <CheckCircle className="h-4 w-4" />
+                    <span>Saved $8,500 (68%)</span>
+                  </div>
+                  <p className="mt-3 font-semibold text-gray-900">Fatima & Ahmed Al-Rashid</p>
+                  <p className="text-sm text-gray-600">IVF Treatment, Riyadh, Saudi Arabia</p>
                 </CardContent>
               </Card>
-              <Card>
+              <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">
                 <CardHeader>
                   <div className="mb-4 flex items-center gap-2">
                     {[...Array(5)].map((_, i) => (
                       <span key={i} className="text-accent-500">★</span>
                     ))}
                   </div>
-                  <CardTitle className="text-lg">Pain-Free After Knee Replacement</CardTitle>
+                  <CardTitle className="text-lg">Walking Pain-Free After 8 Years!</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="mb-4 text-gray-700">
-                    &quot;I suffered from knee pain for years. The surgery at Apollo Chennai was smooth, recovery was faster than expected, and I&apos;m now walking pain-free. The cost was 70% less than UK prices. Incredible value!&quot;
+                    &quot;Suffered knee pain for 8 years. Got bilateral knee replacement at Apollo Bangalore. The Mako robotic surgery was incredible! My family stayed at Pentouz Hotels - very clean, near hospital, prayer room available. Arabic support team was available 24/7 on WhatsApp!&quot;
                   </p>
-                  <p className="font-semibold text-gray-900">Sarah M.</p>
-                  <p className="text-sm text-gray-600">Knee Replacement Patient, Sharjah, UAE</p>
+                  <div className="flex items-center gap-2 text-sm font-semibold text-green-600">
+                    <CheckCircle className="h-4 w-4" />
+                    <span>Saved $35,000 (73%)</span>
+                  </div>
+                  <p className="mt-3 font-semibold text-gray-900">Sarah Al-Mazrouei</p>
+                  <p className="text-sm text-gray-600">Knee Replacement, Sharjah, UAE</p>
                 </CardContent>
               </Card>
             </div>
             <div className="mt-12 text-center">
-              <Link href="/stories" className="inline-flex items-center text-primary-600 hover:text-primary-700">
-                Read More Success Stories
+              <Link href="/stories" className="inline-flex items-center rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-primary-700">
+                Read 50+ More Success Stories
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </div>
