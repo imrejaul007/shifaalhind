@@ -106,7 +106,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
               <div>
                 <h3 className="mb-3 text-2xl font-semibold text-gray-900">Cultural Sensitivity & Comfort</h3>
                 <p className="text-lg leading-relaxed text-gray-700">
-                  We understand the unique needs of GCC patients. Our partner hospitals provide halal meal options, prayer facilities, and female doctors for women patients when requested. We arrange accommodation close to hospitals with amenities familiar to GCC travelers. Our team understands cultural nuances and ensures your comfort throughout your medical journey.
+                  We understand the unique needs of GCC patients. Our partner hospitals provide halal meal options, prayer facilities, and female doctors for women patients when requested. We arrange accommodation close to hospitals with amenities familiar to GCC travelers. In Bangalore, we partner with <a href="https://pentouz.com/" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700 underline">Pentouz Hotels</a>, offering comfortable and convenient stays near major medical facilities. Our team understands cultural nuances and ensures your comfort throughout your medical journey.
                 </p>
               </div>
             </div>

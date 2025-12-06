@@ -89,7 +89,7 @@ export default function ServicesPage() {
       icon: Hotel,
       title: 'Accommodation',
       description: 'Hotel bookings near hospitals with special rates for patients and families.',
-      details: 'Partner hotels with medical-friendly amenities, special rates, and hospital proximity.',
+      details: 'Partner hotels with medical-friendly amenities, special rates, and hospital proximity. In Bangalore, we partner with Pentouz Hotels for comfortable stays near medical facilities.',
     },
     {
       icon: MapPin,
@@ -404,7 +404,7 @@ export default function ServicesPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
-                    <span>Accommodation booking</span>
+                    <span>Accommodation booking (Pentouz Hotels in Bangalore)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-green-600" />
@@ -486,7 +486,7 @@ export default function ServicesPage() {
               'Visa assistance letters',
               'Flight booking support',
               'Airport pickup & drop-off',
-              'Accommodation arrangements',
+              'Accommodation arrangements (Pentouz Hotels in Bangalore)',
               'Medical interpreter services',
               'Local transportation',
               'Local SIM card & connectivity',
