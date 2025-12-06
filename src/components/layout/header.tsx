@@ -188,21 +188,21 @@ export function Header() {
                         <ChevronDown className="h-4 w-4" />
                       </button>
                       {treatmentsOpen && (
-                        <div className={`absolute left-0 top-full z-50 mt-1.5 rounded-lg border border-gray-100 bg-white shadow-xl ${item.megaMenu ? 'w-[800px] p-6' : 'w-60 py-2'}`}>
+                        <div className={`absolute left-0 top-full z-50 mt-1.5 rounded-lg border border-gray-100 bg-white shadow-xl ${item.megaMenu ? 'w-[950px] p-6' : 'w-60 py-2'}`}>
                           {item.megaMenu ? (
                             // Mega Menu with categories
-                            <div className="grid grid-cols-3 gap-6">
+                            <div className="grid grid-cols-4 gap-5">
                               {item.submenu?.map((category: any) => (
                                 <div key={category.category}>
-                                  <h3 className="mb-3 text-sm font-bold text-gray-900 border-b border-gray-200 pb-2">
+                                  <h3 className="mb-2.5 text-xs font-bold text-gray-900 border-b border-gray-200 pb-1.5">
                                     {category.category}
                                   </h3>
-                                  <div className="space-y-1">
+                                  <div className="space-y-0.5">
                                     {category.items.map((subItem: any) => (
                                       <Link
                                         key={subItem.name}
                                         href={subItem.href}
-                                        className="block rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
+                                        className="block rounded-md px-2.5 py-1.5 text-sm font-medium text-gray-700 transition-colors hover:bg-primary-50 hover:text-primary-600"
                                       >
                                         {subItem.name}
                                       </Link>
@@ -211,7 +211,7 @@ export function Header() {
                                 </div>
                               ))}
                               {/* View All Link */}
-                              <div className="col-span-3 border-t border-gray-200 pt-4 mt-2">
+                              <div className="col-span-4 border-t border-gray-200 pt-3 mt-2">
                                 <Link
                                   href="/treatments"
                                   className="flex items-center justify-center rounded-lg bg-primary-500 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-600"
