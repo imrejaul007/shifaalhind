@@ -79,10 +79,26 @@ export default function BookingPage() {
     setIsSubmitting(true);
 
     try {
+      // Get selected treatment name
+      const treatmentIndex = data.treatmentId ? parseInt(data.treatmentId) - 1 : -1;
+      const treatmentName = treatmentIndex >= 0 ? ALL_TREATMENTS[treatmentIndex]?.name : 'Not specified';
+
+      // Prepare submission data - don't send treatmentId (avoid foreign key constraint)
+      const submissionData = {
+        userName: data.userName,
+        email: data.email,
+        phone: data.phone,
+        countryOrigin: data.countryOrigin,
+        cityOrigin: data.cityOrigin,
+        preferredDate: data.preferredDate,
+        // Include treatment name in message instead of invalid treatmentId
+        message: `Treatment: ${treatmentName}\n\n${data.medicalConditions || ''}${data.message ? '\n\n' + data.message : ''}`.trim(),
+      };
+
       const response = await fetch('/api/v1/lead', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify(submissionData),
       });
 
       if (response.ok) {

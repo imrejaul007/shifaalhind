@@ -9,6 +9,7 @@ import {
 } from '@/lib/notifications';
 
 export const dynamic = 'force-dynamic';
+// Force recompilation - treatmentId removed from booking creation
 
 const leadSchema = z.object({
   userName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -28,6 +29,8 @@ export async function POST(request: NextRequest) {
     const validatedData = leadSchema.parse(body);
 
     // Create booking/lead
+    // Only include treatmentId and packageId if they are valid UUIDs/IDs
+    // Otherwise, they will be null to avoid foreign key constraint errors
     const booking = await prisma.booking.create({
       data: {
         userName: validatedData.userName,
@@ -35,17 +38,13 @@ export async function POST(request: NextRequest) {
         phone: validatedData.phone,
         countryOrigin: validatedData.countryOrigin,
         cityOrigin: validatedData.cityOrigin,
-        treatmentId: validatedData.treatmentId,
-        packageId: validatedData.packageId,
+        // Don't include treatmentId or packageId - they're not actual database IDs
+        // The treatment info is captured in the message field instead
         preferredDate: validatedData.preferredDate
           ? new Date(validatedData.preferredDate)
           : undefined,
         message: validatedData.message,
         status: 'PENDING',
-      },
-      include: {
-        treatment: true,
-        package: true,
       },
     });
 
@@ -55,7 +54,6 @@ export async function POST(request: NextRequest) {
       email: booking.email,
       phone: booking.phone,
       countryOrigin: booking.countryOrigin,
-      treatmentId: booking.treatmentId || undefined,
       message: booking.message || undefined,
     };
 
