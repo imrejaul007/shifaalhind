@@ -13,6 +13,7 @@ import {
   Phone,
   Star
 } from 'lucide-react';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism India for UAE Patients | Save 60-80% on Treatment',
@@ -499,6 +500,9 @@ export default function UAEPatientsPage() {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white">

@@ -6,6 +6,7 @@ import {
   Check,
   Plane
 } from 'lucide-react';
+import { TrustBadges } from '@/components/trust-badges/trust-badges';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism India for Bahrain Patients | Save 70-80%',
@@ -128,6 +129,9 @@ export default function BahrainPatientsPage() {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges Section */}
+      <TrustBadges />
 
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white">
         <div className="container mx-auto px-4 text-center">
