@@ -45,7 +45,8 @@ export function InternalLinks({
   links,
   variant = 'default'
 }: InternalLinksProps) {
-  if (links.length === 0) return null;
+  // Return null if no links provided
+  if (!links || links.length === 0) return null;
 
   if (variant === 'inline') {
     return (

@@ -28,6 +28,9 @@ export function Testimonials({
   subtitle = "Real stories from patients who transformed their lives",
   className = ""
 }: TestimonialsProps) {
+  // Return null if no testimonials
+  if (!testimonials || testimonials.length === 0) return null;
+
   return (
     <section className={`py-16 ${className}`}>
       <div className="container mx-auto px-4">
