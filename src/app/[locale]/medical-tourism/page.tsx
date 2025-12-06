@@ -38,8 +38,16 @@ export const metadata: Metadata = {
 };
 
 export default async function MedicalTourismPage() {
-  // Fetch all cities with their treatments
+  // Fetch only Indian cities with their treatments
   const cities = await prisma.city.findMany({
+    where: {
+      country: {
+        OR: [
+          { name_en: 'India' },
+          { code: 'IN' },
+        ],
+      },
+    },
     include: {
       country: true,
       cityTreatments: {
