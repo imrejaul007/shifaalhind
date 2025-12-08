@@ -23,6 +23,7 @@ import { gccCountries } from '@/config/gcc-countries';
 import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
+import { PatientJourney } from '@/components/patient-journey/patient-journey';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -953,70 +954,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="bg-gradient-to-br from-gray-50 via-primary-50/20 to-gray-50 px-4 py-16">
-        <div className="container">
-          <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            How Shifa AlHind Works - Your Medical Tourism Journey
-          </h2>
-          <div className="mx-auto max-w-5xl">
-            <div className="grid gap-8 md:grid-cols-3">
-              <Card className="relative border-2 border-primary-100 transition-all hover:shadow-2xl">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 text-xl font-bold text-white shadow-xl">1</div>
-                <CardHeader className="pt-10">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100">
-                    <Languages className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <CardTitle>Free Consultation & Evaluation</CardTitle>
-                  <CardDescription>
-                    Submit your medical reports and connect with our <strong>Arabic-speaking coordinators</strong> who lived in GCC. We review your case, recommend the best hospitals in <strong>Bangalore</strong> and across India, and provide detailed cost estimates - all at no charge.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="relative border-2 border-orange-100 bg-gradient-to-br from-white to-orange-50/30 transition-all hover:shadow-2xl">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-orange-500 to-orange-600 text-xl font-bold text-white shadow-xl">2</div>
-                <CardHeader className="pt-10">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-orange-50 to-orange-100">
-                    <Hotel className="h-6 w-6 text-orange-600" />
-                  </div>
-                  <CardTitle>Complete Travel Arrangements</CardTitle>
-                  <CardDescription>
-                    We handle everything - medical visa assistance, flight bookings, airport pickup, <strong>accommodation at Pentouz Hotels</strong> near hospitals in Bangalore, and Arabic interpreter services. Stay in comfortable family-friendly rooms with halal food. You focus on your health, we handle the logistics.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-              <Card className="relative border-2 border-green-100 bg-gradient-to-br from-white to-green-50/30 transition-all hover:shadow-2xl">
-                <div className="absolute -top-4 left-6 flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 text-xl font-bold text-white shadow-xl">3</div>
-                <CardHeader className="pt-10">
-                  <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-green-50 to-green-100">
-                    <Heart className="h-6 w-6 text-green-600" />
-                  </div>
-                  <CardTitle>Treatment & Recovery</CardTitle>
-                  <CardDescription>
-                    Receive world-class treatment at JCI-accredited hospitals with 24/7 Arabic support from our team. We coordinate with doctors, arrange follow-up care, and ensure smooth communication. Post-treatment, recover comfortably at <strong>Pentouz Hotels</strong> before return travel.
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </div>
-            <div className="mt-12 rounded-lg border-2 border-primary-100 bg-white p-6 text-center shadow-lg">
-              <p className="mb-6 text-lg text-gray-700">
-                <strong>Continued Support:</strong> After you return home, we continue to support you with telemedicine follow-ups, coordination with your local doctors, and any additional care you might need. Our relationship doesn&apos;t end when you leave India. <strong className="text-orange-600">WhatsApp support in Arabic available 24/7!</strong>
-              </p>
-              <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button asChild size="lg">
-                  <Link href="/services">Learn More About Our Services</Link>
-                </Button>
-                <Button asChild size="lg" variant="outline" className="border-orange-300 text-orange-600 hover:bg-orange-50">
-                  <Link href="https://pentouz.com/" target="_blank" rel="noopener noreferrer">
-                    <Hotel className="mr-2 h-5 w-5" />
-                    Visit Pentouz Hotels
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Enhanced Patient Journey - 8 Steps */}
+      <PatientJourney locale="en" />
 
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={faqData.map(faq => ({ question: faq.question, answer: faq.answer }))} />
