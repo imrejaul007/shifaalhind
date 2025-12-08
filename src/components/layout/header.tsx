@@ -115,6 +115,8 @@ export function Header() {
     },
     { name: t('common.hospitals'), href: '/hospitals' },
     { name: t('common.doctors'), href: '/doctors' },
+    { name: 'Success Stories', href: '/case-studies' },
+    { name: 'Visa Assistance', href: '/visa-assistance' },
     { name: t('common.about'), href: '/about' },
     { name: t('common.contact'), href: '/contact' },
   ];

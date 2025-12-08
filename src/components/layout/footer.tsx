@@ -108,6 +108,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/case-studies" className="text-gray-600 hover:text-primary-500">
+                  Success Stories
+                </Link>
+              </li>
+              <li>
+                <Link href="/visa-assistance" className="text-gray-600 hover:text-primary-500">
+                  Visa Assistance
+                </Link>
+              </li>
+              <li>
                 <Link href="/contact" className="text-gray-600 hover:text-primary-500">
                   Contact
                 </Link>
