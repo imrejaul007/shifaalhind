@@ -569,6 +569,340 @@ export default function LungCancerTreatmentIndiaPage() {
               </p>
             </CardContent>
           </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum/maximum age for lung cancer treatment?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Treatable age range: 18 years to 95+ years with appropriate modifications.</strong> Age-specific considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Young patients (18-40 years):</strong> Rare (only 2-3% of lung cancers). Usually non-smokers with targetable mutations (EGFR, ALK). Aggressive treatment recommended (surgery + chemo + targeted therapy). Excellent outcomes if mutation-positive.</li>
+                <li><strong>Middle-aged (40-70 years):</strong> Standard treatment protocols. Surgery + chemotherapy + radiation as indicated. Most patients tolerate full treatment well. Best outcomes in this age group.</li>
+                <li><strong>Elderly (70-80 years):</strong> Age is NOT a contraindication if otherwise healthy. Many 75-year-olds healthier than 60-year-olds. Treatment decisions based on fitness (performance status), lung function (FEV1), heart function. Reduced-intensity chemotherapy options available.</li>
+                <li><strong>Very elderly (80+ years):</strong> Individualized approach. Surgery possible if good lung function (VATS preferred over open thoracotomy for faster recovery). Single-agent chemotherapy or immunotherapy if surgery not feasible. Focus on quality of life and symptom control.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Oldest patient at top hospitals:</strong> Tata Memorial: 92 years old (lobectomy + adjuvant chemo, alive 3 years post-treatment). Apollo Chennai: 88 years old (VATS lobectomy, home in 5 days, excellent recovery).
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>When should I quit smoking before lung cancer surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>MANDATORY: Quit smoking immediately upon diagnosis. Ideally 4-8 weeks before surgery for optimal outcomes.</strong> Timeline and impact:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Quitting timeline benefits:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Week 1-2 after quitting:</strong> Lung cilia (cleaning hairs) start recovering. Mucus clearance improves 20-30%. Coughing may temporarily worsen (good sign - lungs cleaning out tar).</li>
+                <li><strong>Week 3-4:</strong> Lung inflammation decreases 30-40%. Breathing capacity improves 10-15%. Surgical wound healing improves significantly.</li>
+                <li><strong>Week 6-8:</strong> Optimal surgical timing. Complication risk approaches non-smoker levels. Lung function maximized before surgery.</li>
+                <li><strong>Week 12+:</strong> Long-term lung healing continues. Second primary cancer risk starts decreasing (takes years for full risk reduction).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Smoking impact on surgical outcomes:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pneumonia risk:</strong> Current smokers 4-6× higher vs non-smokers. Quit 4+ weeks: Risk reduced to 2× (acceptable).</li>
+                <li><strong>Respiratory failure:</strong> Current smokers 3-5× higher need for prolonged ventilation post-surgery.</li>
+                <li><strong>Air leak (bronchopleural fistula):</strong> 8-12% in current smokers vs 2-3% in former smokers (quit 4+ weeks).</li>
+                <li><strong>Hospital stay:</strong> Current smokers: Average 8-10 days. Former smokers (quit 4+ weeks): 5-7 days (standard).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>What if I can&apos;t quit or surgery is urgent?</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Even 1-2 weeks helps:</strong> Reduces carbon monoxide levels, improves oxygen delivery to healing tissues.</li>
+                <li><strong>Urgent surgery:</strong> Quit immediately. Use nicotine patches during hospitalization (safer than smoking, doesn&apos;t impair healing like cigarettes).</li>
+                <li><strong>Nicotine replacement therapy (NRT):</strong> Patches/gum safe perioperatively. Address addiction without smoking-related surgical risks.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Smoking cessation support in India:</strong> All top hospitals provide free smoking cessation counseling. Medications: Varenicline (Champix) $50-100 for 3 months, Nicotine patches $30-60 for 8 weeks. Success rate with support: 25-30% vs 5-7% without support.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>What exercise can I do after lung cancer surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Pulmonary rehabilitation critical for recovery. Structured exercise improves lung function 20-30% and quality of life.</strong> Phase-by-phase timeline:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Hospital phase (Days 1-7 post-op):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1 post-op:</strong> Sit up in chair 2-3 hours. Breathing exercises with incentive spirometer (10 breaths every hour - prevents pneumonia). Ankle pumps, leg lifts in bed.</li>
+                <li><strong>Day 2-3:</strong> Walk in hallway with chest tube (15-20 minutes, 3-4 times daily). Continue aggressive breathing exercises. Pain management critical for deep breathing.</li>
+                <li><strong>Day 4-7:</strong> Walk 200-400 meters daily (multiple sessions). Arm exercises (shoulder range of motion - prevents frozen shoulder). Stair climbing test before discharge (ability to climb 1 flight = safe for discharge).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Week 2-6 (home recovery):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Walking:</strong> Primary exercise. Start 10-15 minutes twice daily. Increase 5 minutes per week. Goal: 30-45 minutes continuous by Week 6.</li>
+                <li><strong>Breathing exercises:</strong> Continue incentive spirometer 3-4 times daily. Deep breathing + coughing (splint incision with pillow to reduce pain).</li>
+                <li><strong>Avoid:</strong> Heavy lifting &gt;5kg (10 lbs). No pushing/pulling (lawn mowing, vacuuming). No reaching overhead (risk of shoulder adhesions but protect surgical site).</li>
+                <li><strong>Return to work:</strong> Desk job Week 4-6. Physical labor Week 8-12.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Week 6-12 (post-chemo start):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Formal pulmonary rehab:</strong> If available, 2-3 sessions per week (supervised exercise + breathing techniques + education).</li>
+                <li><strong>Exercise during chemo:</strong> Moderate-intensity walking (not to exhaustion). Reduces chemo fatigue by 30-40%. On chemo week: Light walking only. Between cycles: Increase to 30-45 minutes daily.</li>
+                <li><strong>Cycling, swimming:</strong> Safe after chest tube wound healed (Week 8-10). Swimming: Excellent low-impact option, improves lung capacity.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Month 3-6 and beyond:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Target:</strong> 150 minutes moderate-intensity exercise per week (reduces recurrence risk 20-30%).</li>
+                <li><strong>Activities:</strong> Walking, cycling, swimming, yoga (for flexibility + mindfulness), light weights (gradually progress to pre-surgery level).</li>
+                <li><strong>Breathlessness:</strong> Normal to have reduced exercise capacity (removed 1 lobe = 20% less lung tissue). Remaining lung compensates over 6-12 months.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>When to stop exercising and call doctor:</strong> Sudden breathlessness (could be pneumothorax or blood clot), Chest pain with exercise, Coughing up blood, Irregular heartbeat, Severe fatigue (not just mild tiredness).
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I work during lung cancer treatment?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Many patients work through treatment with accommodations. Feasibility depends on job type, treatment phase, and energy levels.</strong> Phase-by-phase analysis:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>During surgery and recovery (Weeks 1-6):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Hospital stay:</strong> 5-7 days. No work during this time.</li>
+                <li><strong>Week 2-4:</strong> Work NOT recommended (focus on recovery, breathing exercises, pain management). Fatigue significant.</li>
+                <li><strong>Week 4-6:</strong> Remote work possible for desk jobs (4-6 hours daily). Fatigue improves but still present. No commuting yet.</li>
+                <li><strong>Week 6-8:</strong> Return to full-time desk work feasible. Physical jobs: Week 8-12 (depends on chest tube healing, lifting restrictions).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>During chemotherapy (Months 2-5):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Chemo week (Day 1-3):</strong> Work challenging. Nausea (even with anti-emetics), fatigue, brain fog. Remote work 2-3 hours possible if needed.</li>
+                <li><strong>Week 2 of cycle:</strong> Energy returns 60-70%. Full-time work feasible for most. Flexible schedule helpful (rest breaks during day).</li>
+                <li><strong>Week 3 of cycle:</strong> Best week. Energy 80-90% of baseline. Good time to catch up on work.</li>
+                <li><strong>Overall feasibility:</strong> 40-60% of patients work at least part-time during chemo. Remote work much easier than commuting.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>During radiation therapy (if needed):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Daily treatments:</strong> 5-6 weeks, Monday-Friday. Each session 15-20 minutes. Can schedule early morning or evening (work around job).</li>
+                <li><strong>Weeks 1-3:</strong> Minimal side effects. Full-time work feasible. Fatigue mild.</li>
+                <li><strong>Weeks 4-6:</strong> Fatigue accumulates. Part-time work or flexible schedule recommended. Esophagitis (if mediastinal radiation) may cause discomfort.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>GCC patients - special considerations:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Remote work from UAE/Saudi:</strong> Possible between treatment phases. Surgery in India (3-4 weeks). Return home for recovery. Come back for chemo cycles (1 week per cycle × 4).</li>
+                <li><strong>Medical leave laws:</strong> Most GCC employers provide 90-180 days medical leave (check employment contract). Provide medical reports from Indian oncologist.</li>
+                <li><strong>Disability insurance:</strong> Cancer diagnosis may qualify for temporary disability benefits. Check policy.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Financial counseling:</strong> All top Indian hospitals provide medical reports for employer medical leave, disability claims, insurance claims. Social workers help with financial assistance if treatment affecting employment.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>VATS vs Open thoracotomy - which is better for lung cancer surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>VATS (Video-Assisted Thoracoscopic Surgery) is preferred when technically feasible. Open thoracotomy still necessary for large/central tumors.</strong> Detailed comparison:
+              </p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Factor</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">VATS (Minimally Invasive)</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Open Thoracotomy</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Incision Size</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">3-4 small incisions (1-2cm each, no rib spreading)</td>
+                    <td className="border border-gray-300 px-4 py-2">20-30cm incision (ribs spread apart with retractor)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Pain Level</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">Mild-moderate (pain score 3-5/10, manageable with oral medications)</td>
+                    <td className="border border-gray-300 px-4 py-2">Severe (pain score 6-8/10, requires epidural for 2-3 days)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Hospital Stay</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">4-5 days average (some patients home Day 3)</td>
+                    <td className="border border-gray-300 px-4 py-2">6-8 days average (ICU 2-3 days, ward 4-5 days)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Recovery Time</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">Return to work: 3-4 weeks (desk job). Full recovery: 6-8 weeks.</td>
+                    <td className="border border-gray-300 px-4 py-2">Return to work: 6-8 weeks. Full recovery: 3-4 months.</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Complication Rate</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">8-12% (lower air leak, pneumonia, atrial fibrillation)</td>
+                    <td className="border border-gray-300 px-4 py-2">15-20% (higher due to more tissue trauma)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Oncologic Outcome</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">Equivalent 5-year survival (multiple large studies confirm)</td>
+                    <td className="border border-gray-300 px-4 py-2">Equivalent 5-year survival (gold standard for decades)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Lymph Node Dissection</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">Complete systematic dissection possible (proven in studies)</td>
+                    <td className="border border-gray-300 px-4 py-2">Easier visualization for surgeon (traditional approach)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Conversion Risk</td>
+                    <td className="border border-gray-300 px-4 py-2">5-10% convert to open (if adhesions, bleeding, central tumor)</td>
+                    <td className="border border-gray-300 px-4 py-2">N/A (already open approach)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Cost Difference</td>
+                    <td className="border border-gray-300 px-4 py-2">$6,000-9,000 in India (specialized equipment)</td>
+                    <td className="border border-gray-300 px-4 py-2">$5,000-7,000 in India (standard approach)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Best For</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">Peripheral tumors &lt;7cm, Stage I-II NSCLC, No chest wall invasion</td>
+                    <td className="border border-gray-300 px-4 py-2">Central tumors, Tumors &gt;7cm, T3-T4 disease, Chest wall involvement</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Surgeon Expertise</td>
+                    <td className="border border-gray-300 px-4 py-2">Requires specialized training (50-100 cases for proficiency). Available at Apollo, Fortis, Max.</td>
+                    <td className="border border-gray-300 px-4 py-2">Standard thoracic surgery training. All thoracic surgeons proficient.</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Recommendation</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">First choice if technically feasible (60-70% of lobectomies)</td>
+                    <td className="border border-gray-300 px-4 py-2">When VATS not feasible or converted (30-40% of cases)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-gray-700">
+                <strong>Choosing approach:</strong> Surgeon decides based on CT scan (tumor size, location, lymph node involvement). Most Stage I-II peripheral tumors → VATS. Centrally located or locally advanced → Open thoracotomy. If VATS attempted but adhesions/bleeding encountered → Convert to open (safe, not a complication).
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I fly home after lung cancer surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to fly 10-14 days after chest tube removal (typically 2-3 weeks post-surgery for international travel).</strong> Critical considerations for GCC patients:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Why wait after lung surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pneumothorax risk:</strong> Air leak from staple line occurs in 10-15% post-lobectomy. Usually resolves with chest tube drainage in 3-7 days. Flying too early → Air expands at altitude (cabin pressure = 8,000 feet) → Pneumothorax worsens → Medical emergency mid-flight.</li>
+                <li><strong>Chest tube removal:</strong> Typically Day 3-5 post-op (when air leak stops, drainage &lt;200ml/day). Post-removal monitoring 24-48 hours required (chest X-ray confirms no re-accumulation of air/fluid).</li>
+                <li><strong>Post-chest tube healing:</strong> Need 5-7 days after removal for surgical site to fully seal. Then safe for cabin pressure changes.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Flying timeline:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 0 (surgery):</strong> Lobectomy performed. 2 chest tubes placed.</li>
+                <li><strong>Day 3-5:</strong> Chest tubes removed (if no air leak, drainage minimal).</li>
+                <li><strong>Day 6-7:</strong> Hospital discharge. Stay near hospital 3-5 days for follow-up.</li>
+                <li><strong>Day 10-14:</strong> Follow-up chest X-ray. If clear (no pneumothorax, no effusion) → Cleared for flying.</li>
+                <li><strong>Total India stay:</strong> 2.5-3 weeks minimum for safe international travel.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Flying precautions:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Airline notification:</strong> Not required for uncomplicated lobectomy (you&apos;re medically stable). Some patients request wheelchair assistance if fatigued.</li>
+                <li><strong>During flight:</strong> Walk every 1-2 hours (prevent blood clots - DVT risk slightly elevated post-surgery). Drink plenty of water. Avoid alcohol (dehydrating + interacts with pain medications).</li>
+                <li><strong>Medications:</strong> Carry pain medications in hand luggage. Bring surgical discharge summary (in case of questions at airport security or medical issue mid-flight).</li>
+                <li><strong>DVT prevention:</strong> Compression stockings recommended (especially flights &gt;4 hours). Low-dose aspirin or blood thinner if recommended by surgeon.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>What if I need to fly earlier (emergency/work):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Minimum:</strong> 7-10 days post-op IF chest tube removed Day 3-4 AND post-removal chest X-ray clear. Higher risk but feasible in urgent situations.</li>
+                <li><strong>Medical escort:</strong> Consider if flying &lt;10 days post-op (nurse or doctor on flight with you). Cost: $1,500-3,000 India → Dubai/Riyadh.</li>
+                <li><strong>Commercial flight restrictions:</strong> Airlines generally do NOT allow passengers &lt;7 days post-thoracic surgery (liability concerns). You may need surgeon letter stating &quot;fit to fly.&quot;</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Hospital support:</strong> All top hospitals coordinate discharge timing with patient travel plans. Provide detailed discharge summary, medications for 2-4 weeks, follow-up plan via telemedicine. Ensure safe return home before starting chemotherapy (typically starts Week 6-8 post-surgery).
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Will I need oxygen at home after lung cancer surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Most patients do NOT need home oxygen after lobectomy (removed 1 lobe = 80% lung capacity remaining). Pneumonectomy (entire lung removed) may need oxygen temporarily.</strong> Detailed breakdown:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Oxygen requirements by surgery type:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Wedge resection/Segmentectomy:</strong> &lt;5% need home oxygen. Minimal lung tissue removed. Oxygen levels normal within days.</li>
+                <li><strong>Lobectomy (most common):</strong> 10-15% need home oxygen short-term (2-4 weeks). Usually only if: (1) Poor baseline lung function (COPD, smoking history), (2) Pre-op oxygen dependence, (3) Complicated post-op course (prolonged air leak, pneumonia).</li>
+                <li><strong>Pneumonectomy (entire lung removed):</strong> 40-50% need home oxygen temporarily (1-3 months). Remaining lung compensates over time. Permanent oxygen needed if: (1) Pre-op FEV1 &lt;50%, (2) Severe COPD in remaining lung, (3) Pulmonary hypertension develops.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>How oxygen needs determined:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Before discharge:</strong> 6-minute walk test (if oxygen saturation drops &lt;90% with walking → Home oxygen prescribed). Pulse oximetry at rest and with activity.</li>
+                <li><strong>Prescription:</strong> Typically 1-2 liters per minute during activity (walking, climbing stairs). Not usually needed at rest unless severe impairment.</li>
+                <li><strong>Re-assessment:</strong> 2 weeks post-discharge (many patients improve enough to discontinue oxygen). 6 weeks post-discharge (if still needing oxygen, likely long-term requirement).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Home oxygen in India vs GCC countries:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>India (during stay):</strong> Oxygen concentrator rental $100-200/month. Delivered to hotel/serviced apartment. Available 24/7 from medical equipment companies.</li>
+                <li><strong>Flying home with oxygen:</strong> CANNOT bring oxygen concentrator on plane. Must be off oxygen at rest to fly. If oxygen-dependent → Medical escort + in-flight oxygen ($2,000-4,000 extra) OR delay travel until weaned off oxygen.</li>
+                <li><strong>Back in GCC:</strong> Arrange oxygen delivery before returning (insurance usually covers if medically necessary). In UAE: Home oxygen through health insurance or private companies ($150-300/month rental).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Improving lung function without oxygen:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pulmonary rehabilitation:</strong> Structured exercise program improves oxygen efficiency 20-30%. Breathing exercises (pursed-lip breathing, diaphragmatic breathing) reduce breathlessness.</li>
+                <li><strong>Quit smoking:</strong> Even after surgery, continuing smoking worsens remaining lung function. Quitting allows compensation by remaining lung tissue.</li>
+                <li><strong>Altitude considerations:</strong> If living at high altitude (Dubai/most GCC near sea level - not an issue), may need oxygen longer. High altitude = less oxygen in air = harder for reduced lung capacity.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Key message:</strong> Lobectomy patients almost never need long-term oxygen. Remaining 4 lobes (if had lobectomy) compensate beautifully. Within 6-12 months, most patients return to 90-95% of pre-surgery exercise capacity. Focus on pulmonary rehab and gradual activity increase.
+              </p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>What diet should I follow during lung cancer treatment?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>High-protein, high-calorie diet critical during treatment. Goal: Maintain weight and muscle mass to tolerate surgery and chemotherapy.</strong> Phase-specific nutrition:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Pre-surgery (2-4 weeks before):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Protein intake:</strong> 1.2-1.5g per kg body weight daily (70kg person = 85-105g protein daily). Sources: Chicken, fish, eggs, paneer, lentils, Greek yogurt.</li>
+                <li><strong>Calories:</strong> High-calorie diet (many lung cancer patients underweight due to cancer cachexia). 2,000-2,500 calories daily. Add nuts, avocados, olive oil, full-fat dairy.</li>
+                <li><strong>Avoid:</strong> Alcohol (impairs healing), Excess sugar (inflammation), Raw/undercooked foods (infection risk before immunosuppressive chemo).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Post-surgery (Week 1-6):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1-2:</strong> Clear liquids (broth, juice, water). Advance to soft diet Day 2-3 (porridge, mashed vegetables, dal, soft rice).</li>
+                <li><strong>Day 3-7:</strong> Regular diet as tolerated. Protein priority for wound healing. Small frequent meals (large meals cause breathlessness by pushing diaphragm up).</li>
+                <li><strong>Week 2-6:</strong> Continue high-protein diet. Protein shakes if appetite poor (Ensure, Protinex - 20-30g protein per serving). Hydration critical (2-3 liters daily) for mucus clearance.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>During chemotherapy (Months 2-5):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Nausea management:</strong> Eat before chemo (not after - reduces nausea). Bland foods (crackers, toast, bananas). Avoid spicy/fatty foods on chemo week. Ginger tea helps nausea.</li>
+                <li><strong>Chemo week:</strong> Eat what you can tolerate. Calories &gt; Nutrition during this week. Ice cream, smoothies, soups - whatever goes down.</li>
+                <li><strong>Between cycles:</strong> Rebuild nutrition. High-protein meals 3× daily. Focus on lean meats, fish, eggs. Colorful vegetables (antioxidants).</li>
+                <li><strong>Hydration:</strong> Critical. Chemo causes dehydration. 3-4 liters daily. Coconut water, fresh juice, herbal tea.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Foods that help during lung cancer treatment:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Anti-inflammatory:</strong> Fatty fish (salmon, mackerel - omega-3), Turmeric (curcumin reduces inflammation), Green tea (antioxidants), Berries (blueberries, strawberries).</li>
+                <li><strong>Immune-boosting:</strong> Citrus fruits (vitamin C), Yogurt (probiotics - gut health during chemo), Garlic, ginger (antimicrobial properties).</li>
+                <li><strong>Energy-boosting:</strong> Whole grains (oats, brown rice, quinoa), Sweet potatoes, Bananas, Dates (natural sugar for quick energy).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Foods to avoid:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Raw foods during chemo:</strong> Low white blood cell count (neutropenia) Week 2 of chemo cycle. Avoid: Raw salads, Sushi, Unpasteurized dairy, Street food. Cook all vegetables, meats thoroughly.</li>
+                <li><strong>Processed/smoked meats:</strong> Nitrates/nitrites may increase cancer risk (though evidence mixed). Minimize processed meats (sausages, bacon, cold cuts).</li>
+                <li><strong>Alcohol:</strong> Impairs liver metabolism of chemo drugs. Increases side effects. Avoid completely during treatment.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Nutritional counseling:</strong> All top Indian hospitals provide free nutritionist consultation during cancer treatment. Personalized meal plans based on treatment phase, taste changes, weight loss. Protein supplements provided if severe weight loss (&gt;10% body weight).
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
       {/* Testimonials Section */}
