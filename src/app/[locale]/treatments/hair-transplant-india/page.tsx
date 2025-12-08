@@ -551,6 +551,170 @@ export default function HairTransplantIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Recommended minimum age: 25 years.</strong> Hair loss pattern must be stabilized before transplant. Younger patients (under 25) still experiencing hair loss - transplanted area stays but surrounding areas may thin. Exceptions: trauma/burn victims (any age), stable baldness documented 2+ years. Most surgeons prefer 28-30+ for best long-term results. Free consultation determines candidacy regardless of age.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>How much does hair transplant cost per graft?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Cost per graft in India: $0.40-$0.80 (₹35-₹65)</strong> vs $3-$8 in USA/UK. Total cost depends on grafts needed:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>1,000 grafts: $400-800</li>
+                <li>2,000 grafts: $800-1,600</li>
+                <li>3,000 grafts: $1,200-2,400</li>
+                <li>4,000+ grafts: $1,600-3,200</li>
+              </ul>
+              <p className="mt-3">
+                Price includes: surgeon fees, clinic facilities, anesthesia, post-op medications, follow-up consultations. No hidden charges. FUE slightly more expensive than FUT (30% premium for minimal scarring).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Should I quit smoking before hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Yes, absolutely quit 2 weeks before and 2 weeks after surgery.</strong> Nicotine restricts blood flow to scalp, reducing graft survival rate from 95-98% to 70-80%. Smokers have 3x higher risk of: poor graft survival, infection, delayed healing, shock loss. Some clinics refuse surgery if patient continues smoking. E-cigarettes/vaping also prohibited (same nicotine effect). Worth quitting for successful result - you&apos;re investing $1,000-3,000!
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I wear hats or caps after hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Avoid tight hats for 10-14 days.</strong> Timeline: Days 1-5: NO hats (grafts vulnerable to dislodging), Days 6-10: Loose baseball cap okay (not touching transplanted area), Day 11+: Normal hats allowed. During flying home: wear loose hat (sun protection). Avoid: tight caps, beanies, helmets for 2 weeks. After 2 weeks, resume normal hat wearing. Transplanted grafts fully secure after 10 days.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I wash my hair after hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>First wash at clinic Day 2 post-op</strong> (gentle, supervised). Then:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Days 3-10:</strong> Gentle washing daily (baby shampoo, cup method - no direct spray)</li>
+                <li><strong>Days 11-14:</strong> Light shower okay (low pressure, lukewarm water)</li>
+                <li><strong>Day 15+:</strong> Normal washing allowed (still avoid hot water)</li>
+                <li><strong>Month 1+:</strong> Resume regular hair care routine</li>
+              </ul>
+              <p className="mt-3">
+                Clinic provides special shampoo and detailed washing instructions. Proper washing prevents scabs and infection. Never scratch or pick scabs (let them fall naturally).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I exercise after hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Exercise timeline:</strong>
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Walking:</strong> Immediately (helps circulation)</li>
+                <li><strong>Light cardio:</strong> 2 weeks (avoid sweating first 10 days)</li>
+                <li><strong>Running/jogging:</strong> 3 weeks</li>
+                <li><strong>Weight lifting:</strong> 4 weeks (avoid straining/blood pressure spikes)</li>
+                <li><strong>Swimming:</strong> 1 month (chlorine irritation risk)</li>
+                <li><strong>Contact sports:</strong> 2-3 months (head trauma risk)</li>
+              </ul>
+              <p className="mt-3">
+                Excessive sweating in first 2 weeks can cause infection and graft loss. Patience ensures 95-98% graft survival vs 80-85% if exercising too early.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I cut, style, or dye transplanted hair?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Yes! Transplanted hair is 100% natural and grows for life.</strong> Timeline: <strong>Cutting:</strong> 6 weeks (after shock loss phase), <strong>Styling (gel, wax):</strong> 3 months, <strong>Hair dye:</strong> 6 months (avoid harsh chemicals earlier). Can use blow dryer, straightener, curler after 6 months. Get regular haircuts, style as desired. Transplanted hair has same growth rate, texture, and properties as your original donor hair. Treat it like normal hair after first 6 months.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need medication after hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Post-op medications (7-10 days):</strong> Antibiotics (prevent infection), painkillers (mild discomfort), anti-inflammatory (reduce swelling). All included in package.
+              </p>
+              <p>
+                <strong>Long-term medication (optional but recommended):</strong> <strong>Finasteride 1mg daily</strong> - prevents further hair loss in non-transplanted areas. Stops DHT hormone that causes baldness. 90% of patients maintain existing hair, 65% see new growth. Cost: $5-10/month in India. <strong>Minoxidil 5% topical</strong> - stimulates growth. Optional for better density. Discuss with surgeon during consultation.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the success rate of hair transplant in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Overall success rate: 95-98% graft survival at top clinics.</strong> Eugenix, AK Clinics, DHI India, Dermaclinix all report 95%+ success rates. International standards same as USA/Europe. Factors affecting success: surgeon experience (choose 10+ years), clinic accreditation (JCI/NABH), patient compliance (no smoking, proper aftercare), realistic graft count. Failed grafts (&lt;5%) don&apos;t grow - usually due to patient factors (smoking, infection, poor aftercare). Choose experienced clinic for best results.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Will I need multiple hair transplant sessions?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Depends on baldness severity and goals:</strong> <strong>Single session sufficient:</strong> 80% of patients (Norwood 2-5, need 1,500-3,000 grafts). <strong>Two sessions needed:</strong> Advanced baldness (Norwood 6-7, need 4,000-6,000 total grafts), maximum density desired, large front + crown coverage. <strong>Session spacing:</strong> 9-12 months between sessions (allow full healing and growth assessment). Some patients return after 5-10 years for age-related crown thinning (mini touch-up 500-1,000 grafts).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Will I have visible scars from hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>FUE: No visible scars.</strong> Tiny dot scars (0.8-1mm) completely hidden by surrounding hair. Can keep hair very short (buzz cut #1-2) without visible scarring. 99% of patients report no noticeable scarring. <strong>FUT: Linear scar on back of head.</strong> Length: 15-25cm, Width: 1-2mm (expert surgeon). Easily hidden by shoulder-length or longer hair. Visible only if you shave head completely bald. Scar fades to thin white line after 12 months. Choose FUE if you prefer short hair.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I return to work after hair transplant?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p>
+                <strong>Most patients return to work in 7-10 days.</strong> Timeline by job type: <strong>Office/desk job:</strong> 7 days (wear loose hat if desired), <strong>Physical labor:</strong> 10-14 days (avoid heavy lifting, sweating), <strong>Customer-facing roles:</strong> 10-14 days (redness fades, look presentable), <strong>Outdoor work:</strong> 2 weeks (sun exposure, dust risk). Work from home option: 3-5 days. Transplanted area has small scabs (look like dandruff) for first 10 days - easily concealed with hat. Plan accordingly for international patients.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
