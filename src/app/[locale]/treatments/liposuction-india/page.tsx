@@ -572,6 +572,152 @@ export default function LiposuctionIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                What is the minimum age and BMI for liposuction?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>Minimum age: 18 years</strong> (some surgeons prefer 21+ for best skin elasticity). <strong>BMI requirements:</strong>
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li><strong>Ideal candidates: BMI 25-30</strong> (overweight but not obese, localized fat deposits)</li>
+                <li><strong>Acceptable: BMI 30-35</strong> (mild obesity, realistic expectations, commitment to lifestyle changes)</li>
+                <li><strong>Not recommended: BMI 35+</strong> (significant obesity, weight loss surgery more appropriate)</li>
+                <li><strong>Best results: BMI under 32</strong> (better skin retraction, lower complication risk)</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                Liposuction is <strong>not a weight loss solution</strong> - it&apos;s body contouring for stubborn fat that won&apos;t respond to diet/exercise. Ideal patients are within 20-30 lbs of goal weight with good skin tone. Younger patients (18-40) have better skin elasticity and results.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                Can I smoke before or after liposuction?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>No, smoking significantly increases risks and delays healing.</strong> Smoking timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li><strong>4 weeks before surgery:</strong> Stop smoking completely (nicotine constricts blood vessels, reduces oxygen to tissues)</li>
+                <li><strong>6 weeks after surgery:</strong> Continue abstaining (critical healing period, prevents skin necrosis)</li>
+                <li><strong>Long-term:</strong> Ideally quit permanently for best results and overall health</li>
+                <li><strong>Vaping equally harmful:</strong> E-cigarettes contain nicotine, same risks as traditional smoking</li>
+                <li><strong>Risks of smoking:</strong> 3-6× higher infection rate, delayed wound healing, skin death (necrosis), poor scarring, uneven results</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                Some surgeons refuse to operate on active smokers due to high complication risk. Nicotine patches/gum also discouraged (still contain nicotine). Blood test may be required to verify nicotine-free status before surgery. If you can&apos;t quit, postpone surgery until you can commit to tobacco-free period.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                When can I fly home after liposuction surgery?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>Safe to fly 7-10 days after liposuction</strong> (after surgeon clearance and drain removal if applicable). Timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li><strong>Single area (1-2 zones):</strong> Can fly after 5-7 days (minimal swelling, quick recovery)</li>
+                <li><strong>Multiple areas (3-4 zones):</strong> Wait 7-10 days (more swelling, need stability)</li>
+                <li><strong>High-volume lipo (4+ liters):</strong> Wait 10-14 days (major surgery, ensure healing started)</li>
+                <li><strong>With drains:</strong> Drains removed Day 3-7, can fly 2-3 days after removal</li>
+                <li><strong>Clearance required:</strong> Surgeon must approve fitness to fly (check incisions, swelling, vital signs)</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                <strong>Flying precautions:</strong> Wear compression garment during flight (reduces swelling from cabin pressure), walk every 2 hours (prevent blood clots - DVT risk), aisle seat preferred (easier to move), pack extra garments and medications in carry-on, bring surgeon&apos;s letter explaining recent surgery. Avoid heavy lifting of luggage (ask for assistance). Stay hydrated but limit alcohol (worsens swelling).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                When can I exercise after liposuction?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>Gradual return to exercise over 6-8 weeks.</strong> Timeline by activity:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600 mb-3">
+                <li><strong>Walking:</strong> Immediately after surgery (encouraged from Day 1, reduces blood clot risk)</li>
+                <li><strong>Light cardio (treadmill, bike):</strong> Week 2-3 (heart rate under 120 bpm, no jarring movements)</li>
+                <li><strong>Jogging/running:</strong> Week 4-6 (once swelling reduced 70%+, surgeon clearance required)</li>
+                <li><strong>Weight training (upper body):</strong> Week 3-4 if no upper body lipo, Week 6 if arms/chest treated</li>
+                <li><strong>Weight training (lower body):</strong> Week 4-6 (no squats/deadlifts until Week 6)</li>
+                <li><strong>Swimming:</strong> Week 4-6 (incisions must be fully healed, no scabs)</li>
+                <li><strong>High-impact sports:</strong> Week 6-8 (contact sports, CrossFit, HIIT classes)</li>
+              </ul>
+              <p className="mb-3 text-gray-600"><strong>Signs to stop exercising:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li>Increased swelling or pain</li>
+                <li>Bleeding from incision sites</li>
+                <li>Excessive fatigue or dizziness</li>
+                <li>Fluid drainage or separation of incisions</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                <strong>Compression garment:</strong> Must wear during all exercise for first 6 weeks (supports healing, reduces swelling). Start slow and increase intensity 10-20% per week. Listen to your body - if it hurts, you&apos;re doing too much too soon.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                Is liposuction painful? What anesthesia is used?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>Pain is moderate and well-managed with medications.</strong> Pain timeline and anesthesia options:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600 mb-3">
+                <li><strong>During procedure:</strong> No pain (under anesthesia)</li>
+                <li><strong>Day 1-3:</strong> Moderate soreness (feels like intense workout, muscle ache), pain 4-6/10, managed with prescription painkillers</li>
+                <li><strong>Week 1:</strong> Pain reduces to 2-4/10, switch to over-the-counter meds (ibuprofen)</li>
+                <li><strong>Week 2+:</strong> Minimal pain 0-2/10, tenderness when touching treated areas</li>
+                <li><strong>Month 1-3:</strong> Occasional numbness or tingling (nerve regeneration, normal)</li>
+              </ul>
+              <p className="mb-3 text-gray-600"><strong>Anesthesia options:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li><strong>General anesthesia:</strong> Completely asleep (for multiple areas, high-volume lipo, 3+ hours surgery)</li>
+                <li><strong>IV sedation (twilight):</strong> Drowsy but responsive (for 1-2 areas, 1-2 hour procedures)</li>
+                <li><strong>Local with sedation:</strong> Numbed areas + relaxation meds (small areas only, not common)</li>
+                <li><strong>Most common:</strong> General anesthesia (safer for longer procedures, patient comfort)</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                <strong>Pain comparison:</strong> Most patients say liposuction pain is less than expected - similar to severe muscle soreness after extreme workout. Compression garment helps reduce pain by supporting tissues. VASER and laser lipo cause less pain than traditional liposuction (gentler on tissues).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardContent className="p-6">
+              <h3 className="mb-3 text-lg font-semibold text-gray-900">
+                Will I have loose skin after liposuction?
+              </h3>
+              <p className="mb-3 text-gray-600">
+                <strong>Depends on age, skin elasticity, and volume removed.</strong> Skin tightening expectations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600 mb-3">
+                <li><strong>Good skin retraction (minimal/no loose skin):</strong> Age under 40, good skin elasticity, moderate fat removal (2-4 liters), non-smoker, healthy weight, VASER/laser lipo used</li>
+                <li><strong>Moderate loose skin (improves over time):</strong> Age 40-55, moderate elasticity, larger volume removal (4-5 liters), will tighten 30-50% over 6-12 months</li>
+                <li><strong>Significant loose skin (may need tummy tuck):</strong> Age 55+, poor elasticity, massive weight loss history, 5+ liters removed, smoking history</li>
+              </ul>
+              <p className="mb-3 text-gray-600"><strong>Skin tightening timeline:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-600">
+                <li><strong>Month 1-3:</strong> Skin appears loose (swelling masks contraction)</li>
+                <li><strong>Month 3-6:</strong> Skin begins tightening (collagen remodeling)</li>
+                <li><strong>Month 6-12:</strong> Maximum skin retraction achieved (70-80% of final tightening)</li>
+                <li><strong>Year 2:</strong> Final 20% improvement (full collagen maturation)</li>
+              </ul>
+              <p className="mt-3 text-gray-600">
+                <strong>Improving skin tightening:</strong> VASER/laser lipo (stimulates collagen, 20-30% better tightening vs traditional), compression garment 24/7 for 6 weeks (supports skin contraction), radiofrequency treatments Month 3-6 (additional tightening), maintain weight (fluctuations worsen loose skin). If significant loose skin anticipated, surgeon may recommend combining lipo with tummy tuck/arm lift/thigh lift for best cosmetic result.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
