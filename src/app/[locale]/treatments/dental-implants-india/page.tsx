@@ -528,6 +528,198 @@ export default function DentalImplantsIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for dental implants?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Minimum age: 18-21 years</strong> (after jaw growth completes). Age considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Under 18:</strong> Not recommended (jaw still growing, implant position shifts)</li>
+                <li><strong>18-21 years:</strong> Case-by-case basis (women 18+, men 21+, confirm growth complete via X-ray)</li>
+                <li><strong>21+ years:</strong> Ideal age, jaw growth complete, implants stable</li>
+                <li><strong>No upper age limit:</strong> 70+ year olds get implants successfully if healthy</li>
+                <li><strong>Health matters more than age:</strong> Good bone density, no uncontrolled diabetes, non-smoker</li>
+              </ul>
+              <p className="mt-3">
+                Youngest patient at top clinics: 18 (trauma case). Oldest: 87 (full mouth All-on-4). Surgeon evaluates bone quality and health, not just age.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I smoke after getting dental implants?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>No, smoking is the #1 risk factor for implant failure.</strong> Smoking reduces success rate from 95% to 85% or lower. Impact:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Before surgery:</strong> Stop 2-4 weeks before (improves healing, reduces infection risk)</li>
+                <li><strong>After surgery:</strong> Absolutely NO smoking for minimum 2-3 months (osseointegration critical period)</li>
+                <li><strong>Long-term:</strong> Quit permanently for best results (smoking causes bone loss around implants over time)</li>
+                <li><strong>Vaping equally harmful:</strong> Nicotine constricts blood vessels, delays healing</li>
+                <li><strong>Failure rate:</strong> Smokers have 2-3× higher implant failure rate vs non-smokers</li>
+              </ul>
+              <p className="mt-3">
+                If you can&apos;t quit: Some clinics refuse implants for active smokers. Others proceed with signed consent acknowledging higher risk. Nicotine patches/gum okay (no smoke/heat damage). Quitting smoking is most important thing you can do for implant success.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I fly home after dental implant surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Safe to fly home 3-5 days after implant surgery</strong> (after surgeon clearance). Timeline by procedure:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Single tooth implant:</strong> Fly after 3 days (minimal surgery, quick healing)</li>
+                <li><strong>Multiple implants (2-4):</strong> Fly after 4-5 days (more swelling, need extra healing time)</li>
+                <li><strong>Full mouth implants:</strong> Fly after 5-7 days (major surgery, ensure bleeding stopped, swelling manageable)</li>
+                <li><strong>With bone grafting:</strong> Fly after 5-7 days (bone graft needs stability before air pressure changes)</li>
+                <li><strong>With sinus lift:</strong> Fly after 7-10 days (avoid cabin pressure affecting sinus)</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Flying concerns addressed:</strong> Cabin pressure won&apos;t damage implants (implants securely placed in bone). Pack extra painkillers and antibiotics in carry-on. Clinic provides post-op medications for 2 weeks. Schedule 24-hour post-op checkup before flying. Bring surgeon&apos;s clearance letter for airline/immigration.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What if dental implants fail - is it covered?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Top clinics offer 1-2 year warranty</strong> on implant failures (not patient fault). Coverage details:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Covered (FREE re-implant):</strong> Implant doesn&apos;t integrate (2-5% chance), infection not caused by poor hygiene, surgical complications, implant defect/fracture</li>
+                <li><strong>NOT covered:</strong> Failure due to smoking, poor oral hygiene (no brushing/flossing), trauma/accident, patient ignores post-op instructions, bone loss from medical conditions (uncontrolled diabetes)</li>
+                <li><strong>Standard warranty:</strong> 1 year on standard implants, 2 years on premium implants (Straumann, Nobel Biocare), 5 years on All-on-4/6 full mouth (some clinics)</li>
+                <li><strong>Lifetime warranty:</strong> Available at premium clinics (Dental Roots, Apollo White) if: Annual checkups maintained, X-rays submitted yearly, proper hygiene documented</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Failure signs:</strong> Implant feels loose/mobile after 3 months, persistent pain/swelling after 2 weeks, pus/discharge around implant, X-ray shows bone loss. Contact clinic immediately if suspected - early intervention prevents complete failure.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>How do I care for dental implants after returning home?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Implants need same care as natural teeth</strong> to last 20+ years. Daily care routine:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 mb-3">
+                <li><strong>Brush 2× daily:</strong> Use soft-bristle brush, fluoride toothpaste, 2 minutes each time (same as natural teeth)</li>
+                <li><strong>Floss daily:</strong> Use implant-specific floss or water flosser to clean around implant and under crown</li>
+                <li><strong>Mouthwash:</strong> Antibacterial mouthwash 1× daily (reduces plaque, prevents gum disease)</li>
+                <li><strong>Avoid:</strong> Hard foods that can crack crown (ice, hard candy, bones), smoking (causes bone loss), excessive alcohol (delays healing first 3 months)</li>
+              </ul>
+              <p className="mb-3"><strong>Professional care:</strong></p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Dental cleaning:</strong> Every 6 months at local dentist (professional cleaning prevents gum disease around implants)</li>
+                <li><strong>Annual X-ray:</strong> Check bone level around implant, send to India clinic via WhatsApp for evaluation</li>
+                <li><strong>Report issues early:</strong> Bleeding, pain, looseness - contact India clinic immediately (early treatment prevents failure)</li>
+              </ul>
+              <p className="mt-3">
+                Clinic provides detailed care instructions in English/Arabic, 24/7 WhatsApp support for questions, virtual follow-ups at Month 1, 3, 6, and 12. Most patients never have issues with proper care.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need bone grafting - how much does it cost?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>30-40% of implant patients need bone grafting</strong> (adds $300-600 per site). Bone grafting needed if:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 mb-3">
+                <li><strong>Long time since tooth loss:</strong> Jawbone shrinks without tooth stimulation (lose 25% bone height in first year, 40-60% after 3+ years)</li>
+                <li><strong>Gum disease history:</strong> Periodontitis causes bone loss before tooth falls out</li>
+                <li><strong>Tooth extracted due to infection:</strong> Infection destroys bone before extraction</li>
+                <li><strong>Denture wearer:</strong> Dentures accelerate bone loss over time (no chewing pressure on bone)</li>
+                <li><strong>Upper jaw implants:</strong> Upper jaw has naturally thinner bone vs lower jaw</li>
+              </ul>
+              <p className="mb-3"><strong>Bone grafting procedure:</strong></p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Material used:</strong> Synthetic bone (most common), donor bone (human/bovine), patient&apos;s own bone (from chin/jaw)</li>
+                <li><strong>Procedure:</strong> Bone graft placed in implant site, covered with membrane, stitched, heals 3-6 months before implant placement</li>
+                <li><strong>Cost:</strong> $300-600 per site (India) vs $1,500-3,000 (USA)</li>
+                <li><strong>Success rate:</strong> 90-95% grafts successful, allows normal implant placement after healing</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Alternative (no grafting):</strong> All-on-4 full mouth implants use angled placement to avoid areas with bone loss ($4,000-6,000 vs $6,000-10,000 with grafting). 3D CBCT scan at consultation determines if you need grafting.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I get dental implants if I have diabetes?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>Yes, diabetics can get implants if blood sugar well-controlled</strong> (HbA1c below 7%). Diabetes considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 mb-3">
+                <li><strong>Well-controlled diabetes (HbA1c &lt; 7%):</strong> Success rate 90-95% (slightly lower than non-diabetics but still excellent)</li>
+                <li><strong>Moderately controlled (HbA1c 7-9%):</strong> Success rate 85-90%, requires extra monitoring, longer healing time (4-6 months vs 3-4 months)</li>
+                <li><strong>Poorly controlled (HbA1c &gt; 9%):</strong> Not recommended (high failure risk, severe infection risk), must get diabetes under control first</li>
+              </ul>
+              <p className="mb-3"><strong>Extra precautions for diabetics:</strong></p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Pre-surgery:</strong> Submit HbA1c test (within 3 months), stabilize blood sugar 2-4 weeks before surgery</li>
+                <li><strong>During surgery:</strong> Monitor blood glucose levels, adjust medications as needed</li>
+                <li><strong>Post-surgery:</strong> Longer antibiotic course (10-14 days vs 5-7 days), more frequent checkups (weekly vs bi-weekly), strict wound care (infection risk higher)</li>
+                <li><strong>Healing:</strong> Takes 25-50% longer than non-diabetics (4-6 months osseointegration vs 3-4 months)</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Bottom line:</strong> Diabetics get successful implants daily at top India clinics. Key is good diabetes control (HbA1c &lt; 7%), excellent oral hygiene, and following post-op care strictly. Surgeon evaluates individually based on your HbA1c and overall health.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Why are dental implants so much cheaper in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3">
+                <strong>70-80% lower cost in India, same quality as USA/UK.</strong> Price difference reasons:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 mb-3">
+                <li><strong>Lower operating costs:</strong> Clinic rent/overhead 80% lower than USA ($2K/month vs $15K+/month in NYC)</li>
+                <li><strong>Lower labor costs:</strong> Dental staff salaries 70% lower (still highly qualified, MDS degree = USA DDS equivalent)</li>
+                <li><strong>Lower lab costs:</strong> Crown/bridge fabrication $50-100 vs $300-500 in USA (in-house labs common)</li>
+                <li><strong>Volume pricing:</strong> Top clinics do 1,000-5,000 implants annually, negotiate bulk discounts on implants/materials</li>
+                <li><strong>Government support:</strong> Medical tourism incentives, tax breaks for accredited hospitals</li>
+                <li><strong>Currency exchange:</strong> Strong USD/GBP/AED vs INR (exchange rate advantage)</li>
+              </ul>
+              <p className="mb-3"><strong>Same quality materials used:</strong></p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li><strong>Implant brands:</strong> Same Swiss (Straumann, Nobel Biocare), German (Camlog, Ankylos), Korean (Osstem - FDA approved) implants as USA</li>
+                <li><strong>Crown materials:</strong> Same porcelain, zirconia, titanium abutments</li>
+                <li><strong>Technology:</strong> Same 3D CBCT scanners, guided surgery software, CAD/CAM milling machines</li>
+                <li><strong>Sterilization:</strong> International protocols (autoclaves, single-use instruments)</li>
+              </ul>
+              <p className="mt-3">
+                <strong>Quality assurance:</strong> JCI accreditation (USA-based Joint Commission International) verifies India clinics meet same standards as USA hospitals. 500,000+ medical tourists choose India annually for dental work - proven track record. You pay 20-30% of USA price, get same results.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
