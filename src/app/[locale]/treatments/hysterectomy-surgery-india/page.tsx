@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Hysterectomy Surgery India: Cost, Best Gynecologists 2025',
   description: 'Hysterectomy in India. Laparoscopic $2,500-4,000 vs $20,000-35,000 in USA (75-85% savings). Robotic, vaginal, abdominal options. 2-6 weeks recovery.',
   keywords: 'hysterectomy surgery india, hysterectomy cost india, uterus removal india, robotic hysterectomy india, laparoscopic hysterectomy india, استئصال الرحم في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/hysterectomy-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/hysterectomy-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/hysterectomy-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/hysterectomy-surgery-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function HysterectomySurgeryIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function HysterectomySurgeryIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/hysterectomy-surgery-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

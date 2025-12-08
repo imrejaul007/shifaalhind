@@ -28,6 +28,14 @@ export const metadata: Metadata = {
   title: 'Liposuction India: Cost, Best Surgeons & Results 2025',
   description: 'Liposuction in India costs $1,800-3,500 vs $6,000-11,000 in USA (70% savings). VASER, laser, traditional techniques. Expert cosmetic surgeons, 96% satisfaction.',
   keywords: 'liposuction india, liposuction cost india, vaser liposuction india, laser lipo india, body contouring india, fat removal india, liposuction mumbai, liposuction delhi, شفط الدهون في الهند, تكلفة شفط الدهون في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/liposuction-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/liposuction-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/liposuction-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/liposuction-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -50,8 +58,8 @@ const RELATED_ARTICLES = [
 
 export default function LiposuctionIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -68,7 +76,7 @@ export default function LiposuctionIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/liposuction-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

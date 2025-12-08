@@ -30,12 +30,20 @@ export const metadata: Metadata = {
     'مستشفيات العيون في الهند',
     'ليزك بدون شفرة في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/lasik-eye-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/lasik-eye-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/lasik-eye-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/lasik-eye-surgery-india',
+    },
+  },
 };
 
 export default function LasikEyeSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -52,7 +60,7 @@ export default function LasikEyeSurgeryIndiaPage() {
         followup="Follow-up at 1 day, 1 week, 1 month, 3 months, 6 months, and 1 year. Use prescribed eye drops."
         url="https://shifaalhind.onrender.com/treatments/lasik-eye-surgery-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900">

@@ -27,14 +27,22 @@ export const metadata: Metadata = {
     'علاج التهاب الزائدة الدودية في الهند',
     'مستشفيات الزائدة الدودية في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/appendix-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/appendix-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/appendix-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/appendix-surgery-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function AppendixSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -51,7 +59,7 @@ export default function AppendixSurgeryIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/appendix-surgery-india"
       />
-y-8">
+
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={[
         { question: "How much does appendix surgery cost in India?", answer: "Laparoscopic appendectomy costs $1,000-1,800 in India vs $10,000-20,000 in USA (75-85% savings). Open appendectomy: $700-1,200, Emergency surgery: $1,200-2,000, Perforated appendix: $1,500-2,500. All-inclusive packages available." },

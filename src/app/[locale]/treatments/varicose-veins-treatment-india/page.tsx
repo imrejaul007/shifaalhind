@@ -30,12 +30,20 @@ export const metadata: Metadata = {
     'RFA varicose veins india',
     'أفضل جراح أوعية دموية في الهند'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/varicose-veins-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/varicose-veins-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/varicose-veins-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/varicose-veins-treatment-india',
+    },
+  },
 };
 
 export default function VaricoseVeinsTreatmentPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -52,7 +60,7 @@ export default function VaricoseVeinsTreatmentPage() {
         followup="Wear compression stockings for 2-4 weeks, walk regularly, follow-up at 1 week and 1 month."
         url="https://shifaalhind.onrender.com/treatments/varicose-veins-treatment-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

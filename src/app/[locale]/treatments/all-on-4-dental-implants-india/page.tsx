@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'All-on-4 Dental Implants India: Cost, Best Dentists 2025',
   description: 'All-on-4 dental implants in India cost $4,000-6,000 vs $20,000-30,000 in USA (80% savings). Full arch restoration in one day. Nobel Biocare, Straumann implants.',
   keywords: 'all on 4 dental implants india, full arch dental implants india, teeth in a day india, full mouth dental implants india, nobel biocare india, زراعة الأسنان الكاملة في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/all-on-4-dental-implants-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/all-on-4-dental-implants-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/all-on-4-dental-implants-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/all-on-4-dental-implants-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function AllOn4DentalImplantsIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function AllOn4DentalImplantsIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/all-on-4-dental-implants-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

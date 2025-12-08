@@ -28,14 +28,22 @@ export const metadata: Metadata = {
     'مستشفيات الأورام في الهند',
     'جراحة سرطان عنق الرحم في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/cervical-cancer-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/cervical-cancer-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/cervical-cancer-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/cervical-cancer-treatment-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function CervicalCancerTreatmentIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -52,7 +60,7 @@ export default function CervicalCancerTreatmentIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/cervical-cancer-treatment-india"
       />
-y-8">
+
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={[
         { question: "How much does cervical cancer treatment cost in India?", answer: "Cervical cancer treatment in India costs $2,000-8,000 depending on stage and treatment. Conization: $2,000-3,500, Simple Hysterectomy: $3,500-5,500, Radical Hysterectomy: $5,000-8,000, Chemotherapy: $1,000-2,000/cycle, Radiation: $4,000-6,000, Targeted Therapy: $4,000-8,000. This is 70-85% cheaper than USA ($15,000-60,000)." },

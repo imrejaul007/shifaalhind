@@ -28,14 +28,22 @@ export const metadata: Metadata = {
     'جراحة سرطان القولون في الهند',
     'العلاج الكيميائي لسرطان القولون في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/colon-cancer-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/colon-cancer-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/colon-cancer-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/colon-cancer-treatment-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function ColonCancerTreatmentIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -52,7 +60,7 @@ export default function ColonCancerTreatmentIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/colon-cancer-treatment-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900">

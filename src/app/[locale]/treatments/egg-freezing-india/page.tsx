@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Egg Freezing India: Cost, Best Clinics 2025',
   description: 'Egg freezing in India costs $1,800-3,000 vs $10,000-15,000 in USA (85% savings). Vitrification technique, 90-95% survival rate. Leading fertility centers.',
   keywords: 'egg freezing india, oocyte cryopreservation india, egg freezing cost india, fertility preservation india, social egg freezing india, تجميد البويضات في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/egg-freezing-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/egg-freezing-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/egg-freezing-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/egg-freezing-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function EggFreezingIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function EggFreezingIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/egg-freezing-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

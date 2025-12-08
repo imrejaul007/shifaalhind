@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Gastric Bypass Surgery India: Cost, Best Surgeons 2025',
   description: 'Gastric bypass surgery in India costs $6,000-8,500 vs $20,000-35,000 in USA (75% savings). Laparoscopic Roux-en-Y, 70-80% weight loss. COE bariatric centers.',
   keywords: 'gastric bypass india, gastric bypass surgery cost india, roux en y india, bariatric surgery india, weight loss surgery india, obesity surgery india, جراحة تحويل المعدة في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/gastric-bypass-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/gastric-bypass-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/gastric-bypass-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/gastric-bypass-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function GastricBypassIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function GastricBypassIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/gastric-bypass-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

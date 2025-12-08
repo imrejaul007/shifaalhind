@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'ACL Reconstruction India: Cost, Best Surgeons 2025',
   description: 'ACL reconstruction in India costs $3,500-5,500 vs $20,000-50,000 in USA (85% savings). Arthroscopic surgery, 95% success rate. Sports medicine experts.',
   keywords: 'acl reconstruction india, acl surgery india, acl surgery cost india, acl repair india, knee surgery india, sports medicine india, arthroscopic surgery india, إعادة بناء الرباط الصليبي في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/acl-reconstruction-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/acl-reconstruction-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/acl-reconstruction-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/acl-reconstruction-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function AclReconstructionIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function AclReconstructionIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/acl-reconstruction-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

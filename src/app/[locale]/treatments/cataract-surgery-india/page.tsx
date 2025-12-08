@@ -30,12 +30,20 @@ export const metadata: Metadata = {
     'عملية المياه البيضاء في الهند',
     'زرع العدسة في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/cataract-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/cataract-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/cataract-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/cataract-surgery-india',
+    },
+  },
 };
 
 export default function CataractSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -52,7 +60,7 @@ export default function CataractSurgeryIndiaPage() {
         followup="Eye drops for 4 weeks, follow-up visits at 1 day, 1 week, and 1 month. Vision stabilizes in 4-6 weeks."
         url="https://shifaalhind.onrender.com/treatments/cataract-surgery-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

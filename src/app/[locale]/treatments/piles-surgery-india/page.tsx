@@ -29,12 +29,20 @@ export const metadata: Metadata = {
     'تكلفة جراحة البواسير في الهند',
     'أفضل مستشفى البواسير في الهند'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/piles-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/piles-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/piles-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/piles-surgery-india',
+    },
+  },
 };
 
 export default function PilesSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -51,7 +59,7 @@ export default function PilesSurgeryIndiaPage() {
         followup="Follow-up at 1 week, 2 weeks, and 4 weeks. Maintain high-fiber diet and proper hygiene."
         url="https://shifaalhind.onrender.com/treatments/piles-surgery-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

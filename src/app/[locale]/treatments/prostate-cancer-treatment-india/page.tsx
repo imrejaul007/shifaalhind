@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Prostate Cancer Treatment India: Cost, Best Oncologists 2025',
   description: 'Prostate cancer treatment in India. Robotic prostatectomy $8,000-12,000 vs $50,000-100,000 in USA (75-85% savings). 85-95% success rate, expert oncologists.',
   keywords: 'prostate cancer treatment india, prostate cancer surgery india, radical prostatectomy india, robotic prostatectomy india, prostate cancer hospital india, علاج سرطان البروستاتا في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/prostate-cancer-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/prostate-cancer-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/prostate-cancer-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/prostate-cancer-treatment-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function ProstateCancerTreatmentIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function ProstateCancerTreatmentIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/prostate-cancer-treatment-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

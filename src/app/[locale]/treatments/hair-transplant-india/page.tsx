@@ -27,14 +27,22 @@ export const metadata: Metadata = {
     'أفضل عيادات زراعة الشعر في الهند',
     'زراعة الشعر FUE في الهند'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/hair-transplant-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/hair-transplant-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/hair-transplant-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/hair-transplant-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function HairTransplantIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -51,7 +59,7 @@ export default function HairTransplantIndiaPage() {
         followup="Follow-up visits at 1 week, 1 month, 3 months, 6 months, and 1 year to monitor growth progress."
         url="https://shifaalhind.onrender.com/treatments/hair-transplant-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12">
         <h1 className="mb-4 text-4xl font-bold text-gray-900">Hair Transplant in India: Complete Guide 2025</h1>

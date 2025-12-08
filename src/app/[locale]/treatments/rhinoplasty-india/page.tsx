@@ -28,6 +28,14 @@ export const metadata: Metadata = {
   title: 'Rhinoplasty India: Nose Job Cost, Best Surgeons & Results 2025',
   description: 'Rhinoplasty (nose job) in India costs $2,500-4,500 vs $8,000-15,000 in USA (70% savings). Top plastic surgeons, 95%+ satisfaction. Get consultation.',
   keywords: 'rhinoplasty india, nose job india, rhinoplasty cost india, nose surgery india, nose reshaping india, best rhinoplasty surgeon india, rhinoplasty mumbai delhi, جراحة تجميل الأنف في الهند, عملية الأنف في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/rhinoplasty-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/rhinoplasty-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/rhinoplasty-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/rhinoplasty-india',
+    },
+  },
 };
 
 const DENTAL_RELATED_ARTICLES = [
@@ -50,8 +58,8 @@ const DENTAL_RELATED_ARTICLES = [
 
 export default function RhinoplastyIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -68,7 +76,7 @@ export default function RhinoplastyIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/rhinoplasty-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-20">
         <div className="container">

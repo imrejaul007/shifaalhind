@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'Blood Cancer Treatment India: Cost, Best Hospitals & Success Rate 2025',
   description: 'Blood cancer treatment in India costs 70-85% less than USA. Leukemia, Lymphoma, Myeloma. Top oncology centers, 60-85% success. Chemotherapy, BMT, targeted therapy.',
   keywords: 'blood cancer treatment india, leukemia treatment india, lymphoma treatment india, blood cancer cost india',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/blood-cancer-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/blood-cancer-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/blood-cancer-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/blood-cancer-treatment-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -28,8 +36,8 @@ const RELATED_ARTICLES = [
 
 export default function BloodCancerTreatmentIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -46,7 +54,7 @@ export default function BloodCancerTreatmentIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/blood-cancer-treatment-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-16">
         <div className="container">

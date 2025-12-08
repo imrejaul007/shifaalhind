@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Dental Veneers India: Cost, Best Dentists 2025',
   description: 'Dental veneers in India cost $150-400 per tooth vs $925-2,500 in USA (80% savings). Porcelain, composite, eMax veneers. Expert cosmetic dentists.',
   keywords: 'veneers india, dental veneers cost india, porcelain veneers india, emax veneers india, smile makeover india, cosmetic dentistry india, قشور الأسنان في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/veneers-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/veneers-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/veneers-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/veneers-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function VeneersIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function VeneersIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/veneers-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

@@ -32,12 +32,20 @@ export const metadata: Metadata = {
     'revision hip replacement india',
     'أفضل مستشفى استبدال الورك في الهند'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/hip-replacement-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/hip-replacement-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/hip-replacement-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/hip-replacement-india',
+    },
+  },
 };
 
 export default function HipReplacementIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function HipReplacementIndiaPage() {
         followup="Physical therapy starts immediately, follow-ups at 2 weeks, 6 weeks, 3 months, 6 months, and annually."
         url="https://shifaalhind.onrender.com/treatments/hip-replacement-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

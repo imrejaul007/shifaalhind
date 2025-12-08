@@ -18,6 +18,14 @@ export const metadata: Metadata = {
   title: 'Angioplasty & Stent Placement India: Cost, Best Hospitals 2025',
   description: 'Angioplasty in India costs $3,500-6,000 vs $28,000-57,000 in USA (85% savings). 98% success rate. Top cardiac hospitals, same-day discharge.',
   keywords: 'angioplasty india, angioplasty cost india, heart stent india, coronary angioplasty india, angioplasty surgery india, best hospital angioplasty india',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/angioplasty-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/angioplasty-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/angioplasty-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/angioplasty-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -28,8 +36,8 @@ const RELATED_ARTICLES = [
 
 export default function AngioplastyIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -46,7 +54,7 @@ export default function AngioplastyIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/angioplasty-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-16">
         <div className="container">

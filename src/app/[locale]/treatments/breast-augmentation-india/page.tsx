@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'Breast Augmentation India: Cost, Best Surgeons 2025',
   description: 'Breast augmentation in India costs $2,800-4,500 vs $8,000-15,000 in USA (70% savings). Silicone/saline implants, board-certified surgeons, 97% satisfaction.',
   keywords: 'breast augmentation india, breast implants india, breast enlargement india, breast surgery india, silicone implants india, cosmetic surgery india, تكبير الثدي في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/breast-augmentation-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/breast-augmentation-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/breast-augmentation-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/breast-augmentation-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function BreastAugmentationIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function BreastAugmentationIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/breast-augmentation-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

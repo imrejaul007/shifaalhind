@@ -28,12 +28,20 @@ export const metadata: Metadata = {
     'تكلفة علاج حصوات الكلى في الهند',
     'أفضل مستشفى حصوات الكلى في الهند'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/kidney-stone-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/kidney-stone-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/kidney-stone-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/kidney-stone-treatment-india',
+    },
+  },
 };
 
 export default function KidneyStoneTreatmentPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -50,7 +58,7 @@ export default function KidneyStoneTreatmentPage() {
         followup="Follow-up imaging at 2 weeks and 3 months. Dietary modifications and increased water intake."
         url="https://shifaalhind.onrender.com/treatments/kidney-stone-treatment-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

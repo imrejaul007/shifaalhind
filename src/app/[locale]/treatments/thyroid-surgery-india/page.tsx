@@ -25,14 +25,22 @@ export const metadata: Metadata = {
     'تكلفة استئصال الغدة الدرقية في الهند',
     'مستشفيات الغدة الدرقية في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/thyroid-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/thyroid-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/thyroid-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/thyroid-surgery-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function ThyroidSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -49,7 +57,7 @@ export default function ThyroidSurgeryIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/thyroid-surgery-india"
       />
-y-8">
+
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={[
         { question: "How much does thyroid surgery cost in India?", answer: "Total thyroidectomy costs $1,800-3,000 in India vs $12,000-25,000 in USA (75-85% savings). Partial thyroidectomy: $1,500-2,500, Thyroid nodule removal: $1,200-2,200, Thyroid cancer surgery: $2,200-3,500. All-inclusive packages available." },

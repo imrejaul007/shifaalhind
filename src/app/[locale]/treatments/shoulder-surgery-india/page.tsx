@@ -26,14 +26,22 @@ export const metadata: Metadata = {
     'مستشفيات العظام في الهند',
     'إصلاح الكفة المدورة في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/shoulder-surgery-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/shoulder-surgery-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/shoulder-surgery-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/shoulder-surgery-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
 
 export default function ShoulderSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 p
-      {/* Breadcrumb Schema for SEO */}
+    <div className="container mx-auto px-4 py-8">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -50,7 +58,7 @@ export default function ShoulderSurgeryIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/shoulder-surgery-india"
       />
-y-8">
+
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

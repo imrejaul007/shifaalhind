@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: 'PCOS Treatment India: Cost, Best Doctors 2025',
   description: 'PCOS treatment in India costs $800-2,500 vs $5,000-12,000 in USA. Comprehensive care: medication, lifestyle, surgery options. Expert gynecologists, endocrinologists.',
   keywords: 'pcos treatment india, polycystic ovary syndrome india, pcos cure india, pcos treatment cost india, infertility treatment india, pcos surgery india, علاج تكيس المبايض في الهند',
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/treatments/pcos-treatment-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/treatments/pcos-treatment-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/treatments/pcos-treatment-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/treatments/pcos-treatment-india',
+    },
+  },
 };
 
 const RELATED_ARTICLES = [
@@ -36,8 +44,8 @@ const RELATED_ARTICLES = [
 
 export default function PcosTreatmentIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
-      {/* Breadcrumb Schema for SEO */}
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+{/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
         { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
@@ -54,7 +62,7 @@ export default function PcosTreatmentIndiaPage() {
         
         url="https://shifaalhind.onrender.com/treatments/pcos-treatment-india"
       />
-ite">
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">
