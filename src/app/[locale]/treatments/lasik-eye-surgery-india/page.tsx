@@ -557,6 +557,217 @@ export default function LasikEyeSurgeryIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for LASIK surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Minimum age: 18 years</strong> (FDA approved age). However, most surgeons recommend waiting until <strong>21-25 years</strong> for best results. Age considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Under 18:</strong> Not suitable (eyes still growing, prescription unstable)</li>
+                <li><strong>18-21 years:</strong> Allowed but prescription must be stable for 2+ years (no change &gt;0.50 diopter annually)</li>
+                <li><strong>21-40 years:</strong> Ideal age range (prescription stable, best healing, no age-related eye changes yet)</li>
+                <li><strong>40-55 years:</strong> Excellent candidates if healthy, but may need reading glasses soon due to presbyopia</li>
+                <li><strong>55+ years:</strong> Still suitable if no cataracts, realistic expectations about reading glasses</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>No upper age limit</strong> if eyes are healthy (patients in 60s-70s get LASIK successfully). Key requirement: stable prescription for 1-2 years, not age. Youngest patient: 18 with documented stable prescription. Oldest patient at top clinics: 72 years old (excellent results).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I fly home after LASIK surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to fly 24-48 hours after LASIK</strong> (after Day 1 follow-up). Flying timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Day 0 (surgery day):</strong> Do NOT fly (need rest, eyes healing)</li>
+                <li><strong>Day 1:</strong> Mandatory follow-up appointment (surgeon checks flap healing, confirms no complications)</li>
+                <li><strong>Day 2-3:</strong> Safe to fly home (80-90% vision restored, flap sealed)</li>
+                <li><strong>Recommended stay:</strong> 3-5 days in India for peace of mind</li>
+                <li><strong>Cabin pressure safe:</strong> Won&apos;t damage flap or affect healing (pressure changes minimal)</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>Flying precautions:</strong> Use lubricating eye drops every 1-2 hours during flight (cabin air is dry), wear protective sunglasses (bright lights, UV protection), avoid rubbing eyes (especially during sleep), bring extra eye drop bottles in carry-on (TSA allows medical drops), no alcohol on flight (worsens dry eyes). Get surgeon clearance letter for airline if asked. Most GCC patients fly home Day 3-4 with no issues.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I exercise and play sports after LASIK?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Gradual return to sports over 1-4 weeks.</strong> Timeline by activity type:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Walking, light yoga:</strong> Immediately next day (no restrictions)</li>
+                <li><strong>Treadmill, stationary bike:</strong> Day 2-3 (keep sweat out of eyes)</li>
+                <li><strong>Jogging, outdoor running:</strong> Week 1 (wear wrap-around sunglasses for dust/wind protection)</li>
+                <li><strong>Gym, weight training:</strong> Week 1-2 (avoid getting sweat in eyes, no heavy straining that increases eye pressure)</li>
+                <li><strong>Swimming (pool):</strong> Week 2-4 (chlorine can irritate healing eyes)</li>
+                <li><strong>Swimming (ocean, lake):</strong> Week 4 (bacteria risk higher in natural water)</li>
+                <li><strong>Contact sports (football, basketball, martial arts):</strong> Month 1-3 (risk of eye trauma, flap dislodgement in first month)</li>
+                <li><strong>Racquet sports (tennis, squash):</strong> Week 2-4 (protective eyewear recommended first 3 months)</li>
+              </ul>
+              <p className="text-gray-700"><strong>Key restrictions:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li>No swimming for 2-4 weeks (infection risk from water)</li>
+                <li>No contact sports for 1 month minimum (flap dislodgement risk)</li>
+                <li>Wear protective eyewear for racquet sports first 3 months</li>
+                <li>Scuba diving: Wait 3 months (pressure changes can affect healing)</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need to stop wearing contact lenses before LASIK?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Yes, stop contact lenses before pre-op evaluation.</strong> Contact lenses change corneal shape temporarily, affecting measurements. Requirements:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Soft contact lenses (daily/monthly):</strong> Stop 2 weeks before pre-op screening, stay off until surgery (2-3 weeks total)</li>
+                <li><strong>Toric soft lenses (for astigmatism):</strong> Stop 3 weeks before pre-op</li>
+                <li><strong>Rigid gas permeable (RGP/hard lenses):</strong> Stop 4 weeks before pre-op (corneal molding takes longer to reverse)</li>
+                <li><strong>Ortho-K (overnight reshaping lenses):</strong> Stop 6-8 weeks before pre-op (significant corneal changes)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Why this matters:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Contacts compress cornea, altering thickness and curvature measurements</li>
+                <li>Inaccurate measurements → incorrect laser treatment → poor vision outcomes</li>
+                <li>Cornea needs time to return to natural shape (like removing tight shoes - feet need time to decompress)</li>
+                <li>Repeat measurements may be needed if cornea hasn&apos;t fully recovered</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>During contact lens-free period:</strong> Wear glasses exclusively (even if you hate them - temporary inconvenience for perfect measurements). Most patients coordinate LASIK evaluation after stopping lenses, then surgery 1-2 weeks later. Total lens-free time: 3-5 weeks. Bring glasses to India (needed immediately post-LASIK for backup during first 24 hours).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Will I need reading glasses after LASIK if I&apos;m over 40?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>LASIK corrects distance vision, but age-related near vision changes (presbyopia) still occur.</strong> Age-specific expectations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Under 40:</strong> No reading glasses needed after LASIK (accommodation intact, can focus near and far)</li>
+                <li><strong>40-45 years:</strong> May notice slight difficulty reading small print in 2-5 years (presbyopia starting, not LASIK-related)</li>
+                <li><strong>45-50 years:</strong> Likely need reading glasses within 1-3 years for close work (normal aging)</li>
+                <li><strong>50+ years:</strong> Reading glasses needed immediately post-LASIK for books, phones, menus (presbyopia fully developed)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Monovision option for 40+ patients:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>How it works:</strong> Dominant eye corrected for distance, non-dominant eye for near vision (-1.00 to -1.50 undercorrection)</li>
+                <li><strong>Benefit:</strong> Reduced dependence on reading glasses (70-80% reading without glasses)</li>
+                <li><strong>Drawback:</strong> Slight reduction in depth perception and distance clarity (not ideal for pilots, drivers)</li>
+                <li><strong>Trial period:</strong> Test monovision with contact lenses before LASIK to ensure comfort</li>
+                <li><strong>Acceptance rate:</strong> 60-70% of 45+ patients love monovision, 30% prefer traditional LASIK + reading glasses</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>Bottom line:</strong> LASIK is still worth it at 40+ for distance vision freedom (driving, watching TV, recognizing faces). Reading glasses are lightweight, inexpensive, and only needed for close work. Many patients prefer LASIK + reading glasses over being dependent on glasses/contacts all day. Presbyopia happens with or without LASIK - it&apos;s natural aging of eye lens, not a LASIK side effect.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I use computers, phones, and watch TV after LASIK?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Screen use timeline (gradual increase to prevent dry eyes):</strong>
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>First 6 hours post-op:</strong> No screens (sleep recommended, eyes heal fastest when closed)</li>
+                <li><strong>Day 1 (24 hours post-op):</strong> Light phone use okay (10-15 min sessions, frequent breaks)</li>
+                <li><strong>Day 2-7:</strong> Moderate screen use (2-4 hours total daily, 20-20-20 rule: every 20 min, look 20 feet away for 20 seconds)</li>
+                <li><strong>Week 2-4:</strong> Return to normal screen time (8+ hours okay, use lubricating drops hourly)</li>
+                <li><strong>Month 1+:</strong> No restrictions (eyes fully adapted, continue lubricating drops as needed)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Screen use tips to prevent dry eyes:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li>Blink consciously (we blink 60% less when staring at screens - dry eyes worsen)</li>
+                <li>Use preservative-free lubricating drops every 1-2 hours while on screens</li>
+                <li>Increase screen brightness slightly (reduces eye strain)</li>
+                <li>Position monitor 20-26 inches away, slightly below eye level</li>
+                <li>Use blue light filter glasses or apps (reduces digital eye strain)</li>
+                <li>Humid environments help (use humidifier if office air is dry)</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>Work-from-home/office workers:</strong> Can return to desk work Day 1-2. Request remote work first week if possible (allows more eye rest breaks). Bring lubricating drops to office. Most patients resume full 8-hour screen time by Week 2 with no issues. Dry eyes peak Week 2-4, then improve - use drops generously during this period.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What are the long-term risks and complications of LASIK?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>LASIK is very safe with 40+ million procedures worldwide since 1999.</strong> Long-term risks (beyond 5-10 years):
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Regression (power returning):</strong> 1-2% experience 0.25-0.50 power return after 10+ years (usually free enhancement fixes this)</li>
+                <li><strong>Chronic dry eyes:</strong> 1-5% have permanent mild dry eyes requiring daily lubricating drops (manageable, not sight-threatening)</li>
+                <li><strong>Glare/halos persisting:</strong> &lt;1% have permanent night vision issues (starbursts around lights - rare with modern lasers)</li>
+                <li><strong>Ectasia (corneal bulging):</strong> &lt;0.1% develop progressive corneal thinning (screening prevents this - measure corneal thickness pre-op)</li>
+                <li><strong>Flap complications:</strong> &lt;0.5% have late flap issues (trauma to eye decades later can dislodge flap - avoid eye injuries)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>What LASIK does NOT cause:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li>❌ Blindness: Zero documented cases of blindness from LASIK in modern era</li>
+                <li>❌ Cataracts: LASIK doesn&apos;t increase cataract risk (age-related cataracts occur normally after 60+)</li>
+                <li>❌ Glaucoma: No increased risk</li>
+                <li>❌ Retinal detachment: No increased risk (pre-existing high myopia is risk factor, not LASIK itself)</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>Risk mitigation:</strong> Choose experienced surgeon (1,000+ LASIK procedures annually), undergo comprehensive screening (corneal thickness, dry eye test, pupil size), follow post-op care strictly, attend follow-ups, report issues early. 99.5% of patients have no serious long-term complications. Satisfaction rate: 96% at 10 years post-LASIK (would recommend to friends/family).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need enhancement (touch-up) after LASIK and is it free?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Enhancement needed in 5-10% of patients.</strong> Enhancement details:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>When needed:</strong> If residual power remains &gt;-0.50 after 3-6 months, or if patient desires sharper vision (20/15 instead of 20/20)</li>
+                <li><strong>Reasons:</strong> Undercorrection (90% of enhancements - conservative initial treatment), overcorrection (5%), regression (5% - prescription changes over time)</li>
+                <li><strong>Timing:</strong> Wait minimum 6 months post-LASIK (vision must stabilize before enhancement), ideally 12 months</li>
+                <li><strong>Procedure:</strong> Same as original LASIK but faster (lift existing flap, apply additional laser correction, replace flap - 10 min total)</li>
+                <li><strong>Recovery:</strong> Faster than first time (flap already created, just refinement needed - 24-48 hours clear vision)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Enhancement cost/warranty:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700">
+                <li><strong>Lifetime free enhancement:</strong> Centre for Sight, Apollo (if &gt;-0.50 residual power, no patient fault)</li>
+                <li><strong>1-year free enhancement:</strong> Dr. Agarwal&apos;s, Sankara Nethralaya</li>
+                <li><strong>Paid enhancement:</strong> $200-400 per eye after warranty period (much cheaper than full LASIK)</li>
+                <li><strong>Conditions:</strong> Adequate corneal thickness remaining (need 250 microns minimum), no eye disease developed, patient follows post-op care</li>
+              </ul>
+              <p className="mt-3 text-gray-700">
+                <strong>Enhancement rates by initial procedure:</strong> Blade-Free LASIK (5-8% need enhancement), Contoura Vision (3-5% - more precise), SMILE (8-10% - less predictable). Higher initial prescriptions (-8.00 to -10.00) have 15-20% enhancement rate. Surgeon should inform you if your prescription has higher enhancement likelihood. Enhancement doesn&apos;t mean LASIK failed - it&apos;s a planned refinement for perfect vision.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
