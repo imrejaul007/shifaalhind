@@ -512,6 +512,269 @@ export default function PilesSurgeryIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for piles surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Minimum 18 years old for elective piles surgery.</strong> Age considerations by group:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Under 18:</strong> Surgery rarely needed (piles uncommon in children/teens), conservative treatment preferred (fiber, sitz baths, creams), surgery only if severe bleeding causing anemia or prolapse interfering with daily life</li>
+                <li><strong>18-40 years:</strong> Ideal age for surgery (faster healing, fewer comorbidities), most common age group for elective piles surgery, excellent recovery outcomes</li>
+                <li><strong>40-65 years:</strong> Surgery safe and effective, may have slightly longer recovery due to slower healing, comorbidities (diabetes, hypertension) well-managed before surgery</li>
+                <li><strong>65+ years:</strong> Surgery possible if medically fit, comprehensive pre-op evaluation required (cardiac, kidney function), anesthesia risk slightly higher but manageable, oldest patient treated at Fortis: 82 years old</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Special considerations:</strong> Pregnancy: Surgery postponed until 3-6 months after delivery (piles often resolve postpartum). Young adults (18-25): Lifestyle modifications tried first for 3-6 months before surgery. Elderly patients: Laser surgery preferred (daycare, less anesthesia time, faster recovery). Age is not a barrier - fitness and overall health more important than chronological age.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I smoke after piles surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>No, smoking severely impairs healing and increases complications.</strong> Impact timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Before surgery:</strong> Stop smoking 2-4 weeks before procedure (improves wound healing, reduces infection risk 50%+, better anesthesia tolerance)</li>
+                <li><strong>Immediately after (Week 1-4):</strong> Absolutely NO smoking during critical healing period (wound healing most vulnerable first 2 weeks, nicotine constricts blood vessels reducing blood flow to surgical site, smoking increases infection risk 3-4× higher)</li>
+                <li><strong>First 3 months:</strong> Continue avoiding smoking (delayed wound healing can cause anal fissures, chronic wounds, prolonged pain)</li>
+                <li><strong>Long-term:</strong> Quit permanently for best results (smoking is risk factor for piles recurrence, chronic constipation from smoking damages anal tissues)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Smoking complications specific to piles surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Delayed wound healing (4-6 weeks instead of 2-3 weeks)</li>
+                <li>Increased pain and bleeding</li>
+                <li>Higher infection rates (15-20% vs 3-5% in non-smokers)</li>
+                <li>Anal fissure formation (painful tears in anal lining)</li>
+                <li>Poor tissue repair leading to recurrence</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Alternatives:</strong> Nicotine replacement therapy (patches, gum) slightly better than cigarettes but still delays healing - discuss with surgeon. Vaping/e-cigarettes equally harmful (nicotine is the problem, not just smoke). Many hospitals require you to sign waiver if smoking - surgeon may refuse surgery if you won&apos;t quit. Quitting smoking is single most important thing you can do for successful piles surgery outcome.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I exercise and lift weights after piles surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Gradual return to exercise over 4-6 weeks.</strong> Timeline by activity level:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Walking:</strong> Start Day 1 post-surgery (encouraged immediately, reduces blood clot risk, promotes healing, start with 5-10 minutes 3-4 times daily, increase to 20-30 minutes by Week 2)</li>
+                <li><strong>Light stretching/yoga:</strong> Week 2-3 (gentle poses only, avoid inversions, downward dog, anything putting pressure on anal area)</li>
+                <li><strong>Swimming:</strong> Week 3-4 (after wound completely healed, no bleeding/discharge, chlorine can irritate if wounds not fully closed)</li>
+                <li><strong>Cycling:</strong> Week 4-6 (sitting on bike seat puts pressure on surgical site, wait until pain-free, use padded seat/shorts)</li>
+                <li><strong>Running/jogging:</strong> Week 4-6 (jarring motion can strain healing tissues, start slow - 10-15 minutes, increase gradually)</li>
+                <li><strong>Weight training (upper body):</strong> Week 3-4 (light weights only, no straining, avoid holding breath)</li>
+                <li><strong>Weight training (lower body):</strong> Week 6-8 (no heavy squats/deadlifts until Week 8, avoid exercises causing anal pressure)</li>
+                <li><strong>Heavy lifting (&gt;20 lbs):</strong> Week 6-8 minimum (straining can cause bleeding, wound reopening, recurrence)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Warning signs to stop exercise:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Bleeding from surgical site (fresh red blood)</li>
+                <li>Increased pain or swelling in anal area</li>
+                <li>Feeling of pressure or straining in rectum</li>
+                <li>Fever or signs of infection</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Exercise tips for piles surgery recovery:</strong> Always empty bowels before exercise (no straining with full rectum). Wear supportive underwear during exercise. Stay hydrated (8-10 glasses water daily). Never hold breath during exercise (causes intra-abdominal pressure spike). If activity causes pain - you&apos;re doing too much too soon. Surgeon clearance required before resuming gym/sports (usually Week 4-6 checkup).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What can I eat after piles surgery? Any diet restrictions?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>High-fiber diet is critical for healing and preventing constipation.</strong> Diet timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1 (Surgery day):</strong> Clear liquids (water, coconut water, clear soup, apple juice) for 6-8 hours post-op, then soft foods (khichdi, porridge, mashed potatoes, yogurt)</li>
+                <li><strong>Days 2-7:</strong> Soft, high-fiber foods (well-cooked vegetables, fruits without skin like banana/papaya, whole grain porridge, lentil soup, prunes/dates for natural laxative effect)</li>
+                <li><strong>Week 2-4:</strong> Regular high-fiber diet (25-30g fiber daily, all fruits and vegetables, whole grains - brown rice, whole wheat, oats, beans and legumes)</li>
+                <li><strong>Long-term:</strong> Continue high-fiber diet to prevent recurrence</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Foods to eat (promotes soft stools, easy bowel movements):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Fruits: Papaya, banana, apple (peeled), pears, prunes, figs, berries</li>
+                <li>Vegetables: Spinach, bottle gourd, ridge gourd, carrots (cooked), beans</li>
+                <li>Grains: Oats, brown rice, whole wheat bread, quinoa</li>
+                <li>Protein: Dal (lentils), eggs, fish, chicken (avoid red meat first 2 weeks)</li>
+                <li>Fluids: 8-10 glasses water daily, buttermilk, fresh fruit juice</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Foods to avoid (causes constipation, irritation, straining):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>First 4 weeks avoid:</strong> Spicy foods (can burn during bowel movements), red meat (hard to digest), fried/oily foods, white bread/white rice (low fiber), cheese and dairy (constipating), alcohol (dehydrating), caffeine (can irritate)</li>
+                <li><strong>Forever avoid (recurrence triggers):</strong> Processed foods low in fiber, excessive junk food, chronically low water intake</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>First bowel movement after surgery:</strong> Usually Day 2-3. Will be uncomfortable but not as painful as feared (stool softeners prescribed to ease passage). Key is to not strain - let it happen naturally. Sitz bath immediately after BM reduces pain. Each subsequent BM gets easier. By Week 2, bowel movements should be comfortable and pain-free with high-fiber diet.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need someone to accompany me for piles surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Companion recommended but not mandatory for laser surgery, required for traditional surgery.</strong> Breakdown:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Laser piles surgery (daycare):</strong> Can manage alone if needed (procedure under local/spinal anesthesia - you&apos;re awake, discharged same day after 6-8 hours, can walk and take care of basic needs), but companion helpful for: picking up medications, helping with first sitz bath at hotel, emotional support first 24-48 hours, accompanying to follow-up visit</li>
+                <li><strong>Traditional piles surgery (1-2 night stay):</strong> Companion strongly recommended (general anesthesia often used, more post-op pain requiring assistance, 1-2 day hospital stay with caregiver helpful, mobility limited first 24 hours)</li>
+                <li><strong>International patients:</strong> Many GCC patients come alone for laser surgery (hospitals provide: Airport pickup/drop, dedicated international patient coordinator, 24/7 WhatsApp support, hotel booking assistance, nurse visit at hotel Day 1-2 if needed for ₹1,500-2,000/$20-25)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Hospital support for solo patients:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Pristyn Care: Free pickup/drop, WhatsApp support 24/7, hotel recommendations near hospital</li>
+                <li>Fortis/Apollo: International patient coordinator handles all logistics, hotel arrangements</li>
+                <li>Max/Medanta: Concierge services, language translators (Arabic available)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Practical tips for solo patients:</strong> Book hotel within 2-3 km of hospital (easy for follow-up visits). Stock up on supplies before surgery (stool softeners, pain meds, high-fiber snacks, water). Have emergency contact numbers (surgeon, hospital, coordinator). Video call family/friends for emotional support. Consider staying extra 2-3 days for peace of mind. Most solo patients manage fine - piles surgery is not major surgery requiring intensive care.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can piles come back during pregnancy after surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Yes, piles can recur during pregnancy even after successful surgery.</strong> Details:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Recurrence risk:</strong> 20-30% of women develop piles during pregnancy (even if previously treated surgically), 50% resolve spontaneously within 3-6 months after delivery, only 10-15% require repeat surgery post-pregnancy</li>
+                <li><strong>Why pregnancy causes piles:</strong> Increased blood volume puts pressure on pelvic veins, growing uterus compresses inferior vena cava, hormonal changes relax vein walls, constipation common in pregnancy, pushing during labor strains hemorrhoidal veins</li>
+                <li><strong>Timeline:</strong> Most pregnancy-related piles develop in third trimester (Months 7-9), worsen during labor/delivery, improve significantly within 6-12 weeks postpartum</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Planning pregnancy after piles surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Wait 3-6 months:</strong> Allow complete healing before pregnancy (reduces recurrence risk from 30% to 20%)</li>
+                <li><strong>Surgery if pregnant:</strong> Avoid elective piles surgery during pregnancy (only emergency surgery for severe bleeding, gangrene), conservative treatment preferred (sitz baths, fiber, creams), surgery postponed until 3-6 months postpartum</li>
+                <li><strong>C-section vs vaginal delivery:</strong> Vaginal delivery increases piles risk more than C-section, but C-section not recommended solely to prevent piles</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Prevention during pregnancy (if you&apos;ve had surgery):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>High-fiber diet from Day 1 of pregnancy (30-35g daily)</li>
+                <li>Drink 10-12 glasses water daily</li>
+                <li>Regular gentle exercise (walking, prenatal yoga)</li>
+                <li>Kegel exercises to improve pelvic floor strength</li>
+                <li>Never strain during bowel movements (use stool softeners if needed)</li>
+                <li>Sleep on left side (reduces pressure on pelvic veins)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Bottom line:</strong> Previous piles surgery doesn&apos;t guarantee freedom from pregnancy-related piles, but it doesn&apos;t increase risk either. Most pregnancy piles resolve after delivery without repeat surgery. If planning pregnancy within 1-2 years, discuss timing with surgeon - may recommend delaying surgery until after delivery unless severe symptoms interfering with quality of life.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the difference between internal and external piles treatment in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Different treatment approaches based on piles location and severity.</strong> Comparison:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Internal piles (inside rectum, above dentate line):</strong> Not usually painful (no pain nerve endings inside rectum), main symptom: painless bleeding during bowel movements, prolapse (Grade 1-4 based on how far they bulge out), treated based on grade</li>
+                <li><strong>External piles (under skin around anus):</strong> Painful (many nerve endings in anal skin), can form thrombosed pile (blood clot inside - extremely painful), visible/palpable lump outside anus, may bleed if skin tears</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Treatment options by type:</strong></p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Piles Type</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Treatment Options</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Cost in India</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2">Internal Grade 1-2</td>
+                    <td className="border border-gray-300 px-4 py-2">Rubber band ligation, sclerotherapy, infrared coagulation (non-surgical)</td>
+                    <td className="border border-gray-300 px-4 py-2">$200-500</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2">Internal Grade 3</td>
+                    <td className="border border-gray-300 px-4 py-2">Laser hemorrhoidoplasty, stapler hemorrhoidopexy (minimally invasive)</td>
+                    <td className="border border-gray-300 px-4 py-2">$800-1,400</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2">Internal Grade 4</td>
+                    <td className="border border-gray-300 px-4 py-2">Traditional hemorrhoidectomy, stapler hemorrhoidopexy (surgery required)</td>
+                    <td className="border border-gray-300 px-4 py-2">$900-1,400</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2">External piles (small)</td>
+                    <td className="border border-gray-300 px-4 py-2">Conservative (sitz baths, creams, lifestyle changes), excision under local anesthesia</td>
+                    <td className="border border-gray-300 px-4 py-2">$200-600</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2">Thrombosed external piles</td>
+                    <td className="border border-gray-300 px-4 py-2">Incision &amp; drainage (emergency procedure within 72 hours for best results)</td>
+                    <td className="border border-gray-300 px-4 py-2">$300-700</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2">Mixed (internal + external)</td>
+                    <td className="border border-gray-300 px-4 py-2">Combined approach: laser/stapler for internal + excision for external (single procedure)</td>
+                    <td className="border border-gray-300 px-4 py-2">$1,000-1,600</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="text-gray-700">
+                <strong>Diagnosis:</strong> Doctor performs digital rectal examination (DRE) + anoscopy/proctoscopy to visualize internal piles (can&apos;t see them from outside). External piles visible on inspection. Your surgeon will explain exactly which type you have, which grade, and recommend appropriate treatment. Most patients have mixed internal + external piles requiring combination treatment. All treatments available at same hospitals - no need to go to different facilities.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I have sex after piles surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to resume sex after 3-4 weeks (once wound fully healed).</strong> Detailed timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Week 1-2:</strong> Avoid all sexual activity (wound healing critical phase, any pressure/strain on anal/rectal area can cause bleeding, pain levels still moderate, infection risk highest first 2 weeks)</li>
+                <li><strong>Week 3-4:</strong> Light sexual activity may be possible (vaginal sex okay if comfortable for women, anal sex absolutely avoid for 6-8 weeks minimum, oral sex safe, masturbation okay if doesn&apos;t cause straining)</li>
+                <li><strong>After Week 4:</strong> Normal sexual activity can resume (wound should be fully healed, pain-free, surgeon clearance at Week 4 follow-up recommended)</li>
+                <li><strong>Anal sex:</strong> Wait minimum 6-8 weeks, even then approach with extreme caution (anal sex puts direct pressure on surgical site, high risk of wound reopening, bleeding, infection, many surgeons recommend avoiding permanently or waiting 3-6 months), use plenty of lubrication if attempting, stop immediately if any pain/bleeding</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Gender-specific considerations:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Women:</strong> Vaginal sex safe after 3-4 weeks (avoid positions putting pressure on rectum initially like missionary with legs up, side-lying or woman-on-top positions more comfortable), pregnancy should wait 3-6 months after surgery for complete healing</li>
+                <li><strong>Men:</strong> Erectile function not affected by piles surgery, prostate stimulation during sex may cause discomfort first 4-6 weeks, normal sexual function returns fully by Week 6-8</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Warning signs to stop sexual activity:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Bleeding from anal area during or after sex</li>
+                <li>Severe pain in rectal area</li>
+                <li>Swelling or feeling of pressure in anus</li>
+                <li>Discharge or signs of infection</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Communication with surgeon:</strong> This is medical question - don&apos;t be embarrassed to ask your surgeon directly. They can examine wound healing and give personalized clearance. General rule: If it hurts, don&apos;t do it. Your body will tell you when it&apos;s ready. Rushing back to sex too soon risks complications that delay total healing by weeks. Patience for 3-4 weeks ensures lifetime of comfortable sexual activity without piles pain/bleeding.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
