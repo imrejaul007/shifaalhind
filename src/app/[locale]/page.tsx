@@ -509,7 +509,9 @@ export default function HomePage() {
             See how much you can save on popular medical procedures. All costs in USD.
           </p>
         </div>
-        <div className="overflow-x-auto">
+
+        {/* Desktop Table View (md and above) */}
+        <div className="hidden overflow-x-auto md:block">
           <table className="w-full border-collapse rounded-lg bg-white shadow-lg">
             <thead>
               <tr className="bg-primary-50">
@@ -697,6 +699,354 @@ export default function HomePage() {
             </tbody>
           </table>
         </div>
+
+        {/* Mobile Card View (below md) */}
+        <div className="space-y-4 md:hidden">
+          {/* Treatment Card 1 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Heart Bypass Surgery (CABG)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$8K-$12K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$120K-$150K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$90K-$110K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$50K-$70K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$42K-$138K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 2 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Knee Replacement (TKR)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$6K-$8K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$40K-$50K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$35K-$45K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$20K-$28K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$14K-$42K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 3 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">IVF (Single Cycle)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$2.5K-$4K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$12K-$15K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$10K-$12K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$8K-$10K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$4K-$11K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 4 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Dental Implants (Single Tooth)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$500-$800</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$3K-$4.5K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$2.5K-$3.5K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$1.5K-$2K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$700-$3.7K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 5 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Liver Transplant</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$35K-$50K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$500K-$800K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$400K-$600K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$200K-$300K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$150K-$750K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 6 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Cataract Surgery (Both Eyes)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$1.5K-$2.5K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$6K-$8K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$5K-$7K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$3.5K-$5K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$2K-$5.5K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 7 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Rhinoplasty (Nose Job)</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$2.5K-$4K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$8K-$15K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$6K-$10K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$5K-$8K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$2.5K-$11K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Treatment Card 8 */}
+          <Card className="border-2 border-primary-100 bg-white">
+            <CardHeader className="bg-primary-50 pb-3">
+              <CardTitle className="text-base">Spinal Fusion Surgery</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-4">
+              <div className="space-y-3">
+                <div className="flex items-center justify-between rounded-lg bg-green-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇮🇳</span>
+                    <span className="font-medium text-gray-900">India</span>
+                  </div>
+                  <span className="text-lg font-bold text-green-600">$8K-$12K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇺🇸</span>
+                    <span className="font-medium text-gray-700">USA</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$80K-$120K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇬🇧</span>
+                    <span className="font-medium text-gray-700">UK</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$60K-$90K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-gray-50 p-3">
+                  <div className="flex items-center gap-2">
+                    <span className="text-2xl">🇦🇪</span>
+                    <span className="font-medium text-gray-700">UAE</span>
+                  </div>
+                  <span className="font-semibold text-gray-600">$35K-$50K</span>
+                </div>
+                <div className="flex items-center justify-between rounded-lg bg-primary-50 p-3 border-2 border-primary-200">
+                  <span className="font-bold text-primary-900">💰 You Save</span>
+                  <span className="text-xl font-bold text-primary-600">$23K-$108K</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="mt-8 text-center">
           <p className="mb-4 text-gray-700">
             <strong>Note:</strong> Costs include hospital stay, surgeon fees, anesthesia, and follow-up visits. Actual costs may vary based on patient condition and hospital choice.
