@@ -97,10 +97,11 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: 'https://shifaalhind.onrender.com/en',
     languages: {
-      'en-US': '/',
-      'ar-SA': '/ar',
+      'en-US': 'https://shifaalhind.onrender.com/en',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar',
+      'x-default': 'https://shifaalhind.onrender.com/en',
     },
   },
   icons: {

@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     'تكلفة عمليات التجميل الهند',
     'الجراحة التجميلية الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/cosmetic-surgery-cost-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
+    },
+  },
 };
 
 export default function CosmeticSurgeryCostIndiaPage() {
@@ -40,7 +48,7 @@ export default function CosmeticSurgeryCostIndiaPage() {
       lastUpdated="October 2025"
       readTime="12 min"
       breadcrumbTitle="Cosmetic Surgery Cost India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -59,7 +67,7 @@ export default function CosmeticSurgeryCostIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/cosmetic-surgery-cost-india"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

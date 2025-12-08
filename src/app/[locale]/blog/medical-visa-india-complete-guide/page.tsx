@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     'التأشيرة الطبية للهند',
     'تأشيرة العلاج في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-visa-india-complete-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
+    },
+  },
 };
 
 export default function MedicalVisaIndiaGuidePage() {
@@ -37,7 +45,7 @@ export default function MedicalVisaIndiaGuidePage() {
       lastUpdated="October 2025"
       readTime="16 min"
       breadcrumbTitle="Medical Visa India Guide"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -56,7 +64,7 @@ export default function MedicalVisaIndiaGuidePage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/medical-visa-india-complete-guide"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

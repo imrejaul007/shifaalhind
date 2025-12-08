@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     'medical tourism insurance cost',
     'best insurance for medical tourism',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-tourism-insurance-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
+    },
+  },
 };
 
 export default function MedicalTourismInsuranceIndiaPage() {
@@ -32,7 +40,7 @@ export default function MedicalTourismInsuranceIndiaPage() {
       lastUpdated="October 2025"
       readTime="12 min"
       breadcrumbTitle="Medical Tourism Insurance"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -51,7 +59,7 @@ export default function MedicalTourismInsuranceIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/medical-tourism-insurance-india"
       />
-    >
+
       {/* Introduction - Shorter content for context limits */}
       <Card>
         <CardContent className="pt-6">

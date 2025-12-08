@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
   description: 'Complete guide to IVF and fertility treatment in India. Cost comparison, success rates by age, top clinics, real patient stories, and complete timeline for 2025.',
   keywords: ['IVF cost India', 'fertility treatment India', 'IVF India vs UAE', 'IVF success rates India', 'IVF India for UAE patients', 'affordable IVF treatment'],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/ivf-fertility-treatment-india-complete-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -26,7 +34,7 @@ export default function IVFFertilityGuide() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="IVF & Fertility Treatment Guide"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -45,7 +53,7 @@ export default function IVFFertilityGuide() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/ivf-fertility-treatment-india-complete-guide"
       />
-    >
+
       <section className="mb-8">
         <p className="text-lg">IVF in GCC countries costs $10,000-$20,000+ per cycle. India offers the same quality at $3,500-$6,000, with success rates of 55-65% for patients under 35. Over 15,000 international couples choose India annually.</p>
       </section>

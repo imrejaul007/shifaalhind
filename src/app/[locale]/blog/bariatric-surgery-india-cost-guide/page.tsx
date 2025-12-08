@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     'تكلفة جراحة السمنة الهند',
     'جراحة إنقاص الوزن الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/bariatric-surgery-india-cost-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
+    },
+  },
 };
 
 export default function BariatricSurgeryCostIndiaPage() {
@@ -40,7 +48,7 @@ export default function BariatricSurgeryCostIndiaPage() {
       lastUpdated="October 2025"
       readTime="13 min"
       breadcrumbTitle="Bariatric Surgery Cost India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -59,7 +67,7 @@ export default function BariatricSurgeryCostIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/bariatric-surgery-india-cost-guide"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

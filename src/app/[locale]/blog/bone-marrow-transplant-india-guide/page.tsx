@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     'زراعة نخاع العظم الهند من الإمارات',
     'زراعة نخاع العظم الهند للسعوديين',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/bone-marrow-transplant-india-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
+    },
+  },
 };
 
 export default function BoneMarrowTransplantIndiaPage() {
@@ -42,7 +50,7 @@ export default function BoneMarrowTransplantIndiaPage() {
       lastUpdated="October 2025"
       readTime="15 min"
       breadcrumbTitle="Bone Marrow Transplant Cost India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -61,7 +69,7 @@ export default function BoneMarrowTransplantIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/bone-marrow-transplant-india-guide"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

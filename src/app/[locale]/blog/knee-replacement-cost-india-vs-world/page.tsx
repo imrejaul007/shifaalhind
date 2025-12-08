@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
   description: 'Complete cost comparison for knee replacement surgery in India vs USA, UK, UAE. TKR, PKR, bilateral knee costs, top hospitals, success rates, and real patient savings.',
   keywords: ['knee replacement cost India', 'knee surgery India vs USA', 'total knee replacement India', 'orthopedic surgery India cost', 'knee implants India'],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/knee-replacement-cost-india-vs-world',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

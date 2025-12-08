@@ -25,6 +25,14 @@ export const metadata: Metadata = {
     'العلاج في الهند من دبي',
     'مستشفيات الهند لمرضى دبي',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/dubai-to-india-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/dubai-to-india-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/dubai-to-india-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/dubai-to-india-medical-tourism',
+    },
+  },
 };
 
 export default function DubaiToIndiaMedicalTourismPage() {
@@ -37,7 +45,7 @@ export default function DubaiToIndiaMedicalTourismPage() {
       lastUpdated="October 2025"
       readTime="15 min"
       breadcrumbTitle="Dubai to India Medical Tourism"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -56,7 +64,7 @@ export default function DubaiToIndiaMedicalTourismPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/dubai-to-india-medical-tourism"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

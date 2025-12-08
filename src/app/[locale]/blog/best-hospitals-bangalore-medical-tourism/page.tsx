@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     'أفضل مستشفيات بنغالور',
     'مستشفيات بنغالور للسياحة العلاجية'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-bangalore-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-bangalore-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-bangalore-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-bangalore-medical-tourism',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -37,7 +45,7 @@ export default function BestHospitalsBangaloreGuide() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Bangalore"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -56,7 +64,7 @@ export default function BestHospitalsBangaloreGuide() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/best-hospitals-bangalore-medical-tourism"
       />
-    >
+
       <section className="mb-8">
         <p className="text-lg">Bangalore, India&apos;s Silicon Valley, is also its healthcare innovation hub with 30+ NABH/JCI-accredited hospitals treating 100,000+ international patients annually. Home to Manipal Hospitals (India&apos;s 2nd largest chain), Narayana Health (world&apos;s most affordable cardiac care), and cutting-edge medical technology centers.</p>
       </section>

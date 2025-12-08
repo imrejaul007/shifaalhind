@@ -11,6 +11,14 @@ export const metadata: Metadata = {
   title: 'How to Choose the Best Hospital in India for Medical Tourism: Complete 2025 Guide',
   description: 'Complete guide to selecting the best hospital in India for medical tourism. JCI accreditation, doctor credentials, success rates, and how to avoid mistakes.',
   keywords: ['best hospitals India medical tourism', 'how to choose hospital India', 'JCI accredited hospitals India', 'hospital selection guide India', 'international patients India'],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/how-to-choose-best-hospital-india',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

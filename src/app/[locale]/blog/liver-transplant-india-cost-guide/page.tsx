@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     'زراعة الكبد في الهند',
     'مستشفيات زراعة الكبد الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/liver-transplant-india-cost-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -41,7 +49,7 @@ export default function LiverTransplantIndiaPage() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="Liver Transplant India Cost"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -60,7 +68,7 @@ export default function LiverTransplantIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/liver-transplant-india-cost-guide"
       />
-    >
+
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">
         <p className="text-lg leading-relaxed text-gray-700">

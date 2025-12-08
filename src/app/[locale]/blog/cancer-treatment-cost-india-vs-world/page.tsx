@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     'تكلفة علاج السرطان في الهند',
     'علاج السرطان في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/cancer-treatment-cost-india-vs-world',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
   description: 'Complete guide to medical tourism from UAE to India. Cost comparison, step-by-step process, visa guide, best hospitals, and real patient success stories for 2025.',
   keywords: ['medical tourism India from UAE', 'medical treatment India for UAE patients', 'India vs UAE medical costs', 'medical visa India for UAE', 'Dubai to India medical tourism'],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-tourism-india-uae-patients-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

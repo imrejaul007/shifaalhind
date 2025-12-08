@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     'جراحة العمود الفقري في الهند',
     'أفضل جراحي العمود الفقري الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/spine-surgery-india-cost-hospitals',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -41,7 +49,7 @@ export default function SpineSurgeryIndiaPage() {
       lastUpdated="January 2025"
       readTime="13 min"
       breadcrumbTitle="Spine Surgery India Cost"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -60,7 +68,7 @@ export default function SpineSurgeryIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/spine-surgery-india-cost-hospitals"
       />
-    >
+
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">
         <p className="text-lg leading-relaxed text-gray-700">

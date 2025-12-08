@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     'أفضل مستشفيات دلهي',
     'مستشفيات دلهي للسياحة العلاجية'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-delhi-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -38,7 +46,7 @@ export default function BestHospitalsDelhiGuide() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="Best Hospitals Delhi"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -57,7 +65,7 @@ export default function BestHospitalsDelhiGuide() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/best-hospitals-delhi-medical-tourism"
       />
-    >
+
       <section className="mb-8">
         <p className="text-lg">Delhi NCR (National Capital Region) is India&apos;s healthcare capital with 40+ NABH/JCI-accredited hospitals treating 200,000+ international patients annually. Home to AIIMS (Asia&apos;s #1 ranked medical institution), Medanta (world&apos;s largest multi-specialty hospital), and India&apos;s top neurosurgery and organ transplant centers.</p>
       </section>

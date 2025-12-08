@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     'السياحة الأسنان في الهند',
     'تكلفة زراعة الأسنان في الهند',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/dental-tourism-india-complete-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

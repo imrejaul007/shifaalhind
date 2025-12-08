@@ -27,6 +27,14 @@ export const metadata: Metadata = {
     'إدارة مرض السكري في الهند',
     'برنامج عكس مرض السكري',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/diabetes-treatment-india-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -41,7 +49,7 @@ export default function DiabetesTreatmentIndiaPage() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Diabetes Treatment India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -60,7 +68,7 @@ export default function DiabetesTreatmentIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/diabetes-treatment-india-guide"
       />
-    >
+
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">
         <p className="text-lg leading-relaxed text-gray-700">

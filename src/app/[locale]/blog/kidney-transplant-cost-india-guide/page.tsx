@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     'زراعة الكلى الهند من الإمارات',
     'زراعة الكلى الهند للسعوديين',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/kidney-transplant-cost-india-guide',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
+    },
+  },
 };
 
 export default function KidneyTransplantCostIndiaPage() {
@@ -42,7 +50,7 @@ export default function KidneyTransplantCostIndiaPage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Kidney Transplant Cost India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -61,7 +69,7 @@ export default function KidneyTransplantCostIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/kidney-transplant-cost-india-guide"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

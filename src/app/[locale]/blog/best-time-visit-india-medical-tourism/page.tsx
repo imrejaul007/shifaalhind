@@ -20,6 +20,14 @@ export const metadata: Metadata = {
     'india weather for medical tourism',
     'best months for medical treatment india',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-time-visit-india-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
+    },
+  },
 };
 
 export default function BestTimeVisitIndiaPage() {
@@ -32,7 +40,7 @@ export default function BestTimeVisitIndiaPage() {
       lastUpdated="October 2025"
       readTime="11 min"
       breadcrumbTitle="Best Time to Visit India"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -51,7 +59,7 @@ export default function BestTimeVisitIndiaPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/best-time-visit-india-medical-tourism"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

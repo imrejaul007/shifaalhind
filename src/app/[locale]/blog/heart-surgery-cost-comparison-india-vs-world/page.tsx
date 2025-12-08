@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
   description: 'Discover how much you can save on heart surgery in India compared to USA, UK, UAE, and Saudi Arabia. Complete cost breakdown, hospital comparison, and quality analysis for GCC patients.',
   keywords: ['heart surgery cost India', 'cardiac surgery India vs USA', 'heart bypass surgery cost comparison', 'heart surgery India for UAE patients', 'affordable cardiac surgery India'],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/heart-surgery-cost-comparison-india-vs-world',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';

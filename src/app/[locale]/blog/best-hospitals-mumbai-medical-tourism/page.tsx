@@ -23,6 +23,14 @@ export const metadata: Metadata = {
     'أفضل مستشفيات مومباي',
     'مستشفيات مومباي للسياحة العلاجية'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-mumbai-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -37,7 +45,7 @@ export default function BestHospitalsMumbaiGuide() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Mumbai"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -56,7 +64,7 @@ export default function BestHospitalsMumbaiGuide() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/best-hospitals-mumbai-medical-tourism"
       />
-    >
+
       <section className="mb-8">
         <p className="text-lg">Mumbai is India&apos;s premier medical tourism destination with 25+ JCI-accredited hospitals, treating 150,000+ international patients annually. Home to India&apos;s best cardiac, cancer, and orthopedic centers with 95%+ success rates at 60-75% lower costs than USA/UAE.</p>
       </section>

@@ -24,6 +24,14 @@ export const metadata: Metadata = {
     'العلاج الطبي في الهند من الرياض',
     'مستشفيات الهند للمرضى السعوديين',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/riyadh-to-india-healthcare',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/riyadh-to-india-healthcare',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/riyadh-to-india-healthcare',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/riyadh-to-india-healthcare',
+    },
+  },
 };
 
 export default function RiyadhToIndiaHealthcarePage() {
@@ -36,7 +44,7 @@ export default function RiyadhToIndiaHealthcarePage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Riyadh to India Healthcare"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -55,7 +63,7 @@ export default function RiyadhToIndiaHealthcarePage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/riyadh-to-india-healthcare"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">

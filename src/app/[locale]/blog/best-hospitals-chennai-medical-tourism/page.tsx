@@ -28,6 +28,14 @@ export const metadata: Metadata = {
     'مستشفى أبولو تشيناي',
     'زراعة الأعضاء في تشيناي'
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-chennai-medical-tourism',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
+    },
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -42,7 +50,7 @@ export default function BestHospitalsChennaiPage() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Chennai"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -61,7 +69,7 @@ export default function BestHospitalsChennaiPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/best-hospitals-chennai-medical-tourism"
       />
-    >
+
       {/* Introduction */}
       <p className="text-lg leading-relaxed mb-6">
         Chennai (formerly Madras) is India&apos;s <strong>medical tourism heritage capital</strong>, home to Apollo Hospitals&apos; first facility and a pioneer in bringing international patients to India since the 1980s. With <strong>20+ JCI/NABH-accredited hospitals</strong>, Chennai welcomes <strong>150,000+ international patients annually</strong> from 140 countries, offering <strong>85-95% cost savings</strong> compared to USA/UK/UAE while maintaining world-class success rates.

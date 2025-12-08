@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     'جراحة العمود الفقري الهند',
     'جراحة الأعصاب الهند من الإمارات',
   ],
+  alternates: {
+    canonical: 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
+    languages: {
+      'en-US': 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
+      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/neurosurgery-india-cost-hospitals',
+      'x-default': 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
+    },
+  },
 };
 
 export default function NeurosurgeryIndiaCostPage() {
@@ -42,7 +50,7 @@ export default function NeurosurgeryIndiaCostPage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Neurosurgery India Cost"
-
+    >
       {/* Breadcrumb Schema for SEO */}
       <BreadcrumbSchema items={[
         { name: 'Home', url: 'https://shifaalhind.onrender.com' },
@@ -61,7 +69,7 @@ export default function NeurosurgeryIndiaCostPage() {
         publisher={DEFAULT_PUBLISHER}
         url="https://shifaalhind.onrender.com/blog/neurosurgery-india-cost-hospitals"
       />
-    >
+
       {/* Introduction */}
       <Card>
         <CardContent className="pt-6">
