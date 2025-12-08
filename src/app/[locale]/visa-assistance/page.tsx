@@ -295,6 +295,78 @@ export default function VisaAssistancePage() {
       answer: 'Very rare when documents are complete. We have 100% approval rate with proper documentation. We check everything before submission to avoid rejection.',
       answerAr: 'نادر جدًا عند اكتمال الوثائق. لدينا معدل موافقة 100٪ مع التوثيق المناسب. نتحقق من كل شيء قبل التقديم لتجنب الرفض.',
     },
+    {
+      question: 'Are there specific requirements for UAE, Saudi Arabia, Qatar, and other GCC countries?',
+      questionAr: 'هل هناك متطلبات محددة لدولة الإمارات والسعودية وقطر ودول الخليج الأخرى؟',
+      answer: 'All GCC citizens (UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain) follow the same process. Requirements are identical: passport, medical reports, hospital letter, and photo. GCC passports are typically approved faster (2-4 days vs 3-5 days) due to strong diplomatic relations between India and GCC countries.',
+      answerAr: 'جميع مواطني دول مجلس التعاون الخليجي (الإمارات، السعودية، قطر، عمان، الكويت، البحرين) يتبعون نفس العملية. المتطلبات متطابقة: جواز السفر، التقارير الطبية، خطاب المستشفى، والصورة. عادة ما تتم الموافقة على جوازات السفر الخليجية بشكل أسرع (2-4 أيام مقابل 3-5 أيام) بسبب العلاقات الدبلوماسية القوية بين الهند ودول الخليج.',
+    },
+    {
+      question: 'What are the main reasons for visa rejection and how can I avoid them?',
+      questionAr: 'ما هي الأسباب الرئيسية لرفض التأشيرة وكيف يمكنني تجنبها؟',
+      answer: 'Common rejection reasons: (1) Passport validity less than 6 months (2) Poor quality/blurry passport photo (3) Incomplete medical reports (4) Missing hospital letter (5) Name mismatch across documents (6) Previous overstay in India. We prevent all these by checking documents thoroughly before submission. With our service, rejection rate is essentially zero.',
+      answerAr: 'أسباب الرفض الشائعة: (1) صلاحية جواز السفر أقل من 6 أشهر (2) صورة جواز سفر ضعيفة / ضبابية (3) تقارير طبية غير كاملة (4) خطاب المستشفى مفقود (5) عدم تطابق الاسم عبر الوثائق (6) تجاوز الإقامة السابقة في الهند. نمنع كل هذه من خلال فحص الوثائق بدقة قبل التقديم. مع خدمتنا، معدل الرفض صفر بشكل أساسي.',
+    },
+    {
+      question: 'Can I apply for visa before booking treatment/hospital?',
+      questionAr: 'هل يمكنني التقدم بطلب للحصول على تأشيرة قبل حجز العلاج / المستشفى؟',
+      answer: 'No, you need a hospital invitation letter to apply for medical visa. Process: (1) Contact us with your medical condition (2) We connect you with right hospital/doctor (3) Doctor reviews reports and provides treatment plan (4) Hospital issues invitation letter (5) Then we apply for visa. Total timeline: 5-7 days from first contact to visa approval.',
+      answerAr: 'لا، تحتاج إلى خطاب دعوة من المستشفى للتقدم للحصول على تأشيرة طبية. العملية: (1) اتصل بنا مع حالتك الطبية (2) نقوم بتوصيلك بالمستشفى / الطبيب المناسب (3) يراجع الطبيب التقارير ويقدم خطة العلاج (4) يصدر المستشفى خطاب دعوة (5) ثم نقدم طلب التأشيرة. الجدول الزمني الإجمالي: 5-7 أيام من الاتصال الأول إلى موافقة التأشيرة.',
+    },
+    {
+      question: 'What happens at the Indian airport immigration with medical visa?',
+      questionAr: 'ماذا يحدث في الهجرة بالمطار الهندي مع التأشيرة الطبية؟',
+      answer: 'Very smooth process: (1) Show printed e-visa copy and passport (2) Immigration officer stamps passport (takes 2-5 minutes) (3) Collect baggage (4) Exit through green channel (nothing to declare). Keep hospital letter and medical reports in hand baggage in case immigration asks (rare). No additional forms needed. Whole process: 15-30 minutes maximum.',
+      answerAr: 'عملية سلسة للغاية: (1) أظهر نسخة مطبوعة من التأشيرة الإلكترونية وجواز السفر (2) يختم موظف الهجرة جواز السفر (يستغرق 2-5 دقائق) (3) جمع الأمتعة (4) الخروج عبر القناة الخضراء (لا شيء للإعلان عنه). احتفظ بخطاب المستشفى والتقارير الطبية في الأمتعة اليدوية في حالة سأل الهجرة (نادر). لا حاجة لنماذج إضافية. العملية بأكملها: 15-30 دقيقة كحد أقصى.',
+    },
+    {
+      question: 'How does the visa extension process work?',
+      questionAr: 'كيف تعمل عملية تمديد التأشيرة؟',
+      answer: 'Extension process through FRRO office: (1) Apply 1-2 weeks before current visa expires (2) Submit: passport, current visa, medical reports, hospital letter stating need for extension (3) FRRO reviews and approves (2-7 days) (4) Can extend up to 1 year total. Extension fee: ₹200 ($2.50) per month. We handle entire process - you just provide updated medical reports. Most extensions approved in 3-5 days.',
+      answerAr: 'عملية التمديد من خلال مكتب FRRO: (1) التقدم قبل 1-2 أسبوع من انتهاء التأشيرة الحالية (2) تقديم: جواز السفر، التأشيرة الحالية، التقارير الطبية، خطاب المستشفى يفيد بالحاجة إلى التمديد (3) يراجع FRRO ويوافق (2-7 أيام) (4) يمكن التمديد حتى سنة واحدة إجمالاً. رسوم التمديد: 200 روبية (2.50 دولار) شهريًا. نتولى العملية بأكملها - أنت تقدم فقط تقارير طبية محدثة. تتم الموافقة على معظم التمديدات في 3-5 أيام.',
+    },
+    {
+      question: 'What if my passport expires while I&apos;m in India for treatment?',
+      questionAr: 'ماذا لو انتهت صلاحية جواز سفري بينما أنا في الهند للعلاج؟',
+      answer: 'If passport expires during your stay: (1) Immediately contact your country&apos;s embassy/consulate in India (UAE embassy in Delhi, Saudi embassy, etc.) (2) Apply for emergency travel document or passport renewal (3-7 days typically) (3) Once new passport issued, update with FRRO (1-2 days) (4) Medical visa transferred to new passport. We coordinate with embassy and FRRO. This happens occasionally with long treatments (cancer, transplants).',
+      answerAr: 'إذا انتهت صلاحية جواز السفر أثناء إقامتك: (1) اتصل فورًا بسفارة / قنصلية بلدك في الهند (سفارة الإمارات في دلهي، السفارة السعودية، إلخ) (2) تقدم بطلب للحصول على وثيقة سفر طارئة أو تجديد جواز السفر (عادة 3-7 أيام) (3) بمجرد إصدار جواز السفر الجديد، قم بالتحديث مع FRRO (1-2 يوم) (4) يتم نقل التأشيرة الطبية إلى جواز السفر الجديد. نحن ننسق مع السفارة و FRRO. يحدث هذا أحيانًا مع العلاجات الطويلة (السرطان، الزرع).',
+    },
+    {
+      question: 'Can I use multiple entries on medical visa? How does it work?',
+      questionAr: 'هل يمكنني استخدام إدخالات متعددة على التأشيرة الطبية؟ كيف يعمل؟',
+      answer: 'E-Medical Visa allows triple entry (3 separate trips) within 60 days. Example: (1) Trip 1: Arrive for consultation, tests (5 days) → Return home → (2) Trip 2: Return for surgery (10 days) → Go home for recovery → (3) Trip 3: Return for follow-up (3 days). Useful for IVF (multiple cycles), cancer treatment (chemo sessions), or gradual procedures. Each entry counted when you exit India.',
+      answerAr: 'تسمح التأشيرة الطبية الإلكترونية بالدخول الثلاثي (3 رحلات منفصلة) خلال 60 يومًا. مثال: (1) الرحلة 1: الوصول للاستشارة والاختبارات (5 أيام) ← العودة إلى المنزل ← (2) الرحلة 2: العودة للجراحة (10 أيام) ← العودة إلى المنزل للتعافي ← (3) الرحلة 3: العودة للمتابعة (3 أيام). مفيد لعلاج IVF (دورات متعددة)، علاج السرطان (جلسات الكيميائي)، أو الإجراءات التدريجية. يتم احتساب كل دخول عند مغادرة الهند.',
+    },
+    {
+      question: 'Do I need transit visa if flying via another country to India?',
+      questionAr: 'هل أحتاج إلى تأشيرة عبور إذا كنت أسافر عبر بلد آخر إلى الهند؟',
+      answer: 'Depends on layover country and duration: Dubai/Abu Dhabi layover (Emirates/Etihad): No transit visa needed for any duration if not leaving airport. Doha layover (Qatar Airways): No transit visa. Istanbul layover (Turkish Airlines): No transit visa if under 24 hours. Bangkok/Singapore layover: No transit visa if under 24 hours. If layover over 24 hours and want to leave airport for hotel: May need transit visa - check specific country rules.',
+      answerAr: 'يعتمد على بلد التوقف والمدة: توقف دبي / أبوظبي (الإمارات / الاتحاد): لا حاجة لتأشيرة عبور لأي مدة إذا لم تغادر المطار. توقف الدوحة (الخطوط الجوية القطرية): لا تأشيرة عبور. توقف اسطنبول (الخطوط الجوية التركية): لا تأشيرة عبور إذا كانت أقل من 24 ساعة. توقف بانكوك / سنغافورة: لا تأشيرة عبور إذا كانت أقل من 24 ساعة. إذا كان التوقف أكثر من 24 ساعة وتريد مغادرة المطار للفندق: قد تحتاج إلى تأشيرة عبور - تحقق من قواعد البلد المحددة.',
+    },
+    {
+      question: 'Is COVID vaccination required for medical visa to India?',
+      questionAr: 'هل التطعيم ضد كوفيد مطلوب للحصول على تأشيرة طبية للهند؟',
+      answer: 'As of 2024: No COVID vaccination required for entry to India. No COVID test required. No quarantine required. These rules changed in 2023. However, we recommend vaccination for your own safety (hospitals have high standards but you&apos;ll be around sick patients). If you have COVID symptoms at airport: May be asked to test or isolate briefly.',
+      answerAr: 'اعتبارًا من عام 2024: لا يلزم التطعيم ضد كوفيد للدخول إلى الهند. لا يلزم اختبار كوفيد. لا يلزم الحجر الصحي. تغيرت هذه القواعد في عام 2023. ومع ذلك، نوصي بالتطعيم لسلامتك الخاصة (المستشفيات لديها معايير عالية ولكنك ستكون حول المرضى المرضى). إذا كان لديك أعراض كوفيد في المطار: قد يُطلب منك الاختبار أو العزل لفترة وجيزة.',
+    },
+    {
+      question: 'Can I change hospitals during my stay on medical visa?',
+      questionAr: 'هل يمكنني تغيير المستشفيات أثناء إقامتي بتأشيرة طبية؟',
+      answer: 'Yes, but requires updating with FRRO: (1) Get discharge summary from first hospital (2) Get new invitation letter from second hospital (3) Submit both to FRRO with explanation (2-5 days processing) (4) FRRO updates records. Valid reasons: Second opinion needed, better specialist found, treatment complications, relocation to different city. We handle FRRO paperwork. Common when treatment plan changes or complications arise.',
+      answerAr: 'نعم، ولكن يتطلب التحديث مع FRRO: (1) احصل على ملخص التفريغ من المستشفى الأول (2) احصل على خطاب دعوة جديد من المستشفى الثاني (3) قدم كليهما إلى FRRO مع الشرح (2-5 أيام معالجة) (4) يقوم FRRO بتحديث السجلات. أسباب صالحة: الحاجة إلى رأي ثاني، تم العثور على متخصص أفضل، مضاعفات العلاج، الانتقال إلى مدينة مختلفة. نتولى أوراق FRRO. شائع عندما تتغير خطة العلاج أو تنشأ مضاعفات.',
+    },
+    {
+      question: 'What if my treatment takes longer than expected and visa is expiring?',
+      questionAr: 'ماذا لو استغرق علاجي وقتًا أطول من المتوقع وانتهت صلاحية التأشيرة؟',
+      answer: 'Don&apos;t worry - very common situation: (1) Doctor writes letter explaining medical need for extension (complications, additional surgery needed, recovery slower than expected) (2) We submit extension request to FRRO 1-2 weeks before expiry (3) FRRO almost always approves medical extensions (2-5 days) (4) You continue treatment uninterrupted. Emergency same-day extension possible if urgent. Never overstay without extension - penalties are severe.',
+      answerAr: 'لا تقلق - حالة شائعة جدًا: (1) يكتب الطبيب خطابًا يشرح الحاجة الطبية للتمديد (المضاعفات، الحاجة إلى جراحة إضافية، التعافي أبطأ من المتوقع) (2) نقدم طلب التمديد إلى FRRO قبل 1-2 أسبوع من انتهاء الصلاحية (3) يوافق FRRO تقريبًا دائمًا على التمديدات الطبية (2-5 أيام) (4) تواصل العلاج دون انقطاع. التمديد الطارئ في نفس اليوم ممكن إذا كان عاجلاً. لا تتجاوز الإقامة أبدًا بدون تمديد - العقوبات شديدة.',
+    },
+    {
+      question: 'Is there expedited/emergency visa processing available?',
+      questionAr: 'هل هناك معالجة تأشيرة سريعة / طارئة متاحة؟',
+      answer: 'For genuine medical emergencies (heart attack, stroke, severe accident, cancer emergency): (1) We mark application as "Emergency Medical" (2) Processing accelerated to 24-48 hours (vs normal 3-5 days) (3) Requires: Doctor&apos;s emergency certificate, hospital admission letter stating urgency, medical reports showing emergency (4) Government fee same ($80). Success rate: 95% approval within 48 hours. Alternative: Fly to Mumbai/Delhi and get visa on arrival (instant).',
+      answerAr: 'للحالات الطبية الطارئة الحقيقية (نوبة قلبية، سكتة دماغية، حادث شديد، حالة طوارئ سرطانية): (1) نضع علامة على الطلب على أنه "طوارئ طبية" (2) تسريع المعالجة إلى 24-48 ساعة (مقابل 3-5 أيام عادي) (3) يتطلب: شهادة طوارئ الطبيب، خطاب قبول المستشفى يفيد بالاستعجال، تقارير طبية تظهر الطوارئ (4) رسوم الحكومة نفسها (80 دولارًا). معدل النجاح: 95٪ موافقة خلال 48 ساعة. البديل: الطيران إلى مومباي / دلهي والحصول على تأشيرة عند الوصول (فوري).',
+    },
   ];
 
   return (
