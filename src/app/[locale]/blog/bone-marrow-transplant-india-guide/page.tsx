@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,6 +42,25 @@ export default function BoneMarrowTransplantIndiaPage() {
       lastUpdated="October 2025"
       readTime="15 min"
       breadcrumbTitle="Bone Marrow Transplant Cost India"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Bone Marrow Transplant in India - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/bone-marrow-transplant-india-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Bone Marrow Transplant in India - Complete Guide 2025"
+        description="Complete guide to bone marrow transplant in India including costs, success rates, types, and top hospitals."
+        image="https://shifaalhind.onrender.com/images/blog/bone-marrow-transplant.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/bone-marrow-transplant-india-guide"
+      />
     >
       {/* Introduction */}
       <Card>

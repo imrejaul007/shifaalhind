@@ -4,6 +4,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'How to Choose the Best Hospital in India for Medical Tourism: Complete 2025 Guide',
@@ -24,6 +26,25 @@ export default function HospitalSelectionGuide() {
       readTime="12 min"
       breadcrumbTitle="Hospital Selection Guide"
     >
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'How to Choose the Right Hospital in India', url: 'https://shifaalhind.onrender.com/blog/how-to-choose-best-hospital-india' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="How to Choose the Right Hospital in India for Medical Tourism"
+        description="Essential guide to selecting the best hospital in India for your medical treatment. Learn about accreditation, specialties, and key factors."
+        image="https://shifaalhind.onrender.com/images/blog/hospital-selection.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/how-to-choose-best-hospital-india"
+      />
       <section className="mb-8">
         <p className="text-lg">With 1,500+ hospitals in India, choosing the right one is critical. This guide helps you select world-class care and avoid costly mistakes.</p>
       </section>

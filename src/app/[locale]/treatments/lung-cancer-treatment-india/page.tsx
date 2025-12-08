@@ -8,6 +8,8 @@ import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/rela
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const metadata: Metadata = {
   title: 'Lung Cancer Treatment in India 2025: Cost, Best Oncology Hospitals, Success Rate | Surgery, Chemotherapy, Immunotherapy',
@@ -32,7 +34,25 @@ export const dynamic = 'force-dynamic';
 
 export default function LungCancerTreatmentIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Lung Cancer Treatment in India', url: 'https://shifaalhind.onrender.com/treatments/lung-cancer-treatment-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Lung Cancer Treatment"
+        description="Lung cancer treatment includes surgery, chemotherapy, radiation, targeted therapy, and immunotherapy depending on cancer type and stage."
+        procedureType="TherapeuticProcedure"
+        bodyLocation="Lungs"
+        preparation="Comprehensive staging workup, pulmonary function tests, cardiac evaluation if surgery planned."
+        followup="Regular follow-ups every 3-4 months for first 2 years, then every 6 months. CT scans as recommended."
+        url="https://shifaalhind.onrender.com/treatments/lung-cancer-treatment-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

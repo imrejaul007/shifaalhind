@@ -8,6 +8,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import Link from 'next/link';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const metadata: Metadata = {
   title: 'Appendix Surgery (Appendectomy) in India 2025: Cost, Best Hospitals, Recovery Time | Laparoscopic vs Open',
@@ -31,7 +33,25 @@ export const dynamic = 'force-dynamic';
 
 export default function AppendixSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Appendix Surgery in India', url: 'https://shifaalhind.onrender.com/treatments/appendix-surgery-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Appendectomy (Appendix Removal)"
+        description="Appendectomy removes inflamed appendix to prevent rupture and complications."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Appendix"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/appendix-surgery-india"
+      />
+y-8">
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={[
         { question: "How much does appendix surgery cost in India?", answer: "Laparoscopic appendectomy costs $1,000-1,800 in India vs $10,000-20,000 in USA (75-85% savings). Open appendectomy: $700-1,200, Emergency surgery: $1,200-2,000, Perforated appendix: $1,500-2,500. All-inclusive packages available." },

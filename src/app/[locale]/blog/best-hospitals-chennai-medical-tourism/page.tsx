@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Best Hospitals in Chennai for Medical Tourism 2025 | Top 10 JCI-Accredited',
@@ -40,6 +42,25 @@ export default function BestHospitalsChennaiPage() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Chennai"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Best Hospitals in Chennai for Medical Tourism', url: 'https://shifaalhind.onrender.com/blog/best-hospitals-chennai-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Best Hospitals in Chennai for Medical Tourism - Top 10 Guide 2025"
+        description="Complete guide to the best hospitals in Chennai for medical tourism including Apollo and Global Health City."
+        image="https://shifaalhind.onrender.com/images/blog/chennai-hospitals.jpg"
+        datePublished="2025-11-01"
+        dateModified="2025-11-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/best-hospitals-chennai-medical-tourism"
+      />
     >
       {/* Introduction */}
       <p className="text-lg leading-relaxed mb-6">

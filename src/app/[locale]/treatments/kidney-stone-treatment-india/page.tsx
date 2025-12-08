@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,7 +32,25 @@ export const metadata: Metadata = {
 
 export default function KidneyStoneTreatmentPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Kidney Stone Treatment in India', url: 'https://shifaalhind.onrender.com/treatments/kidney-stone-treatment-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Kidney Stone Treatment"
+        description="Kidney stone treatment uses various techniques like ESWL, RIRS, or PCNL to break down and remove kidney stones causing pain and urinary blockage."
+        procedureType="TherapeuticProcedure"
+        bodyLocation="Kidney and Urinary Tract"
+        preparation="Blood tests, urine tests, imaging studies (CT/Ultrasound), fasting before procedure."
+        followup="Follow-up imaging at 2 weeks and 3 months. Dietary modifications and increased water intake."
+        url="https://shifaalhind.onrender.com/treatments/kidney-stone-treatment-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

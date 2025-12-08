@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Best Hospitals in Mumbai for Medical Tourism 2025 | Top 10 JCI-Accredited',
@@ -35,6 +37,25 @@ export default function BestHospitalsMumbaiGuide() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Mumbai"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Best Hospitals in Mumbai for Medical Tourism', url: 'https://shifaalhind.onrender.com/blog/best-hospitals-mumbai-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Best Hospitals in Mumbai for Medical Tourism - Top 10 Guide 2025"
+        description="Complete guide to the best hospitals in Mumbai for medical tourism including specialties, costs, and achievements."
+        image="https://shifaalhind.onrender.com/images/blog/mumbai-hospitals.jpg"
+        datePublished="2025-11-01"
+        dateModified="2025-11-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/best-hospitals-mumbai-medical-tourism"
+      />
     >
       <section className="mb-8">
         <p className="text-lg">Mumbai is India&apos;s premier medical tourism destination with 25+ JCI-accredited hospitals, treating 150,000+ international patients annually. Home to India&apos;s best cardiac, cancer, and orthopedic centers with 95%+ success rates at 60-75% lower costs than USA/UAE.</p>

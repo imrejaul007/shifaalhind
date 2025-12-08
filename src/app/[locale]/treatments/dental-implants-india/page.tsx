@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,7 +33,25 @@ export const metadata: Metadata = {
 
 export default function DentalImplantsIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Dental Implants in India', url: 'https://shifaalhind.onrender.com/treatments/dental-implants-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Dental Implants"
+        description="Dental implant surgery replaces tooth roots with metal posts and replaces damaged or missing teeth with artificial teeth that look and function like real ones."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Jaw and Teeth"
+        preparation="Comprehensive dental exam, X-rays or 3D imaging, treatment plan, bone grafting if needed."
+        followup="Regular check-ups every 3-6 months for the first year, then annually. Professional cleaning every 6 months."
+        url="https://shifaalhind.onrender.com/treatments/dental-implants-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

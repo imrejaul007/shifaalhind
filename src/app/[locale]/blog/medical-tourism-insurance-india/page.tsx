@@ -5,6 +5,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,6 +32,25 @@ export default function MedicalTourismInsuranceIndiaPage() {
       lastUpdated="October 2025"
       readTime="12 min"
       breadcrumbTitle="Medical Tourism Insurance"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Medical Tourism Insurance for India - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/medical-tourism-insurance-india' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Medical Tourism Insurance for India - Complete Guide 2025"
+        description="Complete guide to medical tourism insurance for India including coverage, costs, providers, and what to look for."
+        image="https://shifaalhind.onrender.com/images/blog/medical-insurance.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/medical-tourism-insurance-india"
+      />
     >
       {/* Introduction - Shorter content for context limits */}
       <Card>

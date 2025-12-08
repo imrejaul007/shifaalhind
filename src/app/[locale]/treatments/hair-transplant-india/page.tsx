@@ -6,6 +6,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { PricingGuarantee } from '@/components/pricing-guarantee/pricing-guarantee';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const metadata: Metadata = {
   title: 'Hair Transplant in India 2025: Cost, Best Clinics, Success Rate | FUE & FUT',
@@ -31,7 +33,25 @@ export const dynamic = 'force-dynamic';
 
 export default function HairTransplantIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Hair Transplant in India', url: 'https://shifaalhind.onrender.com/treatments/hair-transplant-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Hair Transplant"
+        description="Hair transplantation is a surgical procedure to restore hair growth by moving hair follicles from donor areas to balding or thinning areas."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Scalp"
+        preparation="Avoid blood-thinning medications, stop smoking 2 weeks before, arrange for post-op care."
+        followup="Follow-up visits at 1 week, 1 month, 3 months, 6 months, and 1 year to monitor growth progress."
+        url="https://shifaalhind.onrender.com/treatments/hair-transplant-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12">
         <h1 className="mb-4 text-4xl font-bold text-gray-900">Hair Transplant in India: Complete Guide 2025</h1>

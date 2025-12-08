@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,6 +42,25 @@ export default function KidneyTransplantCostIndiaPage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Kidney Transplant Cost India"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Kidney Transplant Cost in India - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/kidney-transplant-cost-india-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Kidney Transplant Cost in India - Complete Guide 2025"
+        description="Complete guide to kidney transplant in India including costs, success rates, donor options, and top hospitals."
+        image="https://shifaalhind.onrender.com/images/blog/kidney-transplant.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/kidney-transplant-cost-india-guide"
+      />
     >
       {/* Introduction */}
       <Card>

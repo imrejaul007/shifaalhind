@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
@@ -25,6 +27,25 @@ export default function HeartSurgeryCostComparisonPage() {
       readTime="12 min"
       breadcrumbTitle="Heart Surgery Cost Comparison"
     >
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide', url: 'https://shifaalhind.onrender.com/blog/heart-surgery-cost-comparison-india-vs-world' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide"
+        description="Discover how much you can save on heart surgery in India compared to USA, UK, UAE, and Saudi Arabia. Complete cost breakdown, hospital comparison, and quality analysis for GCC patients."
+        image="https://shifaalhind.onrender.com/images/blog/heart-surgery-cost.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/heart-surgery-cost-comparison-india-vs-world"
+      />
+
       {/* Introduction */}
       <section className="mb-8">
         <p className="text-lg leading-relaxed">

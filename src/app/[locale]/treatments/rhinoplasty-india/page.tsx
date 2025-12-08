@@ -19,6 +19,8 @@ import { RelatedArticles } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -48,7 +50,25 @@ const DENTAL_RELATED_ARTICLES = [
 
 export default function RhinoplastyIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Rhinoplasty in India', url: 'https://shifaalhind.onrender.com/treatments/rhinoplasty-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Rhinoplasty (Nose Reshaping Surgery)"
+        description="Rhinoplasty reshapes the nose for aesthetic or functional improvement by modifying bone, cartilage, and soft tissue."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Nose"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/rhinoplasty-india"
+      />
+ite">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-20">
         <div className="container">

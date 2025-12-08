@@ -17,6 +17,8 @@ import { RelatedArticles } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +36,25 @@ const RELATED_ARTICLES = [
 
 export default function VeneersIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Dental Veneers in India', url: 'https://shifaalhind.onrender.com/treatments/veneers-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Dental Veneers"
+        description="Dental veneers are thin shells placed over teeth to improve appearance by correcting discoloration, chips, or alignment issues."
+        procedureType="TherapeuticProcedure"
+        bodyLocation="Teeth"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/veneers-india"
+      />
+ite">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto max-w-6xl">

@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { CityLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
@@ -25,6 +27,25 @@ export default function MedicalTourismUAEGuidePage() {
       readTime="15 min"
       breadcrumbTitle="UAE Patients Guide"
     >
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Medical Tourism Guide for UAE Patients', url: 'https://shifaalhind.onrender.com/blog/medical-tourism-india-uae-patients-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Medical Tourism Guide for UAE Patients - Complete 2025 Guide"
+        description="Complete guide for UAE patients seeking medical treatment in India. Learn about costs, visa process, top hospitals, and how to plan your medical journey."
+        image="https://shifaalhind.onrender.com/images/blog/uae-medical-tourism.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/medical-tourism-india-uae-patients-guide"
+      />
       {/* Introduction */}
       <section className="mb-8">
         <p className="text-lg leading-relaxed">

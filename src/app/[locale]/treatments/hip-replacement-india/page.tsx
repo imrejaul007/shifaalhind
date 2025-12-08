@@ -8,6 +8,8 @@ import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/re
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +36,25 @@ export const metadata: Metadata = {
 
 export default function HipReplacementIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Hip Replacement in India', url: 'https://shifaalhind.onrender.com/treatments/hip-replacement-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Hip Replacement Surgery"
+        description="Hip replacement surgery replaces damaged hip joint components with artificial implants to restore mobility and relieve pain from arthritis or injury."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Hip Joint"
+        preparation="Medical evaluation, blood tests, X-rays, physical therapy preparation, arrange home care."
+        followup="Physical therapy starts immediately, follow-ups at 2 weeks, 6 weeks, 3 months, 6 months, and annually."
+        url="https://shifaalhind.onrender.com/treatments/hip-replacement-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

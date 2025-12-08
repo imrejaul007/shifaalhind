@@ -5,6 +5,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -30,6 +32,25 @@ export default function BestTimeVisitIndiaPage() {
       lastUpdated="October 2025"
       readTime="11 min"
       breadcrumbTitle="Best Time to Visit India"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Best Time to Visit India for Medical Tourism', url: 'https://shifaalhind.onrender.com/blog/best-time-visit-india-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Best Time to Visit India for Medical Tourism - Season Guide 2025"
+        description="Complete guide to the best time to visit India for medical treatment considering weather, festivals, and recovery."
+        image="https://shifaalhind.onrender.com/images/blog/best-time-visit.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/best-time-visit-india-medical-tourism"
+      />
     >
       {/* Introduction */}
       <Card>

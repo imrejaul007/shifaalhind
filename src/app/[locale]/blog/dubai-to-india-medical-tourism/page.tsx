@@ -5,6 +5,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,6 +37,25 @@ export default function DubaiToIndiaMedicalTourismPage() {
       lastUpdated="October 2025"
       readTime="15 min"
       breadcrumbTitle="Dubai to India Medical Tourism"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Dubai to India Medical Tourism - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/dubai-to-india-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Dubai to India Medical Tourism - Complete Guide 2025"
+        description="Complete medical tourism guide for Dubai patients. Learn about costs, hospitals, visa process, and travel logistics."
+        image="https://shifaalhind.onrender.com/images/blog/dubai-medical-tourism.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/dubai-to-india-medical-tourism"
+      />
     >
       {/* Introduction */}
       <Card>

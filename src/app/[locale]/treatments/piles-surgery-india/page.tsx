@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -31,7 +33,25 @@ export const metadata: Metadata = {
 
 export default function PilesSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Piles Surgery in India', url: 'https://shifaalhind.onrender.com/treatments/piles-surgery-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Piles Surgery (Hemorrhoid Surgery)"
+        description="Hemorrhoid surgery removes enlarged hemorrhoids using techniques like laser, stapler, or traditional methods to provide relief from painful symptoms."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Rectum and Anus"
+        preparation="Bowel preparation, fasting before surgery, stop certain medications as advised."
+        followup="Follow-up at 1 week, 2 weeks, and 4 weeks. Maintain high-fiber diet and proper hygiene."
+        url="https://shifaalhind.onrender.com/treatments/piles-surgery-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

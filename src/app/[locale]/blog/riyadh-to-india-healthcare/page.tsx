@@ -5,6 +5,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,6 +36,25 @@ export default function RiyadhToIndiaHealthcarePage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Riyadh to India Healthcare"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Riyadh to India Healthcare Guide for Saudi Patients', url: 'https://shifaalhind.onrender.com/blog/riyadh-to-india-healthcare' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Riyadh to India Healthcare Guide for Saudi Patients 2025"
+        description="Complete healthcare guide for Riyadh patients seeking treatment in India. Costs, hospitals, visa, and travel information."
+        image="https://shifaalhind.onrender.com/images/blog/riyadh-healthcare.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/riyadh-to-india-healthcare"
+      />
     >
       {/* Introduction */}
       <Card>

@@ -5,6 +5,8 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -35,6 +37,25 @@ export default function MedicalVisaIndiaGuidePage() {
       lastUpdated="October 2025"
       readTime="16 min"
       breadcrumbTitle="Medical Visa India Guide"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Medical Visa India - Complete Application Guide 2025', url: 'https://shifaalhind.onrender.com/blog/medical-visa-india-complete-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Medical Visa India - Complete Application Guide 2025"
+        description="Complete guide to medical visa for India including e-visa process, requirements, costs, and step-by-step application."
+        image="https://shifaalhind.onrender.com/images/blog/medical-visa.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/medical-visa-india-complete-guide"
+      />
     >
       {/* Introduction */}
       <Card>

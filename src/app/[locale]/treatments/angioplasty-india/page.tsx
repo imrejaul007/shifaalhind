@@ -9,6 +9,8 @@ import { RelatedArticles } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -26,7 +28,25 @@ const RELATED_ARTICLES = [
 
 export default function AngioplastyIndiaPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-wh
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Angioplasty in India', url: 'https://shifaalhind.onrender.com/treatments/angioplasty-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Angioplasty and Stenting"
+        description="Angioplasty opens blocked coronary arteries using a balloon and stent to restore blood flow to the heart."
+        procedureType="TherapeuticProcedure"
+        bodyLocation="Coronary Arteries"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/angioplasty-india"
+      />
+ite">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-12 text-white md:py-16">
         <div className="container">

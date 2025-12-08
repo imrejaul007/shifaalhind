@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Best Hospitals in Delhi NCR for Medical Tourism 2025 | Top 10 Multi-Specialty',
@@ -36,6 +38,25 @@ export default function BestHospitalsDelhiGuide() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="Best Hospitals Delhi"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Best Hospitals in Delhi NCR for Medical Tourism', url: 'https://shifaalhind.onrender.com/blog/best-hospitals-delhi-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Best Hospitals in Delhi NCR for Medical Tourism - Top 10 Guide 2025"
+        description="Complete guide to the best hospitals in Delhi NCR for medical tourism including AIIMS, Medanta, and Fortis."
+        image="https://shifaalhind.onrender.com/images/blog/delhi-hospitals.jpg"
+        datePublished="2025-11-01"
+        dateModified="2025-11-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/best-hospitals-delhi-medical-tourism"
+      />
     >
       <section className="mb-8">
         <p className="text-lg">Delhi NCR (National Capital Region) is India&apos;s healthcare capital with 40+ NABH/JCI-accredited hospitals treating 200,000+ international patients annually. Home to AIIMS (Asia&apos;s #1 ranked medical institution), Medanta (world&apos;s largest multi-specialty hospital), and India&apos;s top neurosurgery and organ transplant centers.</p>

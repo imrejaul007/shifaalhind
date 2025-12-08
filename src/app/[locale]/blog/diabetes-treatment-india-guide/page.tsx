@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Diabetes Treatment India - Complete Guide 2025 | Type 1 & Type 2 Management',
@@ -39,6 +41,25 @@ export default function DiabetesTreatmentIndiaPage() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Diabetes Treatment India"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Diabetes Treatment in India - Comprehensive Guide', url: 'https://shifaalhind.onrender.com/blog/diabetes-treatment-india-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Diabetes Treatment in India - Comprehensive Guide 2025"
+        description="Comprehensive guide to diabetes management and treatment in India including costs, specialists, and treatment options."
+        image="https://shifaalhind.onrender.com/images/blog/diabetes-treatment.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/diabetes-treatment-india-guide"
+      />
     >
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">

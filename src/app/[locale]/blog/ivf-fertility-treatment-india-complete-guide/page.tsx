@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
@@ -24,6 +26,25 @@ export default function IVFFertilityGuide() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="IVF & Fertility Treatment Guide"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'IVF & Fertility Treatment India - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/ivf-fertility-treatment-india-complete-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="IVF & Fertility Treatment India - Complete Guide 2025"
+        description="Comprehensive guide to IVF and fertility treatment in India. Learn about costs, success rates, top clinics, and treatment options."
+        image="https://shifaalhind.onrender.com/images/blog/ivf-treatment.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/ivf-fertility-treatment-india-complete-guide"
+      />
     >
       <section className="mb-8">
         <p className="text-lg">IVF in GCC countries costs $10,000-$20,000+ per cycle. India offers the same quality at $3,500-$6,000, with success rates of 55-65% for patients under 35. Over 15,000 international couples choose India annually.</p>

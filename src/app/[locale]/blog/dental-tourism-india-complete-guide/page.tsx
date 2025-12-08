@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Dental Tourism India - Complete Guide [2025] Save 70-80%',
@@ -37,6 +39,25 @@ export default function DentalTourismIndiaPage() {
       readTime="10 min"
       breadcrumbTitle="Dental Tourism India"
     >
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Dental Tourism in India - Complete Guide', url: 'https://shifaalhind.onrender.com/blog/dental-tourism-india-complete-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Dental Tourism in India - Complete Guide 2025"
+        description="Complete guide to dental tourism in India. Learn about costs, procedures, top dental clinics, and quality of care."
+        image="https://shifaalhind.onrender.com/images/blog/dental-tourism.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/dental-tourism-india-complete-guide"
+      />
       <section className="mb-8">
         <p className="text-lg leading-relaxed">
           Dental tourism in India offers <strong>70-80% cost savings</strong> on implants, crowns, veneers,

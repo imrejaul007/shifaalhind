@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Liver Transplant Cost India [2025] - Save 75% | Success Rate 90%+',
@@ -39,6 +41,25 @@ export default function LiverTransplantIndiaPage() {
       lastUpdated="January 2025"
       readTime="15 min"
       breadcrumbTitle="Liver Transplant India Cost"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Liver Transplant in India - Cost & Complete Guide', url: 'https://shifaalhind.onrender.com/blog/liver-transplant-india-cost-guide' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Liver Transplant in India - Cost & Complete Guide 2025"
+        description="Complete guide to liver transplant in India including costs, success rates, top hospitals, and recovery process."
+        image="https://shifaalhind.onrender.com/images/blog/liver-transplant.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/liver-transplant-india-cost-guide"
+      />
     >
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">

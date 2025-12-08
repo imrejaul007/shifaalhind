@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Best Hospitals in Bangalore for Medical Tourism 2025 | Top 10 Multi-Specialty',
@@ -35,6 +37,25 @@ export default function BestHospitalsBangaloreGuide() {
       lastUpdated="January 2025"
       readTime="14 min"
       breadcrumbTitle="Best Hospitals Bangalore"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Best Hospitals in Bangalore for Medical Tourism', url: 'https://shifaalhind.onrender.com/blog/best-hospitals-bangalore-medical-tourism' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Best Hospitals in Bangalore for Medical Tourism - Top 10 Guide 2025"
+        description="Complete guide to the best hospitals in Bangalore for medical tourism including Narayana Health and Apollo."
+        image="https://shifaalhind.onrender.com/images/blog/bangalore-hospitals.jpg"
+        datePublished="2025-11-01"
+        dateModified="2025-11-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/best-hospitals-bangalore-medical-tourism"
+      />
     >
       <section className="mb-8">
         <p className="text-lg">Bangalore, India&apos;s Silicon Valley, is also its healthcare innovation hub with 30+ NABH/JCI-accredited hospitals treating 100,000+ international patients annually. Home to Manipal Hospitals (India&apos;s 2nd largest chain), Narayana Health (world&apos;s most affordable cardiac care), and cutting-edge medical technology centers.</p>

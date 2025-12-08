@@ -8,6 +8,8 @@ import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/rela
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -32,7 +34,25 @@ export const metadata: Metadata = {
 
 export default function LasikEyeSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'LASIK Eye Surgery in India', url: 'https://shifaalhind.onrender.com/treatments/lasik-eye-surgery-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="LASIK Eye Surgery"
+        description="LASIK reshapes the cornea using laser technology to correct refractive errors like myopia, hyperopia, and astigmatism."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Cornea"
+        preparation="Stop wearing contact lenses 2 weeks before, comprehensive eye exam, arrange transportation."
+        followup="Follow-up at 1 day, 1 week, 1 month, 3 months, 6 months, and 1 year. Use prescribed eye drops."
+        url="https://shifaalhind.onrender.com/treatments/lasik-eye-surgery-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900">

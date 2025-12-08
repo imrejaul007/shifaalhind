@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Cancer Treatment Cost India vs USA/UK/UAE [2025] - Save 70-85%',
@@ -37,6 +39,25 @@ export default function CancerTreatmentCostPage() {
       readTime="12 min"
       breadcrumbTitle="Cancer Treatment Cost"
     >
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Cancer Treatment Cost in India 2025', url: 'https://shifaalhind.onrender.com/blog/cancer-treatment-cost-india-vs-world' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Cancer Treatment Cost in India 2025 - Complete Cost Guide"
+        description="Complete guide to cancer treatment costs in India vs global prices. Learn about treatment options, costs, and top oncology hospitals."
+        image="https://shifaalhind.onrender.com/images/blog/cancer-treatment.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/cancer-treatment-cost-india-vs-world"
+      />
       <section className="mb-8">
         <p className="text-lg leading-relaxed">
           Cancer treatment costs in India are <strong>70-85% lower</strong> than in the USA, UK, or GCC countries,

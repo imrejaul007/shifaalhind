@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,6 +40,25 @@ export default function CosmeticSurgeryCostIndiaPage() {
       lastUpdated="October 2025"
       readTime="12 min"
       breadcrumbTitle="Cosmetic Surgery Cost India"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Cosmetic Surgery Cost in India 2025', url: 'https://shifaalhind.onrender.com/blog/cosmetic-surgery-cost-india' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Cosmetic Surgery Cost in India 2025 - Complete Price Guide"
+        description="Complete cost guide for cosmetic surgery procedures in India vs global prices. Learn about procedures, costs, and top clinics."
+        image="https://shifaalhind.onrender.com/images/blog/cosmetic-surgery.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/cosmetic-surgery-cost-india"
+      />
     >
       {/* Introduction */}
       <Card>

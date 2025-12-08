@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { TreatmentLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
@@ -25,6 +27,25 @@ export default function KneeReplacementCostPage() {
       readTime="14 min"
       breadcrumbTitle="Knee Replacement Cost Guide"
     >
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Knee Replacement Cost in India 2025', url: 'https://shifaalhind.onrender.com/blog/knee-replacement-cost-india-vs-world' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Knee Replacement Cost in India 2025 - Complete Cost & Quality Guide"
+        description="Complete guide to knee replacement surgery cost in India vs USA, UK, and UAE. Learn about costs, recovery, top hospitals, and quality of care."
+        image="https://shifaalhind.onrender.com/images/blog/knee-replacement.jpg"
+        datePublished="2025-01-15"
+        dateModified="2025-01-15"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/knee-replacement-cost-india-vs-world"
+      />
       {/* Introduction */}
       <section className="mb-8">
         <p className="text-lg leading-relaxed">

@@ -8,6 +8,8 @@ import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/re
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const metadata: Metadata = {
   title: 'Shoulder Surgery in India 2025: Cost, Best Orthopedic Hospitals | Rotator Cuff Repair, Arthroscopy',
@@ -30,7 +32,25 @@ export const dynamic = 'force-dynamic';
 
 export default function ShoulderSurgeryIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Shoulder Surgery in India', url: 'https://shifaalhind.onrender.com/treatments/shoulder-surgery-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Shoulder Surgery"
+        description="Shoulder surgery repairs rotator cuff tears, treats arthritis, or corrects instability to restore function and relieve pain."
+        procedureType="SurgicalProcedure"
+        bodyLocation="Shoulder Joint"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/shoulder-surgery-india"
+      />
+y-8">
       {/* Hero Section */}
       <section className="mb-12 text-center">
         <h1 className="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">

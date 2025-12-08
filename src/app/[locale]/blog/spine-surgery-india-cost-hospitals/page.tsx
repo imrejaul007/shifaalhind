@@ -6,6 +6,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const metadata: Metadata = {
   title: 'Spine Surgery Cost India [2025] - Save 70% | 95%+ Success Rate',
@@ -39,6 +41,25 @@ export default function SpineSurgeryIndiaPage() {
       lastUpdated="January 2025"
       readTime="13 min"
       breadcrumbTitle="Spine Surgery India Cost"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Spine Surgery in India - Cost & Best Hospitals', url: 'https://shifaalhind.onrender.com/blog/spine-surgery-india-cost-hospitals' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Spine Surgery in India - Cost & Best Hospitals 2025"
+        description="Complete guide to spine surgery in India including costs, procedures, top hospitals, and recovery information."
+        image="https://shifaalhind.onrender.com/images/blog/spine-surgery.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/spine-surgery-india-cost-hospitals"
+      />
     >
       {/* Introduction */}
       <div className="prose prose-lg max-w-none">

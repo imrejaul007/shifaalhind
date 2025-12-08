@@ -5,6 +5,8 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,6 +42,25 @@ export default function NeurosurgeryIndiaCostPage() {
       lastUpdated="October 2025"
       readTime="14 min"
       breadcrumbTitle="Neurosurgery India Cost"
+
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Blog', url: 'https://shifaalhind.onrender.com/blog' },
+        { name: 'Neurosurgery in India - Cost & Best Hospitals', url: 'https://shifaalhind.onrender.com/blog/neurosurgery-india-cost-hospitals' }
+      ]} />
+
+      {/* Article Schema for SEO */}
+      <ArticleSchema
+        headline="Neurosurgery in India - Cost & Best Hospitals 2025"
+        description="Complete guide to neurosurgery in India including costs, procedures, advanced technology, and top neuroscience centers."
+        image="https://shifaalhind.onrender.com/images/blog/neurosurgery.jpg"
+        datePublished="2025-10-01"
+        dateModified="2025-10-01"
+        author={DEFAULT_AUTHOR}
+        publisher={DEFAULT_PUBLISHER}
+        url="https://shifaalhind.onrender.com/blog/neurosurgery-india-cost-hospitals"
+      />
     >
       {/* Introduction */}
       <Card>

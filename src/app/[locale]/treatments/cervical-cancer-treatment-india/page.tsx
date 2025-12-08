@@ -8,6 +8,8 @@ import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/rela
 import { InternalLinks } from '@/components/seo/internal-links';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
+import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 
 export const metadata: Metadata = {
   title: 'Cervical Cancer Treatment in India 2025: Cost, Best Oncology Hospitals, Success Rate | Surgery, Chemotherapy, Radiation',
@@ -32,7 +34,25 @@ export const dynamic = 'force-dynamic';
 
 export default function CervicalCancerTreatmentIndiaPage() {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 p
+      {/* Breadcrumb Schema for SEO */}
+      <BreadcrumbSchema items={[
+        { name: 'Home', url: 'https://shifaalhind.onrender.com' },
+        { name: 'Treatments', url: 'https://shifaalhind.onrender.com/treatments' },
+        { name: 'Cervical Cancer Treatment in India', url: 'https://shifaalhind.onrender.com/treatments/cervical-cancer-treatment-india' }
+      ]} />
+
+      {/* Medical Procedure Schema for SEO */}
+      <MedicalProcedureSchema
+        name="Cervical Cancer Treatment"
+        description="Cervical cancer treatment includes surgery, radiation, chemotherapy, and targeted therapy depending on stage."
+        procedureType="TherapeuticProcedure"
+        bodyLocation="Cervix"
+        
+        
+        url="https://shifaalhind.onrender.com/treatments/cervical-cancer-treatment-india"
+      />
+y-8">
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={[
         { question: "How much does cervical cancer treatment cost in India?", answer: "Cervical cancer treatment in India costs $2,000-8,000 depending on stage and treatment. Conization: $2,000-3,500, Simple Hysterectomy: $3,500-5,500, Radical Hysterectomy: $5,000-8,000, Chemotherapy: $1,000-2,000/cycle, Radiation: $4,000-6,000, Targeted Therapy: $4,000-8,000. This is 70-85% cheaper than USA ($15,000-60,000)." },
