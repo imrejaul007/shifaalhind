@@ -50,47 +50,47 @@ export function FooterImproved() {
   ];
 
   const companyLinks = [
-    { name: 'About Us', href: '/about', icon: Building2 },
-    { name: 'Why Choose Us', href: '/why-choose-us', icon: Star },
-    { name: 'Our Team', href: '/team', icon: Users },
-    { name: 'Success Stories', href: '/case-studies', icon: Heart },
-    { name: 'Patient Testimonials', href: '/testimonials', icon: Star },
-    { name: 'Accreditations', href: '/accreditations', icon: Award },
-    { name: 'Career', href: '/career', icon: Users },
-    { name: 'Press & Media', href: '/press', icon: FileText },
+    { name: t('company.aboutUs'), href: '/about', icon: Building2 },
+    { name: t('company.whyChooseUs'), href: '/why-choose-us', icon: Star },
+    { name: t('company.ourTeam'), href: '/team', icon: Users },
+    { name: t('company.successStories'), href: '/case-studies', icon: Heart },
+    { name: t('company.patientTestimonials'), href: '/testimonials', icon: Star },
+    { name: t('company.accreditations'), href: '/accreditations', icon: Award },
+    { name: t('company.career'), href: '/career', icon: Users },
+    { name: t('company.pressMedia'), href: '/press', icon: FileText },
   ];
 
   const servicesLinks = [
-    { name: 'All Treatments', href: '/treatments', icon: Stethoscope },
-    { name: 'Cardiac Care', href: '/treatments/cardiac', icon: Heart },
-    { name: 'Orthopedic', href: '/treatments/orthopedic', icon: Stethoscope },
-    { name: 'Cancer Treatment', href: '/treatments/cancer', icon: Shield },
-    { name: 'Cosmetic Surgery', href: '/treatments/cosmetic', icon: Star },
-    { name: 'Dental Care', href: '/treatments/dental', icon: Smile },
-    { name: 'Eye Care', href: '/treatments/eye', icon: Eye },
-    { name: 'Fertility Treatment', href: '/treatments/fertility', icon: Baby },
+    { name: t('services.allTreatments'), href: '/treatments', icon: Stethoscope },
+    { name: t('services.cardiacCare'), href: '/treatments/cardiac', icon: Heart },
+    { name: t('services.orthopedic'), href: '/treatments/orthopedic', icon: Stethoscope },
+    { name: t('services.cancerTreatment'), href: '/treatments/cancer', icon: Shield },
+    { name: t('services.cosmeticSurgery'), href: '/treatments/cosmetic', icon: Star },
+    { name: t('services.dentalCare'), href: '/treatments/dental', icon: Smile },
+    { name: t('services.eyeCare'), href: '/treatments/eye', icon: Eye },
+    { name: t('services.fertilityTreatment'), href: '/treatments/fertility', icon: Baby },
   ];
 
   const resourcesLinks = [
-    { name: 'Blog & Articles', href: '/blog', icon: FileText },
-    { name: 'Treatment Guides', href: '/guides', icon: BookOpen },
-    { name: 'Cost Calculator', href: '/cost-calculator', icon: Calculator },
-    { name: 'FAQs', href: '/faq', icon: HelpCircle },
-    { name: 'Medical Glossary', href: '/glossary', icon: BookOpen },
-    { name: 'Insurance Guide', href: '/insurance', icon: Shield },
-    { name: 'Travel Tips', href: '/travel-tips', icon: Plane },
-    { name: 'Recovery Guide', href: '/recovery', icon: Heart },
+    { name: t('resources.blogArticles'), href: '/blog', icon: FileText },
+    { name: t('resources.treatmentGuides'), href: '/guides', icon: BookOpen },
+    { name: t('resources.costCalculator'), href: '/cost-calculator', icon: Calculator },
+    { name: t('resources.faqs'), href: '/faq', icon: HelpCircle },
+    { name: t('resources.medicalGlossary'), href: '/glossary', icon: BookOpen },
+    { name: t('resources.insuranceGuide'), href: '/insurance', icon: Shield },
+    { name: t('resources.travelTips'), href: '/travel-tips', icon: Plane },
+    { name: t('resources.recoveryGuide'), href: '/recovery', icon: Heart },
   ];
 
   const forPatientsLinks = [
-    { name: 'Visa Assistance', href: '/visa-assistance', icon: Plane },
-    { name: 'Travel Arrangements', href: '/travel', icon: Plane },
-    { name: 'Accommodation', href: '/accommodation', icon: Building2 },
-    { name: 'Language Support', href: '/language-support', icon: Globe },
-    { name: 'Airport Pickup', href: '/airport-pickup', icon: Plane },
-    { name: 'Medical Records', href: '/medical-records', icon: FileText },
-    { name: 'Second Opinion', href: '/second-opinion', icon: Stethoscope },
-    { name: 'Payment Options', href: '/payment', icon: CreditCard },
+    { name: t('forPatients.visaAssistance'), href: '/visa-assistance', icon: Plane },
+    { name: t('forPatients.travelArrangements'), href: '/travel', icon: Plane },
+    { name: t('forPatients.accommodation'), href: '/accommodation', icon: Building2 },
+    { name: t('forPatients.languageSupport'), href: '/language-support', icon: Globe },
+    { name: t('forPatients.airportPickup'), href: '/airport-pickup', icon: Plane },
+    { name: t('forPatients.medicalRecords'), href: '/medical-records', icon: FileText },
+    { name: t('forPatients.secondOpinion'), href: '/second-opinion', icon: Stethoscope },
+    { name: t('forPatients.paymentOptions'), href: '/payment', icon: CreditCard },
   ];
 
   const topHospitals = [
@@ -103,10 +103,10 @@ export function FooterImproved() {
   ];
 
   const trustBadges = [
-    { icon: Award, text: '25+ JCI Accredited', color: 'text-yellow-600' },
-    { icon: Shield, text: '100% Safe & Secure', color: 'text-green-600' },
-    { icon: Users, text: '15,000+ Patients', color: 'text-blue-600' },
-    { icon: Star, text: '4.9/5 Rating', color: 'text-orange-600' },
+    { icon: Award, text: t('trustBadges.jciAccredited'), color: 'text-yellow-600' },
+    { icon: Shield, text: t('trustBadges.safeSecure'), color: 'text-green-600' },
+    { icon: Users, text: t('trustBadges.patients'), color: 'text-blue-600' },
+    { icon: Star, text: t('trustBadges.rating'), color: 'text-orange-600' },
   ];
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {

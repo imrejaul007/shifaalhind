@@ -114,235 +114,7 @@ const faqData = [
   }
 ];
 
-export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
-  // Bilingual content structure
-  const content = {
-    en: {
-      hero: {
-        badge: 'Trusted by 10,000+ GCC Patients | Focus on Bangalore Hospitals | Accommodation at Pentouz Hotels',
-        title: 'World-Class Medical Tourism to India from UAE, Saudi Arabia & GCC Countries',
-        subtitle1: 'Save 60-80% on medical treatments without compromising quality. Connect with JCI-accredited hospitals and internationally trained doctors in Bangalore and across India for cardiac surgery, orthopedic procedures, fertility treatments, and more.',
-        subtitle2: 'Trusted by over 10,000 patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Get personalized care with Arabic-speaking coordinators who lived in GCC, no waiting lists, and comprehensive support from consultation to recovery. Stay at Pentouz Hotels near hospitals.',
-        statBadge1: 'Cost Savings',
-        statBadge2: 'GCC Patients',
-        statBadge3: 'JCI Hospitals',
-        statBadge4: 'Arabic Support',
-        cta1: 'Get Free Consultation',
-        cta2: 'View All Treatments',
-        cta3: 'WhatsApp في العربية',
-      },
-      search: {
-        placeholder: 'Search treatments, hospitals, cities...',
-        button: 'Search',
-      },
-      statistics: {
-        title: 'Trusted by Thousands of International Patients',
-        subtitle: 'Leading the way in medical tourism with proven results and world-class care',
-      },
-      treatments: {
-        title: 'Popular Medical Treatments',
-        subtitle: 'Most requested procedures by international patients from UAE, Saudi Arabia & GCC countries',
-        viewAll: 'View All 30+ Treatments',
-        learnMore: 'Learn More',
-        cards: [
-          { title: 'Heart Surgery', description: 'CABG, valve replacement, angioplasty procedures', savings: 'Save $50K-$138K' },
-          { title: 'Knee Replacement', description: 'Total knee replacement with advanced implants', savings: 'Save $14K-$42K' },
-          { title: 'IVF & Fertility', description: 'Advanced fertility treatments and IVF procedures', savings: 'Save $4K-$11K' },
-          { title: 'Dental Implants', description: 'Titanium and zirconia dental implant solutions', savings: 'Save $700-$3.7K' },
-          { title: 'Hair Transplant', description: 'FUE, FUT, and DHI hair restoration techniques', savings: 'Save $6K-$10K' },
-          { title: 'Cancer Treatment', description: 'Advanced oncology care and cancer treatments', savings: 'Save $100K+' },
-          { title: 'Rhinoplasty', description: 'Cosmetic nose reshaping and rhinoplasty surgery', savings: 'Save $2.5K-$11K' },
-          { title: 'LASIK Eye Surgery', description: 'Blade-free LASIK and vision correction', savings: 'Save $3K-$5K' }
-        ]
-      },
-      costComparison: {
-        title: 'Compare Treatment Costs: India vs World',
-        subtitle: 'See how much you can save on popular medical procedures. All costs in USD.',
-        treatment: 'Treatment',
-        india: 'India',
-        usa: 'USA',
-        uk: 'UK',
-        uae: 'UAE',
-        savings: 'Your Savings',
-        youSave: '💰 You Save',
-        treatments: [
-          'Heart Bypass Surgery (CABG)',
-          'Knee Replacement (TKR)',
-          'IVF (Single Cycle)',
-          'Dental Implants (Single Tooth)',
-          'Liver Transplant',
-          'Cataract Surgery (Both Eyes)',
-          'Rhinoplasty (Nose Job)',
-          'Spinal Fusion Surgery'
-        ]
-      },
-      pentouz: {
-        title: 'Accommodation at Pentouz Hotels, Bangalore',
-        subtitle: 'Your comfortable home away from home during medical treatment in Bangalore',
-        nearHospitals: 'Near Major Hospitals',
-        nearHospitalsDesc: '10-15 min from Narayana, Manipal, Apollo, Fortis',
-        familyRooms: 'Family-Friendly Rooms',
-        familyRoomsDesc: 'Spacious rooms for patients and companions',
-        halalPrayer: 'Halal Food & Prayer Room',
-        halalPrayerDesc: 'Multi-cuisine restaurant with halal options',
-        cta: 'Visit Pentouz Hotels →',
-        readyTitle: 'Ready to explore Bangalore hospitals?',
-        readyDesc: 'View our complete list of JCI-accredited hospitals with doctor profiles.',
-        viewHospitals: 'View All Bangalore Hospitals',
-        meetDoctors: 'Meet Our Doctors'
-      },
-      destinations: {
-        title: 'Top Destinations',
-        subtitle: 'Medical tourism destinations across the GCC',
-        forResidents: 'Medical tourism for {country} residents',
-        explore: 'Explore Destinations'
-      },
-      whyIndia: {
-        title: 'Why Choose India for Medical Tourism?',
-        intro: 'India has emerged as a global leader in medical tourism, attracting over 2 million international patients annually. For GCC residents, India offers an unbeatable combination of world-class healthcare in Bangalore and other cities, significant cost savings, and cultural familiarity with Arabic-speaking coordinators.',
-        bangalore: 'Bangalore - India\'s Medical Hub',
-        bangaloreDesc: 'Bangalore is home to India\'s best hospitals like Narayana Health, Manipal, and Apollo with world-class facilities. Perfect weather year-round (15-30°C) for recovery. We arrange your stay at Pentouz Hotels - comfortable accommodation near all major hospitals with family-friendly rooms and halal food options.',
-        costSavings: 'Massive Cost Savings',
-        costSavingsDesc: 'Medical procedures in India cost 60-80% less than in the UAE, Saudi Arabia, or Western countries. A heart bypass surgery that costs $100,000 in the US is available for $8,000-12,000 in India\'s top hospitals, with the same success rates and quality standards.',
-        noWaiting: 'No Waiting Lists',
-        noWaitingDesc: 'Unlike many developed countries where you might wait months for surgery, India\'s healthcare system can schedule your treatment within days or weeks. This is crucial for time-sensitive procedures or patients in pain.',
-        accreditation: 'International Accreditation',
-        accreditationDesc: 'Our partner hospitals hold JCI (Joint Commission International), NABH (National Accreditation Board for Hospitals), and ISO certifications, ensuring they meet the same rigorous standards as hospitals in the US and Europe.',
-        arabicSupport: 'Arabic Support Throughout Journey',
-        arabicSupportDesc: 'All our coordinators speak fluent Arabic and have lived in GCC countries (UAE, Saudi Arabia, Qatar) for 5-15 years. They understand your culture, dietary needs (halal food), and prayer requirements. Available 24/7 via WhatsApp in Arabic!',
-        doctors: 'Experienced Doctors',
-        doctorsDesc: 'India\'s top doctors are trained at institutions like Harvard, Johns Hopkins, and Mayo Clinic. Many have decades of experience and have performed thousands of procedures. India produces over 50,000 specialist doctors annually.',
-        technology: 'Advanced Technology',
-        technologyDesc: 'Leading Indian hospitals invest heavily in cutting-edge medical technology, including robotic surgery systems, CyberKnife radiotherapy, PET-CT scanners, and advanced cardiac catheterization labs.',
-        cultural: 'Cultural & Linguistic Comfort',
-        culturalDesc: 'For GCC patients, India offers cultural familiarity, halal food options, and English-speaking medical staff. Many hospitals have dedicated international patient departments with Arabic interpreters.'
-      },
-      faq: {
-        title: 'Frequently Asked Questions About Medical Tourism to India'
-      },
-      testimonials: {
-        badge: '10,000+ GCC Patients Treated Successfully',
-        title: 'What Our Patients Say',
-        subtitle: 'Real stories from UAE, Saudi Arabia, and GCC patients who experienced our Arabic support, Bangalore hospitals, and comfortable stay at Pentouz Hotels'
-      }
-    },
-    ar: {
-      hero: {
-        badge: 'موثوق من قبل أكثر من 10,000 مريض من دول الخليج | التركيز على مستشفيات بنغالور | الإقامة في فنادق بنتوز',
-        title: 'سياحة علاجية عالمية المستوى إلى الهند من الإمارات والسعودية ودول الخليج',
-        subtitle1: 'وفّر 60-80٪ على العلاجات الطبية دون المساس بالجودة. تواصل مع مستشفيات معتمدة من JCI وأطباء مدربين دولياً في بنغالور وعبر الهند لجراحة القلب، الإجراءات العظمية، علاجات الخصوبة، والمزيد.',
-        subtitle2: 'موثوق من قبل أكثر من 10,000 مريض من الإمارات والسعودية وقطر وعمان والكويت والبحرين. احصل على رعاية شخصية مع منسقين ناطقين بالعربية عاشوا في دول الخليج، بدون قوائم انتظار، ودعم شامل من الاستشارة إلى التعافي. أقم في فنادق بنتوز بالقرب من المستشفيات.',
-        statBadge1: 'التوفير',
-        statBadge2: 'مرضى الخليج',
-        statBadge3: 'مستشفيات JCI',
-        statBadge4: 'دعم عربي',
-        cta1: 'احصل على استشارة مجانية',
-        cta2: 'عرض جميع العلاجات',
-        cta3: 'واتساب بالعربية',
-      },
-      search: {
-        placeholder: 'ابحث عن العلاجات، المستشفيات، المدن...',
-        button: 'بحث',
-      },
-      statistics: {
-        title: 'موثوق من آلاف المرضى الدوليين',
-        subtitle: 'نقود الطريق في السياحة العلاجية مع نتائج مثبتة ورعاية عالمية المستوى',
-      },
-      treatments: {
-        title: 'العلاجات الطبية الشائعة',
-        subtitle: 'الإجراءات الأكثر طلباً من المرضى الدوليين من الإمارات والسعودية ودول الخليج',
-        viewAll: 'عرض جميع العلاجات أكثر من 30',
-        learnMore: 'اعرف المزيد',
-        cards: [
-          { title: 'جراحة القلب', description: 'عمليات القلب المفتوح، استبدال الصمامات، قسطرة الشرايين', savings: 'وفّر $50-138 ألف' },
-          { title: 'استبدال الركبة', description: 'استبدال الركبة الكامل بزراعات متقدمة', savings: 'وفّر $14-42 ألف' },
-          { title: 'التلقيح الصناعي والخصوبة', description: 'علاجات الخصوبة المتقدمة وإجراءات أطفال الأنابيب', savings: 'وفّر $4-11 ألف' },
-          { title: 'زراعة الأسنان', description: 'حلول زراعة الأسنان من التيتانيوم والزركونيا', savings: 'وفّر $700-3,700' },
-          { title: 'زراعة الشعر', description: 'تقنيات زراعة الشعر FUE و FUT و DHI', savings: 'وفّر $6-10 آلاف' },
-          { title: 'علاج السرطان', description: 'رعاية متقدمة للأورام وعلاجات السرطان', savings: 'وفّر أكثر من $100 ألف' },
-          { title: 'تجميل الأنف', description: 'عمليات تجميل وإعادة تشكيل الأنف', savings: 'وفّر $2,500-11,000' },
-          { title: 'عملية الليزك للعيون', description: 'ليزك بدون شفرات وتصحيح النظر', savings: 'وفّر $3-5 آلاف' }
-        ]
-      },
-      costComparison: {
-        title: 'قارن تكاليف العلاج: الهند مقابل العالم',
-        subtitle: 'شاهد كم يمكنك توفيره على الإجراءات الطبية الشائعة. جميع التكاليف بالدولار الأمريكي.',
-        treatment: 'العلاج',
-        india: 'الهند',
-        usa: 'الولايات المتحدة',
-        uk: 'المملكة المتحدة',
-        uae: 'الإمارات',
-        savings: 'توفيرك',
-        youSave: '💰 توفيرك',
-        treatments: [
-          'جراحة القلب المفتوح (CABG)',
-          'استبدال الركبة الكامل',
-          'التلقيح الصناعي (دورة واحدة)',
-          'زراعة الأسنان (سن واحد)',
-          'زراعة الكبد',
-          'عملية الساد (كلتا العينين)',
-          'تجميل الأنف',
-          'جراحة دمج العمود الفقري'
-        ]
-      },
-      pentouz: {
-        title: 'الإقامة في فنادق بنتوز، بنغالور',
-        subtitle: 'منزلك المريح بعيداً عن المنزل أثناء العلاج الطبي في بنغالور',
-        nearHospitals: 'بالقرب من المستشفيات الكبرى',
-        nearHospitalsDesc: '10-15 دقيقة من نارايانا، مانيبال، أبولو، فورتيس',
-        familyRooms: 'غرف عائلية مريحة',
-        familyRoomsDesc: 'غرف واسعة للمرضى والمرافقين',
-        halalPrayer: 'طعام حلال وغرفة صلاة',
-        halalPrayerDesc: 'مطعم متعدد المأكولات مع خيارات حلال',
-        cta: 'زُر فنادق بنتوز ←',
-        readyTitle: 'هل أنت مستعد لاستكشاف مستشفيات بنغالور؟',
-        readyDesc: 'عرض قائمتنا الكاملة للمستشفيات المعتمدة من JCI مع ملفات الأطباء.',
-        viewHospitals: 'عرض جميع مستشفيات بنغالور',
-        meetDoctors: 'تعرّف على أطبائنا'
-      },
-      destinations: {
-        title: 'الوجهات الأولى',
-        subtitle: 'وجهات السياحة العلاجية عبر دول الخليج',
-        forResidents: 'السياحة العلاجية لسكان {country}',
-        explore: 'استكشف الوجهات'
-      },
-      whyIndia: {
-        title: 'لماذا تختار الهند للسياحة العلاجية؟',
-        intro: 'برزت الهند كرائدة عالمية في السياحة العلاجية، حيث تجذب أكثر من 2 مليون مريض دولي سنوياً. لسكان دول الخليج، تقدم الهند مزيجاً لا يُضاهى من الرعاية الصحية عالمية المستوى في بنغالور ومدن أخرى، وتوفير كبير في التكاليف، والألفة الثقافية مع منسقين ناطقين بالعربية.',
-        bangalore: 'بنغالور - المركز الطبي للهند',
-        bangaloreDesc: 'تضم بنغالور أفضل مستشفيات الهند مثل نارايانا هيلث، مانيبال، وأبولو بمرافق عالمية المستوى. طقس مثالي على مدار العام (15-30 درجة مئوية) للتعافي. ننظم إقامتك في فنادق بنتوز - إقامة مريحة بالقرب من جميع المستشفيات الكبرى مع غرف عائلية وخيارات طعام حلال.',
-        costSavings: 'توفير هائل في التكاليف',
-        costSavingsDesc: 'تكلف الإجراءات الطبية في الهند 60-80٪ أقل من الإمارات أو السعودية أو الدول الغربية. جراحة القلب المفتوح التي تكلف $100,000 في الولايات المتحدة متاحة بـ $8,000-12,000 في أفضل مستشفيات الهند، بنفس معدلات النجاح ومعايير الجودة.',
-        noWaiting: 'لا قوائم انتظار',
-        noWaitingDesc: 'على عكس العديد من الدول المتقدمة حيث قد تنتظر شهوراً للجراحة، يمكن لنظام الرعاية الصحية الهندي جدولة علاجك خلال أيام أو أسابيع. هذا أمر حاسم للإجراءات الحساسة للوقت أو المرضى الذين يعانون من الألم.',
-        accreditation: 'اعتماد دولي',
-        accreditationDesc: 'تحمل مستشفياتنا الشريكة شهادات JCI (اللجنة الدولية المشتركة)، NABH (المجلس الوطني لاعتماد المستشفيات)، وشهادات ISO، مما يضمن استيفائها لنفس المعايير الصارمة للمستشفيات في الولايات المتحدة وأوروبا.',
-        arabicSupport: 'دعم عربي طوال الرحلة',
-        arabicSupportDesc: 'جميع منسقينا يتحدثون العربية بطلاقة وعاشوا في دول الخليج (الإمارات، السعودية، قطر) لمدة 5-15 سنة. يفهمون ثقافتك واحتياجاتك الغذائية (طعام حلال) ومتطلبات الصلاة. متاحون 24/7 عبر واتساب بالعربية!',
-        doctors: 'أطباء ذوو خبرة',
-        doctorsDesc: 'أفضل أطباء الهند مدربون في مؤسسات مثل هارفارد، جونز هوبكنز، ومايو كلينك. لدى العديد منهم عقود من الخبرة وأجروا آلاف الإجراءات. تخرّج الهند أكثر من 50,000 طبيب متخصص سنوياً.',
-        technology: 'تكنولوجيا متقدمة',
-        technologyDesc: 'تستثمر المستشفيات الهندية الرائدة بكثافة في التكنولوجيا الطبية المتطورة، بما في ذلك أنظمة الجراحة الروبوتية، العلاج الإشعاعي بالسايبر نايف، ماسحات PET-CT الضوئية، ومختبرات قسطرة القلب المتقدمة.',
-        cultural: 'راحة ثقافية ولغوية',
-        culturalDesc: 'بالنسبة لمرضى الخليج، تقدم الهند ألفة ثقافية وخيارات طعام حلال وموظفين طبيين يتحدثون الإنجليزية. العديد من المستشفيات لديها أقسام مخصصة للمرضى الدوليين مع مترجمين فوريين للعربية.'
-      },
-      faq: {
-        title: 'الأسئلة الشائعة حول السياحة العلاجية إلى الهند'
-      },
-      testimonials: {
-        badge: 'أكثر من 10,000 مريض من الخليج تم علاجهم بنجاح',
-        title: 'ما يقوله مرضانا',
-        subtitle: 'قصص حقيقية من الإمارات والسعودية ومرضى الخليج الذين جربوا دعمنا باللغة العربية، مستشفيات بنغالور، والإقامة المريحة في فنادق بنتوز'
-      }
-    },
-  };
-
-  // Safe locale resolution with fallback
-  const safeLocale = (locale === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
-  const currentContent = content[safeLocale];
-
+export default function HomePage() {
   // Statistics data
   const statistics = [
     {
@@ -408,61 +180,53 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             {/* Trust Badge */}
             <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur-sm">
               <Award className="h-4 w-4 text-accent-300" />
-              <span>{currentContent.hero.badge}</span>
+              <span>Trusted by 10,000+ GCC Patients | Focus on Bangalore Hospitals | Accommodation at Pentouz Hotels</span>
             </div>
 
             <h1 className="mb-6 font-serif text-4xl font-bold leading-tight md:text-5xl lg:text-6xl">
-              {currentContent.hero.title}
+              World-Class Medical Tourism to India from UAE, Saudi Arabia & GCC Countries
             </h1>
             <p className="mb-4 text-lg text-primary-50 md:text-xl">
-              {locale === 'ar' ? currentContent.hero.subtitle1 : (
-                <>
-                  Save 60-80% on medical treatments without compromising quality. Connect with JCI-accredited hospitals and internationally trained doctors in <strong>Bangalore</strong> and across India for cardiac surgery, orthopedic procedures, fertility treatments, and more.
-                </>
-              )}
+              Save 60-80% on medical treatments without compromising quality. Connect with JCI-accredited hospitals and internationally trained doctors in <strong>Bangalore</strong> and across India for cardiac surgery, orthopedic procedures, fertility treatments, and more.
             </p>
             <p className="mb-8 text-base text-primary-100 md:text-lg">
-              {locale === 'ar' ? currentContent.hero.subtitle2 : (
-                <>
-                  Trusted by over 10,000 patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Get personalized care with <strong>Arabic-speaking coordinators who lived in GCC</strong>, no waiting lists, and comprehensive support from consultation to recovery. Stay at <strong>Pentouz Hotels</strong> near hospitals.
-                </>
-              )}
+              Trusted by over 10,000 patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain. Get personalized care with <strong>Arabic-speaking coordinators who lived in GCC</strong>, no waiting lists, and comprehensive support from consultation to recovery. Stay at <strong>Pentouz Hotels</strong> near hospitals.
             </p>
 
             {/* Stats Badges */}
             <div className="mb-8 flex flex-wrap justify-center gap-3">
               <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <div className="text-2xl font-bold">60-80%</div>
-                <div className="text-xs text-primary-100">{currentContent.hero.statBadge1}</div>
+                <div className="text-xs text-primary-100">Cost Savings</div>
               </div>
               <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <div className="text-2xl font-bold">10,000+</div>
-                <div className="text-xs text-primary-100">{currentContent.hero.statBadge2}</div>
+                <div className="text-xs text-primary-100">GCC Patients</div>
               </div>
               <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <div className="text-2xl font-bold">40+</div>
-                <div className="text-xs text-primary-100">{currentContent.hero.statBadge3}</div>
+                <div className="text-xs text-primary-100">JCI Hospitals</div>
               </div>
               <div className="rounded-lg bg-white/10 px-4 py-2 backdrop-blur-sm">
                 <div className="text-2xl font-bold">24/7</div>
-                <div className="text-xs text-primary-100">{currentContent.hero.statBadge4}</div>
+                <div className="text-xs text-primary-100">Arabic Support</div>
               </div>
             </div>
 
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" variant="secondary" className="shadow-xl">
                 <Link href="/consultation">
-                  {currentContent.hero.cta1}
+                  Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white/20 shadow-xl">
-                <Link href="/treatments">{currentContent.hero.cta2}</Link>
+                <Link href="/treatments">View All Treatments</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-accent-500/20 border-accent-300 text-white hover:bg-accent-500/30 shadow-xl">
                 <Link href="/contact">
                   <Languages className="mr-2 h-5 w-5" />
-                  {currentContent.hero.cta3}
+                  WhatsApp في العربية
                 </Link>
               </Button>
             </div>
@@ -481,11 +245,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <input
               type="text"
               name="q"
-              placeholder={currentContent.search.placeholder}
+              placeholder="Search treatments, hospitals, cities..."
               className="flex-1 rounded-lg border-2 border-gray-200 bg-white px-4 py-3 focus:border-primary-500 focus:outline-none"
             />
             <Button type="submit" size="lg" className="sm:w-auto">
-              {currentContent.search.button}
+              Search
             </Button>
           </form>
         </div>
@@ -495,10 +259,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <section className="container px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {currentContent.statistics.title}
+            Trusted by Thousands of International Patients
           </h2>
           <p className="text-lg text-gray-600">
-            {currentContent.statistics.subtitle}
+            Leading the way in medical tourism with proven results and world-class care
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -542,10 +306,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <div className="container">
           <div className="mb-12 text-center">
             <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-              {currentContent.treatments.title}
+              Popular Medical Treatments
             </h2>
             <p className="text-lg text-gray-600">
-              {currentContent.treatments.subtitle}
+              Most requested procedures by international patients from UAE, Saudi Arabia & GCC countries
             </p>
           </div>
 
@@ -555,18 +319,18 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[0].title}</CardTitle>
+                <CardTitle className="text-lg">Heart Surgery</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[0].description}
+                  CABG, valve replacement, angioplasty procedures
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[0].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $50K-$138K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/blog/heart-surgery-cost-comparison-india-vs-world"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
+                  Learn More
                   <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
@@ -577,11 +341,11 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[1].title}</CardTitle>
+                <CardTitle className="text-lg">Knee Replacement</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[1].description}
+                  Total knee replacement with advanced implants
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[1].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $14K-$42K</div>
               </CardHeader>
               <CardContent>
                 <Link
@@ -599,19 +363,19 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[2].title}</CardTitle>
+                <CardTitle className="text-lg">IVF & Fertility</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[2].description}
+                  Advanced fertility treatments and IVF procedures
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[2].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $4K-$11K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/blog/ivf-fertility-treatment-india-complete-guide"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -621,19 +385,19 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[3].title}</CardTitle>
+                <CardTitle className="text-lg">Dental Implants</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[3].description}
+                  Titanium and zirconia dental implant solutions
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[3].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $700-$3.7K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/treatments/dental-implants-india"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -643,19 +407,19 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[4].title}</CardTitle>
+                <CardTitle className="text-lg">Hair Transplant</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[4].description}
+                  FUE, FUT, and DHI hair restoration techniques
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[4].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $6K-$10K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/treatments/hair-transplant-india"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -665,19 +429,19 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[5].title}</CardTitle>
+                <CardTitle className="text-lg">Cancer Treatment</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[5].description}
+                  Advanced oncology care and cancer treatments
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[5].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $100K+</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/blog/cancer-treatment-cost-india-vs-world"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -687,19 +451,19 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Heart className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[6].title}</CardTitle>
+                <CardTitle className="text-lg">Rhinoplasty</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[6].description}
+                  Cosmetic nose reshaping and rhinoplasty surgery
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[6].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $2.5K-$11K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/treatments/rhinoplasty-india"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -709,19 +473,19 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-br from-primary-50 to-primary-100 transition-all group-hover:from-primary-500 group-hover:to-primary-600 group-hover:shadow-xl">
                   <Activity className="h-6 w-6 text-primary-500 transition-colors group-hover:text-white" />
                 </div>
-                <CardTitle className="text-lg">{currentContent.treatments.cards[7].title}</CardTitle>
+                <CardTitle className="text-lg">LASIK Eye Surgery</CardTitle>
                 <CardDescription>
-                  {currentContent.treatments.cards[7].description}
+                  Blade-free LASIK and vision correction
                 </CardDescription>
-                <div className="mt-2 text-sm font-semibold text-green-600">{currentContent.treatments.cards[7].savings}</div>
+                <div className="mt-2 text-sm font-semibold text-green-600">Save $3K-$5K</div>
               </CardHeader>
               <CardContent>
                 <Link
                   href="/treatments/lasik-eye-surgery-india"
                   className="flex items-center text-sm font-medium text-primary-500 hover:text-primary-600"
                 >
-                  {currentContent.treatments.learnMore}
-$1<ArrowRight className="ml-1 h-4 w-4" />
+                  Learn More
+                  <ArrowRight className="ml-1 h-4 w-4" />
                 </Link>
               </CardContent>
             </Card>
@@ -729,7 +493,7 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
 
           <div className="mt-12 text-center">
             <Button asChild variant="outline" size="lg">
-              <Link href="/treatments">{currentContent.treatments.viewAll}</Link>
+              <Link href="/treatments">View All 30+ Treatments</Link>
             </Button>
           </div>
         </div>
@@ -739,10 +503,10 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
       <section className="container px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {currentContent.costComparison.title}
+            Compare Treatment Costs: India vs World
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-gray-600">
-            {currentContent.costComparison.subtitle}
+            See how much you can save on popular medical procedures. All costs in USD.
           </p>
         </div>
 
@@ -752,22 +516,22 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
             <thead>
               <tr className="bg-primary-50">
                 <th className="border border-gray-200 px-4 py-3 text-left font-semibold text-gray-900">
-                  {currentContent.costComparison.treatment}
+                  Treatment
                 </th>
                 <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
-                  {currentContent.costComparison.india}
+                  India
                 </th>
                 <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
-                  {currentContent.costComparison.usa}
+                  USA
                 </th>
                 <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
-                  {currentContent.costComparison.uk}
+                  UK
                 </th>
                 <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-gray-900">
-                  {currentContent.costComparison.uae}
+                  UAE
                 </th>
                 <th className="border border-gray-200 px-4 py-3 text-center font-semibold text-primary-600">
-                  {currentContent.costComparison.savings}
+                  Your Savings
                 </th>
               </tr>
             </thead>
@@ -1368,9 +1132,9 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                   <Hotel className="h-10 w-10 text-white" />
                 </div>
                 <div className="flex-1">
-                  <CardTitle className="text-2xl">{currentContent.pentouz.title}</CardTitle>
+                  <CardTitle className="text-2xl">Accommodation at Pentouz Hotels, Bangalore</CardTitle>
                   <CardDescription className="text-base">
-                    {currentContent.pentouz.subtitle}
+                    Your comfortable home away from home during medical treatment in Bangalore
                   </CardDescription>
                 </div>
               </div>
@@ -1380,22 +1144,22 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
                 <div className="flex gap-3 rounded-lg bg-white/70 p-4">
                   <MapPin className="h-6 w-6 shrink-0 text-orange-600" />
                   <div>
-                    <p className="font-semibold text-gray-900">{currentContent.pentouz.nearHospitals}</p>
-                    <p className="text-sm text-gray-600">{currentContent.pentouz.nearHospitalsDesc}</p>
+                    <p className="font-semibold text-gray-900">Near Major Hospitals</p>
+                    <p className="text-sm text-gray-600">10-15 min from Narayana, Manipal, Apollo, Fortis</p>
                   </div>
                 </div>
                 <div className="flex gap-3 rounded-lg bg-white/70 p-4">
                   <Building2 className="h-6 w-6 shrink-0 text-orange-600" />
                   <div>
-                    <p className="font-semibold text-gray-900">{currentContent.pentouz.familyRooms}</p>
-                    <p className="text-sm text-gray-600">{currentContent.pentouz.familyRoomsDesc}</p>
+                    <p className="font-semibold text-gray-900">Family-Friendly Rooms</p>
+                    <p className="text-sm text-gray-600">Spacious rooms for patients and companions</p>
                   </div>
                 </div>
                 <div className="flex gap-3 rounded-lg bg-white/70 p-4">
                   <CheckCircle className="h-6 w-6 shrink-0 text-orange-600" />
                   <div>
-                    <p className="font-semibold text-gray-900">{currentContent.pentouz.halalPrayer}</p>
-                    <p className="text-sm text-gray-600">{currentContent.pentouz.halalPrayerDesc}</p>
+                    <p className="font-semibold text-gray-900">Halal Food & Prayer Room</p>
+                    <p className="text-sm text-gray-600">Multi-cuisine restaurant with halal options</p>
                   </div>
                 </div>
               </div>
@@ -1412,7 +1176,7 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
 
           <div className="mt-12 text-center">
             <p className="mb-4 text-gray-700">
-              <strong>{currentContent.pentouz.readyTitle}</strong> {currentContent.pentouz.readyDesc}
+              <strong>Ready to explore Bangalore hospitals?</strong> View our complete list of JCI-accredited hospitals with doctor profiles.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
               <Button asChild size="lg" variant="outline" className="border-green-300 text-green-700 hover:bg-green-50">
@@ -1436,10 +1200,10 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
       <section className="container px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {currentContent.destinations.title}
+            Top Destinations
           </h2>
           <p className="text-lg text-gray-600">
-            {currentContent.destinations.subtitle}
+            Medical tourism destinations across the GCC
           </p>
         </div>
 
@@ -1471,11 +1235,11 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
       <section className="container px-4 py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-6 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {currentContent.whyIndia.title}
+            Why Choose India for Medical Tourism?
           </h2>
           <div className="mb-8 text-center">
             <p className="text-lg leading-relaxed text-gray-700">
-              {safeLocale === 'ar' ? currentContent.whyIndia.intro : (<>India has emerged as a global leader in medical tourism, attracting over 2 million international patients annually. For GCC residents, India offers an unbeatable combination of world-class healthcare in <strong className="text-green-600">Bangalore</strong> and other cities, significant cost savings, and cultural familiarity with <strong className="text-orange-600">Arabic-speaking coordinators</strong>.</>)}
+              India has emerged as a global leader in medical tourism, attracting over 2 million international patients annually. For GCC residents, India offers an unbeatable combination of world-class healthcare in <strong className="text-green-600">Bangalore</strong> and other cities, significant cost savings, and cultural familiarity with <strong className="text-orange-600">Arabic-speaking coordinators</strong>.
             </p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
@@ -1483,26 +1247,26 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
               <div className="rounded-lg border-2 border-green-100 bg-gradient-to-br from-green-50 to-emerald-50 p-4">
                 <div className="mb-2 flex items-center gap-2">
                   <Building2 className="h-5 w-5 text-green-600" />
-                  <h3 className="text-xl font-semibold text-gray-900">{currentContent.whyIndia.bangalore}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Bangalore - India&apos;s Medical Hub</h3>
                 </div>
                 <p className="text-gray-700">
                   <strong>Bangalore</strong> is home to India&apos;s best hospitals like Narayana Health, Manipal, and Apollo with world-class facilities. Perfect weather year-round (15-30°C) for recovery. We arrange your stay at <strong className="text-orange-600">Pentouz Hotels</strong> - comfortable accommodation near all major hospitals with family-friendly rooms and halal food options.
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.costSavings}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Massive Cost Savings</h3>
                 <p className="text-gray-700">
                   Medical procedures in India cost 60-80% less than in the UAE, Saudi Arabia, or Western countries. A heart bypass surgery that costs $100,000 in the US is available for $8,000-12,000 in India&apos;s top hospitals, with the same success rates and quality standards.
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.noWaiting}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">No Waiting Lists</h3>
                 <p className="text-gray-700">
                   Unlike many developed countries where you might wait months for surgery, India&apos;s healthcare system can schedule your treatment within days or weeks. This is crucial for time-sensitive procedures or patients in pain.
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.accreditation}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">International Accreditation</h3>
                 <p className="text-gray-700">
                   Our partner hospitals hold JCI (Joint Commission International), NABH (National Accreditation Board for Hospitals), and ISO certifications, ensuring they meet the same rigorous standards as hospitals in the US and Europe.
                 </p>
@@ -1512,26 +1276,26 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
               <div className="rounded-lg border-2 border-orange-100 bg-gradient-to-br from-orange-50 to-amber-50 p-4">
                 <div className="mb-2 flex items-center gap-2">
                   <Languages className="h-5 w-5 text-orange-600" />
-                  <h3 className="text-xl font-semibold text-gray-900">{currentContent.whyIndia.arabicSupport}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900">Arabic Support Throughout Journey</h3>
                 </div>
                 <p className="text-gray-700">
                   All our coordinators speak <strong>fluent Arabic</strong> and have lived in GCC countries (UAE, Saudi Arabia, Qatar) for 5-15 years. They understand your culture, dietary needs (halal food), and prayer requirements. Available 24/7 via WhatsApp in Arabic!
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.doctors}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Experienced Doctors</h3>
                 <p className="text-gray-700">
                   India&apos;s top doctors are trained at institutions like Harvard, Johns Hopkins, and Mayo Clinic. Many have decades of experience and have performed thousands of procedures. India produces over 50,000 specialist doctors annually.
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.technology}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Advanced Technology</h3>
                 <p className="text-gray-700">
                   Leading Indian hospitals invest heavily in cutting-edge medical technology, including robotic surgery systems, CyberKnife radiotherapy, PET-CT scanners, and advanced cardiac catheterization labs.
                 </p>
               </div>
               <div>
-                <h3 className="mb-2 text-xl font-semibold text-gray-900">{currentContent.whyIndia.cultural}</h3>
+                <h3 className="mb-2 text-xl font-semibold text-gray-900">Cultural & Linguistic Comfort</h3>
                 <p className="text-gray-700">
                   For GCC patients, India offers cultural familiarity, halal food options, and English-speaking medical staff. Many hospitals have dedicated international patient departments with Arabic interpreters.
                 </p>
@@ -1554,7 +1318,7 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
       <section className="container px-4 py-16">
         <div className="mx-auto max-w-4xl">
           <h2 className="mb-12 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            {currentContent.faq.title}
+            Frequently Asked Questions About Medical Tourism to India
           </h2>
           <div className="space-y-6">
             <Card>
@@ -1650,10 +1414,10 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
               10,000+ GCC Patients Treated Successfully
             </div>
             <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-              {currentContent.testimonials.title}
+              What Our Patients Say
             </h2>
             <p className="mb-12 text-lg text-gray-600">
-              {currentContent.testimonials.subtitle}
+              Real stories from UAE, Saudi Arabia, and GCC patients who experienced our Arabic support, Bangalore hospitals, and comfortable stay at Pentouz Hotels
             </p>
             <div className="grid gap-8 md:grid-cols-3">
               <Card className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">

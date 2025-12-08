@@ -44,179 +44,179 @@ export function HeaderImproved() {
 
   const navigation = [
     {
-      name: 'Treatments',
+      name: t('nav.treatments'),
       href: '/treatments',
       icon: Heart,
       hasDropdown: true,
       megaMenu: true,
       submenu: [
         {
-          category: '❤️ Cardiac',
+          category: t('nav.categories.cardiac'),
           icon: Heart,
           items: [
-            { name: 'Heart Bypass Surgery', href: '/treatments/heart-surgery-india' },
-            { name: 'Angioplasty & Stents', href: '/treatments/angioplasty-india' },
-            { name: 'Heart Valve Replacement', href: '/treatments/heart-valve-india' },
+            { name: t('nav.treatments.heartBypass'), href: '/treatments/heart-surgery-india' },
+            { name: t('nav.treatments.angioplasty'), href: '/treatments/angioplasty-india' },
+            { name: t('nav.treatments.heartValve'), href: '/treatments/heart-valve-india' },
           ]
         },
         {
-          category: '🦴 Orthopedic',
+          category: t('nav.categories.orthopedic'),
           icon: Bone,
           items: [
-            { name: 'Knee Replacement', href: '/treatments/knee-replacement-india' },
-            { name: 'Hip Replacement', href: '/treatments/hip-replacement-india' },
-            { name: 'Spine Surgery', href: '/treatments/spine-surgery-india' },
-            { name: 'ACL Reconstruction', href: '/treatments/acl-reconstruction-india' },
-            { name: 'Shoulder Surgery', href: '/treatments/shoulder-surgery-india' },
+            { name: t('nav.treatments.kneeReplacement'), href: '/treatments/knee-replacement-india' },
+            { name: t('nav.treatments.hipReplacement'), href: '/treatments/hip-replacement-india' },
+            { name: t('nav.treatments.spineSurgery'), href: '/treatments/spine-surgery-india' },
+            { name: t('nav.treatments.aclReconstruction'), href: '/treatments/acl-reconstruction-india' },
+            { name: t('nav.treatments.shoulderSurgery'), href: '/treatments/shoulder-surgery-india' },
           ]
         },
         {
-          category: '🎗️ Cancer Treatment',
+          category: t('nav.categories.cancer'),
           icon: Shield,
           items: [
-            { name: 'Breast Cancer', href: '/treatments/breast-cancer-treatment-india' },
-            { name: 'Lung Cancer', href: '/treatments/lung-cancer-treatment-india' },
-            { name: 'Colon Cancer', href: '/treatments/colon-cancer-treatment-india' },
-            { name: 'Prostate Cancer', href: '/treatments/prostate-cancer-treatment-india' },
-            { name: 'Blood Cancer', href: '/treatments/blood-cancer-treatment-india' },
-            { name: 'Cervical Cancer', href: '/treatments/cervical-cancer-treatment-india' },
+            { name: t('nav.treatments.breastCancer'), href: '/treatments/breast-cancer-treatment-india' },
+            { name: t('nav.treatments.lungCancer'), href: '/treatments/lung-cancer-treatment-india' },
+            { name: t('nav.treatments.colonCancer'), href: '/treatments/colon-cancer-treatment-india' },
+            { name: t('nav.treatments.prostateCancer'), href: '/treatments/prostate-cancer-treatment-india' },
+            { name: t('nav.treatments.bloodCancer'), href: '/treatments/blood-cancer-treatment-india' },
+            { name: t('nav.treatments.cervicalCancer'), href: '/treatments/cervical-cancer-treatment-india' },
           ]
         },
         {
-          category: '👁️ Eye Care',
+          category: t('nav.categories.eyeCare'),
           icon: Eye,
           items: [
-            { name: 'Cataract Surgery', href: '/treatments/cataract-surgery-india' },
-            { name: 'LASIK Eye Surgery', href: '/treatments/lasik-eye-surgery-india' },
-            { name: 'Retina Treatment', href: '/treatments/retina-treatment-india' },
+            { name: t('nav.treatments.cataractSurgery'), href: '/treatments/cataract-surgery-india' },
+            { name: t('nav.treatments.lasikEyeSurgery'), href: '/treatments/lasik-eye-surgery-india' },
+            { name: t('nav.treatments.retinaTreatment'), href: '/treatments/retina-treatment-india' },
           ]
         },
         {
-          category: '🦷 Dental',
+          category: t('nav.categories.dental'),
           icon: Smile,
           items: [
-            { name: 'Dental Implants', href: '/treatments/dental-implants-india' },
-            { name: 'All-on-4 Implants', href: '/treatments/all-on-4-dental-implants-india' },
-            { name: 'Veneers', href: '/treatments/veneers-india' },
-            { name: 'Smile Makeover', href: '/treatments/smile-makeover-india' },
+            { name: t('nav.treatments.dentalImplants'), href: '/treatments/dental-implants-india' },
+            { name: t('nav.treatments.allOn4Implants'), href: '/treatments/all-on-4-dental-implants-india' },
+            { name: t('nav.treatments.veneers'), href: '/treatments/veneers-india' },
+            { name: t('nav.treatments.smileMakeover'), href: '/treatments/smile-makeover-india' },
           ]
         },
         {
-          category: '✨ Cosmetic',
+          category: t('nav.categories.cosmetic'),
           icon: Star,
           items: [
-            { name: 'Rhinoplasty', href: '/treatments/rhinoplasty-india' },
-            { name: 'Hair Transplant', href: '/treatments/hair-transplant-india' },
-            { name: 'Liposuction', href: '/treatments/liposuction-india' },
-            { name: 'Breast Augmentation', href: '/treatments/breast-augmentation-india' },
+            { name: t('nav.treatments.rhinoplasty'), href: '/treatments/rhinoplasty-india' },
+            { name: t('nav.treatments.hairTransplant'), href: '/treatments/hair-transplant-india' },
+            { name: t('nav.treatments.liposuction'), href: '/treatments/liposuction-india' },
+            { name: t('nav.treatments.breastAugmentation'), href: '/treatments/breast-augmentation-india' },
           ]
         },
         {
-          category: '⚖️ Bariatric',
+          category: t('nav.categories.bariatric'),
           icon: Heart,
           items: [
-            { name: 'Gastric Bypass', href: '/treatments/gastric-bypass-india' },
-            { name: 'Gastric Sleeve', href: '/treatments/gastric-sleeve-india' },
-            { name: 'Bariatric Surgery', href: '/treatments/bariatric-surgery-india' },
+            { name: t('nav.treatments.gastricBypass'), href: '/treatments/gastric-bypass-india' },
+            { name: t('nav.treatments.gastricSleeve'), href: '/treatments/gastric-sleeve-india' },
+            { name: t('nav.treatments.bariatricSurgery'), href: '/treatments/bariatric-surgery-india' },
           ]
         },
         {
-          category: '👶 Fertility',
+          category: t('nav.categories.fertility'),
           icon: Baby,
           items: [
-            { name: 'IVF Treatment', href: '/treatments/ivf-india' },
-            { name: 'ICSI Treatment', href: '/treatments/icsi-india' },
-            { name: 'Egg Freezing', href: '/treatments/egg-freezing-india' },
-            { name: 'PCOS Treatment', href: '/treatments/pcos-treatment-india' },
+            { name: t('nav.treatments.ivfTreatment'), href: '/treatments/ivf-india' },
+            { name: t('nav.treatments.icsiTreatment'), href: '/treatments/icsi-india' },
+            { name: t('nav.treatments.eggFreezing'), href: '/treatments/egg-freezing-india' },
+            { name: t('nav.treatments.pcosTreatment'), href: '/treatments/pcos-treatment-india' },
           ]
         },
         {
-          category: '🏥 General Surgery',
+          category: t('nav.categories.generalSurgery'),
           icon: Stethoscope,
           items: [
-            { name: 'Piles Surgery', href: '/treatments/piles-surgery-india' },
-            { name: 'Hernia Surgery', href: '/treatments/hernia-surgery-india' },
-            { name: 'Gallbladder Surgery', href: '/treatments/gallbladder-surgery-india' },
-            { name: 'Appendix Surgery', href: '/treatments/appendix-surgery-india' },
-            { name: 'Thyroid Surgery', href: '/treatments/thyroid-surgery-india' },
+            { name: t('nav.treatments.pilesSurgery'), href: '/treatments/piles-surgery-india' },
+            { name: t('nav.treatments.herniaSurgery'), href: '/treatments/hernia-surgery-india' },
+            { name: t('nav.treatments.gallbladderSurgery'), href: '/treatments/gallbladder-surgery-india' },
+            { name: t('nav.treatments.appendixSurgery'), href: '/treatments/appendix-surgery-india' },
+            { name: t('nav.treatments.thyroidSurgery'), href: '/treatments/thyroid-surgery-india' },
           ]
         },
         {
-          category: '🩺 Urology',
+          category: t('nav.categories.urology'),
           icon: Heart,
           items: [
-            { name: 'Kidney Stone', href: '/treatments/kidney-stone-treatment-india' },
-            { name: 'Kidney Transplant', href: '/treatments/kidney-transplant-india' },
-            { name: 'Prostate Treatment', href: '/treatments/prostate-treatment-india' },
+            { name: t('nav.treatments.kidneyStone'), href: '/treatments/kidney-stone-treatment-india' },
+            { name: t('nav.treatments.kidneyTransplant'), href: '/treatments/kidney-transplant-india' },
+            { name: t('nav.treatments.prostateTreatment'), href: '/treatments/prostate-treatment-india' },
           ]
         },
         {
-          category: '👩‍⚕️ Women\'s Health',
+          category: t('nav.categories.womensHealth'),
           icon: Heart,
           items: [
-            { name: 'Hysterectomy', href: '/treatments/hysterectomy-surgery-india' },
-            { name: 'Fibroid Treatment', href: '/treatments/fibroid-treatment-india' },
-            { name: 'Endometriosis', href: '/treatments/endometriosis-india' },
+            { name: t('nav.treatments.hysterectomy'), href: '/treatments/hysterectomy-surgery-india' },
+            { name: t('nav.treatments.fibroidTreatment'), href: '/treatments/fibroid-treatment-india' },
+            { name: t('nav.treatments.endometriosis'), href: '/treatments/endometriosis-india' },
           ]
         },
         {
-          category: '🧠 Neurology',
+          category: t('nav.categories.neurology'),
           icon: Brain,
           items: [
-            { name: 'Brain Surgery', href: '/treatments/brain-surgery-india' },
-            { name: 'Neurosurgery', href: '/treatments/neurosurgery-india' },
-            { name: 'Epilepsy Treatment', href: '/treatments/epilepsy-india' },
+            { name: t('nav.treatments.brainSurgery'), href: '/treatments/brain-surgery-india' },
+            { name: t('nav.treatments.neurosurgery'), href: '/treatments/neurosurgery-india' },
+            { name: t('nav.treatments.epilepsyTreatment'), href: '/treatments/epilepsy-india' },
           ]
         },
       ]
     },
     {
-      name: 'Hospitals',
+      name: t('nav.hospitals'),
       href: '/hospitals',
       icon: Building2,
     },
     {
-      name: 'Doctors',
+      name: t('nav.doctors'),
       href: '/doctors',
       icon: UserCheck,
     },
     {
-      name: 'Resources',
+      name: t('nav.resources'),
       href: '#',
       icon: BookOpen,
       hasDropdown: true,
       submenu: [
-        { name: 'Blog & Articles', href: '/blog', icon: FileText },
-        { name: 'Success Stories', href: '/case-studies', icon: Star },
-        { name: 'Patient Testimonials', href: '/testimonials', icon: MessageCircle },
-        { name: 'Treatment Guides', href: '/guides', icon: BookOpen },
-        { name: 'FAQs', href: '/faq', icon: HelpCircle },
-        { name: 'Cost Calculator', href: '/cost-calculator', icon: Calculator },
+        { name: t('nav.resources.blogArticles'), href: '/blog', icon: FileText },
+        { name: t('nav.resources.successStories'), href: '/case-studies', icon: Star },
+        { name: t('nav.resources.patientTestimonials'), href: '/testimonials', icon: MessageCircle },
+        { name: t('nav.resources.treatmentGuides'), href: '/guides', icon: BookOpen },
+        { name: t('nav.resources.faqs'), href: '/faq', icon: HelpCircle },
+        { name: t('nav.resources.costCalculator'), href: '/cost-calculator', icon: Calculator },
       ]
     },
     {
-      name: 'For Patients',
+      name: t('nav.forPatients'),
       href: '#',
       icon: Plane,
       hasDropdown: true,
       submenu: [
-        { name: '🇦🇪 UAE Patients', href: '/for-uae-patients' },
-        { name: '🇸🇦 Saudi Patients', href: '/for-saudi-patients' },
-        { name: '🇶🇦 Qatar Patients', href: '/for-qatar-patients' },
-        { name: '🇴🇲 Oman Patients', href: '/for-oman-patients' },
-        { name: '🇰🇼 Kuwait Patients', href: '/for-kuwait-patients' },
-        { name: '🇧🇭 Bahrain Patients', href: '/for-bahrain-patients' },
-        { name: '✈️ Visa Assistance', href: '/visa-assistance' },
-        { name: '🗺️ Travel Guide', href: '/travel-guide' },
+        { name: t('nav.countries.uaePatients'), href: '/for-uae-patients' },
+        { name: t('nav.countries.saudiPatients'), href: '/for-saudi-patients' },
+        { name: t('nav.countries.qatarPatients'), href: '/for-qatar-patients' },
+        { name: t('nav.countries.omanPatients'), href: '/for-oman-patients' },
+        { name: t('nav.countries.kuwaitPatients'), href: '/for-kuwait-patients' },
+        { name: t('nav.countries.bahrainPatients'), href: '/for-bahrain-patients' },
+        { name: t('nav.countries.visaAssistance'), href: '/visa-assistance' },
+        { name: t('nav.countries.travelGuide'), href: '/travel-guide' },
       ]
     },
     {
-      name: 'About',
+      name: t('nav.about'),
       href: '/about',
       icon: Info,
     },
     {
-      name: 'Contact',
+      name: t('nav.contact'),
       href: '/contact',
       icon: MessageSquare,
     },
@@ -240,19 +240,19 @@ export function HeaderImproved() {
             <div className="flex items-center gap-3 sm:gap-6">
               <div className="flex items-center gap-1.5 font-semibold">
                 <Award className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span>25+ JCI Hospitals</span>
+                <span>{t('nav.announcement.jciHospitals')}</span>
               </div>
               <div className="flex items-center gap-1.5 font-semibold">
                 <Shield className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                <span>Save 60-80%</span>
+                <span>{t('nav.announcement.saveMoney')}</span>
               </div>
               <div className="hidden items-center gap-1.5 font-semibold md:flex">
                 <Users className="h-4 w-4" />
-                <span>15,000+ Happy Patients</span>
+                <span>{t('nav.buttons.happyPatients')}</span>
               </div>
               <div className="hidden items-center gap-1.5 font-semibold lg:flex">
                 <Star className="h-4 w-4 fill-white" />
-                <span>4.9/5 Rating</span>
+                <span>{t('nav.buttons.rating')}</span>
               </div>
             </div>
             <div className="flex items-center gap-3">
@@ -431,7 +431,7 @@ export function HeaderImproved() {
               <Button asChild className="h-10 bg-accent-500 px-5 text-sm font-semibold shadow-md hover:bg-accent-600 hover:shadow-lg">
                 <Link href="/consultation" className="flex items-center gap-1.5">
                   <Calendar className="h-4 w-4" />
-                  Free Consultation
+                  {t('nav.buttons.freeConsultation')}
                 </Link>
               </Button>
             </div>
@@ -630,13 +630,13 @@ export function HeaderImproved() {
               <Button asChild variant="outline" className="h-12 w-full text-base font-semibold">
                 <Link href="/consultation" onClick={() => setMobileMenuOpen(false)}>
                   <Calendar className="mr-2 h-5 w-5" />
-                  Free Consultation
+                  {t('nav.buttons.freeConsultation')}
                 </Link>
               </Button>
               <Button asChild className="h-12 w-full bg-accent-500 text-base font-semibold hover:bg-accent-600">
                 <Link href="/booking" onClick={() => setMobileMenuOpen(false)}>
                   <MapPin className="mr-2 h-5 w-5" />
-                  Book Treatment
+                  {t('nav.buttons.bookTreatment')}
                 </Link>
               </Button>
             </div>
