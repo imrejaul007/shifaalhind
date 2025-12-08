@@ -498,6 +498,370 @@ export default function KidneyStoneTreatmentPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for kidney stone treatment in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>All ages can be treated - kidney stones occur from infancy to 90+ years.</strong> Age-specific approaches:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Children (under 12):</strong> Pediatric urology specialists required, ESWL preferred (non-invasive, least trauma), smaller instruments used for laser procedures, success rate 90%+ same as adults, hospitals: Apollo, Fortis, Medanta have dedicated pediatric urology units</li>
+                <li><strong>Teenagers (12-18):</strong> Treated same as adults with age-appropriate anesthesia, all procedures available (ESWL, laser, PCNL), excellent outcomes due to faster healing, common causes: dehydration (sports, academics), excessive junk food, genetic predisposition</li>
+                <li><strong>Young adults (18-50):</strong> Most common age group for kidney stones, ideal candidates for all procedures, fastest recovery (5-7 days return to work), 95-98% success rates, lifestyle modifications critical to prevent recurrence</li>
+                <li><strong>Middle age (50-70):</strong> Surgery safe with proper cardiac/diabetes management, may need slightly longer hospital stay (1 extra day), success rates same as younger patients, comorbidities well-controlled before procedure</li>
+                <li><strong>Elderly (70+):</strong> Age not a barrier if medically fit, comprehensive pre-op evaluation (cardiac stress test, kidney function), laser procedures preferred over PCNL (less invasive), oldest patient treated: 92 years at Fortis Delhi, anesthesia risk slightly higher but manageable</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Special populations:</strong> Pregnant women: Most procedures postponed to 2nd trimester or after delivery, ureteral stent temporary solution, ESWL contraindicated in pregnancy. Single kidney patients: Extra caution, experienced surgeon essential, success rate same but monitoring more intensive. Recurrent stone formers: Any age, multiple procedures safe with proper spacing (3-6 months between procedures). India&apos;s top hospitals have treated patients from 6 months to 95 years with excellent outcomes.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I smoke after kidney stone surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Smoking not directly contraindicated but strongly discouraged for healing and prevention.</strong> Impact:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Before surgery:</strong> Stop 1-2 weeks before if possible (improves anesthesia tolerance, better lung function, reduced coughing post-op which can cause stent discomfort)</li>
+                <li><strong>Immediately after (Week 1-2):</strong> Avoid smoking (coughing from smoking can dislodge stent, increase pain, cause bleeding, nicotine constricts blood vessels, delays healing)</li>
+                <li><strong>First month:</strong> Minimize smoking (healing period for any internal wounds from laser/PCNL, infection risk slightly higher in smokers)</li>
+                <li><strong>Long-term:</strong> Smoking increases kidney stone recurrence risk (chronic dehydration from smoking, reduced kidney blood flow, altered urine chemistry making stones more likely)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Smoking-related complications for kidney stone surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Post-op coughing causes stent migration or displacement (very painful)</li>
+                <li>Increased urinary tract infection risk (2-3× higher in smokers)</li>
+                <li>Delayed wound healing (PCNL patients - nephrostomy tube site takes longer to close)</li>
+                <li>Chronic kidney disease progression (smoking damages kidney microvasculature over time)</li>
+                <li>Higher stone recurrence rate (smokers 40% more likely to form new stones)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Bottom line:</strong> Unlike piles surgery where smoking is absolutely prohibited, kidney stone surgery can proceed in smokers - but outcomes better if you quit. Post-surgery, main concern is coughing causing stent discomfort. If you must smoke post-op, wait 2-3 days, take cough suppressants, and minimize frequency. Long-term, quitting smoking is one of best things you can do for kidney health and stone prevention. Nicotine patches acceptable (no coughing from patches).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I exercise after kidney stone treatment in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Exercise resumption varies by procedure type.</strong> Timeline by procedure:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>ESWL (shock wave):</strong> Walking: Day 1 (encouraged immediately), Light exercise (treadmill, yoga): Day 3-5, Jogging/running: Week 2, Gym/weights: Week 2-3, Swimming: Week 3-4 (after blood in urine resolves), High-impact sports: Week 4</li>
+                <li><strong>RIRS/URS (laser):</strong> Walking: Day 1-2, Light exercise: Week 1-2, Jogging: Week 2-3, Gym/weights (light): Week 3, Heavy lifting (&gt;20 lbs): Week 4, Swimming: Week 4 (after stent removed if placed), Contact sports: Week 4-6</li>
+                <li><strong>PCNL (large stones):</strong> Walking: Day 2-3 (start slowly), Light exercise: Week 2-3, Jogging: Week 4, Gym/weights: Week 4-6, Heavy lifting: Week 6-8, Swimming: Week 6 (after nephrostomy site fully healed), Contact sports: Week 8</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Exercise restrictions explained:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Stent in place:</strong> Avoid exercises causing bouncing/jarring (jumping jacks, running, trampoline), stent can migrate with excessive movement, swimming okay once incisions healed (chlorine doesn&apos;t affect stent)</li>
+                <li><strong>Blood in urine:</strong> Common for 3-10 days post-procedure, exercise can temporarily increase bleeding (normal, not dangerous), if blood increases significantly during exercise - you&apos;re doing too much too soon</li>
+                <li><strong>Hydration critical:</strong> Drink 3-4 liters water daily especially when exercising, dehydration increases pain, risk of new stones, and slows fragment passage</li>
+                <li><strong>Core exercises:</strong> Crunches, planks, heavy squats increase intra-abdominal pressure, can cause stent discomfort or migration, wait until stent removed for heavy core work</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Warning signs to stop exercise:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Sudden severe flank pain (could be stone fragment blocking ureter)</li>
+                <li>Significant increase in blood in urine (bright red, clots)</li>
+                <li>Fever &gt;100.4°F (could indicate infection)</li>
+                <li>Extreme stent discomfort (sharp stabbing pain in bladder)</li>
+                <li>Difficulty urinating or complete blockage</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Exercise tips for kidney stone recovery:</strong> Start slow and increase 10-15% weekly. Listen to your body - mild discomfort okay, sharp pain means stop. Empty bladder before exercise (reduces stent discomfort). Wear supportive compression shorts if stent in place. Avoid contact sports until surgeon clearance (usually Week 4-8). Swimming excellent low-impact exercise once allowed (promotes circulation, hydration). Most athletes back to full training by Week 4-6 (ESWL/laser) or Week 8-12 (PCNL).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What can I eat and drink after kidney stone surgery? Diet restrictions?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Hydration is #1 priority - drink 3-4 liters water daily.</strong> Diet timeline and stone-specific restrictions:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1 (procedure day):</strong> Clear liquids first 6-8 hours (water, coconut water, clear juice), avoid caffeine/alcohol, normal food once fully awake from anesthesia</li>
+                <li><strong>Days 2-7:</strong> Eat normally - no specific restrictions for healing, focus on hydration (3-4 liters daily to flush stone fragments), avoid excessive salt (can cause swelling), limit caffeine (dehydrating)</li>
+                <li><strong>Week 2-4:</strong> Resume completely normal diet, continue high fluid intake, begin stone-specific diet modifications based on stone analysis results</li>
+                <li><strong>Long-term prevention diet (depends on stone type):</strong> Implemented after stone chemical analysis reveals composition</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Stone-specific diet modifications (for prevention):</strong></p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Stone Type</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Foods to Avoid/Limit</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Foods to Eat</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Calcium Oxalate (80% of stones)</td>
+                    <td className="border border-gray-300 px-4 py-2">Reduce: Spinach, nuts, chocolate, tea, beetroot, sweet potato | Moderate: Salt, animal protein</td>
+                    <td className="border border-gray-300 px-4 py-2">Adequate calcium (milk, yogurt), citrus fruits (lemon water), low-oxalate vegetables</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Uric Acid (5-10%)</td>
+                    <td className="border border-gray-300 px-4 py-2">Reduce: Red meat, organ meats, seafood, alcohol (especially beer) | Limit: Protein to 1g/kg body weight</td>
+                    <td className="border border-gray-300 px-4 py-2">Alkaline foods (fruits, vegetables), citrate-rich: lemon, orange, take citrate supplements if prescribed</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Struvite (infection stones)</td>
+                    <td className="border border-gray-300 px-4 py-2">No specific diet restrictions | Prevent UTIs (main cause)</td>
+                    <td className="border border-gray-300 px-4 py-2">Cranberry juice, probiotics, adequate hydration, prompt antibiotic treatment for UTIs</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Cystine (rare, genetic)</td>
+                    <td className="border border-gray-300 px-4 py-2">Reduce: Protein, especially methionine-rich (meat, eggs, fish)</td>
+                    <td className="border border-gray-300 px-4 py-2">Very high fluid intake (4-5 liters), alkaline diet, take cystine-binding medications (tiopronin)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mb-3 text-gray-700"><strong>Universal prevention diet (all stone types):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Fluids:</strong> 3-4 liters daily (most important factor), water best, lemon water excellent (citrate prevents stones), avoid excessive cola/soda (phosphoric acid increases risk)</li>
+                <li><strong>Salt:</strong> &lt;5g/day (excess salt increases calcium in urine)</li>
+                <li><strong>Calcium:</strong> Don&apos;t avoid calcium (myth!) - adequate calcium (1,000mg/day) binds oxalate in gut, preventing absorption</li>
+                <li><strong>Protein:</strong> Moderate animal protein (1-1.2g/kg body weight), excessive protein increases uric acid, calcium excretion</li>
+                <li><strong>Vitamin C:</strong> Limit supplements &gt;1,000mg daily (converts to oxalate), dietary vitamin C fine</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Practical hydration tips:</strong> Urine should be light yellow to clear (dark yellow means dehydrated). Drink 500ml water upon waking. Carry water bottle everywhere. Drink before thirsty (thirst means already dehydrated). Hot climates/exercise: add extra 1-2 liters. With proper hydration + stone-specific diet, 90% of patients remain stone-free long-term.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Do I need someone to accompany me for kidney stone treatment in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Companion helpful but not mandatory for most procedures.</strong> Breakdown by procedure:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>ESWL (shock wave):</strong> Can manage alone (daycare procedure, sedation only - you&apos;re awake, go home after 4-6 hours, can walk independently), companion nice-to-have for: emotional support, help with taxi/hotel, picking up medications, first 24 hours at hotel</li>
+                <li><strong>RIRS/URS (laser):</strong> Companion recommended (general/spinal anesthesia used, 1-day hospital stay, some grogginess first 12 hours), but many solo patients manage fine with hospital support</li>
+                <li><strong>PCNL (large stones):</strong> Companion strongly recommended (2-3 day hospital stay, general anesthesia, nephrostomy tube requires some care, mobility limited first 24-48 hours, helpful for hospital paperwork, communicating with doctors)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Hospital support for solo international patients:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Fortis/Apollo/Max/Medanta all provide:</strong> Airport pickup/drop service (free or ₹1,500-2,000/$20-25), dedicated international patient coordinator (handles all logistics), 24/7 WhatsApp support (English/Arabic), hotel booking assistance (partner hotels near hospital), attendant services if needed (₹1,500-2,000 per day for personal helper)</li>
+                <li><strong>Medical tourism companies:</strong> Offer complete packages including companion services, visa assistance, hotel, local transport, some GCC patients use these for complete peace of mind</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>What companion can help with:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Admission/discharge paperwork (can be overwhelming in large Indian hospitals)</li>
+                <li>Communicating with doctors/nurses (language barrier for some, though most doctors speak English)</li>
+                <li>Managing medications, follow-up appointment scheduling</li>
+                <li>Emotional support during anxious moments</li>
+                <li>Help with mobility first 24-48 hours post-procedure</li>
+                <li>Filtering stone fragments in urine (doctor may ask to collect fragments for analysis)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Practical tips for solo patients:</strong> Book hotel within 2 km of hospital (easy for follow-up visits, emergency if needed). Have hospital coordinator&apos;s direct WhatsApp number. Video call family daily for moral support. Stock up on bottled water at hotel (need 3-4 liters daily). Many GCC patients come alone for ESWL/laser procedures - very manageable. PCNL patients: consider bringing companion or hiring local attendant (hospitals can arrange). International patient coordinators are excellent - they hold your hand through entire process.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is a ureteral stent and is it painful? How long does it stay?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Ureteral stent is temporary plastic tube placed from kidney to bladder after laser procedures.</strong> Everything you need to know:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>What it is:</strong> Soft plastic tube 6-8 inches long, 2-3mm diameter, coiled ends (pigtail shape prevents migration), allows urine to flow from kidney to bladder bypassing any swelling/fragments, placed during RIRS/URS, NOT needed for ESWL or most PCNL cases</li>
+                <li><strong>Why placed:</strong> Prevents blockage from post-procedure swelling, allows stone fragments to pass without obstruction, reduces risk of kidney damage from blocked ureter, stays in place while ureter heals (2-4 weeks typically)</li>
+                <li><strong>Duration:</strong> RIRS/URS: 2-4 weeks (average 3 weeks), removed in simple office procedure (2-5 minutes), can be removed at home country or return to India</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Is stent painful? Honest answer:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Most patients (60-70%):</strong> Mild to moderate discomfort (not severe pain), pressure/fullness sensation in bladder, urgency to urinate frequently, worse when moving/exercising, manageable with mild painkillers, improves after first week as body adjusts</li>
+                <li><strong>Some patients (20-30%):</strong> More uncomfortable, sharp bladder spasms when urinating, flank pain during urination (urine reflux into kidney), difficulty sleeping due to frequent urination, may need stronger pain medications (tamsulosin helps relax stent)</li>
+                <li><strong>Few patients (5-10%):</strong> Minimal to no discomfort, barely notice stent is there, able to work/exercise normally</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Common stent symptoms (normal, not complications):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Frequent urination (every 1-2 hours) - stent irritates bladder</li>
+                <li>Urgency (sudden strong urge to pee) - bladder spasm from stent end</li>
+                <li>Blood in urine (pink/red tinge) - stent rubs bladder lining, normal</li>
+                <li>Flank pain during/after urination - some urine refluxes back to kidney</li>
+                <li>Feeling of incomplete bladder emptying</li>
+                <li>Worse with physical activity, better when lying down</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Stent removal:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Procedure:</strong> Simple office procedure, no anesthesia needed, cystoscopy (small camera in urethra), grasps stent with forceps and pulls out, takes 2-5 minutes total, slight discomfort but not painful, immediate relief once stent out</li>
+                <li><strong>Options for international patients:</strong> Return to India for removal (ideal, surgeon who placed it removes it, included in package cost), Removal at home country (send stent details to local urologist, costs $200-500 abroad, completely acceptable option), String attached to stent (some surgeons attach removal string, you can pull out yourself - rare practice)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Living with stent (GCC patients):</strong> Can fly with stent safely (no restrictions). Drink extra water during flight. Can work with stent (desk jobs easier than physical labor). Avoid heavy lifting &gt;20 lbs. Sex possible but may be uncomfortable (discuss with partner). Most patients tolerate stent reasonably well for 2-4 weeks. Tamsulosin medication helps 80% of patients with stent discomfort. Removal brings instant relief - patients universally report feeling much better within hours of stent removal.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>ESWL vs Laser (RIRS) - which kidney stone procedure is better?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Both excellent procedures - choice depends on stone size, location, and patient preference.</strong> Detailed comparison:
+              </p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Factor</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">ESWL (Shock Wave)</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">RIRS (Laser)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Invasiveness</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Non-invasive (no incisions, external only)</td>
+                    <td className="border border-gray-300 px-4 py-2">Minimally invasive (scope through urethra, no external cuts)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Anesthesia</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Sedation only (not general)</td>
+                    <td className="border border-gray-300 px-4 py-2">General or spinal anesthesia</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Hospital Stay</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Daycare (4-6 hours, go home same day)</td>
+                    <td className="border border-gray-300 px-4 py-2">1 day (overnight stay)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Recovery Time</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ 2-3 days return to work</td>
+                    <td className="border border-gray-300 px-4 py-2">5-7 days return to work</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Success Rate (Single Session)</td>
+                    <td className="border border-gray-300 px-4 py-2">75-85% (&lt;10mm stones), 60-70% (10-20mm stones)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ 90-95% (stones up to 15mm)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Stone Size Limit</td>
+                    <td className="border border-gray-300 px-4 py-2">Best for &lt;20mm, less effective for larger</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Effective up to 20-25mm</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Stone Location</td>
+                    <td className="border border-gray-300 px-4 py-2">Best: Kidney upper/mid pole, upper ureter | Poor: Lower pole kidney (low clearance)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Works for ALL locations (including difficult lower pole)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Sessions Needed</td>
+                    <td className="border border-gray-300 px-4 py-2">Often need 2-3 sessions for complete clearance (20-40% need repeat)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Usually single session sufficient</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Stone Passage</td>
+                    <td className="border border-gray-300 px-4 py-2">Fragments pass naturally over 2-3 weeks (may be painful if fragments large)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Stone removed during procedure (minimal passage needed)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Stent Needed?</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ No stent (major advantage)</td>
+                    <td className="border border-gray-300 px-4 py-2">Yes, stent placed for 2-4 weeks (causes some discomfort)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Pain Post-Procedure</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Minimal (mild soreness)</td>
+                    <td className="border border-gray-300 px-4 py-2">Moderate (mainly from stent discomfort)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Cost in India</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ $400-800 (cheaper)</td>
+                    <td className="border border-gray-300 px-4 py-2">$1,000-1,500 (more expensive but higher success)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Complications</td>
+                    <td className="border border-gray-300 px-4 py-2">Bruising on skin, blood in urine (mild), steinstrasse (fragment blockage 5%)</td>
+                    <td className="border border-gray-300 px-4 py-2">Ureteral injury (&lt;1%), UTI (2-3%), stent migration (rare)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Best For</td>
+                    <td className="border border-gray-300 px-4 py-2">Small stones (&lt;10mm), kidney/upper ureter, patients wanting quickest recovery, non-invasive preference</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Medium stones (10-20mm), lower pole kidney (ESWL poor clearance), patients wanting single-session cure</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Overall Recommendation</td>
+                    <td className="border border-gray-300 px-4 py-2">Good first-line for simple cases, may need repeat sessions</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Gold standard for most stones 5-20mm (higher success, one-time cure)</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mb-3 text-gray-700"><strong>Doctor&apos;s recommendation by scenario:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>5mm kidney stone, upper pole:</strong> ESWL first choice (80% success, non-invasive, daycare, cheap)</li>
+                <li><strong>12mm kidney stone, lower pole:</strong> RIRS laser (ESWL only 40% clearance for lower pole, laser 95% success)</li>
+                <li><strong>8mm ureter stone:</strong> Either works, RIRS slightly better (98% vs 85% success)</li>
+                <li><strong>15mm kidney stone, any location:</strong> RIRS laser (ESWL needs 2-3 sessions, laser one-shot cure)</li>
+                <li><strong>Multiple small stones (&lt;5mm each):</strong> ESWL (can treat multiple stones in single session)</li>
+                <li><strong>Hard stone (calcium oxalate monohydrate):</strong> RIRS laser (ESWL less effective on very hard stones)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>GCC patient perspective:</strong> If flying from UAE/Saudi for treatment, RIRS laser often better choice despite higher cost - single session with 95% success means one trip to India vs potentially 2-3 trips for ESWL repeat sessions. Stent can be removed at home (saves return trip). Overall, most urologists in India recommend RIRS laser for stones 10-20mm (higher success justifies slightly higher cost and stent discomfort). ESWL excellent for small stones &lt;10mm where success rate comparable to laser.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I have sex after kidney stone treatment in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to resume sexual activity after 1-2 weeks for most procedures.</strong> Timeline by procedure:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>ESWL (shock wave):</strong> Sex safe after 5-7 days (minimal invasiveness, no internal healing needed, wait until blood in urine resolves, mild soreness on treated kidney side may make positions uncomfortable first week)</li>
+                <li><strong>RIRS/URS (laser) WITHOUT stent:</strong> Sex safe after 1 week (ureter healing, wait until any bleeding stops, no restrictions on positions)</li>
+                <li><strong>RIRS/URS WITH stent in place:</strong> Sex possible after 1-2 weeks BUT may be uncomfortable (stent can cause bladder spasms during orgasm, especially in women, positions putting pressure on lower abdomen may increase stent discomfort, some patients prefer waiting until stent removed for comfort), many patients have sex with stent - just less comfortable than usual</li>
+                <li><strong>PCNL (large stones):</strong> Wait 2-3 weeks minimum (nephrostomy tube site needs healing, flank wound can be tender, avoid positions putting pressure on treated side, safe once tube removed and pain-free)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Considerations with ureteral stent:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Women:</strong> Stent end in bladder can cause discomfort during penetration/orgasm, bladder spasms common during climax (not dangerous, just uncomfortable), side-lying or woman-on-top positions may be more comfortable, some women prefer waiting until stent removed (2-4 weeks)</li>
+                <li><strong>Men:</strong> Stent less noticeable during sex for men than women, prostate contraction during orgasm can cause temporary sharp bladder/flank pain (normal, resolves in seconds), erectile function not affected by kidney stone procedures, retrograde ejaculation not a concern</li>
+                <li><strong>Blood in semen:</strong> Rare but possible with stent (hematospermia), not dangerous, resolves after stent removal, no impact on fertility</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>General sexual health after kidney stone treatment:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Fertility not affected by any kidney stone procedure (sperm production, ovulation continue normally)</li>
+                <li>Kidney function unchanged (unless severe recurrent stones causing chronic damage)</li>
+                <li>No long-term sexual dysfunction from procedures</li>
+                <li>Medications (tamsulosin for stent) can rarely cause retrograde ejaculation (temporary, stops when medication stopped)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Warning signs to avoid sexual activity:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Active urinary tract infection (fever, burning urination) - wait until infection cleared with antibiotics</li>
+                <li>Significant bleeding (bright red blood in urine, not just pink tinge)</li>
+                <li>Severe flank/bladder pain making movement difficult</li>
+                <li>Recent nephrostomy tube still in place (PCNL patients - wait until removed)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Practical advice:</strong> Communicate with partner about any discomfort. Start gently - if painful, stop and wait another week. Hydration important - drink water before/after sex (maintains good urine flow past stent). Empty bladder before sex (reduces stent-related bladder spasms). Most patients resume normal sexual activity by Week 2-3 without issues. Stent removal brings immediate improvement in comfort for those who found stent bothersome during sex. If concerned, ask your urologist directly - this is common medical question, nothing to be embarrassed about.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
