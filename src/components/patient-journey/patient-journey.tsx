@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import {
   Phone,
@@ -8,7 +9,7 @@ import {
   Plane,
   Hotel,
   Car,
-  Hospital,
+  Heart,
   MessageCircle,
   CheckCircle2,
   ArrowRight
@@ -108,7 +109,7 @@ const journeySteps: JourneyStep[] = [
     titleAr: 'العلاج والرعاية',
     description: '24/7 Arabic translator, dedicated patient coordinator, halal meals, prayer room access.',
     descriptionAr: 'مترجم عربي على مدار الساعة، منسق مرضى مخصص، وجبات حلال، مصلى.',
-    icon: <Hospital className="h-8 w-8" />,
+    icon: <Heart className="h-8 w-8" />,
     timeline: 'Varies by treatment',
     timelineAr: 'يختلف حسب العلاج',
     color: 'from-red-500 to-red-600'
@@ -237,19 +238,19 @@ export function PatientJourney({ locale = 'en', compact = false }: PatientJourne
             }
           </div>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
+            <Link
               href="/consultation"
               className="inline-flex items-center justify-center rounded-lg bg-gradient-to-r from-primary-600 to-accent-600 px-8 py-3 font-semibold text-white shadow-lg transition-all hover:from-primary-700 hover:to-accent-700 hover:shadow-xl"
             >
               {isArabic ? 'ابدأ رحلتك اليوم' : 'Start Your Journey Today'}
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-lg border-2 border-primary-600 px-8 py-3 font-semibold text-primary-600 transition-all hover:bg-primary-50"
             >
               {isArabic ? 'تحدث مع منسق' : 'Talk to a Coordinator'}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

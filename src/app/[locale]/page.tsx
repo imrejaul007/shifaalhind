@@ -24,6 +24,7 @@ import { CostCalculator } from '@/components/marketing/cost-calculator';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { PatientJourney } from '@/components/patient-journey/patient-journey';
+import { HospitalLogos } from '@/components/hospital-logos/hospital-logos';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -956,6 +957,9 @@ export default function HomePage() {
 
       {/* Enhanced Patient Journey - 8 Steps */}
       <PatientJourney locale="en" />
+
+      {/* Hospital Partnership Logos & Trust Badges */}
+      <HospitalLogos locale="en" showStats={true} />
 
       {/* FAQ Schema for Rich Snippets */}
       <FAQSchema faqs={faqData.map(faq => ({ question: faq.question, answer: faq.answer }))} />

@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/testimonials';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { PricingGuarantee } from '@/components/pricing-guarantee/pricing-guarantee';
 
 export const metadata: Metadata = {
   title: 'Hair Transplant in India 2025: Cost, Best Clinics, Success Rate | FUE & FUT',
@@ -559,6 +560,9 @@ export default function HairTransplantIndiaPage() {
         title="Success Stories from Our Hair Transplant Patients"
         subtitle="Real transformations from GCC patients who regained their confidence"
       />
+
+      {/* Pricing Guarantee - Transparent Pricing */}
+      <PricingGuarantee locale="en" />
 
       {/* Trust Badges Section */}
       <TrustBadges />

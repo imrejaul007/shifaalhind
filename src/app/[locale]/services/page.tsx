@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { TabbedServices } from '@/components/services/tabbed-services';
 import {
   Stethoscope,
   Plane,
@@ -55,95 +56,6 @@ import {
 } from 'lucide-react';
 
 export default function ServicesPage() {
-  const coreServices = [
-    {
-      icon: Stethoscope,
-      title: 'Free Medical Consultation',
-      description: 'Expert review by board-certified specialists within 24 hours',
-      details: 'Personalized treatment plan with detailed cost estimates and success rate information',
-      color: 'from-emerald-500 to-emerald-600',
-    },
-    {
-      icon: Hospital,
-      title: 'Premium Hospital Selection',
-      description: 'Access to 50+ JCI-accredited hospitals across India',
-      details: '1,000+ specialist doctors with 15-30+ years of experience in their fields',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: FileText,
-      title: 'Medical Records Management',
-      description: 'Professional translation and organization of all documents',
-      details: 'Certified medical translators ensure accurate communication with hospitals',
-      color: 'from-purple-500 to-purple-600',
-    },
-    {
-      icon: Calendar,
-      title: 'Priority Appointment Scheduling',
-      description: 'Pre-arranged appointments to minimize waiting time',
-      details: 'Coordinated schedule for tests, consultations, and procedures',
-      color: 'from-orange-500 to-orange-600',
-    },
-  ];
-
-  const travelServices = [
-    {
-      icon: Plane,
-      title: 'Travel Arrangements',
-      description: 'Flight booking assistance and airport VIP services',
-      details: 'Best routes, visa support letters, and complimentary airport transfers',
-      highlight: true,
-    },
-    {
-      icon: Hotel,
-      title: 'Premium Accommodation',
-      description: 'Comfortable stays near hospitals with medical-friendly amenities',
-      details: 'Partner with Pentouz Hotels in Bangalore for convenient, quality accommodation',
-      highlight: true,
-    },
-    {
-      icon: MapPin,
-      title: 'Local Transportation',
-      description: 'Dedicated chauffeur services for all medical appointments',
-      details: 'Optional city tours and sightseeing for family members',
-      highlight: false,
-    },
-    {
-      icon: Languages,
-      title: 'Native Arabic Translators',
-      description: 'GCC-experienced translators who understand your culture',
-      details: 'Our Arabic team members have lived in UAE, Saudi Arabia, and Qatar',
-      highlight: true,
-    },
-  ];
-
-  const supportServices = [
-    {
-      icon: Phone,
-      title: '24/7 Emergency Support',
-      description: 'Immediate response via phone, WhatsApp, and email',
-      details: 'Dedicated emergency hotline with Arabic-speaking coordinators',
-    },
-    {
-      icon: Users,
-      title: 'Personal Case Manager',
-      description: 'Single point of contact throughout your journey',
-      details: 'Bilingual coordinator manages every aspect from arrival to departure',
-    },
-    {
-      icon: CreditCard,
-      title: 'Transparent Pricing',
-      description: 'Clear cost breakdowns with no hidden fees',
-      details: 'Flexible payment options and currency exchange assistance',
-    },
-    {
-      icon: Shield,
-      title: 'Post-Treatment Care',
-      description: 'Continued support after returning home',
-      details: 'Telemedicine follow-ups, report sharing, and medication guidance',
-    },
-  ];
-
   const gccFeatures = [
     {
       icon: MessageCircle,
@@ -273,113 +185,8 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Core Medical Services */}
-      <section className="px-4 py-20">
-        <div className="container mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Medical Services
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              World-class medical coordination with expert support at every step
-            </p>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {coreServices.map((service, index) => (
-              <Card key={index} className="group relative overflow-hidden border-2 transition-all hover:border-primary-300 hover:shadow-2xl">
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 transition-opacity group-hover:opacity-5`} />
-                <CardHeader>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all group-hover:scale-110">
-                    <service.icon className="h-8 w-8 text-primary-600" />
-                  </div>
-                  <CardTitle className="text-center text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
-                    {service.description}
-                  </CardDescription>
-                  <p className="text-center text-sm text-gray-500">{service.details}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Travel & Accommodation */}
-      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 px-4 py-20">
-        <div className="container mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Travel & Accommodation Support
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Comfortable journey from your doorstep to hospital and back
-            </p>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {travelServices.map((service, index) => (
-              <Card
-                key={index}
-                className={`relative overflow-hidden transition-all hover:shadow-2xl ${
-                  service.highlight ? 'border-2 border-accent-400 ring-2 ring-accent-100' : ''
-                }`}
-              >
-                {service.highlight && (
-                  <div className="absolute right-0 top-0 bg-gradient-to-br from-accent-500 to-accent-600 px-3 py-1 text-xs font-bold text-white">
-                    <Star className="mr-1 inline h-3 w-3" />
-                    Premium
-                  </div>
-                )}
-                <CardHeader className="pt-8">
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-accent-100 to-accent-200">
-                    <service.icon className="h-8 w-8 text-accent-600" />
-                  </div>
-                  <CardTitle className="text-center text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
-                    {service.description}
-                  </CardDescription>
-                  <p className="text-center text-sm text-gray-500">{service.details}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Support Services */}
-      <section className="px-4 py-20">
-        <div className="container mx-auto">
-          <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              24/7 Support & Coordination
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Always available when you need us - before, during, and after treatment
-            </p>
-          </div>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            {supportServices.map((service, index) => (
-              <Card key={index} className="border-2 transition-all hover:border-green-300 hover:shadow-2xl">
-                <CardHeader>
-                  <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-green-100 to-green-200">
-                    <service.icon className="h-8 w-8 text-green-600" />
-                  </div>
-                  <CardTitle className="text-center text-lg">{service.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="mb-3 text-center font-medium text-gray-700">
-                    {service.description}
-                  </CardDescription>
-                  <p className="text-center text-sm text-gray-500">{service.details}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Tabbed Services - Pre/During/Post Treatment */}
+      <TabbedServices locale="en" />
 
       {/* How It Works - Enhanced */}
       <section className="bg-gradient-to-br from-purple-50 to-pink-50 px-4 py-20">

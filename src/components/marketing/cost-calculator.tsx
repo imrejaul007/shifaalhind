@@ -326,30 +326,98 @@ export function CostCalculator() {
                 </form>
               ) : (
                 <div className="space-y-6">
-                  {/* Results */}
+                  {/* Savings Highlight */}
                   <div className="rounded-lg bg-gradient-to-r from-green-50 to-emerald-50 p-6 text-center">
-                    <p className="mb-2 text-sm font-medium text-gray-600">
+                    <p className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-600">
                       {getTreatmentName(treatment)}
                     </p>
                     <div className="mb-4">
-                      <div className="mb-1 text-4xl font-bold text-green-600">
+                      <div className="mb-2 text-5xl font-bold text-green-600">
                         ${getSavings().toLocaleString()}
                       </div>
-                      <div className="text-lg font-semibold text-gray-700">
+                      <div className="text-2xl font-bold text-gray-800">
                         You Save {getSavingsPercentage()}%
                       </div>
+                      <div className="mt-2 text-sm text-gray-600">
+                        vs {countryNames[currentCountry]}
+                      </div>
                     </div>
-                    <div className="grid gap-4 text-left text-sm md:grid-cols-2">
-                      <div className="rounded-lg bg-white p-3">
-                        <div className="mb-1 text-xs text-gray-500">Cost in {countryNames[currentCountry] || currentCountry.toUpperCase()}</div>
-                        <div className="text-xl font-bold text-red-600">
-                          ${getCost(currentCountry).toLocaleString()}
+
+                    {/* Savings Meter */}
+                    <div className="mx-auto max-w-md">
+                      <div className="mb-2 flex justify-between text-xs font-medium text-gray-600">
+                        <span>India Cost</span>
+                        <span>{countryNames[currentCountry]} Cost</span>
+                      </div>
+                      <div className="relative h-8 overflow-hidden rounded-full bg-red-200">
+                        <div
+                          className="absolute left-0 top-0 h-full bg-gradient-to-r from-green-500 to-green-600 transition-all duration-1000"
+                          style={{ width: `${100 - getSavingsPercentage()}%` }}
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center text-xs font-bold text-white">
+                          Save {getSavingsPercentage()}%
                         </div>
                       </div>
-                      <div className="rounded-lg bg-white p-3">
-                        <div className="mb-1 text-xs text-gray-500">Cost in India (Bangalore)</div>
-                        <div className="text-xl font-bold text-green-600">
+                    </div>
+                  </div>
+
+                  {/* Cost Comparison Table - 4 Countries */}
+                  <div className="overflow-hidden rounded-lg border-2 border-gray-200 bg-white">
+                    <div className="bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-3">
+                      <h3 className="text-center text-lg font-bold text-white">
+                        Cost Comparison Across Countries
+                      </h3>
+                    </div>
+                    <div className="grid divide-y md:grid-cols-4 md:divide-x md:divide-y-0">
+                      {/* India Column */}
+                      <div className="bg-green-50 p-4">
+                        <div className="mb-2 text-center text-sm font-semibold text-gray-600">
+                          🇮🇳 India
+                        </div>
+                        <div className="mb-2 text-center text-2xl font-bold text-green-600">
                           ${getCost('india').toLocaleString()}
+                        </div>
+                        <div className="rounded bg-green-600 px-2 py-1 text-center text-xs font-bold text-white">
+                          BEST VALUE
+                        </div>
+                      </div>
+
+                      {/* UAE Column */}
+                      <div className="p-4">
+                        <div className="mb-2 text-center text-sm font-semibold text-gray-600">
+                          🇦🇪 UAE
+                        </div>
+                        <div className="mb-2 text-center text-2xl font-bold text-gray-800">
+                          ${getCost('uae').toLocaleString()}
+                        </div>
+                        <div className="rounded bg-orange-100 px-2 py-1 text-center text-xs font-semibold text-orange-700">
+                          {Math.round(((getCost('uae') - getCost('india')) / getCost('uae')) * 100)}% more
+                        </div>
+                      </div>
+
+                      {/* UK Column */}
+                      <div className="p-4">
+                        <div className="mb-2 text-center text-sm font-semibold text-gray-600">
+                          🇬🇧 UK
+                        </div>
+                        <div className="mb-2 text-center text-2xl font-bold text-gray-800">
+                          ${getCost('uk').toLocaleString()}
+                        </div>
+                        <div className="rounded bg-orange-100 px-2 py-1 text-center text-xs font-semibold text-orange-700">
+                          {Math.round(((getCost('uk') - getCost('india')) / getCost('uk')) * 100)}% more
+                        </div>
+                      </div>
+
+                      {/* USA Column */}
+                      <div className="p-4">
+                        <div className="mb-2 text-center text-sm font-semibold text-gray-600">
+                          🇺🇸 USA
+                        </div>
+                        <div className="mb-2 text-center text-2xl font-bold text-gray-800">
+                          ${getCost('usa').toLocaleString()}
+                        </div>
+                        <div className="rounded bg-red-100 px-2 py-1 text-center text-xs font-semibold text-red-700">
+                          {Math.round(((getCost('usa') - getCost('india')) / getCost('usa')) * 100)}% more
                         </div>
                       </div>
                     </div>
