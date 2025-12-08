@@ -1,0 +1,48 @@
+IMAGE ALT TAG AUDIT REPORT
+Generated: 2025-12-08T15:46:48.353Z
+
+================================================================================
+
+SUMMARY:
+Total images found: 6
+Files scanned: 172
+
+ISSUES:
+Missing alt attribute: 4
+Empty alt attribute: 0
+Generic/poor alt text: 0
+Next.js Image without alt: 1
+
+GOOD:
+Good alt text: 1
+
+ALT TAG SCORE: 17%
+================================================================================
+
+
+MISSING ALT ATTRIBUTE:
+
+1. src/app/[locale]/blog/[country]/[city]/[treatment]/[slug]/page.tsx:166
+   <img
+                src={article.thumbnail}
+                alt={isArabic ? article.title_ar : arti...
+
+2. src/app/[locale]/doctors/[slug]/page.tsx:70
+   <img src={doctor.profileImage} alt={doctor.name_en} className="h-full w-full object-cover" />
+
+3. src/app/[locale]/hospitals/[slug]/page.tsx:69
+   <img src={hospital.logo} alt={hospital.name_en} className="h-full w-full object-contain" />
+
+4. src/app/[locale]/packages/[slug]/page.tsx:80
+   <img src={packageItem.thumbnail} alt={packageItem.name_en} className="h-full w-full object-cover" />
+
+
+NEXT.JS IMAGE WITHOUT ALT:
+
+1. src/components/admin/image-upload.tsx:121
+   <Image
+              src={url}
+              alt={`Image ${index + 1}`}
+              fill
+         ...
+
