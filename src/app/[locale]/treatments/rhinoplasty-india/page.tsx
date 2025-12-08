@@ -656,6 +656,132 @@ export default function RhinoplastyIndiaPage() {
                 </p>
               </CardContent>
             </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">What is the minimum age for rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Minimum age is 18 years (after facial growth complete). For females: 16-17 with parental consent. For males: 18-19 years. Exceptions for breathing problems or severe deformity. Psychological maturity important. Most surgeons prefer 20+ for cosmetic rhinoplasty to ensure realistic expectations and stable facial structure.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Can I wear glasses after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Avoid glasses for 6-8 weeks post-op. Use contact lenses or tape glasses to forehead (not nose bridge). After 8 weeks, lightweight glasses okay with surgeon approval. Heavy frames require 3-4 months healing. Alternative: headband-style glasses holders during recovery. Final clearance at 3-month follow-up.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">What about smoking before/after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Stop smoking 4 weeks before and 4 weeks after surgery. Nicotine restricts blood flow, increases infection risk (5x higher), delays healing, causes skin necrosis, and poor scar formation. Vaping/e-cigarettes also prohibited. Nicotine patches not recommended. Smokers have 40% higher complication rate. Some surgeons refuse surgery if patient smokes.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">When can I see final rhinoplasty results?</h3>
+                <p className="text-gray-600">
+                  60% visible at 2 weeks (social activities), 80% at 2 months (most swelling gone), 90% at 6 months (refinement visible), 100% at 12-18 months (all swelling resolved). Nasal tip takes longest to refine. Thick skin patients need 18-24 months. Patience crucial - final result worth the wait.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">What anesthesia is used for rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  General anesthesia (asleep) for most rhinoplasties - safest for 1-2 hour procedure. Local anesthesia + IV sedation for minor revisions or tip-only surgery (30-45 min). Experienced anesthesiologist monitors vitals throughout. Wake up in recovery room after 15-30 minutes. Minimal nausea with modern anesthetics.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Are there risks or complications with rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Serious complications are rare (&lt;2% at top clinics). Common minor issues: temporary numbness (90% resolve), minor asymmetry (correctable), breathing difficulty initially (swelling), prolonged swelling (thick skin). Serious risks: infection (1%), bleeding requiring re-operation (0.5%), poor scarring (&lt;1%), anesthesia reactions. Choosing experienced surgeon at JCI hospital minimizes all risks.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">What is open vs closed rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  <strong>Open:</strong> External incision on columella (vertical strip between nostrils), better visibility for complex cases, slight scar (fades in 6 months). <strong>Closed:</strong> All incisions inside nose, no visible scars, less swelling, faster recovery. Surgeon decides based on complexity. 70% use open for better precision. Both achieve excellent results.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Can I fly immediately after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Wait 7-10 days minimum before flying (after splint removal). Air pressure changes can increase swelling and discomfort. If emergency travel needed: use nasal decongestant spray, stay hydrated, walk every hour, sleep upright, avoid alcohol. Best to wait 2 weeks for long international flights. Get surgeon clearance before booking return flight.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">When can I use makeup and skincare after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Face makeup: 1 week (avoid nose area). Nose makeup: 3-4 weeks (after stitches dissolve). Gentle face washing: 3 days. Sunscreen: 2 weeks (SPF 50+ essential for 6 months). Avoid: exfoliants (2 months), facials (3 months), nose threading/waxing (6 months). Moisturizer okay after 1 week. Cover bruising with concealer after week 2.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Does insurance cover rhinoplasty in India?</h3>
+                <p className="text-gray-600">
+                  Cosmetic rhinoplasty: Not covered by insurance (elective procedure). Functional rhinoplasty for breathing (septoplasty): Sometimes covered if medically necessary. Submit pre-authorization to insurer with medical reports. GCC insurance rarely covers treatment in India. However, 70% cost savings make self-pay affordable ($2,500-4,500 vs $12,000+ insured cost abroad).
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">How painful is rhinoplasty recovery?</h3>
+                <p className="text-gray-600">
+                  Pain level: 3-4/10 (moderate discomfort, not severe pain). Day 1-2: Throbbing headache, sinus pressure (controlled with painkillers). Week 1: Stuffiness, mild ache (like bad sinus infection). Week 2+: Minimal pain, mostly discomfort from swelling. Pain medication needed 3-5 days only. Most patients surprised it&apos;s less painful than expected.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Will I have visible scars after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Closed rhinoplasty: No external scars (all incisions inside nose). Open rhinoplasty: Small scar on columella - barely visible after 6 months, undetectable after 1 year. Scar treatment: silicone gel, massage, avoid sun exposure. Indian surgeons expert in scar minimization techniques. 99% of patients report no noticeable scarring at 1-year follow-up.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">Can I exercise after rhinoplasty?</h3>
+                <p className="text-gray-600">
+                  Walking: Immediately (helps circulation). Light cardio: 3 weeks. Running/cycling: 4-6 weeks. Weight lifting: 6-8 weeks. Contact sports: 3-6 months. Yoga: 3 weeks (avoid inversions 2 months). Swimming: 6 weeks (chlorine irritation risk). Swimming pools okay after 2 months. Listen to body - stop if pain or bleeding occurs.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <h3 className="mb-2 text-lg font-semibold">How long do rhinoplasty results last?</h3>
+                <p className="text-gray-600">
+                  Rhinoplasty results are permanent - reshaped bone and cartilage don&apos;t change. Nose continues natural aging (skin thickens, tip drops slightly after 20+ years), but surgical changes remain. Trauma or injury can alter shape. Revision rate 5-10% (usually minor tweaks, not structural failure). Proper technique and care ensure lifelong results in 90%+ patients.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
