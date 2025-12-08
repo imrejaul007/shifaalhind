@@ -618,6 +618,387 @@ export default function HipReplacementIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for hip replacement surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>No strict minimum age - hip replacement performed from age 40 to 90+.</strong> Age considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Under 40:</strong> Avoided if possible (implant wear - younger patients more active, may need 2-3 revisions in lifetime), alternatives tried first (hip resurfacing, osteotomy, pain management), only if severe arthritis, AVN (avascular necrosis), failed trauma causing disability</li>
+                <li><strong>40-60 years:</strong> Common age group for hip replacement (active patients with severe arthritis, osteoarthritis, rheumatoid arthritis), ceramic-on-ceramic implant recommended (25-30 year life, withstands higher activity), success rate 98%, full return to active lifestyle</li>
+                <li><strong>60-75 years:</strong> Ideal age for hip replacement (most patients in this group, excellent outcomes 95-98% success), either ceramic or metal-poly implant suitable, faster recovery than younger patients (more compliant with restrictions), most surgeons highly experienced with this age group</li>
+                <li><strong>75-85 years:</strong> Surgery safe if medically fit (comprehensive cardiac evaluation required, diabetes well-controlled, good bone quality assessed), metal-poly implant preferred (15-20 years sufficient for age), success rate 94-96%, benefits often outweigh risks (improved quality of life, mobility, independence)</li>
+                <li><strong>85+ years:</strong> Case-by-case decision (anesthesia risk slightly higher, recovery slower, bone quality may be poor - osteoporosis), partial hip replacement (hemiarthroplasty) often chosen over total (faster surgery, lower risk), oldest patient at Fortis: 94 years old (successful outcome)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Bottom line:</strong> Age is a number - physiological health matters more than chronological age. Top Indian hospitals assess: cardiac function (stress test if needed), bone quality (DEXA scan for osteoporosis), diabetes control (HbA1c &lt;7%), kidney/liver function, ability to participate in physiotherapy. If medically fit, hip replacement improves quality of life dramatically at any age. Younger patients need durable implants (ceramic), older patients need low-risk procedures (careful anesthesia, infection prevention).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I smoke after hip replacement surgery in India?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Smoking dramatically increases complications - should quit 4-6 weeks before and 3 months after surgery.</strong> Impact:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Before surgery:</strong> Stop 4-6 weeks before (reduces surgical complications 50%, improves lung function for anesthesia, better wound healing, reduces infection risk from 5-7% to 1-2%), nicotine constricts blood vessels limiting oxygen to tissues (critical for bone healing around implant)</li>
+                <li><strong>Immediately after (Week 1-4):</strong> Absolutely NO smoking (wound healing critical phase, smoking delays healing 2-3× longer, increases deep infection risk around implant 3-5× higher, impairs bone integration with implant - may cause loosening)</li>
+                <li><strong>First 3 months:</strong> Continue avoiding smoking (implant osseointegration period - bone grows into implant surface, smoking reduces bone density around implant, increases risk of dislocation, aseptic loosening)</li>
+                <li><strong>Long-term:</strong> Quit permanently for best outcomes (smokers have 2-3× higher revision surgery rate at 10-15 years, chronic smoking causes bone loss around implant, early implant failure 20-30% more common in smokers)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Smoking-specific complications for hip replacement:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Wound infection: 5-7% in smokers vs 1-2% in non-smokers (deep infection requires implant removal, 6-12 month treatment)</li>
+                <li>Delayed wound healing: 3-4 weeks vs 2 weeks (wound breakdown, requires re-suturing)</li>
+                <li>Deep vein thrombosis (blood clots): 50% higher risk in smokers</li>
+                <li>Pneumonia: 2-3× higher in smokers (general anesthesia affects lungs)</li>
+                <li>Implant loosening: Aseptic loosening 30% more common (smoking reduces bone density, poor osseointegration)</li>
+                <li>Revision surgery needed earlier: 12-15 years vs 20-25 years in non-smokers</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Surgeon&apos;s perspective:</strong> Many orthopedic surgeons at top hospitals (Fortis, Apollo, Medanta) counsel patients strongly on smoking cessation - some refuse elective hip replacement if patient unwon&apos;t quit (risk too high). If you smoke, be honest with surgeon (don&apos;t hide it - they need to plan extra precautions: longer antibiotic course, extended wound care, closer monitoring). Nicotine replacement therapy (patches, gum) acceptable before/after surgery (nicotine alone less harmful than smoking - no carbon monoxide, tar, heat damage). Vaping equally harmful (nicotine still constricts blood vessels). Quitting smoking best thing you can do for hip replacement success - even quitting 2 weeks before helps (every day counts).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I drive after hip replacement surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Driving timeline depends on which hip operated and transmission type.</strong> Breakdown:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Left hip replacement + automatic transmission:</strong> Can drive at 2-3 weeks if pain-free, off strong pain medications (opioids impair reaction time), can perform emergency stop safely (tested in parking lot first), most patients comfortable driving Week 3-4</li>
+                <li><strong>Right hip replacement + automatic transmission:</strong> Wait 4-6 weeks minimum (right foot controls brake/accelerator - critical for safety), must have: no pain when pressing brake hard, reaction time &lt;0.5 seconds, surgeon clearance (usually Week 4-6 checkup), off all opioid pain medications</li>
+                <li><strong>Either hip + manual transmission:</strong> Wait 6-8 weeks (clutch requires significant hip flexion and force, may strain healing hip, risk of dislocation if pivot/twist while pressing clutch), automatic transmission strongly recommended first 3 months</li>
+                <li><strong>Bilateral hip replacement (both hips):</strong> Wait 8-12 weeks (need both hips stable, pain-free, full control of both legs), automatic transmission only</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Safety considerations before driving:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Test emergency stop:</strong> In empty parking lot, can you slam brake hard without hip pain? (critical safety check)</li>
+                <li><strong>Reaction time:</strong> Can you move foot from accelerator to brake in &lt;0.5 seconds? (pain/stiffness slows reaction)</li>
+                <li><strong>Hip flexion:</strong> Can you sit in driver&apos;s seat without hip flexing &gt;90°? (use firm cushion if seat too low, avoid low sports cars)</li>
+                <li><strong>Pain medication:</strong> Completely off opioids (codeine, tramadol, morphine impair judgment - illegal to drive), NSAIDs (ibuprofen, naproxen) okay</li>
+                <li><strong>Surgeon clearance:</strong> Get written clearance from surgeon (some insurance policies require this after surgery)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Practical driving tips post-hip replacement:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Getting in car:</strong> Back into seat, sit down, then swing both legs together into car (avoid pivoting on operated hip)</li>
+                <li><strong>Getting out:</strong> Swing both legs out together, then stand (use door frame for support)</li>
+                <li><strong>Seat position:</strong> Adjust seat higher if possible (prevents &gt;90° hip flexion), recline backrest slightly (more comfortable for hip)</li>
+                <li><strong>First drives:</strong> Short trips only (10-15 minutes, to grocery store, not highway), avoid rush hour (high-stress driving requires quick reactions)</li>
+                <li><strong>Passenger role:</strong> Easier than driving (can be passenger after 2 weeks for short trips, 3-4 weeks for long trips)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Insurance and legal considerations:</strong> Check your car insurance policy (some require medical clearance after surgery before coverage valid). In India, no specific law prevents driving after hip replacement (use your judgment), but if accident occurs and you&apos;re within 6 weeks of surgery, insurance may question fitness to drive. International patients: If flying home before 6 weeks, arrange driver for first month home (family, Uber, taxi). GCC countries: Similar driving timeline applies - check local regulations. Most patients very comfortable driving by Week 6-8 and forget they had surgery. Automatic transmission makes life much easier - if you have manual, consider automatic rental first 2-3 months.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I have sex after hip replacement surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to resume sexual activity 4-6 weeks after hip replacement with position modifications.</strong> Timeline and guidance:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Week 1-3:</strong> Avoid all sexual activity (hip dislocation risk highest first 6 weeks, any vigorous movement dangerous, intimacy possible without intercourse - kissing, cuddling, hand stimulation)</li>
+                <li><strong>Week 4-6:</strong> Can resume sexual activity cautiously with surgeon clearance (hip more stable but still vulnerable, pain should be minimal, must follow position restrictions strictly)</li>
+                <li><strong>Week 6-12:</strong> Resume normal sexual activity with some position modifications (hip stronger, dislocation risk lower but still present, most patients comfortable by Week 8)</li>
+                <li><strong>After 3 months:</strong> All positions safe (hip fully healed, dislocation risk &lt;1%, no restrictions on positions or frequency)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Safe positions (avoid hip flexion &gt;90°, adduction/crossing legs, internal rotation):</strong></p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Position</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Safe if Hip Replaced</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Instructions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Operated person on bottom (back)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ SAFE (Week 4-6+)</td>
+                    <td className="border border-gray-300 px-4 py-2">Lie on back, keep legs apart (no crossing/adduction), knees bent &lt;90°, pillow between legs if needed, partner on top controls depth/angle</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Operated person on side (non-operated side down)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ SAFE (Week 6+)</td>
+                    <td className="border border-gray-300 px-4 py-2">Lie on non-operated side, operated leg on top, pillow between legs, partner behind (spooning), very comfortable position for hip patients</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Operated person on top (kneeling)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-orange-600">⚠️ CAUTION (Week 8+ only)</td>
+                    <td className="border border-gray-300 px-4 py-2">Only after Week 8, avoid deep hip flexion, keep hips extended, not recommended until 12 weeks for safety</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Standing/rear entry</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ SAFE (Week 6+)</td>
+                    <td className="border border-gray-300 px-4 py-2">Operated person standing/bending forward slightly, partner from behind, minimal hip flexion (&lt;90°), good option for early resumption</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Missionary (operated person bottom, legs up)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-red-600">❌ AVOID (hip flexion &gt;90°)</td>
+                    <td className="border border-gray-300 px-4 py-2">Never bring knees to chest (causes &gt;90° flexion, high dislocation risk), keep legs lower, flat on bed or bent &lt;90° only</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mb-3 text-gray-700"><strong>Communication with partner:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Discuss restrictions before resuming (partner needs to understand dislocation risk, no spontaneous position changes first 3 months)</li>
+                <li>Pain is warning sign (any sharp hip pain during activity - STOP immediately, pain means you&apos;re stressing hip beyond safe range)</li>
+                <li>Go slow first time (be gentle, test range of motion, build confidence over 2-3 sessions)</li>
+                <li>Use pillows strategically (between legs prevents adduction, under hips prevents excessive flexion)</li>
+                <li>Let partner do most movement (operated person stays relatively still, partner controls pace/depth/angle)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Medical perspective:</strong> Sexual function not affected by hip replacement (no nerve damage to sexual organs, no hormonal changes, erectile function/lubrication normal). Most patients report BETTER sex life after hip replacement (no more chronic hip pain that limited intimacy for years pre-surgery). Dislocation during sex is rare (&lt;0.5%) if following position guidelines - most dislocations occur from falls, getting in/out of low chairs, not from sexual activity. Surgeon won&apos;t ask about sexual activity unless you bring it up (perfectly normal medical question - don&apos;t be embarrassed to ask specifics). Some hospitals provide illustrated position guides for post-hip replacement patients (discreet pamphlet). By 3-6 months, most patients forget they had hip surgery during intimate moments - hip feels natural, no restrictions needed long-term.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Will I need a blood transfusion during hip replacement surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Blood transfusion needed in 10-30% of hip replacements depending on technique and patient factors.</strong> Details:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Transfusion rates by technique:</strong> Minimally invasive anterior approach: 5-10% (less tissue damage, less bleeding), Standard posterior approach: 15-25%, Bilateral hip replacement: 30-50% (two surgeries = more blood loss), Revision hip replacement: 30-60% (complex surgery, more bleeding)</li>
+                <li><strong>Average blood loss:</strong> Total hip replacement: 300-800ml (1-2 units of blood), about 1-2 pints, Bilateral hip: 600-1,200ml (2-4 units), Revision hip: 500-1,500ml depending on complexity</li>
+                <li><strong>When transfusion needed:</strong> Pre-op hemoglobin &lt;12 g/dL (anemic patients), Post-op hemoglobin &lt;8 g/dL (severe anemia symptoms - dizziness, weakness, rapid heart rate), Blood loss &gt;800ml during surgery (surgeon&apos;s judgment), Patient symptomatic (extremely tired, short of breath, chest pain)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Blood conservation strategies (reduce transfusion need):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pre-op optimization:</strong> Iron supplements 4 weeks before surgery (if hemoglobin 11-12, bring to 13-14), EPO injections (erythropoietin - stimulates red blood cell production, used in anemic patients, 2-3 injections pre-op), stop blood thinners 5-7 days before (aspirin, clopidogrel - resume after surgery)</li>
+                <li><strong>During surgery:</strong> Tranexamic acid (TXA) injection (reduces blood loss 30-50%, standard at all top hospitals, very safe medication), Careful surgical technique (minimally invasive approach, meticulous hemostasis - stopping bleeding), Cell saver device (collects your own blood during surgery, filters and returns it - autologous transfusion)</li>
+                <li><strong>After surgery:</strong> Drain blood collection (first 24 hours, usually &lt;200ml), TXA continued for 24 hours, compression stockings (reduce bleeding, prevent blood clots)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Blood transfusion options in India:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Allogeneic transfusion (donor blood):</strong> Most common (95% of transfusions), screened for HIV, Hepatitis B/C, malaria, syphilis (very safe in India at JCI hospitals), blood type matched (O, A, B, AB, Rh), typically 1-2 units if needed</li>
+                <li><strong>Autologous donation (your own blood):</strong> Donate 1-2 units of your own blood 2-4 weeks before surgery, stored and given back during/after surgery, eliminates infection risk, not common in India (logistically complex for international patients)</li>
+                <li><strong>Cell saver (intra-operative blood salvage):</strong> Available at top hospitals (Fortis, Apollo, Medanta, Max), collects blood lost during surgery, washes and returns it, reduces donor blood need 50%</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Should you be concerned about blood transfusion?</strong> No. Blood supply at JCI-accredited hospitals in India is extremely safe (rigorous screening, infection rate &lt;0.01% for HIV/Hepatitis). Tranexamic acid (TXA) has dramatically reduced transfusion rates last 5-10 years (now standard practice, reduces need 50%+). Most patients (70-90%) do NOT need transfusion with modern techniques. If you&apos;re anemic pre-op (hemoglobin &lt;12), notify surgeon 4 weeks before (time to optimize with iron/EPO). Jehovah&apos;s Witnesses or patients refusing transfusion: Inform surgeon (they can use cell saver, TXA, EPO, minimize blood loss - bloodless hip replacement possible but requires extra precautions). Overall, blood transfusion is safe, sometimes necessary, and shouldn&apos;t deter you from hip replacement - benefits far outweigh minor transfusion risk.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Anterior vs Posterior Hip Replacement Approach - Which is better?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Both approaches excellent - choice depends on surgeon experience and patient anatomy.</strong> Detailed comparison:
+              </p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Factor</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Anterior Approach (Front)</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Posterior Approach (Back)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Muscle Damage</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ No muscles cut (goes between muscles)</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Gluteal muscles cut/detached then repaired</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Recovery Speed</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Faster (walk Day 1, less pain)</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Slightly slower (walk Day 2, more muscle pain)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Hospital Stay</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ 2-3 days average</td>
+                    <td className="border border-gray-300 px-4 py-2">3-5 days average</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Dislocation Risk</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Lower (1-2% lifetime risk)</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Slightly higher (2-4% lifetime risk)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Post-Op Restrictions</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Fewer (can cross legs after 6 weeks)</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ More (no crossing legs 3 months, no bending &gt;90°)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Surgeon Learning Curve</td>
+                    <td className="border border-gray-300 px-4 py-2 text-orange-600">⚠️ Steep (requires 100+ cases to master, newer technique)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Easier (all surgeons trained, 50+ years standard approach)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Complications</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Lateral femoral cutaneous nerve injury 10-15% (thigh numbness, temporary), femoral nerve injury &lt;1%</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Sciatic nerve injury &lt;1%, heterotopic ossification (bone growth) 3-5%</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Scar Location</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Front of hip (hidden when lying on back, 3-4 inches)</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Side/back of hip (visible when lying down, 6-8 inches often)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Suitable For</td>
+                    <td className="border border-gray-300 px-4 py-2">Younger patients (&lt;70), thin to moderate build (BMI &lt;35), primary hip replacement</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ All patients (obese, muscular, revision surgery, complex anatomy)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Success Rate</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ 97-98% (same as posterior if experienced surgeon)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ 97-98% (gold standard, proven 50+ years)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Availability in India</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ Available at top centers only (Fortis, Max, Apollo - limited surgeons)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Available everywhere (all surgeons perform)</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Cost</td>
+                    <td className="border border-gray-300 px-4 py-2">⚠️ $6,500-9,000 (specialized technique, longer OR time)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ $5,000-7,500 (standard pricing)</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Recommendation</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Excellent if surgeon very experienced (&gt;200 anterior cases)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ Reliable choice, proven results, any surgeon</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mb-3 text-gray-700"><strong>Which to choose?</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Choose anterior if:</strong> You want fastest recovery (important for international patients - minimize India stay), surgeon is very experienced (&gt;200 anterior cases - ask specifically), you&apos;re younger/active patient wanting quicker return to sports, you want lowest dislocation risk</li>
+                <li><strong>Choose posterior if:</strong> Surgeon has more posterior experience (1,000+ posterior vs 50 anterior - go with expertise), you&apos;re obese/muscular (BMI &gt;35 - anterior technically difficult), you need revision surgery (posterior gives better exposure for complex cases), you want proven technique with 50+ years track record</li>
+                <li><strong>Either approach fine if:</strong> Surgeon equally experienced in both (let surgeon choose based on your anatomy), you&apos;re average build, healthy, primary hip replacement (outcomes essentially identical at 1-2 years)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Bottom line:</strong> Surgeon experience matters MORE than approach chosen. A highly experienced surgeon doing posterior (1,000+ cases) will have better outcomes than inexperienced surgeon doing anterior (50 cases). Don&apos;t choose surgeon based solely on anterior approach marketing - ask: &quot;How many anterior hip replacements have YOU personally done?&quot; (Should be &gt;200 minimum, ideally 500+). In India, most top surgeons still prefer posterior (Dr. Yash Gulati at Medanta, Dr. Rajesh Ahlawat at Fortis Bangalore) with excellent outcomes. Some surgeons trained in USA/Europe offer anterior (Max Hospital Delhi, Fortis Gurgaon). Both approaches result in pain-free, functional hip at 6 months - recovery speed difference is only 1-2 weeks. Long-term (5-10 years), no difference in outcomes, implant survival, or patient satisfaction between approaches.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I fly after hip replacement surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Safe to fly 10-14 days after hip replacement with precautions.</strong> Detailed timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Minimum wait time:</strong> 10 days after surgery (wound healed, stitches removed or dissolving well, pain controlled with oral meds, can walk 100+ meters with walker/crutches, surgeon clearance obtained)</li>
+                <li><strong>Recommended wait time:</strong> 14-21 days (more comfortable flight, less pain/swelling, better mobility in airport, can walk without walker - just cane, less deep vein thrombosis DVT risk)</li>
+                <li><strong>Too early to fly (&lt;7 days):</strong> High DVT risk (blood clot), wound not healed (infection risk on plane), pain too severe for long flight, can&apos;t walk through airport safely</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Flying precautions to prevent DVT (blood clots):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Blood thinner:</strong> Continue low molecular weight heparin (LMWH) injections or rivaroxaban tablets for 6 weeks post-op (don&apos;t stop early just because flying home - DVT risk lasts 6 weeks, not just first week)</li>
+                <li><strong>Compression stockings:</strong> Wear knee-high medical compression stockings during flight (20-30 mmHg pressure, provided by hospital)</li>
+                <li><strong>Walk every hour:</strong> Walk up/down aisle every 60 minutes (keeps blood flowing, prevents pooling in legs, ask for aisle seat)</li>
+                <li><strong>Ankle exercises:</strong> When seated, pump ankles up/down 10 times every 30 minutes, rotate ankles clockwise/counter-clockwise</li>
+                <li><strong>Hydration:</strong> Drink water every hour (dehydration thickens blood, increases clot risk, avoid alcohol/caffeine - dehydrating)</li>
+                <li><strong>Seat selection:</strong> Aisle seat essential (need to walk frequently, easier to stand/stretch, business class better - more leg room, can elevate operated leg)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Airport navigation after hip replacement:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Wheelchair service:</strong> Request at booking (free at most airports, attendant pushes you to gate, you can walk short distances as comfortable but have wheelchair for long terminals)</li>
+                <li><strong>Priority boarding:</strong> Inform airline of recent surgery (board early, extra time to settle in seat, avoid being bumped in aisle by rush)</li>
+                <li><strong>Metal detector:</strong> Hip implant may trigger (carry surgery card from hospital, inform security before screening, hand wand check or full-body scanner available)</li>
+                <li><strong>Carry-on medications:</strong> Pack pain meds, blood thinner in carry-on (checked luggage lost = disaster, include prescriptions in English)</li>
+                <li><strong>Walker/crutches:</strong> Airline allows as medical equipment (doesn&apos;t count as carry-on, can gate-check, staff will help)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Surgeon clearance letter (bring copy):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li>Date of surgery and procedure performed (total hip replacement, right/left)</li>
+                <li>Cleared for air travel (date of clearance)</li>
+                <li>Implant type and serial number (for airport security)</li>
+                <li>Current medications (blood thinner, pain meds)</li>
+                <li>Emergency contact in India and home country</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>GCC patient tips for flying home:</strong> Delhi/Mumbai to Dubai: 3-3.5 hour flight (manageable, walk once mid-flight), Delhi to Riyadh: 4-4.5 hours (walk twice - at 1.5hr and 3hr marks), Book business class if possible (fully reclining seat helps, extra space to elevate leg on ottoman/footrest, easier boarding/deplaning), Arrive airport 3 hours early (extra time for wheelchair service, priority boarding, security with implant). Most GCC patients fly home Day 12-16 post-surgery very comfortably. Some extend to 3-4 weeks for extra physiotherapy (ideal but not necessary - can continue physio at home). No increased risk of complications flying early as long as: wound healed, no signs of infection (fever, redness, drainage), pain controlled, on blood thinner, following DVT precautions. After arriving home, continue physiotherapy 3x/week for 6-12 weeks (hospital provides exercise plan, can send to your home physiotherapist, or virtual sessions with India physiotherapist via video call).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I kneel or squat after hip replacement surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Kneeling: Yes after 3 months. Deep squatting: Avoid forever.</strong> Detailed breakdown:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Kneeling timeline:</strong> First 3 months: Avoid kneeling (high dislocation risk - kneeling requires &gt;90° hip flexion), Months 3-6: Can kneel with caution (one knee at a time, use cushion under knees, avoid prolonged kneeling), After 6 months: Kneeling safe (hip fully healed, capsule scarred - stable, dislocation risk &lt;1%)</li>
+                <li><strong>Kneeling for prayer (important for Muslim patients):</strong> First 3 months: Pray sitting in chair (permissible in Islam for medical reasons), use raised prayer table (keeps hips &lt;90° flexion), Months 3-6+: Can resume floor prayer with modifications (use thick cushion under knees, hands on chair for support getting up/down, take extra time - no rushing), most patients comfortable with floor prayer by Month 6</li>
+                <li><strong>Kneeling for gardening/chores:</strong> After 3 months okay briefly (use knee pads, gardening stool better - keeps hips higher, limit to 10-15 minutes at a time), long-term: Kneeling is safe but may be uncomfortable (some patients report knee/hip stiffness after prolonged kneeling - not dangerous, just uncomfortable)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Squatting restrictions:</strong></p>
+              <table className="min-w-full border-collapse border border-gray-300 mb-3">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Squat Type</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Allowed?</th>
+                    <th className="border border-gray-300 px-4 py-2 text-left">Guidance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Partial squat (knees bent &lt;90°)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-green-600">✅ SAFE after 6 weeks</td>
+                    <td className="border border-gray-300 px-4 py-2">Like sitting in chair, hips bent &lt;90°, safe for life, good for leg strengthening physiotherapy exercises</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Deep squat (knees &gt;90°, buttocks toward heels)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-red-600">❌ AVOID FOREVER</td>
+                    <td className="border border-gray-300 px-4 py-2">Causes &gt;120° hip flexion, high dislocation risk, even after 1 year - permanently avoid</td>
+                  </tr>
+                  <tr>
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Asian squat (flat-footed deep squat)</td>
+                    <td className="border border-gray-300 px-4 py-2 text-red-600">❌ AVOID FOREVER</td>
+                    <td className="border border-gray-300 px-4 py-2">Common in India for toilet/cooking, but causes extreme hip flexion (&gt;130°), use raised Western toilet, cooking stool instead</td>
+                  </tr>
+                  <tr className="bg-gray-50">
+                    <td className="border border-gray-300 px-4 py-2 font-semibold">Squatting to pick up object</td>
+                    <td className="border border-gray-300 px-4 py-2 text-orange-600">⚠️ Use modified technique</td>
+                    <td className="border border-gray-300 px-4 py-2">Don&apos;t squat down - use grabber tool (long-handled reacher), or kneel on one knee (good knee down, operated hip stays extended), or sit in chair and lean forward</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p className="mb-3 text-gray-700"><strong>Lifestyle modifications for squatting restrictions:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Toilets:</strong> Use Western raised toilet seat forever (Indian squat toilets permanently avoid - install Western toilet at home, use seated public restrooms), raised toilet seat adds 3-4 inches height (keeps hips &lt;90°)</li>
+                <li><strong>Picking up objects:</strong> Use grabber/reacher tool (24-32 inch long-handled tool, available for ₹500-1,000 / $10-15), or ask someone to pick up, or use dustpan with long handle</li>
+                <li><strong>Cooking:</strong> Use high stool in kitchen (traditional Indian cooking involves floor sitting - use counter height stool instead), or stand at counter for food prep</li>
+                <li><strong>Washing floors:</strong> Use mop with long handle (avoid squatting to wash, hire help if needed - small cost vs dislocation risk)</li>
+                <li><strong>Putting on shoes/socks:</strong> Use sock aid device, long-handled shoe horn (avoid bending down to tie shoes - slip-on shoes easiest)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Why deep squatting dangerous:</strong> Deep squat causes extreme hip flexion (&gt;120-130°), brings femoral head to edge of socket (acetabular cup), one more inch of movement = dislocation (femoral head pops out of socket), dislocation requires emergency reduction (ER visit, sedation, manipulation to pop back in - very painful), 50% of patients who dislocate once will dislocate again (recurrent instability), may need revision surgery with constrained implant (restricts range of motion, less comfortable). Bottom line: You can live a full, active, comfortable life without deep squatting - it&apos;s the one permanent restriction worth following religiously. Kneeling is okay after 3-6 months, but deep squatting stay away from forever. 99% of daily activities don&apos;t require deep squat - with minor adaptations (raised toilet, grabber tool, cooking stool), most patients never miss squatting ability.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
