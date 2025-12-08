@@ -580,6 +580,260 @@ export default function CataractSurgeryIndiaPage() {
               </p>
             </CardContent>
           </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What is the minimum age for cataract surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Cataract surgery can be performed at any age - from newborns to 100+ years old.</strong> Age considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pediatric cataracts (birth-18 years):</strong> Congenital cataracts operated in first 6-8 weeks of life (critical for visual development, prevents amblyopia/lazy eye). Childhood cataracts (trauma, genetic) operated as soon as diagnosed. Requires specialized pediatric ophthalmologist. Excellent success rate with early intervention.</li>
+                <li><strong>Young adults (18-40 years):</strong> Rare unless trauma, steroid use, diabetes, genetic. Standard phacoemulsification with IOL. Success rate 99%+. May choose multifocal IOL for active lifestyle (no reading glasses).</li>
+                <li><strong>Adults (40-70 years):</strong> Most common age group for cataracts (90% of patients). Ideal treatment candidates. Quick recovery, return to work in 1-2 weeks. Success rate 99%+.</li>
+                <li><strong>Elderly (70-90 years):</strong> Excellent candidates if healthy. Age not a barrier. Success rate same as younger patients. May need medical clearance if heart disease, diabetes. Recovery slightly slower but still excellent outcomes.</li>
+                <li><strong>Very elderly (90+ years):</strong> Oldest cataract patient at Dr. Agarwal&apos;s: 104 years old (successful surgery). Treatment decision based on overall health and quality of life improvement. Anesthesia risk assessment required. Success rate 95-98% (slightly lower due to co-existing conditions).</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>GCC patients note:</strong> No age restrictions for international patients. Flying home safe at any age 3-5 days post-surgery.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Does smoking affect cataract surgery and recovery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Smoking increases cataract formation rate and slows healing after surgery, but surgery can still be performed successfully.</strong> Impact and recommendations:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>How smoking affects cataracts and surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Accelerates cataract formation:</strong> Smokers develop cataracts 2-3 years earlier than non-smokers (toxins damage lens proteins)</li>
+                <li><strong>Slows wound healing:</strong> Reduced oxygen to corneal incision (healing delayed 30-40%, 2-3mm incision takes 5-7 days vs 3-5 days for non-smokers)</li>
+                <li><strong>Higher inflammation risk:</strong> 1.5-2× higher risk of post-op inflammation (more eye drops needed, longer recovery)</li>
+                <li><strong>Dry eye worsening:</strong> Smoking worsens dry eye symptoms (gritty feeling, watering) common after cataract surgery</li>
+                <li><strong>Increased infection risk:</strong> Slightly higher (0.5% vs 0.1% for non-smokers) but still very low</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Smoking timeline for surgery:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>2-4 weeks before:</strong> Quit or reduce to &lt;5 cigarettes/day (improves wound healing capacity, reduces inflammation)</li>
+                <li><strong>Week 1-2 after:</strong> NO smoking (critical corneal healing period, incision sealing itself)</li>
+                <li><strong>Weeks 3-4 after:</strong> Avoid smoking if possible (healing continues, still vulnerable to infection)</li>
+                <li><strong>Long-term:</strong> Quit permanently to prevent cataracts in second eye or secondary cataracts (PCO)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Success rates:</strong> Non-smokers: 99.5% success. Smokers who quit 4 weeks before: 98.5% success. Current smokers: 97% success (higher inflammation, slower healing but still excellent). Smoking does NOT disqualify you from surgery.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I exercise, lift weights, and swim after cataract surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Light activities immediately, but strenuous exercise delayed 2-4 weeks to prevent increased eye pressure.</strong> Detailed timeline:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1 (surgery day):</strong> Rest at home (lie down or sit, watch TV, read with operated eye). Walking around house OK. NO bending below waist (increases eye pressure), heavy lifting, exercise, swimming.</li>
+                <li><strong>Days 2-7:</strong> Light walking encouraged (20-30 minutes, fresh air). Light household chores OK (cooking, washing dishes). Resume computer work Day 3-5. Avoid: Bending, heavy lifting &gt;5kg, running, yoga, gym, swimming (infection risk).</li>
+                <li><strong>Weeks 2-3:</strong> Gradual activity resumption. Allowed: Brisk walking, light yoga (no inversions/headstands), stationary cycling, light weights &lt;5kg. Avoid: Running, heavy lifting, swimming, contact sports, hot yoga.</li>
+                <li><strong>Week 3-4:</strong> Resume normal exercise with doctor clearance. Allowed: Running, gym, moderate weightlifting (&lt;20kg), outdoor cycling. Avoid: Heavy squats/deadlifts (increases intraocular pressure), swimming pools (wait Week 4-6), contact sports (boxing, basketball - risk of eye trauma).</li>
+                <li><strong>Week 4-6:</strong> Swimming pools allowed (chlorine safe, 2-3mm incision fully healed). Heavy weightlifting allowed (&gt;20kg). Contact sports allowed with protective eyewear.</li>
+                <li><strong>Month 2+:</strong> All activities unrestricted (eye fully healed, IOL stable)</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Exercise-specific guidelines:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Walking:</strong> Day 1 onwards (encouraged for circulation)</li>
+                <li><strong>Running/jogging:</strong> Week 3-4 (bouncing movement safe once incision healed)</li>
+                <li><strong>Yoga:</strong> Week 2 for gentle poses, Week 4 for inversions (downward dog, headstand increase eye pressure temporarily)</li>
+                <li><strong>Gym/weights:</strong> Week 2 for light (&lt;5kg), Week 3-4 for moderate, Week 4-6 for heavy lifting</li>
+                <li><strong>Swimming:</strong> Week 4-6 (wait for complete incision seal, avoid infection). Ocean swimming OK Week 3-4 (saltwater less risky than chlorine).</li>
+                <li><strong>Golf/tennis:</strong> Week 3-4 (eye safe from sudden movements)</li>
+                <li><strong>Contact sports:</strong> Week 6+ with protective eyewear (risk of trauma to eye)</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When can I drive after cataract surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Most patients can drive 2-7 days after surgery once vision clears and surgeon approves.</strong> Driving timeline and safety:
+              </p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1 (surgery day):</strong> NO driving (vision blurry, pupil dilated, mild sedation if oral medication given). Arrange pickup from hospital. Rest at home.</li>
+                <li><strong>Days 2-3:</strong> Vision improving but may still be blurry (70-80% clear). NO driving yet (depth perception affected if only one eye operated, glare sensitivity high). Use taxi, family driver, or Uber.</li>
+                <li><strong>Days 3-7:</strong> Vision clears significantly (90-95% improvement). Can drive Day 3-7 if: (1) Day 1 post-op check shows good healing, (2) Vision meets legal standard (20/40 or better), (3) No double vision or significant glare, (4) Surgeon gives written clearance. Start with short daytime drives only (avoid night driving first week).</li>
+                <li><strong>Week 1-2:</strong> Most patients driving comfortably. Night driving allowed if no halos/glare (monofocal IOL patients usually fine, multifocal IOL patients may experience halos for 2-4 weeks). Long-distance driving OK with breaks.</li>
+                <li><strong>Week 2-4:</strong> All driving unrestricted if vision stable and surgeon approves. Night vision excellent (monofocal IOL) or adapted to halos (multifocal IOL).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>GCC patients (international travel):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Driving home from airport:</strong> Wait 5-7 days after surgery before flying + driving home. Have someone pick you up from airport first few days. Arrange taxi/Uber first week.</li>
+                <li><strong>Driving in unfamiliar roads:</strong> Wait until Week 2 (depth perception fully adapted to new IOL, confident in vision).</li>
+                <li><strong>Desert/bright sun driving:</strong> Wear sunglasses (UV protection mandatory first 3 months). Glare sensitivity higher first 2-4 weeks.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Legal requirements:</strong> Most countries require 20/40 vision (6/12 in metric) in at least one eye for driving license. 99% of cataract patients achieve this or better. Bring surgeon&apos;s clearance letter if stopped by traffic police first few weeks.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Can I watch TV, use phone, and work on computer after cataract surgery?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Yes! Screen time does NOT harm your eyes after cataract surgery. Start with short sessions and increase gradually.</strong> Screen time guidelines:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Day 1 (surgery day):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Watching TV:</strong> YES, safe and encouraged (2-4 hours after surgery once home). Vision will be blurry first 4-6 hours (normal, wear eye shield if concerned). Keep brightness low, sit 6-8 feet away. Watching TV does NOT delay healing or damage IOL.</li>
+                <li><strong>Phone use:</strong> YES, safe (texting, calls, social media). Hold phone 12-15 inches away. Vision blurry first 4-6 hours. Use phone with non-operated eye or wait till Day 2 for clearer vision.</li>
+                <li><strong>Computer work:</strong> WAIT until Day 3-5 (extended focusing tires eye, may cause headache). Short computer use OK Day 1-2 if urgent (emails), but avoid &gt;30 minutes.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Days 2-7:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Watching TV:</strong> Unlimited (no harm to healing eye). Vision clears significantly Day 2-3. Enjoy your improved color vision (colors appear brighter after cataract removal).</li>
+                <li><strong>Phone use:</strong> Unlimited (safe for healing eye). Vision clear enough for comfortable reading Day 2-3. Use adequate lighting to reduce eye strain.</li>
+                <li><strong>Computer work:</strong> Resume Day 3-5 (start with 2-3 hours, increase gradually). Take breaks every 30 minutes (20-20-20 rule: every 20 minutes, look 20 feet away for 20 seconds). Use lubricating eye drops if dry eye (screen time reduces blink rate).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Week 1-2:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>All screen time:</strong> Unrestricted (TV, phone, computer all safe). Return to normal work schedule if desk job. Vision stabilizes 90-95% by Week 1.</li>
+                <li><strong>Reading print books:</strong> Easier than before surgery (better contrast, brighter colors). May need reading glasses if monofocal IOL chosen (distance vision clear, near vision needs glasses). Multifocal IOL patients usually glasses-free for reading.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Common myths debunked:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Myth:</strong> Watching TV delays healing. <strong>Truth:</strong> No evidence. Modern cataract surgery (2-3mm incision, no stitches) heals independently of eye movement.</li>
+                <li><strong>Myth:</strong> Screen light damages new IOL. <strong>Truth:</strong> IOL is inert plastic/silicone (not affected by light, TV, phone, sun). UV-blocking IOLs protect retina.</li>
+                <li><strong>Myth:</strong> Reading/screens increase eye pressure. <strong>Truth:</strong> Eye pressure affected by bending, heavy lifting, straining - NOT by looking at screens.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Bottom line:</strong> Screen time safe from Day 1. Start slowly first 2-3 days (vision blurry), then unlimited as vision clears. Use lubricating drops if dry eye. Enjoy your improved vision!
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>What&apos;s included in the surgery cost? Any hidden fees?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Reputable hospitals offer all-inclusive packages with no hidden fees.</strong> Cost breakdown and what to expect:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>What&apos;s included in standard package ($800-1,500 for monofocal IOL):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Pre-operative tests (Day 1):</strong> Comprehensive eye exam, biometry for IOL power calculation, OCT scan, blood tests, anesthesia evaluation. Value: $150-250.</li>
+                <li><strong>Surgery (Day 2):</strong> Surgeon fee, phacoemulsification procedure (15-20 min), operating room charges, anesthesia (topical or local), basic monofocal IOL (Alcon, Zeiss, or equivalent), microscopic instruments, sterilization. Value: $500-800.</li>
+                <li><strong>Post-operative care (Days 3-30):</strong> Eye shield, sunglasses, antibiotic eye drops (1 week), anti-inflammatory drops (3-4 weeks), Day 1 check-up, Week 1 check-up, Week 4 check-up, 24/7 emergency contact with surgeon. Value: $150-250.</li>
+                <li><strong>Hospital stay:</strong> Same-day discharge (2-4 hours observation), recovery room. No overnight stay needed. Value: $50-100.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>What costs EXTRA (not included in basic package):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Premium IOL upgrades:</strong> Multifocal IOL (glasses-free vision): +$700-1,300 per eye. Toric IOL (astigmatism correction): +$400-800. Femto laser-assisted surgery (blade-free): +$1,000-1,500. These are optional upgrades.</li>
+                <li><strong>Second eye surgery:</strong> If both eyes need cataract removal, second eye is separate charge (usually discounted 10-20% if done during same trip).</li>
+                <li><strong>Complications (rare):</strong> If infection, IOL dislocation, or other complication occurs (&lt;1% of cases), additional treatment needed. Some hospitals include 1-year complication warranty (free treatment), others charge separately.</li>
+                <li><strong>YAG laser capsulotomy:</strong> If posterior capsule becomes cloudy (20-30% of patients, 6 months-2 years later), YAG laser treatment needed. Cost: $200-400. Some hospitals include free YAG laser for 1-2 years.</li>
+                <li><strong>Reading glasses:</strong> If monofocal IOL chosen (distance vision clear), reading glasses needed for near vision. Cost: $50-200 (buy locally or in India).</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Additional costs for international patients:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Flights:</strong> GCC to India roundtrip: $300-600 (budget airlines). Not included in medical package.</li>
+                <li><strong>Hotel (3-5 nights):</strong> $30-100 per night ($90-500 total). Many hospitals have guest houses ($20-40/night). Not included unless specified.</li>
+                <li><strong>Airport pickup:</strong> Free at most top hospitals (Dr. Agarwal&apos;s, LV Prasad, Sankara). If not included: $10-20 Uber from airport.</li>
+                <li><strong>Meals:</strong> Hospital cafeteria $3-8/meal. Not included in surgery cost.</li>
+                <li><strong>Companion visa/travel:</strong> If family member accompanies you, their flight + hotel separate. Companion not medically necessary (many solo patients).</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Getting written quote:</strong> Request detailed written quote before booking (itemized costs, inclusions, exclusions). Ask specifically: (1) Is IOL included or extra? (2) How many follow-ups included? (3) Is YAG laser free if needed? (4) Is 1-year warranty included? Reputable hospitals provide transparent quotes with no surprise bills.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Is cataract surgery covered by insurance for international patients?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Insurance coverage varies by policy type. Most GCC patients self-pay due to India&apos;s low cost.</strong> Insurance options:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Travel insurance:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Usually NOT covered:</strong> Travel insurance excludes pre-existing conditions and elective procedures. Cataract surgery is considered elective (not emergency). Denial reason: &quot;Traveled to India specifically for surgery.&quot;</li>
+                <li><strong>Rarely covered:</strong> If cataract suddenly worsens during India trip (e.g., trauma), emergency cataract surgery may be covered. Requires proof of emergency (medical reports, doctor letter). Very rare scenario.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>International health insurance:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Sometimes covered:</strong> Comprehensive international health plans (Cigna Global, Allianz Worldwide, Bupa Global) may cover cataract surgery in India if: (1) Medically necessary (not cosmetic), (2) Pre-approval obtained, (3) Hospital is in network (JCI-accredited). Check policy carefully.</li>
+                <li><strong>Reimbursement process:</strong> Submit: Hospital invoice, discharge summary, surgeon report, IOL details, payment receipts. Reimbursement in 4-8 weeks. Usually covers 60-80% of costs (policy limits apply).</li>
+                <li><strong>Network hospitals:</strong> Some insurers have direct billing with Apollo, Fortis, Max (no upfront payment). Verify before booking.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Company/employer insurance (expat plans):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>May be covered:</strong> If you work for multinational company in GCC with comprehensive health benefits, cataract surgery in India may be covered. Requires: Pre-approval from HR, network hospital (Apollo, Fortis, Medanta), medical necessity letter from ophthalmologist.</li>
+                <li><strong>Cashless option:</strong> Some corporate plans offer cashless treatment at network hospitals in India (company directly pays hospital). Verify with HR before booking.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Why most GCC patients self-pay:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Insurance hassle:</strong> Pre-approval requires 2-4 weeks (medical reports, photos, waiting period). Many patients prefer to pay and avoid delays.</li>
+                <li><strong>India costs already low:</strong> $800-1,500 for monofocal IOL cataract surgery (affordable even without insurance). Compare: USA $3,500-6,000 (insurance still requires $500-1,500 deductible/co-pay).</li>
+                <li><strong>No insurance increase:</strong> Self-pay avoids insurance claim history (future premium increases for claiming cataract surgery).</li>
+                <li><strong>Faster booking:</strong> Pay directly, book surgery within 1 week. No waiting for insurance approval.</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Recommendation:</strong> Check your insurance policy specifically for &quot;international elective surgery&quot; coverage. If unclear, assume self-pay (most affordable option given India&apos;s low costs). If insurance approves, great - get reimbursement later. Don&apos;t delay surgery waiting for insurance (cataracts worsen over time, earlier treatment = better outcomes).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>When should I operate the second eye? Can I do both eyes during one India trip?</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="mb-3 text-gray-700">
+                <strong>Most surgeons recommend 1-2 weeks gap between eyes for safety and IOL power adjustment.</strong> Second eye timing and planning:
+              </p>
+              <p className="mb-3 text-gray-700"><strong>Recommended timeline:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Option 1: One India trip, both eyes (most common):</strong> Day 1 (arrival + tests), Day 2 (first eye surgery), Days 3-14 (recovery, sightseeing if feeling well), Day 14-15 (second eye surgery + Day 1 post-op check), Day 16 (fly home). Total: 15-16 days in India. Saves flight costs, completes treatment in one trip.</li>
+                <li><strong>Option 2: Two separate India trips:</strong> Trip 1 (first eye, 5-7 days). Wait 4-8 weeks at home (ensure good healing). Trip 2 (second eye, 5-7 days). More expensive (two flights) but safer if first eye complications or if unsure about IOL choice.</li>
+                <li><strong>Option 3: Same-day bilateral surgery (both eyes same day):</strong> Offered at some hospitals for low-risk patients (age &lt;70, no diabetes, no glaucoma). Saves time (3-5 days in India total). Higher risk if rare complication occurs (both eyes affected). Most surgeons do NOT recommend unless exceptional circumstances.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Why 1-2 week gap preferred:</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Monitor first eye healing:</strong> If complication develops (infection, inflammation, IOL dislocation) in first eye, postpone second eye until resolved. Complication rate &lt;1%, but important to detect early.</li>
+                <li><strong>Adjust second eye IOL power:</strong> After first eye surgery, if vision outcome slightly off target (e.g., still -0.5 diopters myopic instead of perfect 0), surgeon can fine-tune second eye IOL power for better match. Results in more balanced vision between eyes.</li>
+                <li><strong>Patient comfort:</strong> Recovery easier if one eye sees clearly while second eye heals. Both eyes operated same day means blurry vision bilaterally for 1-2 days (disorienting for some patients).</li>
+                <li><strong>Reduced infection risk:</strong> If infection occurs in first eye (0.1% risk), waiting prevents spread to second eye during vulnerable healing period.</li>
+              </ul>
+              <p className="mb-3 text-gray-700"><strong>Planning one-trip bilateral surgery (both eyes, one India visit):</strong></p>
+              <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
+                <li><strong>Day 1:</strong> Arrival + pre-operative tests (both eyes evaluated, IOL power calculated for each eye separately)</li>
+                <li><strong>Day 2:</strong> First eye surgery (worse eye operated first, or dominant eye - discuss with surgeon)</li>
+                <li><strong>Day 3:</strong> Post-op check for first eye (vision, pressure, inflammation)</li>
+                <li><strong>Days 4-13:</strong> Recovery, use eye drops, follow restrictions (no swimming, heavy lifting). Light sightseeing OK if feeling well (many patients visit Taj Mahal, local temples during this gap). Vision improving daily in operated eye.</li>
+                <li><strong>Day 14:</strong> Second eye surgery (repeat same procedure, IOL power may be slightly adjusted based on first eye outcome)</li>
+                <li><strong>Day 15:</strong> Post-op check for second eye + final consultation</li>
+                <li><strong>Day 16:</strong> Fly home (both eyes healed sufficiently for safe flight, 3-5 days post-surgery for second eye meets flying guidelines)</li>
+              </ul>
+              <p className="text-gray-700">
+                <strong>Cost advantage of one-trip bilateral:</strong> Flight savings $300-600, hotel savings $200-400 (vs two trips). Total savings: $500-1,000 by combining both eyes into one India visit. 90% of international patients choose this option. Discuss with surgeon during free video consultation to plan timeline.
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
