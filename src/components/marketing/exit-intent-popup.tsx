@@ -79,8 +79,17 @@ export function ExitIntentPopup() {
       }
     };
 
-    // Show after 45 seconds if user hasn't engaged (increased from 30s)
-    const timer = setTimeout(() => {
+    // Normal time-based trigger - show after 30 seconds automatically
+    const normalTimer = setTimeout(() => {
+      if (!hasShown) {
+        setIsOpen(true);
+        setHasShown(true);
+        sessionStorage.setItem('exitPopupShown', 'true');
+      }
+    }, 30000); // 30 seconds - shows popup normally
+
+    // Backup timer - show after 45 seconds if somehow missed
+    const backupTimer = setTimeout(() => {
       if (!hasShown) {
         setIsOpen(true);
         setHasShown(true);
@@ -92,7 +101,8 @@ export function ExitIntentPopup() {
 
     return () => {
       document.removeEventListener('mouseleave', handleMouseLeave);
-      clearTimeout(timer);
+      clearTimeout(normalTimer);
+      clearTimeout(backupTimer);
     };
   }, [hasShown]);
 
@@ -183,8 +193,8 @@ export function ExitIntentPopup() {
         onClick={handleClose}
       />
 
-      {/* Popup with slide-in animation */}
-      <div className="fixed left-1/2 top-1/2 z-50 w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 transform px-4 animate-in zoom-in-95 duration-300">
+      {/* Popup with slide-in animation - 10% smaller size */}
+      <div className="fixed left-1/2 top-1/2 z-50 w-full max-w-[605px] -translate-x-1/2 -translate-y-1/2 transform px-4 animate-in zoom-in-95 duration-300">
         <div className="relative overflow-hidden rounded-2xl bg-white shadow-2xl">
           {/* Gradient header bar */}
           <div className="h-2 bg-gradient-to-r from-primary-500 via-accent-500 to-primary-600" />
