@@ -1,45 +1,196 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import { useLocale } from 'next-intl';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { ALL_TREATMENTS } from '@/config/treatments-list';
 
-const bookingSchema = z.object({
-  // Step 1: Personal Info
-  userName: z.string().min(2, 'Name must be at least 2 characters'),
-  email: z.string().email('Invalid email address'),
-  phone: z.string().min(8, 'Phone number is required'),
-  countryOrigin: z.string().min(2, 'Country is required'),
-  cityOrigin: z.string().optional(),
-
-  // Step 2: Treatment Info
-  treatmentId: z.string().optional(),
-  preferredDate: z.string().optional(),
-
-  // Step 3: Medical Info
-  message: z.string().optional(),
-  medicalConditions: z.string().optional(),
-});
-
-type BookingForm = z.infer<typeof bookingSchema>;
-
-const steps = [
-  { id: 1, name: 'Personal Details', icon: '1️⃣' },
-  { id: 2, name: 'Treatment Selection', icon: '2️⃣' },
-  { id: 3, name: 'Medical Information', icon: '3️⃣' },
-  { id: 4, name: 'Confirmation', icon: '✅' },
-];
+type BookingForm = {
+  userName: string;
+  email: string;
+  phone: string;
+  countryOrigin: string;
+  cityOrigin?: string;
+  treatmentId?: string;
+  preferredDate?: string;
+  message?: string;
+  medicalConditions?: string;
+};
 
 export default function BookingPage() {
+  const locale = useLocale();
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const content = {
+    en: {
+      pageTitle: 'Book Your Treatment',
+      pageSubtitle: 'Complete this form to get started with your medical journey',
+      steps: [
+        { id: 1, name: 'Personal Details', icon: '1️⃣' },
+        { id: 2, name: 'Treatment Selection', icon: '2️⃣' },
+        { id: 3, name: 'Medical Information', icon: '3️⃣' },
+        { id: 4, name: 'Confirmation', icon: '✅' },
+      ],
+      stepOf: 'Step',
+      of: 'of',
+      // Step 1
+      fullName: 'Full Name',
+      fullNamePlaceholder: 'John Doe',
+      email: 'Email',
+      emailPlaceholder: 'john@example.com',
+      phone: 'Phone Number',
+      phonePlaceholder: '+971 50 123 4567',
+      country: 'Country',
+      selectCountry: 'Select Country',
+      city: 'City (Optional)',
+      cityPlaceholder: 'Dubai, Riyadh, Doha...',
+      // Step 2
+      selectTreatment: 'Select Treatment',
+      chooseTreatment: 'Choose Treatment',
+      preferredDate: 'Preferred Date (Optional)',
+      // Step 3
+      medicalConditions: 'Medical Conditions or Questions (Optional)',
+      medicalConditionsPlaceholder: 'Please describe any existing medical conditions, allergies, or specific questions...',
+      additionalNotes: 'Additional Notes (Optional)',
+      additionalNotesPlaceholder: 'Any other information you\'d like to share...',
+      // Step 4
+      reviewInfo: 'Review Your Information',
+      name: 'Name',
+      whatNext: 'What happens next?',
+      nextSteps: [
+        'Our medical team will review your request',
+        'You\'ll receive a call within 24 hours',
+        'We\'ll create a personalized treatment plan',
+        'Cost estimate and timeline will be provided',
+        'Complete support from travel to recovery'
+      ],
+      // Buttons
+      previous: 'Previous',
+      next: 'Next',
+      submitting: 'Submitting...',
+      submitButton: 'Submit Booking Request',
+      // Success screen
+      successTitle: 'Booking Request Submitted!',
+      successMessage: 'Thank you for your booking request. Our medical team will contact you within 24 hours to discuss your treatment plan.',
+      whatHappensNext: 'What Happens Next?',
+      successSteps: [
+        'Medical team reviews your request',
+        'You\'ll receive a call within 24 hours',
+        'Personalized treatment plan created',
+        'Cost estimate and timeline provided',
+        'Travel and accommodation assistance'
+      ],
+      // Help
+      helpText: 'Need help? Contact us at',
+      or: 'or',
+      // Errors
+      nameMinLength: 'Name must be at least 2 characters',
+      invalidEmail: 'Invalid email address',
+      phoneRequired: 'Phone number is required',
+      countryRequired: 'Country is required',
+      errorAlert: 'Error submitting booking. Please try again.',
+      // Country groups
+      gccCountries: '🌟 GCC Countries (Primary Target)',
+      menaRegion: '🌍 MENA Region',
+      otherCountries: '🌎 Other Countries'
+    },
+    ar: {
+      pageTitle: 'احجز علاجك',
+      pageSubtitle: 'أكمل هذا النموذج لبدء رحلتك الطبية',
+      steps: [
+        { id: 1, name: 'التفاصيل الشخصية', icon: '1️⃣' },
+        { id: 2, name: 'اختيار العلاج', icon: '2️⃣' },
+        { id: 3, name: 'المعلومات الطبية', icon: '3️⃣' },
+        { id: 4, name: 'التأكيد', icon: '✅' },
+      ],
+      stepOf: 'الخطوة',
+      of: 'من',
+      // Step 1
+      fullName: 'الاسم الكامل',
+      fullNamePlaceholder: 'محمد أحمد',
+      email: 'البريد الإلكتروني',
+      emailPlaceholder: 'mohammed@example.com',
+      phone: 'رقم الهاتف',
+      phonePlaceholder: '٩٧١٥٠١٢٣٤٥٦٧+',
+      country: 'الدولة',
+      selectCountry: 'اختر الدولة',
+      city: 'المدينة (اختياري)',
+      cityPlaceholder: 'دبي، الرياض، الدوحة...',
+      // Step 2
+      selectTreatment: 'اختر العلاج',
+      chooseTreatment: 'اختر العلاج',
+      preferredDate: 'التاريخ المفضل (اختياري)',
+      // Step 3
+      medicalConditions: 'الحالات الطبية أو الأسئلة (اختياري)',
+      medicalConditionsPlaceholder: 'يرجى وصف أي حالات طبية موجودة، حساسية، أو أسئلة محددة...',
+      additionalNotes: 'ملاحظات إضافية (اختياري)',
+      additionalNotesPlaceholder: 'أي معلومات أخرى ترغب في مشاركتها...',
+      // Step 4
+      reviewInfo: 'راجع معلوماتك',
+      name: 'الاسم',
+      whatNext: 'ما الذي سيحدث بعد ذلك؟',
+      nextSteps: [
+        'سيراجع فريقنا الطبي طلبك',
+        'ستتلقى مكالمة خلال 24 ساعة',
+        'سننشئ خطة علاجية مخصصة لك',
+        'سيتم تقديم تقدير التكلفة والجدول الزمني',
+        'دعم كامل من السفر إلى التعافي'
+      ],
+      // Buttons
+      previous: 'السابق',
+      next: 'التالي',
+      submitting: 'جارٍ الإرسال...',
+      submitButton: 'إرسال طلب الحجز',
+      // Success screen
+      successTitle: 'تم إرسال طلب الحجز!',
+      successMessage: 'شكراً لك على طلب الحجز. سيتواصل معك فريقنا الطبي خلال 24 ساعة لمناقشة خطة علاجك.',
+      whatHappensNext: 'ما الذي سيحدث بعد ذلك؟',
+      successSteps: [
+        'يراجع الفريق الطبي طلبك',
+        'ستتلقى مكالمة خلال 24 ساعة',
+        'يتم إنشاء خطة علاجية مخصصة',
+        'يتم تقديم تقدير التكلفة والجدول الزمني',
+        'المساعدة في السفر والإقامة'
+      ],
+      // Help
+      helpText: 'تحتاج مساعدة؟ اتصل بنا على',
+      or: 'أو',
+      // Errors
+      nameMinLength: 'يجب أن يكون الاسم على الأقل حرفين',
+      invalidEmail: 'عنوان بريد إلكتروني غير صالح',
+      phoneRequired: 'رقم الهاتف مطلوب',
+      countryRequired: 'الدولة مطلوبة',
+      errorAlert: 'خطأ في إرسال الحجز. يرجى المحاولة مرة أخرى.',
+      // Country groups
+      gccCountries: '🌟 دول مجلس التعاون الخليجي (الهدف الأساسي)',
+      menaRegion: '🌍 منطقة الشرق الأوسط وشمال أفريقيا',
+      otherCountries: '🌎 دول أخرى'
+    }
+  };
+
+  const safeLocale = (locale === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
+  const currentContent = content[safeLocale];
+
+  // Create dynamic schema with localized error messages
+  const bookingSchema = useMemo(() => z.object({
+    userName: z.string().min(2, currentContent.nameMinLength),
+    email: z.string().email(currentContent.invalidEmail),
+    phone: z.string().min(8, currentContent.phoneRequired),
+    countryOrigin: z.string().min(2, currentContent.countryRequired),
+    cityOrigin: z.string().optional(),
+    treatmentId: z.string().optional(),
+    preferredDate: z.string().optional(),
+    message: z.string().optional(),
+    medicalConditions: z.string().optional(),
+  }), [currentContent]);
 
   const {
     register,
@@ -79,11 +230,9 @@ export default function BookingPage() {
     setIsSubmitting(true);
 
     try {
-      // Get selected treatment name
       const treatmentIndex = data.treatmentId ? parseInt(data.treatmentId) - 1 : -1;
       const treatmentName = treatmentIndex >= 0 ? ALL_TREATMENTS[treatmentIndex]?.name : 'Not specified';
 
-      // Prepare submission data - don't send treatmentId (avoid foreign key constraint)
       const submissionData = {
         userName: data.userName,
         email: data.email,
@@ -91,7 +240,6 @@ export default function BookingPage() {
         countryOrigin: data.countryOrigin,
         cityOrigin: data.cityOrigin,
         preferredDate: data.preferredDate,
-        // Include treatment name in message instead of invalid treatmentId
         message: `Treatment: ${treatmentName}\n\n${data.medicalConditions || ''}${data.message ? '\n\n' + data.message : ''}`.trim(),
       };
 
@@ -104,11 +252,11 @@ export default function BookingPage() {
       if (response.ok) {
         setIsSubmitted(true);
       } else {
-        alert('Error submitting booking. Please try again.');
+        alert(currentContent.errorAlert);
       }
     } catch (error) {
       console.error('Booking error:', error);
-      alert('Error submitting booking. Please try again.');
+      alert(currentContent.errorAlert);
     } finally {
       setIsSubmitting(false);
     }
@@ -124,19 +272,17 @@ export default function BookingPage() {
             </div>
           </div>
           <h1 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-            Booking Request Submitted!
+            {currentContent.successTitle}
           </h1>
           <p className="mb-8 text-lg text-gray-600">
-            Thank you for your booking request. Our medical team will contact you within 24 hours to discuss your treatment plan.
+            {currentContent.successMessage}
           </p>
           <div className="rounded-xl bg-primary-50 p-6">
-            <h3 className="mb-2 font-semibold text-primary-900">What Happens Next?</h3>
+            <h3 className="mb-2 font-semibold text-primary-900">{currentContent.whatHappensNext}</h3>
             <ul className="space-y-2 text-left text-primary-700">
-              <li>✅ Medical team reviews your request</li>
-              <li>✅ You&apos;ll receive a call within 24 hours</li>
-              <li>✅ Personalized treatment plan created</li>
-              <li>✅ Cost estimate and timeline provided</li>
-              <li>✅ Travel and accommodation assistance</li>
+              {currentContent.successSteps.map((step, index) => (
+                <li key={index}>✅ {step}</li>
+              ))}
             </ul>
           </div>
         </div>
@@ -150,17 +296,17 @@ export default function BookingPage() {
         {/* Header */}
         <div className="mb-8 text-center">
           <h1 className="mb-2 font-serif text-4xl font-bold text-gray-900">
-            Book Your Treatment
+            {currentContent.pageTitle}
           </h1>
           <p className="text-lg text-gray-600">
-            Complete this form to get started with your medical journey
+            {currentContent.pageSubtitle}
           </p>
         </div>
 
         {/* Progress Steps */}
         <div className="mb-8">
           <div className="flex items-center justify-between">
-            {steps.map((step, index) => (
+            {currentContent.steps.map((step, index) => (
               <div key={step.id} className="flex flex-1 items-center">
                 <div className="flex flex-col items-center">
                   <div
@@ -180,7 +326,7 @@ export default function BookingPage() {
                     {step.name}
                   </span>
                 </div>
-                {index < steps.length - 1 && (
+                {index < currentContent.steps.length - 1 && (
                   <div
                     className={`mx-2 h-1 flex-1 ${
                       currentStep > step.id ? 'bg-primary-500' : 'bg-gray-200'
@@ -196,9 +342,9 @@ export default function BookingPage() {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Card>
             <CardHeader>
-              <CardTitle>{steps[currentStep - 1].name}</CardTitle>
+              <CardTitle>{currentContent.steps[currentStep - 1].name}</CardTitle>
               <CardDescription>
-                Step {currentStep} of {steps.length}
+                {currentContent.stepOf} {currentStep} {currentContent.of} {currentContent.steps.length}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -206,70 +352,70 @@ export default function BookingPage() {
               {currentStep === 1 && (
                 <div className="space-y-4">
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Full Name *</label>
-                    <Input {...register('userName')} placeholder="John Doe" />
+                    <label className="mb-2 block text-sm font-medium">{currentContent.fullName} *</label>
+                    <Input {...register('userName')} placeholder={currentContent.fullNamePlaceholder} />
                     {errors.userName && (
                       <p className="mt-1 text-sm text-red-600">{errors.userName.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Email *</label>
-                    <Input {...register('email')} type="email" placeholder="john@example.com" />
+                    <label className="mb-2 block text-sm font-medium">{currentContent.email} *</label>
+                    <Input {...register('email')} type="email" placeholder={currentContent.emailPlaceholder} />
                     {errors.email && (
                       <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Phone Number *</label>
-                    <Input {...register('phone')} type="tel" placeholder="+971 50 123 4567" />
+                    <label className="mb-2 block text-sm font-medium">{currentContent.phone} *</label>
+                    <Input {...register('phone')} type="tel" placeholder={currentContent.phonePlaceholder} />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
                     )}
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Country *</label>
+                    <label className="mb-2 block text-sm font-medium">{currentContent.country} *</label>
                     <select
                       {...register('countryOrigin')}
                       className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
                     >
-                      <option value="">Select Country</option>
+                      <option value="">{currentContent.selectCountry}</option>
 
-                      <optgroup label="🌟 GCC Countries (Primary Target)">
-                        <option value="AE">🇦🇪 United Arab Emirates (UAE)</option>
-                        <option value="SA">🇸🇦 Saudi Arabia</option>
-                        <option value="QA">🇶🇦 Qatar</option>
-                        <option value="OM">🇴🇲 Oman</option>
-                        <option value="KW">🇰🇼 Kuwait</option>
-                        <option value="BH">🇧🇭 Bahrain</option>
+                      <optgroup label={currentContent.gccCountries}>
+                        <option value="AE">🇦🇪 {safeLocale === 'ar' ? 'الإمارات العربية المتحدة' : 'United Arab Emirates (UAE)'}</option>
+                        <option value="SA">🇸🇦 {safeLocale === 'ar' ? 'المملكة العربية السعودية' : 'Saudi Arabia'}</option>
+                        <option value="QA">🇶🇦 {safeLocale === 'ar' ? 'قطر' : 'Qatar'}</option>
+                        <option value="OM">🇴🇲 {safeLocale === 'ar' ? 'عمان' : 'Oman'}</option>
+                        <option value="KW">🇰🇼 {safeLocale === 'ar' ? 'الكويت' : 'Kuwait'}</option>
+                        <option value="BH">🇧🇭 {safeLocale === 'ar' ? 'البحرين' : 'Bahrain'}</option>
                       </optgroup>
 
-                      <optgroup label="🌍 MENA Region">
-                        <option value="EG">🇪🇬 Egypt</option>
-                        <option value="JO">🇯🇴 Jordan</option>
-                        <option value="LB">🇱🇧 Lebanon</option>
-                        <option value="IQ">🇮🇶 Iraq</option>
-                        <option value="YE">🇾🇪 Yemen</option>
-                        <option value="SY">🇸🇾 Syria</option>
-                        <option value="PS">🇵🇸 Palestine</option>
-                        <option value="MA">🇲🇦 Morocco</option>
-                        <option value="DZ">🇩🇿 Algeria</option>
-                        <option value="TN">🇹🇳 Tunisia</option>
-                        <option value="LY">🇱🇾 Libya</option>
-                        <option value="SD">🇸🇩 Sudan</option>
+                      <optgroup label={currentContent.menaRegion}>
+                        <option value="EG">🇪🇬 {safeLocale === 'ar' ? 'مصر' : 'Egypt'}</option>
+                        <option value="JO">🇯🇴 {safeLocale === 'ar' ? 'الأردن' : 'Jordan'}</option>
+                        <option value="LB">🇱🇧 {safeLocale === 'ar' ? 'لبنان' : 'Lebanon'}</option>
+                        <option value="IQ">🇮🇶 {safeLocale === 'ar' ? 'العراق' : 'Iraq'}</option>
+                        <option value="YE">🇾🇪 {safeLocale === 'ar' ? 'اليمن' : 'Yemen'}</option>
+                        <option value="SY">🇸🇾 {safeLocale === 'ar' ? 'سوريا' : 'Syria'}</option>
+                        <option value="PS">🇵🇸 {safeLocale === 'ar' ? 'فلسطين' : 'Palestine'}</option>
+                        <option value="MA">🇲🇦 {safeLocale === 'ar' ? 'المغرب' : 'Morocco'}</option>
+                        <option value="DZ">🇩🇿 {safeLocale === 'ar' ? 'الجزائر' : 'Algeria'}</option>
+                        <option value="TN">🇹🇳 {safeLocale === 'ar' ? 'تونس' : 'Tunisia'}</option>
+                        <option value="LY">🇱🇾 {safeLocale === 'ar' ? 'ليبيا' : 'Libya'}</option>
+                        <option value="SD">🇸🇩 {safeLocale === 'ar' ? 'السودان' : 'Sudan'}</option>
                       </optgroup>
 
-                      <optgroup label="🌎 Other Countries">
-                        <option value="US">🇺🇸 United States</option>
-                        <option value="GB">🇬🇧 United Kingdom</option>
-                        <option value="CA">🇨🇦 Canada</option>
-                        <option value="AU">🇦🇺 Australia</option>
-                        <option value="SG">🇸🇬 Singapore</option>
-                        <option value="MY">🇲🇾 Malaysia</option>
-                        <option value="TH">🇹🇭 Thailand</option>
-                        <option value="OTHER">🌍 Other</option>
+                      <optgroup label={currentContent.otherCountries}>
+                        <option value="US">🇺🇸 {safeLocale === 'ar' ? 'الولايات المتحدة' : 'United States'}</option>
+                        <option value="GB">🇬🇧 {safeLocale === 'ar' ? 'المملكة المتحدة' : 'United Kingdom'}</option>
+                        <option value="CA">🇨🇦 {safeLocale === 'ar' ? 'كندا' : 'Canada'}</option>
+                        <option value="AU">🇦🇺 {safeLocale === 'ar' ? 'أستراليا' : 'Australia'}</option>
+                        <option value="SG">🇸🇬 {safeLocale === 'ar' ? 'سنغافورة' : 'Singapore'}</option>
+                        <option value="MY">🇲🇾 {safeLocale === 'ar' ? 'ماليزيا' : 'Malaysia'}</option>
+                        <option value="TH">🇹🇭 {safeLocale === 'ar' ? 'تايلاند' : 'Thailand'}</option>
+                        <option value="OTHER">🌍 {safeLocale === 'ar' ? 'أخرى' : 'Other'}</option>
                       </optgroup>
                     </select>
                     {errors.countryOrigin && (
@@ -278,8 +424,8 @@ export default function BookingPage() {
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">City (Optional)</label>
-                    <Input {...register('cityOrigin')} placeholder="Dubai, Riyadh, Doha..." />
+                    <label className="mb-2 block text-sm font-medium">{currentContent.city}</label>
+                    <Input {...register('cityOrigin')} placeholder={currentContent.cityPlaceholder} />
                   </div>
                 </div>
               )}
@@ -288,12 +434,12 @@ export default function BookingPage() {
               {currentStep === 2 && (
                 <div className="space-y-4">
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Select Treatment *</label>
+                    <label className="mb-2 block text-sm font-medium">{currentContent.selectTreatment} *</label>
                     <select
                       {...register('treatmentId')}
                       className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
                     >
-                      <option value="">Choose Treatment</option>
+                      <option value="">{currentContent.chooseTreatment}</option>
                       {ALL_TREATMENTS.map((treatment, index) => (
                         <option key={treatment.slug} value={String(index + 1)}>
                           {treatment.name}
@@ -306,7 +452,7 @@ export default function BookingPage() {
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Preferred Date (Optional)</label>
+                    <label className="mb-2 block text-sm font-medium">{currentContent.preferredDate}</label>
                     <Input {...register('preferredDate')} type="date" />
                   </div>
                 </div>
@@ -317,25 +463,25 @@ export default function BookingPage() {
                 <div className="space-y-4">
                   <div>
                     <label className="mb-2 block text-sm font-medium">
-                      Medical Conditions or Questions (Optional)
+                      {currentContent.medicalConditions}
                     </label>
                     <textarea
                       {...register('medicalConditions')}
                       rows={4}
                       className="flex w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
-                      placeholder="Please describe any existing medical conditions, allergies, or specific questions..."
+                      placeholder={currentContent.medicalConditionsPlaceholder}
                     />
                   </div>
 
                   <div>
                     <label className="mb-2 block text-sm font-medium">
-                      Additional Notes (Optional)
+                      {currentContent.additionalNotes}
                     </label>
                     <textarea
                       {...register('message')}
                       rows={3}
                       className="flex w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
-                      placeholder="Any other information you&apos;d like to share..."
+                      placeholder={currentContent.additionalNotesPlaceholder}
                     />
                   </div>
                 </div>
@@ -345,28 +491,28 @@ export default function BookingPage() {
               {currentStep === 4 && (
                 <div className="space-y-6">
                   <div className="rounded-xl bg-gray-50 p-6">
-                    <h3 className="mb-4 font-semibold text-gray-900">Review Your Information</h3>
+                    <h3 className="mb-4 font-semibold text-gray-900">{currentContent.reviewInfo}</h3>
 
                     <div className="space-y-3 text-sm">
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Name:</span>
+                        <span className="text-gray-600">{currentContent.name}:</span>
                         <span className="font-medium">{formData.userName}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Email:</span>
+                        <span className="text-gray-600">{currentContent.email}:</span>
                         <span className="font-medium">{formData.email}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Phone:</span>
+                        <span className="text-gray-600">{currentContent.phone}:</span>
                         <span className="font-medium">{formData.phone}</span>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-gray-600">Country:</span>
+                        <span className="text-gray-600">{currentContent.country}:</span>
                         <span className="font-medium">{formData.countryOrigin}</span>
                       </div>
                       {formData.preferredDate && (
                         <div className="flex justify-between">
-                          <span className="text-gray-600">Preferred Date:</span>
+                          <span className="text-gray-600">{currentContent.preferredDate}:</span>
                           <span className="font-medium">{formData.preferredDate}</span>
                         </div>
                       )}
@@ -374,13 +520,11 @@ export default function BookingPage() {
                   </div>
 
                   <div className="rounded-xl border-2 border-primary-200 bg-primary-50 p-6">
-                    <h4 className="mb-2 font-semibold text-primary-900">What happens next?</h4>
+                    <h4 className="mb-2 font-semibold text-primary-900">{currentContent.whatNext}</h4>
                     <ul className="space-y-2 text-sm text-primary-700">
-                      <li>✓ Our medical team will review your request</li>
-                      <li>✓ You&apos;ll receive a call within 24 hours</li>
-                      <li>✓ We&apos;ll create a personalized treatment plan</li>
-                      <li>✓ Cost estimate and timeline will be provided</li>
-                      <li>✓ Complete support from travel to recovery</li>
+                      {currentContent.nextSteps.map((step, index) => (
+                        <li key={index}>✓ {step}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -391,18 +535,18 @@ export default function BookingPage() {
                 {currentStep > 1 && (
                   <Button type="button" variant="outline" onClick={prevStep}>
                     <ArrowLeft className="mr-2 h-4 w-4" />
-                    Previous
+                    {currentContent.previous}
                   </Button>
                 )}
 
                 {currentStep < 4 ? (
                   <Button type="button" onClick={nextStep} className="ml-auto">
-                    Next
+                    {currentContent.next}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
                   <Button type="submit" disabled={isSubmitting} className="ml-auto">
-                    {isSubmitting ? 'Submitting...' : 'Submit Booking Request'}
+                    {isSubmitting ? currentContent.submitting : currentContent.submitButton}
                   </Button>
                 )}
               </div>
@@ -413,11 +557,11 @@ export default function BookingPage() {
         {/* Help Section */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600">
-            Need help? Contact us at{' '}
+            {currentContent.helpText}{' '}
             <a href="tel:+971501234567" className="text-primary-600 hover:text-primary-700">
               +971 50 123 4567
             </a>{' '}
-            or{' '}
+            {currentContent.or}{' '}
             <a href="mailto:support@shifaalhind.com" className="text-primary-600 hover:text-primary-700">
               support@shifaalhind.com
             </a>
