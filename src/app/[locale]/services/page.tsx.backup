@@ -1,19 +1,29 @@
+import type { Metadata } from 'next';
+
 export const dynamic = 'force-dynamic';
 
-import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
-  return generateSEOMetadata({
-    title_en: 'Medical Tourism Services - End-to-End Support | Shifa AlHind',
-    title_ar: 'خدمات السياحة العلاجية - دعم شامل من البداية إلى النهاية | شفاء الهند',
-    description_en: 'Complete medical tourism services: Free consultation, hospital selection, visa assistance, travel arrangements, 24/7 support. Native Arabic speakers who lived in GCC.',
-    description_ar: 'خدمات سياحة علاجية شاملة: استشارة مجانية، اختيار المستشفى، مساعدة التأشيرة، ترتيبات السفر، دعم على مدار الساعة. متحدثون عرب أصليون عاشوا في دول الخليج.',
-    locale,
-    path: '/services',
-  });
-}
+export const metadata: Metadata = {
+  title: 'Medical Tourism Services - End-to-End Support | Shifa Al Hind',
+  description: 'Complete medical tourism services: Free consultation, hospital selection, visa assistance, travel arrangements, 24/7 support. Native Arabic speakers who lived in GCC.',
+  keywords: [
+    'medical tourism services',
+    'medical travel services India',
+    'healthcare tourism package',
+    'medical tourism coordinator',
+    'India medical travel support',
+    'medical tourism UAE',
+    'Arabic medical translator GCC',
+    'خدمات السياحة الطبية',
+    'خدمات السفر الطبي',
+    'دعم السياحة العلاجية',
+    'مترجم عربي طبي',
+  ],
+  openGraph: {
+    title: 'Complete Medical Tourism Services - End-to-End Support',
+    description: 'Free consultation, hospital selection, travel arrangements, 24/7 support. Native Arabic speakers who lived in GCC.',
+    type: 'website',
+  },
+};
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';

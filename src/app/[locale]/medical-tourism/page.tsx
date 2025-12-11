@@ -8,48 +8,34 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { MapPin, Building2, Globe, Award, Clock, Shield, Heart, Bone, Baby, Smile, Eye, TrendingDown, Users, CheckCircle, Star, DollarSign } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: '{currentContent.hero.title} - Save 60-80% on World-Class Healthcare | Shifa AlHind',
-  description: 'Experience premium medical tourism to India. {currentContent.destinations.jciHospitals}, expert doctors, no waiting times. Popular with UAE & Saudi patients. Save 60-80% on surgery, cancer treatment, IVF, dental & cosmetic procedures.',
-  keywords: [
-    'medical tourism india',
-    'medical tourism india from uae',
-    'medical tourism india from saudi arabia',
-    'medical tourism india cost',
-    'medical tourism india hospitals',
-    'medical tourism india packages',
-    'medical tourism india dubai patients',
-    'medical tourism india riyadh patients',
-    'affordable healthcare india',
-    'best hospitals india for international patients',
-    // Arabic keywords for GCC market
-    'السياحة العلاجية في الهند',
-    'العلاج الطبي في الهند',
-    'مستشفيات الهند للمرضى الدوليين',
-    'تكلفة العلاج في الهند',
-    'الرعاية الصحية في الهند من الإمارات',
-    'العلاج في الهند من السعودية',
-  ],
-  openGraph: {
-    title: 'Medical Tourism to India - Save 60-80% on World-Class Healthcare',
-    description: 'JCI-accredited hospitals, expert doctors, no waiting times. Trusted by patients from UAE, Saudi Arabia & GCC.',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+
+  return generateSEOMetadata({
+    title_en: 'Medical Tourism to India 2025 - Save 60-80% on World-Class Healthcare',
+    title_ar: 'السياحة العلاجية إلى الهند 2025 - وفر 60-80% على الرعاية الصحية',
+    description_en: 'Experience premium medical tourism to India. 40+ JCI-accredited hospitals, expert doctors, no waiting times. Popular with UAE & Saudi patients. Save 60-80% on surgery, cancer treatment, IVF, dental & cosmetic procedures.',
+    description_ar: 'استمتع بالسياحة العلاجية الممتازة إلى الهند. أكثر من 40 مستشفى معتمد من JCI، أطباء خبراء، لا أوقات انتظار. شائع لدى مرضى الإمارات والسعودية. وفر 60-80% على الجراحة، علاج السرطان، أطفال الأنابيب، الإجراءات السنية والتجميلية.',
+    locale,
+    path: '/medical-tourism',
+  });
+}
 
 export default async function MedicalTourismPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
-  
+
   // Bilingual content for Medical Tourism page
   const content = {
     en: {
       hero: {
         title: 'Medical Tourism to India 2025',
-        subtitle: '{currentContent.hero.subtitle}',
-        description: '{currentContent.hero.description}',
+        subtitle: 'Save 60-80% on World-Class Healthcare with JCI-Accredited Hospitals',
+        description: 'Trusted by 200,000+ patients from UAE, Saudi Arabia & GCC countries annually. No waiting times. Expert doctors. Complete support.',
         cta1: 'Get Free Consultation',
         cta2: 'Book Treatment Now',
-        features: '{currentContent.hero.features}'
+        features: '✓ Free Second Opinion ✓ No Waiting Time ✓ Medical Visa Assistance ✓ Airport Pickup Included'
       },
       statistics: [
         { number: '500,000+', label: 'International Patients/Year', description: 'Patients from 150+ countries' },
@@ -58,19 +44,19 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
         { number: '60-80%', label: 'Average Savings', description: 'Compared to Western countries' },
       ],
       benefits: {
-        title: '{currentContent.benefits.title}',
+        title: 'Why Choose India for Medical Treatment?',
         subtitle: 'India has become the world\'s leading medical tourism destination, attracting patients from 150+ countries',
       },
       popularTreatments: {
-        title: '{currentContent.popularTreatments.title}',
-        subtitle: '{currentContent.popularTreatments.subtitle}',
+        title: 'Popular Medical Treatments',
+        subtitle: 'Most requested procedures by international patients from UAE, Saudi Arabia & GCC countries',
         viewDetails: 'View Details & Hospitals',
         viewAll: 'View All 30+ Treatments →',
-        indiaLabel: '{currentContent.popularTreatments.indiaLabel}',
+        indiaLabel: 'India Cost:',
       },
       costSavings: {
-        title: '{currentContent.costSavings.title}',
-        subtitle: '{currentContent.costSavings.subtitle}',
+        title: 'Massive Cost Savings - Real Comparison',
+        subtitle: 'See how much you can save on common medical procedures',
         headers: {
           treatment: 'Treatment',
           india: 'India',
@@ -81,53 +67,53 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
         },
         note1: 'Average savings: 60-80%',
         note1Bold: ' compared to USA, UK, and UAE',
-        note2: '{currentContent.costSavings.note2}'
+        note2: 'All prices include: Surgery, Hospital stay, Doctor fees, Medication, Post-op care'
       },
       destinations: {
-        title: '{currentContent.destinations.title}',
-        subtitle: '{currentContent.destinations.subtitle}',
+        title: 'Top Medical Tourism Destinations in India',
+        subtitle: 'JCI-accredited hospitals, expert doctors, direct flights from Dubai, Abu Dhabi, Riyadh',
         treatmentsAvailable: 'treatments available',
         jciHospitals: 'JCI-accredited hospitals',
-        directFlights: '{currentContent.destinations.directFlights}',
+        directFlights: 'Direct flights from GCC',
         viewButton: 'View Hospitals & Treatments'
       },
       gccSection: {
-        title: '{currentContent.gccSection.title}',
-        subtitle: '{currentContent.gccSection.subtitle}',
+        title: 'Special Support for GCC Patients',
+        subtitle: 'We understand the needs of patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain',
         uae: {
-          title: '{currentContent.gccSection.uae.title}',
+          title: '🇦🇪 UAE Patients',
           features: [
-            {currentContent.gccSection.uae.features[0]},
-            {currentContent.gccSection.uae.features[1]},
-            {currentContent.gccSection.uae.features[2]},
-            {currentContent.gccSection.uae.features[3]}
+            'Direct flights: Dubai/Abu Dhabi → Mumbai (3h), Delhi (3.5h), Bangalore (4h)',
+            'Medical visa on arrival at 6 major airports (instant approval)',
+            'Arabic-speaking coordinators available 24/7',
+            'Halal food, prayer rooms in all major hospitals'
           ],
           button: 'UAE Patients Guide →'
         },
         saudi: {
-          title: '{currentContent.gccSection.saudi.title}',
+          title: '🇸🇦 Saudi Arabia Patients',
           features: [
-            {currentContent.gccSection.saudi.features[0]},
-            {currentContent.gccSection.saudi.features[1]},
-            {currentContent.gccSection.saudi.features[2]},
-            {currentContent.gccSection.saudi.features[3]}
+            'Direct flights: Riyadh/Jeddah → Mumbai (4h), Delhi (4.5h), Bangalore (5h)',
+            'e-Medical visa online (approval in 3-5 days, $80 total)',
+            'Arabic translators, Saudi-friendly accommodation',
+            'Family/companion visa included (Medical Attendant Visa)'
           ],
           button: 'Saudi Patients Guide →'
         },
         allGcc: {
-          title: '{currentContent.gccSection.allGcc.title}',
+          title: '🌍 All GCC Countries',
           features: [
-            {currentContent.gccSection.allGcc.features[0]},
-            {currentContent.gccSection.allGcc.features[1]},
-            {currentContent.gccSection.allGcc.features[2]},
-            {currentContent.gccSection.allGcc.features[3]}
+            'Qatar, Oman, Kuwait, Bahrain patients welcome',
+            'Simple medical visa process (online or on arrival)',
+            'Complete package: Visa, flights, hotel, treatment included',
+            'Post-treatment follow-up via video call after return'
           ],
           button: 'Medical Visa Guide →'
         }
       },
       howItWorks: {
-        title: '{currentContent.howItWorks.title}',
-        subtitle: '{currentContent.howItWorks.subtitle}',
+        title: 'Your Medical Journey - Step by Step',
+        subtitle: 'From consultation to recovery, we handle everything',
         steps: [
           {
             title: 'Free Consultation',
@@ -135,72 +121,72 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
             timeline: 'Day 1-2'
           },
           {
-            title: currentContent.howItWorks.steps[1].title,
-            desc: currentContent.howItWorks.steps[1].desc,
-            timeline: currentContent.howItWorks.steps[1].timeline
+            title: 'Treatment Plan & Visa',
+            desc: 'Receive detailed treatment plan, cost estimate, hospital options. We assist with medical visa application (e-visa or on arrival).',
+            timeline: 'Day 3-7'
           },
           {
-            title: currentContent.howItWorks.steps[2].title,
-            desc: currentContent.howItWorks.steps[2].desc,
-            timeline: currentContent.howItWorks.steps[2].timeline
+            title: 'Travel & Arrival',
+            desc: 'Book flights. We arrange: Airport pickup, hotel (patient + companion), hospital pre-admission, welcome coordinator.',
+            timeline: 'Day 8-10'
           },
           {
-            title: currentContent.howItWorks.steps[3].title,
-            desc: currentContent.howItWorks.steps[3].desc,
-            timeline: currentContent.howItWorks.steps[3].timeline
+            title: 'Treatment & Recovery',
+            desc: 'Treatment in JCI-accredited hospital. Post-surgery care, recovery monitoring. Follow-up after returning home (video calls).',
+            timeline: 'Week 2+'
           }
         ],
         finalCta: 'Start Your Journey - Free Consultation'
       },
       blogArticles: {
-        title: '{currentContent.blogArticles.title}',
-        subtitle: '{currentContent.blogArticles.subtitle}',
+        title: 'Medical Tourism Guides & Resources',
+        subtitle: 'Comprehensive guides to help you plan your medical journey to India',
         guides: [
           {
-            title: '{currentContent.blogArticles.guides[0].title}',
-            desc: '{currentContent.blogArticles.guides[0].desc}',
+            title: 'Medical Tourism Guide for UAE Patients',
+            desc: 'Complete guide for patients from Dubai, Abu Dhabi, Sharjah. Flights, visa, costs, best hospitals.',
             button: 'Read Guide →'
           },
           {
-            title: '{currentContent.blogArticles.guides[1].title}',
-            desc: '{currentContent.blogArticles.guides[1].desc}',
+            title: 'Healthcare Guide for Riyadh Patients',
+            desc: 'Saudi Arabia patients: Direct flights, medical visa process, top hospitals, cost savings in SAR.',
             button: 'Read Guide →'
           },
           {
-            title: '{currentContent.blogArticles.guides[2].title}',
-            desc: '{currentContent.blogArticles.guides[2].desc}',
+            title: 'Medical Visa India Complete Guide',
+            desc: 'e-Medical visa, visa on arrival, application process, documents required, processing time.',
             button: 'Read Guide →'
           },
           {
-            title: '{currentContent.blogArticles.guides[3].title}',
-            desc: '{currentContent.blogArticles.guides[3].desc}',
+            title: 'Best Time to Visit India for Treatment',
+            desc: 'Weather, peak seasons, hospital availability, travel tips by month. Best months: Oct-March.',
             button: 'Read Guide →'
           },
           {
-            title: '{currentContent.blogArticles.guides[4].title}',
+            title: 'Medical Tourism Insurance Guide',
             desc: 'Do you need insurance? Best providers, coverage options, costs $50-$200. What\'s covered.',
             button: 'Read Guide →'
           },
           {
-            title: '{currentContent.blogArticles.guides[5].title}',
-            desc: '{currentContent.blogArticles.guides[5].desc}',
+            title: 'Choosing the Right Hospital',
+            desc: 'JCI accreditation, doctor credentials, success rates, international patient services, reviews.',
             button: 'Read Guide →'
           }
         ],
         viewAll: 'View All 24 Guides →'
       },
       faqSection: {
-        title: '{currentContent.faqSection.title}',
-        subtitle: '{currentContent.faqSection.subtitle}'
+        title: 'Frequently Asked Questions',
+        subtitle: 'Common questions from international patients about medical tourism to India'
       },
       finalCta: {
-        title: '{currentContent.finalCta.title}',
+        title: 'Ready to Start Your Medical Journey to India?',
         subtitle: 'Get a free consultation, second opinion, and personalized treatment plan from India\'s top medical experts',
         cta1: 'Get Free Consultation Now',
         cta2: 'Contact Us',
-        features1: '{currentContent.finalCta.features1}',
-        features2: '{currentContent.finalCta.features2}',
-        support: '{currentContent.finalCta.support}'
+        features1: '✓ 200,000+ International Patients/Year ✓ 40+ JCI-Accredited Hospitals',
+        features2: '✓ 95%+ Success Rate ✓ Save 60-80% on Treatment Costs',
+        support: 'Available 24/7 | WhatsApp Support | Arabic & English'
       }
     },
     ar: {
@@ -487,13 +473,6 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
     },
   ];
 
-  const statistics = [
-    { number: '500,000+', label: 'International Patients/Year', description: 'Patients from 150+ countries' },
-    { number: '40+', label: 'JCI-Accredited Hospitals', description: 'International quality standards' },
-    { number: '95%+', label: 'Success Rate', description: 'On par with USA/UK hospitals' },
-    { number: '60-80%', label: 'Average Savings', description: 'Compared to Western countries' },
-  ];
-
   const faqData = [
     {
       question: 'Is medical treatment in India safe for international patients?',
@@ -538,13 +517,13 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-20 text-white">
         <div className="container mx-auto text-center">
           <h1 className="mb-4 font-serif text-4xl font-bold md:text-6xl">
-            Medical Tourism to India 2025
+            {currentContent.hero.title}
           </h1>
           <p className="mx-auto mb-6 max-w-3xl text-xl text-primary-100 md:text-2xl">
-            Save 60-80% on World-Class Healthcare with JCI-Accredited Hospitals
+            {currentContent.hero.subtitle}
           </p>
           <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-100">
-            Trusted by 200,000+ patients from UAE, Saudi Arabia & GCC countries annually. No waiting times. Expert doctors. Complete support.
+            {currentContent.hero.description}
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
@@ -555,7 +534,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
             </Button>
           </div>
           <p className="mt-6 text-sm text-primary-100">
-            ✓ Free Second Opinion ✓ No Waiting Time ✓ Medical Visa Assistance ✓ Airport Pickup Included
+            {currentContent.hero.features}
           </p>
         </div>
       </section>
@@ -578,7 +557,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       {/* Benefits Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-          Why Choose India for Medical Treatment?
+          {currentContent.benefits.title}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
           {currentContent.benefits.subtitle}
@@ -610,10 +589,10 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gray-50 px-4 py-16">
         <div className="container mx-auto">
           <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            Popular Medical Treatments
+            {currentContent.popularTreatments.title}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            Most requested procedures by international patients from UAE, Saudi Arabia & GCC countries
+            {currentContent.popularTreatments.subtitle}
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -633,7 +612,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
                   <CardContent className="pt-6">
                     <div className="mb-4 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm text-gray-600">India Cost:</span>
+                        <span className="text-sm text-gray-600">{currentContent.popularTreatments.indiaLabel}</span>
                         <span className="text-lg font-bold text-gray-900">{treatment.cost}</span>
                       </div>
                       <div className="rounded-lg bg-green-50 px-3 py-2 text-center">
@@ -642,7 +621,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
                     </div>
                     <Button asChild className="w-full">
                       <Link href={`/${treatment.type === 'blog' ? 'blog' : 'treatments'}/${treatment.slug}`}>
-                        View Details & Hospitals
+                        {currentContent.popularTreatments.viewDetails}
                       </Link>
                     </Button>
                   </CardContent>
@@ -662,10 +641,10 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       {/* Cost Savings Comparison */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-          Massive Cost Savings - Real Comparison
+          {currentContent.costSavings.title}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-          See how much you can save on common medical procedures
+          {currentContent.costSavings.subtitle}
         </p>
 
         <div className="mx-auto max-w-5xl overflow-x-auto">
@@ -754,7 +733,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
             <strong>{currentContent.costSavings.note1}</strong>{currentContent.costSavings.note1Bold}
           </p>
           <p className="mt-2 text-gray-600">
-            All prices include: Surgery, Hospital stay, Doctor fees, Medication, Post-op care
+            {currentContent.costSavings.note2}
           </p>
         </div>
       </section>
@@ -763,10 +742,10 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gray-50 px-4 py-16">
         <div className="container mx-auto">
           <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            Top Medical Tourism Destinations in India
+            {currentContent.destinations.title}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            JCI-accredited hospitals, expert doctors, direct flights from Dubai, Abu Dhabi, Riyadh
+            {currentContent.destinations.subtitle}
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -789,16 +768,16 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
                     </p>
                     <p className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle className="h-4 w-4 text-green-500" />
-                      JCI-accredited hospitals
+                      {currentContent.destinations.jciHospitals}
                     </p>
                     <p className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle className="h-4 w-4 text-green-500" />
-                      Direct flights from GCC
+                      {currentContent.destinations.directFlights}
                     </p>
                   </div>
                   <Button asChild className="w-full">
                     <Link href={`/medical-tourism/${city.country.slug}/${city.slug}`}>
-                      View Hospitals & Treatments
+                      {currentContent.destinations.viewButton}
                     </Link>
                   </Button>
                 </CardContent>
@@ -811,34 +790,24 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       {/* GCC-Specific Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-          Special Support for GCC Patients
+          {currentContent.gccSection.title}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-          We understand the needs of patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain
+          {currentContent.gccSection.subtitle}
         </p>
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-xl">🇦🇪 UAE Patients</CardTitle>
+              <CardTitle className="text-xl">{currentContent.gccSection.uae.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Direct flights: Dubai/Abu Dhabi → Mumbai (3h), Delhi (3.5h), Bangalore (4h)
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Medical visa on arrival at 6 major airports (instant approval)
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Arabic-speaking coordinators available 24/7
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Halal food, prayer rooms in all major hospitals
-              </p>
+              {currentContent.gccSection.uae.features.map((feature, index) => (
+                <p key={index} className="flex items-start gap-2 text-sm">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>{feature}</span>
+                </p>
+              ))}
               <Button asChild className="w-full mt-4">
                 <Link href="/blog/dubai-to-india-medical-tourism">{currentContent.gccSection.uae.button}</Link>
               </Button>
@@ -847,25 +816,15 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
 
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-xl">🇸🇦 Saudi Arabia Patients</CardTitle>
+              <CardTitle className="text-xl">{currentContent.gccSection.saudi.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Direct flights: Riyadh/Jeddah → Mumbai (4h), Delhi (4.5h), Bangalore (5h)
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                e-Medical visa online (approval in 3-5 days, $80 total)
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Arabic translators, Saudi-friendly accommodation
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Family/companion visa included (Medical Attendant Visa)
-              </p>
+              {currentContent.gccSection.saudi.features.map((feature, index) => (
+                <p key={index} className="flex items-start gap-2 text-sm">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>{feature}</span>
+                </p>
+              ))}
               <Button asChild className="w-full mt-4">
                 <Link href="/blog/riyadh-to-india-healthcare">{currentContent.gccSection.saudi.button}</Link>
               </Button>
@@ -874,25 +833,15 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
 
           <Card className="border-2">
             <CardHeader>
-              <CardTitle className="text-xl">🌍 All GCC Countries</CardTitle>
+              <CardTitle className="text-xl">{currentContent.gccSection.allGcc.title}</CardTitle>
             </CardHeader>
             <CardContent className="space-y-2">
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Qatar, Oman, Kuwait, Bahrain patients welcome
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Simple medical visa process (online or on arrival)
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Complete package: Visa, flights, hotel, treatment included
-              </p>
-              <p className="flex items-start gap-2 text-sm">
-                <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                Post-treatment follow-up via video call after return
-              </p>
+              {currentContent.gccSection.allGcc.features.map((feature, index) => (
+                <p key={index} className="flex items-start gap-2 text-sm">
+                  <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                  <span>{feature}</span>
+                </p>
+              ))}
               <Button asChild className="w-full mt-4">
                 <Link href="/blog/medical-visa-india-complete-guide">{currentContent.gccSection.allGcc.button}</Link>
               </Button>
@@ -905,45 +854,20 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gradient-to-br from-primary-50 to-primary-100 px-4 py-16">
         <div className="container mx-auto">
           <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            Your Medical Journey - Step by Step
+            {currentContent.howItWorks.title}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            From consultation to recovery, we handle everything
+            {currentContent.howItWorks.subtitle}
           </p>
 
           <div className="mx-auto max-w-5xl">
             <div className="grid gap-8 md:grid-cols-4">
-              {[
-                {
-                  step: '1',
-                  title: currentContent.howItWorks.steps[0].title,
-                  desc: currentContent.howItWorks.steps[0].desc,
-                  timeline: currentContent.howItWorks.steps[0].timeline
-                },
-                {
-                  step: '2',
-                  title: 'Treatment Plan & Visa',
-                  desc: 'Receive detailed treatment plan, cost estimate, hospital options. We assist with medical visa application (e-visa or on arrival).',
-                  timeline: 'Day 3-7'
-                },
-                {
-                  step: '3',
-                  title: 'Travel & Arrival',
-                  desc: 'Book flights. We arrange: Airport pickup, hotel (patient + companion), hospital pre-admission, welcome coordinator.',
-                  timeline: 'Day 8-10'
-                },
-                {
-                  step: '4',
-                  title: 'Treatment & Recovery',
-                  desc: 'Treatment in JCI-accredited hospital. Post-surgery care, recovery monitoring. Follow-up after returning home (video calls).',
-                  timeline: 'Week 2+'
-                },
-              ].map((item, index) => (
+              {currentContent.howItWorks.steps.map((item, index) => (
                 <Card key={index} className="text-center border-2 hover:shadow-xl transition-shadow">
                   <CardHeader>
                     <div className="mb-4 flex justify-center">
                       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-700 font-serif text-3xl font-bold text-white shadow-lg">
-                        {item.step}
+                        {index + 1}
                       </div>
                     </div>
                     <div className="mb-2">
@@ -972,96 +896,39 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       {/* Blog Articles Section */}
       <section className="container mx-auto px-4 py-16">
         <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-          Medical Tourism Guides & Resources
+          {currentContent.blogArticles.title}
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-          Comprehensive guides to help you plan your medical journey to India
+          {currentContent.blogArticles.subtitle}
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Medical Tourism Guide for UAE Patients</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                Complete guide for patients from Dubai, Abu Dhabi, Sharjah. Flights, visa, costs, best hospitals.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/dubai-to-india-medical-tourism">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
+          {currentContent.blogArticles.guides.map((guide, index) => {
+            const guideLinks = [
+              '/blog/dubai-to-india-medical-tourism',
+              '/blog/riyadh-to-india-healthcare',
+              '/blog/medical-visa-india-complete-guide',
+              '/blog/best-time-visit-india-medical-tourism',
+              '/blog/medical-tourism-insurance-india',
+              '/blog/selecting-right-hospital-india'
+            ];
 
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Healthcare Guide for Riyadh Patients</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                Saudi Arabia patients: Direct flights, medical visa process, top hospitals, cost savings in SAR.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/riyadh-to-india-healthcare">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Medical Visa India Complete Guide</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                e-Medical visa, visa on arrival, application process, documents required, processing time.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/medical-visa-india-complete-guide">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Best Time to Visit India for Treatment</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                Weather, peak seasons, hospital availability, travel tips by month. Best months: Oct-March.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/best-time-visit-india-medical-tourism">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Medical Tourism Insurance Guide</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                {currentContent.blogArticles.guides[4].desc}
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/medical-tourism-insurance-india">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="hover:shadow-xl transition-shadow">
-            <CardHeader>
-              <CardTitle className="text-lg">Choosing the Right Hospital</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-gray-600 mb-4">
-                JCI accreditation, doctor credentials, success rates, international patient services, reviews.
-              </p>
-              <Button asChild variant="outline" className="w-full">
-                <Link href="/blog/selecting-right-hospital-india">Read Guide →</Link>
-              </Button>
-            </CardContent>
-          </Card>
+            return (
+              <Card key={index} className="hover:shadow-xl transition-shadow">
+                <CardHeader>
+                  <CardTitle className="text-lg">{guide.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-gray-600 mb-4">
+                    {guide.desc}
+                  </p>
+                  <Button asChild variant="outline" className="w-full">
+                    <Link href={guideLinks[index]}>{guide.button}</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            );
+          })}
         </div>
 
         <div className="mt-12 text-center">
@@ -1075,10 +942,10 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gray-50 px-4 py-16">
         <div className="container mx-auto max-w-4xl">
           <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
-            Frequently Asked Questions
+            {currentContent.faqSection.title}
           </h2>
           <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-            Common questions from international patients about medical tourism to India
+            {currentContent.faqSection.subtitle}
           </p>
 
           <div className="space-y-6">
@@ -1109,7 +976,7 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
       <section className="bg-gradient-to-br from-primary-600 to-primary-800 px-4 py-20 text-white">
         <div className="container mx-auto text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
-            Ready to Start Your Medical Journey to India?
+            {currentContent.finalCta.title}
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
             {currentContent.finalCta.subtitle}
@@ -1123,9 +990,9 @@ export default async function MedicalTourismPage({ params }: { params: Promise<{
             </Button>
           </div>
           <div className="space-y-2 text-primary-100">
-            <p>✓ 200,000+ International Patients/Year ✓ 40+ JCI-Accredited Hospitals</p>
-            <p>✓ 95%+ Success Rate ✓ Save 60-80% on Treatment Costs</p>
-            <p className="text-sm mt-4">Available 24/7 | WhatsApp Support | Arabic & English</p>
+            <p>{currentContent.finalCta.features1}</p>
+            <p>{currentContent.finalCta.features2}</p>
+            <p className="text-sm mt-4">{currentContent.finalCta.support}</p>
           </div>
         </div>
       </section>

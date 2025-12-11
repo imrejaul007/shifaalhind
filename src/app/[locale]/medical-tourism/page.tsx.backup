@@ -10,8 +10,8 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 
 export const metadata: Metadata = {
-  title: 'Medical Tourism to India 2025 - Save 60-80% on World-Class Healthcare | Shifa AlHind',
-  description: 'Experience premium medical tourism to India. JCI-accredited hospitals, expert doctors, no waiting times. Popular with UAE & Saudi patients. Save 60-80% on surgery, cancer treatment, IVF, dental & cosmetic procedures.',
+  title: '{currentContent.hero.title} - Save 60-80% on World-Class Healthcare | Shifa AlHind',
+  description: 'Experience premium medical tourism to India. {currentContent.destinations.jciHospitals}, expert doctors, no waiting times. Popular with UAE & Saudi patients. Save 60-80% on surgery, cancer treatment, IVF, dental & cosmetic procedures.',
   keywords: [
     'medical tourism india',
     'medical tourism india from uae',
@@ -37,7 +37,339 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function MedicalTourismPage() {
+export default async function MedicalTourismPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  
+  // Bilingual content for Medical Tourism page
+  const content = {
+    en: {
+      hero: {
+        title: 'Medical Tourism to India 2025',
+        subtitle: '{currentContent.hero.subtitle}',
+        description: '{currentContent.hero.description}',
+        cta1: 'Get Free Consultation',
+        cta2: 'Book Treatment Now',
+        features: '{currentContent.hero.features}'
+      },
+      statistics: [
+        { number: '500,000+', label: 'International Patients/Year', description: 'Patients from 150+ countries' },
+        { number: '40+', label: 'JCI-Accredited Hospitals', description: 'International quality standards' },
+        { number: '95%+', label: 'Success Rate', description: 'On par with USA/UK hospitals' },
+        { number: '60-80%', label: 'Average Savings', description: 'Compared to Western countries' },
+      ],
+      benefits: {
+        title: '{currentContent.benefits.title}',
+        subtitle: 'India has become the world\'s leading medical tourism destination, attracting patients from 150+ countries',
+      },
+      popularTreatments: {
+        title: '{currentContent.popularTreatments.title}',
+        subtitle: '{currentContent.popularTreatments.subtitle}',
+        viewDetails: 'View Details & Hospitals',
+        viewAll: 'View All 30+ Treatments →',
+        indiaLabel: '{currentContent.popularTreatments.indiaLabel}',
+      },
+      costSavings: {
+        title: '{currentContent.costSavings.title}',
+        subtitle: '{currentContent.costSavings.subtitle}',
+        headers: {
+          treatment: 'Treatment',
+          india: 'India',
+          usa: 'USA',
+          uk: 'UK',
+          uae: 'UAE',
+          savings: 'You Save'
+        },
+        note1: 'Average savings: 60-80%',
+        note1Bold: ' compared to USA, UK, and UAE',
+        note2: '{currentContent.costSavings.note2}'
+      },
+      destinations: {
+        title: '{currentContent.destinations.title}',
+        subtitle: '{currentContent.destinations.subtitle}',
+        treatmentsAvailable: 'treatments available',
+        jciHospitals: 'JCI-accredited hospitals',
+        directFlights: '{currentContent.destinations.directFlights}',
+        viewButton: 'View Hospitals & Treatments'
+      },
+      gccSection: {
+        title: '{currentContent.gccSection.title}',
+        subtitle: '{currentContent.gccSection.subtitle}',
+        uae: {
+          title: '{currentContent.gccSection.uae.title}',
+          features: [
+            {currentContent.gccSection.uae.features[0]},
+            {currentContent.gccSection.uae.features[1]},
+            {currentContent.gccSection.uae.features[2]},
+            {currentContent.gccSection.uae.features[3]}
+          ],
+          button: 'UAE Patients Guide →'
+        },
+        saudi: {
+          title: '{currentContent.gccSection.saudi.title}',
+          features: [
+            {currentContent.gccSection.saudi.features[0]},
+            {currentContent.gccSection.saudi.features[1]},
+            {currentContent.gccSection.saudi.features[2]},
+            {currentContent.gccSection.saudi.features[3]}
+          ],
+          button: 'Saudi Patients Guide →'
+        },
+        allGcc: {
+          title: '{currentContent.gccSection.allGcc.title}',
+          features: [
+            {currentContent.gccSection.allGcc.features[0]},
+            {currentContent.gccSection.allGcc.features[1]},
+            {currentContent.gccSection.allGcc.features[2]},
+            {currentContent.gccSection.allGcc.features[3]}
+          ],
+          button: 'Medical Visa Guide →'
+        }
+      },
+      howItWorks: {
+        title: '{currentContent.howItWorks.title}',
+        subtitle: '{currentContent.howItWorks.subtitle}',
+        steps: [
+          {
+            title: 'Free Consultation',
+            desc: 'Submit medical reports online. Get second opinion from Indian specialist within 48 hours. Video call with doctor (free).',
+            timeline: 'Day 1-2'
+          },
+          {
+            title: currentContent.howItWorks.steps[1].title,
+            desc: currentContent.howItWorks.steps[1].desc,
+            timeline: currentContent.howItWorks.steps[1].timeline
+          },
+          {
+            title: currentContent.howItWorks.steps[2].title,
+            desc: currentContent.howItWorks.steps[2].desc,
+            timeline: currentContent.howItWorks.steps[2].timeline
+          },
+          {
+            title: currentContent.howItWorks.steps[3].title,
+            desc: currentContent.howItWorks.steps[3].desc,
+            timeline: currentContent.howItWorks.steps[3].timeline
+          }
+        ],
+        finalCta: 'Start Your Journey - Free Consultation'
+      },
+      blogArticles: {
+        title: '{currentContent.blogArticles.title}',
+        subtitle: '{currentContent.blogArticles.subtitle}',
+        guides: [
+          {
+            title: '{currentContent.blogArticles.guides[0].title}',
+            desc: '{currentContent.blogArticles.guides[0].desc}',
+            button: 'Read Guide →'
+          },
+          {
+            title: '{currentContent.blogArticles.guides[1].title}',
+            desc: '{currentContent.blogArticles.guides[1].desc}',
+            button: 'Read Guide →'
+          },
+          {
+            title: '{currentContent.blogArticles.guides[2].title}',
+            desc: '{currentContent.blogArticles.guides[2].desc}',
+            button: 'Read Guide →'
+          },
+          {
+            title: '{currentContent.blogArticles.guides[3].title}',
+            desc: '{currentContent.blogArticles.guides[3].desc}',
+            button: 'Read Guide →'
+          },
+          {
+            title: '{currentContent.blogArticles.guides[4].title}',
+            desc: 'Do you need insurance? Best providers, coverage options, costs $50-$200. What\'s covered.',
+            button: 'Read Guide →'
+          },
+          {
+            title: '{currentContent.blogArticles.guides[5].title}',
+            desc: '{currentContent.blogArticles.guides[5].desc}',
+            button: 'Read Guide →'
+          }
+        ],
+        viewAll: 'View All 24 Guides →'
+      },
+      faqSection: {
+        title: '{currentContent.faqSection.title}',
+        subtitle: '{currentContent.faqSection.subtitle}'
+      },
+      finalCta: {
+        title: '{currentContent.finalCta.title}',
+        subtitle: 'Get a free consultation, second opinion, and personalized treatment plan from India\'s top medical experts',
+        cta1: 'Get Free Consultation Now',
+        cta2: 'Contact Us',
+        features1: '{currentContent.finalCta.features1}',
+        features2: '{currentContent.finalCta.features2}',
+        support: '{currentContent.finalCta.support}'
+      }
+    },
+    ar: {
+      hero: {
+        title: 'السياحة العلاجية إلى الهند 2025',
+        subtitle: 'وفّر 60-80% على رعاية صحية عالمية المستوى مع مستشفيات معتمدة من JCI',
+        description: 'موثوق من قبل أكثر من 200,000 مريض من الإمارات والسعودية ودول الخليج سنوياً. لا أوقات انتظار. أطباء خبراء. دعم شامل.',
+        cta1: 'احصل على استشارة مجانية',
+        cta2: 'احجز علاجك الآن',
+        features: '✓ رأي طبي ثاني مجاني ✓ لا وقت انتظار ✓ المساعدة في التأشيرة الطبية ✓ الاستقبال في المطار مشمول'
+      },
+      statistics: [
+        { number: '500,000+', label: 'مريض دولي سنوياً', description: 'مرضى من أكثر من 150 دولة' },
+        { number: '40+', label: 'مستشفى معتمد من JCI', description: 'معايير جودة عالمية' },
+        { number: '95%+', label: 'معدل النجاح', description: 'مماثل لمستشفيات أمريكا وبريطانيا' },
+        { number: '60-80%', label: 'متوسط التوفير', description: 'مقارنة بالدول الغربية' },
+      ],
+      benefits: {
+        title: 'لماذا تختار الهند للعلاج الطبي؟',
+        subtitle: 'أصبحت الهند الوجهة الرائدة عالمياً للسياحة العلاجية، وتجذب المرضى من أكثر من 150 دولة',
+      },
+      popularTreatments: {
+        title: 'العلاجات الطبية الشائعة',
+        subtitle: 'الإجراءات الأكثر طلباً من المرضى الدوليين من الإمارات والسعودية ودول الخليج',
+        viewDetails: 'عرض التفاصيل والمستشفيات',
+        viewAll: 'عرض جميع العلاجات (أكثر من 30) ←',
+        indiaLabel: 'التكلفة في الهند:',
+      },
+      costSavings: {
+        title: 'توفير كبير في التكاليف - مقارنة حقيقية',
+        subtitle: 'شاهد كم يمكنك توفيره على الإجراءات الطبية الشائعة',
+        headers: {
+          treatment: 'العلاج',
+          india: 'الهند',
+          usa: 'أمريكا',
+          uk: 'بريطانيا',
+          uae: 'الإمارات',
+          savings: 'توفيرك'
+        },
+        note1: 'متوسط التوفير: 60-80%',
+        note1Bold: ' مقارنة بأمريكا وبريطانيا والإمارات',
+        note2: 'جميع الأسعار تشمل: الجراحة، الإقامة في المستشفى، أتعاب الطبيب، الأدوية، الرعاية بعد العملية'
+      },
+      destinations: {
+        title: 'أفضل وجهات السياحة العلاجية في الهند',
+        subtitle: 'مستشفيات معتمدة من JCI، أطباء خبراء، رحلات مباشرة من دبي وأبوظبي والرياض',
+        treatmentsAvailable: 'علاج متاح',
+        jciHospitals: 'مستشفيات معتمدة من JCI',
+        directFlights: 'رحلات مباشرة من دول الخليج',
+        viewButton: 'عرض المستشفيات والعلاجات'
+      },
+      gccSection: {
+        title: 'دعم خاص لمرضى دول الخليج',
+        subtitle: 'نحن نفهم احتياجات المرضى من الإمارات والسعودية وقطر وعُمان والكويت والبحرين',
+        uae: {
+          title: '🇦🇪 مرضى الإمارات',
+          features: [
+            'رحلات مباشرة: دبي/أبوظبي ← مومباي (3 ساعات)، دلهي (3.5 ساعة)، بنغالور (4 ساعات)',
+            'تأشيرة طبية عند الوصول في 6 مطارات رئيسية (موافقة فورية)',
+            'منسقون ناطقون بالعربية متاحون على مدار الساعة',
+            'طعام حلال، غرف صلاة في جميع المستشفيات الكبرى'
+          ],
+          button: 'دليل مرضى الإمارات ←'
+        },
+        saudi: {
+          title: '🇸🇦 مرضى السعودية',
+          features: [
+            'رحلات مباشرة: الرياض/جدة ← مومباي (4 ساعات)، دلهي (4.5 ساعة)، بنغالور (5 ساعات)',
+            'تأشيرة طبية إلكترونية عبر الإنترنت (موافقة خلال 3-5 أيام، $80 إجمالي)',
+            'مترجمون عرب، إقامة مناسبة للسعوديين',
+            'تأشيرة مرافق/عائلة مشمولة (تأشيرة مرافق طبي)'
+          ],
+          button: 'دليل المرضى السعوديين ←'
+        },
+        allGcc: {
+          title: '🌍 جميع دول الخليج',
+          features: [
+            'مرحباً بمرضى قطر وعُمان والكويت والبحرين',
+            'عملية تأشيرة طبية بسيطة (عبر الإنترنت أو عند الوصول)',
+            'باقة كاملة: تأشيرة، رحلات، فندق، علاج مشمول',
+            'متابعة ما بعد العلاج عبر مكالمة فيديو بعد العودة'
+          ],
+          button: 'دليل التأشيرة الطبية ←'
+        }
+      },
+      howItWorks: {
+        title: 'رحلتك العلاجية - خطوة بخطوة',
+        subtitle: 'من الاستشارة إلى التعافي، نتولى كل شيء',
+        steps: [
+          {
+            title: 'استشارة مجانية',
+            desc: 'أرسل التقارير الطبية عبر الإنترنت. احصل على رأي ثاني من أخصائي هندي خلال 48 ساعة. مكالمة فيديو مع الطبيب (مجانية).',
+            timeline: 'اليوم 1-2'
+          },
+          {
+            title: 'خطة العلاج والتأشيرة',
+            desc: 'استلم خطة علاج مفصلة، تقدير التكلفة، خيارات المستشفيات. نساعدك في طلب التأشيرة الطبية (إلكترونية أو عند الوصول).',
+            timeline: 'اليوم 3-7'
+          },
+          {
+            title: 'السفر والوصول',
+            desc: 'احجز الرحلات. نرتب: الاستقبال في المطار، الفندق (المريض + المرافق)، التسجيل المسبق في المستشفى، منسق الاستقبال.',
+            timeline: 'اليوم 8-10'
+          },
+          {
+            title: 'العلاج والتعافي',
+            desc: 'العلاج في مستشفى معتمد من JCI. رعاية ما بعد الجراحة، مراقبة التعافي. المتابعة بعد العودة للوطن (مكالمات فيديو).',
+            timeline: 'الأسبوع 2+'
+          }
+        ],
+        finalCta: 'ابدأ رحلتك - استشارة مجانية'
+      },
+      blogArticles: {
+        title: 'أدلة وموارد السياحة العلاجية',
+        subtitle: 'أدلة شاملة لمساعدتك في التخطيط لرحلتك العلاجية إلى الهند',
+        guides: [
+          {
+            title: 'دليل السياحة العلاجية لمرضى الإمارات',
+            desc: 'دليل شامل للمرضى من دبي وأبوظبي والشارقة. الرحلات، التأشيرة، التكاليف، أفضل المستشفيات.',
+            button: 'اقرأ الدليل ←'
+          },
+          {
+            title: 'دليل الرعاية الصحية لمرضى الرياض',
+            desc: 'مرضى السعودية: رحلات مباشرة، عملية التأشيرة الطبية، أفضل المستشفيات، التوفير بالريال السعودي.',
+            button: 'اقرأ الدليل ←'
+          },
+          {
+            title: 'دليل التأشيرة الطبية للهند - شامل',
+            desc: 'التأشيرة الطبية الإلكترونية، التأشيرة عند الوصول، عملية التقديم، المستندات المطلوبة، وقت المعالجة.',
+            button: 'اقرأ الدليل ←'
+          },
+          {
+            title: 'أفضل وقت لزيارة الهند للعلاج',
+            desc: 'الطقس، المواسم، توفر المستشفيات، نصائح السفر حسب الشهر. أفضل الأشهر: أكتوبر-مارس.',
+            button: 'اقرأ الدليل ←'
+          },
+          {
+            title: 'دليل تأمين السياحة العلاجية',
+            desc: 'هل تحتاج للتأمين؟ أفضل مقدمي الخدمة، خيارات التغطية، التكاليف $50-$200. ما هو مشمول.',
+            button: 'اقرأ الدليل ←'
+          },
+          {
+            title: 'اختيار المستشفى المناسب',
+            desc: 'اعتماد JCI، شهادات الأطباء، معدلات النجاح، خدمات المرضى الدوليين، التقييمات.',
+            button: 'اقرأ الدليل ←'
+          }
+        ],
+        viewAll: 'عرض جميع الأدلة (24 دليل) ←'
+      },
+      faqSection: {
+        title: 'الأسئلة الشائعة',
+        subtitle: 'أسئلة شائعة من المرضى الدوليين حول السياحة العلاجية إلى الهند'
+      },
+      finalCta: {
+        title: 'هل أنت مستعد لبدء رحلتك العلاجية إلى الهند؟',
+        subtitle: 'احصل على استشارة مجانية، رأي طبي ثاني، وخطة علاج مخصصة من كبار الخبراء الطبيين في الهند',
+        cta1: 'احصل على استشارة مجانية الآن',
+        cta2: 'اتصل بنا',
+        features1: '✓ أكثر من 200,000 مريض دولي سنوياً ✓ أكثر من 40 مستشفى معتمد من JCI',
+        features2: '✓ معدل نجاح أكثر من 95% ✓ وفّر 60-80% على تكاليف العلاج',
+        support: 'متاح 24/7 | دعم واتساب | عربي وإنجليزي'
+      }
+    }
+  };
+
+  // Safe locale resolution with fallback
+  const safeLocale = (locale === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
+  const currentContent = content[safeLocale];
+
   // Fetch only Indian cities with their treatments
   const cities = await prisma.city.findMany({
     where: {
@@ -216,10 +548,10 @@ export default async function MedicalTourismPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
-              <Link href="/consultation">Get Free Consultation</Link>
+              <Link href="/consultation">{currentContent.hero.cta1}</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary-700 text-lg px-8 py-6">
-              <Link href="/booking">Book Treatment Now</Link>
+              <Link href="/booking">{currentContent.hero.cta2}</Link>
             </Button>
           </div>
           <p className="mt-6 text-sm text-primary-100">
@@ -232,7 +564,7 @@ export default async function MedicalTourismPage() {
       <section className="bg-white px-4 py-12 border-b">
         <div className="container mx-auto">
           <div className="grid gap-8 md:grid-cols-4">
-            {statistics.map((stat, index) => (
+            {currentContent.statistics.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="mb-2 text-4xl font-bold text-primary-600">{stat.number}</div>
                 <div className="mb-1 text-lg font-semibold text-gray-900">{stat.label}</div>
@@ -249,7 +581,7 @@ export default async function MedicalTourismPage() {
           Why Choose India for Medical Treatment?
         </h2>
         <p className="mx-auto mb-12 max-w-2xl text-center text-lg text-gray-600">
-          India has become the world&apos;s leading medical tourism destination, attracting patients from 150+ countries
+          {currentContent.benefits.subtitle}
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -321,7 +653,7 @@ export default async function MedicalTourismPage() {
 
           <div className="mt-12 text-center">
             <Button asChild size="lg" variant="outline">
-              <Link href="/treatments">View All 30+ Treatments →</Link>
+              <Link href="/treatments">{currentContent.popularTreatments.viewAll}</Link>
             </Button>
           </div>
         </div>
@@ -340,12 +672,12 @@ export default async function MedicalTourismPage() {
           <table className="w-full border-collapse rounded-lg overflow-hidden shadow-lg">
             <thead>
               <tr className="bg-gradient-to-r from-primary-600 to-primary-700 text-white">
-                <th className="px-6 py-4 text-left">Treatment</th>
-                <th className="px-6 py-4 text-center">India</th>
-                <th className="px-6 py-4 text-center">USA</th>
-                <th className="px-6 py-4 text-center">UK</th>
-                <th className="px-6 py-4 text-center">UAE</th>
-                <th className="px-6 py-4 text-center">You Save</th>
+                <th className="px-6 py-4 text-left">{currentContent.costSavings.headers.treatment}</th>
+                <th className="px-6 py-4 text-center">{currentContent.costSavings.headers.india}</th>
+                <th className="px-6 py-4 text-center">{currentContent.costSavings.headers.usa}</th>
+                <th className="px-6 py-4 text-center">{currentContent.costSavings.headers.uk}</th>
+                <th className="px-6 py-4 text-center">{currentContent.costSavings.headers.uae}</th>
+                <th className="px-6 py-4 text-center">{currentContent.costSavings.headers.savings}</th>
               </tr>
             </thead>
             <tbody className="bg-white">
@@ -419,7 +751,7 @@ export default async function MedicalTourismPage() {
 
         <div className="mt-8 text-center">
           <p className="text-lg text-gray-700">
-            <strong>Average savings: 60-80%</strong> compared to USA, UK, and UAE
+            <strong>{currentContent.costSavings.note1}</strong>{currentContent.costSavings.note1Bold}
           </p>
           <p className="mt-2 text-gray-600">
             All prices include: Surgery, Hospital stay, Doctor fees, Medication, Post-op care
@@ -453,7 +785,7 @@ export default async function MedicalTourismPage() {
                   <div className="mb-4 space-y-2">
                     <p className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle className="h-4 w-4 text-green-500" />
-                      {city.cityTreatments.length} treatments available
+                      {city.cityTreatments.length} {currentContent.destinations.treatmentsAvailable}
                     </p>
                     <p className="flex items-center gap-2 text-sm text-gray-700">
                       <CheckCircle className="h-4 w-4 text-green-500" />
@@ -508,7 +840,7 @@ export default async function MedicalTourismPage() {
                 Halal food, prayer rooms in all major hospitals
               </p>
               <Button asChild className="w-full mt-4">
-                <Link href="/blog/dubai-to-india-medical-tourism">UAE Patients Guide →</Link>
+                <Link href="/blog/dubai-to-india-medical-tourism">{currentContent.gccSection.uae.button}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -535,7 +867,7 @@ export default async function MedicalTourismPage() {
                 Family/companion visa included (Medical Attendant Visa)
               </p>
               <Button asChild className="w-full mt-4">
-                <Link href="/blog/riyadh-to-india-healthcare">Saudi Patients Guide →</Link>
+                <Link href="/blog/riyadh-to-india-healthcare">{currentContent.gccSection.saudi.button}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -562,7 +894,7 @@ export default async function MedicalTourismPage() {
                 Post-treatment follow-up via video call after return
               </p>
               <Button asChild className="w-full mt-4">
-                <Link href="/blog/medical-visa-india-complete-guide">Medical Visa Guide →</Link>
+                <Link href="/blog/medical-visa-india-complete-guide">{currentContent.gccSection.allGcc.button}</Link>
               </Button>
             </CardContent>
           </Card>
@@ -584,9 +916,9 @@ export default async function MedicalTourismPage() {
               {[
                 {
                   step: '1',
-                  title: 'Free Consultation',
-                  desc: 'Submit medical reports online. Get second opinion from Indian specialist within 48 hours. Video call with doctor (free).',
-                  timeline: 'Day 1-2'
+                  title: currentContent.howItWorks.steps[0].title,
+                  desc: currentContent.howItWorks.steps[0].desc,
+                  timeline: currentContent.howItWorks.steps[0].timeline
                 },
                 {
                   step: '2',
@@ -631,7 +963,7 @@ export default async function MedicalTourismPage() {
 
           <div className="mt-12 text-center">
             <Button asChild size="lg">
-              <Link href="/consultation">Start Your Journey - Free Consultation</Link>
+              <Link href="/consultation">{currentContent.howItWorks.finalCta}</Link>
             </Button>
           </div>
         </div>
@@ -709,7 +1041,7 @@ export default async function MedicalTourismPage() {
             </CardHeader>
             <CardContent>
               <p className="text-sm text-gray-600 mb-4">
-                Do you need insurance? Best providers, coverage options, costs $50-$200. What&apos;s covered.
+                {currentContent.blogArticles.guides[4].desc}
               </p>
               <Button asChild variant="outline" className="w-full">
                 <Link href="/blog/medical-tourism-insurance-india">Read Guide →</Link>
@@ -734,7 +1066,7 @@ export default async function MedicalTourismPage() {
 
         <div className="mt-12 text-center">
           <Button asChild size="lg" variant="outline">
-            <Link href="/blog">View All 24 Guides →</Link>
+            <Link href="/blog">{currentContent.blogArticles.viewAll}</Link>
           </Button>
         </div>
       </section>
@@ -780,14 +1112,14 @@ export default async function MedicalTourismPage() {
             Ready to Start Your Medical Journey to India?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            Get a free consultation, second opinion, and personalized treatment plan from India&apos;s top medical experts
+            {currentContent.finalCta.subtitle}
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <Button asChild size="lg" variant="secondary" className="text-lg px-8 py-6">
-              <Link href="/consultation">Get Free Consultation Now</Link>
+              <Link href="/consultation">{currentContent.finalCta.cta1}</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-primary-700 text-lg px-8 py-6">
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/contact">{currentContent.finalCta.cta2}</Link>
             </Button>
           </div>
           <div className="space-y-2 text-primary-100">
