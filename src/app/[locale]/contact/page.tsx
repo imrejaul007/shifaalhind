@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -13,30 +13,27 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { ALL_TREATMENTS } from '@/config/treatments-list';
 
-const contactSchema = z.object({
-  name: z.string().min(2, currentContent.form.nameRequired),
-  email: z.string().email(currentContent.form.invalidEmail),
-  phone: z.string().optional(),
-  country: z.string().optional(),
-  treatmentInterest: z.string().optional(),
-  subject: z.string().min(5, currentContent.form.subjectRequired),
-  message: z.string().min(10, currentContent.form.messageMinLength),
-});
-
-type ContactForm = z.infer<typeof contactSchema>;
+type ContactForm = {
+  name: string;
+  email: string;
+  phone?: string;
+  country?: string;
+  treatmentInterest?: string;
+  subject: string;
+  message: string;
+};
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  
   const locale = useLocale();
 
   // Bilingual content for Contact page
   const content = {
     en: {
       hero: {
-        title: '{currentContent.hero.title}',
+        title: 'Get in Touch',
         subtitle: "We're here to help 24/7. Reach out to us anytime!"
       },
       contactMethods: {
@@ -50,21 +47,21 @@ export default function ContactPage() {
         visitUs: 'Visit us'
       },
       form: {
-        title: '{currentContent.form.title}',
+        title: 'Send Us a Message',
         name: 'Name',
         nameRequired: 'Name is required',
         namePlaceholder: 'Your name',
         email: 'Email',
         invalidEmail: 'Invalid email',
         emailPlaceholder: 'your@email.com',
-        phone: '{currentContent.form.phone}',
+        phone: 'Phone / WhatsApp',
         phonePlaceholder: '+971 50 123 4567',
-        country: '{currentContent.form.country}',
+        country: 'Your Country',
         selectCountry: 'Select country...',
         gccCountries: '🌟 GCC Countries',
         menaRegion: '🌍 MENA Region',
         otherCountries: '🌎 Other Countries',
-        treatmentInterest: '{currentContent.form.treatmentInterest}',
+        treatmentInterest: 'Treatment of Interest',
         selectTreatment: 'Select treatment (optional)...',
         subject: 'Subject',
         subjectRequired: 'Subject is required',
@@ -77,6 +74,34 @@ export default function ContactPage() {
         successMessage: "Message sent successfully! We'll get back to you soon.",
         errorMessage: 'Failed to send message. Please try again.',
         required: '*'
+      },
+      countries: {
+        uae: 'United Arab Emirates',
+        saudi: 'Saudi Arabia',
+        qatar: 'Qatar',
+        oman: 'Oman',
+        kuwait: 'Kuwait',
+        bahrain: 'Bahrain',
+        egypt: 'Egypt',
+        jordan: 'Jordan',
+        lebanon: 'Lebanon',
+        iraq: 'Iraq',
+        yemen: 'Yemen',
+        syria: 'Syria',
+        palestine: 'Palestine',
+        morocco: 'Morocco',
+        algeria: 'Algeria',
+        tunisia: 'Tunisia',
+        libya: 'Libya',
+        sudan: 'Sudan',
+        usa: 'United States',
+        uk: 'United Kingdom',
+        canada: 'Canada',
+        australia: 'Australia',
+        singapore: 'Singapore',
+        malaysia: 'Malaysia',
+        thailand: 'Thailand',
+        other: 'Other'
       }
     },
     ar: {
@@ -122,12 +147,51 @@ export default function ContactPage() {
         successMessage: 'تم إرسال الرسالة بنجاح! سنتواصل معك قريباً.',
         errorMessage: 'فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.',
         required: '*'
+      },
+      countries: {
+        uae: 'الإمارات العربية المتحدة',
+        saudi: 'المملكة العربية السعودية',
+        qatar: 'قطر',
+        oman: 'عمان',
+        kuwait: 'الكويت',
+        bahrain: 'البحرين',
+        egypt: 'مصر',
+        jordan: 'الأردن',
+        lebanon: 'لبنان',
+        iraq: 'العراق',
+        yemen: 'اليمن',
+        syria: 'سوريا',
+        palestine: 'فلسطين',
+        morocco: 'المغرب',
+        algeria: 'الجزائر',
+        tunisia: 'تونس',
+        libya: 'ليبيا',
+        sudan: 'السودان',
+        usa: 'الولايات المتحدة',
+        uk: 'المملكة المتحدة',
+        canada: 'كندا',
+        australia: 'أستراليا',
+        singapore: 'سنغافورة',
+        malaysia: 'ماليزيا',
+        thailand: 'تايلاند',
+        other: 'أخرى'
       }
     }
   };
 
   const safeLocale = (locale === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
   const currentContent = content[safeLocale];
+
+  // Create dynamic schema with localized error messages
+  const contactSchema = useMemo(() => z.object({
+    name: z.string().min(2, currentContent.form.nameRequired),
+    email: z.string().email(currentContent.form.invalidEmail),
+    phone: z.string().optional(),
+    country: z.string().optional(),
+    treatmentInterest: z.string().optional(),
+    subject: z.string().min(5, currentContent.form.subjectRequired),
+    message: z.string().min(10, currentContent.form.messageMinLength),
+  }), [currentContent]);
 
   const {
     register,
@@ -202,7 +266,7 @@ export default function ContactPage() {
       <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-16 text-white">
         <div className="container text-center">
           <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl">
-            Get in Touch
+            {currentContent.hero.title}
           </h1>
           <p className="text-xl text-primary-100">
             {currentContent.hero.subtitle}
@@ -238,7 +302,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl">
           <Card>
             <CardHeader>
-              <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl">{currentContent.form.title}</CardTitle>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -262,7 +326,7 @@ export default function ContactPage() {
 
                 <div className="grid gap-6 md:grid-cols-2">
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Phone / WhatsApp</label>
+                    <label className="mb-2 block text-sm font-medium">{currentContent.form.phone}</label>
                     <Input {...register('phone')} type="tel" placeholder={currentContent.form.phonePlaceholder} />
                     {errors.phone && (
                       <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>
@@ -270,7 +334,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className="mb-2 block text-sm font-medium">Your Country</label>
+                    <label className="mb-2 block text-sm font-medium">{currentContent.form.country}</label>
                     <select
                       {...register('country')}
                       className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
@@ -278,45 +342,45 @@ export default function ContactPage() {
                       <option value="">{currentContent.form.selectCountry}</option>
 
                       <optgroup label={currentContent.form.gccCountries}>
-                        <option value="AE">🇦🇪 United Arab Emirates</option>
-                        <option value="SA">🇸🇦 Saudi Arabia</option>
-                        <option value="QA">🇶🇦 Qatar</option>
-                        <option value="OM">🇴🇲 Oman</option>
-                        <option value="KW">🇰🇼 Kuwait</option>
-                        <option value="BH">🇧🇭 Bahrain</option>
+                        <option value="AE">🇦🇪 {currentContent.countries.uae}</option>
+                        <option value="SA">🇸🇦 {currentContent.countries.saudi}</option>
+                        <option value="QA">🇶🇦 {currentContent.countries.qatar}</option>
+                        <option value="OM">🇴🇲 {currentContent.countries.oman}</option>
+                        <option value="KW">🇰🇼 {currentContent.countries.kuwait}</option>
+                        <option value="BH">🇧🇭 {currentContent.countries.bahrain}</option>
                       </optgroup>
 
                       <optgroup label={currentContent.form.menaRegion}>
-                        <option value="EG">🇪🇬 Egypt</option>
-                        <option value="JO">🇯🇴 Jordan</option>
-                        <option value="LB">🇱🇧 Lebanon</option>
-                        <option value="IQ">🇮🇶 Iraq</option>
-                        <option value="YE">🇾🇪 Yemen</option>
-                        <option value="SY">🇸🇾 Syria</option>
-                        <option value="PS">🇵🇸 Palestine</option>
-                        <option value="MA">🇲🇦 Morocco</option>
-                        <option value="DZ">🇩🇿 Algeria</option>
-                        <option value="TN">🇹🇳 Tunisia</option>
-                        <option value="LY">🇱🇾 Libya</option>
-                        <option value="SD">🇸🇩 Sudan</option>
+                        <option value="EG">🇪🇬 {currentContent.countries.egypt}</option>
+                        <option value="JO">🇯🇴 {currentContent.countries.jordan}</option>
+                        <option value="LB">🇱🇧 {currentContent.countries.lebanon}</option>
+                        <option value="IQ">🇮🇶 {currentContent.countries.iraq}</option>
+                        <option value="YE">🇾🇪 {currentContent.countries.yemen}</option>
+                        <option value="SY">🇸🇾 {currentContent.countries.syria}</option>
+                        <option value="PS">🇵🇸 {currentContent.countries.palestine}</option>
+                        <option value="MA">🇲🇦 {currentContent.countries.morocco}</option>
+                        <option value="DZ">🇩🇿 {currentContent.countries.algeria}</option>
+                        <option value="TN">🇹🇳 {currentContent.countries.tunisia}</option>
+                        <option value="LY">🇱🇾 {currentContent.countries.libya}</option>
+                        <option value="SD">🇸🇩 {currentContent.countries.sudan}</option>
                       </optgroup>
 
                       <optgroup label={currentContent.form.otherCountries}>
-                        <option value="US">🇺🇸 United States</option>
-                        <option value="GB">🇬🇧 United Kingdom</option>
-                        <option value="CA">🇨🇦 Canada</option>
-                        <option value="AU">🇦🇺 Australia</option>
-                        <option value="SG">🇸🇬 Singapore</option>
-                        <option value="MY">🇲🇾 Malaysia</option>
-                        <option value="TH">🇹🇭 Thailand</option>
-                        <option value="OTHER">🌍 Other</option>
+                        <option value="US">🇺🇸 {currentContent.countries.usa}</option>
+                        <option value="GB">🇬🇧 {currentContent.countries.uk}</option>
+                        <option value="CA">🇨🇦 {currentContent.countries.canada}</option>
+                        <option value="AU">🇦🇺 {currentContent.countries.australia}</option>
+                        <option value="SG">🇸🇬 {currentContent.countries.singapore}</option>
+                        <option value="MY">🇲🇾 {currentContent.countries.malaysia}</option>
+                        <option value="TH">🇹🇭 {currentContent.countries.thailand}</option>
+                        <option value="OTHER">🌍 {currentContent.countries.other}</option>
                       </optgroup>
                     </select>
                   </div>
                 </div>
 
                 <div>
-                  <label className="mb-2 block text-sm font-medium">Treatment of Interest</label>
+                  <label className="mb-2 block text-sm font-medium">{currentContent.form.treatmentInterest}</label>
                   <select
                     {...register('treatmentInterest')}
                     className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
