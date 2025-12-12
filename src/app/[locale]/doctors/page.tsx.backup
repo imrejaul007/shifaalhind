@@ -1,18 +1,3 @@
-import { generateSEOMetadata } from '@/lib/seo';
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
-  return generateSEOMetadata({
-    title_en: 'Expert Medical Doctors in India | Board-Certified Specialists',
-    title_ar: 'أطباء طبيون خبراء في الهند | متخصصون معتمدون',
-    description_en: 'Consult with 25+ board-certified specialist doctors in Bangalore. International training, 15-35 years experience, Arabic-speaking support. Expert care in cardiac, orthopedic, oncology, IVF, neurosurgery, and more.',
-    description_ar: 'استشر مع أكثر من 25 طبيباً متخصصاً معتمداً في بنغالور. تدريب دولي، خبرة 15-35 عاماً، دعم ناطق بالعربية. رعاية متخصصة في القلب والعظام والأورام وأطفال الأنابيب وجراحة الأعصاب والمزيد.',
-    locale,
-    path: '/doctors',
-  });
-}
-
 export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
@@ -24,9 +9,7 @@ import {
   MapPin, Phone, MessageCircle, Globe, Users, Sparkles, TrendingDown, Building2
 } from 'lucide-react';
 
-export default async function DoctorsPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
+export default async function DoctorsPage() {
   const doctors = await prisma.doctor.findMany({
     where: { published: true },
     include: {
@@ -50,254 +33,6 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
   const bangaloreDoctors = doctors.filter(d => d.hospital.city.slug === 'bangalore');
   const arabicSpeakingDoctors = doctors.filter(d => d.languages.includes('Arabic'));
 
-  // Bilingual content
-  const content = {
-    en: {
-      hero: {
-        badge: '25+ Expert Doctors in Bangalore | Arabic-Speaking Team',
-        title: 'World-Class Medical Experts',
-        subtitle: 'Board-certified specialists with international training, decades of experience, and Arabic-speaking support for GCC patients',
-        stats: [
-          { label: `${doctors.length}+`, value: 'Expert Doctors' },
-          { label: `${arabicSpeakingDoctors.length}+`, value: 'Arabic Speaking' },
-          { label: '15-35 Years', value: 'Experience' },
-          { label: 'JCI/NABH', value: 'Accredited' },
-        ],
-        buttons: {
-          book: 'Book Free Consultation',
-          arabic: 'Arabic-Speaking Doctors',
-        },
-      },
-      whyDoctors: {
-        badge: 'Why Choose Our Doctors?',
-        title: 'Trusted by 10,000+ GCC Patients',
-        benefits: [
-          {
-            title: 'International Qualifications',
-            description: 'MBBS, MS, MCh, DM degrees from top Indian & international medical colleges',
-          },
-          {
-            title: '15-35 Years Experience',
-            description: 'Senior consultants with thousands of successful surgeries and procedures',
-          },
-          {
-            title: 'Multi-lingual Support',
-            description: 'Doctors speak English, Hindi, and work with native Arabic coordinators from GCC',
-          },
-          {
-            title: 'Patient-Centric Care',
-            description: 'Personalized treatment plans, second opinions, and 24/7 support',
-          },
-        ],
-      },
-      testimonials: {
-        badge: 'Patient Reviews',
-        title: 'What GCC Patients Say About Our Doctors',
-        items: [
-          {
-            name: 'Khalid Al-Mahmoud',
-            location: 'Kuwait City, Kuwait',
-            doctor: 'Dr. Devi Shetty',
-            treatment: 'Heart Bypass Surgery',
-            quote: 'Dr. Shetty is a world-renowned cardiac surgeon. The Arabic coordinator explained everything in my language. The care was exceptional and I saved $90,000 compared to USA.',
-            rating: 5,
-          },
-          {
-            name: 'Mariam Al-Sabah',
-            location: 'Abu Dhabi, UAE',
-            doctor: 'Dr. Rajesh Bendre',
-            treatment: 'IVF Treatment',
-            quote: "Dr. Bendre and his team were incredibly compassionate. After 2 failed cycles in UAE, we succeeded in Bangalore. The Arabic-speaking team made us feel at home.",
-            rating: 5,
-          },
-          {
-            name: 'Omar Al-Ghamdi',
-            location: 'Jeddah, Saudi Arabia',
-            doctor: 'Dr. Anil Arora',
-            treatment: 'Knee Replacement',
-            quote: "Dr. Arora is one of India's best orthopedic surgeons. I was walking without pain in 2 weeks. The coordinator arranged halal food and prayer facilities. Highly recommended!",
-            rating: 5,
-          },
-        ],
-      },
-      bangalore: {
-        badge: 'Bangalore Medical Hub',
-        title: 'Top Doctors in Bangalore',
-        subtitle: "Bangalore is India's medical tourism capital with world-class hospitals and expert doctors. We work with the best specialists across all major hospitals.",
-        labels: {
-          topDoctor: '⭐ Top Doctor',
-          qualifications: 'Qualifications:',
-          consultationFee: 'Consultation Fee',
-          viewProfile: 'View Full Profile',
-          showing: (count: number, total: number) => `Showing ${count} of ${total} doctors in Bangalore`,
-          viewAll: 'View All Bangalore Doctors',
-          experience: 'years experience',
-        },
-      },
-      arabicDoctors: {
-        badge: 'For GCC Patients',
-        title: 'Arabic-Speaking Medical Team',
-        subtitle: 'Our doctors work with native Arabic-speaking coordinators who lived in GCC countries for 5-15 years. They understand your language, culture, and medical needs.',
-        labels: {
-          arabic: 'Arabic',
-          coordinator: '+ Native Arabic coordinator support',
-          consultationFee: 'Consultation Fee',
-          viewProfile: 'View Full Profile',
-          experience: 'years experience',
-        },
-      },
-      allDoctors: {
-        title: (count: number) => `All Expert Doctors (${count})`,
-        subtitle: 'Browse our complete network of board-certified specialists across India',
-        empty: {
-          title: 'No doctors available yet',
-          subtitle: 'Check back soon for our medical experts',
-          button: 'Contact Us',
-        },
-        labels: {
-          arabic: 'Arabic',
-          qualifications: 'Qualifications:',
-          languages: 'Languages:',
-          consultationFee: 'Consultation Fee',
-          viewProfile: 'View Profile',
-          experience: 'years experience',
-        },
-      },
-      cta: {
-        title: 'Consult with Our Medical Experts',
-        subtitle: 'Get a free consultation with our specialists. Native Arabic coordinators (from Dubai & Riyadh) available 24/7 on WhatsApp.',
-        buttons: {
-          consultation: 'Free Medical Consultation',
-          call: 'Call Now',
-          whatsapp: 'WhatsApp في العربية',
-        },
-      },
-    },
-    ar: {
-      hero: {
-        badge: '25+ طبيب خبير في بنغالور | فريق ناطق بالعربية',
-        title: 'خبراء طبيون عالميون',
-        subtitle: 'متخصصون معتمدون مع تدريب دولي، عقود من الخبرة، ودعم ناطق بالعربية لمرضى دول الخليج',
-        stats: [
-          { label: `${doctors.length}+`, value: 'أطباء خبراء' },
-          { label: `${arabicSpeakingDoctors.length}+`, value: 'ناطقون بالعربية' },
-          { label: '15-35 سنة', value: 'خبرة' },
-          { label: 'JCI/NABH', value: 'معتمد' },
-        ],
-        buttons: {
-          book: 'احجز استشارة مجانية',
-          arabic: 'أطباء ناطقون بالعربية',
-        },
-      },
-      whyDoctors: {
-        badge: 'لماذا تختار أطباءنا؟',
-        title: 'موثوق به من قبل أكثر من 10,000 مريض من دول الخليج',
-        benefits: [
-          {
-            title: 'مؤهلات دولية',
-            description: 'درجات MBBS و MS و MCh و DM من أفضل الكليات الطبية الهندية والدولية',
-          },
-          {
-            title: 'خبرة 15-35 عاماً',
-            description: 'استشاريون كبار مع آلاف الجراحات والإجراءات الناجحة',
-          },
-          {
-            title: 'دعم متعدد اللغات',
-            description: 'الأطباء يتحدثون الإنجليزية والهندية ويعملون مع منسقين ناطقين بالعربية من دول الخليج',
-          },
-          {
-            title: 'رعاية محورها المريض',
-            description: 'خطط علاج شخصية، آراء ثانية، ودعم على مدار الساعة',
-          },
-        ],
-      },
-      testimonials: {
-        badge: 'آراء المرضى',
-        title: 'ماذا يقول مرضى دول الخليج عن أطبائنا',
-        items: [
-          {
-            name: 'خالد المحمود',
-            location: 'مدينة الكويت، الكويت',
-            doctor: 'د. ديفي شيتي',
-            treatment: 'جراحة القلب المفتوح',
-            quote: 'الدكتور شيتي جراح قلب مشهور عالمياً. المنسق العربي شرح كل شيء بلغتي. الرعاية كانت استثنائية ووفرت 90,000 دولار مقارنة بأمريكا.',
-            rating: 5,
-          },
-          {
-            name: 'مريم الصباح',
-            location: 'أبو ظبي، الإمارات العربية المتحدة',
-            doctor: 'د. راجيش بيندري',
-            treatment: 'علاج أطفال الأنابيب',
-            quote: 'الدكتور بيندري وفريقه كانوا متعاطفين بشكل لا يصدق. بعد دورتين فاشلتين في الإمارات، نجحنا في بنغالور. الفريق الناطق بالعربية جعلنا نشعر وكأننا في بيتنا.',
-            rating: 5,
-          },
-          {
-            name: 'عمر الغامدي',
-            location: 'جدة، المملكة العربية السعودية',
-            doctor: 'د. أنيل أرورا',
-            treatment: 'استبدال مفصل الركبة',
-            quote: 'الدكتور أرورا واحد من أفضل جراحي العظام في الهند. كنت أمشي بدون ألم في أسبوعين. المنسق نظم الطعام الحلال ومرافق الصلاة. أوصي به بشدة!',
-            rating: 5,
-          },
-        ],
-      },
-      bangalore: {
-        badge: 'مركز بنغالور الطبي',
-        title: 'أفضل الأطباء في بنغالور',
-        subtitle: 'بنغالور هي عاصمة السياحة العلاجية في الهند مع مستشفيات عالمية المستوى وأطباء خبراء. نحن نعمل مع أفضل المتخصصين عبر جميع المستشفيات الرئيسية.',
-        labels: {
-          topDoctor: '⭐ طبيب متميز',
-          qualifications: 'المؤهلات:',
-          consultationFee: 'رسوم الاستشارة',
-          viewProfile: 'عرض الملف الكامل',
-          showing: (count: number, total: number) => `عرض ${count} من ${total} طبيب في بنغالور`,
-          viewAll: 'عرض جميع أطباء بنغالور',
-          experience: 'سنة خبرة',
-        },
-      },
-      arabicDoctors: {
-        badge: 'لمرضى دول الخليج',
-        title: 'فريق طبي ناطق بالعربية',
-        subtitle: 'يعمل أطباؤنا مع منسقين ناطقين بالعربية عاشوا في دول الخليج لمدة 5-15 عاماً. إنهم يفهمون لغتك وثقافتك واحتياجاتك الطبية.',
-        labels: {
-          arabic: 'عربي',
-          coordinator: '+ دعم منسق ناطق بالعربية',
-          consultationFee: 'رسوم الاستشارة',
-          viewProfile: 'عرض الملف الكامل',
-          experience: 'سنة خبرة',
-        },
-      },
-      allDoctors: {
-        title: (count: number) => `جميع الأطباء الخبراء (${count})`,
-        subtitle: 'تصفح شبكتنا الكاملة من المتخصصين المعتمدين عبر الهند',
-        empty: {
-          title: 'لا يوجد أطباء متاحون حتى الآن',
-          subtitle: 'تحقق مرة أخرى قريباً للحصول على خبرائنا الطبيين',
-          button: 'اتصل بنا',
-        },
-        labels: {
-          arabic: 'عربي',
-          qualifications: 'المؤهلات:',
-          languages: 'اللغات:',
-          consultationFee: 'رسوم الاستشارة',
-          viewProfile: 'عرض الملف',
-          experience: 'سنة خبرة',
-        },
-      },
-      cta: {
-        title: 'استشر مع خبرائنا الطبيين',
-        subtitle: 'احصل على استشارة مجانية مع متخصصينا. منسقون ناطقون بالعربية (من دبي والرياض) متاحون على مدار الساعة طوال أيام الأسبوع على واتساب.',
-        buttons: {
-          consultation: 'استشارة طبية مجانية',
-          call: 'اتصل الآن',
-          whatsapp: 'واتساب in English',
-        },
-      },
-    },
-  };
-
-  const t = content[locale as 'en' | 'ar'];
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -306,23 +41,26 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
         <div className="container relative mx-auto text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
-            <span>{t.hero.badge}</span>
+            <span>25+ Expert Doctors in Bangalore | Arabic-Speaking Team</span>
           </div>
           <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
-            {t.hero.title}
+            World-Class Medical Experts
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-primary-100">
-            {t.hero.subtitle}
+            Board-certified specialists with international training, decades of experience,
+            and Arabic-speaking support for GCC patients
           </p>
 
           {/* Stats */}
           <div className="mx-auto mb-8 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
-            {t.hero.stats.map((stat, idx) => (
+            {[
+              { icon: Users, label: '{doctors.length}+', value: 'Expert Doctors' },
+              { icon: Languages, label: '{arabicSpeakingDoctors.length}+', value: 'Arabic Speaking' },
+              { icon: Award, label: '15-35 Years', value: 'Experience' },
+              { icon: Building2, label: 'JCI/NABH', value: 'Accredited' },
+            ].map((stat, idx) => (
               <div key={idx} className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
-                {idx === 0 && <Users className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 1 && <Languages className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 2 && <Award className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 3 && <Building2 className="mx-auto mb-2 h-6 w-6" />}
+                <stat.icon className="mx-auto mb-2 h-6 w-6" />
                 <p className="mb-1 text-lg font-bold">{stat.label}</p>
                 <p className="text-sm text-primary-100">{stat.value}</p>
               </div>
@@ -331,12 +69,12 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
 
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
-              <Link href="/consultation">{t.hero.buttons.book}</Link>
+              <Link href="/consultation">Book Free Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="#arabic-doctors">
                 <Languages className="mr-2 h-5 w-5" />
-                {t.hero.buttons.arabic}
+                Arabic-Speaking Doctors
               </Link>
             </Button>
           </div>
@@ -349,21 +87,39 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
           <div className="mb-12 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
               <Award className="h-4 w-4" />
-              {t.whyDoctors.badge}
+              Why Choose Our Doctors?
             </div>
             <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              {t.whyDoctors.title}
+              Trusted by 10,000+ GCC Patients
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-4">
-            {t.whyDoctors.benefits.map((item, index) => (
+            {[
+              {
+                icon: GraduationCap,
+                title: 'International Qualifications',
+                description: 'MBBS, MS, MCh, DM degrees from top Indian & international medical colleges',
+              },
+              {
+                icon: Briefcase,
+                title: '15-35 Years Experience',
+                description: 'Senior consultants with thousands of successful surgeries and procedures',
+              },
+              {
+                icon: Languages,
+                title: 'Multi-lingual Support',
+                description: 'Doctors speak English, Hindi, and work with native Arabic coordinators from GCC',
+              },
+              {
+                icon: CheckCircle,
+                title: 'Patient-Centric Care',
+                description: 'Personalized treatment plans, second opinions, and 24/7 support',
+              },
+            ].map((item, index) => (
               <Card key={index} className="group border-2 transition-all hover:scale-105 hover:border-primary-300 hover:shadow-xl">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-primary-600 shadow-lg transition-all group-hover:scale-110">
-                    {index === 0 && <GraduationCap className="h-8 w-8 text-white" />}
-                    {index === 1 && <Briefcase className="h-8 w-8 text-white" />}
-                    {index === 2 && <Languages className="h-8 w-8 text-white" />}
-                    {index === 3 && <CheckCircle className="h-8 w-8 text-white" />}
+                    <item.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-lg">{item.title}</CardTitle>
                   <CardDescription className="text-sm">{item.description}</CardDescription>
@@ -380,15 +136,40 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
           <div className="mb-12 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
               <Users className="h-4 w-4" />
-              {t.testimonials.badge}
+              Patient Reviews
             </div>
             <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              {t.testimonials.title}
+              What GCC Patients Say About Our Doctors
             </h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {t.testimonials.items.map((testimonial, idx) => (
+            {[
+              {
+                name: 'Khalid Al-Mahmoud',
+                location: 'Kuwait City, Kuwait',
+                doctor: 'Dr. Devi Shetty',
+                treatment: 'Heart Bypass Surgery',
+                quote: 'Dr. Shetty is a world-renowned cardiac surgeon. The Arabic coordinator explained everything in my language. The care was exceptional and I saved $90,000 compared to USA.',
+                rating: 5,
+              },
+              {
+                name: 'Mariam Al-Sabah',
+                location: 'Abu Dhabi, UAE',
+                doctor: 'Dr. Rajesh Bendre',
+                treatment: 'IVF Treatment',
+                quote: 'Dr. Bendre and his team were incredibly compassionate. After 2 failed cycles in UAE, we succeeded in Bangalore. The Arabic-speaking team made us feel at home.',
+                rating: 5,
+              },
+              {
+                name: 'Omar Al-Ghamdi',
+                location: 'Jeddah, Saudi Arabia',
+                doctor: 'Dr. Anil Arora',
+                treatment: 'Knee Replacement',
+                quote: 'Dr. Arora is one of India&apos;s best orthopedic surgeons. I was walking without pain in 2 weeks. The coordinator arranged halal food and prayer facilities. Highly recommended!',
+                rating: 5,
+              },
+            ].map((testimonial, idx) => (
               <Card key={idx} className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">
                 <CardHeader>
                   <div className="mb-2 flex items-center gap-1">
@@ -423,13 +204,14 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
             <div className="mb-12 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
                 <MapPin className="h-4 w-4" />
-                {t.bangalore.badge}
+                Bangalore Medical Hub
               </div>
               <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-                {t.bangalore.title}
+                Top Doctors in Bangalore
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-gray-600">
-                {t.bangalore.subtitle}
+                Bangalore is India&apos;s medical tourism capital with world-class hospitals and expert doctors.
+                We work with the best specialists across all major hospitals.
               </p>
             </div>
 
@@ -443,12 +225,12 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                       </div>
                       {doctor.featured && (
                         <div className="rounded-full bg-yellow-100 px-3 py-1 text-xs font-semibold text-yellow-700">
-                          {t.bangalore.labels.topDoctor}
+                          ⭐ Top Doctor
                         </div>
                       )}
                     </div>
                     <CardTitle className="text-xl">
-                      {doctor.title_en} {locale === 'ar' ? doctor.name_ar : doctor.name_en}
+                      {doctor.title_en} {doctor.name_en}
                     </CardTitle>
                     <CardDescription>{doctor.specialties.join(', ')}</CardDescription>
                     {doctor.rating && (
@@ -463,22 +245,22 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                     <div>
                       <div className="mb-1 flex items-center gap-2 text-sm font-semibold text-gray-900">
                         <Building2 className="h-4 w-4 text-green-600" />
-                        {locale === 'ar' ? doctor.hospital.name_ar : doctor.hospital.name_en}
+                        {doctor.hospital.name_en}
                       </div>
                       <p className="text-sm text-gray-600">
-                        {locale === 'ar' ? doctor.hospital.city.name_ar : doctor.hospital.city.name_en}, India
+                        {doctor.hospital.city.name_en}, India
                       </p>
                       {doctor.experience && (
                         <div className="mt-1 flex items-center gap-1 text-sm text-gray-600">
                           <Briefcase className="h-3 w-3" />
-                          <span>{doctor.experience}+ {t.bangalore.labels.experience}</span>
+                          <span>{doctor.experience}+ years experience</span>
                         </div>
                       )}
                     </div>
 
                     {doctor.qualifications.length > 0 && (
                       <div>
-                        <h4 className="mb-2 text-sm font-semibold text-gray-900">{t.bangalore.labels.qualifications}</h4>
+                        <h4 className="mb-2 text-sm font-semibold text-gray-900">Qualifications:</h4>
                         <div className="flex flex-wrap gap-1">
                           {doctor.qualifications.slice(0, 2).map((qual, idx) => (
                             <span
@@ -506,13 +288,13 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
 
                     {doctor.consultationFee && (
                       <div className="rounded-lg bg-green-50 p-3 text-center">
-                        <p className="text-xs text-gray-600">{t.bangalore.labels.consultationFee}</p>
+                        <p className="text-xs text-gray-600">Consultation Fee</p>
                         <p className="text-lg font-bold text-green-700">${doctor.consultationFee}</p>
                       </div>
                     )}
 
                     <Button asChild className="w-full">
-                      <Link href={`/doctors/${doctor.slug}`}>{t.bangalore.labels.viewProfile}</Link>
+                      <Link href={`/doctors/${doctor.slug}`}>View Full Profile</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -522,10 +304,10 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
             {bangaloreDoctors.length > 6 && (
               <div className="mt-8 text-center">
                 <p className="mb-4 text-gray-600">
-                  {t.bangalore.labels.showing(6, bangaloreDoctors.length)}
+                  Showing 6 of {bangaloreDoctors.length} doctors in Bangalore
                 </p>
                 <Button asChild variant="outline" size="lg">
-                  <Link href="#all-doctors">{t.bangalore.labels.viewAll}</Link>
+                  <Link href="#all-doctors">View All Bangalore Doctors</Link>
                 </Button>
               </div>
             )}
@@ -540,13 +322,14 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
             <div className="mb-12 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-orange-100 px-4 py-2 text-sm font-medium text-orange-700">
                 <Languages className="h-4 w-4" />
-                {t.arabicDoctors.badge}
+                For GCC Patients
               </div>
               <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-                {t.arabicDoctors.title}
+                Arabic-Speaking Medical Team
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-gray-600">
-                {t.arabicDoctors.subtitle}
+                Our doctors work with native Arabic-speaking coordinators who lived in GCC countries
+                for 5-15 years. They understand your language, culture, and medical needs.
               </p>
             </div>
 
@@ -560,11 +343,11 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                       </div>
                       <div className="rounded-full bg-orange-100 px-3 py-1 text-xs font-semibold text-orange-700">
                         <Languages className="mr-1 inline h-3 w-3" />
-                        {t.arabicDoctors.labels.arabic}
+                        Arabic
                       </div>
                     </div>
                     <CardTitle className="text-xl">
-                      {doctor.title_en} {locale === 'ar' ? doctor.name_ar : doctor.name_en}
+                      {doctor.title_en} {doctor.name_en}
                     </CardTitle>
                     <CardDescription>{doctor.specialties.join(', ')}</CardDescription>
                     {doctor.rating && (
@@ -577,23 +360,21 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <p className="mb-1 text-sm font-semibold text-gray-900">
-                        {locale === 'ar' ? doctor.hospital.name_ar : doctor.hospital.name_en}
-                      </p>
+                      <p className="mb-1 text-sm font-semibold text-gray-900">{doctor.hospital.name_en}</p>
                       <p className="text-sm text-gray-600">
-                        {locale === 'ar' ? doctor.hospital.city.name_ar : doctor.hospital.city.name_en}, {locale === 'ar' ? doctor.hospital.city.country.name_ar : doctor.hospital.city.country.name_en}
+                        {doctor.hospital.city.name_en}, {doctor.hospital.city.country.name_en}
                       </p>
                       {doctor.experience && (
                         <div className="mt-1 flex items-center gap-1 text-sm text-gray-600">
                           <Briefcase className="h-3 w-3" />
-                          <span>{doctor.experience}+ {t.arabicDoctors.labels.experience}</span>
+                          <span>{doctor.experience}+ years experience</span>
                         </div>
                       )}
                     </div>
 
                     {doctor.qualifications.length > 0 && (
                       <div>
-                        <h4 className="mb-2 text-sm font-semibold text-gray-900">{t.allDoctors.labels.qualifications}</h4>
+                        <h4 className="mb-2 text-sm font-semibold text-gray-900">Qualifications:</h4>
                         <div className="flex flex-wrap gap-1">
                           {doctor.qualifications.slice(0, 3).map((qual, idx) => (
                             <span
@@ -620,19 +401,19 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                         </span>
                       </div>
                       <p className="mt-1 text-xs text-orange-700">
-                        {t.arabicDoctors.labels.coordinator}
+                        + Native Arabic coordinator support
                       </p>
                     </div>
 
                     {doctor.consultationFee && (
                       <div className="rounded-lg bg-green-50 p-3 text-center">
-                        <p className="text-xs text-gray-600">{t.arabicDoctors.labels.consultationFee}</p>
+                        <p className="text-xs text-gray-600">Consultation Fee</p>
                         <p className="text-lg font-bold text-green-700">${doctor.consultationFee}</p>
                       </div>
                     )}
 
                     <Button asChild className="w-full">
-                      <Link href={`/doctors/${doctor.slug}`}>{t.arabicDoctors.labels.viewProfile}</Link>
+                      <Link href={`/doctors/${doctor.slug}`}>View Full Profile</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -646,10 +427,10 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
       <section id="all-doctors" className="container mx-auto px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-            {t.allDoctors.title(doctors.length)}
+            All Expert Doctors ({doctors.length})
           </h2>
           <p className="text-gray-600">
-            {t.allDoctors.subtitle}
+            Browse our complete network of board-certified specialists across India
           </p>
         </div>
 
@@ -658,10 +439,10 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
               <User className="h-10 w-10 text-gray-400" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold text-gray-900">{t.allDoctors.empty.title}</h3>
-            <p className="mb-6 text-gray-600">{t.allDoctors.empty.subtitle}</p>
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">No doctors available yet</h3>
+            <p className="mb-6 text-gray-600">Check back soon for our medical experts</p>
             <Button asChild>
-              <Link href="/contact">{t.allDoctors.empty.button}</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         ) : (
@@ -676,12 +457,12 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                     {doctor.languages.includes('Arabic') && (
                       <div className="rounded-full bg-orange-100 px-2 py-1 text-xs font-semibold text-orange-700">
                         <Languages className="mr-1 inline h-3 w-3" />
-                        {t.allDoctors.labels.arabic}
+                        Arabic
                       </div>
                     )}
                   </div>
                   <CardTitle className="text-xl">
-                    {doctor.title_en} {locale === 'ar' ? doctor.name_ar : doctor.name_en}
+                    {doctor.title_en} {doctor.name_en}
                   </CardTitle>
                   <CardDescription>{doctor.specialties.join(', ')}</CardDescription>
                   {doctor.rating && (
@@ -694,23 +475,21 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
-                    <p className="mb-1 text-sm font-semibold text-gray-900">
-                      {locale === 'ar' ? doctor.hospital.name_ar : doctor.hospital.name_en}
-                    </p>
+                    <p className="mb-1 text-sm font-semibold text-gray-900">{doctor.hospital.name_en}</p>
                     <p className="text-sm text-gray-600">
-                      {locale === 'ar' ? doctor.hospital.city.name_ar : doctor.hospital.city.name_en}, {locale === 'ar' ? doctor.hospital.city.country.name_ar : doctor.hospital.city.country.name_en}
+                      {doctor.hospital.city.name_en}, {doctor.hospital.city.country.name_en}
                     </p>
                     {doctor.experience && (
                       <div className="mt-1 flex items-center gap-1 text-sm text-gray-600">
                         <Briefcase className="h-3 w-3" />
-                        <span>{doctor.experience}+ {t.allDoctors.labels.experience}</span>
+                        <span>{doctor.experience}+ years experience</span>
                       </div>
                     )}
                   </div>
 
                   {doctor.qualifications.length > 0 && (
                     <div>
-                      <h4 className="mb-2 text-sm font-semibold text-gray-900">{t.allDoctors.labels.qualifications}</h4>
+                      <h4 className="mb-2 text-sm font-semibold text-gray-900">Qualifications:</h4>
                       <div className="flex flex-wrap gap-1">
                         {doctor.qualifications.slice(0, 3).map((qual, idx) => (
                           <span
@@ -731,20 +510,20 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
 
                   {doctor.languages.length > 0 && (
                     <div>
-                      <h4 className="mb-2 text-sm font-semibold text-gray-900">{t.allDoctors.labels.languages}</h4>
+                      <h4 className="mb-2 text-sm font-semibold text-gray-900">Languages:</h4>
                       <p className="text-sm text-gray-600">{doctor.languages.join(', ')}</p>
                     </div>
                   )}
 
                   {doctor.consultationFee && (
                     <div className="rounded-lg bg-green-50 p-2 text-center">
-                      <p className="text-sm text-gray-600">{t.allDoctors.labels.consultationFee}</p>
+                      <p className="text-sm text-gray-600">Consultation Fee</p>
                       <p className="text-lg font-bold text-green-700">${doctor.consultationFee}</p>
                     </div>
                   )}
 
                   <Button asChild className="w-full">
-                    <Link href={`/doctors/${doctor.slug}`}>{t.allDoctors.labels.viewProfile}</Link>
+                    <Link href={`/doctors/${doctor.slug}`}>View Profile</Link>
                   </Button>
                 </CardContent>
               </Card>
@@ -758,28 +537,29 @@ export default async function DoctorsPage({ params }: { params: Promise<{ locale
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
         <div className="container relative mx-auto text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
-            {t.cta.title}
+            Consult with Our Medical Experts
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            {t.cta.subtitle}
+            Get a free consultation with our specialists. Native Arabic coordinators
+            (from Dubai & Riyadh) available 24/7 on WhatsApp.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
               <Link href="/consultation">
                 <CheckCircle className="mr-2 h-5 w-5" />
-                {t.cta.buttons.consultation}
+                Free Medical Consultation
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="/contact">
                 <Phone className="mr-2 h-5 w-5" />
-                {t.cta.buttons.call}
+                Call Now
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="https://wa.me/919876543210">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                {t.cta.buttons.whatsapp}
+                WhatsApp في العربية
               </Link>
             </Button>
           </div>
