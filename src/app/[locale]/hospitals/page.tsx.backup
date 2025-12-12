@@ -1,18 +1,3 @@
-import { generateSEOMetadata } from '@/lib/seo';
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
-  return generateSEOMetadata({
-    title_en: 'JCI-Accredited Partner Hospitals in India | World-Class Healthcare',
-    title_ar: 'المستشفيات الشريكة المعتمدة من JCI في الهند | رعاية صحية عالمية المستوى',
-    description_en: 'Browse 40+ JCI/NABH accredited hospitals in Bangalore and across India. World-class medical facilities with international patient services, Arabic-speaking coordinators, and accommodation at Pentouz Hotels. Save 60-80% on treatments.',
-    description_ar: 'تصفح أكثر من 40 مستشفى معتمد من JCI/NABH في بنغالور وعبر الهند. مرافق طبية عالمية المستوى مع خدمات المرضى الدوليين، منسقين ناطقين بالعربية، وإقامة في فنادق بينتوز. وفر 60-80٪ على العلاجات.',
-    locale,
-    path: '/hospitals',
-  });
-}
-
 export const dynamic = 'force-dynamic';
 
 import Link from 'next/link';
@@ -24,9 +9,7 @@ import {
   Globe, Heart, Bed, TrendingDown, MessageCircle, Clock, Hotel
 } from 'lucide-react';
 
-export default async function HospitalsPage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-
+export default async function HospitalsPage() {
   const hospitals = await prisma.hospital.findMany({
     where: { published: true },
     include: {
@@ -46,253 +29,14 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
   // Filter hospitals by city for highlighting
   const bangaloreHospitals = hospitals.filter(h => h.city.slug === 'bangalore');
 
-  // Bilingual content
-  const content = {
-    en: {
-      hero: {
-        badge: '40+ JCI/NABH Accredited Hospitals | Focus on Bangalore',
-        title: 'World-Class Partner Hospitals',
-        subtitle: 'JCI-accredited hospitals in Bangalore with cutting-edge technology, international patient services, and accommodation at Pentouz Hotels',
-        stats: [
-          { label: `${hospitals.length}+`, value: 'Partner Hospitals' },
-          { label: `${bangaloreHospitals.length}+`, value: 'In Bangalore' },
-          { label: '40+', value: 'JCI/NABH Certified' },
-          { label: '60-80%', value: 'Cost Savings' },
-        ],
-        buttons: {
-          find: 'Find Right Hospital',
-          bangalore: 'Bangalore Hospitals',
-        },
-      },
-      features: {
-        title: 'Why Our Partner Hospitals?',
-        items: [
-          'JCI & NABH Accredited Hospitals',
-          'State-of-the-art Medical Technology',
-          'Board-Certified Specialist Doctors',
-          'International Patient Services',
-          'Native Arabic-Speaking Coordinators',
-          '24/7 Emergency Services',
-        ],
-      },
-      testimonials: {
-        badge: 'Success Stories',
-        title: 'GCC Patients Love Our Hospitals',
-        items: [
-          {
-            name: 'Abdullah Al-Hamad',
-            location: 'Doha, Qatar',
-            hospital: 'Narayana Health City',
-            treatment: 'Heart Bypass Surgery',
-            quote: 'Narayana Health City is world-class. Dr. Devi Shetty performed my surgery. The hospital has more advanced equipment than many hospitals in GCC. Saved $95,000!',
-            rating: 5,
-          },
-          {
-            name: 'Layla Al-Saud',
-            location: 'Riyadh, Saudi Arabia',
-            hospital: 'Manipal Hospital',
-            treatment: 'Hip Replacement',
-            quote: 'Manipal Hospital Bangalore is outstanding. JCI-accredited with robotic surgery. The Arabic coordinator arranged everything including halal food. Highly recommend!',
-            rating: 5,
-          },
-          {
-            name: 'Rashid Al-Maktoum',
-            location: 'Dubai, UAE',
-            hospital: 'Apollo Hospital',
-            treatment: 'Cancer Treatment',
-            quote: 'Apollo Hospital has Proton Therapy, the most advanced cancer treatment. Stayed at Pentouz Hotels nearby - very comfortable. Saved $120,000 vs USA. Best decision!',
-            rating: 5,
-          },
-        ],
-      },
-      bangalore: {
-        badge: "India's Medical Tourism Capital",
-        title: 'Best Hospitals in Bangalore',
-        subtitle: "Bangalore (Bengaluru) is India's premier medical tourism destination with world-class hospitals, expert doctors, best weather year-round, and comfortable accommodation at Pentouz Hotels.",
-        benefits: [
-          {
-            title: 'JCI-Accredited',
-            description: '10+ JCI/NABH certified hospitals with international standards',
-          },
-          {
-            title: 'World-Class Care',
-            description: 'Cutting-edge technology including robotic surgery and Proton Therapy',
-          },
-          {
-            title: 'Pentouz Hotels',
-            description: 'Premium accommodation near hospitals with all amenities',
-          },
-          {
-            title: 'Best Weather',
-            description: '15-30°C year-round - perfect for recovery and tourism',
-          },
-        ],
-        pentouz: {
-          title: 'Accommodation at Pentouz Hotels',
-          subtitle: 'Premium comfort during your medical journey in Bangalore',
-          features: [
-            { text: 'Near Major Hospitals', detail: 'Easy access to all our partner hospitals' },
-            { text: 'Family-Friendly Rooms', detail: 'Spacious rooms with all modern amenities' },
-            { text: 'Halal Food Available', detail: 'Multi-cuisine restaurant with halal options' },
-          ],
-          button: 'Visit Pentouz Hotels →',
-        },
-        showing: (shown: number, total: number) => `Showing ${shown} of ${total} hospitals in Bangalore`,
-        labels: {
-          featured: '⭐ Featured',
-          topSpecialties: 'Top Specialties:',
-          expertDoctors: 'Expert Doctors',
-          viewDetails: 'View Details',
-        },
-      },
-      allHospitals: {
-        title: (count: number) => `All Partner Hospitals (${count})`,
-        subtitle: 'Browse our complete network of JCI/NABH accredited hospitals across India',
-        empty: {
-          title: 'No hospitals available yet',
-          subtitle: 'Check back soon for our partner hospitals',
-          button: 'Contact Us',
-        },
-        labels: {
-          bangalore: 'Bangalore',
-          specialties: 'Specialties:',
-          viewDetails: 'View Details',
-        },
-      },
-      cta: {
-        title: 'Find the Perfect Hospital for Your Treatment',
-        subtitle: 'Our medical experts and native Arabic coordinators (from Dubai & Riyadh) will help you choose the best hospital. Available 24/7 on WhatsApp.',
-        buttons: {
-          selection: 'Free Hospital Selection',
-          call: 'Call Now',
-          whatsapp: 'WhatsApp في العربية',
-        },
-      },
-    },
-    ar: {
-      hero: {
-        badge: '40+ مستشفى معتمد من JCI/NABH | التركيز على بنغالور',
-        title: 'مستشفيات شريكة عالمية المستوى',
-        subtitle: 'مستشفيات معتمدة من JCI في بنغالور مع تكنولوجيا متطورة، خدمات المرضى الدوليين، والإقامة في فنادق بينتوز',
-        stats: [
-          { label: `${hospitals.length}+`, value: 'مستشفيات شريكة' },
-          { label: `${bangaloreHospitals.length}+`, value: 'في بنغالور' },
-          { label: '40+', value: 'معتمد JCI/NABH' },
-          { label: '60-80%', value: 'توفير في التكاليف' },
-        ],
-        buttons: {
-          find: 'ابحث عن المستشفى المناسب',
-          bangalore: 'مستشفيات بنغالور',
-        },
-      },
-      features: {
-        title: 'لماذا مستشفياتنا الشريكة؟',
-        items: [
-          'مستشفيات معتمدة من JCI و NABH',
-          'تكنولوجيا طبية حديثة',
-          'أطباء متخصصون معتمدون',
-          'خدمات المرضى الدوليين',
-          'منسقون ناطقون بالعربية',
-          'خدمات طوارئ على مدار الساعة',
-        ],
-      },
-      testimonials: {
-        badge: 'قصص النجاح',
-        title: 'مرضى دول الخليج يحبون مستشفياتنا',
-        items: [
-          {
-            name: 'عبد الله الحمد',
-            location: 'الدوحة، قطر',
-            hospital: 'Narayana Health City',
-            treatment: 'جراحة القلب المفتوح',
-            quote: 'نارايانا هيلث سيتي عالمي المستوى. قام الدكتور ديفي شيتي بإجراء جراحتي. المستشفى لديه معدات أكثر تطوراً من العديد من مستشفيات الخليج. وفرت 95,000 دولار!',
-            rating: 5,
-          },
-          {
-            name: 'ليلى السعود',
-            location: 'الرياض، المملكة العربية السعودية',
-            hospital: 'Manipal Hospital',
-            treatment: 'استبدال مفصل الورك',
-            quote: 'مستشفى مانيبال بنغالور متميز. معتمد من JCI مع الجراحة الروبوتية. المنسق العربي نظم كل شيء بما في ذلك الطعام الحلال. أوصي به بشدة!',
-            rating: 5,
-          },
-          {
-            name: 'راشد المكتوم',
-            location: 'دبي، الإمارات العربية المتحدة',
-            hospital: 'Apollo Hospital',
-            treatment: 'علاج السرطان',
-            quote: 'مستشفى أبولو لديه العلاج بالبروتون، أحدث علاج للسرطان. أقمت في فنادق بينتوز القريبة - مريحة جداً. وفرت 120,000 دولار مقابل أمريكا. أفضل قرار!',
-            rating: 5,
-          },
-        ],
-      },
-      bangalore: {
-        badge: 'عاصمة السياحة العلاجية في الهند',
-        title: 'أفضل المستشفيات في بنغالور',
-        subtitle: 'بنغالور (بنغالورو) هي وجهة السياحة العلاجية الرئيسية في الهند مع مستشفيات عالمية المستوى، أطباء خبراء، أفضل طقس على مدار العام، وإقامة مريحة في فنادق بينتوز.',
-        benefits: [
-          {
-            title: 'معتمد من JCI',
-            description: 'أكثر من 10 مستشفيات معتمدة من JCI/NABH بمعايير دولية',
-          },
-          {
-            title: 'رعاية عالمية المستوى',
-            description: 'تكنولوجيا متطورة بما في ذلك الجراحة الروبوتية والعلاج بالبروتون',
-          },
-          {
-            title: 'فنادق بينتوز',
-            description: 'إقامة فاخرة بالقرب من المستشفيات مع جميع وسائل الراحة',
-          },
-          {
-            title: 'أفضل طقس',
-            description: '15-30 درجة مئوية على مدار العام - مثالي للتعافي والسياحة',
-          },
-        ],
-        pentouz: {
-          title: 'الإقامة في فنادق بينتوز',
-          subtitle: 'راحة فاخرة خلال رحلتك العلاجية في بنغالور',
-          features: [
-            { text: 'بالقرب من المستشفيات الرئيسية', detail: 'سهولة الوصول إلى جميع مستشفياتنا الشريكة' },
-            { text: 'غرف مناسبة للعائلات', detail: 'غرف واسعة مع جميع وسائل الراحة الحديثة' },
-            { text: 'طعام حلال متوفر', detail: 'مطعم متعدد المأكولات مع خيارات حلال' },
-          ],
-          button: 'زيارة فنادق بينتوز ←',
-        },
-        showing: (shown: number, total: number) => `عرض ${shown} من ${total} مستشفى في بنغالور`,
-        labels: {
-          featured: '⭐ مميز',
-          topSpecialties: 'التخصصات الرئيسية:',
-          expertDoctors: 'أطباء خبراء',
-          viewDetails: 'عرض التفاصيل',
-        },
-      },
-      allHospitals: {
-        title: (count: number) => `جميع المستشفيات الشريكة (${count})`,
-        subtitle: 'تصفح شبكتنا الكاملة من المستشفيات المعتمدة من JCI/NABH عبر الهند',
-        empty: {
-          title: 'لا توجد مستشفيات متاحة حتى الآن',
-          subtitle: 'تحقق مرة أخرى قريباً للحصول على مستشفياتنا الشريكة',
-          button: 'اتصل بنا',
-        },
-        labels: {
-          bangalore: 'بنغالور',
-          specialties: 'التخصصات:',
-          viewDetails: 'عرض التفاصيل',
-        },
-      },
-      cta: {
-        title: 'ابحث عن المستشفى المثالي لعلاجك',
-        subtitle: 'سيساعدك خبراؤنا الطبيون والمنسقون الناطقون بالعربية (من دبي والرياض) في اختيار أفضل مستشفى. متاحون على مدار الساعة طوال أيام الأسبوع على واتساب.',
-        buttons: {
-          selection: 'اختيار مستشفى مجاني',
-          call: 'اتصل الآن',
-          whatsapp: 'واتساب in English',
-        },
-      },
-    },
-  };
-
-  const t = content[locale as 'en' | 'ar'];
+  const features = [
+    'JCI & NABH Accredited Hospitals',
+    'State-of-the-art Medical Technology',
+    'Board-Certified Specialist Doctors',
+    'International Patient Services',
+    'Native Arabic-Speaking Coordinators',
+    '24/7 Emergency Services',
+  ];
 
   return (
     <div className="min-h-screen">
@@ -302,23 +46,26 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
         <div className="container relative mx-auto text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
             <Sparkles className="h-4 w-4" />
-            <span>{t.hero.badge}</span>
+            <span>40+ JCI/NABH Accredited Hospitals | Focus on Bangalore</span>
           </div>
           <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
-            {t.hero.title}
+            World-Class Partner Hospitals
           </h1>
           <p className="mx-auto mb-8 max-w-3xl text-xl text-primary-100">
-            {t.hero.subtitle}
+            JCI-accredited hospitals in Bangalore with cutting-edge technology,
+            international patient services, and accommodation at Pentouz Hotels
           </p>
 
           {/* Stats */}
           <div className="mx-auto mb-8 grid max-w-4xl grid-cols-2 gap-6 md:grid-cols-4">
-            {t.hero.stats.map((stat, idx) => (
+            {[
+              { icon: Building2, label: `{hospitals.length}+`, value: 'Partner Hospitals' },
+              { icon: MapPin, label: `{bangaloreHospitals.length}+`, value: 'In Bangalore' },
+              { icon: Award, label: '40+', value: 'JCI/NABH Certified' },
+              { icon: TrendingDown, label: '60-80%', value: 'Cost Savings' },
+            ].map((stat, idx) => (
               <div key={idx} className="rounded-xl bg-white/10 p-4 backdrop-blur-sm">
-                {idx === 0 && <Building2 className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 1 && <MapPin className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 2 && <Award className="mx-auto mb-2 h-6 w-6" />}
-                {idx === 3 && <TrendingDown className="mx-auto mb-2 h-6 w-6" />}
+                <stat.icon className="mx-auto mb-2 h-6 w-6" />
                 <p className="mb-1 text-lg font-bold">{stat.label}</p>
                 <p className="text-sm text-primary-100">{stat.value}</p>
               </div>
@@ -327,12 +74,12 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
 
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
-              <Link href="/consultation">{t.hero.buttons.find}</Link>
+              <Link href="/consultation">Find Right Hospital</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="#bangalore-hospitals">
                 <MapPin className="mr-2 h-5 w-5" />
-                {t.hero.buttons.bangalore}
+                Bangalore Hospitals
               </Link>
             </Button>
           </div>
@@ -344,11 +91,11 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
         <div className="container mx-auto">
           <div className="mb-8 text-center">
             <h2 className="mb-4 font-serif text-3xl font-bold text-gray-900">
-              {t.features.title}
+              Why Our Partner Hospitals?
             </h2>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {t.features.items.map((feature, index) => (
+            {features.map((feature, index) => (
               <div key={index} className="flex items-center gap-3 rounded-lg border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 p-4 transition-all hover:scale-105 hover:border-primary-300 hover:shadow-lg">
                 <CheckCircle className="h-6 w-6 shrink-0 text-green-600" />
                 <span className="font-medium text-gray-900">{feature}</span>
@@ -364,15 +111,40 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
           <div className="mb-12 text-center">
             <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary-100 px-4 py-2 text-sm font-medium text-primary-700">
               <Users className="h-4 w-4" />
-              {t.testimonials.badge}
+              Success Stories
             </div>
             <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              {t.testimonials.title}
+              GCC Patients Love Our Hospitals
             </h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            {t.testimonials.items.map((testimonial, idx) => (
+            {[
+              {
+                name: 'Abdullah Al-Hamad',
+                location: 'Doha, Qatar',
+                hospital: 'Narayana Health City',
+                treatment: 'Heart Bypass Surgery',
+                quote: 'Narayana Health City is world-class. Dr. Devi Shetty performed my surgery. The hospital has more advanced equipment than many hospitals in GCC. Saved $95,000!',
+                rating: 5,
+              },
+              {
+                name: 'Layla Al-Saud',
+                location: 'Riyadh, Saudi Arabia',
+                hospital: 'Manipal Hospital',
+                treatment: 'Hip Replacement',
+                quote: 'Manipal Hospital Bangalore is outstanding. JCI-accredited with robotic surgery. The Arabic coordinator arranged everything including halal food. Highly recommend!',
+                rating: 5,
+              },
+              {
+                name: 'Rashid Al-Maktoum',
+                location: 'Dubai, UAE',
+                hospital: 'Apollo Hospital',
+                treatment: 'Cancer Treatment',
+                quote: 'Apollo Hospital has Proton Therapy, the most advanced cancer treatment. Stayed at Pentouz Hotels nearby - very comfortable. Saved $120,000 vs USA. Best decision!',
+                rating: 5,
+              },
+            ].map((testimonial, idx) => (
               <Card key={idx} className="border-2 border-primary-100 bg-gradient-to-br from-white to-primary-50 transition-all hover:scale-105 hover:shadow-2xl">
                 <CardHeader>
                   <div className="mb-2 flex items-center gap-1">
@@ -407,26 +179,45 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
             <div className="mb-12 text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-green-100 px-4 py-2 text-sm font-medium text-green-700">
                 <MapPin className="h-4 w-4" />
-                {t.bangalore.badge}
+                India's Medical Tourism Capital
               </div>
               <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-                {t.bangalore.title}
+                Best Hospitals in Bangalore
               </h2>
               <p className="mx-auto max-w-3xl text-lg text-gray-600">
-                {t.bangalore.subtitle}
+                Bangalore (Bengaluru) is India&apos;s premier medical tourism destination with world-class hospitals,
+                expert doctors, best weather year-round, and comfortable accommodation at Pentouz Hotels.
               </p>
             </div>
 
             {/* Bangalore Benefits */}
             <div className="mb-12 grid gap-6 md:grid-cols-4">
-              {t.bangalore.benefits.map((benefit, idx) => (
+              {[
+                {
+                  icon: Award,
+                  title: 'JCI-Accredited',
+                  description: '10+ JCI/NABH certified hospitals with international standards',
+                },
+                {
+                  icon: Heart,
+                  title: 'World-Class Care',
+                  description: 'Cutting-edge technology including robotic surgery and Proton Therapy',
+                },
+                {
+                  icon: Hotel,
+                  title: 'Pentouz Hotels',
+                  description: 'Premium accommodation near hospitals with all amenities',
+                },
+                {
+                  icon: Globe,
+                  title: 'Best Weather',
+                  description: '15-30°C year-round - perfect for recovery and tourism',
+                },
+              ].map((benefit, idx) => (
                 <Card key={idx} className="border-2 border-green-100 bg-gradient-to-br from-white to-green-50 text-center transition-all hover:scale-105 hover:shadow-xl">
                   <CardHeader>
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-green-500 to-green-600 shadow-lg">
-                      {idx === 0 && <Award className="h-8 w-8 text-white" />}
-                      {idx === 1 && <Heart className="h-8 w-8 text-white" />}
-                      {idx === 2 && <Hotel className="h-8 w-8 text-white" />}
-                      {idx === 3 && <Globe className="h-8 w-8 text-white" />}
+                      <benefit.icon className="h-8 w-8 text-white" />
                     </div>
                     <CardTitle className="text-lg">{benefit.title}</CardTitle>
                     <CardDescription className="text-sm">{benefit.description}</CardDescription>
@@ -443,20 +234,22 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                     <Hotel className="h-10 w-10 text-white" />
                   </div>
                   <div className="flex-1">
-                    <CardTitle className="text-2xl">{t.bangalore.pentouz.title}</CardTitle>
+                    <CardTitle className="text-2xl">Accommodation at Pentouz Hotels</CardTitle>
                     <CardDescription className="text-base">
-                      {t.bangalore.pentouz.subtitle}
+                      Premium comfort during your medical journey in Bangalore
                     </CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4 md:grid-cols-3">
-                  {t.bangalore.pentouz.features.map((feature, idx) => (
+                  {[
+                    { icon: MapPin, text: 'Near Major Hospitals', detail: 'Easy access to all our partner hospitals' },
+                    { icon: Bed, text: 'Family-Friendly Rooms', detail: 'Spacious rooms with all modern amenities' },
+                    { icon: CheckCircle, text: 'Halal Food Available', detail: 'Multi-cuisine restaurant with halal options' },
+                  ].map((feature, idx) => (
                     <div key={idx} className="flex gap-3 rounded-lg bg-white/70 p-4">
-                      {idx === 0 && <MapPin className="h-6 w-6 shrink-0 text-orange-600" />}
-                      {idx === 1 && <Bed className="h-6 w-6 shrink-0 text-orange-600" />}
-                      {idx === 2 && <CheckCircle className="h-6 w-6 shrink-0 text-orange-600" />}
+                      <feature.icon className="h-6 w-6 shrink-0 text-orange-600" />
                       <div>
                         <p className="font-semibold text-gray-900">{feature.text}</p>
                         <p className="text-sm text-gray-600">{feature.detail}</p>
@@ -468,7 +261,7 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                   <Button asChild size="lg" variant="default" className="bg-orange-600 hover:bg-orange-700">
                     <Link href="https://pentouz.com/" target="_blank" rel="noopener noreferrer">
                       <Hotel className="mr-2 h-5 w-5" />
-                      {t.bangalore.pentouz.button}
+                      Visit Pentouz Hotels →
                     </Link>
                   </Button>
                 </div>
@@ -486,14 +279,14 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                       </div>
                       {hospital.featured && (
                         <div className="rounded-full bg-yellow-100 px-3 py-1 text-xs font-semibold text-yellow-700">
-                          {t.bangalore.labels.featured}
+                          ⭐ Featured
                         </div>
                       )}
                     </div>
-                    <CardTitle className="text-xl">{locale === 'ar' ? hospital.name_ar : hospital.name_en}</CardTitle>
+                    <CardTitle className="text-xl">{hospital.name_en}</CardTitle>
                     <CardDescription className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
-                      {locale === 'ar' ? hospital.city.name_ar : hospital.city.name_en}, India
+                      {hospital.city.name_en}, India
                     </CardDescription>
                     {hospital.rating && (
                       <div className="mt-2 flex items-center gap-1 text-sm">
@@ -517,7 +310,7 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
 
                     <div>
                       <h4 className="mb-2 text-sm font-semibold text-gray-900">
-                        {t.bangalore.labels.topSpecialties}
+                        Top Specialties:
                       </h4>
                       <div className="flex flex-wrap gap-1">
                         {hospital.specialties.slice(0, 4).map((specialty, idx) => (
@@ -539,14 +332,14 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                     {hospital.doctors.length > 0 && (
                       <div className="rounded-lg bg-green-50 p-3">
                         <p className="text-sm text-gray-600">
-                          <span className="font-semibold text-green-700">{hospital.doctors.length}</span> {t.bangalore.labels.expertDoctors}
+                          <span className="font-semibold text-green-700">{hospital.doctors.length}</span> Expert Doctors
                         </p>
                       </div>
                     )}
 
                     <div className="flex gap-2">
                       <Button asChild className="flex-1" size="sm">
-                        <Link href={`/hospitals/${hospital.slug}`}>{t.bangalore.labels.viewDetails}</Link>
+                        <Link href={`/hospitals/${hospital.slug}`}>View Details</Link>
                       </Button>
                       <Button asChild variant="outline" size="sm">
                         <Link href="/contact">
@@ -562,7 +355,7 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
             {bangaloreHospitals.length > 6 && (
               <div className="mt-8 text-center">
                 <p className="mb-4 text-gray-600">
-                  {t.bangalore.showing(Math.min(6, bangaloreHospitals.length), bangaloreHospitals.length)}
+                  Showing {Math.min(6, bangaloreHospitals.length)} of {bangaloreHospitals.length} hospitals in Bangalore
                 </p>
               </div>
             )}
@@ -574,10 +367,10 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
       <section className="container mx-auto px-4 py-16">
         <div className="mb-12 text-center">
           <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-            {t.allHospitals.title(hospitals.length)}
+            All Partner Hospitals ({hospitals.length})
           </h2>
           <p className="text-gray-600">
-            {t.allHospitals.subtitle}
+            Browse our complete network of JCI/NABH accredited hospitals across India
           </p>
         </div>
 
@@ -586,10 +379,10 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
             <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
               <Building2 className="h-10 w-10 text-gray-400" />
             </div>
-            <h3 className="mb-2 text-xl font-semibold text-gray-900">{t.allHospitals.empty.title}</h3>
-            <p className="mb-6 text-gray-600">{t.allHospitals.empty.subtitle}</p>
+            <h3 className="mb-2 text-xl font-semibold text-gray-900">No hospitals available yet</h3>
+            <p className="mb-6 text-gray-600">Check back soon for our partner hospitals</p>
             <Button asChild>
-              <Link href="/contact">{t.allHospitals.empty.button}</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         ) : (
@@ -604,14 +397,14 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                     {hospital.city.slug === 'bangalore' && (
                       <div className="rounded-full bg-green-100 px-2 py-1 text-xs font-semibold text-green-700">
                         <MapPin className="mr-1 inline h-3 w-3" />
-                        {t.allHospitals.labels.bangalore}
+                        Bangalore
                       </div>
                     )}
                   </div>
-                  <CardTitle className="text-xl">{locale === 'ar' ? hospital.name_ar : hospital.name_en}</CardTitle>
+                  <CardTitle className="text-xl">{hospital.name_en}</CardTitle>
                   <CardDescription className="flex items-center gap-1">
                     <MapPin className="h-4 w-4" />
-                    {locale === 'ar' ? hospital.city.name_ar : hospital.city.name_en}, {locale === 'ar' ? hospital.city.country.name_ar : hospital.city.country.name_en}
+                    {hospital.city.name_en}, {hospital.city.country.name_en}
                   </CardDescription>
                   {hospital.rating && (
                     <div className="mt-2 flex items-center gap-1 text-sm">
@@ -634,7 +427,7 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
                   )}
 
                   <div className="mb-4">
-                    <h4 className="mb-2 text-sm font-semibold text-gray-900">{t.allHospitals.labels.specialties}</h4>
+                    <h4 className="mb-2 text-sm font-semibold text-gray-900">Specialties:</h4>
                     <div className="flex flex-wrap gap-1">
                       {hospital.specialties.slice(0, 4).map((specialty, idx) => (
                         <span
@@ -654,7 +447,7 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
 
                   <div className="flex gap-2">
                     <Button asChild className="flex-1" size="sm">
-                      <Link href={`/hospitals/${hospital.slug}`}>{t.allHospitals.labels.viewDetails}</Link>
+                      <Link href={`/hospitals/${hospital.slug}`}>View Details</Link>
                     </Button>
                     <Button asChild variant="outline" size="sm">
                       <Link href="/contact">
@@ -674,28 +467,29 @@ export default async function HospitalsPage({ params }: { params: Promise<{ loca
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
         <div className="container relative mx-auto text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">
-            {t.cta.title}
+            Find the Perfect Hospital for Your Treatment
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            {t.cta.subtitle}
+            Our medical experts and native Arabic coordinators (from Dubai & Riyadh)
+            will help you choose the best hospital. Available 24/7 on WhatsApp.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
               <Link href="/consultation">
                 <CheckCircle className="mr-2 h-5 w-5" />
-                {t.cta.buttons.selection}
+                Free Hospital Selection
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="/contact">
                 <Phone className="mr-2 h-5 w-5" />
-                {t.cta.buttons.call}
+                Call Now
               </Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white bg-transparent text-white hover:bg-white/10">
               <Link href="https://wa.me/919876543210">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                {t.cta.buttons.whatsapp}
+                WhatsApp في العربية
               </Link>
             </Button>
           </div>
