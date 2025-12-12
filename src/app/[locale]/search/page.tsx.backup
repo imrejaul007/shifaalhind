@@ -33,144 +33,6 @@ export default function SearchPage() {
   const [isSearching, setIsSearching] = useState(false);
   const [hasSearched, setHasSearched] = useState(false);
 
-  // Bilingual content
-  const content = {
-    en: {
-      hero: {
-        title: 'Search Medical Tourism',
-        subtitle: 'Find treatments, hospitals, cities, and information',
-        placeholder: 'Search treatments, hospitals, cities...',
-        searchButton: 'Search',
-        searching: 'Searching...',
-      },
-      results: {
-        searching: 'Searching...',
-        foundResults: (count: number) => `Found ${count} result${count !== 1 ? 's' : ''}`,
-        noResultsFound: 'No results found',
-        showingResultsFor: (q: string) => `Showing results for "${q}"`,
-        noResultsFor: (q: string) => `No results for "${q}". Try different keywords.`,
-      },
-      noResults: {
-        title: 'No results found',
-        description: (q: string) => `We couldn't find any results for "${q}". Try:`,
-        suggestions: [
-          'Using different keywords',
-          'Checking your spelling',
-          'Using more general terms',
-          'Browsing our popular categories below',
-        ],
-        browseButton: 'Browse Treatments',
-        hospitalsButton: 'Browse Hospitals',
-      },
-      types: {
-        treatment: 'Treatment',
-        hospital: 'Hospital',
-        city: 'City',
-        article: 'Article',
-      },
-      buttons: {
-        viewDetails: 'View Details',
-      },
-      categories: {
-        title: 'Popular Categories',
-        treatments: {
-          title: 'Treatments',
-          description: 'Browse all available medical treatments',
-          button: 'View All Treatments',
-        },
-        hospitals: {
-          title: 'Hospitals',
-          description: 'Explore our partner hospitals',
-          button: 'View All Hospitals',
-        },
-        destinations: {
-          title: 'Destinations',
-          description: 'Medical tourism by city',
-          button: 'Explore Destinations',
-        },
-        articles: {
-          title: 'Articles & Guides',
-          description: 'Read our medical tourism blog',
-          button: 'Read Blog',
-        },
-      },
-      cta: {
-        title: "Can't Find What You're Looking For?",
-        subtitle: 'Contact our team for personalized assistance with your medical tourism needs',
-        consultationButton: 'Free Consultation',
-        contactButton: 'Contact Us',
-      },
-    },
-    ar: {
-      hero: {
-        title: 'البحث في السياحة العلاجية',
-        subtitle: 'ابحث عن العلاجات والمستشفيات والمدن والمعلومات',
-        placeholder: 'ابحث عن العلاجات والمستشفيات والمدن...',
-        searchButton: 'بحث',
-        searching: 'جاري البحث...',
-      },
-      results: {
-        searching: 'جاري البحث...',
-        foundResults: (count: number) => `تم العثور على ${count} نتيجة`,
-        noResultsFound: 'لم يتم العثور على نتائج',
-        showingResultsFor: (q: string) => `عرض النتائج لـ "${q}"`,
-        noResultsFor: (q: string) => `لا توجد نتائج لـ "${q}". جرب كلمات مختلفة.`,
-      },
-      noResults: {
-        title: 'لم يتم العثور على نتائج',
-        description: (q: string) => `لم نتمكن من العثور على أي نتائج لـ "${q}". جرب:`,
-        suggestions: [
-          'استخدام كلمات مختلفة',
-          'التحقق من الإملاء',
-          'استخدام مصطلحات أكثر عمومية',
-          'تصفح الفئات الشائعة أدناه',
-        ],
-        browseButton: 'تصفح العلاجات',
-        hospitalsButton: 'تصفح المستشفيات',
-      },
-      types: {
-        treatment: 'علاج',
-        hospital: 'مستشفى',
-        city: 'مدينة',
-        article: 'مقال',
-      },
-      buttons: {
-        viewDetails: 'عرض التفاصيل',
-      },
-      categories: {
-        title: 'الفئات الشائعة',
-        treatments: {
-          title: 'العلاجات',
-          description: 'تصفح جميع العلاجات الطبية المتاحة',
-          button: 'عرض جميع العلاجات',
-        },
-        hospitals: {
-          title: 'المستشفيات',
-          description: 'استكشف مستشفياتنا الشريكة',
-          button: 'عرض جميع المستشفيات',
-        },
-        destinations: {
-          title: 'الوجهات',
-          description: 'السياحة العلاجية حسب المدينة',
-          button: 'استكشف الوجهات',
-        },
-        articles: {
-          title: 'المقالات والأدلة',
-          description: 'اقرأ مدونة السياحة العلاجية',
-          button: 'اقرأ المدونة',
-        },
-      },
-      cta: {
-        title: 'لا يمكنك العثور على ما تبحث عنه؟',
-        subtitle: 'اتصل بفريقنا للحصول على مساعدة شخصية في احتياجات السياحة العلاجية',
-        consultationButton: 'استشارة مجانية',
-        contactButton: 'اتصل بنا',
-      },
-    },
-  };
-
-  const t = content[locale as 'en' | 'ar'];
-
   useEffect(() => {
     if (query) {
       performSearch(query);
@@ -243,8 +105,7 @@ export default function SearchPage() {
   };
 
   const getTypeLabel = (type: string) => {
-    const typeKey = type as 'treatment' | 'hospital' | 'city' | 'article';
-    return t.types[typeKey] || type;
+    return type.charAt(0).toUpperCase() + type.slice(1);
   };
 
   return (
@@ -254,10 +115,10 @@ export default function SearchPage() {
         <div className="container mx-auto">
           <div className="mx-auto max-w-3xl text-center">
             <h1 className="mb-4 font-serif text-4xl font-bold md:text-5xl">
-              {t.hero.title}
+              Search Medical Tourism
             </h1>
             <p className="mb-8 text-lg text-primary-100">
-              {t.hero.subtitle}
+              Find treatments, hospitals, cities, and information
             </p>
 
             {/* Search Form */}
@@ -269,9 +130,8 @@ export default function SearchPage() {
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder={t.hero.placeholder}
+                    placeholder="Search treatments, hospitals, cities..."
                     className="w-full rounded-lg border-2 border-gray-300 bg-white py-3 pl-12 pr-4 text-gray-900 focus:border-primary-500 focus:outline-none"
-                    dir={locale === 'ar' ? 'rtl' : 'ltr'}
                   />
                 </div>
                 <Button
@@ -283,10 +143,10 @@ export default function SearchPage() {
                   {isSearching ? (
                     <>
                       <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                      {t.hero.searching}
+                      Searching...
                     </>
                   ) : (
-                    t.hero.searchButton
+                    'Search'
                   )}
                 </Button>
               </div>
@@ -303,16 +163,18 @@ export default function SearchPage() {
             <div className="mb-8">
               <h2 className="mb-2 text-2xl font-bold text-gray-900">
                 {isSearching
-                  ? t.results.searching
+                  ? 'Searching...'
                   : totalCount > 0
-                  ? t.results.foundResults(totalCount)
-                  : t.results.noResultsFound}
+                  ? `Found ${totalCount} result${totalCount !== 1 ? 's' : ''}`
+                  : 'No results found'}
               </h2>
               {query && !isSearching && (
                 <p className="text-gray-600">
-                  {totalCount > 0
-                    ? t.results.showingResultsFor(query)
-                    : t.results.noResultsFor(query)}
+                  {totalCount > 0 ? (
+                    <>Showing results for &quot;{query}&quot;</>
+                  ) : (
+                    <>No results for &quot;{query}&quot;. Try different keywords.</>
+                  )}
                 </p>
               )}
             </div>
@@ -356,7 +218,7 @@ export default function SearchPage() {
                   <CardContent>
                     <Button asChild variant="outline" size="sm">
                       <Link href={result.url}>
-                        {t.buttons.viewDetails}
+                        View Details
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -372,21 +234,22 @@ export default function SearchPage() {
               <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-100">
                 <Search className="h-10 w-10 text-gray-400" />
               </div>
-              <h3 className="mb-2 text-xl font-semibold text-gray-900">{t.noResults.title}</h3>
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">No results found</h3>
               <p className="mb-6 text-gray-600">
-                {t.noResults.description(query)}
+                We couldn&apos;t find any results for &quot;{query}&quot;. Try:
               </p>
               <ul className="mb-8 space-y-2 text-left text-gray-700">
-                {t.noResults.suggestions.map((suggestion, index) => (
-                  <li key={index}>• {suggestion}</li>
-                ))}
+                <li>• Using different keywords</li>
+                <li>• Checking your spelling</li>
+                <li>• Using more general terms</li>
+                <li>• Browsing our popular categories below</li>
               </ul>
               <div className="flex justify-center gap-4">
                 <Button asChild variant="outline">
-                  <Link href="/treatments">{t.noResults.browseButton}</Link>
+                  <Link href="/treatments">Browse Treatments</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link href="/hospitals">{t.noResults.hospitalsButton}</Link>
+                  <Link href="/hospitals">Browse Hospitals</Link>
                 </Button>
               </div>
             </div>
@@ -396,7 +259,7 @@ export default function SearchPage() {
           {!hasSearched && (
             <div className="py-12">
               <h3 className="mb-8 text-center text-2xl font-bold text-gray-900">
-                {t.categories.title}
+                Popular Categories
               </h3>
               <div className="grid gap-6 md:grid-cols-2">
                 <Card>
@@ -404,13 +267,13 @@ export default function SearchPage() {
                     <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-red-50">
                       <Heart className="h-6 w-6 text-red-600" />
                     </div>
-                    <CardTitle>{t.categories.treatments.title}</CardTitle>
-                    <CardDescription>{t.categories.treatments.description}</CardDescription>
+                    <CardTitle>Treatments</CardTitle>
+                    <CardDescription>Browse all available medical treatments</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild variant="outline" className="w-full">
                       <Link href="/treatments">
-                        {t.categories.treatments.button}
+                        View All Treatments
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -422,13 +285,13 @@ export default function SearchPage() {
                     <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50">
                       <Building2 className="h-6 w-6 text-blue-600" />
                     </div>
-                    <CardTitle>{t.categories.hospitals.title}</CardTitle>
-                    <CardDescription>{t.categories.hospitals.description}</CardDescription>
+                    <CardTitle>Hospitals</CardTitle>
+                    <CardDescription>Explore our partner hospitals</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild variant="outline" className="w-full">
                       <Link href="/hospitals">
-                        {t.categories.hospitals.button}
+                        View All Hospitals
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -440,13 +303,13 @@ export default function SearchPage() {
                     <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-green-50">
                       <MapPin className="h-6 w-6 text-green-600" />
                     </div>
-                    <CardTitle>{t.categories.destinations.title}</CardTitle>
-                    <CardDescription>{t.categories.destinations.description}</CardDescription>
+                    <CardTitle>Destinations</CardTitle>
+                    <CardDescription>Medical tourism by city</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild variant="outline" className="w-full">
                       <Link href="/medical-tourism">
-                        {t.categories.destinations.button}
+                        Explore Destinations
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -458,13 +321,13 @@ export default function SearchPage() {
                     <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-lg bg-purple-50">
                       <FileText className="h-6 w-6 text-purple-600" />
                     </div>
-                    <CardTitle>{t.categories.articles.title}</CardTitle>
-                    <CardDescription>{t.categories.articles.description}</CardDescription>
+                    <CardTitle>Articles & Guides</CardTitle>
+                    <CardDescription>Read our medical tourism blog</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <Button asChild variant="outline" className="w-full">
                       <Link href="/blog">
-                        {t.categories.articles.button}
+                        Read Blog
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
@@ -480,17 +343,17 @@ export default function SearchPage() {
       <section className="bg-gradient-to-br from-primary-500 to-primary-700 px-4 py-16 text-white">
         <div className="container mx-auto text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold">
-            {t.cta.title}
+            Can&apos;t Find What You&apos;re Looking For?
           </h2>
           <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            {t.cta.subtitle}
+            Contact our team for personalized assistance with your medical tourism needs
           </p>
           <div className="flex justify-center gap-4">
             <Button asChild size="lg" variant="secondary">
-              <Link href="/consultation">{t.cta.consultationButton}</Link>
+              <Link href="/consultation">Free Consultation</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-primary-700">
-              <Link href="/contact">{t.cta.contactButton}</Link>
+              <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
         </div>
