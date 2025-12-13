@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -20,114 +19,202 @@ import {
   Award,
   Download,
 } from 'lucide-react';
+import { generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Medical Visa Assistance for India - Fast e-Visa in 3-5 Days | Shifa Al Hind',
-  description: 'Complete medical visa assistance for India. E-visa in 3-5 days, visa on arrival at 6 airports. Free support for UAE, Saudi, Qatar, Oman, Kuwait, Bahrain patients.',
-  keywords: [
-    'medical visa india',
-    'india medical visa assistance',
-    'e-medical visa india',
-    'medical visa on arrival india',
-    'medical attendant visa',
-    'india visa GCC',
-    'التأشيرة الطبية للهند',
-    'تأشيرة العلاج في الهند',
-    'فيزا طبية الهند',
-    'مساعدة التأشيرة الطبية',
-  ],
-  openGraph: {
-    title: 'Medical Visa Assistance for India - Fast e-Visa in 3-5 Days',
-    description: 'Free medical visa assistance. E-visa in 3-5 days, visa on arrival at 6 airports. Native Arabic support for GCC patients.',
-    type: 'website',
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
 
-export default function VisaAssistancePage() {
+  return generateSEOMetadata({
+    title_en: 'Medical Visa Assistance for India - Fast e-Visa in 3-5 Days | Shifa Al Hind',
+    title_ar: 'مساعدة التأشيرة الطبية للهند - تأشيرة إلكترونية سريعة في 3-5 أيام | شفاء الهند',
+    description_en:
+      'Complete medical visa assistance for India. E-visa in 3-5 days, visa on arrival at 6 airports. Free support for UAE, Saudi, Qatar, Oman, Kuwait, Bahrain patients.',
+    description_ar:
+      'مساعدة شاملة في التأشيرة الطبية للهند. تأشيرة إلكترونية في 3-5 أيام، تأشيرة عند الوصول في 6 مطارات. دعم مجاني لمرضى الإمارات والسعودية وقطر وعمان والكويت والبحرين.',
+    locale,
+    path: '/visa-assistance',
+  });
+}
+
+export default async function VisaAssistancePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
+  const content = {
+    en: {
+      hero: {
+        badge: '10,000+ Visas Approved Since 2013 • 100% Success Rate',
+        title: 'Free Medical Visa Assistance\nfor India',
+        subtitle: 'Get your e-visa in 3-5 days • No embassy visit required • 100% online',
+        description:
+          'Complete visa support in Arabic for UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain patients',
+        buttons: {
+          visa: 'Get Visa Help Now',
+          whatsapp: 'WhatsApp Support',
+        },
+      },
+      visaTypes: {
+        title: '3 Types of Medical Visas for India',
+        subtitle: 'Choose the best option for your situation. We help with all types.',
+        recommended: '⭐ Recommended',
+      },
+      process: {
+        title: 'Simple 4-Step Process',
+        subtitle: 'We handle everything from document preparation to visa approval',
+      },
+      documents: {
+        title: 'Required Documents',
+        subtitle: 'Just 4 simple documents. We help prepare everything else.',
+      },
+      whyUs: {
+        title: 'Why Choose Our Visa Service?',
+        subtitle: '10,000+ visas approved since 2013 with 100% success rate',
+      },
+      faqs: {
+        title: 'Frequently Asked Questions',
+      },
+      cta: {
+        title: 'Ready to Get Your Medical Visa?',
+        subtitle:
+          'Free visa assistance • E-visa in 3-5 days • 100% success rate • Native Arabic support',
+        buttons: {
+          start: 'Start Visa Process',
+          call: 'Call +971 50 123 4567',
+          email: 'Email Us',
+        },
+      },
+    },
+    ar: {
+      hero: {
+        badge: 'أكثر من 10,000 تأشيرة معتمدة منذ 2013 • معدل نجاح 100٪',
+        title: 'مساعدة مجانية في التأشيرة الطبية\nللهند',
+        subtitle: 'احصل على تأشيرتك الإلكترونية في 3-5 أيام • لا حاجة لزيارة السفارة • 100٪ عبر الإنترنت',
+        description:
+          'دعم كامل للتأشيرة باللغة العربية لمرضى الإمارات والسعودية وقطر وعمان والكويت والبحرين',
+        buttons: {
+          visa: 'احصل على مساعدة التأشيرة الآن',
+          whatsapp: 'دعم واتساب',
+        },
+      },
+      visaTypes: {
+        title: '3 أنواع من التأشيرات الطبية للهند',
+        subtitle: 'اختر الخيار الأفضل لحالتك. نحن نساعد في جميع الأنواع.',
+        recommended: '⭐ موصى به',
+      },
+      process: {
+        title: 'عملية بسيطة من 4 خطوات',
+        subtitle: 'نحن نتولى كل شيء من إعداد المستندات إلى الموافقة على التأشيرة',
+      },
+      documents: {
+        title: 'الوثائق المطلوبة',
+        subtitle: '4 مستندات بسيطة فقط. نحن نساعد في إعداد كل شيء آخر.',
+      },
+      whyUs: {
+        title: 'لماذا تختار خدمة التأشيرة لدينا؟',
+        subtitle: 'أكثر من 10,000 تأشيرة معتمدة منذ 2013 مع معدل نجاح 100٪',
+      },
+      faqs: {
+        title: 'الأسئلة المتكررة',
+      },
+      cta: {
+        title: 'هل أنت مستعد للحصول على تأشيرتك الطبية؟',
+        subtitle:
+          'مساعدة مجانية في التأشيرة • تأشيرة إلكترونية في 3-5 أيام • معدل نجاح 100٪ • دعم عربي أصلي',
+        buttons: {
+          start: 'ابدأ عملية التأشيرة',
+          call: 'اتصل +971 50 123 4567',
+          email: 'راسلنا عبر البريد',
+        },
+      },
+    },
+  };
+
+  const t = content[locale as 'en' | 'ar'];
+
   const visaTypes = [
     {
       icon: Globe,
-      title: 'e-Medical Visa (Online)',
-      titleAr: 'التأشيرة الطبية الإلكترونية',
-      time: '3-5 Days',
-      timeAr: '3-5 أيام',
+      title: locale === 'ar' ? 'التأشيرة الطبية الإلكترونية' : 'e-Medical Visa (Online)',
+      time: locale === 'ar' ? '3-5 أيام' : '3-5 Days',
       cost: '$80 USD',
-      validity: '60 days (triple entry)',
-      validityAr: '60 يومًا (دخول ثلاثي)',
-      features: [
-        'Apply 100% online',
-        'No embassy visit required',
-        'Approved in 3-5 business days',
-        'Valid for 60 days',
-        'Triple entry allowed',
-        'Can extend up to 1 year',
-      ],
-      featuresAr: [
-        'التقديم 100٪ عبر الإنترنت',
-        'لا حاجة لزيارة السفارة',
-        'تتم الموافقة في 3-5 أيام عمل',
-        'صالحة لمدة 60 يومًا',
-        'دخول ثلاثي مسموح',
-        'يمكن التمديد حتى سنة واحدة',
-      ],
+      validity: locale === 'ar' ? '60 يومًا (دخول ثلاثي)' : '60 days (triple entry)',
+      features:
+        locale === 'ar'
+          ? [
+              'التقديم 100٪ عبر الإنترنت',
+              'لا حاجة لزيارة السفارة',
+              'تتم الموافقة في 3-5 أيام عمل',
+              'صالحة لمدة 60 يومًا',
+              'دخول ثلاثي مسموح',
+              'يمكن التمديد حتى سنة واحدة',
+            ]
+          : [
+              'Apply 100% online',
+              'No embassy visit required',
+              'Approved in 3-5 business days',
+              'Valid for 60 days',
+              'Triple entry allowed',
+              'Can extend up to 1 year',
+            ],
       color: 'from-blue-500 to-blue-600',
       recommended: true,
     },
     {
       icon: Plane,
-      title: 'Medical Visa on Arrival',
-      titleAr: 'التأشيرة الطبية عند الوصول',
-      time: 'Instant (at airport)',
-      timeAr: 'فوري (في المطار)',
+      title: locale === 'ar' ? 'التأشيرة الطبية عند الوصول' : 'Medical Visa on Arrival',
+      time: locale === 'ar' ? 'فوري (في المطار)' : 'Instant (at airport)',
       cost: '$80 USD',
-      validity: '60 days (double entry)',
-      validityAr: '60 يومًا (دخول مزدوج)',
-      features: [
-        'Instant approval at airport',
-        'Available at 6 major airports',
-        'Mumbai, Delhi, Bangalore, Chennai, Kolkata, Hyderabad',
-        'No prior application needed',
-        'Must have medical documents',
-        'Valid for 60 days',
-      ],
-      featuresAr: [
-        'موافقة فورية في المطار',
-        'متاح في 6 مطارات رئيسية',
-        'مومباي ودلهي وبنغالور وتشيناي وكولكاتا وحيدر أباد',
-        'لا حاجة لطلب مسبق',
-        'يجب أن يكون لديك وثائق طبية',
-        'صالحة لمدة 60 يومًا',
-      ],
+      validity: locale === 'ar' ? '60 يومًا (دخول مزدوج)' : '60 days (double entry)',
+      features:
+        locale === 'ar'
+          ? [
+              'موافقة فورية في المطار',
+              'متاح في 6 مطارات رئيسية',
+              'مومباي ودلهي وبنغالور وتشيناي وكولكاتا وحيدر أباد',
+              'لا حاجة لطلب مسبق',
+              'يجب أن يكون لديك وثائق طبية',
+              'صالحة لمدة 60 يومًا',
+            ]
+          : [
+              'Instant approval at airport',
+              'Available at 6 major airports',
+              'Mumbai, Delhi, Bangalore, Chennai, Kolkata, Hyderabad',
+              'No prior application needed',
+              'Must have medical documents',
+              'Valid for 60 days',
+            ],
       color: 'from-orange-500 to-orange-600',
       recommended: false,
     },
     {
       icon: Users,
-      title: 'Medical Attendant Visa',
-      titleAr: 'تأشيرة المرافق الطبي',
-      time: '3-5 Days',
-      timeAr: '3-5 أيام',
+      title: locale === 'ar' ? 'تأشيرة المرافق الطبي' : 'Medical Attendant Visa',
+      time: locale === 'ar' ? '3-5 أيام' : '3-5 Days',
       cost: '$80 USD',
-      validity: '60 days (must match patient)',
-      validityAr: '60 يومًا (يجب أن تتطابق مع المريض)',
-      features: [
-        'For family/companions',
-        'Up to 2 attendants per patient',
-        'Same validity as medical visa',
-        'Can extend with patient',
-        'Must apply together',
-        'Covers spouse, children, parents',
-      ],
-      featuresAr: [
-        'للعائلة / المرافقين',
-        'ما يصل إلى 2 مرافقين لكل مريض',
-        'نفس صلاحية التأشيرة الطبية',
-        'يمكن التمديد مع المريض',
-        'يجب التقديم معًا',
-        'يشمل الزوج والأطفال والوالدين',
-      ],
+      validity: locale === 'ar' ? '60 يومًا (يجب أن تتطابق مع المريض)' : '60 days (must match patient)',
+      features:
+        locale === 'ar'
+          ? [
+              'للعائلة / المرافقين',
+              'ما يصل إلى 2 مرافقين لكل مريض',
+              'نفس صلاحية التأشيرة الطبية',
+              'يمكن التمديد مع المريض',
+              'يجب التقديم معًا',
+              'يشمل الزوج والأطفال والوالدين',
+            ]
+          : [
+              'For family/companions',
+              'Up to 2 attendants per patient',
+              'Same validity as medical visa',
+              'Can extend with patient',
+              'Must apply together',
+              'Covers spouse, children, parents',
+            ],
       color: 'from-green-500 to-green-600',
       recommended: false,
     },
@@ -136,123 +223,133 @@ export default function VisaAssistancePage() {
   const processSteps = [
     {
       step: '1',
-      title: 'Share Medical Documents',
-      titleAr: 'مشاركة الوثائق الطبية',
-      description: 'Send us your passport copy, medical reports, and hospital letter via WhatsApp or email.',
-      descriptionAr: 'أرسل لنا نسخة من جواز السفر والتقارير الطبية وخطاب المستشفى عبر واتساب أو البريد الإلكتروني.',
+      title: locale === 'ar' ? 'مشاركة الوثائق الطبية' : 'Share Medical Documents',
+      description:
+        locale === 'ar'
+          ? 'أرسل لنا نسخة من جواز السفر والتقارير الطبية وخطاب المستشفى عبر واتساب أو البريد الإلكتروني.'
+          : 'Send us your passport copy, medical reports, and hospital letter via WhatsApp or email.',
       icon: FileText,
-      timeline: '15 minutes',
-      timelineAr: '15 دقيقة',
+      timeline: locale === 'ar' ? '15 دقيقة' : '15 minutes',
     },
     {
       step: '2',
-      title: 'We Prepare Application',
-      titleAr: 'نحن نعد الطلب',
-      description: 'Our visa specialists fill out all forms, upload documents, and ensure everything is correct.',
-      descriptionAr: 'يقوم متخصصو التأشيرات لدينا بملء جميع النماذج وتحميل المستندات والتأكد من صحة كل شيء.',
+      title: locale === 'ar' ? 'نحن نعد الطلب' : 'We Prepare Application',
+      description:
+        locale === 'ar'
+          ? 'يقوم متخصصو التأشيرات لدينا بملء جميع النماذج وتحميل المستندات والتأكد من صحة كل شيء.'
+          : 'Our visa specialists fill out all forms, upload documents, and ensure everything is correct.',
       icon: Shield,
-      timeline: '2-3 hours',
-      timelineAr: '2-3 ساعات',
+      timeline: locale === 'ar' ? '2-3 ساعات' : '2-3 hours',
     },
     {
       step: '3',
-      title: 'Government Processing',
-      titleAr: 'المعالجة الحكومية',
-      description: 'Indian government reviews and approves your e-visa application. We track status daily.',
-      descriptionAr: 'تراجع الحكومة الهندية طلب التأشيرة الإلكترونية وتوافق عليه. نتابع الحالة يوميًا.',
+      title: locale === 'ar' ? 'المعالجة الحكومية' : 'Government Processing',
+      description:
+        locale === 'ar'
+          ? 'تراجع الحكومة الهندية طلب التأشيرة الإلكترونية وتوافق عليه. نتابع الحالة يوميًا.'
+          : 'Indian government reviews and approves your e-visa application. We track status daily.',
       icon: Clock,
-      timeline: '3-5 business days',
-      timelineAr: '3-5 أيام عمل',
+      timeline: locale === 'ar' ? '3-5 أيام عمل' : '3-5 business days',
     },
     {
       step: '4',
-      title: 'Receive e-Visa',
-      titleAr: 'استلام التأشيرة الإلكترونية',
-      description: 'e-Visa emailed to you. Print copy and bring to airport. Valid for 60 days with triple entry.',
-      descriptionAr: 'يتم إرسال التأشيرة الإلكترونية عبر البريد الإلكتروني. اطبع نسخة وأحضرها إلى المطار. صالحة لمدة 60 يومًا مع دخول ثلاثي.',
+      title: locale === 'ar' ? 'استلام التأشيرة الإلكترونية' : 'Receive e-Visa',
+      description:
+        locale === 'ar'
+          ? 'يتم إرسال التأشيرة الإلكترونية عبر البريد الإلكتروني. اطبع نسخة وأحضرها إلى المطار. صالحة لمدة 60 يومًا مع دخول ثلاثي.'
+          : 'e-Visa emailed to you. Print copy and bring to airport. Valid for 60 days with triple entry.',
       icon: CheckCircle2,
-      timeline: 'Instant email',
-      timelineAr: 'بريد إلكتروني فوري',
+      timeline: locale === 'ar' ? 'بريد إلكتروني فوري' : 'Instant email',
     },
   ];
 
   const requiredDocuments = [
     {
-      title: 'Passport Copy',
-      titleAr: 'نسخة من جواز السفر',
-      description: 'Must be valid for at least 6 months from date of arrival',
-      descriptionAr: 'يجب أن يكون صالحًا لمدة 6 أشهر على الأقل من تاريخ الوصول',
+      title: locale === 'ar' ? 'نسخة من جواز السفر' : 'Passport Copy',
+      description:
+        locale === 'ar'
+          ? 'يجب أن يكون صالحًا لمدة 6 أشهر على الأقل من تاريخ الوصول'
+          : 'Must be valid for at least 6 months from date of arrival',
       icon: FileText,
     },
     {
-      title: 'Hospital Letter',
-      titleAr: 'خطاب المستشفى',
-      description: 'Invitation letter from Indian hospital (we provide this)',
-      descriptionAr: 'خطاب دعوة من مستشفى هندي (نحن نوفر هذا)',
+      title: locale === 'ar' ? 'خطاب المستشفى' : 'Hospital Letter',
+      description:
+        locale === 'ar'
+          ? 'خطاب دعوة من مستشفى هندي (نحن نوفر هذا)'
+          : 'Invitation letter from Indian hospital (we provide this)',
       icon: Award,
     },
     {
-      title: 'Medical Reports',
-      titleAr: 'التقارير الطبية',
-      description: 'Recent medical reports, scans, or diagnosis',
-      descriptionAr: 'تقارير طبية حديثة أو فحوصات أو تشخيص',
+      title: locale === 'ar' ? 'التقارير الطبية' : 'Medical Reports',
+      description:
+        locale === 'ar'
+          ? 'تقارير طبية حديثة أو فحوصات أو تشخيص'
+          : 'Recent medical reports, scans, or diagnosis',
       icon: FileText,
     },
     {
-      title: 'Passport Photo',
-      titleAr: 'صورة جواز السفر',
-      description: '2x2 inch white background photo (recent)',
-      descriptionAr: 'صورة 2×2 بوصة خلفية بيضاء (حديثة)',
+      title: locale === 'ar' ? 'صورة جواز السفر' : 'Passport Photo',
+      description:
+        locale === 'ar'
+          ? 'صورة 2×2 بوصة خلفية بيضاء (حديثة)'
+          : '2x2 inch white background photo (recent)',
       icon: Users,
     },
   ];
 
   const whyChooseUs = [
     {
-      title: '100% Success Rate',
-      titleAr: '100٪ معدل النجاح',
-      description: 'Over 10,000 medical visas approved since 2013. Zero rejections when documents are complete.',
-      descriptionAr: 'أكثر من 10000 تأشيرة طبية تمت الموافقة عليها منذ عام 2013. لا يوجد رفض عند اكتمال الوثائق.',
+      title: locale === 'ar' ? '100٪ معدل النجاح' : '100% Success Rate',
+      description:
+        locale === 'ar'
+          ? 'أكثر من 10000 تأشيرة طبية تمت الموافقة عليها منذ عام 2013. لا يوجد رفض عند اكتمال الوثائق.'
+          : 'Over 10,000 medical visas approved since 2013. Zero rejections when documents are complete.',
       icon: Star,
       color: 'text-yellow-600',
     },
     {
-      title: 'Free Service',
-      titleAr: 'خدمة مجانية',
-      description: 'We handle all visa paperwork at no charge. You only pay government fees ($80).',
-      descriptionAr: 'نتولى جميع الأوراق المتعلقة بالتأشيرة مجانًا. أنت تدفع فقط رسوم الحكومة (80 دولارًا).',
+      title: locale === 'ar' ? 'خدمة مجانية' : 'Free Service',
+      description:
+        locale === 'ar'
+          ? 'نتولى جميع الأوراق المتعلقة بالتأشيرة مجانًا. أنت تدفع فقط رسوم الحكومة (80 دولارًا).'
+          : 'We handle all visa paperwork at no charge. You only pay government fees ($80).',
       icon: CheckCircle2,
       color: 'text-green-600',
     },
     {
-      title: 'Native Arabic Support',
-      titleAr: 'دعم عربي أصلي',
-      description: 'Our visa team includes native Arabic speakers who lived in Dubai, Riyadh, and Doha.',
-      descriptionAr: 'يضم فريق التأشيرات لدينا متحدثين أصليين باللغة العربية الذين عاشوا في دبي والرياض والدوحة.',
+      title: locale === 'ar' ? 'دعم عربي أصلي' : 'Native Arabic Support',
+      description:
+        locale === 'ar'
+          ? 'يضم فريق التأشيرات لدينا متحدثين أصليين باللغة العربية الذين عاشوا في دبي والرياض والدوحة.'
+          : 'Our visa team includes native Arabic speakers who lived in Dubai, Riyadh, and Doha.',
       icon: MessageCircle,
       color: 'text-blue-600',
     },
     {
-      title: 'Fast Processing',
-      titleAr: 'معالجة سريعة',
-      description: '3-5 days for e-visa vs 7-10 days through embassy. We track status daily.',
-      descriptionAr: '3-5 أيام للتأشيرة الإلكترونية مقابل 7-10 أيام عبر السفارة. نتابع الحالة يوميًا.',
+      title: locale === 'ar' ? 'معالجة سريعة' : 'Fast Processing',
+      description:
+        locale === 'ar'
+          ? '3-5 أيام للتأشيرة الإلكترونية مقابل 7-10 أيام عبر السفارة. نتابع الحالة يوميًا.'
+          : '3-5 days for e-visa vs 7-10 days through embassy. We track status daily.',
       icon: Clock,
       color: 'text-orange-600',
     },
     {
-      title: 'Visa Extension Help',
-      titleAr: 'مساعدة في تمديد التأشيرة',
-      description: 'Can extend up to 1 year through FRRO office. We handle all paperwork.',
-      descriptionAr: 'يمكن التمديد حتى سنة واحدة من خلال مكتب FRRO. نتولى جميع الأوراق.',
+      title: locale === 'ar' ? 'مساعدة في تمديد التأشيرة' : 'Visa Extension Help',
+      description:
+        locale === 'ar'
+          ? 'يمكن التمديد حتى سنة واحدة من خلال مكتب FRRO. نتولى جميع الأوراق.'
+          : 'Can extend up to 1 year through FRRO office. We handle all paperwork.',
       icon: Calendar,
       color: 'text-purple-600',
     },
     {
-      title: 'Complete Guidance',
-      titleAr: 'إرشادات كاملة',
-      description: 'Step-by-step help from application to arrival. 24/7 WhatsApp support.',
-      descriptionAr: 'مساعدة خطوة بخطوة من التطبيق إلى الوصول. دعم واتساب 24/7.',
+      title: locale === 'ar' ? 'إرشادات كاملة' : 'Complete Guidance',
+      description:
+        locale === 'ar'
+          ? 'مساعدة خطوة بخطوة من التطبيق إلى الوصول. دعم واتساب 24/7.'
+          : 'Step-by-step help from application to arrival. 24/7 WhatsApp support.',
       icon: Users,
       color: 'text-indigo-600',
     },
@@ -260,112 +357,72 @@ export default function VisaAssistancePage() {
 
   const faqs = [
     {
-      question: 'Do I need to visit the Indian embassy?',
-      questionAr: 'هل أحتاج إلى زيارة السفارة الهندية؟',
-      answer: 'No! With e-Medical Visa, everything is done 100% online. You never need to visit an embassy or consulate.',
-      answerAr: 'لا! مع التأشيرة الطبية الإلكترونية، كل شيء يتم 100٪ عبر الإنترنت. لا تحتاج أبدًا إلى زيارة السفارة أو القنصلية.',
+      question: locale === 'ar' ? 'هل أحتاج إلى زيارة السفارة الهندية؟' : 'Do I need to visit the Indian embassy?',
+      answer:
+        locale === 'ar'
+          ? 'لا! مع التأشيرة الطبية الإلكترونية، كل شيء يتم 100٪ عبر الإنترنت. لا تحتاج أبدًا إلى زيارة السفارة أو القنصلية.'
+          : 'No! With e-Medical Visa, everything is done 100% online. You never need to visit an embassy or consulate.',
     },
     {
-      question: 'How long does the visa process take?',
-      questionAr: 'كم من الوقت تستغرق عملية التأشيرة؟',
-      answer: 'E-visa takes 3-5 business days. Visa on arrival is instant at the airport. We recommend e-visa for peace of mind.',
-      answerAr: 'تستغرق التأشيرة الإلكترونية 3-5 أيام عمل. التأشيرة عند الوصول فورية في المطار. نوصي بالتأشيرة الإلكترونية لراحة البال.',
+      question:
+        locale === 'ar'
+          ? 'كم من الوقت تستغرق عملية التأشيرة؟'
+          : 'How long does the visa process take?',
+      answer:
+        locale === 'ar'
+          ? 'تستغرق التأشيرة الإلكترونية 3-5 أيام عمل. التأشيرة عند الوصول فورية في المطار. نوصي بالتأشيرة الإلكترونية لراحة البال.'
+          : 'E-visa takes 3-5 business days. Visa on arrival is instant at the airport. We recommend e-visa for peace of mind.',
     },
     {
-      question: 'Can my family come with me?',
-      questionAr: 'هل يمكن لعائلتي القدوم معي؟',
-      answer: 'Yes! Up to 2 family members can apply for Medical Attendant Visa. Spouse, children, or parents are eligible.',
-      answerAr: 'نعم! يمكن لما يصل إلى 2 من أفراد الأسرة التقدم بطلب للحصول على تأشيرة المرافق الطبي. الزوج والأطفال أو الوالدين مؤهلون.',
+      question: locale === 'ar' ? 'هل يمكن لعائلتي القدوم معي؟' : 'Can my family come with me?',
+      answer:
+        locale === 'ar'
+          ? 'نعم! يمكن لما يصل إلى 2 من أفراد الأسرة التقدم بطلب للحصول على تأشيرة المرافق الطبي. الزوج والأطفال أو الوالدين مؤهلون.'
+          : 'Yes! Up to 2 family members can apply for Medical Attendant Visa. Spouse, children, or parents are eligible.',
     },
     {
-      question: 'What if I need to stay longer than 60 days?',
-      questionAr: 'ماذا لو احتجت إلى البقاء أكثر من 60 يومًا؟',
-      answer: 'You can extend the medical visa up to 1 year through the FRRO (Foreigners Regional Registration Office). We handle all extension paperwork for free.',
-      answerAr: 'يمكنك تمديد التأشيرة الطبية حتى سنة واحدة من خلال مكتب FRRO (مكتب التسجيل الإقليمي للأجانب). نتولى جميع الأوراق الخاصة بالتمديد مجانًا.',
+      question:
+        locale === 'ar'
+          ? 'ماذا لو احتجت إلى البقاء أكثر من 60 يومًا؟'
+          : 'What if I need to stay longer than 60 days?',
+      answer:
+        locale === 'ar'
+          ? 'يمكنك تمديد التأشيرة الطبية حتى سنة واحدة من خلال مكتب FRRO (مكتب التسجيل الإقليمي للأجانب). نتولى جميع الأوراق الخاصة بالتمديد مجانًا.'
+          : 'You can extend the medical visa up to 1 year through the FRRO (Foreigners Regional Registration Office). We handle all extension paperwork for free.',
     },
     {
-      question: 'What is the visa cost?',
-      questionAr: 'ما هي تكلفة التأشيرة؟',
-      answer: 'Government fee is $80 USD per person. Our service is completely free. You only pay the government fee directly.',
-      answerAr: 'رسوم الحكومة 80 دولارًا أمريكيًا لكل شخص. خدمتنا مجانية تمامًا. أنت تدفع فقط رسوم الحكومة مباشرة.',
+      question: locale === 'ar' ? 'ما هي تكلفة التأشيرة؟' : 'What is the visa cost?',
+      answer:
+        locale === 'ar'
+          ? 'رسوم الحكومة 80 دولارًا أمريكيًا لكل شخص. خدمتنا مجانية تمامًا. أنت تدفع فقط رسوم الحكومة مباشرة.'
+          : 'Government fee is $80 USD per person. Our service is completely free. You only pay the government fee directly.',
     },
     {
-      question: 'Can the visa be rejected?',
-      questionAr: 'هل يمكن رفض التأشيرة؟',
-      answer: 'Very rare when documents are complete. We have 100% approval rate with proper documentation. We check everything before submission to avoid rejection.',
-      answerAr: 'نادر جدًا عند اكتمال الوثائق. لدينا معدل موافقة 100٪ مع التوثيق المناسب. نتحقق من كل شيء قبل التقديم لتجنب الرفض.',
+      question: locale === 'ar' ? 'هل يمكن رفض التأشيرة؟' : 'Can the visa be rejected?',
+      answer:
+        locale === 'ar'
+          ? 'نادر جدًا عند اكتمال الوثائق. لدينا معدل موافقة 100٪ مع التوثيق المناسب. نتحقق من كل شيء قبل التقديم لتجنب الرفض.'
+          : 'Very rare when documents are complete. We have 100% approval rate with proper documentation. We check everything before submission to avoid rejection.',
     },
     {
-      question: 'Are there specific requirements for UAE, Saudi Arabia, Qatar, and other GCC countries?',
-      questionAr: 'هل هناك متطلبات محددة لدولة الإمارات والسعودية وقطر ودول الخليج الأخرى؟',
-      answer: 'All GCC citizens (UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain) follow the same process. Requirements are identical: passport, medical reports, hospital letter, and photo. GCC passports are typically approved faster (2-4 days vs 3-5 days) due to strong diplomatic relations between India and GCC countries.',
-      answerAr: 'جميع مواطني دول مجلس التعاون الخليجي (الإمارات، السعودية، قطر، عمان، الكويت، البحرين) يتبعون نفس العملية. المتطلبات متطابقة: جواز السفر، التقارير الطبية، خطاب المستشفى، والصورة. عادة ما تتم الموافقة على جوازات السفر الخليجية بشكل أسرع (2-4 أيام مقابل 3-5 أيام) بسبب العلاقات الدبلوماسية القوية بين الهند ودول الخليج.',
+      question:
+        locale === 'ar'
+          ? 'هل هناك متطلبات محددة لدولة الإمارات والسعودية وقطر ودول الخليج الأخرى؟'
+          : 'Are there specific requirements for UAE, Saudi Arabia, Qatar, and other GCC countries?',
+      answer:
+        locale === 'ar'
+          ? 'جميع مواطني دول مجلس التعاون الخليجي (الإمارات، السعودية، قطر، عمان، الكويت، البحرين) يتبعون نفس العملية. المتطلبات متطابقة: جواز السفر، التقارير الطبية، خطاب المستشفى، والصورة. عادة ما تتم الموافقة على جوازات السفر الخليجية بشكل أسرع (2-4 أيام مقابل 3-5 أيام) بسبب العلاقات الدبلوماسية القوية بين الهند ودول الخليج.'
+          : 'All GCC citizens (UAE, Saudi Arabia, Qatar, Oman, Kuwait, Bahrain) follow the same process. Requirements are identical: passport, medical reports, hospital letter, and photo. GCC passports are typically approved faster (2-4 days vs 3-5 days) due to strong diplomatic relations between India and GCC countries.',
     },
     {
-      question: 'What are the main reasons for visa rejection and how can I avoid them?',
-      questionAr: 'ما هي الأسباب الرئيسية لرفض التأشيرة وكيف يمكنني تجنبها؟',
-      answer: 'Common rejection reasons: (1) Passport validity less than 6 months (2) Poor quality/blurry passport photo (3) Incomplete medical reports (4) Missing hospital letter (5) Name mismatch across documents (6) Previous overstay in India. We prevent all these by checking documents thoroughly before submission. With our service, rejection rate is essentially zero.',
-      answerAr: 'أسباب الرفض الشائعة: (1) صلاحية جواز السفر أقل من 6 أشهر (2) صورة جواز سفر ضعيفة / ضبابية (3) تقارير طبية غير كاملة (4) خطاب المستشفى مفقود (5) عدم تطابق الاسم عبر الوثائق (6) تجاوز الإقامة السابقة في الهند. نمنع كل هذه من خلال فحص الوثائق بدقة قبل التقديم. مع خدمتنا، معدل الرفض صفر بشكل أساسي.',
-    },
-    {
-      question: 'Can I apply for visa before booking treatment/hospital?',
-      questionAr: 'هل يمكنني التقدم بطلب للحصول على تأشيرة قبل حجز العلاج / المستشفى؟',
-      answer: 'No, you need a hospital invitation letter to apply for medical visa. Process: (1) Contact us with your medical condition (2) We connect you with right hospital/doctor (3) Doctor reviews reports and provides treatment plan (4) Hospital issues invitation letter (5) Then we apply for visa. Total timeline: 5-7 days from first contact to visa approval.',
-      answerAr: 'لا، تحتاج إلى خطاب دعوة من المستشفى للتقدم للحصول على تأشيرة طبية. العملية: (1) اتصل بنا مع حالتك الطبية (2) نقوم بتوصيلك بالمستشفى / الطبيب المناسب (3) يراجع الطبيب التقارير ويقدم خطة العلاج (4) يصدر المستشفى خطاب دعوة (5) ثم نقدم طلب التأشيرة. الجدول الزمني الإجمالي: 5-7 أيام من الاتصال الأول إلى موافقة التأشيرة.',
-    },
-    {
-      question: 'What happens at the Indian airport immigration with medical visa?',
-      questionAr: 'ماذا يحدث في الهجرة بالمطار الهندي مع التأشيرة الطبية؟',
-      answer: 'Very smooth process: (1) Show printed e-visa copy and passport (2) Immigration officer stamps passport (takes 2-5 minutes) (3) Collect baggage (4) Exit through green channel (nothing to declare). Keep hospital letter and medical reports in hand baggage in case immigration asks (rare). No additional forms needed. Whole process: 15-30 minutes maximum.',
-      answerAr: 'عملية سلسة للغاية: (1) أظهر نسخة مطبوعة من التأشيرة الإلكترونية وجواز السفر (2) يختم موظف الهجرة جواز السفر (يستغرق 2-5 دقائق) (3) جمع الأمتعة (4) الخروج عبر القناة الخضراء (لا شيء للإعلان عنه). احتفظ بخطاب المستشفى والتقارير الطبية في الأمتعة اليدوية في حالة سأل الهجرة (نادر). لا حاجة لنماذج إضافية. العملية بأكملها: 15-30 دقيقة كحد أقصى.',
-    },
-    {
-      question: 'How does the visa extension process work?',
-      questionAr: 'كيف تعمل عملية تمديد التأشيرة؟',
-      answer: 'Extension process through FRRO office: (1) Apply 1-2 weeks before current visa expires (2) Submit: passport, current visa, medical reports, hospital letter stating need for extension (3) FRRO reviews and approves (2-7 days) (4) Can extend up to 1 year total. Extension fee: ₹200 ($2.50) per month. We handle entire process - you just provide updated medical reports. Most extensions approved in 3-5 days.',
-      answerAr: 'عملية التمديد من خلال مكتب FRRO: (1) التقدم قبل 1-2 أسبوع من انتهاء التأشيرة الحالية (2) تقديم: جواز السفر، التأشيرة الحالية، التقارير الطبية، خطاب المستشفى يفيد بالحاجة إلى التمديد (3) يراجع FRRO ويوافق (2-7 أيام) (4) يمكن التمديد حتى سنة واحدة إجمالاً. رسوم التمديد: 200 روبية (2.50 دولار) شهريًا. نتولى العملية بأكملها - أنت تقدم فقط تقارير طبية محدثة. تتم الموافقة على معظم التمديدات في 3-5 أيام.',
-    },
-    {
-      question: 'What if my passport expires while I&apos;m in India for treatment?',
-      questionAr: 'ماذا لو انتهت صلاحية جواز سفري بينما أنا في الهند للعلاج؟',
-      answer: 'If passport expires during your stay: (1) Immediately contact your country&apos;s embassy/consulate in India (UAE embassy in Delhi, Saudi embassy, etc.) (2) Apply for emergency travel document or passport renewal (3-7 days typically) (3) Once new passport issued, update with FRRO (1-2 days) (4) Medical visa transferred to new passport. We coordinate with embassy and FRRO. This happens occasionally with long treatments (cancer, transplants).',
-      answerAr: 'إذا انتهت صلاحية جواز السفر أثناء إقامتك: (1) اتصل فورًا بسفارة / قنصلية بلدك في الهند (سفارة الإمارات في دلهي، السفارة السعودية، إلخ) (2) تقدم بطلب للحصول على وثيقة سفر طارئة أو تجديد جواز السفر (عادة 3-7 أيام) (3) بمجرد إصدار جواز السفر الجديد، قم بالتحديث مع FRRO (1-2 يوم) (4) يتم نقل التأشيرة الطبية إلى جواز السفر الجديد. نحن ننسق مع السفارة و FRRO. يحدث هذا أحيانًا مع العلاجات الطويلة (السرطان، الزرع).',
-    },
-    {
-      question: 'Can I use multiple entries on medical visa? How does it work?',
-      questionAr: 'هل يمكنني استخدام إدخالات متعددة على التأشيرة الطبية؟ كيف يعمل؟',
-      answer: 'E-Medical Visa allows triple entry (3 separate trips) within 60 days. Example: (1) Trip 1: Arrive for consultation, tests (5 days) → Return home → (2) Trip 2: Return for surgery (10 days) → Go home for recovery → (3) Trip 3: Return for follow-up (3 days). Useful for IVF (multiple cycles), cancer treatment (chemo sessions), or gradual procedures. Each entry counted when you exit India.',
-      answerAr: 'تسمح التأشيرة الطبية الإلكترونية بالدخول الثلاثي (3 رحلات منفصلة) خلال 60 يومًا. مثال: (1) الرحلة 1: الوصول للاستشارة والاختبارات (5 أيام) ← العودة إلى المنزل ← (2) الرحلة 2: العودة للجراحة (10 أيام) ← العودة إلى المنزل للتعافي ← (3) الرحلة 3: العودة للمتابعة (3 أيام). مفيد لعلاج IVF (دورات متعددة)، علاج السرطان (جلسات الكيميائي)، أو الإجراءات التدريجية. يتم احتساب كل دخول عند مغادرة الهند.',
-    },
-    {
-      question: 'Do I need transit visa if flying via another country to India?',
-      questionAr: 'هل أحتاج إلى تأشيرة عبور إذا كنت أسافر عبر بلد آخر إلى الهند؟',
-      answer: 'Depends on layover country and duration: Dubai/Abu Dhabi layover (Emirates/Etihad): No transit visa needed for any duration if not leaving airport. Doha layover (Qatar Airways): No transit visa. Istanbul layover (Turkish Airlines): No transit visa if under 24 hours. Bangkok/Singapore layover: No transit visa if under 24 hours. If layover over 24 hours and want to leave airport for hotel: May need transit visa - check specific country rules.',
-      answerAr: 'يعتمد على بلد التوقف والمدة: توقف دبي / أبوظبي (الإمارات / الاتحاد): لا حاجة لتأشيرة عبور لأي مدة إذا لم تغادر المطار. توقف الدوحة (الخطوط الجوية القطرية): لا تأشيرة عبور. توقف اسطنبول (الخطوط الجوية التركية): لا تأشيرة عبور إذا كانت أقل من 24 ساعة. توقف بانكوك / سنغافورة: لا تأشيرة عبور إذا كانت أقل من 24 ساعة. إذا كان التوقف أكثر من 24 ساعة وتريد مغادرة المطار للفندق: قد تحتاج إلى تأشيرة عبور - تحقق من قواعد البلد المحددة.',
-    },
-    {
-      question: 'Is COVID vaccination required for medical visa to India?',
-      questionAr: 'هل التطعيم ضد كوفيد مطلوب للحصول على تأشيرة طبية للهند؟',
-      answer: 'As of 2024: No COVID vaccination required for entry to India. No COVID test required. No quarantine required. These rules changed in 2023. However, we recommend vaccination for your own safety (hospitals have high standards but you&apos;ll be around sick patients). If you have COVID symptoms at airport: May be asked to test or isolate briefly.',
-      answerAr: 'اعتبارًا من عام 2024: لا يلزم التطعيم ضد كوفيد للدخول إلى الهند. لا يلزم اختبار كوفيد. لا يلزم الحجر الصحي. تغيرت هذه القواعد في عام 2023. ومع ذلك، نوصي بالتطعيم لسلامتك الخاصة (المستشفيات لديها معايير عالية ولكنك ستكون حول المرضى المرضى). إذا كان لديك أعراض كوفيد في المطار: قد يُطلب منك الاختبار أو العزل لفترة وجيزة.',
-    },
-    {
-      question: 'Can I change hospitals during my stay on medical visa?',
-      questionAr: 'هل يمكنني تغيير المستشفيات أثناء إقامتي بتأشيرة طبية؟',
-      answer: 'Yes, but requires updating with FRRO: (1) Get discharge summary from first hospital (2) Get new invitation letter from second hospital (3) Submit both to FRRO with explanation (2-5 days processing) (4) FRRO updates records. Valid reasons: Second opinion needed, better specialist found, treatment complications, relocation to different city. We handle FRRO paperwork. Common when treatment plan changes or complications arise.',
-      answerAr: 'نعم، ولكن يتطلب التحديث مع FRRO: (1) احصل على ملخص التفريغ من المستشفى الأول (2) احصل على خطاب دعوة جديد من المستشفى الثاني (3) قدم كليهما إلى FRRO مع الشرح (2-5 أيام معالجة) (4) يقوم FRRO بتحديث السجلات. أسباب صالحة: الحاجة إلى رأي ثاني، تم العثور على متخصص أفضل، مضاعفات العلاج، الانتقال إلى مدينة مختلفة. نتولى أوراق FRRO. شائع عندما تتغير خطة العلاج أو تنشأ مضاعفات.',
-    },
-    {
-      question: 'What if my treatment takes longer than expected and visa is expiring?',
-      questionAr: 'ماذا لو استغرق علاجي وقتًا أطول من المتوقع وانتهت صلاحية التأشيرة؟',
-      answer: 'Don&apos;t worry - very common situation: (1) Doctor writes letter explaining medical need for extension (complications, additional surgery needed, recovery slower than expected) (2) We submit extension request to FRRO 1-2 weeks before expiry (3) FRRO almost always approves medical extensions (2-5 days) (4) You continue treatment uninterrupted. Emergency same-day extension possible if urgent. Never overstay without extension - penalties are severe.',
-      answerAr: 'لا تقلق - حالة شائعة جدًا: (1) يكتب الطبيب خطابًا يشرح الحاجة الطبية للتمديد (المضاعفات، الحاجة إلى جراحة إضافية، التعافي أبطأ من المتوقع) (2) نقدم طلب التمديد إلى FRRO قبل 1-2 أسبوع من انتهاء الصلاحية (3) يوافق FRRO تقريبًا دائمًا على التمديدات الطبية (2-5 أيام) (4) تواصل العلاج دون انقطاع. التمديد الطارئ في نفس اليوم ممكن إذا كان عاجلاً. لا تتجاوز الإقامة أبدًا بدون تمديد - العقوبات شديدة.',
-    },
-    {
-      question: 'Is there expedited/emergency visa processing available?',
-      questionAr: 'هل هناك معالجة تأشيرة سريعة / طارئة متاحة؟',
-      answer: 'For genuine medical emergencies (heart attack, stroke, severe accident, cancer emergency): (1) We mark application as "Emergency Medical" (2) Processing accelerated to 24-48 hours (vs normal 3-5 days) (3) Requires: Doctor&apos;s emergency certificate, hospital admission letter stating urgency, medical reports showing emergency (4) Government fee same ($80). Success rate: 95% approval within 48 hours. Alternative: Fly to Mumbai/Delhi and get visa on arrival (instant).',
-      answerAr: 'للحالات الطبية الطارئة الحقيقية (نوبة قلبية، سكتة دماغية، حادث شديد، حالة طوارئ سرطانية): (1) نضع علامة على الطلب على أنه "طوارئ طبية" (2) تسريع المعالجة إلى 24-48 ساعة (مقابل 3-5 أيام عادي) (3) يتطلب: شهادة طوارئ الطبيب، خطاب قبول المستشفى يفيد بالاستعجال، تقارير طبية تظهر الطوارئ (4) رسوم الحكومة نفسها (80 دولارًا). معدل النجاح: 95٪ موافقة خلال 48 ساعة. البديل: الطيران إلى مومباي / دلهي والحصول على تأشيرة عند الوصول (فوري).',
+      question:
+        locale === 'ar'
+          ? 'ما هي الأسباب الرئيسية لرفض التأشيرة وكيف يمكنني تجنبها؟'
+          : 'What are the main reasons for visa rejection and how can I avoid them?',
+      answer:
+        locale === 'ar'
+          ? 'أسباب الرفض الشائعة: (1) صلاحية جواز السفر أقل من 6 أشهر (2) صورة جواز سفر ضعيفة / ضبابية (3) تقارير طبية غير كاملة (4) خطاب المستشفى مفقود (5) عدم تطابق الاسم عبر الوثائق (6) تجاوز الإقامة السابقة في الهند. نمنع كل هذه من خلال فحص الوثائق بدقة قبل التقديم. مع خدمتنا، معدل الرفض صفر بشكل أساسي.'
+          : 'Common rejection reasons: (1) Passport validity less than 6 months (2) Poor quality/blurry passport photo (3) Incomplete medical reports (4) Missing hospital letter (5) Name mismatch across documents (6) Previous overstay in India. We prevent all these by checking documents thoroughly before submission. With our service, rejection rate is essentially zero.',
     },
   ];
 
@@ -377,28 +434,29 @@ export default function VisaAssistancePage() {
         <div className="container relative mx-auto text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm backdrop-blur-sm">
             <CheckCircle2 className="h-4 w-4" />
-            <span>10,000+ Visas Approved Since 2013 • 100% Success Rate</span>
+            <span>{t.hero.badge}</span>
           </div>
-          <h1 className="mb-6 font-serif text-4xl font-bold md:text-6xl">
-            Free Medical Visa Assistance<br />for India
+          <h1 className="mb-6 whitespace-pre-line font-serif text-4xl font-bold md:text-6xl">
+            {t.hero.title}
           </h1>
-          <p className="mx-auto mb-4 max-w-3xl text-xl text-primary-100">
-            Get your e-visa in 3-5 days • No embassy visit required • 100% online
-          </p>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-200">
-            Complete visa support in Arabic for UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain patients
-          </p>
+          <p className="mx-auto mb-4 max-w-3xl text-xl text-primary-100">{t.hero.subtitle}</p>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-primary-200">{t.hero.description}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
               <Link href="/consultation">
                 <CheckCircle2 className="mr-2 h-5 w-5" />
-                Get Visa Help Now
+                {t.hero.buttons.visa}
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700"
+            >
               <Link href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                WhatsApp Support
+                {t.hero.buttons.whatsapp}
               </Link>
             </Button>
           </div>
@@ -410,11 +468,9 @@ export default function VisaAssistancePage() {
         <div className="container mx-auto">
           <div className="mb-12 text-center">
             <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              3 Types of Medical Visas for India
+              {t.visaTypes.title}
             </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Choose the best option for your situation. We help with all types.
-            </p>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">{t.visaTypes.subtitle}</p>
           </div>
           <div className="grid gap-8 lg:grid-cols-3">
             {visaTypes.map((visa, index) => {
@@ -428,18 +484,26 @@ export default function VisaAssistancePage() {
                 >
                   {visa.recommended && (
                     <div className="absolute right-4 top-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 px-3 py-1 text-xs font-bold text-white shadow-lg">
-                      ⭐ Recommended
+                      {t.visaTypes.recommended}
                     </div>
                   )}
                   <CardHeader>
-                    <div className={`mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${visa.color} shadow-lg`}>
+                    <div
+                      className={`mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br ${visa.color} shadow-lg`}
+                    >
                       <Icon className="h-10 w-10 text-white" />
                     </div>
                     <CardTitle className="text-center text-xl">{visa.title}</CardTitle>
                     <CardDescription className="text-center">
                       <div className="mt-2 text-2xl font-bold text-gray-900">{visa.cost}</div>
-                      <div className="mt-1 text-sm">Processing: {visa.time}</div>
-                      <div className="mt-1 text-xs">Valid: {visa.validity}</div>
+                      <div className="mt-1 text-sm">
+                        {locale === 'ar' ? 'المعالجة: ' : 'Processing: '}
+                        {visa.time}
+                      </div>
+                      <div className="mt-1 text-xs">
+                        {locale === 'ar' ? 'صالح: ' : 'Valid: '}
+                        {visa.validity}
+                      </div>
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -463,12 +527,8 @@ export default function VisaAssistancePage() {
       <section className="bg-gradient-to-br from-gray-50 to-white px-4 py-20">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Simple 4-Step Process
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              We handle everything from document preparation to visa approval
-            </p>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">{t.process.title}</h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">{t.process.subtitle}</p>
           </div>
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {processSteps.map((step, index) => {
@@ -503,18 +563,17 @@ export default function VisaAssistancePage() {
       <section className="px-4 py-20">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Required Documents
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              Just 4 simple documents. We help prepare everything else.
-            </p>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">{t.documents.title}</h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">{t.documents.subtitle}</p>
           </div>
           <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-2">
             {requiredDocuments.map((doc, index) => {
               const Icon = doc.icon;
               return (
-                <Card key={index} className="border-2 transition-all hover:border-primary-300 hover:shadow-lg">
+                <Card
+                  key={index}
+                  className="border-2 transition-all hover:border-primary-300 hover:shadow-lg"
+                >
                   <CardContent className="flex items-start gap-4 p-6">
                     <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary-100 to-primary-200">
                       <Icon className="h-6 w-6 text-primary-600" />
@@ -535,18 +594,17 @@ export default function VisaAssistancePage() {
       <section className="bg-gradient-to-br from-primary-50 to-accent-50 px-4 py-20">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Why Choose Our Visa Service?
-            </h2>
-            <p className="mx-auto max-w-2xl text-lg text-gray-600">
-              10,000+ visas approved since 2013 with 100% success rate
-            </p>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">{t.whyUs.title}</h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">{t.whyUs.subtitle}</p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item, index) => {
               const Icon = item.icon;
               return (
-                <Card key={index} className="border-2 border-white bg-white/80 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl">
+                <Card
+                  key={index}
+                  className="border-2 border-white bg-white/80 backdrop-blur-sm transition-all hover:scale-105 hover:shadow-xl"
+                >
                   <CardContent className="p-6 text-center">
                     <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-gray-50 to-gray-100">
                       <Icon className={`h-8 w-8 ${item.color}`} />
@@ -565,9 +623,7 @@ export default function VisaAssistancePage() {
       <section className="px-4 py-20">
         <div className="container mx-auto">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-              Frequently Asked Questions
-            </h2>
+            <h2 className="mb-4 font-serif text-4xl font-bold text-gray-900">{t.faqs.title}</h2>
           </div>
           <div className="mx-auto max-w-3xl space-y-4">
             {faqs.map((faq, index) => (
@@ -592,29 +648,35 @@ export default function VisaAssistancePage() {
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:20px_20px]" />
         <div className="container relative mx-auto text-center">
           <Plane className="mx-auto mb-6 h-16 w-16 text-primary-200" />
-          <h2 className="mb-4 font-serif text-4xl font-bold">
-            Ready to Get Your Medical Visa?
-          </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">
-            Free visa assistance • E-visa in 3-5 days • 100% success rate • Native Arabic support
-          </p>
+          <h2 className="mb-4 font-serif text-4xl font-bold">{t.cta.title}</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-xl text-primary-100">{t.cta.subtitle}</p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button asChild size="lg" variant="secondary" className="shadow-xl">
               <Link href="/consultation">
                 <CheckCircle2 className="mr-2 h-5 w-5" />
-                Start Visa Process
+                {t.cta.buttons.start}
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700"
+            >
               <Link href="tel:+971501234567">
                 <Phone className="mr-2 h-5 w-5" />
-                Call +971 50 123 4567
+                {t.cta.buttons.call}
               </Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-2 border-white bg-white/10 text-white backdrop-blur-sm hover:bg-white hover:text-primary-700"
+            >
               <Link href="mailto:info@shifaalhind.com">
                 <Mail className="mr-2 h-5 w-5" />
-                Email Us
+                {t.cta.buttons.email}
               </Link>
             </Button>
           </div>
