@@ -139,40 +139,50 @@ export function ExitIntentPopup() {
     setCurrentStep((prev) => Math.max(prev - 1, 1));
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
-    // TODO: Send to your lead capture API
-    console.log('Enhanced lead captured:', {
-      treatment,
-      phone,
-      email,
-      country,
-      needVisa,
-      needHalal,
-      source: 'exit_intent_popup_enhanced'
-    });
-
-    // Track conversion with more details
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'exit_popup_conversion_enhanced', {
-        event_category: 'Lead',
-        event_label: treatment,
-        value: currentStep, // Track at which step they converted
+    try {
+      await fetch('/api/v1/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userName: 'Exit Intent Lead',
+          email,
+          phone,
+          countryOrigin: country || 'unknown',
+          message: `Treatment: ${treatment}, Visa: ${needVisa}, Halal: ${needHalal}, Source: exit_intent_popup`,
+        }),
       });
-    }
 
-    // Show success message
-    alert('🎉 Thank you! Our medical team will contact you within 2 hours with your personalized cost estimate and treatment plan.');
-    setIsOpen(false);
+      // Track conversion
+      if (typeof window !== 'undefined' && 'gtag' in window) {
+        (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'exit_popup_conversion_enhanced', {
+          event_category: 'Lead',
+          event_label: treatment,
+          value: currentStep,
+        });
+      }
+
+      alert('Thank you! Our medical team will contact you within 2 hours with your personalized cost estimate and treatment plan.');
+      setIsOpen(false);
+    } catch {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleClose = () => {
     setIsOpen(false);
 
     // Track dismissal with step info
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'exit_popup_dismissed_enhanced', {
+    if (typeof window !== 'undefined' && 'gtag' in window) {
+      (window as Window & { gtag: (...args: unknown[]) => void }).gtag('event', 'exit_popup_dismissed_enhanced', {
         event_category: 'Lead',
         event_label: `step_${currentStep}`,
       });

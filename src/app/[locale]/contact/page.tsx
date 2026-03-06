@@ -2,7 +2,7 @@
 
 export const dynamic = 'force-dynamic';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useLocale } from 'next-intl';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -12,6 +12,8 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Mail, Phone, MapPin, MessageCircle } from 'lucide-react';
 import { ALL_TREATMENTS } from '@/config/treatments-list';
+import { trackContactSubmit } from '@/lib/analytics';
+import { captureUTMParams, formatUTMString, type UTMParams } from '@/lib/utm';
 
 type ContactForm = {
   name: string;
@@ -26,6 +28,12 @@ type ContactForm = {
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [utmParams, setUtmParams] = useState<UTMParams>({});
+
+  useEffect(() => {
+    setUtmParams(captureUTMParams());
+  }, []);
 
   const locale = useLocale();
 
@@ -204,12 +212,16 @@ export default function ContactPage() {
 
   const onSubmit = async (data: ContactForm) => {
     setIsSubmitting(true);
+    setFormError(null);
 
     try {
       const response = await fetch('/api/v1/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          ...data,
+          ...(formatUTMString(utmParams) ? { utm: formatUTMString(utmParams) } : {}),
+        }),
       });
 
       const result = await response.json();
@@ -217,13 +229,13 @@ export default function ContactPage() {
       if (response.ok && result.success) {
         setIsSubmitted(true);
         reset();
+        trackContactSubmit('contact-page');
         setTimeout(() => setIsSubmitted(false), 5000);
       } else {
-        alert(result.error || currentContent.form.errorMessage);
+        setFormError(result.error || currentContent.form.errorMessage);
       }
-    } catch (error) {
-      console.error('Contact form error:', error);
-      alert(currentContent.form.errorMessage);
+    } catch {
+      setFormError(currentContent.form.errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -419,10 +431,16 @@ export default function ContactPage() {
                   {isSubmitting ? currentContent.form.sending : currentContent.form.sendButton}
                 </Button>
 
+                {formError && (
+                  <div className="rounded-lg bg-red-50 p-4 text-center text-sm text-red-700">
+                    {formError}
+                  </div>
+                )}
+
                 {isSubmitted && (
-                  <p className="text-center text-sm text-green-600">
+                  <div className="rounded-lg bg-green-50 p-4 text-center text-sm text-green-700">
                     {currentContent.form.successMessage}
-                  </p>
+                  </div>
                 )}
               </form>
             </CardContent>

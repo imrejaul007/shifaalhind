@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { prisma } from '@/lib/prisma';
 import { auth } from '@/lib/auth';
+import { treatmentCreateSchema } from '@/lib/validations/admin';
 
 export const dynamic = 'force-dynamic';
 
@@ -36,12 +37,20 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
+    const parsed = treatmentCreateSchema.safeParse(body);
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
 
     const treatment = await prisma.treatment.create({
-      data: body,
+      data: parsed.data,
     });
 
-    return NextResponse.json(treatment);
+    return NextResponse.json(treatment, { status: 201 });
   } catch (error) {
     console.error('Error creating treatment:', error);
     return NextResponse.json(

@@ -1,8 +1,33 @@
 export const dynamic = 'force-dynamic';
 
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const doctor = await prisma.doctor.findUnique({
+    where: { slug, published: true },
+    include: { hospital: { include: { city: true } } },
+  });
+  if (!doctor) return { title: 'Doctor Not Found' };
+
+  const title = `${doctor.title_en || 'Dr.'} ${doctor.name_en} - ${(doctor.specialties || []).join(', ')} | Shifa AlHind`;
+  const description = `Consult ${doctor.title_en || 'Dr.'} ${doctor.name_en} at ${doctor.hospital.name_en}, ${doctor.hospital.city.name_en}. ${doctor.experience ? `${doctor.experience}+ years experience.` : ''} Book your appointment today.`;
+  const url = `${process.env.NEXT_PUBLIC_APP_URL || 'https://shifaalhind.onrender.com'}/${locale}/doctors/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { 'en-US': `/en/doctors/${slug}`, 'ar-SA': `/ar/doctors/${slug}` },
+    },
+    openGraph: { title, description, url, type: 'profile' },
+  };
+}
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -66,8 +91,8 @@ export default async function DoctorDetailPage({ params }: PageProps) {
               {/* Doctor Image/Avatar */}
               <div className="shrink-0">
                 {doctor.profileImage ? (
-                  <div className="h-32 w-32 overflow-hidden rounded-full border-4 border-white/20">
-                    <img src={doctor.profileImage} alt={doctor.name_en} className="h-full w-full object-cover" />
+                  <div className="relative h-32 w-32 overflow-hidden rounded-full border-4 border-white/20">
+                    <Image src={doctor.profileImage} alt={doctor.name_en} fill className="object-cover" sizes="128px" />
                   </div>
                 ) : (
                   <div className="flex h-32 w-32 items-center justify-center rounded-full border-4 border-white/20 bg-white/10">

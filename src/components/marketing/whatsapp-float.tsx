@@ -20,16 +20,8 @@ export function WhatsAppFloat() {
     return () => clearTimeout(timer);
   }, []);
 
-  // WhatsApp numbers for different regions
-  // TODO: Replace with actual business numbers
-  const whatsappNumbers = {
-    uae: '971501234567',      // UAE: +971-50-123-4567
-    saudi: '966501234567',     // Saudi: +966-50-123-4567
-    india: '919876543210',     // India: +91-98765-43210
-  };
-
-  // Default to India number (can be made dynamic based on user location)
-  const defaultNumber = whatsappNumbers.india;
+  // Use the configured support WhatsApp number from environment
+  const defaultNumber = process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP?.replace('+', '') || '919876543210';
   const message = encodeURIComponent(
     'Hi! I\'m interested in medical treatment in India. Can you help me with more information?'
   );

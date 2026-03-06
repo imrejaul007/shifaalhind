@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,32 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Best Hospitals in Delhi NCR for Medical Tourism 2025 | Top 10 Multi-Specialty',
-  description: 'Complete guide to Delhi&apos;s best hospitals for international patients. Top 10 NABH/JCI hospitals with world-class doctors, 90%+ success rates, and 70-85% cost savings.',
-  keywords: [
-    'best hospitals delhi',
-    'top hospitals delhi ncr',
-    'delhi hospitals for medical tourism',
-    'AIIMS delhi',
-    'fortis hospital delhi',
-    'max hospital delhi',
-    'apollo hospital delhi',
-    'medanta gurgaon',
-    'international patients delhi',
-    'أفضل مستشفيات دلهي',
-    'مستشفيات دلهي للسياحة العلاجية'
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-delhi-medical-tourism',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-delhi-medical-tourism',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Best Hospitals in Delhi NCR for Medical Tourism 2025 | Top 10 Multi-Specialty',
+    title_ar: 'أفضل مستشفيات دلهي للسياحة العلاجية 2025 | أفضل 10 مستشفيات متعددة التخصصات',
+    description_en: 'Complete guide to Delhi\'s best hospitals for international patients. Top 10 NABH/JCI hospitals with world-class doctors, 90%+ success rates, and 70-85% cost savings.',
+    description_ar: 'دليل شامل لأفضل مستشفيات دلهي للمرضى الدوليين. أفضل 10 مستشفيات معتمدة من NABH/JCI مع أطباء عالميين ومعدلات نجاح 90%+ وتوفير 70-85%.',
+    locale,
+    path: '/blog/best-hospitals-delhi-medical-tourism',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,32 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Cancer Treatment Cost India vs USA/UK/UAE [2025] - Save 70-85%',
-  description: 'Complete cancer treatment cost comparison: India vs world. Top JCI hospitals, 85%+ success rates. Save $50,000-$150,000. Free consultation.',
-  keywords: [
-    'cancer treatment cost india',
-    'cancer treatment india vs usa',
-    'cancer hospital india cost',
-    'chemotherapy cost india',
-    'radiation therapy cost india',
-    'best cancer hospitals india',
-    'tata memorial hospital',
-    'apollo cancer hospital',
-    'cancer treatment india uae patients',
-    'تكلفة علاج السرطان في الهند',
-    'علاج السرطان في الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/cancer-treatment-cost-india-vs-world',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/cancer-treatment-cost-india-vs-world',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Cancer Treatment Cost India vs USA/UK/UAE [2025] - Save 70-85%',
+    title_ar: 'تكلفة علاج السرطان في الهند مقارنة بأمريكا/بريطانيا/الإمارات [2025] - وفّر 70-85%',
+    description_en: 'Complete cancer treatment cost comparison: India vs world. Top JCI hospitals, 85%+ success rates. Save $50,000-$150,000. Free consultation.',
+    description_ar: 'مقارنة شاملة لتكلفة علاج السرطان: الهند مقابل العالم. أفضل مستشفيات JCI بمعدلات نجاح 85%+. وفّر 50,000-150,000 دولار. استشارة مجانية.',
+    locale,
+    path: '/blog/cancer-treatment-cost-india-vs-world',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@/lib/auth';
+import { articleUpdateSchema } from '@/lib/validations/admin';
 
 export const dynamic = 'force-dynamic';
 
@@ -53,10 +54,18 @@ export async function PUT(
 
     const { id } = await params;
     const body = await request.json();
+    const parsed = articleUpdateSchema.safeParse(body);
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
 
     const article = await prisma.article.update({
       where: { id },
-      data: body,
+      data: parsed.data,
     });
 
     return NextResponse.json(article);

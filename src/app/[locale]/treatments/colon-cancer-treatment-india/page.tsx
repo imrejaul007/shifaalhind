@@ -10,6 +10,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const metadata: Metadata = {
   title: 'Colon Cancer Treatment in India 2025: Cost, Best Oncology Hospitals, Success Rate | Surgery, Chemotherapy, Radiation',
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function ColonCancerTreatmentIndiaPage() {
+export default async function ColonCancerTreatmentIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -701,10 +704,21 @@ export default function ColonCancerTreatmentIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="colon-cancer-treatment-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
       
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Colon Cancer Treatment"
+        lowPrice={5000}
+        highPrice={20000}
+        url="/en/treatments/colon-cancer-treatment-india"
+      />
     </div>
   );
 }

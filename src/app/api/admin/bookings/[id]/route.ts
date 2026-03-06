@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { auth } from '@/lib/auth';
+import { bookingUpdateSchema } from '@/lib/validations/admin';
 
 export const dynamic = 'force-dynamic';
 
@@ -51,11 +52,19 @@ export async function PUT(
 
     const { id } = await params;
     const body = await request.json();
+    const parsed = bookingUpdateSchema.safeParse(body);
 
-    const { status, notes, assignedTranslatorId, ...otherFields } = body;
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Validation failed', details: parsed.error.flatten() },
+        { status: 400 }
+      );
+    }
+
+    const { status, notes, assignedTranslatorId, ...otherFields } = parsed.data;
 
     // Build update data
-    const updateData: any = {
+    const updateData: Record<string, unknown> = {
       ...otherFields,
     };
 
@@ -68,13 +77,13 @@ export async function PUT(
     }
 
     // If notes are provided, add new note to existing notes array
-    if (notes && typeof notes === 'string' && notes.trim()) {
+    if (notes && notes.trim()) {
       const currentBooking = await prisma.booking.findUnique({
         where: { id },
         select: { notes: true },
       });
 
-      const existingNotes = (currentBooking?.notes as any[]) || [];
+      const existingNotes = (currentBooking?.notes as Record<string, unknown>[]) || [];
       const newNote = {
         text: notes,
         author: session.user.name || session.user.email || 'Admin',

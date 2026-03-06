@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
@@ -7,33 +6,21 @@ import { SocialShare } from '@/components/blog/social-share';
 import { RelatedArticles, DENTAL_RELATED_ARTICLES } from '@/components/blog/related-articles';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Medical Visa India 2025 | Complete Guide - Easy Application, Requirements & Process',
-  description: 'Complete guide to Indian medical visa for medical tourism. Online application in 3-5 days, visa on arrival option, required documents, fees, extension process. Step-by-step instructions for GCC, USA, UK patients.',
-  keywords: [
-    'medical visa india',
-    'india medical visa application',
-    'medical visa india online',
-    'medical visa india requirements',
-    'medical attendant visa india',
-    'india medical visa for uae',
-    'india medical visa for saudi',
-    'medical visa india fees',
-    'التأشيرة الطبية للهند',
-    'تأشيرة العلاج في الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-visa-india-complete-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-visa-india-complete-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Medical Visa India 2025 | Complete Guide - Easy Application, Requirements & Process',
+    title_ar: 'التأشيرة الطبية للهند 2025 | دليل شامل - طلب سهل والمتطلبات والإجراءات',
+    description_en: 'Complete guide to Indian medical visa for medical tourism. Online application in 3-5 days, visa on arrival option, required documents, fees, extension process.',
+    description_ar: 'دليل شامل للتأشيرة الطبية الهندية للسياحة العلاجية. تقديم إلكتروني خلال 3-5 أيام وخيار التأشيرة عند الوصول والمستندات المطلوبة والرسوم وعملية التمديد.',
+    locale,
+    path: '/blog/medical-visa-india-complete-guide',
+  });
+}
 
 export default function MedicalVisaIndiaGuidePage() {
   return (

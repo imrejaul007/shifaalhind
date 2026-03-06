@@ -21,6 +21,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -56,7 +58,8 @@ const DENTAL_RELATED_ARTICLES = [
   }
 ];
 
-export default function RhinoplastyIndiaPage() {
+export default async function RhinoplastyIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
 {/* Breadcrumb Schema for SEO */}
@@ -101,9 +104,12 @@ export default function RhinoplastyIndiaPage() {
                 <span>95%+ satisfaction</span>
               </div>
             </div>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
                 <Link href="/consultation">Get Free Consultation</Link>
+              </Button>
+              <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+                <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20Rhinoplasty%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary-600">
                 <Link href="/booking">View Before & After</Link>
@@ -115,7 +121,7 @@ export default function RhinoplastyIndiaPage() {
 
       {/* Quick Stats */}
       <section className="container -mt-8 px-4">
-        <div className="mx-auto grid max-w-5xl gap-4 md:grid-cols-4">
+        <div className="mx-auto grid max-w-5xl gap-4 grid-cols-2 md:grid-cols-4">
           <Card className="border-t-4 border-t-primary-500 shadow-lg">
             <CardContent className="pt-6 text-center">
               <DollarSign className="mx-auto mb-2 h-8 w-8 text-primary-600" />
@@ -822,6 +828,9 @@ export default function RhinoplastyIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="rhinoplasty-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -835,12 +844,15 @@ export default function RhinoplastyIndiaPage() {
             <p className="mb-8 text-xl text-primary-50">
               Get free consultation, cost estimate & before/after photos from top rhinoplasty surgeons
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
                 <Link href="/consultation">
                   Get Free Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
+              </Button>
+              <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+                <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20Rhinoplasty%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-primary-600">
                 <Link href="/booking">View Success Stories</Link>
@@ -867,6 +879,14 @@ export default function RhinoplastyIndiaPage() {
       <div className="container px-4 pb-16">
         <InternalLinks variant="compact" />
       </div>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Rhinoplasty"
+        lowPrice={2000}
+        highPrice={5000}
+        url="/en/treatments/rhinoplasty-india"
+      />
     </div>
   );
 }

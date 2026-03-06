@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,20 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
-  description: 'Discover how much you can save on heart surgery in India compared to USA, UK, UAE, and Saudi Arabia. Complete cost breakdown, hospital comparison, and quality analysis for GCC patients.',
-  keywords: ['heart surgery cost India', 'cardiac surgery India vs USA', 'heart bypass surgery cost comparison', 'heart surgery India for UAE patients', 'affordable cardiac surgery India'],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/heart-surgery-cost-comparison-india-vs-world',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/heart-surgery-cost-comparison-india-vs-world',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Heart Surgery Cost in India vs USA, UK, UAE & Saudi Arabia: Complete 2025 Guide',
+    title_ar: 'تكلفة جراحة القلب في الهند مقارنة بأمريكا وبريطانيا والإمارات والسعودية: دليل 2025 الشامل',
+    description_en: 'Discover how much you can save on heart surgery in India compared to USA, UK, UAE, and Saudi Arabia. Complete cost breakdown, hospital comparison, and quality analysis for GCC patients.',
+    description_ar: 'اكتشف كم يمكنك توفيره في جراحة القلب في الهند مقارنة بأمريكا وبريطانيا والإمارات والسعودية. تحليل شامل للتكاليف ومقارنة المستشفيات وجودة الرعاية.',
+    locale,
+    path: '/blog/heart-surgery-cost-comparison-india-vs-world',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

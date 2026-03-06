@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Cairo } from 'next/font/google';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import './globals.css';
 import { generateOrganizationSchema } from '@/lib/seo';
+import { generateWebSiteSchema, generateMedicalClinicSchema } from '@/lib/schemas';
 import { ClarityScript } from '@/components/analytics/clarity-script';
 
 const inter = Inter({
@@ -33,17 +34,30 @@ export const metadata: Metadata = {
     'Connect with world-class hospitals and treatments in India. Affordable, quality healthcare for patients from UAE, Saudi Arabia, Qatar, Oman, Kuwait, and Bahrain.',
   keywords: [
     'medical tourism',
+    'medical tourism India',
     'India healthcare',
     'medical treatment India',
     'hospitals in India',
-    'affordable healthcare',
+    'affordable healthcare India',
     'GCC medical tourism',
-    'medical tourism India',
-    'healthcare India',
     'best hospitals India',
+    'JCI accredited hospitals India',
+    'surgery India cost',
+    'treatment India cost',
     'medical packages India',
-    'surgery India',
-    'treatment India',
+    'medical tourism from UAE',
+    'medical tourism from Saudi Arabia',
+    'medical tourism from Dubai',
+    'السياحة العلاجية في الهند',
+    'علاج في الهند',
+    'مستشفيات الهند',
+    'تكلفة العلاج في الهند',
+    'أفضل مستشفيات الهند',
+    'سياحة علاجية من الإمارات',
+    'سياحة علاجية من السعودية',
+    'علاج في الهند من دبي',
+    'شلون أسافر الهند للعلاج',
+    'وين أحسن مستشفى في الهند',
   ],
   authors: [{ name: 'Shifa AlHind' }],
   creator: 'Shifa AlHind',
@@ -130,14 +144,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const organizationSchema = generateOrganizationSchema();
+  const webSiteSchema = generateWebSiteSchema();
+  const medicalClinicSchema = generateMedicalClinicSchema();
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        {/* WebSite Schema with SearchAction (enables sitelinks searchbox) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+        />
+        {/* MedicalBusiness Schema (local SEO + knowledge panel) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalClinicSchema) }}
+        />
+        {/* Resource hints for performance */}
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.clarity.ms" />
       </head>
       <body className={`${inter.variable} ${playfair.variable} ${cairo.variable} font-sans antialiased`}>
         {children}

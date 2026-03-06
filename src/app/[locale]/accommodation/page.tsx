@@ -30,7 +30,7 @@ import {
   Coffee,
   Bed,
 } from 'lucide-react';
-import { generateSEOMetadata } from '@/lib/seo';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 

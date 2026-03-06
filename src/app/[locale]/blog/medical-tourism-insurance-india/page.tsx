@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
@@ -7,28 +6,21 @@ import { RelatedArticles, DIABETES_RELATED_ARTICLES } from '@/components/blog/re
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Medical Tourism Insurance India 2025 | Coverage, Cost & Best Plans',
-  description: 'Complete guide to medical tourism insurance for India. Coverage options, costs, best international insurers, claim process. Protect yourself during medical treatment abroad.',
-  keywords: [
-    'medical tourism insurance india',
-    'travel insurance medical treatment india',
-    'international medical insurance india',
-    'medical tourism insurance cost',
-    'best insurance for medical tourism',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-tourism-insurance-india',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-insurance-india',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Medical Tourism Insurance India 2025 | Coverage, Cost & Best Plans',
+    title_ar: 'تأمين السياحة العلاجية في الهند 2025 | التغطية والتكلفة وأفضل الخطط',
+    description_en: 'Complete guide to medical tourism insurance for India. Coverage options, costs, best international insurers, claim process. Protect yourself during medical treatment abroad.',
+    description_ar: 'دليل شامل لتأمين السياحة العلاجية في الهند. خيارات التغطية والتكاليف وأفضل شركات التأمين الدولية وعملية المطالبات. احمِ نفسك أثناء العلاج في الخارج.',
+    locale,
+    path: '/blog/medical-tourism-insurance-india',
+  });
+}
 
 export default function MedicalTourismInsuranceIndiaPage() {
   return (

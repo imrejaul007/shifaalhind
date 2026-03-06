@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,36 +6,21 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Cosmetic Surgery Cost India vs World 2025 | Save 60-75%',
-  description: 'Complete guide to cosmetic surgery costs in India. Compare rhinoplasty, liposuction, breast augmentation, facelift, tummy tuck prices. Save 60-75% at JCI-accredited clinics with world-class results.',
-  keywords: [
-    'cosmetic surgery cost india',
-    'plastic surgery india prices',
-    'rhinoplasty cost india',
-    'liposuction india cost',
-    'breast augmentation india',
-    'facelift cost india',
-    'tummy tuck india price',
-    'cosmetic surgery india for UAE patients',
-    'plastic surgery india vs USA',
-    'cosmetic surgery mumbai delhi',
-    'جراحة التجميل في الهند',
-    'تكلفة عمليات التجميل الهند',
-    'الجراحة التجميلية الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/cosmetic-surgery-cost-india',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/cosmetic-surgery-cost-india',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Cosmetic Surgery Cost India vs World 2025 | Save 60-75%',
+    title_ar: 'تكلفة جراحة التجميل في الهند مقارنة بالعالم 2025 | وفّر 60-75%',
+    description_en: 'Complete guide to cosmetic surgery costs in India. Compare rhinoplasty, liposuction, breast augmentation, facelift, tummy tuck prices. Save 60-75% at JCI-accredited clinics with world-class results.',
+    description_ar: 'دليل شامل لتكلفة جراحة التجميل في الهند. قارن أسعار تجميل الأنف وشفط الدهون وتكبير الثدي وشد الوجه. وفّر 60-75% في عيادات معتمدة من JCI.',
+    locale,
+    path: '/blog/cosmetic-surgery-cost-india',
+  });
+}
 
 export default function CosmeticSurgeryCostIndiaPage() {
   return (

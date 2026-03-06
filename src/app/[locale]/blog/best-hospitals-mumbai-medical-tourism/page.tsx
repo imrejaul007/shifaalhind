@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,31 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Best Hospitals in Mumbai for Medical Tourism 2025 | Top 10 JCI-Accredited',
-  description: 'Complete guide to best hospitals in Mumbai for international patients. Compare top 10 JCI-accredited hospitals, specialties, costs, and success rates for medical tourism.',
-  keywords: [
-    'best hospitals mumbai',
-    'mumbai hospitals for medical tourism',
-    'top hospitals mumbai',
-    'JCI hospitals mumbai',
-    'apollo hospital mumbai',
-    'fortis hospital mumbai',
-    'mumbai medical tourism',
-    'international patients mumbai hospitals',
-    'أفضل مستشفيات مومباي',
-    'مستشفيات مومباي للسياحة العلاجية'
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-mumbai-medical-tourism',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-mumbai-medical-tourism',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Best Hospitals in Mumbai for Medical Tourism 2025 | Top 10 JCI-Accredited',
+    title_ar: 'أفضل مستشفيات مومباي للسياحة العلاجية 2025 | أفضل 10 مستشفيات معتمدة من JCI',
+    description_en: 'Complete guide to best hospitals in Mumbai for international patients. Compare top 10 JCI-accredited hospitals, specialties, costs, and success rates for medical tourism.',
+    description_ar: 'دليل شامل لأفضل مستشفيات مومباي للمرضى الدوليين. قارن أفضل 10 مستشفيات معتمدة من JCI والتخصصات والتكاليف ومعدلات النجاح.',
+    locale,
+    path: '/blog/best-hospitals-mumbai-medical-tourism',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

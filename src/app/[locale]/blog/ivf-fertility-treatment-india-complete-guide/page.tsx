@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,20 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
-  description: 'Complete guide to IVF and fertility treatment in India. Cost comparison, success rates by age, top clinics, real patient stories, and complete timeline for 2025.',
-  keywords: ['IVF cost India', 'fertility treatment India', 'IVF India vs UAE', 'IVF success rates India', 'IVF India for UAE patients', 'affordable IVF treatment'],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/ivf-fertility-treatment-india-complete-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/ivf-fertility-treatment-india-complete-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'IVF & Fertility Treatment in India: Complete 2025 Guide for GCC Patients',
+    title_ar: 'علاج أطفال الأنابيب والخصوبة في الهند: دليل 2025 الشامل لمرضى الخليج',
+    description_en: 'Complete guide to IVF and fertility treatment in India. Cost comparison, success rates by age, top clinics, real patient stories, and complete timeline for 2025.',
+    description_ar: 'دليل شامل لعلاج أطفال الأنابيب والخصوبة في الهند. مقارنة التكاليف ومعدلات النجاح حسب العمر وأفضل العيادات وقصص المرضى والجدول الزمني الكامل.',
+    locale,
+    path: '/blog/ivf-fertility-treatment-india-complete-guide',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

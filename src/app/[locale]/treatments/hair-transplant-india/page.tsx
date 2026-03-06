@@ -8,6 +8,8 @@ import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { PricingGuarantee } from '@/components/pricing-guarantee/pricing-guarantee';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const metadata: Metadata = {
   title: 'Hair Transplant in India 2025: Cost, Best Clinics, Success Rate | FUE & FUT',
@@ -39,7 +41,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function HairTransplantIndiaPage() {
+export default async function HairTransplantIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -756,6 +759,9 @@ export default function HairTransplantIndiaPage() {
       {/* Pricing Guarantee - Transparent Pricing */}
       <PricingGuarantee locale="en" />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="hair-transplant-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -780,6 +786,14 @@ export default function HairTransplantIndiaPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Hair Transplant"
+        lowPrice={1000}
+        highPrice={3000}
+        url="/en/treatments/hair-transplant-india"
+      />
     </div>
   );
 }

@@ -10,6 +10,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const metadata: Metadata = {
   title: 'Gallbladder Surgery in India 2025: Cost, Best Hospitals | Laparoscopic Cholecystectomy',
@@ -36,7 +38,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function GallbladderSurgeryIndiaPage() {
+export default async function GallbladderSurgeryIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -523,6 +526,9 @@ export default function GallbladderSurgeryIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="gallbladder-surgery-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -582,6 +588,14 @@ export default function GallbladderSurgeryIndiaPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Gallbladder Surgery"
+        lowPrice={2000}
+        highPrice={4000}
+        url="/en/treatments/gallbladder-surgery-india"
+      />
     </div>
   );
 }

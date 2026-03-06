@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,34 +7,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Liver Transplant Cost India [2025] - Save 75% | Success Rate 90%+',
-  description: 'Complete liver transplant cost guide for India. Living donor & deceased donor options. Top JCI hospitals with 90%+ success rates. Save $100,000+ vs USA. Free consultation.',
-  keywords: [
-    'liver transplant cost india',
-    'liver transplant india vs usa',
-    'living donor liver transplant india',
-    'best liver transplant hospitals india',
-    'liver transplant success rate india',
-    'liver transplant surgery india',
-    'hepatic transplant india cost',
-    'liver disease treatment india',
-    'liver failure treatment india',
-    'liver transplant india for gcc patients',
-    'تكلفة زرع الكبد في الهند',
-    'زراعة الكبد في الهند',
-    'مستشفيات زراعة الكبد الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/liver-transplant-india-cost-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/liver-transplant-india-cost-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Liver Transplant Cost India [2025] - Save 75% | Success Rate 90%+',
+    title_ar: 'تكلفة زراعة الكبد في الهند [2025] - وفّر 75% | معدل نجاح 90%+',
+    description_en: 'Complete liver transplant cost guide for India. Living donor & deceased donor options. Top JCI hospitals with 90%+ success rates. Save $100,000+ vs USA. Free consultation.',
+    description_ar: 'دليل شامل لتكلفة زراعة الكبد في الهند. خيارات المتبرع الحي والمتوفى. أفضل مستشفيات JCI بمعدلات نجاح 90%+. وفّر أكثر من 100,000 دولار مقارنة بأمريكا.',
+    locale,
+    path: '/blog/liver-transplant-india-cost-guide',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

@@ -1,13 +1,14 @@
 /**
- * WhatsApp Notification Service
+ * WhatsApp Notification Service via Twilio
  *
- * This module provides WhatsApp notification functionality via Twilio.
  * Configure environment variables to enable:
  * - TWILIO_ACCOUNT_SID
  * - TWILIO_AUTH_TOKEN
- * - TWILIO_WHATSAPP_FROM (format: whatsapp:+1234567890)
+ * - TWILIO_WHATSAPP_NUMBER (format: whatsapp:+1234567890)
  * - ADMIN_WHATSAPP (admin number to receive notifications)
  */
+
+import twilio from 'twilio';
 
 interface WhatsAppOptions {
   to: string;
@@ -22,43 +23,49 @@ interface LeadNotificationData {
   treatmentId?: string;
 }
 
+let client: twilio.Twilio | null = null;
+
+function getTwilioClient(): twilio.Twilio | null {
+  if (client) return client;
+
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
+
+  if (!accountSid || !authToken) {
+    return null;
+  }
+
+  client = twilio(accountSid, authToken);
+  return client;
+}
+
 /**
- * Send WhatsApp message
- * Currently logs to console. Integrate with Twilio for production.
+ * Send WhatsApp message via Twilio
  */
 export async function sendWhatsApp(options: WhatsAppOptions): Promise<boolean> {
   try {
-    // Check if WhatsApp is configured
-    const hasWhatsAppConfig =
-      process.env.TWILIO_ACCOUNT_SID &&
-      process.env.TWILIO_AUTH_TOKEN &&
-      process.env.TWILIO_WHATSAPP_FROM;
+    const twilioClient = getTwilioClient();
+    const fromNumber = process.env.TWILIO_WHATSAPP_NUMBER;
 
-    if (!hasWhatsAppConfig) {
-      console.log('[WhatsApp Service] Not configured. Would send:', {
-        to: options.to,
-        messagePreview: options.message.substring(0, 100),
-      });
+    if (!twilioClient || !fromNumber) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[WhatsApp] Not configured, skipping send to:', options.to);
+      }
       return true;
     }
 
-    // TODO: Implement actual WhatsApp sending
-    // Example with Twilio:
-    // const twilio = require('twilio');
-    // const client = twilio(
-    //   process.env.TWILIO_ACCOUNT_SID,
-    //   process.env.TWILIO_AUTH_TOKEN
-    // );
-    // await client.messages.create({
-    //   from: process.env.TWILIO_WHATSAPP_FROM,
-    //   to: options.to.startsWith('whatsapp:') ? options.to : `whatsapp:${options.to}`,
-    //   body: options.message,
-    // });
+    const to = options.to.startsWith('whatsapp:') ? options.to : `whatsapp:${options.to}`;
+    const from = fromNumber.startsWith('whatsapp:') ? fromNumber : `whatsapp:${fromNumber}`;
 
-    console.log('[WhatsApp Service] Message sent successfully to:', options.to);
+    await twilioClient.messages.create({
+      from,
+      to,
+      body: options.message,
+    });
+
     return true;
   } catch (error) {
-    console.error('[WhatsApp Service] Failed to send message:', error);
+    console.error('[WhatsApp] Failed to send:', error);
     return false;
   }
 }
@@ -79,16 +86,12 @@ export async function sendLeadWhatsAppNotification(
 ${data.treatmentId ? `💊 *Treatment ID:* ${data.treatmentId}` : ''}
 
 ⏰ Please follow up within 24 hours.
-
-_Sent from Shifa AlHind Platform_
   `.trim();
 
-  const adminWhatsApp = process.env.ADMIN_WHATSAPP || '+971501234567';
+  const adminWhatsApp = process.env.ADMIN_WHATSAPP || process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP;
+  if (!adminWhatsApp) return true;
 
-  return sendWhatsApp({
-    to: adminWhatsApp,
-    message,
-  });
+  return sendWhatsApp({ to: adminWhatsApp, message });
 }
 
 /**
@@ -106,21 +109,12 @@ Thank you for your interest in medical treatment in India.
 
 ✅ We have received your inquiry
 ⏰ Our team will contact you within 24 hours
-📞 You can also reach us at +971 50 123 4567
-
-*Your Details:*
-📧 ${data.email}
-📱 ${data.phone}
-🌍 ${data.countryOrigin}
 
 Best regards,
 Shifa AlHind Team
   `.trim();
 
-  return sendWhatsApp({
-    to: data.phone,
-    message,
-  });
+  return sendWhatsApp({ to: data.phone, message });
 }
 
 /**
@@ -140,17 +134,13 @@ export async function sendContactWhatsAppNotification(data: {
 📋 *Subject:* ${data.subject}
 
 💬 *Message:*
-${data.message}
+${data.message.substring(0, 500)}
 
 ⏰ Please respond within 24 hours.
-
-_Sent from Shifa AlHind Platform_
   `.trim();
 
-  const supportWhatsApp = process.env.SUPPORT_WHATSAPP || '+971501234567';
+  const supportWhatsApp = process.env.SUPPORT_WHATSAPP || process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP;
+  if (!supportWhatsApp) return true;
 
-  return sendWhatsApp({
-    to: supportWhatsApp,
-    message,
-  });
+  return sendWhatsApp({ to: supportWhatsApp, message });
 }

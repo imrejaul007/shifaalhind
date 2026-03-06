@@ -31,6 +31,20 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+interface SubMenuItem {
+  name: string;
+  href: string;
+  icon?: React.ComponentType<{ className?: string }>;
+}
+
+interface MenuCategory {
+  category: string;
+  icon: React.ComponentType<{ className?: string }>;
+  items: SubMenuItem[];
+}
+
+type SubmenuItem = SubMenuItem | MenuCategory;
+
 export function HeaderImproved() {
   const t = useTranslations();
   const locale = useLocale();
@@ -285,7 +299,7 @@ export function HeaderImproved() {
             </Link>
 
             {/* Desktop Navigation - Enhanced */}
-            <nav className="hidden items-center gap-1 lg:flex" dir={locale === 'ar' ? 'rtl' : 'ltr'}>
+            <nav className="hidden items-center gap-1 lg:flex" dir={locale === 'ar' ? 'rtl' : 'ltr'} aria-label="Main navigation">
               {navigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.hasDropdown ? (
@@ -302,7 +316,15 @@ export function HeaderImproved() {
                         if (item.name === 'For Patients') setCountriesOpen(false);
                       }}
                     >
-                      <button className="flex h-10 items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold text-gray-700 transition-all hover:bg-primary-50 hover:text-primary-600">
+                      <button
+                        className="flex h-10 items-center gap-1.5 rounded-lg px-3.5 py-2 text-sm font-semibold text-gray-700 transition-all hover:bg-primary-50 hover:text-primary-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                        aria-expanded={
+                          item.name === 'Treatments' ? treatmentsOpen :
+                          item.name === 'Resources' ? resourcesOpen :
+                          item.name === 'For Patients' ? countriesOpen : false
+                        }
+                        aria-haspopup="true"
+                      >
                         {item.icon && <item.icon className="h-4 w-4" />}
                         {item.name}
                         <ChevronDown className="h-3.5 w-3.5" />
@@ -323,14 +345,14 @@ export function HeaderImproved() {
                             </Link>
                           </div>
                           <div className="grid grid-cols-4 gap-5">
-                            {item.submenu?.map((category: any) => (
+                            {(item.submenu as MenuCategory[])?.map((category) => (
                               <div key={category.category}>
                                 <h4 className="mb-2.5 flex items-center gap-1.5 text-xs font-bold text-gray-900">
                                   <span className="text-base">{category.category.split(' ')[0]}</span>
                                   <span>{category.category.split(' ').slice(1).join(' ')}</span>
                                 </h4>
                                 <div className="space-y-0.5">
-                                  {category.items.map((subItem: any) => (
+                                  {category.items.map((subItem: SubMenuItem) => (
                                     <Link
                                       key={subItem.name}
                                       href={subItem.href}
@@ -373,8 +395,8 @@ export function HeaderImproved() {
 
                       {/* Regular Dropdown for Resources & Countries */}
                       {!item.megaMenu && ((item.name === 'Resources' && resourcesOpen) || (item.name === 'For Patients' && countriesOpen)) && (
-                        <div className="absolute left-0 top-full z-50 mt-1.5 w-64 rounded-lg border border-gray-100 bg-white py-2 shadow-xl">
-                          {item.submenu?.map((subItem: any) => (
+                        <div className="absolute left-0 top-full z-50 mt-1.5 w-64 rounded-lg border border-gray-100 bg-white py-2 shadow-xl" role="menu">
+                          {(item.submenu as SubMenuItem[])?.map((subItem) => (
                             <Link
                               key={subItem.name}
                               href={subItem.href}
@@ -450,9 +472,10 @@ export function HeaderImproved() {
 
               <button
                 type="button"
-                className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-primary-600 text-primary-600 hover:bg-primary-50"
+                className="flex h-10 w-10 items-center justify-center rounded-lg border-2 border-primary-600 text-primary-600 hover:bg-primary-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Menu"
+                aria-expanded={mobileMenuOpen}
               >
                 {mobileMenuOpen ? (
                   <X className="h-5 w-5" />
@@ -576,13 +599,13 @@ export function HeaderImproved() {
                         (item.name === 'For Patients' && mobileCountriesOpen)) && (
                         <div className="mt-2 space-y-3 pl-4">
                           {item.megaMenu ? (
-                            item.submenu?.map((category: any) => (
+                            item.submenu?.map((category: MenuCategory) => (
                               <div key={category.category}>
                                 <h4 className="mb-2 text-xs font-bold uppercase text-gray-500">
                                   {category.category}
                                 </h4>
                                 <div className="space-y-1">
-                                  {category.items.map((subItem: any) => (
+                                  {category.items.map((subItem: SubMenuItem) => (
                                     <Link
                                       key={subItem.name}
                                       href={subItem.href}
@@ -596,7 +619,7 @@ export function HeaderImproved() {
                               </div>
                             ))
                           ) : (
-                            item.submenu?.map((subItem: any) => (
+                            (item.submenu as SubMenuItem[])?.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}

@@ -1,0 +1,48 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(while read f)",
+      "Bash(do sed -i '' \"s/import { generateSEOMetadata } from ''@\\\\/lib\\\\/seo''/import { generateMetadata as generateSEOMetadata } from ''@\\\\/lib\\\\/seo''/\" \"$f\")",
+      "Read(//tmp/**)",
+      "Read(//Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/treatments/$page/**)",
+      "Read(//Users/rejaulkarim/Documents/**)",
+      "Bash(grep -c 'text-3xl md:text-4xl' src/app/[locale]/treatments/appendix-surgery-india/page.tsx)",
+      "Bash(grep -c 'text-2xl md:text-3xl' src/app/[locale]/treatments/appendix-surgery-india/page.tsx)",
+      "Bash(npx tsc --noEmit --pretty src/components/trust-signals/gcc-trust.tsx)",
+      "Bash(npx tsc --noEmit src/components/seo/contextual-sidebar.tsx src/config/internal-links.ts)",
+      "Bash(npx tsc --noEmit --pretty src/config/internal-links.ts src/components/seo/contextual-sidebar.tsx)",
+      "Bash(npx tsc --noEmit --pretty)",
+      "Bash(head -5 src/app/[locale]/blog/dubai-to-india-medical-tourism/page.tsx)",
+      "Bash(xargs -I {} find {} -type d)",
+      "Bash(wc -l \"/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/blog\"/*.tsx)",
+      "Bash(npx tsc --noEmit --pretty src/app/[locale]/treatments-from/[city]/page.tsx)",
+      "Bash(npx tsc --noEmit --pretty src/app/[locale]/specialists/[specialty]/page.tsx)",
+      "Bash(grep -l \"FAQSchema\" \"src/app/[locale]/treatments\"/*\"/page.tsx\")",
+      "Read(//Users/rejaulkarim/Documents/med Shifa al hind/**)",
+      "Read(//Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/treatments/$dir/**)",
+      "Bash(grep -r \"og:image\\\\|openGraph\" src/app/[locale]/treatments --include=\"*.tsx\")",
+      "Bash(grep -n \"شو\\\\|ليش\\\\|شلون\" src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(grep -r \"phone\\\\|Phone\\\\|+971\\\\|+966\\\\|+974\" src/app/[locale]/for-uae-patients/page.tsx)",
+      "Bash(grep -n \"^      <h[1-6]\" src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(grep -E \"<h[1-6]\" src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(grep -r \"openGraph\\\\|og:\" src/app/[locale]/treatments --include=\"*.tsx\")",
+      "Bash(head -50 src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(grep -A10 \"export const metadata\" src/app/[locale]/treatments/cancer-treatment-india/page.tsx)",
+      "Bash(grep -A6 \"alternates:\" src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(head -100 src/app/[locale]/treatments/ivf-india/page.tsx)",
+      "Bash(grep -r \"Testimonials\" src/app/[locale]/treatments --include=\"*.tsx\")",
+      "Bash(grep -r \"TrustBadges\" src/app/[locale]/treatments --include=\"*.tsx\")",
+      "Bash(grep -r \"export default function\" \"src/app/[locale]/treatments/\"*/page.tsx)",
+      "Bash(for d in src/app/[locale]/treatments/*/)",
+      "Bash(do basename \"$d\")",
+      "Bash(grep -r \"params.*locale\" src/app/[locale]/treatments/)",
+      "Bash(npx tsc --noEmit src/app/[locale]/treatments/heart-surgery-india/page.tsx)"
+    ],
+    "additionalDirectories": [
+      "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]",
+      "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/treatments-from/[city]",
+      "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/specialists",
+      "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]/blog"
+    ]
+  }
+}

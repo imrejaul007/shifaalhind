@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,38 +6,21 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Kidney Transplant Cost India 2025 | Save 75-85% - Complete Guide',
-  description: 'Complete guide to kidney transplant costs in India. Living donor, deceased donor, and paired exchange programs. Save 75-85% at JCI-accredited centers with 95%+ success rates. Compare India vs USA/UK/UAE/Saudi prices.',
-  keywords: [
-    'kidney transplant cost india',
-    'kidney transplant india price',
-    'renal transplant cost india',
-    'kidney transplant india vs usa',
-    'kidney transplant india for gcc patients',
-    'living donor kidney transplant india',
-    'deceased donor kidney transplant india',
-    'kidney transplant india success rate',
-    'best kidney transplant hospitals india',
-    'kidney transplant cost mumbai delhi bangalore',
-    // Arabic keywords
-    'زراعة الكلى في الهند',
-    'تكلفة زراعة الكلى في الهند',
-    'زراعة الكلى الهند من الإمارات',
-    'زراعة الكلى الهند للسعوديين',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/kidney-transplant-cost-india-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/kidney-transplant-cost-india-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Kidney Transplant Cost India 2025 | Save 75-85% - Complete Guide',
+    title_ar: 'تكلفة زراعة الكلى في الهند 2025 | وفّر 75-85% - دليل شامل',
+    description_en: 'Complete guide to kidney transplant costs in India. Living donor, deceased donor, and paired exchange programs. Save 75-85% at JCI-accredited centers with 95%+ success rates.',
+    description_ar: 'دليل شامل لتكلفة زراعة الكلى في الهند. متبرع حي ومتبرع متوفى وبرامج التبادل. وفّر 75-85% في مراكز معتمدة من JCI بمعدلات نجاح 95%+.',
+    locale,
+    path: '/blog/kidney-transplant-cost-india-guide',
+  });
+}
 
 export default function KidneyTransplantCostIndiaPage() {
   return (

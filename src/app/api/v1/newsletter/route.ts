@@ -4,6 +4,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
 import { prisma } from '@/lib/prisma';
 import { sendEmail } from '@/lib/notifications/email';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 // Validation schema
 const newsletterSchema = z.object({
@@ -14,6 +15,16 @@ const newsletterSchema = z.object({
 
 export async function POST(req: NextRequest) {
   try {
+    // Rate limit: 3 requests per minute per IP
+    const ip = getClientIp(req);
+    const { success: withinLimit } = rateLimit(`newsletter:${ip}`, { limit: 3, windowSeconds: 60 });
+    if (!withinLimit) {
+      return NextResponse.json(
+        { success: false, error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+
     const body = await req.json();
 
     // Validate input

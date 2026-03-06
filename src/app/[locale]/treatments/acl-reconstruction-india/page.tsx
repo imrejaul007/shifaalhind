@@ -19,6 +19,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -42,7 +44,8 @@ const RELATED_ARTICLES = [
   { title: "Hair Transplant India", href: "/treatments/hair-transplant-india", description: "FUE/FUT from $800" }
 ];
 
-export default function AclReconstructionIndiaPage() {
+export default async function AclReconstructionIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
 {/* Breadcrumb Schema for SEO */}
@@ -92,6 +95,9 @@ export default function AclReconstructionIndiaPage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
               <Button asChild size="lg" className="bg-accent-500 text-lg hover:bg-accent-600">
                 <Link href="/consultation">Get Free Consultation</Link>
+              </Button>
+              <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+                <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20ACL%20Reconstruction%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-2 border-white bg-transparent text-lg text-white hover:bg-white hover:text-primary-600">
                 <Link href="#cost">View Pricing</Link>
@@ -382,6 +388,7 @@ export default function AclReconstructionIndiaPage() {
               <p className="mb-3 text-gray-600">
                 <strong>Both grafts have 95%+ success rate. Choice depends on age, sport, donor site morbidity tolerance.</strong> Detailed comparison:
               </p>
+              <div className="overflow-x-auto">
               <table className="min-w-full border-collapse border border-gray-300 mb-3">
                 <thead className="bg-gray-100">
                   <tr>
@@ -458,6 +465,7 @@ export default function AclReconstructionIndiaPage() {
                   </tr>
                 </tbody>
               </table>
+              </div>
               <p className="text-gray-600">
                 <strong>Bottom line:</strong> Hamstring graft = less pain, faster return to work, better cosmetics. Patellar tendon = slightly stronger, faster healing, but more pain and kneeling issues. For GCC patients (prayer 5 times daily requires kneeling) → Hamstring graft usually better choice.
               </p>
@@ -591,6 +599,9 @@ export default function AclReconstructionIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="acl-reconstruction-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -598,9 +609,14 @@ export default function AclReconstructionIndiaPage() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="mb-4 font-serif text-3xl font-bold md:text-4xl">Ready to Get Started?</h2>
           <p className="mb-8 text-xl text-primary-50">Get your personalized treatment plan today</p>
-          <Button asChild size="lg" className="bg-accent-500 text-lg hover:bg-accent-600">
-            <Link href="/consultation">Get Free Consultation<ArrowRight className="ml-2 h-5 w-5" /></Link>
-          </Button>
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+            <Button asChild size="lg" className="bg-accent-500 text-lg hover:bg-accent-600">
+              <Link href="/consultation">Get Free Consultation<ArrowRight className="ml-2 h-5 w-5" /></Link>
+            </Button>
+            <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+              <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20ACL%20Reconstruction%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -613,6 +629,14 @@ export default function AclReconstructionIndiaPage() {
       <div className="container mx-auto max-w-6xl px-4 pb-12">
         <InternalLinks variant="compact" />
       </div>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="ACL Reconstruction"
+        lowPrice={3000}
+        highPrice={5000}
+        url="/en/treatments/acl-reconstruction-india"
+      />
     </div>
   );
 }

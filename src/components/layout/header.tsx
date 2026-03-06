@@ -17,6 +17,17 @@ import {
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
+interface SubMenuItem {
+  name: string;
+  href: string;
+}
+
+interface MenuCategory {
+  category: string;
+  icon?: React.ComponentType<{ className?: string }>;
+  items: SubMenuItem[];
+}
+
 export function Header() {
   const t = useTranslations();
   const locale = useLocale();
@@ -194,13 +205,13 @@ export function Header() {
                           {item.megaMenu ? (
                             // Mega Menu with categories
                             <div className="grid grid-cols-4 gap-5">
-                              {item.submenu?.map((category: any) => (
+                              {(item.submenu as MenuCategory[])?.map((category) => (
                                 <div key={category.category}>
                                   <h3 className="mb-2.5 text-xs font-bold text-gray-900 border-b border-gray-200 pb-1.5">
                                     {category.category}
                                   </h3>
                                   <div className="space-y-0.5">
-                                    {category.items.map((subItem: any) => (
+                                    {category.items.map((subItem: SubMenuItem) => (
                                       <Link
                                         key={subItem.name}
                                         href={subItem.href}
@@ -224,7 +235,7 @@ export function Header() {
                             </div>
                           ) : (
                             // Regular dropdown
-                            item.submenu?.map((subItem: any) => (
+                            (item.submenu as unknown as SubMenuItem[])?.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
@@ -395,13 +406,13 @@ export function Header() {
                       </button>
                       {mobileTreatmentsOpen && item.megaMenu && (
                         <div className="mt-2 space-y-4 pl-4">
-                          {item.submenu?.map((category: any) => (
+                          {(item.submenu as MenuCategory[])?.map((category) => (
                             <div key={category.category}>
                               <h4 className="text-xs font-bold text-gray-500 uppercase mb-2">
                                 {category.category}
                               </h4>
                               <div className="space-y-1">
-                                {category.items.map((subItem: any) => (
+                                {category.items.map((subItem: SubMenuItem) => (
                                   <Link
                                     key={subItem.name}
                                     href={subItem.href}

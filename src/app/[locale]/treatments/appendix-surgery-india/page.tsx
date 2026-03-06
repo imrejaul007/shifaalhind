@@ -10,6 +10,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const metadata: Metadata = {
   title: 'Appendix Surgery (Appendectomy) in India 2025: Cost, Best Hospitals, Recovery Time | Laparoscopic vs Open',
@@ -39,7 +41,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function AppendixSurgeryIndiaPage() {
+export default async function AppendixSurgeryIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -74,11 +77,11 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* Hero Section */}
       <div className="mb-12 text-center">
-        <h1 className="text-4xl font-bold mb-4">Appendix Surgery (Appendectomy) in India</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">Appendix Surgery (Appendectomy) in India</h1>
         <p className="text-xl text-gray-600 mb-6">
           Emergency appendix removal surgery in India. Laparoscopic appendectomy $1,000-1,800, save 75-85% vs USA. Top hospitals, 99% success rate, 1-2 weeks recovery.
         </p>
-        <div className="flex gap-4 justify-center flex-wrap">
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <Button asChild size="lg">
             <Link href="/booking">Get Free Consultation</Link>
           </Button>
@@ -118,7 +121,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* Cost Comparison */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Appendix Surgery Cost Comparison</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Appendix Surgery Cost Comparison</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse border border-gray-300">
             <thead className="bg-green-50">
@@ -187,7 +190,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* What's Included */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">What&apos;s Included in the Package</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">What&apos;s Included in the Package</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card>
             <CardHeader>
@@ -257,7 +260,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* Laparoscopic vs Open Comparison */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Laparoscopic vs Open Appendectomy</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Laparoscopic vs Open Appendectomy</h2>
         <div className="overflow-x-auto">
           <table className="min-w-full border-collapse border border-gray-300">
             <thead className="bg-green-50">
@@ -325,7 +328,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* Top Hospitals */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Top 3 Hospitals for Appendix Surgery in India</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Top 3 Hospitals for Appendix Surgery in India</h2>
         <div className="grid grid-cols-1 gap-6">
           <Card>
             <CardHeader>
@@ -406,7 +409,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* Recovery Timeline */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">Recovery Timeline After Appendix Surgery</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Recovery Timeline After Appendix Surgery</h2>
         <div className="grid grid-cols-1 gap-6">
           <Card>
             <CardHeader>
@@ -495,7 +498,7 @@ export default function AppendixSurgeryIndiaPage() {
 
       {/* FAQ Section */}
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-6">FAQ</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">FAQ</h2>
         <div className="grid grid-cols-1 gap-6">
           <Card>
             <CardHeader>
@@ -549,6 +552,9 @@ export default function AppendixSurgeryIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="appendix-surgery-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -561,7 +567,7 @@ export default function AppendixSurgeryIndiaPage() {
           <p className="text-gray-600 mb-6">
             Get a free consultation with top general surgeons. Emergency appointments available 24/7.
           </p>
-          <div className="flex gap-4 justify-center flex-wrap">
+          <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
             <Button asChild size="lg">
               <Link href="/booking">Book Free Consultation</Link>
             </Button>
@@ -571,6 +577,14 @@ export default function AppendixSurgeryIndiaPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Appendix Surgery"
+        lowPrice={1500}
+        highPrice={3000}
+        url="/en/treatments/appendix-surgery-india"
+      />
     </div>
   );
 }

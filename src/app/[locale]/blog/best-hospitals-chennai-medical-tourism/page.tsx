@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -8,35 +7,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Best Hospitals in Chennai for Medical Tourism 2025 | Top 10 JCI-Accredited',
-  description: 'Complete guide to best hospitals in Chennai for international patients. Compare top 10 JCI-accredited hospitals, specialties, costs, and success rates for medical tourism.',
-  keywords: [
-    'best hospitals chennai',
-    'chennai hospitals for medical tourism',
-    'top hospitals chennai',
-    'JCI hospitals chennai',
-    'apollo hospitals chennai',
-    'global health city chennai',
-    'chennai medical tourism',
-    'international patients chennai hospitals',
-    'organ transplant chennai',
-    'أفضل مستشفيات تشيناي',
-    'مستشفيات تشيناي للسياحة العلاجية',
-    'السياحة العلاجية في تشيناي',
-    'مستشفى أبولو تشيناي',
-    'زراعة الأعضاء في تشيناي'
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-hospitals-chennai-medical-tourism',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-hospitals-chennai-medical-tourism',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Best Hospitals in Chennai for Medical Tourism 2025 | Top 10 JCI-Accredited',
+    title_ar: 'أفضل مستشفيات تشيناي للسياحة العلاجية 2025 | أفضل 10 مستشفيات معتمدة من JCI',
+    description_en: 'Complete guide to best hospitals in Chennai for international patients. Compare top 10 JCI-accredited hospitals, specialties, costs, and success rates for medical tourism.',
+    description_ar: 'دليل شامل لأفضل مستشفيات تشيناي للمرضى الدوليين. قارن أفضل 10 مستشفيات معتمدة من JCI والتخصصات والتكاليف ومعدلات النجاح.',
+    locale,
+    path: '/blog/best-hospitals-chennai-medical-tourism',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

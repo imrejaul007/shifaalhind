@@ -13,6 +13,8 @@ import {
   Star
 } from 'lucide-react';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { GCCTrustBadges, InsurancePartners, GovernmentPartnership, WhatsAppLocalNumber } from '@/components/trust-signals/gcc-trust';
+import { LocalBusinessSchema } from '@/components/seo/local-business-schema';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -213,7 +215,7 @@ export default async function SaudiPatientsPage({ params }: { params: Promise<{ 
         cta2: 'عرض أفضل المستشفيات'
       },
       whyChoose: {
-        title: 'لماذا يختار أكثر من 80,000 مريض سعودي الهند كل عام',
+        title: 'ليش أكثر من 80,000 مريض سعودي يختارون الهند كل سنة',
         reasons: [
           {
             title: 'وفر 70-85% على التكاليف',
@@ -343,8 +345,8 @@ export default async function SaudiPatientsPage({ params }: { params: Promise<{ 
         title: 'الأسئلة الشائعة',
         questions: [
           {
-            q: 'كم من الوقت يستغرق العلاج الطبي في الهند؟',
-            a: 'معظم الإجراءات تستغرق 7-21 يوماً بما في ذلك التعافي. جراحة القلب: 10-14 يوماً، استبدال الركبة: 10-15 يوماً، أطفال الأنابيب: 21-28 يوماً. يمكنك العودة إلى السعودية بعد موافقة الطبيب.'
+            q: 'كم ياخذ العلاج الطبي في الهند وقت؟',
+            a: 'أغلب العمليات تاخذ 7-21 يوم مع التعافي. جراحة القلب: 10-14 يوم، استبدال الركبة: 10-15 يوم، أطفال الأنابيب: 21-28 يوم. تقدر ترجع السعودية بعد ما الدكتور يوافق.'
           },
           {
             q: 'هل المستشفيات الهندية جيدة مثل مستشفيات السعودية؟',
@@ -359,17 +361,17 @@ export default async function SaudiPatientsPage({ params }: { params: Promise<{ 
             a: 'بعض المستشفيات تقبل بوبا العربية والتعاونية إذا كان لديك تغطية دولية. معظم المرضى يدفعون مباشرة (أرخص بكثير) ويطالبون بالتعويض. نوفر فواتير تفصيلية لمطالبات التأمين.'
           },
           {
-            q: 'هل يمكن لعائلتي مرافقتي؟',
-            a: 'نعم! التأشيرة الطبية تسمح بـ 2 مرافقين للمرضى السعوديين. نرتب إقامة العائلة (150-400 ريال/ليلة). يتم توفير مترجم للتواصل العائلي مع الأطباء.'
+            q: 'تقدر عايلتي تجي معي؟',
+            a: 'أكيد! الفيزا الطبية تسمح بـ 2 مرافقين للمرضى السعوديين. نرتبلكم إقامة العايلة (150-400 ريال/ليلة). نوفر مترجم للتواصل مع الأطباء.'
           },
           {
-            q: 'كيف أدفع ثمن العلاج؟',
+            q: 'كيف أدفع تكاليف العلاج؟',
             a: 'نقبل التحويلات البنكية الدولية (SWIFT) وبطاقات الائتمان (فيزا، ماستركارد) وتبادل الريال السعودي. خطة دفع متاحة للإجراءات باهظة الثمن. لا توجد تكاليف مخفية.'
           }
         ]
       },
       finalCta: {
-        title: 'جاهز لتوفير 70-85% على علاجك الطبي؟',
+        title: 'مستعد توفر 70-85% على علاجك الطبي؟',
         subtitle: 'انضم إلى آلاف المرضى السعوديين الذين غيروا صحتهم ووفروا مئات الآلاف من الريالات مع أفضل مستشفيات الهند',
         cta1: 'احصل على استشارة مجانية',
         cta2: 'واتساب',
@@ -644,6 +646,11 @@ export default async function SaudiPatientsPage({ params }: { params: Promise<{ 
       {/* Trust Badges Section */}
       <TrustBadges />
 
+      {/* GCC Trust Signals */}
+      <GCCTrustBadges country="saudi" locale={locale as 'en' | 'ar'} />
+      <InsurancePartners country="saudi" locale={locale as 'en' | 'ar'} />
+      <GovernmentPartnership country="saudi" locale={locale as 'en' | 'ar'} />
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -671,6 +678,8 @@ export default async function SaudiPatientsPage({ params }: { params: Promise<{ 
           </p>
         </div>
       </section>
+
+      <LocalBusinessSchema country="Saudi Arabia" countryCode="SA" phone="+919876543210" currency="SAR" />
     </div>
   );
 }

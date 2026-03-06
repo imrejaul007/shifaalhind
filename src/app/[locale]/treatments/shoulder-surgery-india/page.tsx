@@ -10,6 +10,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const metadata: Metadata = {
   title: 'Shoulder Surgery in India 2025: Cost, Best Orthopedic Hospitals | Rotator Cuff Repair, Arthroscopy',
@@ -38,7 +40,8 @@ export const metadata: Metadata = {
 
 export const dynamic = 'force-dynamic';
 
-export default function ShoulderSurgeryIndiaPage() {
+export default async function ShoulderSurgeryIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -578,6 +581,9 @@ export default function ShoulderSurgeryIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="shoulder-surgery-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -637,6 +643,14 @@ export default function ShoulderSurgeryIndiaPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Shoulder Surgery"
+        lowPrice={4000}
+        highPrice={7000}
+        url="/en/treatments/shoulder-surgery-india"
+      />
     </div>
   );
 }

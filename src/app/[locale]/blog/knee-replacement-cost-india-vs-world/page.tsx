@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,20 +6,19 @@ import { TreatmentLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
-  description: 'Complete cost comparison for knee replacement surgery in India vs USA, UK, UAE. TKR, PKR, bilateral knee costs, top hospitals, success rates, and real patient savings.',
-  keywords: ['knee replacement cost India', 'knee surgery India vs USA', 'total knee replacement India', 'orthopedic surgery India cost', 'knee implants India'],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/knee-replacement-cost-india-vs-world',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/knee-replacement-cost-india-vs-world',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Knee Replacement Surgery Cost in India vs USA, UK, UAE: Complete 2025 Guide',
+    title_ar: 'تكلفة جراحة استبدال الركبة في الهند مقارنة بأمريكا وبريطانيا والإمارات: دليل 2025 الشامل',
+    description_en: 'Complete cost comparison for knee replacement surgery in India vs USA, UK, UAE. TKR, PKR, bilateral knee costs, top hospitals, success rates, and real patient savings.',
+    description_ar: 'مقارنة شاملة لتكلفة جراحة استبدال الركبة في الهند مقابل أمريكا وبريطانيا والإمارات. تكاليف الاستبدال الكلي والجزئي وأفضل المستشفيات ومعدلات النجاح.',
+    locale,
+    path: '/blog/knee-replacement-cost-india-vs-world',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

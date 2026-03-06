@@ -10,6 +10,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -40,7 +42,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function CataractSurgeryIndiaPage() {
+export default async function CataractSurgeryIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -323,6 +326,9 @@ export default function CataractSurgeryIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="cataract-surgery-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -917,6 +923,14 @@ export default function CataractSurgeryIndiaPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Cataract Surgery"
+        lowPrice={1000}
+        highPrice={2500}
+        url="/en/treatments/cataract-surgery-india"
+      />
     </div>
   );
 }

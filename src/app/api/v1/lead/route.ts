@@ -7,9 +7,9 @@ import {
   sendLeadWhatsAppNotification,
   sendLeadWhatsAppConfirmation,
 } from '@/lib/notifications';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
-// Force recompilation - treatmentId removed from booking creation
 
 const leadSchema = z.object({
   userName: z.string().min(2, 'Name must be at least 2 characters'),
@@ -25,6 +25,16 @@ const leadSchema = z.object({
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 requests per minute per IP
+    const ip = getClientIp(request);
+    const { success: withinLimit } = rateLimit(`lead:${ip}`, { limit: 5, windowSeconds: 60 });
+    if (!withinLimit) {
+      return NextResponse.json(
+        { success: false, error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const validatedData = leadSchema.parse(body);
 
@@ -72,8 +82,6 @@ export async function POST(request: NextRequest) {
     ]).catch((error) => {
       console.error('WhatsApp notification error:', error);
     });
-
-    // TODO: Add to CRM (HubSpot, Salesforce, etc.)
 
     return NextResponse.json({
       success: true,

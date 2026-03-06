@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,38 +6,21 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Bone Marrow Transplant India 2025 | BMT Cost Guide - Save 70-80%',
-  description: 'Complete guide to bone marrow transplant (BMT) costs in India. Autologous, allogeneic, haploidentical BMT for leukemia, lymphoma, thalassemia. Save 70-80% at JCI-accredited centers with 75-85% success rates.',
-  keywords: [
-    'bone marrow transplant cost india',
-    'BMT cost india',
-    'stem cell transplant india price',
-    'bone marrow transplant india vs usa',
-    'bone marrow transplant india for gcc patients',
-    'allogeneic bmt india',
-    'autologous bmt india',
-    'haploidentical transplant india',
-    'best bone marrow transplant hospitals india',
-    'bmt success rate india',
-    // Arabic keywords
-    'زراعة نخاع العظم في الهند',
-    'تكلفة زراعة نخاع العظم الهند',
-    'زراعة نخاع العظم الهند من الإمارات',
-    'زراعة نخاع العظم الهند للسعوديين',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/bone-marrow-transplant-india-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/bone-marrow-transplant-india-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Bone Marrow Transplant India 2025 | BMT Cost Guide - Save 70-80%',
+    title_ar: 'زراعة نخاع العظم في الهند 2025 | دليل تكلفة BMT - وفّر 70-80%',
+    description_en: 'Complete guide to bone marrow transplant (BMT) costs in India. Autologous, allogeneic, haploidentical BMT for leukemia, lymphoma, thalassemia. Save 70-80% at JCI-accredited centers with 75-85% success rates.',
+    description_ar: 'دليل شامل لتكلفة زراعة نخاع العظم في الهند. زراعة ذاتية وخيفية ونصف متطابقة لسرطان الدم والليمفوما والثلاسيميا. وفّر 70-80% في مراكز معتمدة من JCI.',
+    locale,
+    path: '/blog/bone-marrow-transplant-india-guide',
+  });
+}
 
 export default function BoneMarrowTransplantIndiaPage() {
   return (

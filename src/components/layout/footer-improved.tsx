@@ -33,6 +33,7 @@ import {
 } from 'lucide-react';
 import { gccCountries } from '@/config/gcc-countries';
 import { Button } from '@/components/ui/button';
+import { trackNewsletterSignup } from '@/lib/analytics';
 
 export function FooterImproved() {
   const t = useTranslations('footer');
@@ -132,6 +133,7 @@ export function FooterImproved() {
       if (data.success) {
         setMessage({ type: 'success', text: data.message || 'Successfully subscribed!' });
         setEmail('');
+        trackNewsletterSignup('footer');
       } else {
         setMessage({ type: 'error', text: data.error || 'Failed to subscribe' });
       }
@@ -478,7 +480,7 @@ export function FooterImproved() {
                 Medical Disclaimer
               </Link>
               <span className="text-gray-300">•</span>
-              <Link href="/sitemap" className="font-medium text-gray-600 hover:text-primary-600">
+              <Link href="/sitemap-page" className="font-medium text-gray-600 hover:text-primary-600">
                 Sitemap
               </Link>
             </div>

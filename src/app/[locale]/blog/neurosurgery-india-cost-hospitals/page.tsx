@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,38 +6,21 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Neurosurgery India Cost 2025 | Brain & Spine Surgery - Save 65-80%',
-  description: 'Complete guide to neurosurgery costs in India. Brain tumor, spinal surgery, aneurysm treatment at JCI-accredited centers. Save 65-80% with 90%+ success rates. Compare India vs USA/UK/UAE/Saudi prices.',
-  keywords: [
-    'neurosurgery cost india',
-    'brain surgery india price',
-    'spine surgery india cost',
-    'brain tumor surgery india',
-    'aneurysm treatment india',
-    'neurosurgery india vs usa',
-    'best neurosurgery hospitals india',
-    'neurosurgery success rate india',
-    'brain surgery india for gcc patients',
-    'spinal surgery india cost',
-    // Arabic keywords
-    'جراحة الأعصاب في الهند',
-    'تكلفة جراحة الدماغ في الهند',
-    'جراحة العمود الفقري الهند',
-    'جراحة الأعصاب الهند من الإمارات',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/neurosurgery-india-cost-hospitals',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/neurosurgery-india-cost-hospitals',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Neurosurgery India Cost 2025 | Brain & Spine Surgery - Save 65-80%',
+    title_ar: 'تكلفة جراحة الأعصاب في الهند 2025 | جراحة الدماغ والعمود الفقري - وفّر 65-80%',
+    description_en: 'Complete guide to neurosurgery costs in India. Brain tumor, spinal surgery, aneurysm treatment at JCI-accredited centers. Save 65-80% with 90%+ success rates.',
+    description_ar: 'دليل شامل لتكلفة جراحة الأعصاب في الهند. أورام الدماغ وجراحة العمود الفقري وعلاج تمدد الأوعية الدموية في مراكز معتمدة من JCI. وفّر 65-80% بمعدلات نجاح 90%+.',
+    locale,
+    path: '/blog/neurosurgery-india-cost-hospitals',
+  });
+}
 
 export default function NeurosurgeryIndiaCostPage() {
   return (

@@ -1,12 +1,27 @@
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import React from 'react';
 import {
   Check,
+  Heart,
+  DollarSign,
   Plane,
-  Phone
+  Shield,
+  Clock,
+  Users,
+  Phone,
+  Star,
+  Stethoscope,
+  Baby,
+  Bone,
+  Eye,
+  Brain,
+  Syringe
 } from 'lucide-react';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { GCCTrustBadges, InsurancePartners, GovernmentPartnership, WhatsAppLocalNumber } from '@/components/trust-signals/gcc-trust';
+import { LocalBusinessSchema } from '@/components/seo/local-business-schema';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -15,8 +30,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return generateSEOMetadata({
     title_en: 'Medical Tourism India for Qatar Patients | Save 65-80% on Treatment',
     title_ar: 'السياحة العلاجية في الهند لمرضى قطر | وفر 65-80% على العلاج',
-    description_en: 'Discover why 15,000+ Qatar patients choose India for medical treatment. Save 65-80% on heart surgery, IVF, knee replacement with JCI-accredited hospitals. Direct flights from Doha.',
-    description_ar: 'اكتشف لماذا يختار أكثر من 15,000 مريض قطري الهند للعلاج الطبي. وفر 65-80% على جراحة القلب، أطفال الأنابيب، استبدال الركبة مع مستشفيات معتمدة من JCI. رحلات مباشرة من الدوحة.',
+    description_en: 'Join 15,000+ Qatar patients who saved 65-80% on medical treatment in India. MOPH approved, HMC partnership, JCI hospitals, Qatar Airways direct flights from Doha. Heart surgery QAR 200K→35K.',
+    description_ar: 'انضم إلى أكثر من 15,000 مريض قطري وفروا 65-80% على العلاج الطبي في الهند. معتمد من وزارة الصحة العامة، شراكة حمد الطبية، مستشفيات JCI، رحلات مباشرة من الدوحة.',
     locale,
     path: '/for-qatar-patients',
   });
@@ -33,79 +48,249 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
         title: 'Medical Tourism to India for Qatar Patients',
         subtitle: 'Join 15,000+ Qatar patients who saved 65-80% on world-class medical treatment in India\'s top JCI-accredited hospitals',
         cta1: 'Get Free Consultation',
-        cta2: 'View Top Hospitals'
+        cta2: 'WhatsApp Us Now'
+      },
+      whyChoose: {
+        title: 'Why 15,000+ Qatar Patients Choose India Every Year',
+        reasons: [
+          {
+            title: 'Save 65-80% on Costs',
+            description: 'Heart surgery: QAR 200,000 in Qatar \u2192 QAR 35,000 in India\nIVF: QAR 60,000 in Qatar \u2192 QAR 12,000 in India\nKnee replacement: QAR 90,000 in Qatar \u2192 QAR 20,000 in India'
+          },
+          {
+            title: 'JCI-Accredited Hospitals',
+            description: 'Apollo, Fortis, Max, Manipal hospitals meet international standards. Same quality as Qatar hospitals at a fraction of the cost.'
+          },
+          {
+            title: 'Qatar Airways Direct Flights',
+            description: '3.5 hour flights from Doha to Mumbai and Delhi. Qatar Airways and IndiGo operate multiple daily direct flights to major Indian cities.'
+          },
+          {
+            title: 'No Waiting Times',
+            description: 'Book surgery within 7-14 days vs months of waiting in Qatar. Immediate consultations with top specialists available.'
+          },
+          {
+            title: 'Arabic-Speaking Staff',
+            description: 'Many hospitals have Arabic-speaking coordinators, translators, and staff to ensure comfortable communication for Qatari patients.'
+          },
+          {
+            title: '98%+ Success Rates',
+            description: 'India\'s top hospitals match or exceed Qatar success rates. Over 500,000 international patients treated annually with world-class outcomes.'
+          }
+        ]
       },
       costComparison: {
-        title: 'Qatar vs India: Cost Comparison',
+        title: 'Qatar vs India: Cost Comparison (QAR)',
         tableHeaders: {
           treatment: 'Treatment',
-          qatarCost: 'Qatar Cost',
+          localCost: 'Qatar Cost',
           indiaCost: 'India Cost',
           savings: 'You Save'
         },
         treatments: [
-          { name: 'Heart Bypass Surgery', qatar: 'QAR 130,000', india: 'QAR 27,000', save: 'QAR 103,000 (79%)' },
-          { name: 'IVF Treatment', qatar: 'QAR 50,000', india: 'QAR 11,000', save: 'QAR 39,000 (78%)' },
-          { name: 'Knee Replacement', qatar: 'QAR 70,000', india: 'QAR 16,500', save: 'QAR 53,500 (76%)' },
-          { name: 'Liver Transplant', qatar: 'QAR 480,000', india: 'QAR 110,000', save: 'QAR 370,000 (77%)' }
+          { name: 'Heart Bypass Surgery (CABG)', local: 'QAR 200,000', india: 'QAR 35,000', save: 'QAR 165,000 (83%)' },
+          { name: 'Heart Valve Replacement', local: 'QAR 220,000', india: 'QAR 40,000', save: 'QAR 180,000 (82%)' },
+          { name: 'Total Knee Replacement', local: 'QAR 90,000', india: 'QAR 20,000', save: 'QAR 70,000 (78%)' },
+          { name: 'IVF Treatment (1 cycle)', local: 'QAR 60,000', india: 'QAR 12,000', save: 'QAR 48,000 (80%)' },
+          { name: 'Spinal Fusion Surgery', local: 'QAR 140,000', india: 'QAR 30,000', save: 'QAR 110,000 (79%)' },
+          { name: 'Liver Transplant', local: 'QAR 700,000', india: 'QAR 150,000', save: 'QAR 550,000 (79%)' },
+          { name: 'Hip Replacement', local: 'QAR 100,000', india: 'QAR 22,000', save: 'QAR 78,000 (78%)' },
+          { name: 'Dental Implants (full mouth)', local: 'QAR 75,000', india: 'QAR 15,000', save: 'QAR 60,000 (80%)' },
+          { name: 'Gastric Bypass Surgery', local: 'QAR 95,000', india: 'QAR 22,000', save: 'QAR 73,000 (77%)' },
+          { name: 'Kidney Transplant', local: 'QAR 500,000', india: 'QAR 110,000', save: 'QAR 390,000 (78%)' }
         ],
-        note: '*Prices include hospital stay, surgeon fees, medications. Flights extra.'
+        note: '*Prices include hospital stay, surgeon fees, medications, and post-operative care. Flights and accommodation extra. 1 QAR \u2248 0.27 USD.'
       },
-      flights: {
-        title: 'Direct Flights from Doha to India',
-        cardTitle: 'Doha (DOH) to India',
-        routes: [
-          'Mumbai (BOM) - 3.5 hours, 2-3 flights/day (Qatar Airways, IndiGo)',
-          'Delhi (DEL) - 4 hours, 2 flights/day',
-          'Bangalore (BLR) - 4.5 hours, 1-2 flights/day'
-        ],
-        cost: 'Flight Cost: QAR 1,000-2,200 round-trip'
+      popularTreatments: {
+        title: 'Most Popular Treatments for Qatar Patients',
+        treatments: [
+          { name: 'Heart Surgery', description: 'CABG, valve replacement, angioplasty with 98%+ success rates', icon: 'heart' },
+          { name: 'IVF & Fertility', description: 'Advanced IVF, ICSI, egg freezing with high success rates', icon: 'baby' },
+          { name: 'Orthopedic Surgery', description: 'Knee & hip replacement, spine surgery, sports medicine', icon: 'bone' },
+          { name: 'Cancer Treatment', description: 'Chemotherapy, radiation, robotic surgery, immunotherapy', icon: 'syringe' },
+          { name: 'Eye Surgery', description: 'LASIK, cataract, retinal surgery, corneal transplant', icon: 'eye' },
+          { name: 'Neurosurgery', description: 'Brain tumor, spine surgery, deep brain stimulation', icon: 'brain' }
+        ]
+      },
+      patientJourney: {
+        title: 'Your Treatment Journey: Doha to India',
+        steps: [
+          { step: '1', title: 'Free Consultation', description: 'Share your medical reports via WhatsApp. Get doctor recommendations and cost estimate within 24 hours.' },
+          { step: '2', title: 'Treatment Plan', description: 'Receive a detailed treatment plan with hospital options, doctor profiles, and transparent pricing in QAR.' },
+          { step: '3', title: 'Visa & Travel', description: 'We handle your e-Medical visa application, flight booking assistance, and airport pickup from Doha Hamad International.' },
+          { step: '4', title: 'Hospital Admission', description: 'Dedicated Arabic-speaking coordinator meets you. VIP hospital admission with private room and halal meals.' },
+          { step: '5', title: 'Treatment & Recovery', description: 'World-class treatment by top specialists. 24/7 support for you and your family throughout your stay.' },
+          { step: '6', title: 'Return to Qatar', description: 'Post-treatment follow-up plan. Video consultations with your doctor after returning to Doha, Al Wakrah, or Al Khor.' }
+        ]
+      },
+      faq: {
+        title: 'Frequently Asked Questions - Qatar Patients',
+        questions: [
+          {
+            q: 'How long does medical treatment in India take?',
+            a: 'Most procedures take 7-21 days including recovery. Heart surgery: 10-14 days, knee replacement: 10-15 days, IVF: 21-28 days. You can fly back to Qatar after doctor clearance.'
+          },
+          {
+            q: 'Is the quality of Indian hospitals comparable to Qatar?',
+            a: 'Yes! Apollo, Fortis, Max, and Manipal are JCI-accredited with international standards. Many doctors trained at Harvard, Johns Hopkins, and Mayo Clinic. Success rates match or exceed Qatar hospitals including HMC.'
+          },
+          {
+            q: 'How do I get a medical visa from Qatar?',
+            a: 'Apply online at indianvisaonline.gov.in/evisa. Select e-Medical Visa. Processing takes 3-5 business days. Cost is about QAR 290. We provide complete visa assistance including hospital invitation letter.'
+          },
+          {
+            q: 'Can my family accompany me from Qatar?',
+            a: 'Yes! Medical visa allows 1-2 attendants. We arrange accommodation near the hospital (QAR 150-400/night). Family members can stay with you during recovery.'
+          },
+          {
+            q: 'Does Qatar insurance cover treatment in India?',
+            a: 'Many Qatar insurance providers including QLM, Doha Insurance, and Qatar Insurance cover treatment at JCI-accredited hospitals abroad. Check with your insurer. We provide all documentation for claims.'
+          },
+          {
+            q: 'What about halal food and prayer facilities?',
+            a: 'All top hospitals provide halal meals. Prayer rooms are available. Many hospitals in Mumbai and Delhi have dedicated GCC patient wings with Arabic TV channels and culturally sensitive care.'
+          },
+          {
+            q: 'How much money should I bring from Qatar?',
+            a: 'Most costs are paid in advance via bank transfer. Bring QAR 2,000-5,000 for daily expenses, meals outside hospital, and local transport. We accept international credit cards and bank transfers.'
+          },
+          {
+            q: 'Is MOPH Qatar approval needed for treatment in India?',
+            a: 'MOPH approval is not required for self-funded treatment abroad. However, if seeking government coverage or insurance reimbursement, you may need prior approval. We help with all documentation and approvals needed.'
+          }
+        ]
       },
       finalCta: {
         title: 'Ready to Save 65-80% on Your Medical Treatment?',
-        subtitle: 'Join thousands of Qatar patients who transformed their health with India\'s top hospitals',
+        subtitle: 'Join thousands of Qatar patients who transformed their health and saved money with India\'s top hospitals',
         cta1: 'Get Free Consultation',
-        cta2: 'WhatsApp Us'
+        cta2: 'WhatsApp Us',
+        note: 'Free consultation \u2022 No obligation \u2022 Response within 1 hour'
       }
     },
     ar: {
       hero: {
-        title: 'السياحة العلاجية في الهند لمرضى قطر',
-        subtitle: 'انضم إلى أكثر من 15,000 مريض قطري وفروا 65-80% على العلاج الطبي عالمي المستوى في أفضل مستشفيات الهند المعتمدة من JCI',
-        cta1: 'احصل على استشارة مجانية',
-        cta2: 'عرض أفضل المستشفيات'
+        title: '\u0627\u0644\u0633\u064a\u0627\u062d\u0629 \u0627\u0644\u0639\u0644\u0627\u062c\u064a\u0629 \u0641\u064a \u0627\u0644\u0647\u0646\u062f \u0644\u0645\u0631\u0636\u0649 \u0642\u0637\u0631',
+        subtitle: '\u0634\u0644\u0648\u0646 \u0623\u0643\u062b\u0631 \u0645\u0646 15,000 \u0645\u0631\u064a\u0636 \u0642\u0637\u0631\u064a \u0648\u0641\u0631\u0648\u0627 65-80% \u0639\u0644\u0649 \u0627\u0644\u0639\u0644\u0627\u062c \u0627\u0644\u0637\u0628\u064a \u0639\u0627\u0644\u0645\u064a \u0627\u0644\u0645\u0633\u062a\u0648\u0649 \u0641\u064a \u0623\u0641\u0636\u0644 \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0627\u0644\u0647\u0646\u062f \u0627\u0644\u0645\u0639\u062a\u0645\u062f\u0629 \u0645\u0646 JCI',
+        cta1: '\u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u0627\u0633\u062a\u0634\u0627\u0631\u0629 \u0645\u062c\u0627\u0646\u064a\u0629',
+        cta2: '\u062a\u0648\u0627\u0635\u0644 \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0627\u0628 \u0627\u0644\u062d\u064a\u0646'
+      },
+      whyChoose: {
+        title: '\u0644\u064a\u0634 \u0623\u0643\u062b\u0631 \u0645\u0646 15,000 \u0645\u0631\u064a\u0636 \u0642\u0637\u0631\u064a \u064a\u062e\u062a\u0627\u0631\u0648\u0646 \u0627\u0644\u0647\u0646\u062f \u0643\u0644 \u0633\u0646\u0629',
+        reasons: [
+          {
+            title: '\u0648\u0641\u0631 65-80% \u0645\u0646 \u0627\u0644\u062a\u0643\u0627\u0644\u064a\u0641',
+            description: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0642\u0644\u0628: 200 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0642\u0637\u0631 \u2190 35 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0627\u0644\u0647\u0646\u062f\n\u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0623\u0646\u0627\u0628\u064a\u0628: 60 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0642\u0637\u0631 \u2190 12 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0627\u0644\u0647\u0646\u062f\n\u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0631\u0643\u0628\u0629: 90 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0642\u0637\u0631 \u2190 20 \u0623\u0644\u0641 \u0631\u064a\u0627\u0644 \u0641\u064a \u0627\u0644\u0647\u0646\u062f'
+          },
+          {
+            title: '\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0645\u0639\u062a\u0645\u062f\u0629 \u0645\u0646 JCI',
+            description: '\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0623\u0628\u0648\u0644\u0648 \u0648\u0641\u0648\u0631\u062a\u064a\u0633 \u0648\u0645\u0627\u0643\u0633 \u0648\u0645\u0627\u0646\u064a\u0628\u0627\u0644 \u062a\u0644\u0628\u064a \u0627\u0644\u0645\u0639\u0627\u064a\u064a\u0631 \u0627\u0644\u062f\u0648\u0644\u064a\u0629. \u0646\u0641\u0633 \u0627\u0644\u062c\u0648\u062f\u0629 \u0643\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0642\u0637\u0631 \u0628\u062c\u0632\u0621 \u0628\u0633\u064a\u0637 \u0645\u0646 \u0627\u0644\u062a\u0643\u0644\u0641\u0629.'
+          },
+          {
+            title: '\u0631\u062d\u0644\u0627\u062a \u0645\u0628\u0627\u0634\u0631\u0629 \u0639\u0628\u0631 \u0627\u0644\u062e\u0637\u0648\u0637 \u0627\u0644\u0642\u0637\u0631\u064a\u0629',
+            description: '\u0631\u062d\u0644\u0627\u062a \u0645\u0646 3.5 \u0633\u0627\u0639\u0627\u062a \u0645\u0646 \u0627\u0644\u062f\u0648\u062d\u0629 \u0625\u0644\u0649 \u0645\u0648\u0645\u0628\u0627\u064a \u0648\u062f\u0644\u0647\u064a. \u0627\u0644\u062e\u0637\u0648\u0637 \u0627\u0644\u0642\u0637\u0631\u064a\u0629 \u0648\u0625\u0646\u062f\u064a\u062c\u0648 \u0639\u0646\u062f\u0647\u0645 \u0631\u062d\u0644\u0627\u062a \u064a\u0648\u0645\u064a\u0629 \u0645\u0628\u0627\u0634\u0631\u0629 \u0644\u0644\u0645\u062f\u0646 \u0627\u0644\u0647\u0646\u062f\u064a\u0629 \u0627\u0644\u0631\u0626\u064a\u0633\u064a\u0629.'
+          },
+          {
+            title: '\u0628\u062f\u0648\u0646 \u0623\u0648\u0642\u0627\u062a \u0627\u0646\u062a\u0638\u0627\u0631',
+            description: '\u0627\u062d\u062c\u0632 \u0627\u0644\u062c\u0631\u0627\u062d\u0629 \u062e\u0644\u0627\u0644 7-14 \u064a\u0648\u0645\u064b\u0627 \u0645\u0642\u0627\u0628\u0644 \u0634\u0647\u0648\u0631 \u0627\u0646\u062a\u0638\u0627\u0631 \u0641\u064a \u0642\u0637\u0631. \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0641\u0648\u0631\u064a\u0629 \u0645\u0639 \u0623\u0641\u0636\u0644 \u0627\u0644\u0645\u062a\u062e\u0635\u0635\u064a\u0646.'
+          },
+          {
+            title: '\u0637\u0627\u0642\u0645 \u064a\u062a\u062d\u062f\u062b \u0627\u0644\u0639\u0631\u0628\u064a\u0629',
+            description: '\u0648\u0627\u064a\u062f \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0639\u0646\u062f\u0647\u0627 \u0645\u0646\u0633\u0642\u064a\u0646 \u0648\u0645\u062a\u0631\u062c\u0645\u064a\u0646 \u064a\u062a\u062d\u062f\u062b\u0648\u0646 \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u0639\u0634\u0627\u0646 \u062a\u0643\u0648\u0646 \u0645\u0631\u062a\u0627\u062d \u0641\u064a \u0627\u0644\u062a\u0648\u0627\u0635\u0644.'
+          },
+          {
+            title: '\u0645\u0639\u062f\u0644\u0627\u062a \u0646\u062c\u0627\u062d \u062a\u0632\u064a\u062f \u0639\u0646 98%',
+            description: '\u0623\u0641\u0636\u0644 \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0627\u0644\u0647\u0646\u062f \u062a\u0636\u0627\u0647\u064a \u0623\u0648 \u062a\u062a\u062c\u0627\u0648\u0632 \u0645\u0639\u062f\u0644\u0627\u062a \u0646\u062c\u0627\u062d \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0642\u0637\u0631 \u0628\u0645\u0627 \u0641\u064a\u0647\u0627 \u062d\u0645\u062f \u0627\u0644\u0637\u0628\u064a\u0629. \u0623\u0643\u062b\u0631 \u0645\u0646 500,000 \u0645\u0631\u064a\u0636 \u062f\u0648\u0644\u064a \u064a\u062a\u0645 \u0639\u0644\u0627\u062c\u0647\u0645 \u0633\u0646\u0648\u064a\u064b\u0627.'
+          }
+        ]
       },
       costComparison: {
-        title: 'مقارنة التكاليف: قطر مقابل الهند',
+        title: '\u0645\u0642\u0627\u0631\u0646\u0629 \u0627\u0644\u062a\u0643\u0627\u0644\u064a\u0641: \u0642\u0637\u0631 \u0645\u0642\u0627\u0628\u0644 \u0627\u0644\u0647\u0646\u062f (\u0631\u064a\u0627\u0644 \u0642\u0637\u0631\u064a)',
         tableHeaders: {
-          treatment: 'العلاج',
-          qatarCost: 'تكلفة قطر',
-          indiaCost: 'تكلفة الهند',
-          savings: 'ما توفره'
+          treatment: '\u0627\u0644\u0639\u0644\u0627\u062c',
+          localCost: '\u062a\u0643\u0644\u0641\u0629 \u0642\u0637\u0631',
+          indiaCost: '\u062a\u0643\u0644\u0641\u0629 \u0627\u0644\u0647\u0646\u062f',
+          savings: '\u062a\u0648\u0641\u064a\u0631\u0643'
         },
         treatments: [
-          { name: 'جراحة القلب المفتوح', qatar: '130,000 ريال', india: '27,000 ريال', save: '103,000 ريال (79%)' },
-          { name: 'علاج أطفال الأنابيب', qatar: '50,000 ريال', india: '11,000 ريال', save: '39,000 ريال (78%)' },
-          { name: 'استبدال الركبة', qatar: '70,000 ريال', india: '16,500 ريال', save: '53,500 ريال (76%)' },
-          { name: 'زراعة الكبد', qatar: '480,000 ريال', india: '110,000 ريال', save: '370,000 ريال (77%)' }
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0642\u0644\u0628 \u0627\u0644\u0645\u0641\u062a\u0648\u062d (CABG)', local: '200,000 \u0631\u064a\u0627\u0644', india: '35,000 \u0631\u064a\u0627\u0644', save: '165,000 \u0631\u064a\u0627\u0644 (83%)' },
+          { name: '\u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0635\u0645\u0627\u0645 \u0627\u0644\u0642\u0644\u0628', local: '220,000 \u0631\u064a\u0627\u0644', india: '40,000 \u0631\u064a\u0627\u0644', save: '180,000 \u0631\u064a\u0627\u0644 (82%)' },
+          { name: '\u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0631\u0643\u0628\u0629 \u0627\u0644\u0643\u0627\u0645\u0644', local: '90,000 \u0631\u064a\u0627\u0644', india: '20,000 \u0631\u064a\u0627\u0644', save: '70,000 \u0631\u064a\u0627\u0644 (78%)' },
+          { name: '\u0639\u0644\u0627\u062c \u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0623\u0646\u0627\u0628\u064a\u0628 (\u062f\u0648\u0631\u0629 \u0648\u0627\u062d\u062f\u0629)', local: '60,000 \u0631\u064a\u0627\u0644', india: '12,000 \u0631\u064a\u0627\u0644', save: '48,000 \u0631\u064a\u0627\u0644 (80%)' },
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u062f\u0645\u062c \u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u0641\u0642\u0631\u064a', local: '140,000 \u0631\u064a\u0627\u0644', india: '30,000 \u0631\u064a\u0627\u0644', save: '110,000 \u0631\u064a\u0627\u0644 (79%)' },
+          { name: '\u0632\u0631\u0627\u0639\u0629 \u0627\u0644\u0643\u0628\u062f', local: '700,000 \u0631\u064a\u0627\u0644', india: '150,000 \u0631\u064a\u0627\u0644', save: '550,000 \u0631\u064a\u0627\u0644 (79%)' },
+          { name: '\u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0648\u0631\u0643', local: '100,000 \u0631\u064a\u0627\u0644', india: '22,000 \u0631\u064a\u0627\u0644', save: '78,000 \u0631\u064a\u0627\u0644 (78%)' },
+          { name: '\u0632\u0631\u0627\u0639\u0629 \u0627\u0644\u0623\u0633\u0646\u0627\u0646 (\u0641\u0645 \u0643\u0627\u0645\u0644)', local: '75,000 \u0631\u064a\u0627\u0644', india: '15,000 \u0631\u064a\u0627\u0644', save: '60,000 \u0631\u064a\u0627\u0644 (80%)' },
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u062a\u062d\u0648\u064a\u0644 \u0627\u0644\u0645\u0639\u062f\u0629', local: '95,000 \u0631\u064a\u0627\u0644', india: '22,000 \u0631\u064a\u0627\u0644', save: '73,000 \u0631\u064a\u0627\u0644 (77%)' },
+          { name: '\u0632\u0631\u0627\u0639\u0629 \u0627\u0644\u0643\u0644\u0649', local: '500,000 \u0631\u064a\u0627\u0644', india: '110,000 \u0631\u064a\u0627\u0644', save: '390,000 \u0631\u064a\u0627\u0644 (78%)' }
         ],
-        note: '*الأسعار تشمل الإقامة في المستشفى، أتعاب الجراح، الأدوية. الرحلات الجوية إضافية.'
+        note: '*\u0627\u0644\u0623\u0633\u0639\u0627\u0631 \u062a\u0634\u0645\u0644 \u0627\u0644\u0625\u0642\u0627\u0645\u0629 \u0641\u064a \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u0649 \u0648\u0631\u0633\u0648\u0645 \u0627\u0644\u062c\u0631\u0627\u062d \u0648\u0627\u0644\u0623\u062f\u0648\u064a\u0629 \u0648\u0627\u0644\u0631\u0639\u0627\u064a\u0629 \u0628\u0639\u062f \u0627\u0644\u0639\u0645\u0644\u064a\u0629. \u0627\u0644\u0631\u062d\u0644\u0627\u062a \u0648\u0627\u0644\u0625\u0642\u0627\u0645\u0629 \u0625\u0636\u0627\u0641\u064a\u0629. 1 \u0631\u064a\u0627\u0644 \u0642\u0637\u0631\u064a \u2248 0.27 \u062f\u0648\u0644\u0627\u0631.'
       },
-      flights: {
-        title: 'رحلات مباشرة من الدوحة إلى الهند',
-        cardTitle: 'الدوحة (DOH) إلى الهند',
-        routes: [
-          'مومباي (BOM) - 3.5 ساعات، 2-3 رحلات/يوم (القطرية، إنديجو)',
-          'دلهي (DEL) - 4 ساعات، رحلتان/يوم',
-          'بنغالور (BLR) - 4.5 ساعات، 1-2 رحلات/يوم'
-        ],
-        cost: 'تكلفة الرحلة: 1,000-2,200 ريال ذهاباً وإياباً'
+      popularTreatments: {
+        title: '\u0623\u0643\u062b\u0631 \u0627\u0644\u0639\u0644\u0627\u062c\u0627\u062a \u0634\u064a\u0648\u0639\u064b\u0627 \u0644\u0645\u0631\u0636\u0649 \u0642\u0637\u0631',
+        treatments: [
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0642\u0644\u0628', description: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0642\u0644\u0628 \u0627\u0644\u0645\u0641\u062a\u0648\u062d\u060c \u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0635\u0645\u0627\u0645\u060c \u0642\u0633\u0637\u0631\u0629 \u0628\u0645\u0639\u062f\u0644\u0627\u062a \u0646\u062c\u0627\u062d +98%', icon: 'heart' },
+          { name: '\u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0623\u0646\u0627\u0628\u064a\u0628 \u0648\u0627\u0644\u062e\u0635\u0648\u0628\u0629', description: '\u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0623\u0646\u0627\u0628\u064a\u0628 \u0627\u0644\u0645\u062a\u0642\u062f\u0645\u060c \u0627\u0644\u062d\u0642\u0646 \u0627\u0644\u0645\u062c\u0647\u0631\u064a\u060c \u062a\u062c\u0645\u064a\u062f \u0627\u0644\u0628\u0648\u064a\u0636\u0627\u062a', icon: 'baby' },
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0639\u0638\u0627\u0645', description: '\u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0631\u0643\u0628\u0629 \u0648\u0627\u0644\u0648\u0631\u0643\u060c \u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u0641\u0642\u0631\u064a', icon: 'bone' },
+          { name: '\u0639\u0644\u0627\u062c \u0627\u0644\u0633\u0631\u0637\u0627\u0646', description: '\u0639\u0644\u0627\u062c \u0643\u064a\u0645\u064a\u0627\u0626\u064a\u060c \u0625\u0634\u0639\u0627\u0639\u064a\u060c \u062c\u0631\u0627\u062d\u0629 \u0631\u0648\u0628\u0648\u062a\u064a\u0629\u060c \u0639\u0644\u0627\u062c \u0645\u0646\u0627\u0639\u064a', icon: 'syringe' },
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0639\u064a\u0648\u0646', description: '\u0644\u064a\u0632\u0643\u060c \u0625\u0639\u062a\u0627\u0645 \u0627\u0644\u0639\u062f\u0633\u0629\u060c \u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0634\u0628\u0643\u064a\u0629\u060c \u0632\u0631\u0627\u0639\u0629 \u0627\u0644\u0642\u0631\u0646\u064a\u0629', icon: 'eye' },
+          { name: '\u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0623\u0639\u0635\u0627\u0628', description: '\u0623\u0648\u0631\u0627\u0645 \u0627\u0644\u062f\u0645\u0627\u063a\u060c \u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0639\u0645\u0648\u062f \u0627\u0644\u0641\u0642\u0631\u064a\u060c \u062a\u062d\u0641\u064a\u0632 \u0627\u0644\u062f\u0645\u0627\u063a \u0627\u0644\u0639\u0645\u064a\u0642', icon: 'brain' }
+        ]
+      },
+      patientJourney: {
+        title: '\u0631\u062d\u0644\u0629 \u0639\u0644\u0627\u062c\u0643: \u0645\u0646 \u0627\u0644\u062f\u0648\u062d\u0629 \u0625\u0644\u0649 \u0627\u0644\u0647\u0646\u062f',
+        steps: [
+          { step: '1', title: '\u0627\u0633\u062a\u0634\u0627\u0631\u0629 \u0645\u062c\u0627\u0646\u064a\u0629', description: '\u0634\u0627\u0631\u0643 \u062a\u0642\u0627\u0631\u064a\u0631\u0643 \u0627\u0644\u0637\u0628\u064a\u0629 \u0639\u0628\u0631 \u0648\u0627\u062a\u0633\u0627\u0628. \u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u062a\u0648\u0635\u064a\u0627\u062a \u0627\u0644\u0623\u0637\u0628\u0627\u0621 \u0648\u062a\u0642\u062f\u064a\u0631 \u0627\u0644\u062a\u0643\u0644\u0641\u0629 \u062e\u0644\u0627\u0644 24 \u0633\u0627\u0639\u0629.' },
+          { step: '2', title: '\u062e\u0637\u0629 \u0627\u0644\u0639\u0644\u0627\u062c', description: '\u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u062e\u0637\u0629 \u0639\u0644\u0627\u062c \u0645\u0641\u0635\u0644\u0629 \u0645\u0639 \u062e\u064a\u0627\u0631\u0627\u062a \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0648\u0645\u0644\u0641\u0627\u062a \u0627\u0644\u0623\u0637\u0628\u0627\u0621 \u0648\u0623\u0633\u0639\u0627\u0631 \u0634\u0641\u0627\u0641\u0629 \u0628\u0627\u0644\u0631\u064a\u0627\u0644 \u0627\u0644\u0642\u0637\u0631\u064a.' },
+          { step: '3', title: '\u0627\u0644\u062a\u0623\u0634\u064a\u0631\u0629 \u0648\u0627\u0644\u0633\u0641\u0631', description: '\u0646\u062a\u0648\u0644\u0649 \u0637\u0644\u0628 \u0627\u0644\u062a\u0623\u0634\u064a\u0631\u0629 \u0627\u0644\u0637\u0628\u064a\u0629 \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a\u0629 \u0648\u0627\u0644\u0645\u0633\u0627\u0639\u062f\u0629 \u0641\u064a \u062d\u062c\u0632 \u0627\u0644\u0631\u062d\u0644\u0627\u062a \u0648\u0627\u0644\u0627\u0633\u062a\u0642\u0628\u0627\u0644 \u0641\u064a \u0645\u0637\u0627\u0631 \u062d\u0645\u062f \u0627\u0644\u062f\u0648\u0644\u064a.' },
+          { step: '4', title: '\u062f\u062e\u0648\u0644 \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u0649', description: '\u0645\u0646\u0633\u0642 \u064a\u062a\u062d\u062f\u062b \u0627\u0644\u0639\u0631\u0628\u064a\u0629 \u064a\u0633\u062a\u0642\u0628\u0644\u0643. \u062f\u062e\u0648\u0644 VIP \u0645\u0639 \u063a\u0631\u0641\u0629 \u062e\u0627\u0635\u0629 \u0648\u0648\u062c\u0628\u0627\u062a \u062d\u0644\u0627\u0644.' },
+          { step: '5', title: '\u0627\u0644\u0639\u0644\u0627\u062c \u0648\u0627\u0644\u062a\u0639\u0627\u0641\u064a', description: '\u0639\u0644\u0627\u062c \u0639\u0627\u0644\u0645\u064a \u0627\u0644\u0645\u0633\u062a\u0648\u0649 \u0645\u0646 \u0623\u0641\u0636\u0644 \u0627\u0644\u0645\u062a\u062e\u0635\u0635\u064a\u0646. \u062f\u0639\u0645 \u0639\u0644\u0649 \u0645\u062f\u0627\u0631 24/7 \u0644\u0643 \u0648\u0644\u0639\u0627\u0626\u0644\u062a\u0643.' },
+          { step: '6', title: '\u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0642\u0637\u0631', description: '\u062e\u0637\u0629 \u0645\u062a\u0627\u0628\u0639\u0629 \u0628\u0639\u062f \u0627\u0644\u0639\u0644\u0627\u062c. \u0627\u0633\u062a\u0634\u0627\u0631\u0627\u062a \u0641\u064a\u062f\u064a\u0648 \u0645\u0639 \u0637\u0628\u064a\u0628\u0643 \u0628\u0639\u062f \u0627\u0644\u0639\u0648\u062f\u0629 \u0625\u0644\u0649 \u0627\u0644\u062f\u0648\u062d\u0629 \u0623\u0648 \u0627\u0644\u0648\u0643\u0631\u0629 \u0623\u0648 \u0627\u0644\u062e\u0648\u0631.' }
+        ]
+      },
+      faq: {
+        title: '\u0627\u0644\u0623\u0633\u0626\u0644\u0629 \u0627\u0644\u0634\u0627\u0626\u0639\u0629 - \u0645\u0631\u0636\u0649 \u0642\u0637\u0631',
+        questions: [
+          {
+            q: '\u0634\u0644\u0648\u0646 \u0627\u0644\u0639\u0644\u0627\u062c \u0627\u0644\u0637\u0628\u064a \u0641\u064a \u0627\u0644\u0647\u0646\u062f \u0648\u0643\u0645 \u064a\u0627\u062e\u0630 \u0648\u0642\u062a\u061f',
+            a: '\u0645\u0639\u0638\u0645 \u0627\u0644\u0625\u062c\u0631\u0627\u0621\u0627\u062a \u062a\u0633\u062a\u063a\u0631\u0642 7-21 \u064a\u0648\u0645\u064b\u0627 \u0628\u0645\u0627 \u0641\u064a \u0630\u0644\u0643 \u0627\u0644\u062a\u0639\u0627\u0641\u064a. \u062c\u0631\u0627\u062d\u0629 \u0627\u0644\u0642\u0644\u0628: 10-14 \u064a\u0648\u0645\u064b\u0627\u060c \u0627\u0633\u062a\u0628\u062f\u0627\u0644 \u0627\u0644\u0631\u0643\u0628\u0629: 10-15 \u064a\u0648\u0645\u064b\u0627\u060c \u0623\u0637\u0641\u0627\u0644 \u0627\u0644\u0623\u0646\u0627\u0628\u064a\u0628: 21-28 \u064a\u0648\u0645\u064b\u0627. \u062a\u0642\u062f\u0631 \u062a\u0631\u062c\u0639 \u0642\u0637\u0631 \u0628\u0639\u062f \u0645\u0648\u0627\u0641\u0642\u0629 \u0627\u0644\u0637\u0628\u064a\u0628.'
+          },
+          {
+            q: '\u0647\u0644 \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0627\u0644\u0647\u0646\u062f\u064a\u0629 \u0632\u064a\u0646\u0629 \u0645\u062b\u0644 \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0642\u0637\u0631\u061f',
+            a: '\u0625\u064a\u0647! \u0623\u0628\u0648\u0644\u0648 \u0648\u0641\u0648\u0631\u062a\u064a\u0633 \u0648\u0645\u0627\u0643\u0633 \u0648\u0645\u0627\u0646\u064a\u0628\u0627\u0644 \u0645\u0639\u062a\u0645\u062f\u0629 \u0645\u0646 JCI \u0628\u0645\u0639\u0627\u064a\u064a\u0631 \u062f\u0648\u0644\u064a\u0629. \u0648\u0627\u064a\u062f \u0645\u0646 \u0627\u0644\u0623\u0637\u0628\u0627\u0621 \u062a\u062f\u0631\u0628\u0648\u0627 \u0641\u064a \u0647\u0627\u0631\u0641\u0627\u0631\u062f \u0648\u062c\u0648\u0646\u0632 \u0647\u0648\u0628\u0643\u0646\u0632 \u0648\u0645\u0627\u064a\u0648 \u0643\u0644\u064a\u0646\u0643.'
+          },
+          {
+            q: '\u0634\u0644\u0648\u0646 \u0623\u062d\u0635\u0644 \u0639\u0644\u0649 \u062a\u0623\u0634\u064a\u0631\u0629 \u0637\u0628\u064a\u0629 \u0645\u0646 \u0642\u0637\u0631\u061f',
+            a: '\u0642\u062f\u0645 \u0639\u0628\u0631 \u0627\u0644\u0625\u0646\u062a\u0631\u0646\u062a \u0639\u0644\u0649 indianvisaonline.gov.in/evisa. \u0627\u062e\u062a\u0631 \u0627\u0644\u062a\u0623\u0634\u064a\u0631\u0629 \u0627\u0644\u0637\u0628\u064a\u0629 \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a\u0629. \u0627\u0644\u0645\u0639\u0627\u0644\u062c\u0629 \u062a\u0627\u062e\u0630 3-5 \u0623\u064a\u0627\u0645 \u0639\u0645\u0644. \u0646\u0648\u0641\u0631 \u0645\u0633\u0627\u0639\u062f\u0629 \u0643\u0627\u0645\u0644\u0629 \u0641\u064a \u0627\u0644\u062a\u0623\u0634\u064a\u0631\u0629.'
+          },
+          {
+            q: '\u064a\u0642\u062f\u0631 \u0623\u0647\u0644\u064a \u064a\u064a\u0648\u0646 \u0645\u0639\u0627\u064a \u0645\u0646 \u0642\u0637\u0631\u061f',
+            a: '\u0625\u064a\u0647! \u0627\u0644\u062a\u0623\u0634\u064a\u0631\u0629 \u0627\u0644\u0637\u0628\u064a\u0629 \u062a\u0633\u0645\u062d \u0628\u0645\u0631\u0627\u0641\u0642 \u0648\u0627\u062d\u062f \u0623\u0648 \u0627\u062b\u0646\u064a\u0646. \u0646\u0631\u062a\u0628 \u0627\u0644\u0625\u0642\u0627\u0645\u0629 \u0642\u0631\u064a\u0628 \u0645\u0646 \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u0649 (150-400 \u0631\u064a\u0627\u0644/\u0644\u064a\u0644\u0629). \u0627\u0644\u0639\u0627\u0626\u0644\u0629 \u062a\u0642\u062f\u0631 \u062a\u0628\u0642\u0649 \u0645\u0639\u0627\u0643 \u0648\u0642\u062a \u0627\u0644\u062a\u0639\u0627\u0641\u064a.'
+          },
+          {
+            q: '\u0647\u0644 \u062a\u0623\u0645\u064a\u0646 \u0642\u0637\u0631 \u064a\u063a\u0637\u064a \u0627\u0644\u0639\u0644\u0627\u062c \u0641\u064a \u0627\u0644\u0647\u0646\u062f\u061f',
+            a: '\u0648\u0627\u064a\u062f \u0645\u0646 \u0634\u0631\u0643\u0627\u062a \u0627\u0644\u062a\u0623\u0645\u064a\u0646 \u0641\u064a \u0642\u0637\u0631 \u0628\u0645\u0627 \u0641\u064a\u0647\u0627 QLM \u0648\u062a\u0623\u0645\u064a\u0646 \u0627\u0644\u062f\u0648\u062d\u0629 \u0648\u062a\u0623\u0645\u064a\u0646 \u0642\u0637\u0631 \u062a\u063a\u0637\u064a \u0627\u0644\u0639\u0644\u0627\u062c \u0641\u064a \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0645\u0639\u062a\u0645\u062f\u0629 \u062f\u0648\u0644\u064a\u064b\u0627. \u062a\u0627\u0643\u062f \u0645\u0639 \u0634\u0631\u0643\u0629 \u0627\u0644\u062a\u0623\u0645\u064a\u0646 \u062d\u0642\u0643. \u0646\u0648\u0641\u0631 \u0643\u0644 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0627\u062a \u0627\u0644\u0644\u0627\u0632\u0645\u0629.'
+          },
+          {
+            q: '\u0634\u0648 \u0628\u062e\u0635\u0648\u0635 \u0627\u0644\u0623\u0643\u0644 \u0627\u0644\u062d\u0644\u0627\u0644 \u0648\u0623\u0645\u0627\u0643\u0646 \u0627\u0644\u0635\u0644\u0627\u0629\u061f',
+            a: '\u0643\u0644 \u0627\u0644\u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0627\u0644\u0643\u0628\u064a\u0631\u0629 \u062a\u0648\u0641\u0631 \u0648\u062c\u0628\u0627\u062a \u062d\u0644\u0627\u0644. \u063a\u0631\u0641 \u0627\u0644\u0635\u0644\u0627\u0629 \u0645\u062a\u0648\u0641\u0631\u0629. \u0648\u0627\u064a\u062f \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0641\u064a \u0645\u0648\u0645\u0628\u0627\u064a \u0648\u062f\u0644\u0647\u064a \u0639\u0646\u062f\u0647\u0627 \u0623\u062c\u0646\u062d\u0629 \u062e\u0627\u0635\u0629 \u0644\u0645\u0631\u0636\u0649 \u0627\u0644\u062e\u0644\u064a\u062c.'
+          },
+          {
+            q: '\u0643\u0645 \u0641\u0644\u0648\u0633 \u0644\u0627\u0632\u0645 \u0623\u062c\u064a\u0628 \u0645\u0639\u0627\u064a \u0645\u0646 \u0642\u0637\u0631\u061f',
+            a: '\u0645\u0639\u0638\u0645 \u0627\u0644\u062a\u0643\u0627\u0644\u064a\u0641 \u062a\u062f\u0641\u0639 \u0645\u0642\u062f\u0645\u064b\u0627 \u0639\u0628\u0631 \u062a\u062d\u0648\u064a\u0644 \u0628\u0646\u0643\u064a. \u062c\u064a\u0628 \u0645\u0639\u0627\u0643 2,000-5,000 \u0631\u064a\u0627\u0644 \u0644\u0644\u0645\u0635\u0627\u0631\u064a\u0641 \u0627\u0644\u064a\u0648\u0645\u064a\u0629. \u0646\u0642\u0628\u0644 \u0628\u0637\u0627\u0642\u0627\u062a \u0627\u0644\u0627\u0626\u062a\u0645\u0627\u0646 \u0627\u0644\u062f\u0648\u0644\u064a\u0629 \u0648\u0627\u0644\u062a\u062d\u0648\u064a\u0644\u0627\u062a \u0627\u0644\u0628\u0646\u0643\u064a\u0629.'
+          },
+          {
+            q: '\u0647\u0644 \u0644\u0627\u0632\u0645 \u0645\u0648\u0627\u0641\u0642\u0629 \u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u0635\u062d\u0629 \u0627\u0644\u0639\u0627\u0645\u0629 \u0644\u0644\u0639\u0644\u0627\u062c \u0641\u064a \u0627\u0644\u0647\u0646\u062f\u061f',
+            a: '\u0645\u0648\u0627\u0641\u0642\u0629 \u0648\u0632\u0627\u0631\u0629 \u0627\u0644\u0635\u062d\u0629 \u0645\u0648 \u0645\u0637\u0644\u0648\u0628\u0629 \u0644\u0644\u0639\u0644\u0627\u062c \u0627\u0644\u0645\u0645\u0648\u0644 \u0630\u0627\u062a\u064a\u064b\u0627 \u0641\u064a \u0627\u0644\u062e\u0627\u0631\u062c. \u0628\u0633 \u0625\u0630\u0627 \u062a\u0628\u064a \u062a\u063a\u0637\u064a\u0629 \u062d\u0643\u0648\u0645\u064a\u0629 \u0623\u0648 \u062a\u0639\u0648\u064a\u0636 \u062a\u0623\u0645\u064a\u0646\u060c \u0645\u0645\u0643\u0646 \u062a\u062d\u062a\u0627\u062c \u0645\u0648\u0627\u0641\u0642\u0629 \u0645\u0633\u0628\u0642\u0629. \u0646\u0633\u0627\u0639\u062f\u0643 \u0641\u064a \u0643\u0644 \u0627\u0644\u0645\u0633\u062a\u0646\u062f\u0627\u062a \u0648\u0627\u0644\u0645\u0648\u0627\u0641\u0642\u0627\u062a.'
+          }
+        ]
       },
       finalCta: {
-        title: 'جاهز لتوفير 65-80% على علاجك الطبي؟',
-        subtitle: 'انضم إلى آلاف المرضى القطريين الذين غيروا صحتهم مع أفضل مستشفيات الهند',
-        cta1: 'احصل على استشارة مجانية',
-        cta2: 'تواصل عبر واتساب'
+        title: '\u062c\u0627\u0647\u0632 \u062a\u0648\u0641\u0631 65-80% \u0639\u0644\u0649 \u0639\u0644\u0627\u062c\u0643 \u0627\u0644\u0637\u0628\u064a\u061f',
+        subtitle: '\u0627\u0646\u0636\u0645 \u0625\u0644\u0649 \u0622\u0644\u0627\u0641 \u0627\u0644\u0645\u0631\u0636\u0649 \u0627\u0644\u0642\u0637\u0631\u064a\u064a\u0646 \u0627\u0644\u0644\u064a \u063a\u064a\u0631\u0648\u0627 \u0635\u062d\u062a\u0647\u0645 \u0648\u0648\u0641\u0631\u0648\u0627 \u0641\u0644\u0648\u0633\u0647\u0645 \u0645\u0639 \u0623\u0641\u0636\u0644 \u0645\u0633\u062a\u0634\u0641\u064a\u0627\u062a \u0627\u0644\u0647\u0646\u062f',
+        cta1: '\u0627\u062d\u0635\u0644 \u0639\u0644\u0649 \u0627\u0633\u062a\u0634\u0627\u0631\u0629 \u0645\u062c\u0627\u0646\u064a\u0629',
+        cta2: '\u0648\u0627\u062a\u0633\u0627\u0628',
+        note: '\u0627\u0633\u062a\u0634\u0627\u0631\u0629 \u0645\u062c\u0627\u0646\u064a\u0629 \u2022 \u0628\u062f\u0648\u0646 \u0627\u0644\u062a\u0632\u0627\u0645 \u2022 \u0631\u062f \u062e\u0644\u0627\u0644 \u0633\u0627\u0639\u0629 \u0648\u0627\u062d\u062f\u0629'
       }
     }
   };
@@ -113,8 +298,59 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
   const safeLocale = (locale === 'ar' ? 'ar' : 'en') as 'en' | 'ar';
   const currentContent = content[safeLocale];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: content.en.faq.questions.map((faq) => ({
+      '@type': 'Question',
+      name: faq.q,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.a,
+      },
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://shifaalhind.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'For Qatar Patients',
+        item: 'https://shifaalhind.com/for-qatar-patients',
+      },
+    ],
+  };
+
+  const treatmentIcons: Record<string, React.ReactNode> = {
+    heart: <Heart className="w-8 h-8 text-emerald-600" />,
+    baby: <Baby className="w-8 h-8 text-emerald-600" />,
+    bone: <Bone className="w-8 h-8 text-emerald-600" />,
+    syringe: <Syringe className="w-8 h-8 text-emerald-600" />,
+    eye: <Eye className="w-8 h-8 text-emerald-600" />,
+    brain: <Brain className="w-8 h-8 text-emerald-600" />,
+  };
+
   return (
     <div className="min-h-screen">
+      {/* JSON-LD Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-20">
         <div className="container mx-auto px-4">
@@ -126,23 +362,48 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
               {currentContent.hero.subtitle}
             </p>
             <div className="flex gap-4 justify-center flex-wrap">
-              <Link href="/booking">
+              <Link href={`/${locale}/booking`}>
                 <Button size="lg" variant="secondary">
                   {currentContent.hero.cta1}
                 </Button>
               </Link>
-              <Link href="/hospitals">
+              <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex">
                 <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-emerald-600">
+                  <Phone className="w-5 h-5 mr-2" />
                   {currentContent.hero.cta2}
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cost Comparison Table */}
+      {/* Why Qatar Patients Choose India */}
       <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {currentContent.whyChoose.title}
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {currentContent.whyChoose.reasons.map((reason, index) => {
+              const icons = [DollarSign, Shield, Plane, Clock, Users, Heart];
+              const Icon = icons[index];
+              return (
+                <Card key={index} className="p-6">
+                  <Icon className="w-12 h-12 text-emerald-600 mb-4" />
+                  <h3 className="text-xl font-semibold mb-3">{reason.title}</h3>
+                  <p className="text-gray-600 whitespace-pre-line">
+                    {reason.description}
+                  </p>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Cost Comparison Table */}
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
             {currentContent.costComparison.title}
@@ -152,16 +413,16 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
               <thead className="bg-emerald-600 text-white">
                 <tr>
                   <th className="px-6 py-4 text-left">{currentContent.costComparison.tableHeaders.treatment}</th>
-                  <th className="px-6 py-4 text-right">{currentContent.costComparison.tableHeaders.qatarCost}</th>
+                  <th className="px-6 py-4 text-right">{currentContent.costComparison.tableHeaders.localCost}</th>
                   <th className="px-6 py-4 text-right">{currentContent.costComparison.tableHeaders.indiaCost}</th>
                   <th className="px-6 py-4 text-right">{currentContent.costComparison.tableHeaders.savings}</th>
                 </tr>
               </thead>
               <tbody>
                 {currentContent.costComparison.treatments.map((treatment, index) => (
-                  <tr key={index} className={index % 2 === 1 ? 'bg-gray-50' : 'border-b'}>
+                  <tr key={index} className={index % 2 === 1 ? 'border-b bg-gray-50' : 'border-b'}>
                     <td className="px-6 py-4 font-medium">{treatment.name}</td>
-                    <td className="px-6 py-4 text-right">{treatment.qatar}</td>
+                    <td className="px-6 py-4 text-right">{treatment.local}</td>
                     <td className="px-6 py-4 text-right text-emerald-600 font-semibold">{treatment.india}</td>
                     <td className="px-6 py-4 text-right text-emerald-600 font-bold">{treatment.save}</td>
                   </tr>
@@ -175,38 +436,92 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
         </div>
       </section>
 
-      {/* Flights */}
-      <section className="py-16 bg-gray-50">
+      {/* Popular Treatments */}
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            {currentContent.flights.title}
+            {currentContent.popularTreatments.title}
           </h2>
-          <div className="max-w-3xl mx-auto">
-            <Card className="p-6">
-              <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
-                <Plane className="w-6 h-6 text-emerald-600" />
-                {currentContent.flights.cardTitle}
-              </h3>
-              <ul className="space-y-2">
-                {currentContent.flights.routes.map((route, index) => (
-                  <li key={index} className="flex items-center gap-2">
-                    <Check className="w-5 h-5 text-emerald-600" />
-                    <span>{route}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-4 text-sm text-gray-600">
-                <strong>{locale === 'ar' ? 'تكلفة الرحلة:' : 'Flight Cost:'}</strong> {currentContent.flights.cost.split(': ')[1]}
-              </p>
-            </Card>
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {currentContent.popularTreatments.treatments.map((treatment, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+                <div className="flex justify-center mb-4">
+                  {treatmentIcons[treatment.icon]}
+                </div>
+                <h3 className="text-xl font-semibold mb-3">{treatment.name}</h3>
+                <p className="text-gray-600">{treatment.description}</p>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Trust Badges Section */}
+      {/* Patient Journey */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {currentContent.patientJourney.title}
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-6">
+              {currentContent.patientJourney.steps.map((step, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                    {step.step}
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-semibold text-lg mb-1">{step.title}</h3>
+                    <p className="text-gray-600">{step.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GCC Trust Signals */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <GCCTrustBadges country="qatar" locale={safeLocale} />
+          <InsurancePartners country="qatar" locale={safeLocale} />
+          <GovernmentPartnership country="qatar" locale={safeLocale} />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">
+            {currentContent.faq.title}
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            {currentContent.faq.questions.map((faq, index) => (
+              <Card key={index} className="p-6">
+                <h3 className="font-semibold text-lg mb-2">
+                  {faq.q}
+                </h3>
+                <p className="text-gray-600">
+                  {faq.a}
+                </p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Badges */}
       <TrustBadges />
 
-      {/* CTA */}
+      {/* LocalBusiness Schema */}
+      <LocalBusinessSchema
+        country="Qatar"
+        countryCode="QA"
+        phone="+919876543210"
+        currency="QAR"
+      />
+
+      {/* Final CTA */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
@@ -216,18 +531,21 @@ export default async function QatarPatientsPage({ params }: { params: Promise<{ 
             {currentContent.finalCta.subtitle}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <Link href="/booking">
+            <Link href={`/${locale}/booking`}>
               <Button size="lg" variant="secondary">
                 {currentContent.finalCta.cta1}
               </Button>
             </Link>
-            <a href="https://wa.me/974501234567" target="_blank" rel="noopener noreferrer">
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="inline-flex">
               <Button size="lg" variant="outline" className="text-white border-white hover:bg-white hover:text-emerald-600">
                 <Phone className="w-5 h-5 mr-2" />
                 {currentContent.finalCta.cta2}
               </Button>
             </a>
           </div>
+          <p className="mt-6 text-emerald-100">
+            {currentContent.finalCta.note}
+          </p>
         </div>
       </section>
     </div>

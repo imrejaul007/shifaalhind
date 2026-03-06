@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
@@ -7,28 +6,21 @@ import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/rela
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Best Time to Visit India for Medical Tourism 2025 | Weather, Season & Festivals',
-  description: 'Complete guide to the best time to visit India for medical treatment. October-March (winter) is ideal. Weather by season, city-specific recommendations, festivals to avoid, booking tips.',
-  keywords: [
-    'best time visit india medical tourism',
-    'best season for medical tourism india',
-    'when to visit india for treatment',
-    'india weather for medical tourism',
-    'best months for medical treatment india',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/best-time-visit-india-medical-tourism',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/best-time-visit-india-medical-tourism',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Best Time to Visit India for Medical Tourism 2025 | Weather, Season & Festivals',
+    title_ar: 'أفضل وقت لزيارة الهند للسياحة العلاجية 2025 | الطقس والمواسم والمهرجانات',
+    description_en: 'Complete guide to the best time to visit India for medical treatment. October-March (winter) is ideal. Weather by season, city-specific recommendations, festivals to avoid, booking tips.',
+    description_ar: 'دليل شامل لأفضل وقت لزيارة الهند للعلاج الطبي. أكتوبر-مارس (الشتاء) هو الوقت المثالي. الطقس حسب الموسم وتوصيات لكل مدينة ونصائح الحجز.',
+    locale,
+    path: '/blog/best-time-visit-india-medical-tourism',
+  });
+}
 
 export default function BestTimeVisitIndiaPage() {
   return (

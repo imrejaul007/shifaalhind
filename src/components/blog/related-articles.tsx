@@ -14,8 +14,10 @@ import { Card, CardContent } from '@/components/ui/card';
 
 interface RelatedArticle {
   title: string;
-  excerpt: string;
-  slug: string;
+  excerpt?: string;
+  slug?: string;
+  href?: string;
+  description?: string;
   readTime?: string;
   category?: string;
 }
@@ -44,7 +46,7 @@ export function RelatedArticles({
         {articles.map((article, index) => (
           <Link
             key={index}
-            href={`/blog/${article.slug}`}
+            href={article.href || `/blog/${article.slug}`}
             className="group"
           >
             <Card className="h-full border-2 border-gray-200 transition-all hover:border-primary-400 hover:shadow-lg">
@@ -61,9 +63,11 @@ export function RelatedArticles({
                   {article.title}
                 </h3>
 
+                {(article.excerpt || article.description) && (
                 <p className="mb-4 text-sm text-gray-600 line-clamp-3">
-                  {article.excerpt}
+                  {article.excerpt || article.description}
                 </p>
+                )}
 
                 {article.readTime && (
                   <div className="flex items-center text-xs text-gray-500">

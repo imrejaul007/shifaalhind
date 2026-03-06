@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,20 +6,19 @@ import { CityLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
-  description: 'Complete guide to medical tourism from UAE to India. Cost comparison, step-by-step process, visa guide, best hospitals, and real patient success stories for 2025.',
-  keywords: ['medical tourism India from UAE', 'medical treatment India for UAE patients', 'India vs UAE medical costs', 'medical visa India for UAE', 'Dubai to India medical tourism'],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/medical-tourism-india-uae-patients-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/medical-tourism-india-uae-patients-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Medical Tourism to India from UAE: Complete 2025 Guide for Emirati & Expat Patients',
+    title_ar: 'السياحة العلاجية إلى الهند من الإمارات: دليل 2025 الشامل للمرضى الإماراتيين والمقيمين',
+    description_en: 'Complete guide to medical tourism from UAE to India. Cost comparison, step-by-step process, visa guide, best hospitals, and real patient success stories for 2025.',
+    description_ar: 'دليل شامل للسياحة العلاجية من الإمارات إلى الهند. مقارنة التكاليف والعملية خطوة بخطوة ودليل التأشيرة وأفضل المستشفيات وقصص نجاح المرضى.',
+    locale,
+    path: '/blog/medical-tourism-india-uae-patients-guide',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

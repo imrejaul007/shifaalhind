@@ -1,8 +1,33 @@
 export const dynamic = 'force-dynamic';
 
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Image from 'next/image';
 import Link from 'next/link';
 import { prisma } from '@/lib/prisma';
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug, locale } = await params;
+  const pkg = await prisma.package.findUnique({
+    where: { slug, published: true },
+    include: { treatment: true, hospital: true },
+  });
+  if (!pkg) return { title: 'Package Not Found' };
+
+  const title = `${pkg.name_en}${pkg.priceEstimate ? ` - From $${pkg.priceEstimate.toLocaleString()}` : ''} | Shifa AlHind`;
+  const description = pkg.description_en || `${pkg.name_en} medical package in India. ${pkg.durationDays ? `${pkg.durationDays} days.` : ''} ${pkg.hospital?.name_en ? `At ${pkg.hospital.name_en}.` : ''} All-inclusive pricing.`;
+  const url = `${process.env.NEXT_PUBLIC_APP_URL || 'https://shifaalhind.onrender.com'}/${locale}/packages/${slug}`;
+
+  return {
+    title,
+    description,
+    alternates: {
+      canonical: url,
+      languages: { 'en-US': `/en/packages/${slug}`, 'ar-SA': `/ar/packages/${slug}` },
+    },
+    openGraph: { title, description, url, type: 'website' },
+  };
+}
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
@@ -76,8 +101,8 @@ export default async function PackageDetailPage({ params }: PageProps) {
 
             <div className="flex items-start gap-4">
               {packageItem.thumbnail ? (
-                <div className="h-20 w-20 overflow-hidden rounded-lg">
-                  <img src={packageItem.thumbnail} alt={packageItem.name_en} className="h-full w-full object-cover" />
+                <div className="relative h-20 w-20 overflow-hidden rounded-lg">
+                  <Image src={packageItem.thumbnail} alt={packageItem.name_en} fill className="object-cover" sizes="80px" />
                 </div>
               ) : (
                 <div className="flex h-20 w-20 items-center justify-center rounded-lg bg-white/10">

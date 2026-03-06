@@ -7,6 +7,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -38,7 +40,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function KidneyStoneTreatmentPage() {
+export default async function KidneyStoneTreatmentPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="container mx-auto px-4 py-8">
 {/* Breadcrumb Schema for SEO */}
@@ -900,6 +903,9 @@ export default function KidneyStoneTreatmentPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="kidney-stone-treatment-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -920,6 +926,14 @@ export default function KidneyStoneTreatmentPage() {
           </div>
         </CardContent>
       </Card>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Kidney Stone Treatment"
+        lowPrice={1500}
+        highPrice={3500}
+        url="/en/treatments/kidney-stone-treatment-india"
+      />
     </div>
   );
 }

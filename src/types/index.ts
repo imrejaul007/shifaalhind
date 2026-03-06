@@ -56,6 +56,7 @@ export interface GCCCountryConfig {
   slug: string;
   name: string;
   code: string;
+  flag?: string;
   currency: Currency;
   phonePrefix: string;
   cities: Array<{

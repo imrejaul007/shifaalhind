@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,34 +7,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Diabetes Treatment India - Complete Guide 2025 | Type 1 & Type 2 Management',
-  description: 'Comprehensive diabetes treatment guide for India. Advanced care, reversal programs, latest technology. Expert endocrinologists. Save 65-80% vs USA/UK. Free consultation.',
-  keywords: [
-    'diabetes treatment india',
-    'diabetes management india',
-    'diabetes reversal program india',
-    'type 1 diabetes treatment india',
-    'type 2 diabetes treatment india',
-    'insulin pump india cost',
-    'continuous glucose monitoring india',
-    'best diabetes hospitals india',
-    'bariatric surgery diabetes india',
-    'diabetes care india vs usa',
-    'علاج السكري في الهند',
-    'إدارة مرض السكري في الهند',
-    'برنامج عكس مرض السكري',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/diabetes-treatment-india-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/diabetes-treatment-india-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Diabetes Treatment India - Complete Guide 2025 | Type 1 & Type 2 Management',
+    title_ar: 'علاج السكري في الهند - دليل شامل 2025 | إدارة النوع الأول والثاني',
+    description_en: 'Comprehensive diabetes treatment guide for India. Advanced care, reversal programs, latest technology. Expert endocrinologists. Save 65-80% vs USA/UK. Free consultation.',
+    description_ar: 'دليل شامل لعلاج السكري في الهند. رعاية متقدمة وبرامج عكس المرض وأحدث التقنيات. أطباء غدد صماء متخصصون. وفّر 65-80% مقارنة بأمريكا/بريطانيا.',
+    locale,
+    path: '/blog/diabetes-treatment-india-guide',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

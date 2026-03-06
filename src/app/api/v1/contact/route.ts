@@ -5,28 +5,31 @@ import {
   sendContactConfirmation,
   sendContactWhatsAppNotification,
 } from '@/lib/notifications';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 export const dynamic = 'force-dynamic';
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
+  name: z.string().min(2, 'Name must be at least 2 characters').max(200),
   email: z.string().email('Invalid email address'),
-  subject: z.string().min(5, 'Subject must be at least 5 characters'),
-  message: z.string().min(10, 'Message must be at least 10 characters'),
+  subject: z.string().min(5, 'Subject must be at least 5 characters').max(500),
+  message: z.string().min(10, 'Message must be at least 10 characters').max(5000),
 });
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limit: 5 requests per minute per IP
+    const ip = getClientIp(request);
+    const { success: withinLimit } = rateLimit(`contact:${ip}`, { limit: 5, windowSeconds: 60 });
+    if (!withinLimit) {
+      return NextResponse.json(
+        { success: false, error: 'Too many requests. Please try again later.' },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
     const validatedData = contactSchema.parse(body);
-
-    // Log the contact form submission
-    console.log('[Contact Form Submission]', {
-      name: validatedData.name,
-      email: validatedData.email,
-      subject: validatedData.subject,
-      timestamp: new Date().toISOString(),
-    });
 
     // Send notifications (non-blocking - don't fail if notifications fail)
     const notificationData = {
@@ -48,8 +51,6 @@ export async function POST(request: NextRequest) {
     sendContactWhatsAppNotification(notificationData).catch((error) => {
       console.error('WhatsApp notification error:', error);
     });
-
-    // TODO: Log to CRM or support system (Zendesk, HubSpot, etc.)
 
     return NextResponse.json({
       success: true,

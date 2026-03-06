@@ -11,6 +11,8 @@ import { Testimonials, TREATMENT_TESTIMONIALS } from '@/components/testimonials/
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
+import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
+import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
 
 export const dynamic = 'force-dynamic';
 
@@ -34,7 +36,8 @@ const RELATED_ARTICLES = [
   { title: "Medical Visa India Guide", href: "/blog/medical-visa-india-complete-guide", description: "Complete visa process guide" }
 ];
 
-export default function AngioplastyIndiaPage() {
+export default async function AngioplastyIndiaPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
 {/* Breadcrumb Schema for SEO */}
@@ -69,6 +72,9 @@ export default function AngioplastyIndiaPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
                 <Link href="/consultation">Get Free Consultation</Link>
+              </Button>
+              <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+                <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20Angioplasty%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
               </Button>
             </div>
           </div>
@@ -420,6 +426,9 @@ export default function AngioplastyIndiaPage() {
         subtitle="Real transformations from GCC patients who achieved life-changing results"
       />
 
+
+      {/* Contextual Sidebar - Related Treatment Links */}
+      <ContextualSidebar treatmentSlug="angioplasty-india" locale={locale as 'en' | 'ar'} />
       {/* Trust Badges Section */}
       <TrustBadges />
 
@@ -429,9 +438,14 @@ export default function AngioplastyIndiaPage() {
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="mb-4 font-serif text-3xl font-bold">Ready to Get Started?</h2>
             <p className="mb-6 text-xl text-primary-50">Get free consultation & cost estimate from top hospitals</p>
-            <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
-              <Link href="/consultation">Get Free Consultation<ArrowRight className="ml-2 h-5 w-5" /></Link>
-            </Button>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Button asChild size="lg" className="bg-accent-500 hover:bg-accent-600">
+                <Link href="/consultation">Get Free Consultation<ArrowRight className="ml-2 h-5 w-5" /></Link>
+              </Button>
+              <Button asChild size="lg" className="border-2 border-green-400 bg-green-600 text-lg text-white hover:bg-green-700">
+                <a href="https://wa.me/919876543210?text=Hi%2C%20I%20need%20help%20with%20Angioplasty%20in%20India" target="_blank" rel="noopener noreferrer">WhatsApp Us</a>
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -445,6 +459,14 @@ export default function AngioplastyIndiaPage() {
       <div className="container px-4 pb-12">
         <InternalLinks variant="compact" />
       </div>
+
+      {/* SEO: HowTo + Offer + Speakable Schemas */}
+      <TreatmentSchemas
+        treatmentName="Angioplasty"
+        lowPrice={3000}
+        highPrice={6000}
+        url="/en/treatments/angioplasty-india"
+      />
     </div>
   );
 }

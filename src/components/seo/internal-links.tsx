@@ -18,14 +18,15 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 
 interface InternalLink {
-  title: string;
+  title?: string;
+  text?: string;
   href: string;
   description?: string;
 }
 
 interface InternalLinksProps {
   title?: string;
-  links: InternalLink[];
+  links?: InternalLink[];
   variant?: 'default' | 'compact' | 'inline';
 }
 
@@ -46,7 +47,18 @@ export function InternalLinks({
   variant = 'default'
 }: InternalLinksProps) {
   // Return null if no links provided
-  if (!links || links.length === 0) return null;
+  if (!links || links.length === 0) {
+    if (variant === 'compact') {
+      // Show default treatment links
+      links = [
+        { title: 'View All Treatments', href: '/treatments' },
+        { title: 'Our Hospitals', href: '/hospitals' },
+        { title: 'Cost Calculator', href: '/cost-calculator' },
+      ];
+    } else {
+      return null;
+    }
+  }
 
   if (variant === 'inline') {
     return (
@@ -59,7 +71,7 @@ export function InternalLinks({
               href={link.href}
               className="inline-flex items-center rounded-full bg-primary-50 px-3 py-1 text-sm font-medium text-primary-700 hover:bg-primary-100 transition-colors"
             >
-              {link.title}
+              {link.title || link.text}
             </Link>
           ))}
         </div>
@@ -80,7 +92,7 @@ export function InternalLinks({
                   className="flex items-center text-primary-600 hover:text-primary-800 transition-colors group"
                 >
                   <span className="mr-2 text-primary-400 group-hover:text-primary-600">→</span>
-                  <span className="font-medium">{link.title}</span>
+                  <span className="font-medium">{link.title || link.text}</span>
                 </Link>
               </li>
             ))}
@@ -100,7 +112,7 @@ export function InternalLinks({
             <Card className="h-full border-2 border-gray-200 transition-all hover:border-primary-400 hover:shadow-lg">
               <CardContent className="p-6">
                 <h4 className="mb-2 text-lg font-semibold text-primary-700 group-hover:text-primary-600">
-                  {link.title}
+                  {link.title || link.text}
                 </h4>
                 {link.description && (
                   <p className="text-sm text-gray-600 line-clamp-3">

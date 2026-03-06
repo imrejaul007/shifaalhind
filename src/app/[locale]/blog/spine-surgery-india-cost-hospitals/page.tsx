@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import Link from 'next/link';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,34 +7,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Spine Surgery Cost India [2025] - Save 70% | 95%+ Success Rate',
-  description: 'Complete spine surgery cost guide for India. Disc surgery, spinal fusion, minimally invasive procedures. Top hospitals with 95%+ success rates. Save $20,000-$60,000 vs USA. Free consultation.',
-  keywords: [
-    'spine surgery cost india',
-    'spine surgery india vs usa',
-    'spinal fusion cost india',
-    'disc surgery india',
-    'best spine surgeons india',
-    'minimally invasive spine surgery india',
-    'back surgery india cost',
-    'lumbar surgery india',
-    'cervical spine surgery india',
-    'spinal stenosis treatment india',
-    'تكلفة جراحة العمود الفقري في الهند',
-    'جراحة العمود الفقري في الهند',
-    'أفضل جراحي العمود الفقري الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/spine-surgery-india-cost-hospitals',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/spine-surgery-india-cost-hospitals',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Spine Surgery Cost India [2025] - Save 70% | 95%+ Success Rate',
+    title_ar: 'تكلفة جراحة العمود الفقري في الهند [2025] - وفّر 70% | معدل نجاح 95%+',
+    description_en: 'Complete spine surgery cost guide for India. Disc surgery, spinal fusion, minimally invasive procedures. Top hospitals with 95%+ success rates. Save $20,000-$60,000 vs USA.',
+    description_ar: 'دليل شامل لتكلفة جراحة العمود الفقري في الهند. جراحة الديسك والدمج الفقري والإجراءات طفيفة التوغل. أفضل المستشفيات بمعدلات نجاح 95%+. وفّر 20,000-60,000 دولار.',
+    locale,
+    path: '/blog/spine-surgery-india-cost-hospitals',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

@@ -11,25 +11,44 @@ export default function Error({
   reset: () => void;
 }) {
   useEffect(() => {
-    // Log the error to an error reporting service
     console.error('Application error:', error);
   }, [error]);
 
+  const isArabic = typeof window !== 'undefined' && window.location.pathname.startsWith('/ar');
+
+  const content = isArabic ? {
+    title: 'حدث خطأ ما!',
+    description: 'نعتذر عن الإزعاج. حدث خطأ.',
+    errorDetails: 'تفاصيل الخطأ:',
+    errorId: 'معرف الخطأ:',
+    tryAgain: 'حاول مرة أخرى',
+    goHome: 'الصفحة الرئيسية',
+    persistMessage: 'إذا استمرت هذه المشكلة، يرجى التواصل مع الدعم:',
+  } : {
+    title: 'Something went wrong!',
+    description: 'We apologize for the inconvenience. An error has occurred.',
+    errorDetails: 'Error Details:',
+    errorId: 'Error ID:',
+    tryAgain: 'Try Again',
+    goHome: 'Go Home',
+    persistMessage: 'If this problem persists, please contact support:',
+  };
+
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center px-4 py-16">
+    <div className="flex min-h-screen flex-col items-center justify-center px-4 py-16" dir={isArabic ? 'rtl' : 'ltr'}>
       <div className="text-center">
         <h1 className="mb-4 font-serif text-4xl font-bold text-gray-900">
-          Something went wrong!
+          {content.title}
         </h1>
         <p className="mb-8 text-lg text-gray-600">
-          We apologize for the inconvenience. An error has occurred.
+          {content.description}
         </p>
 
         <div className="mb-8 rounded-lg bg-red-50 p-6">
-          <p className="mb-2 font-semibold text-red-800">Error Details:</p>
+          <p className="mb-2 font-semibold text-red-800">{content.errorDetails}</p>
           <p className="text-sm text-red-700">{error.message}</p>
           {error.digest && (
-            <p className="mt-2 text-xs text-red-600">Error ID: {error.digest}</p>
+            <p className="mt-2 text-xs text-red-600">{content.errorId} {error.digest}</p>
           )}
         </div>
 
@@ -38,18 +57,18 @@ export default function Error({
             onClick={() => reset()}
             className="bg-primary-600 hover:bg-primary-700"
           >
-            Try Again
+            {content.tryAgain}
           </Button>
           <Button
             onClick={() => (window.location.href = '/')}
             variant="outline"
           >
-            Go Home
+            {content.goHome}
           </Button>
         </div>
 
         <div className="mt-12 text-sm text-gray-500">
-          <p>If this problem persists, please contact support:</p>
+          <p>{content.persistMessage}</p>
           <p className="mt-2">
             <a
               href="mailto:support@shifaalhind.com"

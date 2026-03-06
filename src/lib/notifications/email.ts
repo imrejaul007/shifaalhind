@@ -1,11 +1,14 @@
 /**
  * Email Notification Service
  *
- * This module provides email notification functionality.
+ * Uses Nodemailer with SMTP configuration.
  * Configure environment variables to enable:
- * - SENDGRID_API_KEY (recommended) OR
- * - EMAIL_SERVER_* variables for SMTP
+ * - EMAIL_SERVER_HOST, EMAIL_SERVER_PORT, EMAIL_SERVER_USER, EMAIL_SERVER_PASSWORD
+ * - EMAIL_FROM (sender address)
  */
+
+import nodemailer from 'nodemailer';
+import { escapeHtml } from '@/lib/html-escape';
 
 interface EmailOptions {
   to: string;
@@ -30,42 +33,56 @@ interface ContactNotificationData {
   message: string;
 }
 
+let transporter: nodemailer.Transporter | null = null;
+
+function getTransporter(): nodemailer.Transporter | null {
+  if (transporter) return transporter;
+
+  const host = process.env.EMAIL_SERVER_HOST;
+  const port = parseInt(process.env.EMAIL_SERVER_PORT || '587', 10);
+  const user = process.env.EMAIL_SERVER_USER;
+  const pass = process.env.EMAIL_SERVER_PASSWORD;
+
+  if (!host || !user || !pass) {
+    return null;
+  }
+
+  transporter = nodemailer.createTransport({
+    host,
+    port,
+    secure: port === 465,
+    auth: { user, pass },
+  });
+
+  return transporter;
+}
+
 /**
  * Send email notification
- * Currently logs to console. Integrate with SendGrid or SMTP for production.
  */
 export async function sendEmail(options: EmailOptions): Promise<boolean> {
   try {
-    // Check if email is configured
-    const hasEmailConfig =
-      process.env.SENDGRID_API_KEY ||
-      process.env.EMAIL_SERVER_HOST;
+    const transport = getTransporter();
 
-    if (!hasEmailConfig) {
-      console.log('[Email Service] Not configured. Would send:', {
-        to: options.to,
-        subject: options.subject,
-        textPreview: options.text?.substring(0, 100),
-      });
+    if (!transport) {
+      // Email not configured — silently skip in development
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('[Email] Not configured, skipping send to:', options.to);
+      }
       return true;
     }
 
-    // TODO: Implement actual email sending
-    // Example with SendGrid:
-    // const sgMail = require('@sendgrid/mail');
-    // sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-    // await sgMail.send({
-    //   to: options.to,
-    //   from: process.env.EMAIL_FROM || 'noreply@shifaalhind.com',
-    //   subject: options.subject,
-    //   html: options.html,
-    //   text: options.text,
-    // });
+    await transport.sendMail({
+      from: process.env.EMAIL_FROM || 'noreply@shifaalhind.com',
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
+      text: options.text,
+    });
 
-    console.log('[Email Service] Email sent successfully to:', options.to);
     return true;
   } catch (error) {
-    console.error('[Email Service] Failed to send email:', error);
+    console.error('[Email] Failed to send:', error);
     return false;
   }
 }
@@ -74,38 +91,34 @@ export async function sendEmail(options: EmailOptions): Promise<boolean> {
  * Send lead notification to admin team
  */
 export async function sendLeadNotification(data: LeadNotificationData): Promise<boolean> {
+  const safe = {
+    userName: escapeHtml(data.userName),
+    email: escapeHtml(data.email),
+    phone: escapeHtml(data.phone),
+    countryOrigin: escapeHtml(data.countryOrigin),
+    treatmentId: data.treatmentId ? escapeHtml(data.treatmentId) : undefined,
+    message: data.message ? escapeHtml(data.message) : undefined,
+  };
+
   const html = `
     <h2>New Lead Received</h2>
     <p>A new patient inquiry has been submitted:</p>
     <ul>
-      <li><strong>Name:</strong> ${data.userName}</li>
-      <li><strong>Email:</strong> ${data.email}</li>
-      <li><strong>Phone:</strong> ${data.phone}</li>
-      <li><strong>Country:</strong> ${data.countryOrigin}</li>
-      ${data.treatmentId ? `<li><strong>Treatment ID:</strong> ${data.treatmentId}</li>` : ''}
-      ${data.message ? `<li><strong>Message:</strong> ${data.message}</li>` : ''}
+      <li><strong>Name:</strong> ${safe.userName}</li>
+      <li><strong>Email:</strong> ${safe.email}</li>
+      <li><strong>Phone:</strong> ${safe.phone}</li>
+      <li><strong>Country:</strong> ${safe.countryOrigin}</li>
+      ${safe.treatmentId ? `<li><strong>Treatment ID:</strong> ${safe.treatmentId}</li>` : ''}
+      ${safe.message ? `<li><strong>Message:</strong> ${safe.message}</li>` : ''}
     </ul>
     <p>Please follow up within 24 hours.</p>
   `;
 
-  const text = `
-New Lead Received
-
-Name: ${data.userName}
-Email: ${data.email}
-Phone: ${data.phone}
-Country: ${data.countryOrigin}
-${data.treatmentId ? `Treatment ID: ${data.treatmentId}` : ''}
-${data.message ? `Message: ${data.message}` : ''}
-
-Please follow up within 24 hours.
-  `.trim();
-
   return sendEmail({
     to: process.env.ADMIN_EMAIL || 'admin@shifaalhind.com',
-    subject: `New Lead: ${data.userName} from ${data.countryOrigin}`,
+    subject: `New Lead: ${safe.userName} from ${safe.countryOrigin}`,
     html,
-    text,
+    text: `New Lead: ${data.userName}, ${data.email}, ${data.phone}, ${data.countryOrigin}`,
   });
 }
 
@@ -113,51 +126,32 @@ Please follow up within 24 hours.
  * Send confirmation email to patient
  */
 export async function sendLeadConfirmation(data: LeadNotificationData): Promise<boolean> {
+  const safe = {
+    userName: escapeHtml(data.userName),
+    email: escapeHtml(data.email),
+    phone: escapeHtml(data.phone),
+    countryOrigin: escapeHtml(data.countryOrigin),
+  };
+
   const html = `
     <h2>Thank You for Your Interest!</h2>
-    <p>Dear ${data.userName},</p>
+    <p>Dear ${safe.userName},</p>
     <p>We have received your inquiry for medical treatment in India. Our medical team will review your request and contact you within 24 hours.</p>
     <h3>Your Details:</h3>
     <ul>
-      <li><strong>Email:</strong> ${data.email}</li>
-      <li><strong>Phone:</strong> ${data.phone}</li>
-      <li><strong>Country:</strong> ${data.countryOrigin}</li>
+      <li><strong>Email:</strong> ${safe.email}</li>
+      <li><strong>Phone:</strong> ${safe.phone}</li>
+      <li><strong>Country:</strong> ${safe.countryOrigin}</li>
     </ul>
-    <p>If you have any urgent questions, please contact us at:</p>
-    <ul>
-      <li><strong>Phone:</strong> +971 50 123 4567</li>
-      <li><strong>WhatsApp:</strong> +971 50 123 4567</li>
-      <li><strong>Email:</strong> support@shifaalhind.com</li>
-    </ul>
+    <p>If you have any urgent questions, please contact us via WhatsApp at ${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP || '+971501234567'}.</p>
     <p>Best regards,<br>Shifa AlHind Team</p>
   `;
-
-  const text = `
-Thank You for Your Interest!
-
-Dear ${data.userName},
-
-We have received your inquiry for medical treatment in India. Our medical team will review your request and contact you within 24 hours.
-
-Your Details:
-- Email: ${data.email}
-- Phone: ${data.phone}
-- Country: ${data.countryOrigin}
-
-If you have any urgent questions, please contact us at:
-- Phone: +971 50 123 4567
-- WhatsApp: +971 50 123 4567
-- Email: support@shifaalhind.com
-
-Best regards,
-Shifa AlHind Team
-  `.trim();
 
   return sendEmail({
     to: data.email,
     subject: 'Thank You for Your Inquiry - Shifa AlHind',
     html,
-    text,
+    text: `Dear ${data.userName}, Thank you for your inquiry. Our team will contact you within 24 hours.`,
   });
 }
 
@@ -165,37 +159,30 @@ Shifa AlHind Team
  * Send contact form notification to support team
  */
 export async function sendContactNotification(data: ContactNotificationData): Promise<boolean> {
+  const safe = {
+    name: escapeHtml(data.name),
+    email: escapeHtml(data.email),
+    subject: escapeHtml(data.subject),
+    message: escapeHtml(data.message).replace(/\n/g, '<br>'),
+  };
+
   const html = `
     <h2>New Contact Form Submission</h2>
-    <p>A new message has been received through the contact form:</p>
     <ul>
-      <li><strong>Name:</strong> ${data.name}</li>
-      <li><strong>Email:</strong> ${data.email}</li>
-      <li><strong>Subject:</strong> ${data.subject}</li>
+      <li><strong>Name:</strong> ${safe.name}</li>
+      <li><strong>Email:</strong> ${safe.email}</li>
+      <li><strong>Subject:</strong> ${safe.subject}</li>
     </ul>
     <h3>Message:</h3>
-    <p>${data.message.replace(/\n/g, '<br>')}</p>
+    <p>${safe.message}</p>
     <p>Please respond within 24 hours.</p>
   `;
-
-  const text = `
-New Contact Form Submission
-
-Name: ${data.name}
-Email: ${data.email}
-Subject: ${data.subject}
-
-Message:
-${data.message}
-
-Please respond within 24 hours.
-  `.trim();
 
   return sendEmail({
     to: process.env.SUPPORT_EMAIL || 'support@shifaalhind.com',
     subject: `Contact Form: ${data.subject}`,
     html,
-    text,
+    text: `From: ${data.name} (${data.email})\nSubject: ${data.subject}\n\n${data.message}`,
   });
 }
 
@@ -203,46 +190,27 @@ Please respond within 24 hours.
  * Send auto-reply to contact form submitter
  */
 export async function sendContactConfirmation(data: ContactNotificationData): Promise<boolean> {
+  const safe = {
+    name: escapeHtml(data.name),
+    subject: escapeHtml(data.subject),
+    message: escapeHtml(data.message).replace(/\n/g, '<br>'),
+  };
+
   const html = `
     <h2>Thank You for Contacting Us!</h2>
-    <p>Dear ${data.name},</p>
+    <p>Dear ${safe.name},</p>
     <p>We have received your message and will respond within 24 hours.</p>
     <h3>Your Message:</h3>
-    <p><strong>Subject:</strong> ${data.subject}</p>
-    <p>${data.message.replace(/\n/g, '<br>')}</p>
-    <p>If you have an urgent inquiry, please contact us directly at:</p>
-    <ul>
-      <li><strong>Phone:</strong> +971 50 123 4567</li>
-      <li><strong>WhatsApp:</strong> +971 50 123 4567</li>
-      <li><strong>Email:</strong> support@shifaalhind.com</li>
-    </ul>
+    <p><strong>Subject:</strong> ${safe.subject}</p>
+    <p>${safe.message}</p>
+    <p>If you have an urgent inquiry, please contact us via WhatsApp at ${process.env.NEXT_PUBLIC_SUPPORT_WHATSAPP || '+971501234567'}.</p>
     <p>Best regards,<br>Shifa AlHind Support Team</p>
   `;
-
-  const text = `
-Thank You for Contacting Us!
-
-Dear ${data.name},
-
-We have received your message and will respond within 24 hours.
-
-Your Message:
-Subject: ${data.subject}
-${data.message}
-
-If you have an urgent inquiry, please contact us directly at:
-- Phone: +971 50 123 4567
-- WhatsApp: +971 50 123 4567
-- Email: support@shifaalhind.com
-
-Best regards,
-Shifa AlHind Support Team
-  `.trim();
 
   return sendEmail({
     to: data.email,
     subject: 'Thank You for Your Message - Shifa AlHind',
     html,
-    text,
+    text: `Dear ${data.name}, Thank you for your message. We will respond within 24 hours.`,
   });
 }

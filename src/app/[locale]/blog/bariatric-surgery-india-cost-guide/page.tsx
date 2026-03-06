@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,36 +6,21 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata: Metadata = {
-  title: 'Bariatric Surgery Cost India 2025 | Weight Loss Surgery Save 70%',
-  description: 'Complete guide to bariatric surgery costs in India. Compare gastric bypass, sleeve gastrectomy, gastric band prices. Save 70-80% at JCI-accredited centers. 85% diabetes remission rate.',
-  keywords: [
-    'bariatric surgery cost india',
-    'weight loss surgery india',
-    'gastric bypass india cost',
-    'sleeve gastrectomy india',
-    'gastric band india price',
-    'bariatric surgery india for UAE patients',
-    'weight loss surgery mumbai delhi',
-    'obesity surgery india',
-    'bariatric surgery india vs USA',
-    'gastric bypass india for diabetes',
-    'جراحة السمنة في الهند',
-    'تكلفة جراحة السمنة الهند',
-    'جراحة إنقاص الوزن الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/bariatric-surgery-india-cost-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/bariatric-surgery-india-cost-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Bariatric Surgery Cost India 2025 | Weight Loss Surgery Save 70%',
+    title_ar: 'تكلفة جراحة السمنة في الهند 2025 | جراحة إنقاص الوزن وفّر 70%',
+    description_en: 'Complete guide to bariatric surgery costs in India. Compare gastric bypass, sleeve gastrectomy, gastric band prices. Save 70-80% at JCI-accredited centers. 85% diabetes remission rate.',
+    description_ar: 'دليل شامل لتكلفة جراحة السمنة في الهند. قارن أسعار تحويل مسار المعدة وتكميم المعدة وربط المعدة. وفّر 70-80% في مراكز معتمدة من JCI.',
+    locale,
+    path: '/blog/bariatric-surgery-india-cost-guide',
+  });
+}
 
 export default function BariatricSurgeryCostIndiaPage() {
   return (

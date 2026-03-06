@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -10,6 +10,8 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
 import { ALL_TREATMENTS } from '@/config/treatments-list';
+import { trackBookingSubmit } from '@/lib/analytics';
+import { captureUTMParams, formatUTMString, type UTMParams } from '@/lib/utm';
 
 type BookingForm = {
   userName: string;
@@ -21,6 +23,7 @@ type BookingForm = {
   preferredDate?: string;
   message?: string;
   medicalConditions?: string;
+  referralSource?: string;
 };
 
 export default function BookingPage() {
@@ -28,6 +31,12 @@ export default function BookingPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [utmParams, setUtmParams] = useState<UTMParams>({});
+
+  useEffect(() => {
+    setUtmParams(captureUTMParams());
+  }, []);
 
   const content = {
     en: {
@@ -61,6 +70,8 @@ export default function BookingPage() {
       medicalConditionsPlaceholder: 'Please describe any existing medical conditions, allergies, or specific questions...',
       additionalNotes: 'Additional Notes (Optional)',
       additionalNotesPlaceholder: 'Any other information you\'d like to share...',
+      referralSource: 'How did you hear about us?',
+      referralOptions: ['Google Search', 'Social Media', 'Friend/Family', 'Doctor Referral', 'Advertisement', 'Other'],
       // Step 4
       reviewInfo: 'Review Your Information',
       name: 'Name',
@@ -133,6 +144,8 @@ export default function BookingPage() {
       medicalConditionsPlaceholder: 'يرجى وصف أي حالات طبية موجودة، حساسية، أو أسئلة محددة...',
       additionalNotes: 'ملاحظات إضافية (اختياري)',
       additionalNotesPlaceholder: 'أي معلومات أخرى ترغب في مشاركتها...',
+      referralSource: 'كيف سمعت عنا؟',
+      referralOptions: ['بحث جوجل', 'وسائل التواصل الاجتماعي', 'صديق/عائلة', 'إحالة طبيب', 'إعلان', 'أخرى'],
       // Step 4
       reviewInfo: 'راجع معلوماتك',
       name: 'الاسم',
@@ -190,6 +203,7 @@ export default function BookingPage() {
     preferredDate: z.string().optional(),
     message: z.string().optional(),
     medicalConditions: z.string().optional(),
+    referralSource: z.string().optional(),
   }), [currentContent]);
 
   const {
@@ -228,6 +242,7 @@ export default function BookingPage() {
 
   const onSubmit = async (data: BookingForm) => {
     setIsSubmitting(true);
+    setFormError(null);
 
     try {
       const treatmentIndex = data.treatmentId ? parseInt(data.treatmentId) - 1 : -1;
@@ -240,7 +255,7 @@ export default function BookingPage() {
         countryOrigin: data.countryOrigin,
         cityOrigin: data.cityOrigin,
         preferredDate: data.preferredDate,
-        message: `Treatment: ${treatmentName}\n\n${data.medicalConditions || ''}${data.message ? '\n\n' + data.message : ''}`.trim(),
+        message: `Treatment: ${treatmentName}${data.referralSource ? '\nReferral: ' + data.referralSource : ''}${formatUTMString(utmParams) ? '\nUTM: ' + formatUTMString(utmParams) : ''}\n\n${data.medicalConditions || ''}${data.message ? '\n\n' + data.message : ''}`.trim(),
       };
 
       const response = await fetch('/api/v1/lead', {
@@ -251,12 +266,12 @@ export default function BookingPage() {
 
       if (response.ok) {
         setIsSubmitted(true);
+        trackBookingSubmit(treatmentName);
       } else {
-        alert(currentContent.errorAlert);
+        setFormError(currentContent.errorAlert);
       }
-    } catch (error) {
-      console.error('Booking error:', error);
-      alert(currentContent.errorAlert);
+    } catch {
+      setFormError(currentContent.errorAlert);
     } finally {
       setIsSubmitting(false);
     }
@@ -484,6 +499,21 @@ export default function BookingPage() {
                       placeholder={currentContent.additionalNotesPlaceholder}
                     />
                   </div>
+
+                  <div>
+                    <label className="mb-2 block text-sm font-medium">
+                      {currentContent.referralSource}
+                    </label>
+                    <select
+                      {...register('referralSource')}
+                      className="flex h-12 w-full rounded-lg border-2 border-gray-300 bg-white px-4 py-3 text-base focus:border-primary-500 focus:outline-none"
+                    >
+                      <option value="">--</option>
+                      {currentContent.referralOptions.map((option: string) => (
+                        <option key={option} value={option}>{option}</option>
+                      ))}
+                    </select>
+                  </div>
                 </div>
               )}
 
@@ -527,6 +557,12 @@ export default function BookingPage() {
                       ))}
                     </ul>
                   </div>
+                </div>
+              )}
+
+              {formError && (
+                <div className="rounded-lg bg-red-50 p-4 text-center text-sm text-red-700">
+                  {formError}
                 </div>
               )}
 

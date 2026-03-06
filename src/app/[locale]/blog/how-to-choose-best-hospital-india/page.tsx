@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -6,20 +5,19 @@ import { RelatedArticles, CANCER_RELATED_ARTICLES } from '@/components/blog/rela
 import { InternalLinks } from '@/components/seo/internal-links';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'How to Choose the Best Hospital in India for Medical Tourism: Complete 2025 Guide',
-  description: 'Complete guide to selecting the best hospital in India for medical tourism. JCI accreditation, doctor credentials, success rates, and how to avoid mistakes.',
-  keywords: ['best hospitals India medical tourism', 'how to choose hospital India', 'JCI accredited hospitals India', 'hospital selection guide India', 'international patients India'],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/how-to-choose-best-hospital-india',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/how-to-choose-best-hospital-india',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'How to Choose the Best Hospital in India for Medical Tourism: Complete 2025 Guide',
+    title_ar: 'كيف تختار أفضل مستشفى في الهند للسياحة العلاجية: دليل 2025 الشامل',
+    description_en: 'Complete guide to selecting the best hospital in India for medical tourism. JCI accreditation, doctor credentials, success rates, and how to avoid mistakes.',
+    description_ar: 'دليل شامل لاختيار أفضل مستشفى في الهند للسياحة العلاجية. اعتماد JCI ومؤهلات الأطباء ومعدلات النجاح وكيفية تجنب الأخطاء.',
+    locale,
+    path: '/blog/how-to-choose-best-hospital-india',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

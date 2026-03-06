@@ -13,6 +13,8 @@ import {
   Star
 } from 'lucide-react';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
+import { GCCTrustBadges, InsurancePartners, GovernmentPartnership, WhatsAppLocalNumber } from '@/components/trust-signals/gcc-trust';
+import { LocalBusinessSchema } from '@/components/seo/local-business-schema';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -209,7 +211,7 @@ export default async function UAEPatientsPage({ params }: { params: Promise<{ lo
         cta2: 'عرض أفضل المستشفيات'
       },
       whyChoose: {
-        title: 'لماذا يختار أكثر من 50,000 مريض إماراتي الهند كل عام',
+        title: 'ليش أكثر من 50,000 مريض إماراتي يختارون الهند كل سنة',
         reasons: [
           {
             title: 'وفر 60-80% من التكاليف',
@@ -334,33 +336,33 @@ export default async function UAEPatientsPage({ params }: { params: Promise<{ lo
         title: 'الأسئلة الشائعة',
         questions: [
           {
-            q: 'كم من الوقت يستغرق العلاج الطبي في الهند؟',
-            a: 'معظم الإجراءات تستغرق 7-21 يومًا بما في ذلك التعافي. جراحة القلب: 10-14 يومًا، استبدال الركبة: 10-15 يومًا، أطفال الأنابيب: 21-28 يومًا. يمكنك العودة إلى المنزل بعد موافقة الطبيب.'
+            q: 'كم ياخذ العلاج الطبي في الهند؟',
+            a: 'أغلب العمليات تاخذ 7-21 يوم مع التعافي. جراحة القلب: 10-14 يوم، استبدال الركبة: 10-15 يوم، أطفال الأنابيب: 21-28 يوم. تقدر ترجع الديرة بعد ما الدكتور يعطيك الإذن.'
           },
           {
-            q: 'هل المستشفيات الهندية جيدة حقًا مثل مستشفيات الإمارات؟',
+            q: 'المستشفيات الهندية فعلاً بمستوى مستشفيات الإمارات؟',
             a: 'نعم! أبولو وفورتيس وماكس ومانيبال معتمدة من JCI بمعايير دولية. العديد من الأطباء تدربوا في هارفارد وجونز هوبكنز ومايو كلينك. معدلات النجاح تضاهي أو تتجاوز مستشفيات الإمارات.'
           },
           {
-            q: 'ماذا عن حواجز اللغة؟',
+            q: 'شو الوضع بالنسبة لحاجز اللغة؟',
             a: 'أفضل المستشفيات لديها منسقون وموظفون يتحدثون العربية. جميع الأطباء يتحدثون الإنجليزية بطلاقة. نوفر مترجمين إذا لزم الأمر بدون تكلفة إضافية.'
           },
           {
-            q: 'هل يمكن لعائلتي مرافقتي؟',
-            a: 'نعم! التأشيرة الطبية تسمح بمرافق واحد. نرتب الإقامة بالقرب من المستشفى (100-300 درهم/ليلة). يمكن للعائلة البقاء معك أثناء التعافي.'
+            q: 'تقدر عايلتي تيي وياي؟',
+            a: 'أكيد! الفيزا الطبية تسمح بمرافق واحد. نرتبلكم الإقامة يم المستشفى (100-300 درهم/ليلة). العايلة تقدر تبقى وياك وقت التعافي.'
           },
           {
-            q: 'ماذا لو حدث خطأ ما؟',
+            q: 'شو لو صار شي غلط؟',
             a: 'جميع الإجراءات مغطاة بتأمين سوء الممارسة الطبية للمستشفى. نوفر دعمًا على مدار 24/7. استشارات المتابعة متاحة عبر مكالمة فيديو بعد العودة إلى الإمارات.'
           },
           {
-            q: 'كم من المال يجب أن أحضر معي؟',
+            q: 'كم لازم آخذ فلوس وياي؟',
             a: 'معظم التكاليف تدفع مقدمًا. احضر 2,000-5,000 درهم للإقامة والوجبات والنقل المحلي. نقبل التحويلات البنكية من الإمارات وبطاقات الائتمان الدولية.'
           }
         ]
       },
       finalCta: {
-        title: 'هل أنت مستعد لتوفير 60-80% على علاجك الطبي؟',
+        title: 'يالله نبدأ - وفر 60-80% على علاجك الطبي!',
         subtitle: 'انضم إلى آلاف مرضى الإمارات الذين حولوا صحتهم ووفروا المال مع أفضل مستشفيات الهند',
         cta1: 'احصل على استشارة مجانية',
         cta2: 'واتساب',
@@ -601,6 +603,11 @@ export default async function UAEPatientsPage({ params }: { params: Promise<{ lo
       {/* Trust Badges Section */}
       <TrustBadges />
 
+      {/* GCC Trust Signals */}
+      <GCCTrustBadges country="uae" locale={locale as 'en' | 'ar'} />
+      <InsurancePartners country="uae" locale={locale as 'en' | 'ar'} />
+      <GovernmentPartnership country="uae" locale={locale as 'en' | 'ar'} />
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-emerald-800 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -628,6 +635,8 @@ export default async function UAEPatientsPage({ params }: { params: Promise<{ lo
           </p>
         </div>
       </section>
+
+      <LocalBusinessSchema country="United Arab Emirates" countryCode="AE" phone="+919876543210" currency="AED" />
     </div>
   );
 }

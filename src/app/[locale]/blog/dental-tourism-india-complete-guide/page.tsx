@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { SocialShare } from '@/components/blog/social-share';
@@ -7,32 +6,19 @@ import { InternalLinks } from '@/components/seo/internal-links';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/seo/article-schema';
+import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Dental Tourism India - Complete Guide [2025] Save 70-80%',
-  description: 'Complete dental tourism India guide. Dental implants $300-$800 vs $3,000-$5,000 USA. Top clinics, procedures, quality standards.',
-  keywords: [
-    'dental tourism india',
-    'dental implants cost india',
-    'dental treatment india',
-    'india dental tourism',
-    'cheap dental implants india',
-    'cosmetic dentistry india',
-    'veneers cost india',
-    'dental tourism india from uae',
-    'dental tourism india dubai',
-    'السياحة الأسنان في الهند',
-    'تكلفة زراعة الأسنان في الهند',
-  ],
-  alternates: {
-    canonical: 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
-    languages: {
-      'en-US': 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
-      'ar-SA': 'https://shifaalhind.onrender.com/ar/blog/dental-tourism-india-complete-guide',
-      'x-default': 'https://shifaalhind.onrender.com/en/blog/dental-tourism-india-complete-guide',
-    },
-  },
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return generateSEOMetadata({
+    title_en: 'Dental Tourism India - Complete Guide [2025] Save 70-80%',
+    title_ar: 'سياحة الأسنان في الهند - دليل شامل [2025] وفّر 70-80%',
+    description_en: 'Complete dental tourism India guide. Dental implants $300-$800 vs $3,000-$5,000 USA. Top clinics, procedures, quality standards.',
+    description_ar: 'دليل شامل لسياحة الأسنان في الهند. زراعة الأسنان 300-800 دولار مقابل 3,000-5,000 دولار في أمريكا. أفضل العيادات والإجراءات ومعايير الجودة.',
+    locale,
+    path: '/blog/dental-tourism-india-complete-guide',
+  });
+}
 
 export const dynamic = 'force-dynamic';
 

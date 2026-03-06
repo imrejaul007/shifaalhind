@@ -100,8 +100,8 @@ export function CostCalculator() {
       setShowResults(true);
 
       // Track calculator usage
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'cost_calculator_used', {
+      if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+        (window as Record<string, unknown> & { gtag: (...args: unknown[]) => void }).gtag('event', 'cost_calculator_used', {
           event_category: 'Engagement',
           event_label: treatment,
         });
@@ -109,22 +109,41 @@ export function CostCalculator() {
     }
   };
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleGetQuote = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
-    // TODO: Send to your lead capture API
-    console.log('Lead captured via calculator:', { treatment, currentCountry, email, phone });
-
-    // Track conversion
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('event', 'calculator_lead_conversion', {
-        event_category: 'Lead',
-        event_label: treatment,
-        value: getSavings(),
+    try {
+      await fetch('/api/v1/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userName: 'Calculator Lead',
+          email,
+          phone,
+          countryOrigin: currentCountry,
+          message: `Treatment: ${treatment}, Estimated savings: $${getSavings().toLocaleString()} (${getSavingsPercentage()}%)`,
+        }),
       });
-    }
 
-    alert('Thank you! We\'ll send you a detailed quote within 24 hours.');
+      // Track conversion
+      if (typeof window !== 'undefined' && (window as Record<string, unknown>).gtag) {
+        (window as Record<string, unknown> & { gtag: (...args: unknown[]) => void }).gtag('event', 'calculator_lead_conversion', {
+          event_category: 'Lead',
+          event_label: treatment,
+          value: getSavings(),
+        });
+      }
+
+      alert('Thank you! We\'ll send you a detailed quote within 24 hours.');
+    } catch {
+      alert('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Country names for display
