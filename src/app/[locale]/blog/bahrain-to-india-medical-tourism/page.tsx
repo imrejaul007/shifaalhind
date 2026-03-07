@@ -1,6 +1,3 @@
-'use client';
-
-import { useLocale } from 'next-intl';
 import BlogArticleLayout from '@/components/blog/blog-article-layout';
 import { Card, CardContent } from '@/components/ui/card';
 import { InternalLinks } from '@/components/seo/internal-links';
@@ -12,8 +9,8 @@ import { ArticleSchema, DEFAULT_AUTHOR, DEFAULT_PUBLISHER } from '@/components/s
 
 export const dynamic = 'force-dynamic';
 
-export default function BahrainToIndiaMedicalTourismPage() {
-  const locale = useLocale();
+export default async function BahrainToIndiaMedicalTourismPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
 
   const content = {
     en: {
