@@ -40,7 +40,12 @@
       "Bash(npm run lint)",
       "Bash(npm test)",
       "Bash(npx playwright test --list)",
-      "Bash(npx next lint --fix)"
+      "Bash(npx next lint --fix)",
+      "Bash(gh run list --limit 3)",
+      "Bash(brew list gh)",
+      "Bash(gh --version)",
+      "Bash(brew install gh)",
+      "WebFetch(domain:github.com)"
     ],
     "additionalDirectories": [
       "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]",
