@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, DollarSign, Clock, MapPin, Heart, Star } from 'lucide-react';
+import { CheckCircle2, Clock, MapPin, Heart, Star } from 'lucide-react';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
 export const dynamic = 'force-dynamic';
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-interface CaseStudy {
+interface _CaseStudy {
   id: string;
   patientName: string;
   age: number;
@@ -536,7 +536,7 @@ export default async function CaseStudiesPage({ params }: { params: Promise<{ lo
         </div>
 
         <div className="space-y-12">
-          {currentContent.caseStudies.map((study, index) => (
+          {currentContent.caseStudies.map((study) => (
             <Card key={study.id} className="overflow-hidden border-2 border-gray-100 shadow-xl">
               <CardHeader className="bg-gradient-to-r from-primary-50 to-primary-100 border-b-2 border-primary-200">
                 <div className="flex items-start justify-between">

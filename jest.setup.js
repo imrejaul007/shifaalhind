@@ -20,6 +20,6 @@ jest.mock('next/navigation', () => ({
 
 // Mock next-intl
 jest.mock('next-intl', () => ({
-  useTranslations: () => (key: string) => key,
+  useTranslations: () => (key) => key,
   useLocale: () => 'en',
 }));

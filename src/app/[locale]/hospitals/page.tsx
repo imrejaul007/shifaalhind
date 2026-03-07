@@ -21,7 +21,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   Building2, Award, MapPin, Phone, CheckCircle, Star, Users, Sparkles,
-  Globe, Heart, Bed, TrendingDown, MessageCircle, Clock, Hotel
+  Globe, Heart, Bed, TrendingDown, MessageCircle, Hotel
 } from 'lucide-react';
 
 export default async function HospitalsPage({ params }: { params: Promise<{ locale: string }> }) {

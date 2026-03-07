@@ -6,7 +6,7 @@ import { TrustBadges } from '@/components/trust-badges/trust-badges';
 import {
   Heart, Brain, Bone, Baby, Sparkles, Eye, SmilePlus, Weight,
   Stethoscope, Award, Building2, Users, CheckCircle, Star,
-  ArrowRight, MessageCircle, ChevronDown, ChevronUp, Shield,
+  ArrowRight, MessageCircle, Shield,
   Clock, Globe, BadgeCheck
 } from 'lucide-react';
 

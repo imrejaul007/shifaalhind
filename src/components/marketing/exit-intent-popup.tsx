@@ -380,7 +380,7 @@ export function ExitIntentPopup() {
                     className="w-full rounded-lg border-2 border-gray-200 px-4 py-3 text-base focus:border-primary-500 focus:outline-none transition-colors"
                     required
                   />
-                  <p className="mt-1 text-xs text-gray-500">We'll send your cost estimate via WhatsApp</p>
+                  <p className="mt-1 text-xs text-gray-500">We&apos;ll send your cost estimate via WhatsApp</p>
                 </div>
 
                 <div>
@@ -396,7 +396,7 @@ export function ExitIntentPopup() {
                     className="w-full rounded-lg border-2 border-gray-200 px-4 py-3 text-base focus:border-primary-500 focus:outline-none transition-colors"
                     required
                   />
-                  <p className="mt-1 text-xs text-gray-500">We'll send detailed treatment plan to your email</p>
+                  <p className="mt-1 text-xs text-gray-500">We&apos;ll send detailed treatment plan to your email</p>
                 </div>
 
                 <div>

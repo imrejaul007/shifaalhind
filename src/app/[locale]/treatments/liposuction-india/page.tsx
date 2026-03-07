@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Star,
   Shield,
-  Users,
   Award
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
@@ -591,7 +590,7 @@ export default async function LiposuctionIndiaPage({ params }: { params: Promise
                 Will the fat come back after liposuction?
               </h3>
               <p className="text-gray-600">
-                The fat cells removed during liposuction are permanently gone and won't return. However, remaining fat cells can expand if you gain significant weight. Maintaining your weight within 10 lbs of your post-liposuction weight preserves results. Studies show 85% of patients maintain their results for 5+ years with a healthy lifestyle.
+                The fat cells removed during liposuction are permanently gone and won&apos;t return. However, remaining fat cells can expand if you gain significant weight. Maintaining your weight within 10 lbs of your post-liposuction weight preserves results. Studies show 85% of patients maintain their results for 5+ years with a healthy lifestyle.
               </p>
             </CardContent>
           </Card>

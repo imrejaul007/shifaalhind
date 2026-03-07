@@ -6,7 +6,7 @@
  * Designed for SEO topical authority and user navigation.
  */
 
-import { ALL_TREATMENTS, getTreatmentName } from './treatments-list';
+import { getTreatmentName } from './treatments-list';
 
 // ---------------------------------------------------------------------------
 // Types

@@ -3,13 +3,11 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
-  CheckCircle2,
   Clock,
   DollarSign,
   Heart,
   ArrowRight,
-  Star,
-  Award
+  Star
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
@@ -260,7 +258,7 @@ export default async function PcosTreatmentIndiaPage({ params }: { params: Promi
           <Card>
             <CardContent className="p-6">
               <h3 className="mb-3 text-lg font-semibold text-gray-900">Can PCOS be cured permanently?</h3>
-              <p className="text-gray-600">PCOS cannot be "cured" but can be effectively managed. 75-85% of women achieve regular periods, reduced symptoms with treatment. Weight loss (even 5-10%) dramatically improves symptoms. Medication helps regulate hormones. Symptoms may return if treatment stopped.</p>
+              <p className="text-gray-600">PCOS cannot be &quot;cured&quot; but can be effectively managed. 75-85% of women achieve regular periods, reduced symptoms with treatment. Weight loss (even 5-10%) dramatically improves symptoms. Medication helps regulate hormones. Symptoms may return if treatment stopped.</p>
             </CardContent>
           </Card>
           <Card>

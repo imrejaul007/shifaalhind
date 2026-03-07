@@ -153,7 +153,7 @@ export default async function CityTreatmentPage({ params }: { params: Promise<{ 
   const { city: citySlug, treatment: treatmentSlug, locale } = await params;
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://shifaalhind.onrender.com';
   const cityInfo = findCity(citySlug);
-  const treatmentConfig = findTreatment(treatmentSlug);
+  const _treatmentConfig = findTreatment(treatmentSlug);
   const tData = treatmentData[treatmentSlug] || treatmentData['heart-surgery'];
   const flight = flightData[citySlug] || flightData['dubai'];
   const hospitals = topHospitals[treatmentSlug] || topHospitals['heart-surgery'];

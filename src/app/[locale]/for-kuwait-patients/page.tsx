@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import React from 'react';
 import {
-  Check,
   Heart,
   DollarSign,
   Plane,
@@ -11,8 +10,6 @@ import {
   Clock,
   Users,
   Phone,
-  Star,
-  Stethoscope,
   Baby,
   Bone,
   Eye,
@@ -20,7 +17,7 @@ import {
   Syringe
 } from 'lucide-react';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
-import { GCCTrustBadges, InsurancePartners, GovernmentPartnership, WhatsAppLocalNumber } from '@/components/trust-signals/gcc-trust';
+import { GCCTrustBadges, InsurancePartners, GovernmentPartnership } from '@/components/trust-signals/gcc-trust';
 import { LocalBusinessSchema } from '@/components/seo/local-business-schema';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 

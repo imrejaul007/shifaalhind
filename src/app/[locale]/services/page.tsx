@@ -20,23 +20,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { TabbedServices } from '@/components/services/tabbed-services';
 import {
-  Stethoscope,
-  Plane,
-  Hotel,
   FileText,
   Languages,
-  CreditCard,
   Phone,
-  Users,
-  MapPin,
   Calendar,
   Heart,
-  Shield,
   Building2 as Hospital,
   CheckCircle,
   Clock,
-  Award,
-  Globe,
   Star,
   MessageCircle,
   Headset,

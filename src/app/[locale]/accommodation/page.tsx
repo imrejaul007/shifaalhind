@@ -10,7 +10,6 @@ import {
   Shield,
   MapPin,
   Phone,
-  Clock,
   Star,
   Check,
   Home,

@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
   CheckCircle2,
-  Clock,
   DollarSign,
   Heart,
   ArrowRight,
@@ -15,7 +14,6 @@ import {
   Stethoscope,
   Baby,
   Microscope,
-  ShieldCheck,
   MessageCircle,
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';

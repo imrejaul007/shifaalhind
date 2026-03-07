@@ -126,7 +126,7 @@ export default async function CostComparisonCountryPage({ params }: PageProps) {
   if (!cd) return null;
 
   const treatmentList = Object.entries(treatmentCosts);
-  const rate = currencies[cd.currencyCode].rate;
+  const _rate = currencies[cd.currencyCode].rate;
 
   // FAQ data
   const faqs = isAr
@@ -165,7 +165,7 @@ export default async function CostComparisonCountryPage({ params }: PageProps) {
       <ItemListSchema
         name={isAr ? `مقارنة تكاليف العلاج: ${cd.nameAr} مقابل الهند` : `Treatment Cost Comparison: ${cd.nameEn} vs India`}
         description={isAr ? `أسعار أكثر من 20 علاج طبي - ${cd.nameAr} مقابل الهند` : `Prices for 20+ medical treatments - ${cd.nameEn} vs India`}
-        items={treatmentList.map(([key, t], i) => ({
+        items={treatmentList.map(([_key, t], i) => ({
           name: isAr ? t.nameAr : t.name,
           url: `/treatments/${t.slug}`,
           position: i + 1,

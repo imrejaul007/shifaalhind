@@ -10,7 +10,6 @@ import {
   ArrowRight,
   Star,
   Shield,
-  Users,
   Award
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';

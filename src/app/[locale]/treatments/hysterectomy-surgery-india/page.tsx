@@ -3,13 +3,11 @@ import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import {
-  CheckCircle2,
   Clock,
   DollarSign,
   Heart,
   ArrowRight,
-  Star,
-  Award
+  Star
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';

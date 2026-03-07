@@ -36,7 +36,11 @@
       "Bash(for d in src/app/[locale]/treatments/*/)",
       "Bash(do basename \"$d\")",
       "Bash(grep -r \"params.*locale\" src/app/[locale]/treatments/)",
-      "Bash(npx tsc --noEmit src/app/[locale]/treatments/heart-surgery-india/page.tsx)"
+      "Bash(npx tsc --noEmit src/app/[locale]/treatments/heart-surgery-india/page.tsx)",
+      "Bash(npm run lint)",
+      "Bash(npm test)",
+      "Bash(npx playwright test --list)",
+      "Bash(npx next lint --fix)"
     ],
     "additionalDirectories": [
       "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]",

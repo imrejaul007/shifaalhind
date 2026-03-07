@@ -827,7 +827,7 @@ export default async function BreastCancerTreatmentIndiaPage({ params }: { param
               </p>
               <p className="mb-3 text-gray-700"><strong>Travel insurance:</strong></p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
-                <li><strong>Usually NOT covered:</strong> Cancer treatment is pre-existing condition (diagnosis before travel). Travel insurance for emergency only (accident, sudden illness). Denial: "Traveled to India specifically for cancer treatment."</li>
+                <li><strong>Usually NOT covered:</strong> Cancer treatment is pre-existing condition (diagnosis before travel). Travel insurance for emergency only (accident, sudden illness). Denial: &quot;Traveled to India specifically for cancer treatment.&quot;</li>
               </ul>
               <p className="mb-3 text-gray-700"><strong>International health insurance:</strong></p>
               <ul className="list-disc pl-6 space-y-1 text-gray-700 mb-3">
@@ -857,7 +857,7 @@ export default async function BreastCancerTreatmentIndiaPage({ params }: { param
                 <li><strong>Step 5:</strong> Keep all receipts, invoices, medical reports for reimbursement claim (even if initially denied, can appeal).</li>
               </ul>
               <p className="text-gray-700">
-                <strong>Recommendation:</strong> Check policy for "international cancer treatment" coverage. If unclear, assume self-pay (most cost-effective in India). If insurance approves, use it. If denied, proceed self-pay immediately - cancer treatment should not be delayed for insurance negotiations. All major hospitals have international patient coordinators to help with insurance paperwork.
+                <strong>Recommendation:</strong> Check policy for &quot;international cancer treatment&quot; coverage. If unclear, assume self-pay (most cost-effective in India). If insurance approves, use it. If denied, proceed self-pay immediately - cancer treatment should not be delayed for insurance negotiations. All major hospitals have international patient coordinators to help with insurance paperwork.
               </p>
             </CardContent>
           </Card>

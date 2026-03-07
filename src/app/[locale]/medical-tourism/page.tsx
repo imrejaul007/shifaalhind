@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 import { prisma } from '@/lib/prisma';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Building2, Globe, Award, Clock, Shield, Heart, Bone, Baby, Smile, Eye, TrendingDown, Users, CheckCircle, Star, DollarSign } from 'lucide-react';
+import { MapPin, Globe, Award, Clock, Heart, Bone, Baby, Smile, Eye, Users, CheckCircle, Star, DollarSign } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';

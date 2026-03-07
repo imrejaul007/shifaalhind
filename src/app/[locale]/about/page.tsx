@@ -17,7 +17,6 @@ import {
   Shield,
   Clock,
   UserCheck,
-  Headset,
   BadgeCheck,
 } from 'lucide-react';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';

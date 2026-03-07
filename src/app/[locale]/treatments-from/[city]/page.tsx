@@ -6,7 +6,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 import {
   Heart, Bone, Baby, SmilePlus, Scissors, Eye, Brain, Pill,
   Stethoscope, Weight, Activity, Leaf, Clock, Plane, Building2,
-  BadgePercent, Phone, ChevronRight, CheckCircle, MessageCircle,
+  BadgePercent, Phone, ChevronRight, MessageCircle,
   HelpCircle, Star, Shield, Users,
 } from 'lucide-react';
 

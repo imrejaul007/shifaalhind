@@ -9,13 +9,11 @@ import {
   Heart,
   ArrowRight,
   Star,
-  Award,
   Shield,
   Activity,
   TrendingDown,
   Calendar,
   Stethoscope,
-  Users,
   Utensils,
 } from 'lucide-react';
 import { FAQSchema } from '@/components/seo/faq-schema-client';

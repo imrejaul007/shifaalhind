@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
 import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { FAQSchema } from '@/components/seo/faq-schema-client';

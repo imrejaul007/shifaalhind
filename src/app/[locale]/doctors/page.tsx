@@ -21,7 +21,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
   User, Award, GraduationCap, Languages, CheckCircle, Star, Briefcase,
-  MapPin, Phone, MessageCircle, Globe, Users, Sparkles, TrendingDown, Building2
+  MapPin, Phone, MessageCircle, Globe, Users, Sparkles, Building2
 } from 'lucide-react';
 
 export default async function DoctorsPage({ params }: { params: Promise<{ locale: string }> }) {

@@ -6,7 +6,7 @@ import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import {
-  Heart, Bone, Baby, Smile, Eye, Brain, Activity, Scissors, Droplet, Salad, Egg, Pill, Syringe,
+  Heart, Bone, Baby, Smile, Eye, Brain, Activity, Scissors, Droplet, Salad, Egg, Pill,
   TrendingDown, Users, Award, Clock, Star, Sparkles, CheckCircle, Phone, MessageCircle, Globe
 } from 'lucide-react';
 

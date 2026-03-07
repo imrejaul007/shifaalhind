@@ -132,7 +132,7 @@ interface PatientJourneyProps {
   compact?: boolean;
 }
 
-export function PatientJourney({ locale = 'en', compact = false }: PatientJourneyProps) {
+export function PatientJourney({ locale = 'en', compact: _compact = false }: PatientJourneyProps) {
   const isArabic = locale === 'ar';
 
   return (

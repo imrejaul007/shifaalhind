@@ -25,7 +25,6 @@ import {
   HelpCircle,
   Star,
   Plane,
-  Search,
   Calendar,
   MapPin,
 } from 'lucide-react';
@@ -43,7 +42,7 @@ interface MenuCategory {
   items: SubMenuItem[];
 }
 
-type SubmenuItem = SubMenuItem | MenuCategory;
+type _SubmenuItem = SubMenuItem | MenuCategory;
 
 export function HeaderImproved() {
   const t = useTranslations();

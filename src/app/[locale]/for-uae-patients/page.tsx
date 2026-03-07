@@ -13,7 +13,7 @@ import {
   Star
 } from 'lucide-react';
 import { TrustBadges } from '@/components/trust-badges/trust-badges';
-import { GCCTrustBadges, InsurancePartners, GovernmentPartnership, WhatsAppLocalNumber } from '@/components/trust-signals/gcc-trust';
+import { GCCTrustBadges, InsurancePartners, GovernmentPartnership } from '@/components/trust-signals/gcc-trust';
 import { LocalBusinessSchema } from '@/components/seo/local-business-schema';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 

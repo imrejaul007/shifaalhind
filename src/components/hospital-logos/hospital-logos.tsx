@@ -268,7 +268,7 @@ export function HospitalLogos({ locale = 'en', showStats = true }: HospitalLogos
                 </div>
 
                 {/* Learn More Link */}
-                <a
+                <Link
                   href="/hospitals"
                   className="inline-flex items-center text-sm font-semibold text-primary-600 transition-colors hover:text-primary-700"
                 >
@@ -286,7 +286,7 @@ export function HospitalLogos({ locale = 'en', showStats = true }: HospitalLogos
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
 
               {/* Hover effect gradient overlay */}

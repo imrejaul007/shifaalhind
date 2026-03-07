@@ -13,11 +13,9 @@ import {
   Phone,
   Mail,
   MessageCircle,
-  ArrowRight,
   AlertCircle,
   Star,
   Award,
-  Download,
 } from 'lucide-react';
 import { generateMetadata as generateSEOMetadata } from '@/lib/seo';
 
@@ -532,7 +530,6 @@ export default async function VisaAssistancePage({
           </div>
           <div className="mx-auto grid max-w-4xl gap-8 md:grid-cols-2">
             {processSteps.map((step, index) => {
-              const Icon = step.icon;
               return (
                 <Card key={index} className="border-2 border-primary-100 transition-all hover:shadow-xl">
                   <CardHeader>
