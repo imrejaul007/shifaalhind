@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import { ChevronDown, ChevronUp, Search } from 'lucide-react';
 
 interface FAQItem {
@@ -200,12 +201,12 @@ export function VoiceOptimizedFAQ({
                       <div className="mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
                         <p className="text-sm text-gray-600 dark:text-gray-400">
                           {isRtl ? 'للمزيد من المعلومات' : 'For more information,'}
-                          <a
+                          <Link
                             href="/contact"
                             className="ml-1 text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 rtl:mr-1"
                           >
                             {isRtl ? 'تواصل معنا' : 'contact our team'}
-                          </a>
+                          </Link>
                         </p>
                       </div>
                     </div>

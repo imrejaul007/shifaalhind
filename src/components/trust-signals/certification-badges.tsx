@@ -1,4 +1,4 @@
-import { Award, Shield, CheckCircle, Star, Users, Clock, Globe, Heart, Trophy, FileCheck } from 'lucide-react';
+import { Award, Shield, CheckCircle, Star, Users, Clock, Globe, Trophy, FileCheck } from 'lucide-react';
 
 interface CertificationBadgeProps {
   locale?: 'en' | 'ar';

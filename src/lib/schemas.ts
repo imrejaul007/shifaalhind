@@ -606,7 +606,6 @@ export function generateMedicalConditionSchema(data: {
   signOrSymptom?: string[];
   possibleTreatment?: string[];
 }) {
-  const baseUrl = getBaseUrl();
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalCondition',
