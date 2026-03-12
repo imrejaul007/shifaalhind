@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Eye, EyeOff, X, ZoomIn, ChevronLeft, ChevronRight, Play } from 'lucide-react';
+import { Eye, EyeOff, X, ZoomIn, ChevronLeft, ChevronRight, Play, Grid, User } from 'lucide-react';
 
 interface GalleryItem {
   id: string;
@@ -99,12 +99,12 @@ const mockGalleryData: GalleryItem[] = [
  * Critical for building trust and conversion
  */
 export function BeforeAfterGallery({
-  treatment = 'Medical Treatment',
+  _treatment = 'Medical Treatment',
   locale = 'en',
   variant = 'slider',
   limit = 6,
 }: BeforeAfterGalleryProps) {
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [_selectedId, _setSelectedId] = useState<string | null>(null);
   const [showModal, setShowModal] = useState(false);
   const [selectedItem, setSelectedItem] = useState<GalleryItem | null>(null);
   const [viewMode, setViewMode] = useState<'paired' | 'grid'>('paired');
@@ -186,7 +186,7 @@ export function BeforeAfterGallery({
         {/* Gallery Content */}
         {viewMode === 'paired' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {getPairedItems().map((pair, index) => (
+            {getPairedItems().map((pair, _index) => (
               <div
                 key={`${pair.before.id}-${pair.after.id}`}
                 className="rounded-xl border border-gray-200 overflow-hidden bg-white shadow-sm hover:shadow-md transition-all"

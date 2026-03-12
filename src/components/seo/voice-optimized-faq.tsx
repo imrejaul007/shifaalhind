@@ -75,7 +75,13 @@ export function VoiceOptimizedFAQ({
 
       // Only add suggestedAnswer if follow-up questions exist
       if (faq.followUpQuestions && faq.followUpQuestions.length > 0) {
-        (baseEntity as any).suggestedAnswer = {
+        const entityWithSuggested = baseEntity as {
+          '@type': string;
+          name: string;
+          acceptedAnswer: { '@type': string; text: string };
+          suggestedAnswer?: { '@type': string; text: string };
+        };
+        entityWithSuggested.suggestedAnswer = {
           '@type': 'Answer' as const,
           text: faq.followUpQuestions.join(' '),
         };
