@@ -26,6 +26,9 @@ import { SocialShare } from '@/components/blog/social-share';
 import { PatientJourney } from '@/components/patient-journey/patient-journey';
 import { HospitalLogos } from '@/components/hospital-logos/hospital-logos';
 import { CertificationBadges, MedicalQualityStatement } from '@/components/trust-signals/certification-badges';
+import { CurrencyConverter, MultiCurrencyDisplay } from '@/components/conversion/currency-converter';
+import { TimeZoneDisplay } from '@/components/widgets/time-zone-display';
+import { WeatherWidget } from '@/components/widgets/weather-widget';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -1561,6 +1564,50 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
       <section className="container px-4 pb-12">
         <div className="mx-auto max-w-4xl">
           <MedicalQualityStatement locale={safeLocale} />
+        </div>
+      </section>
+
+      {/* Currency Converter, Time Zone & Weather Widgets */}
+      <section className="container px-4 pb-12">
+        <div className="mx-auto max-w-6xl">
+          <div className="mb-8 text-center">
+            <h2 className="mb-4 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+              {safeLocale === 'ar' ? 'أدوات مفيدة لرحلتك العلاجية' : 'Helpful Tools for Your Medical Journey'}
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400">
+              {safeLocale === 'ar'
+                ? 'احصل على معلومات الأسعار والتوقيت والطقس في مكان واحد'
+                : 'Get price, time, and weather information in one place'}
+            </p>
+          </div>
+          <div className="grid gap-8 lg:grid-cols-3">
+            {/* Currency Converter */}
+            <div>
+              <CurrencyConverter
+                price={10000}
+                locale={safeLocale}
+                variant="widget"
+                defaultCurrency="AED"
+                showRates={false}
+              />
+            </div>
+
+            {/* Time Zone Display */}
+            <div>
+              <TimeZoneDisplay
+                locale={safeLocale}
+                variant="comparison"
+              />
+            </div>
+
+            {/* Weather Widget */}
+            <div>
+              <WeatherWidget
+                locale={safeLocale}
+                variant="grid"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

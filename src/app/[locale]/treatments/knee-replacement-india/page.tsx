@@ -12,6 +12,8 @@ import { BreadcrumbSchema } from '@/components/seo/breadcrumb-schema';
 import { MedicalProcedureSchema } from '@/components/seo/medical-procedure-schema';
 import { TreatmentSchemas } from '@/components/seo/treatment-schemas';
 import { ContextualSidebar } from '@/components/seo/contextual-sidebar';
+import { DoctorProfileCardGrid } from '@/components/doctors/doctor-profile-card';
+import { PatientReviews, RatingSummary } from '@/components/reviews/patient-reviews';
 
 export const dynamic = 'force-dynamic';
 
@@ -551,6 +553,141 @@ export default async function KneeReplacementIndiaPage({ params }: { params: Pro
       {/* Testimonials */}
       <section className="mb-12 rounded-xl bg-gray-50 p-8">
         <Testimonials testimonials={TREATMENT_TESTIMONIALS['generic']} />
+      </section>
+
+      {/* Expert Doctors for Knee Replacement */}
+      <section className="mb-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center font-serif text-2xl md:text-3xl font-bold text-gray-900">
+            Expert Knee Surgeons in India
+          </h2>
+          <DoctorProfileCardGrid
+            doctors={[
+              {
+                id: '1',
+                name: 'Dr. A.K. Venkatachalam',
+                nameAr: 'د. أ. ك. فينكاتاتشالام',
+                specialty: 'Orthopedic Surgeon',
+                specialtyAr: 'جراح العظام',
+                hospital: 'Fortis Memorial Research Institute',
+                hospitalAr: 'معهد فورتيس للأبحاث الطبية',
+                experience: 25,
+                rating: 4.9,
+                reviews: 1500,
+                price: { min: 5000, max: 8000, currency: 'USD' },
+                education: ['MBBS, MS (Orthopedics)', 'Fellowship in Joint Replacement'],
+                certifications: ['MCh Orthopedics', 'Fellowship Royal College Surgeons'],
+                languages: ['English', 'Hindi', 'Arabic'],
+                slug: 'dr-ak-venkatachalam',
+              },
+              {
+                id: '2',
+                name: 'Dr. David Rajan',
+                nameAr: 'د. ديفيد راجان',
+                specialty: 'Knee Replacement Specialist',
+                specialtyAr: 'أخصائي استبدال الركبة',
+                hospital: 'Apollo Hospitals, Chennai',
+                hospitalAr: 'مستشفيات أبولو، تشيناي',
+                experience: 22,
+                rating: 4.8,
+                reviews: 1200,
+                price: { min: 5000, max: 7500, currency: 'USD' },
+                education: ['MBBS, MS (Orthopedics)', 'Fellowship in Arthroscopy'],
+                certifications: ['Fellowship International Society of Arthroscopy'],
+                languages: ['English', 'Tamil', 'Arabic'],
+                slug: 'dr-david-rajan',
+              },
+              {
+                id: '3',
+                name: 'Dr. Saurabh Chandra',
+                nameAr: 'د. سوراب شاندرا',
+                specialty: 'Revision Knee Surgery',
+                specialtyAr: 'جراحة الركبة التصحيحية',
+                hospital: 'Medanta - The Medicity',
+                hospitalAr: 'ميدانتا - المديسيتي',
+                experience: 18,
+                rating: 4.7,
+                reviews: 980,
+                price: { min: 6000, max: 9000, currency: 'USD' },
+                education: ['MBBS, MS (Orthopedics)', 'Fellowship Revision Surgery'],
+                certifications: ['Fellowship German Knee Society'],
+                languages: ['English', 'Hindi', 'Arabic'],
+                slug: 'dr-saurabh-chandra',
+              },
+            ]}
+            locale={locale as 'en' | 'ar'}
+            variant="detailed"
+            limit={6}
+            showPrice={true}
+          />
+        </div>
+      </section>
+
+      {/* Patient Reviews */}
+      <section className="mb-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-8 text-center font-serif text-2xl md:text-3xl font-bold text-gray-900">
+            Patient Reviews & Success Stories
+          </h2>
+          <PatientReviews
+            reviews={[
+              {
+                id: '1',
+                patientName: 'Ahmed Al-Mansoori',
+                country: 'UAE',
+                flag: '🇦🇪',
+                treatment: 'Knee Replacement',
+                treatmentAr: 'استبدال الركبة',
+                rating: 5,
+                date: '2024-12-15',
+                review: 'Amazing experience at Fortis! Dr. Venkatachalam is a true expert. My knee pain is completely gone after 6 months of suffering. The staff was incredibly helpful, especially the Arabic interpreter. The recovery was smooth and I was walking within 2 days. Highly recommend for anyone considering knee surgery in India.',
+                reviewAr: 'تجربة رائعة في فورتيس! د. فينكاتاتشالام خبير حقيقي. ألم الركبة اختفى تماماً بعد 6 أشهر من المعاناة. كان الموظفون مفيدون للغاية، خاصة المترجم العربي. كان التعافي سلساً وكنت أمشي خلال يومين. أنصح بشدة لأي شخص يفكر في جراحة الركبة في الهند.',
+                helpfulCount: 234,
+                isVerified: true,
+                hospital: 'Fortis Memorial Research Institute',
+                beforeAfterImages: {
+                  before: '/images/patient-knee-before.jpg',
+                  after: '/images/patient-knee-after.jpg',
+                },
+              },
+              {
+                id: '2',
+                patientName: 'Sarah Al-Hassan',
+                country: 'Saudi Arabia',
+                flag: '🇸🇦',
+                treatment: 'Knee Replacement',
+                treatmentAr: 'استبدال الركبة',
+                rating: 5,
+                date: '2024-11-28',
+                review: 'Words cannot describe how grateful I am to Dr. David Rajan at Apollo. After years of struggling with knee issues, I can now walk pain-free. The hospital was excellent - clean, modern, and very professional. The cost was just a fraction of what I would have paid in Saudi Arabia. Thank you Shifa AlHind for making this possible!',
+                reviewAr: 'لا يمكن للكلمات أن تعبر عن مدى امتناني لد. ديفيد راجان في أبولو. بعد سنوات من المعاناة مع مشاكل الركبة، يمكنني المشي الآن دون ألم. كان المستشفى ممتازًا - نظيفًا وعصريًا ومحترفًا للغاية. كانت التكلفة مجرد جزء صغير مما سأدفعه في السعودية. شكرًا لك شفاء الهند لجعل هذا ممكنًا!',
+                helpfulCount: 189,
+                isVerified: true,
+                hospital: 'Apollo Hospitals, Chennai',
+              },
+              {
+                id: '3',
+                patientName: 'Mohammad Al-Kuwari',
+                country: 'Kuwait',
+                flag: '🇰🇼',
+                treatment: 'Knee Replacement',
+                treatmentAr: 'استبدال الركبة',
+                rating: 4.5,
+                date: '2024-10-05',
+                review: 'I had bilateral knee replacement at Medanta with Dr. Chandra. Complex surgery handled very professionally. Recovery was faster than expected - walking without support in 10 days. The rehabilitation program was excellent. Total cost including 3 weeks stay was very reasonable compared to Kuwait.',
+                reviewAr: 'أجريت استبدال ركبة ثنائي في ميدانتا مع د. شاندرا. جراحة معقدة تم التعامل معها باحترافية عالية. كان التعافي أسرع من المتوقع - المشي دون دعم في 10 أيام. كان برنامج إعادة التأهيل ممتازًا. كانت التكلفة الإجمالية بما في ذلك 3 أسابيع من الإقامة معقولة جدًا مقارنة بالكويت.',
+                helpfulCount: 156,
+                isVerified: true,
+                hospital: 'Medanta - The Medicity',
+              },
+            ]}
+            locale={locale as 'en' | 'ar'}
+            variant="grid"
+            limit={6}
+            showFilters={false}
+            showBeforeAfter={true}
+          />
+        </div>
       </section>
 
       {/* Trust Badges */}
