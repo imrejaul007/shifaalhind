@@ -25,6 +25,7 @@ import { FAQSchema } from '@/components/seo/faq-schema-client';
 import { SocialShare } from '@/components/blog/social-share';
 import { PatientJourney } from '@/components/patient-journey/patient-journey';
 import { HospitalLogos } from '@/components/hospital-logos/hospital-logos';
+import { CertificationBadges, MedicalQualityStatement } from '@/components/trust-signals/certification-badges';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -1541,8 +1542,30 @@ $1<ArrowRight className="ml-1 h-4 w-4" />
         </div>
       </section>
 
+      {/* Trust & Certification Badges - Enhanced */}
+      <section className="container px-4 py-12">
+        <div className="mx-auto max-w-6xl">
+          <h2 className="mb-6 text-center font-serif text-3xl font-bold text-gray-900 md:text-4xl">
+            {safeLocale === 'ar' ? '🏅 الاعتمادات والشهادات الطبية' : '🏅 Medical Certifications & Trust Badges'}
+          </h2>
+          <p className="mb-8 text-center text-lg text-gray-600 dark:text-gray-400">
+            {safeLocale === 'ar'
+              ? 'جميع المستشفيات الشريكة حاصلة على اعتمادات دولية تضمن لك أعلى معايير الجودة والسلامة'
+              : 'All partner hospitals hold international accreditations ensuring the highest standards of quality and safety'}
+          </p>
+          <CertificationBadges locale={safeLocale} variant="detailed" />
+        </div>
+      </section>
+
+      {/* Medical Quality Statement */}
+      <section className="container px-4 pb-12">
+        <div className="mx-auto max-w-4xl">
+          <MedicalQualityStatement locale={safeLocale} />
+        </div>
+      </section>
+
       {/* Enhanced Patient Journey - 8 Steps */}
-      <PatientJourney locale="en" />
+      <PatientJourney locale={safeLocale} />
 
       {/* Hospital Partnership Logos & Trust Badges */}
       <HospitalLogos locale="en" showStats={true} />

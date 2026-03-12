@@ -9,10 +9,29 @@ interface SEOProps {
   locale: string;
   path?: string;
   images?: string[];
-  type?: 'website' | 'article';
+  type?: 'website' | 'article' | 'product' | 'profile' | 'video';
   publishedTime?: string;
+  modifiedTime?: string;
   authors?: string[];
   keywords?: string[];
+  // Enhanced Open Graph options
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImageAlt?: string;
+  ogImageWidth?: number;
+  ogImageHeight?: number;
+  // Twitter Card options
+  twitterCard?: 'summary' | 'summary_large_image' | 'app' | 'player';
+  twitterCreator?: string;
+  twitterSite?: string;
+  // Article specific
+  articleSection?: string;
+  articleTags?: string[];
+  // Product specific
+  productName?: string;
+  productPrice?: number;
+  productCurrency?: string;
+  productAvailability?: 'InStock' | 'OutOfStock' | 'PreOrder';
 }
 
 export function generateMetadata({
@@ -25,8 +44,27 @@ export function generateMetadata({
   images = [],
   type = 'website',
   publishedTime,
+  modifiedTime,
   authors,
   keywords = [],
+  // Enhanced Open Graph
+  ogTitle,
+  ogDescription,
+  ogImageAlt,
+  ogImageWidth = 1200,
+  ogImageHeight = 630,
+  // Twitter Card
+  twitterCard = 'summary_large_image',
+  twitterCreator = '@shifaalhind',
+  twitterSite = '@shifaalhind',
+  // Article specific
+  articleSection,
+  articleTags,
+  // Product specific
+  productName,
+  productPrice,
+  productCurrency = 'USD',
+  productAvailability = 'InStock',
 }: SEOProps): Metadata {
   const baseUrl = getBaseUrl();
   const title = locale === 'ar' ? title_ar : title_en;
@@ -41,12 +79,17 @@ export function generateMetadata({
       url: `${baseUrl}/images/og-default.jpg`,
       width: 1200,
       height: 630,
-      alt: siteName,
+      alt: ogImageAlt || siteName,
     },
   ];
 
   const ogImages = images.length
-    ? images.map((img) => ({ url: img, width: 1200, height: 630 }))
+    ? images.map((img) => ({
+        url: img,
+        width: ogImageWidth,
+        height: ogImageHeight,
+        alt: ogImageAlt || title || siteName,
+      }))
     : defaultImages;
 
   return {
@@ -54,22 +97,54 @@ export function generateMetadata({
     description: description || undefined,
     keywords: keywords.length ? keywords : undefined,
     authors: authors ? authors.map((name) => ({ name })) : undefined,
+    // Robots meta
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    // Open Graph - Enhanced
     openGraph: {
-      title: fullTitle,
-      description: description || undefined,
+      title: ogTitle || fullTitle,
+      description: ogDescription || description || undefined,
       url,
       siteName,
       locale: locale === 'ar' ? 'ar_SA' : 'en_US',
-      type,
+      alternateLocale: locale === 'ar' ? 'en_US' : 'ar_SA',
+      type: type === 'video' || type === 'product' ? 'website' : type, // Limit to supported types for Next.js
       images: ogImages,
       ...(publishedTime && { publishedTime }),
-    },
+      ...(modifiedTime && { modifiedTime }),
+      // Article-specific
+      ...(type === 'article' && {
+        authors: authors?.map(name => ({ name })),
+        section: articleSection,
+        tags: articleTags || keywords,
+      }),
+      // Product-specific
+      ...(type === 'product' && productName && {
+        productName,
+        priceAmount: productPrice,
+        priceCurrency: productCurrency,
+        availability: productAvailability,
+      }),
+    } as any, // Use type assertion to allow extended properties
+    // Twitter Cards - Enhanced
     twitter: {
-      card: 'summary_large_image',
-      title: fullTitle,
-      description: description || undefined,
+      card: twitterCard,
+      title: ogTitle || fullTitle,
+      description: ogDescription || description || undefined,
       images: ogImages.map((img) => img.url),
+      creator: twitterCreator,
+      site: twitterSite,
     },
+    // Canonical & alternates
     alternates: {
       canonical: url,
       languages: {
@@ -77,6 +152,36 @@ export function generateMetadata({
         ar: `${baseUrl}/ar${path}`,
       },
     },
+    // Additional meta tags
+    ...(type === 'article' && {
+      article: {
+        publishedTime,
+        modifiedTime,
+        authors: authors?.map(name => ({ name })),
+        section: articleSection,
+        tags: articleTags || keywords,
+      },
+    }),
+    // Viewport optimization
+    viewport: {
+      width: 'device-width',
+      initialScale: 1,
+    },
+    // Theme color
+    themeColor: [
+      { media: '(prefers-color-scheme: light)', color: '#10B981' },
+      { media: '(prefers-color-scheme: dark)', color: '#059669' },
+    ],
+    // Icons
+    icons: {
+      icon: '/favicon.ico',
+      shortcut: '/favicon-16x16.png',
+      apple: '/apple-touch-icon.png',
+    },
+    // Application name
+    applicationName: siteName,
+    // Generator
+    generator: 'Next.js',
   };
 }
 

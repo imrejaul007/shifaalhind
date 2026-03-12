@@ -347,3 +347,335 @@ export function generateLocalBusinessSchema(data: {
     },
   };
 }
+
+// ============================================================
+// Doctor Schema (for individual doctor profiles)
+// ============================================================
+export function generateDoctorSchema(data: {
+  name: string;
+  image?: string;
+  specialty: string;
+  hospitalName: string;
+  hospitalUrl?: string;
+  description?: string;
+  worksFor?: string;
+  languages?: string[];
+  priceRange?: string;
+  url?: string;
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: data.name,
+    image: data.image,
+    jobTitle: data.specialty,
+    description: data.description,
+    url: data.url ? `${baseUrl}${data.url}` : undefined,
+    worksFor: {
+      '@type': 'MedicalOrganization',
+      name: data.hospitalName,
+      ...(data.hospitalUrl && { url: data.hospitalUrl }),
+    },
+    ...(data.worksFor && {
+      worksFor: {
+        '@type': 'Organization',
+        name: data.worksFor,
+      },
+    }),
+    medicalSpecialty: data.specialty,
+    ...(data.languages && {
+      knowsLanguage: data.languages,
+    }),
+    ...(data.priceRange && {
+      priceRange: data.priceRange,
+    }),
+  };
+}
+
+// ============================================================
+// Hospital Schema (for individual hospital profiles)
+// ============================================================
+export function generateHospitalSchema(data: {
+  name: string;
+  image?: string;
+  description?: string;
+  address?: {
+    streetAddress?: string;
+    addressLocality?: string;
+    addressRegion?: string;
+    postalCode?: string;
+    addressCountry?: string;
+  };
+  telephone?: string;
+  url?: string;
+  accreditation?: string[];
+  medicalSpecialty?: string[];
+  numberOfBeds?: number;
+  department?: string[];
+  priceRange?: string;
+  aggregateRating?: {
+    ratingValue: number;
+    reviewCount: number;
+  };
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Hospital',
+    name: data.name,
+    image: data.image,
+    description: data.description,
+    url: data.url ? `${baseUrl}${data.url}` : undefined,
+    ...(data.address && {
+      address: {
+        '@type': 'PostalAddress',
+        ...data.address,
+      },
+    }),
+    ...(data.telephone && { telephone: data.telephone }),
+    ...(data.accreditation && { accreditation: data.accreditation }),
+    ...(data.medicalSpecialty && { medicalSpecialty: data.medicalSpecialty }),
+    ...(data.numberOfBeds && { numberOfBeds: data.numberOfBeds }),
+    ...(data.department && { department: data.department }),
+    ...(data.priceRange && { priceRange: data.priceRange }),
+    ...(data.aggregateRating && {
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: data.aggregateRating.ratingValue,
+        reviewCount: data.aggregateRating.reviewCount,
+      },
+    }),
+  };
+}
+
+// ============================================================
+// Video Schema (for treatment videos, testimonials, etc.)
+// ============================================================
+export function generateVideoSchema(data: {
+  name: string;
+  description?: string;
+  thumbnailUrl: string;
+  uploadDate?: string;
+  duration?: string;
+  contentUrl?: string;
+  embedUrl?: string;
+  author?: string;
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: data.name,
+    description: data.description,
+    thumbnailUrl: data.thumbnailUrl.startsWith('http') ? data.thumbnailUrl : `${baseUrl}${data.thumbnailUrl}`,
+    ...(data.uploadDate && { uploadDate: data.uploadDate }),
+    ...(data.duration && { duration: data.duration }),
+    ...(data.contentUrl && {
+      contentUrl: data.contentUrl.startsWith('http') ? data.contentUrl : `${baseUrl}${data.contentUrl}`,
+    }),
+    ...(data.embedUrl && {
+      embedUrl: data.embedUrl.startsWith('http') ? data.embedUrl : `${baseUrl}${data.embedUrl}`,
+    }),
+    ...(data.author && { author: { '@type': 'Person', name: data.author } }),
+  };
+}
+
+// ============================================================
+// Image Schema (for image optimization and discovery)
+// ============================================================
+export function generateImageSchema(data: {
+  url: string;
+  caption?: string;
+  width?: number;
+  height?: number;
+  author?: string;
+  license?: string;
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageObject',
+    url: data.url.startsWith('http') ? data.url : `${baseUrl}${data.url}`,
+    ...(data.caption && { caption: data.caption }),
+    ...(data.width && { width: data.width }),
+    ...(data.height && { height: data.height }),
+    ...(data.author && { author: { '@type': 'Person', name: data.author } }),
+    ...(data.license && { license: data.license }),
+  };
+}
+
+// ============================================================
+// BreadcrumbList Schema (for breadcrumb navigation)
+// ============================================================
+export function generateBreadcrumbSchema(data: {
+  items: Array<{
+    name: string;
+    url: string;
+  }>;
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: data.items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url.startsWith('http') ? item.url : `${baseUrl}${item.url}`,
+    })),
+  };
+}
+
+// ============================================================
+// Organization Schema (comprehensive company information)
+// ============================================================
+export function generateOrganizationSchema(data?: {
+  logo?: string;
+  sameAs?: string[];
+  contactPoint?: {
+    telephone: string;
+    contactType: string;
+    areaServed?: string[];
+  }[];
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Shifa AlHind',
+    alternateName: 'شفاء الهند',
+    url: baseUrl,
+    logo: data?.logo ? `${baseUrl}${data.logo}` : `${baseUrl}/images/logo.png`,
+    description: 'Premium medical tourism facilitator connecting GCC patients with top JCI-accredited hospitals in India.',
+    address: {
+      '@type': 'PostalAddress',
+      addressCountry: 'IN',
+      addressLocality: 'New Delhi',
+      addressRegion: 'Delhi',
+    },
+    telephone: '+919876543210',
+    email: 'info@shifaalhind.com',
+    ...(data?.contactPoint && {
+      contactPoint: data.contactPoint.map(cp => ({
+        '@type': 'ContactPoint',
+        telephone: cp.telephone,
+        contactType: cp.contactType,
+        ...(cp.areaServed && { areaServed: cp.areaServed }),
+      })),
+    }),
+    ...(data?.sameAs && { sameAs: data.sameAs }),
+    areaServed: [
+      { '@type': 'Country', name: 'United Arab Emirates' },
+      { '@type': 'Country', name: 'Saudi Arabia' },
+      { '@type': 'Country', name: 'Qatar' },
+      { '@type': 'Country', name: 'Oman' },
+      { '@type': 'Country', name: 'Kuwait' },
+      { '@type': 'Country', name: 'Bahrain' },
+    ],
+    availableLanguage: ['English', 'Arabic'],
+  };
+}
+
+// ============================================================
+// MedicalAudience Schema (for targeting specific patient groups)
+// ============================================================
+export function generateMedicalAudienceSchema(data: {
+  audienceType?: string;
+  suggestedMinAge?: number;
+  suggestedMaxAge?: number;
+  suggestedGender?: 'Male' | 'Female';
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalAudience',
+    ...(data.audienceType && { audienceType: data.audienceType }),
+    ...(data.suggestedMinAge && { suggestedMinAge: data.suggestedMinAge }),
+    ...(data.suggestedMaxAge && { suggestedMaxAge: data.suggestedMaxAge }),
+    ...(data.suggestedGender && { suggestedGender: data.suggestedGender }),
+  };
+}
+
+// ============================================================
+// MedicalCondition Schema (for treatment/disease information)
+// ============================================================
+export function generateMedicalConditionSchema(data: {
+  name: string;
+  alternateName?: string[];
+  description?: string;
+  signOrSymptom?: string[];
+  possibleTreatment?: string[];
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'MedicalCondition',
+    name: data.name,
+    ...(data.alternateName && { alternateName: data.alternateName }),
+    ...(data.description && { description: data.description }),
+    ...(data.signOrSymptom && { signOrSymptom: data.signOrSymptom }),
+    ...(data.possibleTreatment && {
+      possibleTreatment: data.possibleTreatment.map(treatment => ({
+        '@type': 'MedicalProcedure',
+        name: treatment,
+      })),
+    }),
+  };
+}
+
+// ============================================================
+// FAQPage Schema (comprehensive FAQ for voice search)
+// ============================================================
+export function generateFAQPageSchema(data: {
+  mainEntity: Array<{
+    question: string;
+    acceptedAnswer: string;
+    suggestedAnswer?: string[];
+  }>;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.mainEntity.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.acceptedAnswer,
+      },
+      ...(faq.suggestedAnswer && {
+        suggestedAnswer: {
+          '@type': 'Answer',
+          text: faq.suggestedAnswer.join(' '),
+        },
+      }),
+    })),
+  };
+}
+
+// ============================================================
+// AboutPage Schema (for About page)
+// ============================================================
+export function generateAboutPageSchema(data: {
+  name: string;
+  description: string;
+  url: string;
+  foundingDate?: string;
+  founders?: string[];
+  numberOfEmployees?: number;
+}) {
+  const baseUrl = getBaseUrl();
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    mainEntity: {
+      '@type': 'Organization',
+      name: data.name,
+      url: data.url.startsWith('http') ? data.url : `${baseUrl}${data.url}`,
+      description: data.description,
+      ...(data.foundingDate && { foundingDate: data.foundingDate }),
+      ...(data.founders && { founders: data.founders.map(f => ({ '@type': 'Person', name: f })) }),
+      ...(data.numberOfEmployees && { numberOfEmployees: data.numberOfEmployees }),
+    },
+  };
+}

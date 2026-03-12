@@ -45,7 +45,8 @@
       "Bash(brew list gh)",
       "Bash(gh --version)",
       "Bash(brew install gh)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "Bash(grep -i \"render\\\\|email\\\\|account\" \"/Users/rejaulkarim/Documents/med Shifa al hind/.env\"*)"
     ],
     "additionalDirectories": [
       "/Users/rejaulkarim/Documents/med Shifa al hind/src/app/[locale]",
